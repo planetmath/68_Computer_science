@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DeterministicFiniteAutomaton}
+\pmcreated{2013-03-22 12:26:37}
+\pmmodified{2013-03-22 12:26:37}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{deterministic finite automaton}
+\pmrecord{16}{32553}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q05}
+\pmclassification{msc}{03D10}
+\pmsynonym{dfa}{DeterministicFiniteAutomaton}
+\pmsynonym{finite state machine}{DeterministicFiniteAutomaton}
+\pmsynonym{fsm}{DeterministicFiniteAutomaton}
+\pmrelated{Automaton}
+\pmrelated{ContextFreeLanguage}
+\pmrelated{RegularLanguage}
+\pmrelated{Language}
+\pmrelated{NonDeterministicFiniteAutomaton}
+\pmrelated{SubsetConstruction}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\begin{document}
+A \emph{deterministic finite automaton} (or DFA) is a deterministic automaton with a finite input alphabet and a finite number of states.  It can be formally defined as a 5-tuple
+$(S, \Sigma, \delta, q_0, F)$, where 
+\begin{itemize}
+\item $S$ is a non-empty finite set of \emph{states}, 
+\item $\Sigma$ is the alphabet (defining what set of input strings the automaton operates on), 
+\item $\delta : S\times\Sigma\rightarrow S$ is the \emph{transition function},
+\item $q_0 \in S$ is the starting state, and 
+\item $F \subseteq S$ is a set of final (or accepting states).  
+\end{itemize}
+A DFA works exactly like a general automaton: operation begins at $q_0$, and movement from state to state is governed by the transition function $\delta$.  A word is accepted exactly when a final state is reached upon reading the last (rightmost) symbol of the word.
+
+DFAs represent regular languages, and can be used to test whether any string in $\Sigma^*$ is in the language it represents.  Consider the following regular language over the alphabet $\Sigma := \left\{ \verb.a., \verb.b. \right\}$ (represented by the regular expression \verb=aa*b=):
+
+\begin{eqnarray*}
+\verb.<.S\verb.>. & \verb.::=. & \verb=a=\,A \\
+\verb.<.A\verb.>. & \verb.::=. & b\,\verb.|.\,\verb=a=\,A \\
+\end{eqnarray*}
+
+This language can be represented by the DFA with the following state diagram:
+
+$$
+\UseComputerModernTips
+\xymatrix {
+    \ar[r] &
+        *+[o][F-]{0} \ar[r]_a \ar[rd]_b &
+        *+[o][F-]{1} \ar@(r,u)[]_a \ar[r]_b &
+        *++[o][F=]{2} \ar[dl]^{a,b}
+    \\
+        &&
+        *+[o][F-]{3} \ar@(r,d)[]^{a,b}
+}
+$$
+
+The vertex 0 is the initial state $q_0$, and the vertex 2 is the only state in $F$.  Note that for every vertex there is an edge leading away from it with a label for each symbol in $\Sigma$.  This is a requirement of DFAs, which guarantees that operation is well-defined for any finite string.
+
+If given the string \verb=aaab= as input, operation of the DFA above is as follows.  The first \verb=a= is removed from the input string, so the edge from 0 to 1 is followed.  The resulting input string is \verb=aab=.  For each of the next two \verb=a=s, the edge is followed from 1 to itself.  Finally, \verb=b= is read from the input string and the edge from 1 to 2 is followed.  Since the input string is now $\lambda$, the operation of the DFA halts.  Since it has halted in the accepting state 2, the string \verb=aaab= is accepted as a sentence in the regular language implemented by this DFA.
+
+Now let us trace operation on the string \verb=aaaba=.  Execution is as above, until state 2 is reached with \verb=a= remaining in the input string.  The edge from 2 to 3 is then followed and the operation of the DFA halts.  Since 3 is not an accepting state for this DFA, \verb=aaaba= is \emph{not} accepted.
+
+\textbf{Remarks}.
+\begin{itemize}
+\item 
+A DFA can be modified to include \emph{$\epsilon$-transitions}{EpsilonTransitions}.  But the resulting DFA can be simulated by another DFA (without any epsilon transitions).
+\item
+Although the operation of a DFA is much easier to compute than that of a non-deterministic automaton, it is non-trivial to directly generate a DFA from a regular grammar.  It is much easier to generate a non-deterministic finite automaton from the regular grammar, and then \emph{transform} the non-deterministic finite automaton into a DFA.
+\end{itemize}
+%%%%%
+%%%%%
+\end{document}

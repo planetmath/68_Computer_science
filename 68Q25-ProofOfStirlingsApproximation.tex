@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfStirlingsApproximation}
+\pmcreated{2014-05-08 22:09:30}
+\pmmodified{2014-05-08 22:09:30}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{proof of Stirling's approximation}
+\pmrecord{6}{88106}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Proof}
+\pmclassification{msc}{68Q25}
+\pmclassification{msc}{30E15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Computing the Taylor expansion with remainder of the 
+functions $\log$ and $x \mapsto x \log x - x$, we have
+\begin{align*}
+(n + 1) \log (n + 1) - \log (n + 1) &=& n \log n - n + \log n +
+  \frac{1}{2n} + \frac{1}{6\xi_n^2} \\
+\log (n + 1) &=& \log n + \frac {1}{n} - \frac{1}{2 \eta_n^2}
+\end{align*}
+where $n \le \xi_n \le n + 1$ and $n \le \eta_n \le n + 1$.
+Summing the first equation from $1$ to $n - 1$, we have
+\[
+n \log n - n = -1 + \log (n-1)! + \frac{1}{2} \sum_{m=1}^{n-1} 
+ \frac{1}{m} + \frac{1}{6} \sum_{m=1}^{n-1} \frac{1}{\xi_n^2}.
+\]
+\end{document}

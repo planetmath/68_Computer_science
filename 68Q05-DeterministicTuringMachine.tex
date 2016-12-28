@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DeterministicTuringMachine}
+\pmcreated{2013-03-22 13:01:22}
+\pmmodified{2013-03-22 13:01:22}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{deterministic Turing machine}
+\pmrecord{8}{33411}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmclassification{msc}{68Q10}
+\pmrelated{TuringMachine2}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+The formal definition of a deterministic Turing machine is a tuple:
+
+$$T=(Q,\Sigma,\Gamma,\delta,q_0,B,F)$$
+
+Where $Q$ is a finite set of states, $\Gamma$ is the finite set of tape symbols, $B\in\Gamma$ is the blank symbol, $\Sigma\subseteq\Gamma$ is the set of input symbols, $\delta:Q\times\Gamma\rightarrow Q\times\Gamma\times\{L,R\}$ is the move function, $q_0\in Q$ is the start state and $F\subseteq Q$ is the set of final states.  (Note that, despite the name, $\delta$ is a partial function which will be undefined for some pairs $(q,A)$.)
+
+A Turing machine is conceived to be a box with a tape and a tape head.  The tape consists of an  infinite number of cells stretching in both directions, with the tape head always located over exactly one of these cells. Each cell has symbol from $\Gamma$ written on it.
+
+At the beginning of its computation, $T$ is in state $q_0$ and a finite string $S$ (the input string) over the alphabet $\Sigma$ is written on the tape, with the tape located over the first letter of $S$.  Each cell before the beginning or after the end of $S$ is blank.  For each move, if the current state is $q$ and the value of the cell under the tape head is $A$ then suppose $\delta(q,A)=(q^\prime, A^\prime,D)$.  The value of the cell under the tape head is changed to $A^\prime$, the state changes to $q^\prime$, and the tape head moves to the left if $D=L$ and to the right if $D=R$.  If $\delta(q,A)$ is undefined then the machine halts.
+
+For any $S\in\Gamma^+$, we say $T$ accepts $S$ if $T$ halts in a state $q\in F$ when $S$ is the input string, that $T$ rejects $S$ if $T$ halts in a state $q\not\in F$, and otherwise that $T$ does not halt on $S$.
+
+This definition can easily be extended to multiple tapes with various rules.  $\delta$ should be a function from $Q\times\Gamma^n\rightarrow\Gamma^m\times\{L,R\}^n$ where $n$ is the number of tapes, $m$ is the number of input tapes, and $L$ is interpreted to mean not moving (rather than moving to the left) for one-way tapes.
+%%%%%
+%%%%%
+\end{document}

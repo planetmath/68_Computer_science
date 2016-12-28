@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TimeComplexity}
+\pmcreated{2013-03-22 11:47:39}
+\pmmodified{2013-03-22 11:47:39}
+\pmowner{akrowne}{2}
+\pmmodifier{akrowne}{2}
+\pmtitle{time complexity}
+\pmrecord{10}{30309}
+\pmprivacy{1}
+\pmauthor{akrowne}{2}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q15}
+\pmdefines{polynomial time}
+\pmdefines{polynomial-time}
+\pmdefines{exponential time}
+\pmdefines{exponential-time}
+\pmdefines{complexity classes}
+\pmdefines{meta-complexity classes}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%%%%\usepackage{xypic}
+\begin{document}
+\section{Time Complexity} 
+
+\emph{Time complexity} refers to a function describing how much time it will take an algorithm to execute, based on the parameters of its input.  The exact value of this function is usually ignored in favour of its order, expressed in the so-called Big-O notation (this is based on the limit of the time complexity function as the values of its parameters increase without bound.)
+
+\emph{Complexity classes} are equivalence classes of time complexities which are ``equal'' in Big-O notation.  Further, there are meta-complexity classes\footnote{This term has been invented for use in this entry.} of time complexities which have Big-O expressions that differ only by some specific parameter.  For instance, $O(n^2)$ and $O(n^3)$ are both \emph{polynomial time} complexity classes, similarly $O(2^n)$ and $O(3^n)$ are \emph{exponential time} complexity classes.
+
+\section{Example}
+
+All comparison-based sorting has time complexity no better than $O(n \log n)$, where $n$ is the number of elements to be sorted. The exact expression for time complexity of a particular sorting algorithm may be something like $T(n)= a n \log  n + b$, with $a$ and $b$ constants, which still is order $O(n \log n)$.
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\end{document}

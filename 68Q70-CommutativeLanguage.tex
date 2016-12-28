@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{CommutativeLanguage}
+\pmcreated{2013-03-22 18:56:56}
+\pmmodified{2013-03-22 18:56:56}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{commutative language}
+\pmrecord{5}{41806}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmdefines{commutative}
+\pmdefines{commutative closure}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\Sigma$ be an alphabet and $u$ a word over $\Sigma$.  Write $u$ as a product of symbols in $\Sigma$:
+$$u=a_1 \cdots a_n$$
+where $a_i \in \Sigma$.  A \PMlinkescapetext{\emph{permutation}} of $u$ is a word of the form $$a_{\pi(1)} \cdots a_{\pi(n)},$$
+where $\pi$ is a permutation on $\lbrace 1,\ldots, n\rbrace$.  The set of all permutations of $u$ is denoted by $\operatorname{com}(u)$.  If $\Sigma =\lbrace b_1,\ldots, b_m\rbrace$, it is easy to see that $\operatorname{com}(u)$ has $$\frac{n!}{n_1! \cdots n_m!}$$ elements, where $n_i=|u|_{b_i}$, the number of occurrences of $b_i$ in $u$.
+
+Define a binary relation $\sim$ on $\Sigma^*$ by: $u\sim v$ if $v$ is a permutation of $u$.  Then $\sim$ is a congruence relation on $\Sigma^*$ with respect to concatenation.  In fact, $\Sigma^*/\sim$ is a commutative monoid.
+
+A language $L$ over $\Sigma$ is said to be \emph{commutative} if for every $u\in L$, we have $\operatorname{com}(u) \subseteq L$.  Two equivalent characterization of a commutative language $L$ are:
+\begin{itemize}
+\item If $u=vxyw \in L$, then $vyxw \in L$.
+\item $\Psi^{-1}\circ \Psi(L)\subseteq L$, where $\Psi$ is the Parikh mapping over $\Sigma$ (under some ordering).
+\end{itemize}
+
+The first equivalence comes from the fact that if $vyxw$ is just a permutation of $vxyw$, and that every permutation on $\lbrace 1,\ldots, n\rbrace$ may be expressed as a product of transpositions.  The second equivalence is the realization of the fact that $\operatorname{com}(u)$ is just the set $$\lbrace v\mid |v|_a = |u|_a, a\in \Sigma \rbrace.$$
+
+We have just seen some examples of commutative closed langauges, such as $\operatorname{com}(u)$ for any word $u$, and $\Psi^{-1}\circ \Psi(L)$, for any language $L$.  
+
+Given a language $L$, the smallest commutative language containing $L$ is called the \emph{commutative closure} of $L$.  It is not hard to see that $\Psi^{-1}\circ \Psi(L)$ is the \emph{commutative closure} of $L$.
+
+For example, if $L=\lbrace (abc)^n \mid n\ge 0\rbrace$, then $\Psi^{-1}\circ \Psi(L) = \lbrace w\mid |w|_a=|w|_b = |w|_c\rbrace$.  
+
+\textbf{Remark}.  The above example illustrates the fact that the families of regular languages and context-free languages are not closed under commutative closures.  However, it can be shown that the families of context-sensitive languages and type-0 languages are closed under commutative closures.
+
+\begin{thebibliography}{9}
+\bibitem{mi} M. Ito, {\em Algebraic Theory of Automata and Languages}, World Scientific, Singapore (2004).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

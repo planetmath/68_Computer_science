@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Starfree}
+\pmcreated{2013-03-22 18:59:05}
+\pmmodified{2013-03-22 18:59:05}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{star-free}
+\pmrecord{16}{41850}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+\pmsynonym{star free}{Starfree}
+\pmsynonym{non-counting}{Starfree}
+\pmsynonym{noncounting}{Starfree}
+\pmrelated{StarHeight}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\mathscr{R}$ and $\mathscr{GR}$ be the families of languages represented by regular expressions and generalized regular expressions respectively.  It is well-known that $$\mathscr{R}=\mathscr{GR}.$$
+This means that the additional symbols $\cap$ and $\neg$ in a generalized regular expressions are extraneous: removing them will not affect the representational power of the expressions with respect to regular languages.
+
+What if we remove $^*$, the Kleene star symbol, instead?  With regard to regular expressions, removing $^*$ severely limits the power of the expressions.  By induction, the represented languages are all finite.  In this entry, we briefly discuss what happens when $^*$ is removed from the generalized regular expressions.
+
+\textbf{Definition}.  Let $\Sigma$ be an alphabet.  A language $L$ over $\Sigma$ is said to be \emph{star-free} if it can be expressed by a generalized regular expression without $^*$.  In other words, a star-free language is a language that can be obtained by applying the operations of union, concatenation, and complementation to $\varnothing$ and atomic languages (singleton subsets of $\Sigma$) a finite number of times.
+
+If we denote $\mathscr{SF}$ the family of star-free languages (over some alphabet $\Sigma$), then $\mathscr{SF}$ is the smallest set of languages over $\Sigma$ such that
+\begin{itemize}
+\item $\varnothing\in \mathscr{SF}$, 
+\item $\lbrace a\rbrace \in \mathscr{SF}$ for any $a\in \Sigma$,
+\item if $L,M \in \mathscr{SF}$, then $L\cup M, LM, L^c \in \mathscr{SF}$.
+\end{itemize}
+
+A shorter characterization of a star-free language is a language with star height $0$ with respect to representations by generalized regular expressions.
+
+In relations to finite and regular languages, we have the following:
+\begin{equation}
+\mathscr{F}\subseteq \mathscr{SF} \subseteq \mathscr{R},
+\end{equation}
+where $\mathscr{F}$ denotes the family of finite languages over $\Sigma$.
+
+Furthermore, it is easy to see that $\mathscr{SF}$ is closed under Boolean operations, so that $\mathscr{SF}$ contains infinite languages, for example $\neg \varnothing$ represents $\Sigma^*$.  As a result, the first inclusion must be strict.  This example also shows that languages representable by expressions including the Kleene star may still be star-free.  Here's another example: $\lbrace ab \rbrace^*$ over the alphabet $\lbrace a,b\rbrace$.  This language can be represented as $$\lambda \cup ( ab \Sigma^* \cap \Sigma^* ab \cap \neg (\Sigma^* a^2 \Sigma^*) \cap \neg (\Sigma^* b^2 \Sigma^*))$$
+The expression above, of course, is not star-free, and includes the symbol $\lambda$ representing the empty word.  However, $\Sigma^*$ is just $\neg \varnothing$, and $\lambda$ is just $\Sigma^* \cap \neg(a\Sigma^*) \cap \neg(b\Sigma^*)$.  Some substitutions show that $\lbrace ab\rbrace^*$ is indeed star-free.
+
+Is the second inclusion strict?  Are there regular languages such that representations by expressions including the Kleene star is inevitable?  The following proposition answers the question:
+\begin{prop}  A language $L$ is star-free iff there exists a non-negative integer $n$ such that, for any words $u,v,w$ over $\Sigma$, $uv^nw\in L$ iff $uv^{n+1}w\in L$.
+\end{prop}
+A language satisfying the second statement in the proposition is known as \emph{noncounting}, so the proposition can be restated as: a language is star-free iff it is noncounting.
+
+As a result of this fact, we see that languages such as $\lbrace (ab)^2 \rbrace^*$ is not star-free, although it is regular.  Indeed, if we pick $u=v=w=ab$ as in the statement of the proposition above, we see that $uv^nw$ is in the language iff $uv^{n+1}w$ is not in the language, for any $n\ge 0$.  Therefore, the second inclusion in chain (1) above is also strict.
+
+The above proposition also strengthens chain (1): denote by $\mathscr{T}(\infty)$ the family of locally testable languages, then
+\begin{equation}
+\mathscr{T}(\infty)\subset \mathscr{SF} \subset \mathscr{R}.
+\end{equation}
+The first inclusion is due to the fact that, for any $k$-testable language $L$ (over some $\Sigma$), we have $$\operatorname{sw}_k(uv^kw)=\operatorname{sw}_k(uv^{k+1}w)$$ (the definition of $\operatorname{sw}_k(u)$ is found in the entry on locally testable languages).  Note the first inclusion is also strict.  For example, the language represented by $(ab)^*\cup (ba)^*$ is star-free but not locally testable.
+
+\begin{thebibliography}{9}
+\bibitem{ag} A. Ginzburg, {\em Algebraic Theory of Automata}, Academic Press (1968).
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

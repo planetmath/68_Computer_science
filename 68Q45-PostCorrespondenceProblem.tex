@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PostCorrespondenceProblem}
+\pmcreated{2013-03-22 19:09:59}
+\pmmodified{2013-03-22 19:09:59}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{Post correspondence problem}
+\pmrecord{6}{42072}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\Sigma$ be an alphabet.  As usual, $\Sigma^+$ denotes the set of all non-empty words over $\Sigma$.  Let $P\subset \Sigma^+ \times \Sigma^+$ be finite.  Call a finite sequence 
+$$(u_1,v_1),\ldots, (u_n,v_n)$$
+of pairs in $P$ a \emph{correspondence} in $P$ if $$u_1\cdots u_n = v_1\cdots v_n.$$
+The word $u_1\cdots u_n$ is called a \emph{match} in $P$.
+
+For example, if $\Sigma=\lbrace a,b\rbrace$, and $P=\lbrace (b,b^2), (a^2,a), (b^2a,b^3), (ab^2,a^2b) \rbrace$.  Then $$(a^2,a), (ab^2,a^2b), (b^2a,b^3), (ab^2,a^2b), (b,b^2)$$ is a correspondence in $P$.
+
+On the other hand, there are no correspondences in $\lbrace (ab, a), (a, ba^2)\rbrace$.
+
+The Post correspondence problem asks the following:
+\begin{quote}
+Is there an algorithm (Turing machine or any other equivalent computing models) such that when an arbitrary $P$ is given as an input, returns $1$ if there exists a correspondence in $P$ and $0$ otherwise.
+\end{quote}
+
+The problem is named after E. Post because he proved
+\begin{thm} The Post correspondence problem is unsolvable (no such algorithms exist). \end{thm}
+%%%%%
+%%%%%
+\end{document}

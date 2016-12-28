@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Monad}
+\pmcreated{2013-03-22 12:27:43}
+\pmmodified{2013-03-22 12:27:43}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{monad}
+\pmrecord{11}{32614}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{18C15}
+\pmsynonym{associative law of a monad}{Monad}
+\pmsynonym{left and right identity laws of a monad}{Monad}
+\pmrelated{NaturalTransformation}
+\pmrelated{Functor}
+\pmrelated{Category}
+\pmrelated{FundamentalGroupoid2}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\begin{document}
+A \emph{monad} over a category $\mathcal{C}$ is a triple $(T,\eta,\mu)$, where
+$T$ is an endofunctor of $\mathcal{C}$, $\eta$ is a natural transformation from the identity functor on $\mathcal{C}$, and $\mu$ is a natural transformations from $T\circ T$ to $T$, such that the following two properties hold:
+
+\begin{itemize}
+\item $\mu\circ(\mu\circ T)\equiv\mu\circ(T\circ\mu)$
+\item $\mu\circ(T\circ\eta)\equiv\mathrm{id}_\mathcal{C}\equiv\mu\circ(\eta\circ T)$
+\end{itemize}
+
+These laws are illustrated in the following diagrams.
+
+\begin{tabular}{cc}
+\begin{minipage}{.48\textwidth}
+$$
+\xymatrix{
+T^3(\mathcal{C}) \ar[rr]^{T\mu_{\mathcal{C}}} \ar[dd]_{\mu_{T(\mathcal{C})}} &&
+T^2(\mathcal{C}) \ar[dd]^{\mu_{\mathcal{C}}} \\
+\\
+T^2(\mathcal{C}) \ar[rr]_{\mu_{\mathcal{C}}} && T(\mathcal{C})
+}
+$$
+\end{minipage}
+&
+\begin{minipage}{.48\textwidth}
+$$
+\xymatrix{
+T(\mathrm{id}_{\mathcal{C}}(A)) \ar[rr]^{T(\eta_{\mathcal{C}})}
+\ar[ddrr]_{\mathrm{id}_{\mathcal{C}}} &&
+T^2(\mathcal{C}) \ar[dd]^{\mu_{\mathcal{C}}} &&
+\mathrm{id}_{\mathcal{C}}(T(\mathcal{C}))
+\ar[ll]^{\eta^{T(\mathcal{C})}}
+\ar[ddll]_{\mathrm{id}^{\mathcal{C}}} \\
+\\
+&& T(\mathcal{C})
+}
+$$
+\end{minipage} \\
+$\mu\circ(\mu\circ T)\equiv\mu\circ(T\circ\mu)$ &
+$\mu\circ(T\circ\eta)\equiv\mathrm{id}_\mathcal{C}\equiv\mu\circ(\eta\circ T)$
+\end{tabular}
+
+As an application, monads have been successfully applied in the field of functional programming.  A pure functional program can have no side effects, but some computations are frequently much simpler with such behavior.  Thus a mathematical model of computation such as a monad is needed.  In this case, monads serve to represent state transformations, mutable variables, and interactions between a program and its environment.  For further information in this regard, see http://www.nomaware.com/monads/html/.
+%%%%%
+%%%%%
+\end{document}

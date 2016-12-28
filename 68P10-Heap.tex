@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Heap}
+\pmcreated{2013-03-22 12:29:14}
+\pmmodified{2013-03-22 12:29:14}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{heap}
+\pmrecord{6}{32707}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Data Structure}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{68P20}
+\pmclassification{msc}{68P05}
+\pmrelated{BinaryTree}
+\pmrelated{BalancedTree}
+\pmrelated{HeapInsertionAlgorithm}
+\pmrelated{HeapRemovalAlgorithm}
+\pmrelated{Heapsort}
+\pmdefines{heap property}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\begin{document}
+Let $\preceq$ be a total order on some set $A$.  A \emph{heap} is then a data structure for storing elements in $A$.  A heap is a balanced binary tree, with the property that if $y$ is a descendent of $x$ in the heap, then $x\preceq y$ must hold.  This property is often referred to as the \emph{heap property}.
+
+If $\preceq$ is $\leq$, then the root of the heap always gives the smallest element of the heap, and if $\preceq$ is $\geq$, then the root of the heap always gives the largest element of the heap.  More generally, the root of the heap is some $a\in A$ such that $a\preceq x$ holds for all $x$ in the heap.
+
+For example, the following heap represents the multiset $\left\{ 1, 2, 4, 4, 6, 8 \right\}$ for the total order $\geq$ on $\mathbb{Z}$.
+
+$$
+\xymatrix{
+&&& 8 \ar@{-}[dll] \ar@{-}[drr] \\
+& 4 \ar@{-}[dl] \ar@{-}[dr] &&&& 6 \ar@{-}[dl] \\
+1 && 4 && 2
+}
+$$
+
+Due to the heap property, heaps have a very elegant application to the sorting problem.  The heapsort is an in-place sorting algorithm centered entirely around a heap.  Heaps are also used to implement priority queues.
+%%%%%
+%%%%%
+\end{document}

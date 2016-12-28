@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{GardenofEdenTheorem}
+\pmcreated{2013-03-22 19:22:07}
+\pmmodified{2013-03-22 19:22:07}
+\pmowner{Ziosilvio}{18733}
+\pmmodifier{Ziosilvio}{18733}
+\pmtitle{Garden-of-Eden theorem}
+\pmrecord{9}{42322}
+\pmprivacy{1}
+\pmauthor{Ziosilvio}{18733}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q80}
+\pmclassification{msc}{37B15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\newcommand{\Acal}{\ensuremath{\mathcal{A}}}
+\newcommand{\Neigh}{\ensuremath{\mathcal{N}}}
+\newcommand{\restrict}[2]{\ensuremath{\left.{#1}\right|_{#2}}}
+\newcommand{\Zset}{\ensuremath{\mathbb{Z}}}
+
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\usepackage{hyperref}
+
+Edward F. Moore's Garden-of-Eden theorem
+was the first rigorous statement of cellular automata theory.
+Though originally stated for cellular automata on the plane,
+it works in arbitrary dimension.
+\begin{theorem}[Moore, 1962] \label{thm:mo}
+Let
+\begin{math}
+\Acal = \langle Q, \Neigh, f \rangle
+\end{math}
+be a cellular automaton on $\Zset^d$ with finitely many states.
+If $\Acal$ has two mutually erasable patterns,
+then it has an orphan pattern.
+\end{theorem}
+In other words,
+surjective $d$-dimensional cellular automata are pre-injective.
+
+The same year, John Myhill proved the converse implication.
+\begin{theorem}[Myhill, 1962] \label{thm:my}
+Let
+\begin{math}
+\Acal = \langle Q, \Neigh, f \rangle
+\end{math}
+be a cellular automaton on $\Zset^d$ with finitely many states.
+If $\Acal$ has an orphan pattern,
+then it has two mutually erasable patterns.
+\end{theorem}
+In other words,
+pre-injective $d$-dimensional cellular automata are surjective.
+
+\begin{corollary}
+An injective $d$-dimensional cellular automaton is surjective.
+\end{corollary}
+
+Theorems~\ref{thm:mo} and~\ref{thm:my} hold because of the following statement.
+\begin{lemma} \label{lem:mo}
+Let $a > 0$, $d \geq 1$, $r \geq 1$, $k \geq 1$.
+For every sufficiently large $n$,
+\begin{equation} \label{eq:mo}
+(a^{k^d}-1)^{n^d} < a^{(kn-2r)^d}
+\end{equation}
+\end{lemma}
+Observe that,
+if $a = |Q|$ and
+\begin{equation} \label{eq:Dr}
+\Neigh
+= \{ x \in \Zset^d \mid |x_i| \leq r \, \forall i \in \{1,\ldots,d\} \}
+\;,
+\end{equation}
+then $(a^{kn})^d$
+is the number of possible hypercubic patterns of side $kn$,
+while $(a^{kn-2r})^d$
+is the maximum number of their images via $f$.
+
+\textit{Proof.}
+The inequality (\ref{eq:mo}) is in fact satisfied
+precisely by those $n$ that satisfy
+\begin{displaymath}
+\log_a (a^{k^d}-1) < \left( k - \frac{2r}{n} \right)^d \;,
+\end{displaymath}
+which is true for $n$ large enough since
+\begin{math}
+\log_a (a^{k^d}-1) < k^d
+\end{math}
+while
+\begin{math}
+\lim_{n \to \infty} (k - 2r/n)^d = k^d.
+\end{math}
+\hfill $\Box$
+
+For the rest of this entry, we will suppose
+that the neighborhood index $\Neigh$
+has the form (\ref{eq:Dr}).
+
+\textit{Proof of Moore's theorem.}
+Suppose $\Acal$ has two mutually erasable patterns $p_1$, $p_2$:
+it is not restrictive to suppose that their common support
+is a $d$-hypercube of side $k$.
+Define an equivalence relation $\rho$ on patterns of side $n$
+by stating that $p \rho q$ if and only if $f(p) = f(q)$:
+since $p_1$ and $p_2$ are mutually erasable,
+$\rho$ has at most $|Q|^{k^d}-1$ equivalence classes.
+
+By the same criterion,
+we define a family $\{\rho_n\}_{n \geq 1}$\
+of equivalence relations between hypercubic patterns of side $kn$.
+Each such pattern can be subdivided
+into $n^d$ subpatterns of side $k$:
+and it is clear that,
+if two patterns are in relation $\rho_n$,
+then each of those subpatterns is in relation $\rho$.
+
+But then, the relation $\rho_n$
+cannot have more than $(|Q|^{k^d}-1)^{n^d}$ equivalence classes:
+consequently, at most $(|Q|^{k^d}-1)^{n^d}$ patterns of side $kn-2r$
+can have a preimage.
+By Lemma~\ref{lem:mo} with $a=|Q|$,
+for $n$ large enough, some patterns of side $kn-2r$ must be orphan.
+\hfill $\Box$
+
+\textit{Proof of Myhill's theorem.}
+Let $p$ be an orphan pattern for $\Acal$.
+Again, it is not restrictive to suppose
+that the support of $p$ is a hypercube of side $k$.
+For $n \geq 1$
+let $\nu_n$ be the number of patterns of side $kn$
+that are \emph{not} orphan.
+Split each pattern of side $kn$
+into $n^d$ patterns of side $k$, as we did before.
+Then $\nu_n$ cannot exceed the number of those
+that do not contain a copy of $p$,
+which in turn is at most $(|Q|^{k^d}-1)^{n^d}$.
+
+Take $n$ so large that (\ref{eq:mo}) is satisfied:
+for a fixed state $q_0 \in Q$, and for $q_1 = f(q_0,\ldots,q_0)$,
+there are more configurations that take value $q_0$
+outside the hypercube $\{0,\ldots,kn-2r-1\}^d$
+than there are configurations that take value $q_1$
+outside the hypercube $\{-r,\ldots,kn-1\}^d$
+and are not Gardens of Eden.
+As the configurations of the second type
+are the images of those the first type,
+there must be two with the same image:
+those configurations correspond to two mutually erasable patterns.
+\hfill $\Box$
+
+Theorems~\ref{thm:mo} and ~\ref{thm:my}
+have been shown~\cite{csms99}
+to hold for cellular automata on amenable groups.
+Moore's theorem, in fact, \emph{characterizes} amenable groups
+(cf.~\cite{b10}):
+whether Myhill's theorem also does,
+is an open problem.
+
+\begin{thebibliography}{99}
+
+\bibitem{b10}
+Bartholdi, L. (2010)
+Gardens of Eden and amenability on cellular automata.
+\textit{J. Eur. Math. Soc.} \textbf{12(1)}, 141--148.
+Preprint: \href{http://arxiv.org/abs/0709.4280}{\texttt{arXiv:0709.4280v1}}
+
+\bibitem{csms99}
+Ceccherini-Silberstein, T., Mach\`{\i}, A. and Scarabotti, F. (1999)
+Amenable groups and cellular automata.
+\textit{Annales de l'Institut Fourier, Grenoble} \textbf{49(2)}, 673--685.
+
+\bibitem{mo62}
+Moore, E.F. (1962)
+Machine models of self-reproduction.
+\textit{Proc. Symp. Appl. Math.} \textbf{14}, 17--33.
+
+\bibitem{my62}
+Myhill, J. (1962)
+The converse of Moore's Garden-of-Eden theorem.
+\textit{Proc. Amer. Mat. Soc.} \textbf{14}, 685--686.
+
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

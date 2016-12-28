@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{OnewayFunction}
+\pmcreated{2013-03-22 13:03:14}
+\pmmodified{2013-03-22 13:03:14}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{one-way function}
+\pmrecord{7}{33458}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q30}
+\pmsynonym{one way function}{OnewayFunction}
+\pmsynonym{one-way}{OnewayFunction}
+\pmsynonym{one way}{OnewayFunction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+A function $f$ is a \emph{one-way function} if for any probabilistic, polynomial time computable function $g$ and any polynomial function $p$ there is $m$ such that for all $n>m$:
+
+$$\operatorname{Pr}[f(g(f(x)))=f(x)]<\frac{1}{p(n)}$$
+
+where $x$ has length $n$ and all numbers of length $n$ are equally likely.
+
+That is, no probabilistic, polynomial time function can effectively compute $f^{-1}$.
+
+Note that, since $f$ need not be injective, this is a stricter requirement than
+$$\operatorname{Pr}[g(f(x)))=x]<\frac{1}{p(n)}$$
+
+since not only is $g(f(x))$ (almost always) not $x$, it is (almost always) no value such that $f(g(f(x)))=f(x)$.
+%%%%%
+%%%%%
+\end{document}

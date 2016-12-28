@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Convolution1}
+\pmcreated{2013-03-22 14:16:51}
+\pmmodified{2013-03-22 14:16:51}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{convolution}
+\pmrecord{10}{35734}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68R15}
+%\pmkeywords{words}
+%\pmkeywords{strings}
+\pmrelated{Language}
+\pmrelated{KleeneStar}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Let $\Sigma$ be an alphabet, $\#$ a symbol not in $\Sigma$.
+
+Let $x_1x_2\ldots x_{|x|},y_1y_2\ldots y_{|y|},z_1z_2\ldots z_{|z|},\ldots$ be $n$ words over $\Sigma^*$.  Let $l$ denote the maximum length.
+
+The \emph{convolution} of these words is
+$$(x_1,y_1,\ldots)(x_2,y_2,\ldots)\ldots(x_l,y_l,\ldots)$$where for any \PMlinkescapetext{index} $i>|w|$, the $w_i$ is $\#$.  This is a new word in $((\Sigma\cup\{\#\})^n)^*$.
+
+The convolution of $x,y,z,\ldots$ is sometimes denoted conv($x,y,z,\ldots$), or $x\star y\star z\star\ldots$
+
+\subsection*{Example}
+
+The convolution of $and, fish, be$ is
+$$(a,f,b)(n,i,e)(d,s,\#)(\#,h,\#)$$
+
+\subsection*{Notes}
+This definition bears no \PMlinkescapetext{mathematical relation} to the notion of \PMlinkname{convolution}{Convolution} of functions.
+%%%%%
+%%%%%
+\end{document}

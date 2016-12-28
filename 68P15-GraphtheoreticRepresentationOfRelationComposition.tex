@@ -1,0 +1,272 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{GraphtheoreticRepresentationOfRelationComposition}
+\pmcreated{2013-03-22 17:50:36}
+\pmmodified{2013-03-22 17:50:36}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{graph-theoretic representation of relation composition}
+\pmrecord{9}{40314}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{03E20}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03B10}
+\pmclassification{msc}{68R01}
+%\pmkeywords{bigraph}
+%\pmkeywords{bipartite graph}
+%\pmkeywords{binary relation}
+%\pmkeywords{dyadic relation}
+%\pmkeywords{graph}
+%\pmkeywords{relation}
+%\pmkeywords{relation composition}
+\pmrelated{AlgebraicRepresentationOfRelationComposition}
+\pmrelated{GeometricRepresentationOfRelationComposition}
+\pmrelated{MatrixRepresentationOfRelationComposition}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapephrase{complex}
+\PMlinkescapephrase{Complex}
+\PMlinkescapephrase{dyadic}
+\PMlinkescapephrase{Dyadic}
+
+There is another form of representation for 2-adic relations that is useful to keep in mind, especially for its ability to render the logic of many complex formulas almost instantly understandable to the mind's eye.  This is the representation in terms of \textit{\PMlinkname{bipartite graphs}{BipartiteGraph}}, or \textit{bigraphs} for short.
+
+Here is what $G$ and $H$ look like in the bigraph picture:
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . ./|\. . . . . . . . . . |
+| . . . . . . . / | \ . . . . . . .G. . |
+| . . . . . . ./. | .\. . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 9.  G = 4:3 + 4:4 + 4:5
+\end{verbatim}\end{quote}
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . .\. | ./. . . . . . . . . |
+| . . . . . . . \ | / . . . . . . .H. . |
+| . . . . . . . .\|/. . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 10.  H = 3:4 + 4:4 + 5:4
+\end{verbatim}\end{quote}
+
+These graphs may be read to say:
+
+\begin{quote}
+$G$ puts $4$ in relation to $3, 4, 5$.
+\\
+$H$ puts $3, 4, 5$ in relation to $4$.
+\end{quote}
+
+To form the \PMlinkname{composite relation}{CompositionOfRelations} $G \circ H$, one simply follows the bigraph for $G$ by the bigraph for $H$, here arranging the bigraphs in order down the page, and then treats any non-empty set of paths of length two between two nodes as being equivalent to a single directed edge between those nodes in the composite bigraph for $G \circ H$.
+
+Here's how it looks in pictures:
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . ./|\. . . . . . . . . . |
+| . . . . . . . / | \ . . . . . . .G. . |
+| . . . . . . ./. | .\. . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . .\. | ./. . . . . . . . . |
+| . . . . . . . \ | / . . . . . . .H. . |
+| . . . . . . . .\|/. . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 11.  G Followed By H
+\end{verbatim}\end{quote}
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . . | . . . . . . . . . . |
+| . . . . . . . . | . . . . . . .G o H. |
+| . . . . . . . . | . . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 12.  G Composed With H
+\end{verbatim}\end{quote}
+
+Once again we find that $G \circ H$ = $4:4$.
+
+To see the utility of the bigraph picture of 2-adic relations, let us devise a slightly more complex example of a composition problem, and use it to illustrate the logic of the matrix multiplication formula.
+
+Keeping to the same space $X = \{ 1, 2, 3, 4, 5, 6, 7 \}$, define the 2-adic relations $M, N \subseteq X \times X$ as follows:
+
+\begin{quote}$\begin{array}{lcccccc}
+M & = & 2\mathrm{:}1 + 2\mathrm{:}2 + 2\mathrm{:}3 + 4\mathrm{:}3 & + & 4\mathrm{:}4 & + & 4\mathrm{:}5 + 6\mathrm{:}5 + 6\mathrm{:}6 + 6\mathrm{:}7 \\
+N & = & 1\mathrm{:}1 + 2\mathrm{:}1 + 3\mathrm{:}3 + 4\mathrm{:}3 &   &      +       &   & 4\mathrm{:}5 + 5\mathrm{:}5 + 6\mathrm{:}7 + 7\mathrm{:}7 \\
+\end{array}$\end{quote}
+
+Here are the bigraph pictures:
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./|\. . ./|\. . ./|\. . . . . . |
+| . . . / | \ . / | \ . / | \ . . .M. . |
+| . . ./. | .\./. | .\./. | .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 13.  Dyadic Relation M
+\end{verbatim}\end{quote}
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . | ./. . | ./.\. | . .\. | . . . . |
+| . . | / . . | / . \ | . . \ | . .N. . |
+| . . |/. . . |/. . .\| . . .\| . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 14.  Dyadic Relation N
+\end{verbatim}\end{quote}
+
+To form the composite relation $M \circ N$, one simply follows the bigraph for $M$ by the bigraph for $N$, here arranging the bigraphs in order down the page, and then counts any non-empty set of paths of length two between two nodes as being equivalent to a single directed edge between those two nodes in the composite bigraph for $M \circ N$.
+
+Here's how it looks in pictures:
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./|\. . ./|\. . ./|\. . . . . . |
+| . . . / | \ . / | \ . / | \ . . .M. . |
+| . . ./. | .\./. | .\./. | .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . | ./. . | ./ \. | . .\. | . . . . |
+| . . | / . . | / . \ | . . \ | . .N. . |
+| . . |/. . . |/. . .\| . . .\| . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 15.  M Followed By N
+\end{verbatim}\end{quote}
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./.\. . ./.\. . ./.\. . . . . . |
+| . . . / . \ . / . \ . / . \ . .M o N. |
+| . . ./. . .\./. . .\./. . .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 16.  M Composed With N
+\end{verbatim}\end{quote}
+
+Let us hark back to that mysterious matrix multiplication formula, and see how it appears in the light of the bigraph representation.
+
+The coefficient of the composition $M \circ N$ between $i$ and $j$ in $X$ is given as follows:
+
+\begin{quote}
+$(M \circ N)_{ij} = \sum_{k} M_{ik} N_{kj}.$
+\end{quote}
+
+Graphically interpreted, this is a \textit{sum over paths}.  Starting at the node $i$, $M_{ik}$ being 1 indicates that there is an edge in the bigraph of $M$ from node $i$ to node $k$, and $N_{kj}$ being 1 indicates that there is an edge in the bigraph of $N$ from node $k$ to node $j$.  So the $\sum_{k}$ ranges over all possible intermediaries $k$, ascending from 0 to 1 just as soon as there happens to be some path of length two between nodes $i$ and $j$.
+
+It is instructive at this point to compute the other possible composition that can be formed from $M$ and $N$, namely, the composition $N \circ M$, that takes $M$ and $N$ in the opposite order.  Here is the graphic computation:
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . | ./. . | ./.\. | . .\. | . . . . |
+| . . | / . . | / . \ | . . \ | . .N. . |
+| . . |/. . . |/. . .\| . . .\| . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./|\. . ./|\. . ./|\. . . . . . |
+| . . . / | \ . / | \ . / | \ . . .M. . |
+| . . ./. | .\./. | .\./. | .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 17.  N Followed By M
+\end{verbatim}\end{quote}
+
+\begin{quote}\begin{verbatim}
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . . . . . .N o M. |
+| . . . . . . . . . . . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 18.  N Composed With M
+\end{verbatim}\end{quote}
+
+In sum, $N \circ M = 0$.  This example affords sufficient evidence that relational composition, just like its kindred, matrix multiplication, is a non-commutative algebraic operation.
+
+%%%%%
+%%%%%
+\end{document}

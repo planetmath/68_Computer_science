@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{QuotientOfLanguages}
+\pmcreated{2013-03-22 18:56:06}
+\pmmodified{2013-03-22 18:56:06}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{quotient of languages}
+\pmrecord{7}{41789}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68Q45}
+\pmdefines{quotient}
+\pmdefines{left quotient}
+\pmdefines{right quotient}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $L_1,L_2$ be two languages over some alphabet $\Sigma$.  The \emph{quotient} of $L_1$ by $L_2$ is defined to be the set $$L_1/L_2:=\lbrace u \in \Sigma^* \mid uv \in L_1 \mbox{ for some } v\in L_2\rbrace.$$ $L_1/L_2$ is sometimes written $L_1 L_2^{-1}$.  The quotient so defined is also called the \emph{right quotient}, for one can similarly define the \emph{left quotient} of $L_1$ by $L_2$: $$L_1\backslash L_2:= \lbrace u\in \Sigma^* \mid vu \in L_1 \mbox{ for some } v\in L_2 \rbrace.$$  $L_1\backslash L_2$ is sometimes written $L_2^{-1} L_1$.
+
+Below are some examples of quotients:
+\begin{itemize}
+\item If $L_1 = \lbrace a^n b^n c^n \mid n\ge 0\rbrace$ and $L_2 = \lbrace b,c\rbrace^*$, then 
+\begin{itemize}
+\item $L_1 / L_2 = \lbrace a^m b^n \mid m\ge n \ge 0 \rbrace$
+\item $L_2 / L_1 = L_2$
+\item $L_1 \backslash L_2 = \lbrace \lambda \rbrace$, the singleton consisting the empty word
+\item $L_2 \backslash L_1 = L_2$
+\end{itemize}
+\item for any language $L$ over $\Sigma$:
+\begin{itemize}
+\item $L / \Sigma^*$ is the language of all prefixes of words of $L$
+\item $\Sigma^* / L = \Sigma^*$
+\item $L \backslash \Sigma^*$ is the language of all suffixes of words of $L$
+\item $\Sigma^* \backslash L = \Sigma^*$
+\end{itemize}
+\item $\lambda \in L/L \cap L\backslash L$, and if $\lambda \in L$, then $L \subseteq L/L \cap L\backslash L$.
+\end{itemize}
+
+Here are some basic properties of quotients:
+\begin{enumerate}
+\item $L_1 \subseteq (L_1 / L_2)L_2 \cap L_2 (L_1 \backslash L_2)$.
+\item $(L_1/L_2)L_2 \subseteq (L_1L_2)/L_2$, and $L_2 (L_1 \backslash L_2) \subseteq (L_2L_1) \backslash L_2$.
+\item right and left quotients are related via reversal:
+\begin{eqnarray*}
+(L_1\backslash L_2)^R &=& \lbrace u^R \mid vu \in L_1 \mbox{ for some } v\in L_2 \rbrace \\ 
+&=& \lbrace u^R \mid (vu)^R \in L_1^R \mbox{ for some } v^R \in L_2^R \rbrace \\ 
+&=& \lbrace u^R \mid u^Rv^R \in L_1^R \mbox{ for some } v^R \in L_2^R \rbrace \\ 
+&=& L_1^R / L_2^R.
+\end{eqnarray*}
+\end{enumerate}
+
+A family $\mathscr{F}$ of languages is said to be \emph{closed under quotient by a language $L$} if for every language $M\in \mathscr{F}$, $M / L\in \mathscr{F}$.  Furthermore, $\mathscr{F}$ is said to be \emph{closed under quotient} if $M/L \in \mathscr{F}$ for any $M,L\in\mathscr{F}$.  Closure under quotient is also termed closure under right quotient.  Closure under left quotient is similarly defined.
+
+It can be shown that the families of regular, context-free, and type-0 languages are closed under quotient (both left and right) by a regular language.  The family of context-sensitive languages does not have this closure property.  
+
+Since all of the families mentioned above are closed under reversal, each of the families, except the context-sensitive family, is closed under left quotient by a regular language, according to the second property above.
+
+\begin{thebibliography}{9}
+\bibitem{hu} J.E. Hopcroft, J.D. Ullman, {\em Formal Languages and Their Relation to Automata}, Addison-Wesley, (1969).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

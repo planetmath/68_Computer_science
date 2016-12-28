@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Currying}
+\pmcreated{2013-03-22 12:33:35}
+\pmmodified{2013-03-22 12:33:35}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{currying}
+\pmrecord{8}{32806}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q01}
+\pmsynonym{sch\"onfinkeling}{Currying}
+\pmsynonym{sch\"onfinkelization}{Currying}
+\pmrelated{HigherOrderFunction}
+\pmdefines{curried function}
+\pmdefines{uncurried function}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\Set}{\mathbf{Set}}
+\begin{document}
+\emph{Currying} is the technique of emulating multiple-parametered
+functions with higher-order functions.  The notion is that a function
+of $n$ arguments can be thought of as a function of 1 argument that
+maps to a function of $n-1$ arguments.  A \emph{curried function} is a
+function represented by currying, e.g.
+
+\[
+f \colon A \to (B\to C)
+\]
+
+For conciseness, the mapping operator $\rightarrow$ is usually
+considered right-associative, so one could drop the parentheses in the
+expression above and write $f \colon A\to B\to C$ instead.
+
+In contrast, an \emph{uncurried function} is usually specified as a
+mapping from a Cartesian product, such as
+
+\[
+f \colon (A\times B)\to C.
+\]
+
+The term \emph{currying} is derived from the name of Haskell Curry, a
+20th-century logician.  However, Curry was not the first person to
+discover this notion, as it was first introduced by Gottlob Frege in
+1893 and expanded by Moses Sch\"onfinkel in the 1920s.  Hence the
+notion is sometimes referred to as \emph{sch\"onfinkeling}.
+
+% Note: the term fregenation never caught on.
+
+From the perspective of category theory, currying can be thought of as
+exploiting the fact that $-\times B$ and $\Hom(B,-)$ are adjoint
+functors on $\Set$.  That is, for each set $B$, there is a natural
+equivalence
+\[
+   \nu\colon \Hom_{\Set}(-\times B,-)\overset{\cdot}{\longrightarrow}\Hom_{\Set}(-,\Hom(B,-))
+\]
+defined by sending a map $f\colon (A\times B)\to C$ to the map
+$\nu_f\colon A\to \Hom(B, C)$.  For each $a\in A$, $\nu_f(a)\colon
+B\to C$ is the map defined by $\nu_f(a)(b) = f(a,b)$.
+
+\PMlinkescapeword{term}
+%%%%%
+%%%%%
+\end{document}

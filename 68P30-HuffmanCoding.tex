@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HuffmanCoding}
+\pmcreated{2013-03-22 12:32:25}
+\pmmodified{2013-03-22 12:32:25}
+\pmowner{Logan}{6}
+\pmmodifier{Logan}{6}
+\pmtitle{Huffman coding}
+\pmrecord{7}{32783}
+\pmprivacy{1}
+\pmauthor{Logan}{6}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P30}
+\pmsynonym{Huffman encoding}{HuffmanCoding}
+\pmrelated{HuffmansAlgorithm}
+\pmrelated{MinimumWeightedPathLength}
+\pmrelated{Alphabet}
+\pmrelated{EntropyEncoding}
+\pmrelated{ArithmeticEncoding}
+\pmdefines{Huffman tree}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\begin{document}
+\emph{Huffman coding} is a method of lossless data compression, and a form of entropy encoding.
+The basic idea is to map an alphabet to a representation for that alphabet, composed of strings of variable size, so that symbols that have a higher probability of occurring have a smaller representation than those that occur less often.
+
+The key to Huffman coding is Huffman's algorithm, which constructs an extended binary tree of minimum weighted path length from a list of weights.  For this problem, our list of weights consists of the probabilities of symbol occurrence.  From this tree (which we will call a \emph{Huffman tree} for convenience), the mapping to our variable-sized representations can be defined.
+
+The mapping is obtained by the path from the root of the Huffman tree to the leaf associated with a symbol's weight.  The method can be arbitrary, but typically a value of 0 is associated with an edge to any left child and a value of 1 with an edge to any right child (or vice-versa).  By concatenating the labels associated with the edges that make up the path from the root to a leaf, we get a binary string.  Thus the mapping is defined.
+
+In order to recover the symbols that make up a string from its representation after encoding, an inverse mapping must be possible.
+It is important that this mapping is unambiguous.  We can show that all possible strings formed by concatenating any number of path labels in a Huffman tree are indeed unambiguous, due to the fact that it is a complete binary tree.
+That is, given a string composed of Huffman codes, there is exactly one possible way to decompose it into the individual codes.
+
+Ambiguity occurs if there is any path to some symbol whose label is a prefix of the label of a path to some other symbol.  In the Huffman tree, every symbol is a leaf.  Thus it is impossible for the label of a path to a leaf to be a prefix of any other path label, and so the mapping defined by Huffman coding has an inverse and decoding is possible.
+
+\subsubsection*{Example}
+
+For a simple example, we will take a short phrase and derive our probabilities from a frequency count of letters within that phrase.  The resulting encoding should be good for compressing this phrase, but of course will be inappropriate for other phrases with a different letter distribution.
+
+We will use the phrase ``math for the people by the people''.  The frequency count of characters in this phrase are as follows (let $\textvisiblespace$ denote the spaces).
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Letter} & \textbf{Count} \\
+\hline
+\hline
+$\textvisiblespace$ & 6 \\
+\hline
+e & 6 \\
+\hline
+p & 4 \\
+\hline
+h & 3 \\
+\hline
+o & 3 \\
+\hline
+t & 3 \\
+\hline
+l & 2 \\
+\hline
+a & 1 \\
+\hline
+b & 1 \\
+\hline
+f & 1 \\
+\hline
+m & 1 \\
+\hline
+r & 1 \\
+\hline
+y & 1 \\
+\hline
+\hline
+\textbf{Total} & 33 \\
+\end{tabular}
+\end{center}
+
+We will simply let the frequency counts be the weights.  If we pair each symbol with its weight, and pass this list of weights to Huffman's algorithm, we will get something like the following tree (edge labels have been added).
+
+\begin{center}
+\includegraphics{tree.11}
+\end{center}
+
+From this tree we obtain the following mapping.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Letter} & \textbf{Count} & \textbf{Huffman code} & \textbf{Weight} \\
+\hline
+\hline
+$\textvisiblespace$ & 6 & 111 & 18\\
+\hline
+e & 6 & 01 & 12 \\
+\hline
+p & 4 & 101 & 12\\
+\hline
+h & 3 & 1100 & 12\\
+\hline
+o & 3 & 1101 & 12\\
+\hline
+t & 3 & 001 & 9 \\
+\hline
+l & 2 & 0001 & 8 \\
+\hline
+a & 1 & 00000 & 5\\
+\hline
+b & 1 & 00001 & 5\\
+\hline
+f & 1 & 10000 & 5\\
+\hline
+m & 1 & 10001 & 5\\
+\hline
+r & 1 & 10010 & 5\\
+\hline
+y & 1 & 10011 & 5\\
+\hline
+\hline
+\textbf{Total} & 33 & - & 113 \\
+\end{tabular}
+\end{center}
+
+If we were to use a fixed-sized encoding, our original string would have to be 132 bits in length.  This is because there are 13 symbols, requiring 4 bits of representation, and the length of our string is 33.
+
+The weighted path length of this Huffman tree is 113.  Since these weights came directly from the frequency count of our string, the number of bits required to represent our string using this encoding is the same as the weight of 113.  Thus the Huffman encoded string is $85\%$ the length of the fixed-sized encoding.  Arithmetic encoding can in most cases obtain even greater compression, although it is not quite as simple to implement.
+%%%%%
+%%%%%
+\end{document}

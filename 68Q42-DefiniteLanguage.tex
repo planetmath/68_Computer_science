@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DefiniteLanguage}
+\pmcreated{2013-03-22 18:58:57}
+\pmmodified{2013-03-22 18:58:57}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{definite language}
+\pmrecord{10}{41847}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\newtheorem{cor}{Corollary}
+\begin{document}
+A language is \emph{definite} if the determination of whether a word belongs to the language completely depends on its suffix of a fixed length.  Formally,
+
+\textbf{Definition}.  Let $L$ be a language over an alphabet $\Sigma$.  Then $L$ is \emph{definite} if there is a non-negative integer $k$ such that for any word $u$ over $\Sigma$ with $|u|\ge k$, its suffix $v$ of length $k$ is in $L$ iff $u$ is in $L$.
+
+Note that if $k=0$, then $L$ is either $\Sigma^*$ or $\varnothing$.
+
+A definite language has the following characterization:
+\begin{prop}  $L$ is definite iff there are finite languages $L_1$ and $L_2$ such that $$L=L_1\cup \Sigma^* L_2.$$
+\end{prop}
+\begin{proof}
+Suppose first that $L$ is definite.  Let $L_1$ be the subset of $L$ containing all words with length less than $k$ and $L_2$ the subset of $L$ containing all words of length $k$.  The case when $k=0$ is already mentioned in the note above.  If $k=1$, $L_1$ is either $\lbrace \lambda \rbrace$ or $\varnothing$, depending on whether or not $\lambda\in L$.  In any case, $L_1$ and $L_2$ are both finite.  We verify that $L=L_1\cup \Sigma^*L_2$.  If $u\in L$ and $u$ has length less than $k$, then $u\in L_1$.  Otherwise, it has length at least $k$.  By the definiteness of $L$, its suffix $v$ of length $k$ is in $L$, and thus is in $L_2$.  Therefore $u\in \Sigma^*L_2$ as a result.  This shows that $L\subseteq L_1\cup \Sigma^*L_2$.  On the other hand, suppose $u \in L_1\cup \Sigma^*L_2$.  If $|u|<k$, then $u\in L_1 \subseteq L$.  If $|u|\ge k$, write $u=wv$ where $v$ is the suffix with length $k$.  Then $v\in L_2$, which means that $u\in L$ since $L$ is definite.
+
+Now suppose $L=L_1\cup \Sigma^* L_2$ with $L_1,L_2$ finite.  Let $k$ be the maximum of lengths of words in $L_1\cup L_2$, plus $1$.  $k$ is well-defined since $L_1\cup L_2$ is finite.  Suppose $u$ is a word in $\Sigma^*$ with $|u|\ge k$.  Then $u\notin L_1$.  Let $v$ be the suffix of $u$ with $|v|=k$.  Then $v\notin L_1$ likewise.  If $v\in L$, then $v\in \Sigma^*L_2$ and hence $u\in \Sigma^*L_2$ as well.  If $u\in L$, then $u\in \Sigma^*L_2$, so that $u$ has a suffix $w\in L_2$.  Since $|w|<k$, $w$ is also a suffix of $v$, and therefore $v\in \Sigma^*L_2 \subseteq L$ as a result.  This shows that $L$ is definite.
+\end{proof}
+
+From this characterization, we see that finite languages are special cases of definite languages.  We also see that
+\begin{cor} Every definite language is a regular language. \end{cor}
+
+With regard to the closure properties of definite languages, we have the following: let $\mathscr{D}$ be the family of definite languages, then $\mathscr{D}$ is closed under union and complementation, and therefore any Boolean operations.  However, $\mathscr{D}$ is not closed under concatenation, Kleene star, and reversal.
+
+\textbf{Remark}.  In fact, every definite language is locally testable.  The converse, however, is not true.
+
+\begin{thebibliography}{9}
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

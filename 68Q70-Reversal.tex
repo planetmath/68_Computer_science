@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Reversal}
+\pmcreated{2013-03-22 18:55:20}
+\pmmodified{2013-03-22 18:55:20}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{reversal}
+\pmrecord{12}{41774}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68Q45}
+\pmsynonym{mirror image}{Reversal}
+\pmrelated{Palindrome}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\Sigma$ be an alphabet and $w$ a word over $\Sigma$.  The \emph{reversal} of $w$ is the word obtained from $w$ by ``spelling'' it backwards.  Formally, the \emph{reversal} is defined as a function $\operatorname{rev}:\Sigma^* \to \Sigma^*$ such that, for any word $w=a_1\cdots a_n$, where $a_i \in \Sigma$, $\operatorname{rev}(w):= a_n \cdots a_1$.  Furthermore, $\operatorname{rev}(\lambda):=\lambda$.  Oftentimes $w^R$ or $\operatorname{mi}(w)$ is used to denote the reversal of $w$.
+
+For example, if $\Sigma = \lbrace a, b\rbrace$, and $w=aababb$, then $\operatorname{rev}(w)=bbabaa$.
+
+Two properties of the reversal are:
+\begin{itemize}
+\item it fixes all $a\in \Sigma$: $\operatorname{rev}(a)=a$.
+\item it is idempotent: $\operatorname{rev}\circ \operatorname{rev} = 1$, and 
+\item it reverses concatenation: $\operatorname{rev}(ab)=\operatorname{rev}(b)\operatorname{rev}(a)$.
+\end{itemize}
+In other words, the reversal is an antihomomorphism.  In fact, it is the antihomomorphism that fixes every element of $\Sigma$.  Furthermore, $g$ is an antihomomorphism iff $g\circ \operatorname{rev}$ is a homomorphism.  By the second property above, $h$ is a homomorphism iff $h\circ \operatorname{rev}$ is an antihomomorphism.
+
+A word that is fixed by the reversal is called a palindrome.  The empty word $\lambda$ as well as any symbol in the alphabet $\Sigma$ are trivially palindromes.  Also, for any word $w$, the words $wx\operatorname{rev}(w)$ and $\operatorname{rev}(w)xw$ are both palindromes, where $x$ is either a symbol in $\Sigma$ or the empty word.  In fact, every palindrome can be written this way.
+
+The language consisting of all palindromes over an alphabet is context-free, and not regular if $\Sigma$ has more than one symbol.  It is not hard to see that the productions are $\sigma \to \lambda$, $\sigma \to a$ and $\sigma \to a\sigma a$, where $a$ ranges over $\Sigma$.
+
+Reversal of words can be extended to languages: let $L$ be a language over $\Sigma$, then $$\operatorname{rev}(L):= \lbrace \operatorname{rev}(w) \mid w\in L\rbrace.$$
+
+A family $\mathscr{F}$ of languages is said to be \emph{closed under reversal} if for any $L\in \mathscr{F}$, $\operatorname{rev}(L)\in \mathscr{F}$.  It can be shown that regular languages, context-free languages, context-sensitive languages, and type-0 languages are all closed under reversal.
+%%%%%
+%%%%%
+\end{document}

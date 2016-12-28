@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{StandardEnumeration}
+\pmcreated{2013-03-22 13:33:12}
+\pmmodified{2013-03-22 13:33:12}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{standard enumeration}
+\pmrecord{21}{34158}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmclassification{msc}{03B65}
+\pmsynonym{lexicographic enumeration}{StandardEnumeration}
+%\pmkeywords{standard enumeration}
+%\pmkeywords{language}
+%\pmkeywords{characteristic function}
+%\pmkeywords{characteristic sequence}
+\pmdefines{characteristic function}
+\pmdefines{characteristic sequence}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\begin{document}
+\PMlinkescapeword{natural}
+\PMlinkescapeword{order}
+
+The \emph{standard enumeration} of $\lbrace 0,1\rbrace ^{*}$ is the sequence of strings $s_0 =\lambda$, $s_1 = 0$, $s_2 = 1$, $s_3 = 00$, $s_4 = 01$, $\cdots$ in lexicographic order.
+
+The \emph{characteristic function} of a language $A$ is $\chi_{A}:\mathbb{N}\rightarrow \lbrace 0, 1\rbrace$ such that 
+\[\chi_{A}(n)=\begin{cases}
+1,\text{ if }s_n \in A\\
+0,\text{ if }s_n \notin A.
+\end{cases}\]
+The \emph{characteristic sequence} of a language $A$ (also denoted as $\chi_A$) is the concatenation of the values of the characteristic function in the natural order.
+%%%%%
+%%%%%
+\end{document}

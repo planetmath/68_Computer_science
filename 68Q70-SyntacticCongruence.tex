@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{SyntacticCongruence}
+\pmcreated{2013-03-22 18:52:08}
+\pmmodified{2013-03-22 18:52:08}
+\pmowner{Ziosilvio}{18733}
+\pmmodifier{Ziosilvio}{18733}
+\pmtitle{syntactic congruence}
+\pmrecord{6}{41710}
+\pmprivacy{1}
+\pmauthor{Ziosilvio}{18733}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{20M35}
+\pmdefines{syntactic semigroup}
+\pmdefines{syntactic monoid}
+\pmdefines{syntactic morphism}
+\pmdefines{maximality property of syntactic congruence}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $S$ be a semigroup and let $X\subseteq S$.
+The relation
+\begin{equation} \label{eq:sc}
+s_1\equiv_X s_2
+\;\;\mathrm{iff}\;\;
+\forall l,r\in S (ls_1r\in X\;\mathrm{iff}\;ls_2r\in X)
+\end{equation}
+is called the \emph{syntactic congruence} of $X$.
+The quotient $S/\equiv_X$ is called the \emph{syntactic semigroup} of $X$,
+and the natural morphism $\phi:S\to S/\equiv_X$
+is called the \emph{syntactic morphism} of $X$.
+If $S$ is a monoid, then $S/\equiv_X$ is also a monoid,
+called the \emph{syntactic monoid} of $X$.
+
+As an example,
+if $S=(\mathbb{N},+)$ and
+\begin{math}
+X=\{n\in\mathbb{N}\mid\exists k\in\mathbb{N}\mid n=3k\},
+\end{math}
+then $m\equiv_X n$ if $m\mod 3=n\mod 3$,
+and the syntactic monoid is isomorphic to the cyclic group of order three.
+
+It is straightforward that $\equiv_X$
+is an equivalence relation %%that saturates $X$.
+and $X$ is union of classes of $\equiv_X$.
+To prove that it is a congruence, let $s_1,s_2,t_1,t_2\in S$
+satisfy $s_1\equiv_X s_2$ and $t_1\equiv_X t_2$.
+Let $l,r\in S$ be arbitrary.
+Then $ls_1t_1r\in X$ iff $ls_2t_1r\in X$ because $s_1\equiv_X s_2$,
+and $ls_2t_1r\in X$ iff $ls_2t_2r\in X$ because $t_1\equiv_X t_2$.
+Then $s_1t_1\equiv_X s_2t_2$ since $l$ and $r$ are arbitrary.
+
+The syntactic congruence is both left- and right-invariant,
+\emph{i.e.}, if $s_1\equiv_Xs_2$,
+then $ts_1\equiv_Xts_2$ and $s_1t\equiv_Xs_2t$ for any $t$.
+
+The syntactic congruence is maximal in the following sense:
+\begin{itemize}
+\item if $\chi$ is a congruence over $S$ %%that saturates $X$,
+and $X$ is union of classes of $\chi$,
+\item then $s\chi t$ implies $s\equiv_X t$.
+\end{itemize}
+In fact, let $l,r\in S$:
+since $s\chi t$ and $\chi$ is a congruence, $lsr\chi ltr$.
+However, $X$ is union of classes of $\chi$,
+therefore $lsr$ and $ltr$
+are either both in $X$ or both outside $X$.
+This is true for all $l,r\in S$, thus $s\equiv_X t$.
+
+%%%%%
+%%%%%
+\end{document}

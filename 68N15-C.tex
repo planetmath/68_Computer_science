@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{C}
+\pmcreated{2013-03-22 16:51:37}
+\pmmodified{2013-03-22 16:51:37}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{C++}
+\pmrecord{12}{39108}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N15}
+\pmsynonym{C with Classes}{C}
+\pmrelated{SimpleAnalyticDiscussionOfTheCubicEquation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapeword{even}
+
+{\em \PMlinkescapetext{C}++} is a compiled multi-paradigm programming language based on C that supports procedural, object-oriented and generic programming paradigms. It was developed by Bjarne Stroustrup at Bell Labs in 1983, the same year that the ANSI C standard was ratified. Working in tandem, the ANSI and ISO ratified standard C++ in 1998.
+
+The following C++ program takes two integers as inputs and outputs their greatest common divisor using Euclid's algorithm.
+
+\begin{verbatim}
+#include <iostream> 
+
+template<typename T>
+T gcd(T x, T y) {
+  while ( y != 0 ) {
+    T z = x % y;
+    x = y;
+    y = z;
+  }
+  return x;
+}
+
+int main() { 
+  int inputX, inputY; 
+
+  std::cout << "Please enter x: ";
+  std::cin >> inputX; 
+  std::cout << "Please enter y: ";
+  std::cin >> inputY; 
+
+  std::cout << "The GCD of " << inputX 
+            << " and " << inputY 
+            << " is " << gcd(inputX,inputY) << std::endl; 
+
+  return 0;
+}
+\end{verbatim}
+
+This program works pretty much the same as 
+\PMlinkname{the corresponding C example}{CProgrammingLanguage}.
+Instead of C's standard I/O library, the program uses 
+C++'s \verb=iostream= library. 
+A substantial difference between the two programs
+is that the C++ version of \verb=gcd= function is more general:
+not only can it work with integers of type \verb=int=,
+the same code can work\footnote{
+Moreover, unlike most other object-oriented languages,
+this abtraction imposes absolutely no performance penalty at run-time.}
+with \emph{any} type that has
+division with remainder defined.
+The division with remainder corresponds to the operator \verb=%= in C++.
+
+Note that the algorithm, for integers, may return negative 
+numbers for the greatest common divisor, if an input contains a negative.
+The algorithm is still correct, however, if the ``greatest common divisor''
+is suitably defined, as in modern abstract algebra, 
+to be unique only up to units in a ring.
+See \cite{Stepanov} --- which is where the present example comes from ---
+ for an interesting discussion around this point.
+
+We could define another GCD function with the same name but that took three integers as input and returned the GCD of the trio. Or we could create our own complex integer object and then write a GCD function with the same name that took complex integers as input. Furthermore, we could define the operators so as to enable a programmer to write things like \verb-w = u + v;- with complex integers rather something like \verb-w.setVal(complexAddition(u, v));-. The programmer's imagination is the limit: the addition operator for a set object could be defined to either add up each element in one set to an element in a second set, or to perform a union of the two sets. Even in our simple GCD example, C++'s \verb=iostream= library has overloaded the bitwise operators to perform concatenation.
+
+\begin{thebibliography}{XXXXX}
+\bibitem[Stepanov]{Stepanov}
+Alexander Stepanov. \PMlinkexternal{Foreword to \emph{STL Tutorial and Reference Guide}}{http://www.stepanovpapers.com/MusserForeward.pdf}: C++ Programming with the Standard Template Library, second ed. Addison-Wesley, 2001. 
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

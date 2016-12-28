@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RunlengthEncoding}
+\pmcreated{2013-03-22 17:58:03}
+\pmmodified{2013-03-22 17:58:03}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{run-length encoding}
+\pmrecord{4}{40473}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P30}
+\pmsynonym{RLE}{RunlengthEncoding}
+\pmsynonym{run length encoding}{RunlengthEncoding}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+{\em Run-length encoding} (RLE) is a lossless compression algorithm which counts how many times a symbol or group of symbols is repeated consecutively in the input.
+
+For example, the values of the prime counting function $\pi(n)$ up to 72 are: 0, 1, 2, 2, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 10, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16, 17, 17, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, 20, 20, 21, 21, 21, 21, 21, 21. These can be run-length encoded as: one 0, one 1, two 2s, two 3s, four 4s, two 5s, four 6s, two 7s, four 8s, six 9s, two 10s, six 11s, four 12s, two 13s, four 14ws, five 15s, etc.
+
+Run-length encoding is obviously most effective for inputs containing many repetitions of a symbol or group of symbols, such as flat-color drawings with straight line boundaries. For example, the first line of a run-length encoding of a 720 by 481 drawing of the American flag stretched flat could look something like this: 240 BLUE, 480 RED. Below the blue field, a line-by-line second pass would result in even greater compression: 37 lines of 720 WHITE, followed by 37 lines of 720 RED, then 37 lines of 720 RED, etc. But for a more photorealistic drawing, run-length encoding would result in the opposite of compression.
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PrimitiveRecursiveEncoding}
+\pmcreated{2013-03-22 19:06:20}
+\pmmodified{2013-03-22 19:06:20}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{primitive recursive encoding}
+\pmrecord{7}{41998}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmclassification{msc}{68Q45}
+\pmclassification{msc}{03D20}
+\pmclassification{msc}{94A60}
+\pmdefines{sequence number}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Recall that an encoding of a set $L$ of words over some alphabet $\Sigma$ is defined as an injective function $E: L\to \mathbb{N}$, the set of natural numbers (including $0$ here).
+
+Finite sequences over $\mathbb{N}$ can be thought of as words over the ``infinite'' alphabet $\mathbb{N}$.  So the notion of word encoding directly carries over to encoding of finite sequences of natural numbers.  Let $\mathbb{N}^*$ be the set of all finite sequences over $\mathbb{N}$.
+
+\textbf{Definition}.  Let $E$ be an encoding for $\mathbb{N}^*$.  A number is called a \emph{sequence number} if it is in the range of $E$.  Since $E$ is injective, we say that $E(a)$ is \emph{the} sequence number of the sequence $a$.  
+
+Once $E$ is fixed, we also use the notation $\langle a_1, \ldots, a_k \rangle$ to mean the sequence number of the sequence $a_1,\ldots, a_k$.
+
+Define the following operations on $\mathbb{N}$ associated with a given $E$:
+\begin{enumerate}
+\item $E_n := E | \mathbb{N}^*_n$, the restriction of $E$ to the set $\mathbb{N}^*_n$ of all sequences of length $n$, and $E_0$ is defined as the number $\langle \rangle$.
+\item the \emph{length function}: $\operatorname{lh}: \mathbb{N} \to \mathbb{N}$:
+\begin{displaymath}
+\operatorname{lh}(x) := \left\{
+\begin{array}{ll}
+z , & \textrm{if }E^{-1}(x)\textrm{ exists, and has length }z, \\
+0 , & \textrm{otherwise}.
+\end{array}
+\right.
+\end{displaymath}
+\item $(\cdot)_{\cdot}: \mathbb{N}^2\to \mathbb{N}$, such that 
+\begin{displaymath}
+(x)_y := \left\{
+\begin{array}{ll}
+z , & \textrm{if }E^{-1}(x)\textrm{ exists, has length }\ge y\textrm{, with }z\textrm{ its }y\textrm{-th number}, \\
+0 , & \textrm{otherwise}.
+\end{array}
+\right.
+\end{displaymath}
+\item $*: \mathbb{N}^2 \to \mathbb{N}$, such that 
+\begin{displaymath}
+x * y := \left\{
+\begin{array}{ll}
+E(ab) , & \textrm{where }E(a)=x \textrm{ and }E(b)=y, \\
+0 , & \textrm{otherwise}.
+\end{array}
+\right.
+\end{displaymath}
+The notation $ab$ stands for the concatenation of the sequences $a$ and $b$.
+\item $\operatorname{ext} : \mathbb{N}^2 \to \mathbb{N}$, such that 
+\begin{displaymath}
+\operatorname{ext}(x,y) := \left\{
+\begin{array}{ll}
+E(ay) , & \textrm{where }E(a)=x , \\
+0 , & \textrm{otherwise}.
+\end{array}
+\right.
+\end{displaymath}
+The notation $ay$ stands for the sequence $a$, extended by appending $y$ to the right of $a$.
+\item $\operatorname{red} : \mathbb{N} \to \mathbb{N}$, such that 
+\begin{displaymath}
+\operatorname{red}(x) := \left\{
+\begin{array}{ll}
+z , & \textrm{where }E(a)=x \textrm{ and }E(b)=z \textrm{ such that }a=bc\textrm{ and }c\in \mathbb{N}, \\
+0 , & \textrm{otherwise}.
+\end{array}
+\right.
+\end{displaymath}
+In other words, $z$ is the sequence number of the sequence obtained by removing the last (rightmost) number (if any) in the sequence whose sequence number is $x$, provided that $x$ is a sequence number.
+\end{enumerate}
+
+\textbf{Definition}.  An encoding $E$ for $\mathbb{N}^*$ is said to be \emph{primitive recursive} if 
+\begin{itemize}
+\item $E(\mathbb{N}^*)$ is a primitive recursive set, and
+\item the first three types of functions defined above are primitive recursive.
+\end{itemize}
+
+\begin{prop} If $E$ is primitive recursive, so are the functions $*,\operatorname{ext}$, and $\operatorname{red}$. \end{prop}
+\begin{proof}  Let $\chi(x)$ be the characteristic function of the predicate ``$x$ is a sequence number'' (via $E$).  It is primitive recursive by assumption.
+\begin{enumerate}
+\item Let $n= \operatorname{lh}(x)+\operatorname{lh}(y)$.  Then $x* y = E_n((x)_1, \ldots, (x)_{\operatorname{lh}(x)}, (y)_1, \ldots, (y)_{\operatorname{lh}(y)})\cdot \chi(x)\chi(y)$, which is primitive recursive.
+\item Let $n= \operatorname{lh}(x)+1$.  Then $\operatorname{ext}(x,y) = E_n((x)_1, \ldots, (x)_{\operatorname{lh}(x)}, y)\chi(x)$, which is primitive recursive.
+\item Let $n= \operatorname{lh}(x)\dot{-}1$.  Then 
+\begin{displaymath}
+\operatorname{red}(x) = \left\{
+\begin{array}{ll}
+E_n((x)_1, \ldots, (x)_{\operatorname{lh}(x)\dot{-} 1}) , & \textrm{if }\operatorname{lh}(x)>1\textrm{, and }\chi(x)=1 \\
+\langle \rangle, & \textrm{if }\operatorname{lh}(x)=1\textrm{, and }\chi(x)=1 \\
+0 , & \textrm{otherwise},
+\end{array}
+\right.
+\end{displaymath}
+which is primitive recursive.
+\end{enumerate}
+\end{proof}
+
+Examples of primitive recursive encoding can be found in the parent entry (methods 2, 3, and 7).
+%%%%%
+%%%%%
+\end{document}

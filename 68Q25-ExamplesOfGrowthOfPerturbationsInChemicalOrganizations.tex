@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ExamplesOfGrowthOfPerturbationsInChemicalOrganizations}
+\pmcreated{2014-05-31 15:55:20}
+\pmmodified{2014-05-31 15:55:20}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{examples of growth of perturbations in chemical organizations}
+\pmrecord{33}{88110}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Example}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+
+% making logically defined graphics
+%\usepackage{xypic}
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\newtheorem{thm}{Theorem}
+\begin{document}
+We will examine several simple examples of chemical systems where we start with one species 
+of molecules (or a closed subset of species) then intoruduce a small perturbation and evolve 
+the system using mass action dynamics.  We want to know whether this perturbation will grow
+and, if so, at what rate.  Ultimately, we would like to link the behavor to some feature of
+the reaction system, perhaps related to Rosen's theory of M-R systems.
+
+To get started, consider a trivial case, $A + B \to B + B$.  The system of equations which
+describes this system is:
+\begin{align*}
+ \frac{dx}{dt} &= -kxy \\
+ \frac{dy}{dt} &= kxy
+\end{align*}
+It is easy enough to solve this system.  We begin by noting that
+$\frac{d}{dt} (x + y) =0$, hence $x + y = x_0 + y_0$.
+Substituting this back in to the second equation, we conclude
+that
+\[
+ \frac{dy}{dt} = k(x_0 + y_0 - y)(y) .
+\]
+This equation can readily be solved to yield the implicit solution
+\[
+ kt = \frac{1}{x_0 + y_0} \log \frac{y}{x_0 + y_0 - y} \cdot \frac{x_0}{y_0}
+\]
+which can be solved to produce the explicit solution
+\[
+ y = x_0 + y_0 - \frac{x_0 + y_0}{1 + \frac {y_0}{x_0} \exp(k (x_0 + y_0) t)}.
+\]
+Looking at the solution, we see that it starts out at $y = y_0$ and grows
+towards $y = x_0 + y_0$ as $t \to \infty$.  This is as we expect --- as
+time goes on, whatever A's there are left react with B's to turn into B's
+until we are left with nothing but B's.
+
+If we suppose that, at the initial time $t = 0$, there is only a tiny 
+proportion of B's, i.e. $y_0 \ll x_0$, then we may make an expansion
+of the fraction and conclude that $y$ grows exponentially for small
+values of $t$:
+\[
+ \frac{1}{1 + \frac {y_0}{x_0} \exp(k (x_0 + y_0) t)} \approx
+ 1 - \frac {y_0}{x_0} \exp(k (x_0 + y_0) t)
+\]
+\[
+ y \approx \frac {y_0}{x_0} \exp(k (x_0 + y_0) t)
+\]
+We can also come to this conclusion by bounding $y$ without solving the
+equation first.  For a simple equation like this which is readily solved,
+this is hardly needed but, for larger, more complicated equations, it
+becomes important and this simple example can serve as a illustration of
+the general technique.
+
+\begin{thm}
+Let $C$ be a real number such that $0 < C < 1$ and let $x_0$ and $y_0$ be 
+strictly positive real numbers such that $0 < y_0 < C (x_0 + y_0)$.
+Set $t_1 = \frac{1}{k (x_0 + y_0)} \log C \frac{x_0 + y_0}{y_0}$.  Then 
+there exists a function $f \colon [0,t_1) \to [0, C (x_0 + y_0))$ such that
+$f$ satisfies the differential equation
+\[
+ \frac{df(t)}{dt} = k (x_0 + y_0 - f(t)) f(t).
+\]
+and, for all $t \in [0,t_1)$,
+\[
+ y_0 \exp ((1 - C) k (x_0 + y_0) t) \le f(t) \le y_0 \exp (k (x_0 + y_0) t)  .
+\]
+\end{thm}
+
+\begin{proof}
+By the existence theorem, there exists a positive real number 
+$t_{0}$ and a function  $f \colon [0,t_{0}) \to \mathbb{R}$
+such that $f(0) = y_0$ and $f$ satifies the differential equation. 
+Since $f(0) = y_0 < C (x_0 + y_0)$, by continuity there exists 
+a positive real number $t_2$ and a function $f \colon [0,t_{0}) \to [0, C (x_0 + y_0))$
+which satisfies the same differential equation with the same 
+initial condition.  Furthermore, we assume that $t_2$ is maximal.
+
+Starting with this condition $f(t) < C (x_0 + y_0)$ and
+doing some algebra, we conclude that
+\[
+ (1 - C) k (x_0 + y_0) \le \frac{1}{y} \frac{dy}{dt} \le k (x_0 + y_0)
+\]
+Now, $\frac{1}{y} \frac{dy}{dt} = \frac{d}{dt} (\log y)$ so, by the mean
+value theorem, we conclude that
+\[
+ (1 - C) k (x_0 + y_0) t \le \log \frac{y}{y_0} \le k (x_0 + y_0) t .
+\]
+Exponentiating,
+\[
+ y_0 \exp ((1 - C) k (x_0 + y_0) t) \le y \le y_0 \exp (k (x_0 + y_0) t)  .
+\]
+
+
+We can ensure that the bound on $y$ is satisfied if the condition
+$C (x_0 + y_0) \ge y_0 \exp (k (x_0 + y_0) t)$ is met, which amounts to
+demanding that $0 \le t \le t_1$ where $t_1 = \frac{1}{k (x_0 + y_0)}
+\log C \frac{x_0 + y_0}{y_0}$.
+
+\end{proof}
+\end{document}

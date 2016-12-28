@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BackusNaurForm}
+\pmcreated{2013-03-22 17:37:00}
+\pmmodified{2013-03-22 17:37:00}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{Backus-Naur form}
+\pmrecord{6}{40034}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+\pmsynonym{BNF}{BackusNaurForm}
+\pmsynonym{Backus normal form}{BackusNaurForm}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+\usepackage{psfrag}
+
+% define commands here
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+\PMlinkescapeword{expression}
+
+The \emph{Backus-Naur form} (or \emph{BNF} as it is commonly denoted) is a convenient notation used to represent context-free grammars in an intuitive and more compact manner.  In a Backus-Naur form, there are only four symbols that have special meaning: 
+$$\verb.<.\qquad \verb.>.\qquad \verb.::=.\qquad \verb.|.$$ 
+Given a context-free grammar $(\Sigma,N,P,S)$, a non-terminal (a symbol in the alphabet $N$) is always enclosed in \verb.<. and \verb.>. (e.g. \verb.<expression>.).
+A terminal (a symbol in the alphabet $\Sigma$) is often represented as itself, though in the context of computer languages a terminal symbol is often enclosed in single quotes. A production $(\textit{non-terminal}\to \textit{symbols})$ in $P$ is then represented as
+
+\begin{center}
+\verb.<.\textit{non-terminal}\verb.> ::= .\textit{symbols}
+\end{center}
+
+The symbol \verb.|. is used in BNF to combine multiple productions in $P$ into
+one rule. For instance, if $P := \left\{S\to A, S\to B\right\}$, then $P$ in
+BNF is
+
+\begin{center}
+\verb.<.\textit{S}\verb.> ::= .\textit{A} \verb.|. \textit{B}
+\end{center}
+
+\textbf{Examples}.
+\begin{itemize}
+\item
+Let $\Sigma=\lbrace a,b,c\rbrace$, $N=\lbrace S,T,U\rbrace$ be the terminal and non-terminal alphabets of a formal grammar, and $$P=\lbrace S\to aSb, S\to TU, S\to c, T\to cUc, T\to ac, U\to bT, U\to cb\rbrace$$ is the set of productions.  Then $(\Sigma,N,P,S)$ is a context-free grammar.  The BNF for $P$ is 
+\begin{eqnarray*}
+\verb.<.\textit{S}\verb.>.&\verb.:=.& \textit{a}\verb.<.\textit{S}\verb.>.\textit{b}\verb. | <.\textit{T}\verb.><.\textit{U}\verb.> | .\textit{c}\\
+\verb.<.\textit{T}\verb.>.&\verb.:=.& \textit{c}\verb.<.\textit{U}\verb.>.\textit{c} \verb. | .\textit{ac}\\
+\verb.<.\textit{U}\verb.>.&\verb.:=.& \textit{b}\verb.<.\textit{T}\verb.> | .\textit{cb}
+\end{eqnarray*}
+\item
+For another example, let us transform the context-free grammar specified in the \PMlinkname{parent entry}{ContextFreeLanguage} to BNF.
+For readability, we will call $S$ \textit{expression}, $A$ \textit{term},
+$B$ \textit{factor}, $C$ \textit{number}, and $D$ \textit{digit}. The
+BNF for $P$ is then
+
+\begin{eqnarray}
+\verb.<.expression\verb.>. & \verb.::=. & \verb.<.term\verb.>.\,
+\verb.|.\,\verb.<.expression\verb.>.\,\verb.+.\,\verb.<.term\verb.>.\,
+\verb.|.\,\verb.<.expression\verb.>.\,\verb.-.\,\verb.<.term\verb.>. \nonumber \\
+\verb.<.term\verb.>. & \verb.::=. & \verb.<.factor\verb.>.\,
+\verb.|.\,\verb.<.term\verb.>.\,\verb.*.\,\verb.<.factor\verb.>.\,
+\verb.|.\,\verb.<.term\verb.>.\,\verb./.\,\verb.<.factor\verb.>. \nonumber \\
+\verb.<.factor\verb.>. & \verb.::=. & \verb.<.number\verb.>.\,\verb.|.\, \verb.(<.expression\verb.>). \nonumber \\
+\verb.<.number\verb.>. & \verb.::=. & \verb.<.digit\verb.>.\,\verb.|.\, \verb.<.number\verb.>.\,\verb.<.digit\verb.>. \nonumber \\
+\verb.<.digit\verb.>. & \verb.::=. & \verb.0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9.\label{b}
+\end{eqnarray}
+\end{itemize}
+
+\textbf{Remark}.  As the syntaxes of most programming languages are context-free grammars (or very close to it), the Backus-Naur form can be used to specify these syntaxes.  In fact, BNF was invented to specify the syntax of ALGOL 60.
+%%%%%
+%%%%%
+\end{document}

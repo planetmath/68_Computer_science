@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FineAndWilfsTheoremOnWords}
+\pmcreated{2013-03-22 18:00:39}
+\pmmodified{2013-03-22 18:00:39}
+\pmowner{Ziosilvio}{18733}
+\pmmodifier{Ziosilvio}{18733}
+\pmtitle{Fine and Wilf's theorem on words}
+\pmrecord{18}{40525}
+\pmprivacy{1}
+\pmauthor{Ziosilvio}{18733}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68Q45}
+\pmclassification{msc}{68R15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\naturals}{\ensuremath{\mathbb{N}}}
+
+\newtheorem{theorem}{Theorem}
+\begin{document}
+%% Last modified: April 19, 2008
+Let $w$ be a word on an alphabet $A$ and let $|w|$ be its length.
+A period of $w$ is a value $p>0$
+such that $w_{i+p}=w_{i}$ for every $i\in\{1,2,\ldots,|w|-p\}$.
+This is the same as saying that $w=u^{k}r$
+for some $u,r\in A^{\ast}$ and $k\in\naturals$
+such that $|u|=p$ and $r$ is a prefix of $u$.
+
+Fine and Wilf's theorem
+gives a condition on the length of the periods a word can have.
+\begin{theorem} \label{thm:fw}
+Let $w$ be a word on an alphabet $A$ having periods $p$ and $q$.
+If $|w|\geq p+q-\gcd(p,q)$,
+then $w$ has period $\gcd(p,q)$.
+The value $p+q-\gcd(p,q)$
+is the smallest one that makes the theorem true.
+\end{theorem}
+
+As a counterexample showing that the condition on $|w|$ is necessary,
+the word $aaabaaa$ has periods $4$ and $6$, but not $2=\gcd(4,6)$.
+This can happen because its length is $7<4+6-2=8$.
+
+Observe that Theorem~\ref{thm:fw} can be restated as follows
+(cf.~\cite{l97}).
+\begin{theorem} \label{thm:fw-alt}
+Let $u$ and $w$ be words over an alphabet $A$.
+Suppose $u^h$ and $w^k$, for some $h$ and $k$,
+have a common prefix of length
+\begin{math}
+|u|+|w|-\gcd(|u|,|w|).
+\end{math}
+Then there exists $z\in A^\ast$ of length $\gcd(|u|,|w|)$
+such that $u,w\in z^\ast$.
+The value
+\begin{math}
+|u|+|w|-\gcd(|u|,|w|)
+\end{math}
+is also the smallest one that makes the theorem true.
+\end{theorem}
+
+In fact, Theorem~\ref{thm:fw} clearly implies Theorem~\ref{thm:fw-alt}.
+Now, suppose Theorem~\ref{thm:fw-alt} is true.
+Suppose $w$ has periods $p$ and $q$
+and length at least $p+q-\gcd(p,q)$:
+write $w=u^{k}r=v^{h}s$ with
+$|u|=p$, $|v|=q$, $r$ prefix of $u$, $s$ prefix of $v$.
+Let $M$ be a common multiple of $p$ and $q$ greater than $p$, $q$, and $|w|$:
+then $u^{M/p}$ and $v^{M/q}$ have the common prefix $w$,
+so they also have a common prefix of length $p+q-\gcd(u,v)$.
+Then $u$ and $v$ are powers of a word $z$ of length $\gcd(p,q)$,
+and it is easy to see that $w=z^{m}t$
+for some $m>0$ and some prefix $t$ of $z$.
+
+\begin{thebibliography}{99}
+
+\bibitem{l97}
+M. Lothaire.
+\textit{Combinatorics on words.}
+Cambridge University Press 1997.
+
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

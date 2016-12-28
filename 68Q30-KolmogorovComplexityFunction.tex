@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{KolmogorovComplexityFunction}
+\pmcreated{2013-03-22 13:43:49}
+\pmmodified{2013-03-22 13:43:49}
+\pmowner{tromp}{1913}
+\pmmodifier{tromp}{1913}
+\pmtitle{Kolmogorov complexity function}
+\pmrecord{9}{34418}
+\pmprivacy{1}
+\pmauthor{tromp}{1913}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q30}
+\pmsynonym{algorithmic entropy}{KolmogorovComplexityFunction}
+\pmsynonym{information content}{KolmogorovComplexityFunction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+The (plain) complexity $C(x)$ of a binary string $x$ is the length of a shortest
+program $p$ such that $U(p)=x$, i.e. the (plain) universal Turing machine on
+input $p$, outputs $x$ and halts. The lexicographically least such $p$ is
+denoted $x^{\ast}$.
+The prefix complexity $K(x)$ is defined similarly in terms of the prefix universal
+machine. When clear from context, $x^{\ast}$ is also used to denote the
+lexicographically least prefix program for $x$.
+
+Plain and prefix conditional complexities $C(x|y), K(x|y)$ are defined similarly
+but with $U(x|y)=x$, i.e. the universal machine starts out with $y$ written
+on its worktape.
+
+Subscripting these functions with a Turing machine $M$, as in
+$K_M(x|y)$, denotes the corresponding complexity in which we use machine $M$
+in place of the universal machine $U$.
+%%%%%
+%%%%%
+\end{document}

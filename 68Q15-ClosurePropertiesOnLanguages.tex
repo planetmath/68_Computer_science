@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ClosurePropertiesOnLanguages}
+\pmcreated{2013-03-22 18:59:36}
+\pmmodified{2013-03-22 18:59:36}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{closure properties on languages}
+\pmrecord{6}{41860}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Feature}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q15}
+\pmclassification{msc}{03D55}
+\pmrelated{AbstractFamilyOfLanguages}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{tabls}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+This entry lists some common closure properties on the families of languages corresponding to the Chomsky hierarchy, as well as other related families.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline\hline
+operation & REG & DCFL & CFL & CSL & RC & RE \\
+\hline\hline
+union & Y & N & Y & Y & Y & Y \\
+\hline
+intersection & Y & N & N & Y & Y & Y \\
+\hline
+set difference & Y & N & N & Y & Y & N \\
+\hline
+complementation & Y & Y & N & Y & Y & N \\
+\hline
+intersection with a regular language & Y & Y & Y & Y & Y & Y \\
+\hline
+concatenation & Y & N & Y & Y & Y & Y \\
+\hline
+Kleene star & Y & N & Y & Y & Y & Y \\
+\hline
+Kleene plus & Y & N & Y & Y & Y & Y \\
+\hline
+reversal & Y & Y & Y & Y & Y & Y \\
+\hline
+$\lambda$-free homomorphism & Y & N & Y & Y & Y & Y \\
+\hline
+homomorphism & Y & N & Y & N & N & Y \\
+\hline
+inverse homomorphism & Y & Y & Y & Y & Y & Y \\
+\hline
+$\lambda$-free substitution & Y & N & Y & Y & Y & Y \\
+\hline
+substitution & Y & N & Y & N & N & Y \\
+\hline
+$\lambda$-free GSM mapping & Y & N & Y & Y & Y & Y \\
+\hline
+GSM mapping & Y & N & Y & N & N & Y \\
+\hline
+inverse GSM mapping & Y & Y & Y & Y & Y & Y \\
+\hline
+$k$ limited erasing & Y & & Y & Y & & Y \\
+\hline
+rational transduction & Y & N & Y & N & N & Y \\
+\hline
+right quotient with a regular language & Y & Y & Y & N & & Y \\
+\hline
+left quotient with a regular language & Y & Y & Y & N & & Y \\
+\hline
+\end{tabular}
+\end{center}
+where the definitions of the cells in the top row are the following language families:
+
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline\hline
+abbreviation & name \\
+\hline\hline
+REG & regular \\
+\hline
+DCFL & deterministic context-free \\
+\hline
+CFL & context-free \\
+\hline
+CSL & context-sensitive \\
+\hline
+RC & recursive \\
+\hline
+RE & recursively enumerable \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Remarks}.  Based on the table above, studies in closure properties have been expanded in other directions, such as
+\begin{itemize}
+\item closure properties of the above operations on more families of languages, such as linear languages, indexed languages, and mildly context-sensitive languages
+\item given that an \emph{arbitrary} family of languages is closed under a subset of operations above, what more can one say about the family?  what other closure properties can be deduced? This is known as AFL (abstract family of languages) theory.
+\item closure properties of yet more operations on languages, such as commutative closures, shuffle closures, insertion closures, deletion closures, subword extensions, prefix extensions, and suffix extensions.
+\item knowing that a closure property of an operation is not satisfied for a given language family, study the closure of the property on the family.  For example, what is the Boolean closure of context-free languages?
+\item knowning the a closure property of an operation is not satisfied for a given language family, study whether it is decidable that taking the operation on language(s) leads to a language in the family.  For example, is it decidable that the intersection of two context-free languages is context-free?  Furthermore, if the problem is decidable, what is its complexity?
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{AP} A. P. Parkes, {\em Introduction to Languages, Machines, and Logic}, Springer (2002).
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\bibitem{hu} J.E. Hopcroft, J.D. Ullman, {\em Formal Languages and Their Relation to Automata}, Addison-Wesley, (1969).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

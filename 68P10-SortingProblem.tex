@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{SortingProblem}
+\pmcreated{2013-03-22 11:43:37}
+\pmmodified{2013-03-22 11:43:37}
+\pmowner{Logan}{6}
+\pmmodifier{Logan}{6}
+\pmtitle{sorting problem}
+\pmrecord{10}{30127}
+\pmprivacy{1}
+\pmauthor{Logan}{6}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{82C35}
+%\pmkeywords{sort}
+%\pmkeywords{algorithm}
+%\pmkeywords{comparison}
+\pmrelated{TotalOrder}
+\pmrelated{PartialOrder}
+\pmrelated{Relation}
+\pmrelated{Heapsort}
+\pmrelated{Bubblesort}
+\pmrelated{BinarySearch}
+\pmrelated{InPlaceSortingAlgorithm}
+\pmrelated{InsertionSort}
+\pmrelated{LandauNotation}
+\pmrelated{Quicksort}
+\pmrelated{SelectionSort}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%%%%%%%\usepackage{xypic}
+\begin{document}
+Let $\leq$ be a \emph{total ordering} on the set $S$.
+Given a sequence of $n$ elements, $x_1, x_2, \dots, x_n \in S$, find a sequence
+of distinct indices $1 \leq i_1, i_2, \dots, i_n \leq n$ such that $x_{i_1} \leq x_{i_2} \leq \dots \leq x_{i_n}$.
+\\
+\\
+The sorting problem is a heavily studied area of computer science, and many \emph{sorting algorithms} exist to
+solve it.  The most general algorithms depend only upon the relation $\leq$, and are called \emph{comparison-based sorts}.
+It can be proved that the lower bound for sorting by any comparison-based sorting algorithm is $\Omega(n\log{n})$.
+\\
+\\
+A few other specialized sort algorithms rely on particular properties of the values of elements in $S$ (such as their structure) in order
+to achieve lower time complexity for sorting certain sets of elements.  Examples of such a sorting algorithm are
+the \emph{bucket sort} and the \emph{radix sort}.
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\end{document}

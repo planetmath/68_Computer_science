@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FloydsAlgorithm}
+\pmcreated{2013-03-22 12:16:29}
+\pmmodified{2013-03-22 12:16:29}
+\pmowner{vampyr}{22}
+\pmmodifier{vampyr}{22}
+\pmtitle{Floyd's algorithm}
+\pmrecord{6}{31722}
+\pmprivacy{1}
+\pmauthor{vampyr}{22}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68R10}
+\pmclassification{msc}{05C38}
+\pmclassification{msc}{05C85}
+\pmsynonym{all pairs shortest path algorithm}{FloydsAlgorithm}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic} 
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+\textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+\textit{Input}: #3\newline
+\textit{Output}: #4\newline
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+\begin{figure}[#1]
+\caption{#2}
+\begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+\end{Lalgorithm}
+\end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lfor}[2]{\textbf{for} #1 \textbf{do}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lwhile}[2]{\textbf{while} #1 \textbf{do}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\begin{document}
+Floyd's algorithm is also known as the all pairs shortest path algorithm.  It will compute the shortest path between all possible pairs of vertices in a (possibly weighted) graph or digraph simultaneously in $O(n^3)$ time (where $n$ is the number of vertices in the graph).
+
+\begin{Lalgorithm}{Floyd}{V}{A weighted graph or digraph with vertices $V$}{A matrix $cost$ of shortest paths and a matrix $pred$ of predecessors in the shortest path}
+\Lfor{$(a,b) \in V^2$}{
+\Lif{$adjacent(a,b)$}{
+$cost(a,b) \gets weight(a,b)$\\
+$pred(a,b) \gets a$
+}
+\Lelse{
+$cost(a,b) \gets \infty$\\
+$pred(a,b) \gets null$
+}
+}
+
+\Lfor{$c \in V$}{
+\Lfor{$(a,b) \in V^2$}{
+\Lif{$cost(a,c) < \infty$ and $cost(c,b) < \infty$}{
+\Lif{$cost(a,b) = \infty$ or $cost(a,c) + cost(c,b) < cost(a,b)$}{
+$cost(a,b) \gets cost(a,c)+cost(c,b)$ \\
+$pred(a,b) \gets pred(c,b)$
+}
+}
+}
+}
+
+\end{Lalgorithm}
+%%%%%
+%%%%%
+\end{document}

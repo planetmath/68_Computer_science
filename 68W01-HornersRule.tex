@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HornersRule}
+\pmcreated{2013-03-22 12:06:17}
+\pmmodified{2013-03-22 12:06:17}
+\pmowner{akrowne}{2}
+\pmmodifier{akrowne}{2}
+\pmtitle{Horner's rule}
+\pmrecord{11}{31219}
+\pmprivacy{1}
+\pmauthor{akrowne}{2}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68W01}
+\pmclassification{msc}{13P05}
+\pmclassification{msc}{65Y99}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%%%\usepackage{xypic}
+\begin{document}
+Horner's rule is a technique to reduce the work required for the computation of a polynomial at a particular value.  Its simplest form makes use of the repeated factorizations 
+
+\begin{eqnarray*} 
+ y & = & a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n \\
+   & = & a_0 + x(a_1 + x(a_2 + x(a_3 + \cdots +xa_n)) \cdots ) 
+\end{eqnarray*}
+
+of the terms of the $n$th degree polynomial in $x$ in order to reduce the computation of the polynomial $y(a)$ (at some value $x = a$) to $n$ multiplications and $n$ additions.  
+
+The rule can be generalized to a finite series
+
+$$ y = a_0 p_0 + a_1 p_1 + \cdots + a_n p_n $$
+
+of orthogonal polynomials $p_k = p_k(x)$.  Using the recurrence relation
+
+$$ p_k = (A_k + B_k x) p_{k-1} + C_k p_{k-2} $$
+
+for orthogonal polynomials, one obtains 
+
+$$ y(a) = (a_0 + C_2 b_2) p_0(a) + b_1 p_1(a) $$
+
+with 
+
+\begin{eqnarray*}
+ b_{n+1} & = & b_{n+2} = 0 , \\
+ b_{k-1} & = &  (A_k + B_k\cdot a) b_k + C_{k+1} + b_{k+1} + a_{k-1} 
+\end{eqnarray*}
+
+for the evaluation of $y$ at some particular $a$.  This is a simpler calculation than the straightforward approach, since $a_0$ and $C_2$ are known, $p_0(a)$ and $p_1(a)$ are easy to compute (possibly themselves by Horner's rule), and $b_1$ and $b_2$ are given by a backwards-recurrence which is linear in $n$.
+
+{\bf References}
+
+\begin{itemize}
+\item Originally from The Data Analysis Briefbook
+(\PMlinkexternal{http://rkb.home.cern.ch/rkb/titleA.html}{http://rkb.home.cern.ch/rkb/titleA.html})
+\end{itemize}
+%%%%%
+%%%%%
+%%%%%
+\end{document}

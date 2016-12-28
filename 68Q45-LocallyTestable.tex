@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LocallyTestable}
+\pmcreated{2013-03-22 18:59:03}
+\pmmodified{2013-03-22 18:59:03}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{locally testable}
+\pmrecord{7}{41849}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmclassification{msc}{68Q42}
+\pmsynonym{k-testable}{LocallyTestable}
+\pmdefines{$k$-testable}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+A regular language $L$ over an alphabet $\Sigma$ is \emph{locally testable} if, loosely speaking, testing whether or not an arbitrary word $u$ (over $\Sigma$) is in $L$ is completely determined by its subwords of some fixed length.  The name \emph{locally testable} comes from the fact that properties of $u$, and not $L$, determine the membership of $u$ in $L$.
+
+To formalize this notion, we first define, for any word $u$ over $\Sigma$, the set $\operatorname{sw}_k(u)$ of all subwords of $$\#u\#$$ of length $k$, where $\#$ is a symbol not in $\Sigma$.
+
+\textbf{Definition}.  We say that a regular language $L$ is \emph{$k$-testable} if for any $u,v\in \Sigma^*$ such that $$\operatorname{sw}_k(u)=\operatorname{sw}_k(v),$$ we have $u\in L$ iff $v\in L$.  The equation above says three things at once: 
+\begin{itemize}
+\item the set of subwords of $u$ of length $k$ is equal to the set of subwords of $v$ of length $k$,
+\item the prefix of $u$ of length $k$ is equal to the prefix of $v$ of length $k$, and
+\item the suffix of $u$ of length $k$ is equal to the suffix of $v$ of length $k$.
+\end{itemize}
+We say that $L$ is \emph{locally testable} if it is $k$-testable for some $k\ge 0$.
+
+If we denote $\mathscr{T}(k)$ the family of all $k$-testable languages, and $\mathscr{T}(\infty)$ the family of all locally testable languages, then $$\mathscr{T}(\infty)=\bigcup_{k=0}^{\infty} \mathscr{T}(k).$$
+
+Note that there are only two $0$-testable languages: $\Sigma^*$ and $\varnothing$.
+
+\begin{prop}  Let $\mathscr{D}$ be the family of definite languages.  Then
+\begin{enumerate}
+\item $\mathscr{T}(k)\subset \mathscr{T}(k+1)$ for any $k\ge 0$, and the inclusion is strict.
+\item $\mathscr{D}$ and $\mathscr{T}(k)$ are not comparable for any $k> 0$.  In other words, for every $k$, there is a $k$-testable language that is not definite, and a definite language that is not $k$-testable.
+\item $\mathscr{D}\subset \mathscr{T}(\infty)$, and the inclusion is strict.
+\end{enumerate}
+\end{prop}
+
+We only sketch the proof here.  For the first assertion, note that for every $k\ge 0$, $$\operatorname{sw}_{k+1}(u)=\operatorname{sw}_{k+1}(v)\quad\mbox{implies}\quad \operatorname{sw}_k(u)=\operatorname{sw}_k(v).$$  In addition, the language $\lbrace ab^k\rbrace^*$ is $(k+1)$-testable but not $k$-testable.  For the second statement, note that $\lbrace ab^k\rbrace^*$ is not definite for any $k\ge 0$.  On the other hand, a finite language containing a single word of length $k+1$ is not $k$-testable.  The last assertion is a direct consequence of the second one.
+
+Thus, the families $\mathscr{T}(k)$ provide us with an example of an infinite chain of subfamilies of the family of regular languages.
+
+With regard to the closure properties in $\mathscr{T}(k)$, it is easily see that $\mathscr{T}(k)$ for all $k\ge 0$ including $k=\infty$, is closed under complementation and intersection, and hence all Boolean operations.  The star-closure of $\mathscr{T}(\infty)$ is $\mathscr{R}$, the family of all regular languages.
+
+\textbf{Remark}.  Every locally testable language is star-free, but not conversely.
+
+\begin{thebibliography}{9}
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

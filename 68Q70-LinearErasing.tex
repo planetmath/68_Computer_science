@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LinearErasing}
+\pmcreated{2013-03-22 18:58:54}
+\pmmodified{2013-03-22 18:58:54}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{linear erasing}
+\pmrecord{8}{41846}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmsynonym{limited erasing}{LinearErasing}
+\pmrelated{RestrictedHomomorphism}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+It is well-known that, among all of the language families in the Chomsky hierarchy, the family $\mathscr{S}$ of context-sensitive languages is the only one that is not closed under arbitrary homomorphisms.  Nevertheless, $\mathscr{S}$ is shown to be closed under a more restricted class of homomorphisms, namely the $\lambda$-free homomorphisms.  Question: can we enlarge this class of homomorphisms so that $\mathscr{S}$ is still closed under the larger class?  The answer is yes.
+
+\textbf{Definition}.  Let $L$ be a language over an alphabet $\Sigma$, $h$ a homomorphism over $\Sigma$, and $k$ a non-negative integer.  $h$ is said to be a \emph{$k$-linear erasing} on $L$ if for any word $u\in L$, we have $$|u|\le k |h(u)|,$$
+where $|u|$ stands for the length of $u$.
+
+It is clear that if $h$ is a $k$-linear erasing on $L$, then it is a $m$-linear erasing for any $m\ge k$.  Also, if $h$ is a $0$-linear erasing on $L$, then $L$ is either $\lbrace \lambda\rbrace$, or the empty set $\varnothing$.  In addition, if $h$ is a $k$-linear erasing on $L$, and $L'\subseteq L$, then it is a $k$-linear erasing on $L'$.  Consequently, any $\lambda$-free homomorphism is a $k$-linear erasing on any $L$ over $\Sigma$, for any $k\ge 1$.
+
+However, the notion of linear erasing is language dependent.  For example, let $\Sigma = \lbrace a,b,c\rbrace$.  Let $L_1 = \lbrace a^nb^n \mid n\ge 0\rbrace$ and $L_2= \lbrace a^nc^n \mid n\ge 0\rbrace$.  Suppose $h$ is the homomorphism on $\Sigma^*$ with $h(a)=\lambda$, $h(b)=b^2$ and $h(c)=c$.  Then $h$ is a $1$-linear erasing on $L_1$, and a $2$-linear erasing on $L_2$.
+
+\textbf{Definition}  Let $\mathscr{L}$ be a family of languages over $\Sigma$.  Then $\mathscr{L}$ is said to be \emph{closed under linear erasing} if for any $L\in \mathscr{L}$, and any homomorphism $h$ which is a $k$-linear erasing on $L$ for some $k\ge 0$, then $h(L)\in \mathscr{L}$.
+
+Clearly, if $\mathscr{L}$ is closed under homomorphism, it is closed under linear erasing, and thus the families of \PMlinkname{regular}{RegularLanguage}, context-free, and type-0 languages are all closed under linear erasing.  We also have the following:
+\begin{thm} The family $\mathscr{S}$ of context-sensitive languages is closed under linear erasing. \end{thm}
+
+\textbf{Remark}.  The theorem above can be generalized.  Call a substitution $s$ over $\Sigma$ a $k$-linear erasing on a language $L$ if $|u|\le k|v|$ for any $v\in s(u)$.  If $L$ is context-sensitive such that $s(u)$ is context-sensitive for each $u\in L$, then $s(L)$ is context-sensitive provided that $s$ is a $k$-linear erasing on $L$.
+
+\begin{thebibliography}{9}
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\bibitem{hu} J.E. Hopcroft, J.D. Ullman, {\em Formal Languages and Their Relation to Automata}, Addison-Wesley, (1969).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{UniversalTuringMachine}
+\pmcreated{2013-03-22 13:43:46}
+\pmmodified{2013-03-22 13:43:46}
+\pmowner{tromp}{1913}
+\pmmodifier{tromp}{1913}
+\pmtitle{universal Turing machine}
+\pmrecord{7}{34416}
+\pmprivacy{1}
+\pmauthor{tromp}{1913}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmrelated{ArtificialInteglligence}
+\pmrelated{StrongAIThesis}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+A universal Turing machine $U$ is a Turing machine with a single binary
+one-way read-only input tape, on which it expects to find the encoding of an arbitrary Turing machine $M$. The set of all Turing machine encodings must
+be prefix-free, so that no special end-marker or `blank' is needed to recognize
+a code's end. Having transferred the description of $M$ onto its worktape,
+$U$ then proceeds to simulate the behaviour of $M$ on the remaining
+contents of the input tape. If $M$ halts, then $U$ cleans up its worktape,
+leaving it with just the output of $M$, and halts too.
+
+If we denote by $M()$ the partial function computed by machine $M$,
+and by $<M>$ the encoding of machine $M$ as a binary string,
+then we have $U(<M>x)=M(x)$.
+
+There are two kinds of universal Turing machine, depending on whether the
+input tape alphabet of the simulated machine is $\{0,1,\#\}$ or just $\{0,1\}$.
+The first kind is a {\em plain} Universal Turing machine;
+while the second is a {\em prefix} Universal Turing machine,
+which has the nice property
+that the set of inputs on which it halts is prefix free.
+
+The letter $U$ is commonly used to denote a fixed universal machine, whose
+type is either mentioned explicitly or assumed clear from context.
+%%%%%
+%%%%%
+\end{document}

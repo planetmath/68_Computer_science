@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HornClause}
+\pmcreated{2013-03-22 16:28:34}
+\pmmodified{2013-03-22 16:28:34}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{Horn clause}
+\pmrecord{6}{38641}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N30}
+\pmdefines{dual-Horn clause}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+In logic, a {\em Horn clause} is a clause (a disjunction of literals) with at most one positive literal. A Horn clause with exactly one positive literal is a definite clause; a Horn clause with no positive literals is sometimes called a goal clause, especially in logic programming. A Horn formula is a conjunctive normal form formula whose clauses are all Horn; in other words, it is a conjunction of Horn clauses. A {\em dual-Horn clause} is a clause with at most one negative literal. Horn clauses play a basic role in logic programming and are important for constructive logic.
+
+The following is an example of a (definite) Horn clause:
+
+$$\neg p \vee \neg q \vee \cdots \vee \neg t \vee u$$
+
+Such a formula can be rewritten in the following form, which is more common in logic programming and similar fields:
+
+$$(p \wedge q \wedge \cdots \wedge t) \rightarrow u$$
+
+The relevance of Horn clauses to theorem proving by first-order resolution is that the resolution of two Horn clauses is a Horn clause. Moreover, the resolution of a goal clause and a definite clause is again a goal clause. In automated theorem proving, this can lead to greater efficiencies in proving a theorem (represented as a goal clause). In fact, Prolog is a programming language based on Horn clauses (Prolog also includes constructs such as the cut that cannot be easily expressed in logic).
+
+Horn clauses are also of interest in computational complexity, where the problem of finding a set of variable assignments to make a conjunction of Horn clauses true is a P-complete problem, sometimes called HORNSAT. This is P's version of the boolean satisfiability problem, a central NP-complete problem.
+
+The name "Horn clause" comes from the logician Alfred Horn, who first pointed out the significance of such clauses in 1951, in the article "On sentences which are true of direct unions of algebras", {\it Journal of Symbolic Logic}, {\bf 16}, 14 - 21.
+
+{\it This entry was adapted from the Wikipedia article \PMlinkexternal{Horn clause}{http://en.wikipedia.org/wiki/Horn_clause} as of December 19, 2006.}
+%%%%%
+%%%%%
+\end{document}

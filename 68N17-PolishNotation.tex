@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PolishNotation}
+\pmcreated{2013-03-22 16:09:42}
+\pmmodified{2013-03-22 16:09:42}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{Polish notation}
+\pmrecord{19}{38243}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N17}
+\pmclassification{msc}{03B70}
+\pmsynonym{prefix notation}{PolishNotation}
+\pmsynonym{\L{}ukasiewicz notation}{PolishNotation}
+\pmsynonym{Lukasiewicz notation}{PolishNotation}
+\pmrelated{ReversePolishNotation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Whereas operators are traditionally placed between operands, with parentheses used to override operator precedence, it is possible to place each operator to the left of its operands, thus eliminating ambiguity and the need for parentheses, and even the need for rules of operator precedence.
+
+This is known as \emph{Polish notation} (after the Polish mathematician Jan \L{}ukasiewicz who came up with it), or \emph{prefix notation}. Polish notation is a system of notating mathematical operations (whether arithmetic, logical, etc.) where the operators precede their operands and the ambiguities of operator precedence and the need for parentheses are altogether eliminated.
+
+For example, $2 + 3 \times 15$ probably means 47, but if the possibility exists that the author meant but neglected to put in parentheses, the expression could actually mean $(2 + 3) \times 15 = 75$. In Polish notation, we could define the basic arithmetic operators to all be binary, and write $+ \times 2 \quad 3 \quad 15$ with the confidence that it will evaluate to 21 rather than 47.
+
+Lisp is one computer programming language that uses Polish notation. In \L{}ukasiewicz's vision, parentheses are not necessary at all, certainly not for resolving operator precedence. Lisp, however, uses parentheses to specify arity by enclosing operands affected by a single operator in a ``list,'' and ``the only hierarchy rule [in Lisp is] ... that innermost lists are evaluated before the lists that enclose them.'' (Chirlian, 1986) Thus, in the Lisp expression $(- 21 (+ 3 \quad 5 \ 8))$, the addition operator is ternary and the subtraction operator is binary.
+
+Certain LaTeX packages, such as pstricks, also use Polish notation when used for plotting plane curves.
+
+For stack-based programming languages like Adobe PostScript, reverse Polish notation (or postfix notation) -- in which the operators are written after the operands -- is often the norm. Note that it is quite common for authors to confuse Polish and reverse Polish, e.g., page 3 of Chirlian (1986) speaks of ``{\it reverse Polish} or {\it prefix} notation.''
+
+\begin{thebibliography}{1}
+\bibitem{pc} P. Chirlian, {\it Lisp}, Cleveland: Weber Systems pp. 3, 29 - 34 (1986)
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

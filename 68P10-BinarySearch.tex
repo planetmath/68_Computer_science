@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BinarySearch}
+\pmcreated{2013-03-22 11:44:34}
+\pmmodified{2013-03-22 11:44:34}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{binary search}
+\pmrecord{18}{30165}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{16S40}
+\pmclassification{msc}{20G42}
+\pmclassification{msc}{16W35}
+\pmclassification{msc}{81R50}
+\pmclassification{msc}{16W30}
+\pmclassification{msc}{57T05}
+\pmclassification{msc}{54-01}
+%\pmkeywords{lookup}
+\pmrelated{TotalOrder}
+\pmrelated{PartialOrder}
+\pmrelated{SortingProblem}
+\pmrelated{InsertionSort}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{graphicx}
+%%%%%%%\usepackage{xypic}
+
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+    \textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+    \textit{Input}: #3\newline
+    \textit{Output}: #4
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+    \begin{figure}[#1]
+    \caption{#2}
+    \begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+    \end{Lalgorithm}
+    \end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\begin{document}
+\PMlinkescapeword{entire}
+\PMlinkescapeword{relation}
+
+\subsection*{The Problem}
+
+Let $\leq$ be a total ordering on the set $S$.  Given a sequence of $n$ elements,
+$L = \left\{ x_1 \leq x_2 \leq \dots \leq x_n \right\}$, and a value $y \in S$,
+locate the position of any elements in $L$ that are equal to $y$, or determine that
+none exist.
+
+\subsection*{The Algorithm}
+
+The \emph{binary search} technique is a fundamental method for locating an element of
+a particular value within a sequence of sorted elements (see Sorting Problem).
+The idea is to eliminate half of the search space with each comparison.
+
+First, the
+middle element of the sequence is compared to the value we are searching for.  If this
+element matches the value we are searching for, we are done.  If, however, the middle
+element is ``less than'' the value we are chosen for (as specified by the \PMlinkname{relation}{Relation} used
+to specify a total order over the set of elements), then we know that, if the value exists
+in the sequence, it must exist somewhere \emph{after} the middle element.  Therefore we
+can eliminate the first half of the sequence from our search and simply repeat the search
+in the exact same manner on the remaining half of the sequence.  If, however, the value we
+are searching for comes before the middle element, then we repeat the search on the first half
+of the sequence.
+
+\subsection*{Pseudocode}
+
+%\begin{lstlisting}{}
+\begin{Lalgorithm}{Binary\_Search}{L, n, key}{A list $L$ of $n$ elements, and $key$ (the search key)}{$Position$ (such that $X[Position] = key$)}
+\Lgroup{
+    $Position \gets Find(L, 1, n, key);$
+}\\
+\textbf{function} $Find(L, bottom, top, key)$ \\
+\Lgroup{
+    \Lif{$bottom = top$}{
+        \Lif{$L[bottom] = key$}{$Find \gets bottom$}
+        \Lelse{$Find \gets 0$}}
+    \Lelse{
+    \Lgroup{
+        $middle \gets (bottom + top) / 2;$ \\
+        \Lif{$key < L[middle]$}{
+            $Find \gets Find(L, bottom, middle - 1, key)$}
+        \Lelse{
+            $Find \gets Find(L, middle + 1, top, key)$}
+    }}
+}
+\end{Lalgorithm}
+%\end{lstlisting}
+
+\subsection*{Analysis}
+
+We can specify the runtime complexity of this binary search algorithm by counting the number
+of comparisons required to locate some element $y$ in $L$.  Since half of the list is eliminated
+with each comparison, there can be no more than $\log_2{n}$ comparisons before either the positions
+of all the $y$ elements are found or the entire list is eliminated and $y$ is determined to not exist
+in $L$.
+Thus the worst-case runtime complexity of the binary search is $\mathcal{O}(\log{n})$.
+It can also be shown that the average-case runtime complexity of the binary search is approximately
+$\log_2{n}-1$ comparisons.
+This means that any single entry in a phone book containing one million entries can be located
+with at most 20 comparisons (and on average 19).
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\end{document}

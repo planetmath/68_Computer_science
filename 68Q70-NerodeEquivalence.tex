@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NerodeEquivalence}
+\pmcreated{2013-03-22 18:52:11}
+\pmmodified{2013-03-22 18:52:11}
+\pmowner{Ziosilvio}{18733}
+\pmmodifier{Ziosilvio}{18733}
+\pmtitle{Nerode equivalence}
+\pmrecord{4}{41711}
+\pmprivacy{1}
+\pmauthor{Ziosilvio}{18733}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{20M35}
+\pmdefines{maximality property of Nerode equivalence}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $S$ be a semigroup and let $X\subseteq S$.
+The relation
+\begin{equation} \label{eq:ne}
+s_1\mathcal{N}_X s_2
+\;\;\iff\;\;
+\forall t\in S (s_1t\in X\;\iff\;s_2t\in X)
+\end{equation}
+is an equivalence relation over $S$,
+called the \emph{Nerode equivalence} of $X$.
+
+As an example,
+if $S=(\mathbb{N},+)$ and
+\begin{math}
+X=\{n\in\mathbb{N}\mid\exists k\in\mathbb{N}\mid n=3k\},
+\end{math}
+then $m\mathcal{N}_X n$ iff $m\mod 3=n\mod 3$.
+
+The Nerode equivalence is right-invariant,
+\emph{i.e.}, if $s_1\mathcal{N}_Xs_2$
+then $s_1t\mathcal{N}_Xs_2t$ for any $t$.
+However, it is usually not a congruence.
+
+The Nerode equivalence is maximal in the following sense:
+\begin{itemize}
+\item if $\eta$ is a right-invariant equivalence over $S$ %%that saturates $X$,
+and $X$ is union of classes of $\eta$,
+\item then $s\eta t$ implies $s\mathcal{N}_X t$.
+\end{itemize}
+In fact, let $r\in S$:
+since $s\eta t$ and $\eta$ is right-invariant, $sr\eta tr$.
+However, $X$ is union of classes of $\eta$,
+therefore $sr$ and $tr$
+are either both in $X$ or both outside $X$.
+This is true for all $r\in S$, thus $s\mathcal{N}_X t$.
+
+The Nerode equivalence is linked to the syntactic congruence 
+by the following fact, whose proof is straightforward:
+\begin{displaymath}
+s_1\equiv_X s_2
+\;\;\mathrm{iff}\;\;
+ls_1\mathcal{N}_X ls_2\;\forall l\in S\;.
+\end{displaymath}
+
+%%%%%
+%%%%%
+\end{document}

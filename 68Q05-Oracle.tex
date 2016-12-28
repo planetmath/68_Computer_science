@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Oracle}
+\pmcreated{2013-03-22 13:01:36}
+\pmmodified{2013-03-22 13:01:36}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{oracle}
+\pmrecord{6}{33424}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmdefines{query}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+An \emph{oracle} is a way to allow Turing machines access to information they cannot necessarily calculate.  It makes it possible to consider whether solving one problem would make it possible to solve another problem, and therefore to ask whether one problem is harder than another.
+
+If $T$ is a Turing machine and $\pi$ is a problem (either a search problem or a decision problem) with appropriate alphabet then $T^\pi$ denotes the machine which runs $T$ using $\pi$ as an oracle.
+
+A Turing machine with an oracle has three special states $?$, $y$ and $n$.  Whenever $T^\pi$ enters state $?$ it \emph{queries} the oracle about $x$, the series of non-blank symbols to the right of the tape head.  If $\pi$ is a decision problem then the machine immediately changes to state $y$ if in $x\in\pi$ and $n$ otherwise.  If $\pi$ is a search problem then it switches to state $n$ if there is no $z$ such that $\pi(x,z)$ and to state $y$ is there is such a $z$.  In the latter case the section of the tape containing $x$ is changed to contain $z$.
+
+In either case, the oracle allows the machine to behave as if it could solve $\pi$, since each time it accesses the oracle, the result is the same as a machine which solves $\pi$.
+
+Alternate but equivalent definitions use a special tape to contain the query and response.
+
+Clearly if $L\neq L^\prime$ then $L(T^L)$ may not be equal to $L(T^{L^\prime})$.
+
+By definition, if $T$ is a Turing machine appropriate for a complexity class $\mathcal{C}$ then $T^L$ is a $\mathcal{C}$ Cook reduction of $L(T^L)$ to $L$.
+
+If $\mathcal{C}$ is a complexity class then $T^\mathcal{C}$ is a complexity class with $T^\mathcal{C}=\{L\mid L=L(T^C)\wedge C\in \mathcal{C}\}$.  If $\mathcal{D}$ is another complexity class then $\mathcal{D}^\mathcal{C}=\{L\mid L\in T^\mathcal{C}\wedge L(T^\emptyset)\in\mathcal{D}\}$.
+%%%%%
+%%%%%
+\end{document}

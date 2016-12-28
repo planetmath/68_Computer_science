@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FormalDefinitionOfATuringMachine}
+\pmcreated{2013-03-22 19:09:47}
+\pmmodified{2013-03-22 19:09:47}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{formal definition of a Turing machine}
+\pmrecord{14}{42069}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q10}
+\pmclassification{msc}{68Q05}
+\pmclassification{msc}{03D10}
+\pmrelated{TuringComputable}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Based on the informal description of a Turing machine in the parent entry, we give it a formal mathematical definition:
+
+\textbf{Definition}.  A Turing machine $T$ is a 7-tuple consists of the following:
+\begin{enumerate}
+\item an alphabet $S$ called the state alphabet,
+\item an element $s\in S$ called the start state,
+\item an element $t\in S$ called the accept state, and
+\item an element $r\in S$ such that $r\ne t$, called the reject state,
+\item an alphabet $\Sigma$ called the input alphabet,
+\item a symbol called the blank symbol $B$ not in $\Sigma$,
+\item a function $\delta: S\times \Sigma \to S\times \Sigma \times \lbrace L,R\rbrace$ called the transition function, such that $$\delta(t,a)=\delta(t,b,X)\qquad\mbox{and}\qquad \delta(r,c)=\delta(r,d,Y),$$
+where $a,b,c,d\in \Sigma\cup\lbrace B\rbrace$ and $X,Y\in \lbrace L,R\rbrace$.
+\end{enumerate}
+$t,r$ are collectively called the \emph{halt states} of $T$.
+
+Actually, the definition above is only part of the story.  What is described in the definition is the ``finite control'' (the brain) portion of a Turing machine.  All by itself, the finite control is useless.  In order for a Turing machine to do computations, two other ingredients are needed to complete the description: a tape, and a reading head.  The two can be formalized as follows:
+
+\textbf{Definition}.  A \emph{tape}, or formally a \emph{tape description}, is a function $\tau: \mathbb{Z}\to \Sigma\cup \lbrace B\rbrace$.  A \emph{position of the reading head} is an integer $n\in \mathbb{Z}$.
+
+In other words, the tape of a Turing machine $T$ is infinitely long in both direction, and is divided up into squares.  The content of each square is either a symbol in $\Sigma$ or blank ($B$).  The purpose of the tape is to store input, output, as well as any other strings that are used during computations.  
+
+The finite control and the tape of a Turing machine are connected by a reading head, which points over the tape, has the ability to move left or right along the tape, and reads the tape one square at a time.  The position of the reading head is the square it is currently reading.
+
+The Turing machine defined this way is also known as a two-way deterministic Turing machine.
+
+To formally describe the computational process of a Turing machine, we need to know three things: what is the current state of the finite control, what is on the tape, and what is the current position of the reading head:
+
+\textbf{Definition}.  A \emph{configuration} of a Turing machine is a triple $(p,\tau,m)$, where $p \in S$, called the state of the configuration, $\tau$ is a tape description called the tape description of the configuration, and $m$ is a position of the reading head called \emph{the} position of the reading head of the configuration.
+
+We are now ready to describe what it means for a Turing machine to compute something:
+
+\textbf{Definition}.  Given a Turing machine $T$ (with the associated tape and reading head), a \emph{computation step} $\rightarrow$ is a binary relation on the set of all configurations of $T$, defined as follows: if 
+$$(p,\tau,m)\rightarrow (q,\tau',n),$$ then 
+\begin{displaymath}
+(q,\tau',n)= \left\{
+\begin{array}{ll}
+(q,\tau',m+1) & \textrm{provided that } \delta(p,\tau(m))=(q,b,R), \\
+(q,\tau',m-1) & \textrm{provided that } \delta(p,\tau(m))=(q,b,L),
+\end{array}
+\right.
+\end{displaymath}
+where 
+\begin{displaymath}
+\tau'(i)= \left\{
+\begin{array}{ll}
+b & \textrm{if } i=m, \\
+\tau(i) & \textrm{otherwise.}
+\end{array}
+\right.
+\end{displaymath}
+We can of course take the reflexive transitive closure of $\rightarrow$ to obtain $\rightarrow^*$.
+
+\textbf{Definition}.  An input to a Turing machine is a (finite) word $w$ over $\Sigma$.  If the length of $w$ is $n$, we define the tape description $\tau_w$ of $w$ as follows: 
+\begin{displaymath}
+\tau_w(i)= \left\{
+\begin{array}{ll}
+w_i & \textrm{the $i$-th letter of } w, \mbox{ where }0\le i\le n, \mbox{ and}\\
+B & \textrm{otherwise.}
+\end{array}
+\right.
+\end{displaymath}
+Note that $\tau_{\lambda}$ is the constant function whose value is $B$, where $\lambda$ is the empty word.
+
+\textbf{Definition}.  Given an input $w$ and a Turing machine $T$, a computation of $w$ by $T$ is a finite sequence $$(s,\tau_w,1)=(p_1,\tau_1,m_1), (p_2,\tau_2,m_2), \ldots, (p_k,\tau_k, m_k),$$
+where $(p_i,\tau_i,m_i)\rightarrow (p_{i+1},\tau_{i+1},m_{i+1})$.  From the computation of $w$ above, we also say that the computation of $w$ leads to state $p_k$.  $T$ is said to \emph{accept} an input $w$ iff it there is a computation of $w$ leading to the accepting state $t$.  In other words, $w$ is accepted by $T$ iff $(s,\tau_w,1)\rightarrow^* (t,\tau,m)$ for some $\tau$ and $m$.  Similarly, $w$ is rejected by $T$ iff $(s,\tau_w,1)\rightarrow^* (r,\tau,m)$ for some $\tau$ and $m$.  $T$ is said to \emph{halt} on input $w$ iff it either accepts or rejects $w$.  Otherwise, $T$ is said to \emph{loop} on $w$.
+
+By the definition of the transition function $\delta$, once the computation of $w$ leads to the accepting state $t$, it never leaves that state.  Likewise, once the computation of $w$ leads to the reject state $r$, no further computation will lead to a non-reject state.
+
+\textbf{Definition}.  Let $T$ be a Turing machine.  The set of words accepted by $T$ is denoted by $L(T)$.  A set $A$ of words over $\Sigma$ is said to be \emph{Turing acceptable} if there is a Turing machine $T$ such that $A=L(T)$.  If $T$ halts on every input word, then $T$ is said to be \emph{total}.
+
+\textbf{Remarks}.  
+\begin{itemize}
+\item
+It can be shown that $A\subseteq \Sigma^*$ is Turing acceptable iff it is recursively enumerable.  Furthermore, $A$ is recursive iff there it is Turing acceptable by a total Turing machine.
+\item
+The Turing machines described above are known as language acceptors.  However, any Turing machine can be modified so it is capable of producing outputs.  Using this modification, one can think of a Turing machine as a partial function where an input is in its domain iff the computation leads to a halting state.  More can be found \PMlinkname{here}{TuringComputable}.
+\end{itemize}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfAmdahlsLaw}
+\pmcreated{2013-03-22 13:10:36}
+\pmmodified{2013-03-22 13:10:36}
+\pmowner{lieven}{1075}
+\pmmodifier{lieven}{1075}
+\pmtitle{proof of Amdahl's Law}
+\pmrecord{5}{33622}
+\pmprivacy{1}
+\pmauthor{lieven}{1075}
+\pmtype{Proof}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68M20}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Suppose an algorithm needs $n$ operations to compute the result. With 1 processor, the algorithm will take $n$ time units. With $N$ processors, the $(1-f)n$ parallelizable operations will take $\frac{(1-f)n}{N}$ time units and the remaining $fn$ non parallelizable operations will take $fn$ time units for a total running time of $fn+\frac{(1-f)n}{N}$ time units. So the speedup $S$ is $\frac{n}{fn+\frac{(1-f)n}{N}}=\frac{1}{f+\frac{1-f}{N}}$.
+%%%%%
+%%%%%
+\end{document}

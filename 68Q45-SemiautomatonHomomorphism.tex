@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{SemiautomatonHomomorphism}
+\pmcreated{2013-03-22 19:01:07}
+\pmmodified{2013-03-22 19:01:07}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{semiautomaton homomorphism}
+\pmrecord{7}{41889}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmclassification{msc}{20M35}
+\pmclassification{msc}{03D05}
+\pmclassification{msc}{68Q70}
+\pmdefines{homomorphism}
+\pmdefines{homomorphic image}
+\pmdefines{isomorphism}
+\pmdefines{automaton homomorphism}
+\pmdefines{machine homomorphism}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Just like groups and rings, a semiautomaton can be viewed as an algebraic structure.  As such, one may define algebraic constructs such as subalgebras and homomorphisms.  In this entry, we will briefly discuss the later.
+
+\subsubsection*{Definition}
+
+A \emph{homomorphism} from a semiautomaton $M=(S,\Sigma,\delta)$ to a semiautomaton $N=(T,\Gamma,\gamma)$ is a pair of maps $h:=(f:S\to T,g:\Sigma \to \Gamma)$ such that
+$$f(\delta(s,a))= \gamma(f(s),g(a))$$
+The \emph{image} of the homomorphism $h$ is the subsemiautomaton $h(M):=(f(S),g(\Sigma),\gamma')$ of $N$, where $\gamma'$ is the restriction of $\gamma$ to $f(S)\times g(\Sigma)$, also known as the \emph{homomorphic image} of $M$ under $h$.  
+
+In general, a semiautomaton $N$ is said to be a homomorphic image of a semiautomaton $M$, if there is a homomorphism $h$ such that $h(M)=N$.
+
+When comparing two semiautomata $M,N$, it is customary to identify the two corresponding input alphabets $\Sigma, \Gamma$, especially when one wants to study the interaction between the states of $M$ and the states of $N$.  This can be done by taking $\Delta:=\Sigma\cup \Gamma$, and extend the corresponding transition functions so that they are identities on the extended portions of the input alphabets.  Call the extended semiautomata $M',N'$.
+
+If $h:M\to N$ is a homomorphism, then $h':M'\to N'$ extends $h$ in a natural way: $f'=f$, and $g':\Delta \to \Delta$ given by $g'(a)=g(a)$ if $a\in \Sigma$, and $g'(a)=a$ if $a\in \Gamma-\Sigma$.  Routine verification shows that $h'$ is indeed a homomorphism: if $a\in \Sigma$, $$f'(\delta'(s,a))=f(\delta'(s,a))=f(\delta(s,a))=\gamma(f(s),g(a))=\gamma'(f(s),g(a))=\gamma'(f'(s),g'(a)),$$ and if $a\in \Gamma-\Sigma$, then $$f'(\delta'(s,a))=f(\delta'(s,a))=f(s)=\gamma'(f(s),a)=\gamma'(f'(s),a)=\gamma'(f'(s),g'(a)).$$
+
+A homomorphism $h=(f,g):M\to N$ is an \emph{isomorphism} if both $f$ and $g$ are bijections.  As discussed above, if we identify the input alphabets of $M$ and $N$, and treat $g$ as the identity map on the input alphabet, then $(S,\Sigma,\delta)$ and $(T,\Sigma,\gamma)$ are isomorphic if there is a bijection $f:S\to T$ such that $f(\delta(s,a))=\gamma(f(s),a)$.
+
+\subsubsection*{Specializations to Other Machines}
+
+Computing devices derived from semiautomata such as automata and state-output machines may also be considered as algebras.  We record the definitions of homomorphisms with respect to these objects here.
+
+We adopt the following notations: given an automaton $A=(S,\Sigma,\delta,I,F)$ and a state-output machine $M=(S,\Sigma,\Delta,\delta,\lambda)$, let $A'$ and $M'$ be the associated semiautomaton $(S,\Sigma,\delta)$.  So $A$ and $M$ may be written $(A',I,F)$ and $(M',\Delta,\lambda)$ respectively.
+
+\textbf{Definition (automaton)}.  Given automata $A=(A',I,F)$ and $B=(B',J,G)$.  Then $$h=(f,g):A\to B$$ is a \emph{homomorphism} if 
+\begin{itemize}
+\item $h:A'\to B'$ is a semiautomaton homomorphism, such that 
+\item $f(I)\subseteq J$, and $f(F)\subseteq G$.  
+\end{itemize}
+A homomorphism $h:A\to B$ is an isomorphism if $h:A'\to B'$ is an isomorphism such that $f(I)=J$ and $f(F)=G$.
+
+\textbf{Definition (state-output machine)}.  Given state-output machines $M=(M',\Delta,\lambda)$ and $N=(N',\Omega,\pi)$.  Then $$\phi=(h,k): M\to N$$ is a homomorphism if 
+\begin{itemize}
+\item $h:M'\to N'$ is a semiautomaton homomorphism, and 
+\item $k:\Delta \to \Omega$, such that $$k(\lambda(s,a))=\pi(f(s),g(a)),$$ for all $(s,a)\in S\times \Sigma$, where $S$ and $\Sigma$ are the state and input alphabets of $M$.
+\end{itemize}
+A homomorphism $\phi:A\to B$ is an isomorphism if $h:M'\to N'$ is an isomorphism and $k$ is a bijection.
+
+\begin{thebibliography}{8}
+\bibitem{ag} A. Ginzburg, {\em Algebraic Theory of Automata}, Academic Press (1968).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PolynomialHierarchyIsAHierarchy}
+\pmcreated{2013-03-22 13:02:14}
+\pmmodified{2013-03-22 13:02:14}
+\pmowner{uzeromay}{4983}
+\pmmodifier{uzeromay}{4983}
+\pmtitle{polynomial hierarchy is a hierarchy}
+\pmrecord{5}{33438}
+\pmprivacy{1}
+\pmauthor{uzeromay}{4983}
+\pmtype{Result}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+The polynomial hierarchy is a hierarchy.  Specifically: \[\Sigma^p_i\cup\Pi^p_i\subseteq\Delta^p_{i+1}\subseteq\Sigma^p_{i+1}\cap\Pi^p_{i+1}.\]
+
+\section*{Proof}
+
+To see that $\Sigma^p_i\cup\Pi^p_i\subseteq\Delta^p_{i+1}=\mathcal{P}^{\Sigma^p_i}$, 
+observe that the machine which checks its input against its oracle and accepts or rejects when the oracle accepts or rejects (respectively) is easily in $\mathcal{P}$, as is the machine which rejects or accepts when the oracle accepts or rejects (respectively).  These easily emulate $\Sigma^p_i$ and $\Pi^p_i$ respectively.
+
+Since $\mathcal{P}\subseteq\mathcal{NP}$, it is clear that 
+$\Delta^p_i\subseteq\Sigma^p_i$.  Since $\mathcal{P}^{\mathcal{C}}$ is 
+closed 
+under complementation for any 
+complexity class 
+$\mathcal{C}$ (the associated 
+machines are deterministic and always halt, so the complementary machine just 
+reverses which states are accepting), if 
+$L\in\mathcal{P}^{\Sigma^p_i}\subseteq\Sigma^p_i$ then so is $\overline{L}$, 
+and therefore $L\in\Pi^p_i$.
+
+
+
+Unlike the arithmetical hierarchy, the polynomial hierarchy is not known to be proper.  Indeed, if $\mathcal{P}=\mathcal{NP}$ then $\mathcal{P}=\mathcal{PH}$, so a proof that the hierarchy is proper would be quite significant.
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RedblackTree}
+\pmcreated{2013-03-22 16:28:32}
+\pmmodified{2013-03-22 16:28:32}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{red-black tree}
+\pmrecord{7}{38640}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapeword{block}
+\PMlinkescapeword{blocks}
+\PMlinkescapeword{type}
+\PMlinkescapeword{even}
+\PMlinkescapeword{complex}
+\PMlinkescapeword{running}
+\PMlinkescapeword{root}
+\PMlinkescapeword{addition}
+\PMlinkescapeword{order}
+\PMlinkescapeword{color}
+\PMlinkescapeword{row}
+
+A {\em red-black tree} is a type of self-balancing binary search tree, a data structure used in computer science, typically used to implement associative arrays. The original structure was invented in 1972 by Rudolf Bayer who called them "symmetric binary B-trees", but acquired its modern name in a paper in 1978 by Leo J. Guibas and Robert Sedgewick. It is complex, but has good worst-case running time for its operations and is efficient in practice: it can search, insert, and delete in $O(\log n)$ time, where $n$ is the number of elements in the tree.
+
+A red-black tree is a special type of binary tree, which is a structure used in computer science to organize pieces of comparable data, such as numbers. In binary trees, each piece of data is stored in a node. One of the nodes always functions as our starting place, and is not the child of any node; we call this the root node or root. It has up to two "children", other nodes to which it connects. Each of these children can have up to two children of its own, and so on. The root node thus has a path connecting it to any other node in the tree.
+
+If a node has no children, we call it a leaf node, since intuitively it is at the periphery of the tree. A subtree is the portion of the tree that can be reached from a certain node, considered as a tree itself. In red-black trees, the leaves are assumed to be null; that is, they do not contain any data.
+
+Binary search trees, including red-black trees, satisfy the constraint that every node contains a value less than or equal to all nodes in its right subtree, and greater than or equal to all nodes in its left subtree. This makes it quick to search the tree for a given value, and allows efficient in-order traversal of elements.
+
+Red-black trees, along with AVL trees, offer the best possible worst-case guarantees for insertion time, deletion time, and search time. Not only does this make them valuable in time-sensitive applications such as real-time applications, but it makes them valuable building blocks in other data structures which provide worst-case guarantees; for example, many data structures used in computational geometry can be based on red-black trees.
+
+Red-black trees are also particularly valuable in functional programming, where they are one of the most common persistent data structures, used to construct associative arrays and sets which can retain previous versions after mutations. The persistent version of red-black trees requires O(log n) space for each insertion or deletion, in addition to time.
+
+Red-black trees are an isometry of 2-3-4 trees. In other words, for every 2-3-4 tree, there exists at least one red-black tree with data elements in the same order. The insertion and deletion operations on 2-3-4 trees are also equivalent to color-flipping and rotations in red-black trees. This makes 2-3-4 trees an important tool for understanding the logic behind red-black trees, and this is why many introductory algorithm texts introduce 2-3-4 trees just before red-black trees, even though 2-3-4 trees are not often used in practice.
+
+A red-black tree is a binary search tree where each node has a color attribute, the value of which is either red or black. In addition to the ordinary requirements imposed on binary search trees, we make the following additional requirements of any valid red-black tree:
+
+A node is either red or black. 
+The root is black. 
+All leaves are black. (This includes the NIL children.) 
+Both children of every red node are black. (So every red node must have a black parent by modus tollens.) 
+Every simple path from a node to a descendant leaf contains the same number of black nodes. 
+These constraints enforce a critical property of red-black trees: that the longest possible path from the root to a leaf is no more than twice as long as the shortest possible path. The result is that the tree is roughly balanced. Since operations such as inserting, deleting, and finding values requires worst-case time proportional to the height of the tree, this theoretical upper bound on the height allows red-black trees to be efficient in the worst-case, unlike ordinary binary search trees.
+
+To see why these properties guarantee this, it suffices to note that no path can have two red nodes in a row, since both children of every red node are black and a black node is the only possible parent for a red node. The shortest possible path has all black nodes, and the longest possible path alternates between red and black nodes. Since all maximal paths have the same number of black nodes, because every simple path from a node to a descendant leaf contains the same number of black nodes, this shows that no path is more than twice as long as any other path.
+
+In many presentations of tree data structures, it is possible for a node to have only one child, and leaf nodes contain data. It is possible to present red-black trees in this paradigm, but it changes several of the properties and complicates the algorithms. For this reason, in this article we use "nil leaves" or "null leaves", which contain no data and merely serve to indicate where the tree ends, as shown above. These nodes are often omitted in drawings, resulting in a tree which seems to contradict the above principles, but which in fact does not. A consequence of this is that all internal (non-leaf) nodes have two children, although one or more of those children may be a null leaf.
+
+Some explain a red-black tree as a binary search tree whose edges, instead of nodes, are colored in red or black, but this does not make any difference. The color of a node in our terminology corresponds to the color of the edge connecting the node to its parent, except that the root node is always black in our terminology (property 2) whereas the corresponding edge does not exist.
+
+{\it This entry was adapted from the Wikipedia article \PMlinkexternal{Red-black tree}{http://en.wikipedia.org/wiki/Red-black_tree} as of December 19, 2006.}
+%%%%%
+%%%%%
+\end{document}

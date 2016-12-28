@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Btree}
+\pmcreated{2013-03-22 17:22:08}
+\pmmodified{2013-03-22 17:22:08}
+\pmowner{Mathprof}{13753}
+\pmmodifier{Mathprof}{13753}
+\pmtitle{B-tree}
+\pmrecord{9}{39730}
+\pmprivacy{1}
+\pmauthor{Mathprof}{13753}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{68P05}
+\pmdefines{order}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+A \emph{B-tree of \PMlinkescapetext{order} $m$} is a \PMlinkname{balanced}{BalancedTree} search tree in 
+which 
+\begin{itemize}
+\item
+every node has at most $m$ children,
+\item 
+every node, other than a root or leaf, has at least $m/2$ children,
+\item
+the root has at least 2 children if it is not a leaf,
+\item
+all leaf nodes appear on the same level
+\item
+a nonleaf node with $k$ children has $k-1$ keys.
+\end{itemize}
+
+
+If the tree has $n$ nodes its height is $O(log_2(n))$.
+
+%%%%%
+%%%%%
+\end{document}

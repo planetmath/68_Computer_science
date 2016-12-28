@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{InsertionOperationOnLanguages}
+\pmcreated{2013-03-22 18:56:53}
+\pmmodified{2013-03-22 18:56:53}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{insertion operation on languages}
+\pmrecord{6}{41805}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68Q45}
+\pmsynonym{insertion-closed}{InsertionOperationOnLanguages}
+\pmsynonym{insertion-closure}{InsertionOperationOnLanguages}
+\pmrelated{DeletionOperationOnLanguages}
+\pmrelated{ShuffleOfLanguages}
+\pmdefines{insertion}
+\pmdefines{insertion closed}
+\pmdefines{insertion closure}
+\pmdefines{$k$-insertion}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\Sigma$ be an alphabet, and $u,v$ words over $\Sigma$.  An \emph{insertion} of $u$ into $v$ is a word of the form $v_1uv_2$, where $v=v_1v_2$.  The concatenation of two words is just a special case of insertion.  Also, if $w$ is an insertion of $u$ into $v$, then $v$ is a deletion of $u$ from $w$.
+
+\emph{The insertion} of $u$ into $v$ is the set of all insertions of $v$ into $u$, and is denoted by $v\rhd u$.
+
+The notion of insertion can be extended to languages.  Let $L_1,L_2$ be two languages over $\Sigma$.  The insertion of $L_1$ into $L_2$, denoted by $L_1 \rhd L_2$, is the set of all insertions of words in $L_1$ into words in $L_2$.  In other words, $$L_1 \rhd L_2 = \bigcup \lbrace u\rhd v\mid u\in L_1, v\in L_2 \rbrace.$$  So $u \rhd v = \lbrace u\rbrace \rhd \lbrace v\rbrace$.
+
+A language $L$ is said to be \emph{insertion closed} if $L\rhd L \subseteq L$.  Clearly $\Sigma^*$ is insertion closed, and arbitrary intersection of insertion closed languages is insertion closed.  Given a language $L$, the \emph{insertion closure} of $L$, denoted by $\operatorname{Ins}(L)$, is the smallest insertion closed language containing $L$.  It is clear that $\operatorname{Ins}(L)$ exists and is unique.
+
+More to come...
+
+The concept of insertion can be generalized.  Instead of the insertion of $u$ into $v$ taking place in one location in $v$, the insertion can take place in several locations, provided that $u$ must also be broken up into pieces so that each individual piece goes into each inserting location.  More precisely, given a positive integer $k$, a \emph{$k$-insertion of $u$ into $v$} is a word of the form $$v_1 u_1 \cdots v_k u_k v_{k+1}$$ where $u=u_1 \cdots u_k$ and $v=v_1 \cdots v_{k+1}$.  So an insertion is just a $1$-insertion.  \emph{The $k$-insertion} of $u$ into $v$ is the set of all $k$-insertions of $u$ into $v$, and is denoted by $u \rhd^{[k]} v$.  Clearly $\rhd^{[1]} = \rhd$.
+
+\textbf{Example}.  Let $\Sigma=\lbrace a,b\rbrace$, and $u=aba$, $v=bab$, and $w=bababa$.  Then 
+\begin{itemize}
+\item $w$ is an insertion of $u$ into $v$, as well as an insertion of $v$ into $u$, for $w=vu\lambda = \lambda v u$.
+\item $w$ is also a $2$-insertion of $u$ into $v$: 
+\begin{itemize}
+\item
+the decompositions $u=(ab)(a)$ and $v=(b)(ab)\lambda$
+\item
+or the decompositions  $u=\lambda u$ and $v=\lambda v\lambda$
+\end{itemize}
+produce $(b)(ab)(ab)(a)\lambda = \lambda \lambda v u \lambda = w$.
+\item Finally, $w$ is also a $2$-insertion of $v$ into $u$, as the decompositions $u = \lambda u \lambda$ and $v= v \lambda$ produce $\lambda v u\lambda  \lambda = w$.
+\item $u\rhd v=\lbrace ababab, babaab, baabab, bababa\rbrace$.
+\end{itemize}
+
+From this example, we observe that a $k$-insertion is a $(k+1)$-insertion, and every $k$-insertion of $u$ into $v$ is a $(k+1)$-insertion of $v$ into $u$.  As a result, $$u \rhd^{[k]} v \subseteq (u \rhd^{[k+1]} v) \cap (v \rhd^{[k+1]} u).$$
+
+As before, given languages $L_1$ and $L_2$, \emph{the $k$-insertion} of $L_1$ into $L_2$, denoted by $L_1 \rhd^{[k]} L_2$, is the union of all $u \rhd^{[k]} v$, where $u\in L_1$ and $v\in L_2$.
+
+\textbf{Remark}.  Some closure properties regarding insertions: let $\mathscr{R}$ be the family of regular languages, and $\mathscr{F}$ the family of context-free languages.  Then $\mathscr{R}$ is closed under $\rhd^{[k]}$, for each positive integer $k$.  $\mathscr{F}$ is closed $\rhd^{[k]}$ only when $k=1$.  If $L_1\in \mathscr{R}$ and $L_2\in \mathscr{F}$, then $L_1 \rhd^{[k]} L_2$ and $L_2 \rhd^{[k]} L_1$ are both in $\mathscr{F}$.  The proofs of these closure properties can be found in the reference.
+
+\begin{thebibliography}{9}
+\bibitem{mi} M. Ito, {\em Algebraic Theory of Automata and Languages}, World Scientific, Singapore (2004).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

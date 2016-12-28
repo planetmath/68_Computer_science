@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MyhillNerodeTheorem}
+\pmcreated{2013-03-22 18:52:13}
+\pmmodified{2013-03-22 18:52:13}
+\pmowner{Ziosilvio}{18733}
+\pmmodifier{Ziosilvio}{18733}
+\pmtitle{Myhill-Nerode theorem}
+\pmrecord{14}{41712}
+\pmprivacy{1}
+\pmauthor{Ziosilvio}{18733}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{20M35}
+\pmsynonym{Myhill-Nerode theorem for languages}{MyhillNerodeTheorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $L$ be a language on the finite alphabet $A$
+and let $\mathcal{N}_L$ be its Nerode equivalence.
+The following are equivalent.
+\begin{enumerate}
+\item
+$L$ is recognized by a deterministic finite automaton.
+\item
+$A^\ast/\mathcal{N}_L$ is finite.
+\end{enumerate}
+Moreover, the number of classes of $\mathcal{N}_L$
+is the smallest number of states of a DFA recognizing $L$.
+
+\textit{Proof.}
+First, suppose
+\begin{math}
+A^\ast/\mathcal{N}_L=\{q_0=[\lambda]_{\mathcal{N}_L},\ldots,q_{k-1}\}=Q,
+\end{math}
+where $\lambda$ is the empty word on $A$.
+Construct a DFA $\mathcal{A}=\left<Q,A,q_0,\delta,F\right>$
+(called the \emph{Nerode automaton} for $L$)
+with $\delta:Q\times A\to Q$ defined by
+\begin{equation} \label{eq:map}
+\delta(q,a)=[wa]_{\mathcal{N}_L}\;,\;\;w\in q\;,
+\end{equation}
+and
+\begin{equation} \label{eq:final}
+F=\{q\in Q\mid\exists w\in L\mid w\in q\}\;.
+\end{equation}
+Then $\delta$ is well defined
+because $w_1\mathcal{N}_Lw_2$ implies $w_1u\mathcal{N}_Lw_2u$.
+It is also straightforward that $\mathcal{A}$ recognizes $L$.
+
+On the other hand,
+let $\mathcal{A}=\left<Q,A,q_0,\delta,F\right>$
+be a DFA that recognizes $L$.
+Extend $\delta$ to $Q\times A^\ast$ by putting
+$\delta(q,\lambda)=q$ and
+$\delta(q,aw)=\delta(\delta(q,a),w)$
+for every $q\in Q$, $a\in A$, $w\in A^\ast$.
+Define $f:Q\to A^\ast/\mathcal{N}_L\cup\{\emptyset\}$ as
+\begin{equation} \label{eq:f}
+f(q) = \left\{\begin{array}{ll}
+[w]_{\mathcal{N}_L}
+& \mathrm{if}\;\delta(q_0,w)=q \\
+\emptyset
+& \mathrm{if}\;\delta(q_0,w)\neq q\forall w\in A^\ast
+\end{array}
+\right.
+\end{equation}
+Then $f$ is well defined.
+In fact, suppose $q_1=q_2=q$:
+then either $f(q_1)=f(q_2)=\emptyset$,
+or there are $w_1,w_2\in A^\ast$ such that $\delta(q_0,w_1)=\delta(q_0,w_2)=q$.
+But in the latter case, $\delta(q_0,w_1u)=\delta(q_0,w_2u)=\delta(q,u)$
+for any $u\in A^\ast$,
+hence $w_1\mathcal{N}_Lw_2$ since $\mathcal{A}$ recognizes $L$.
+Finally, for any $w\in A^\ast$ we have
+\begin{math}
+[w]_{\mathcal{N}_L}=f\left(\delta(q_0,w)\right),
+\end{math}
+so every class of $\mathcal{N}_L$ has a preimage according to $f$;
+consequently, $|Q|\geq|A^\ast/\mathcal{N}_L|$.
+\hfill$\Box$
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,357 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DiamondLemma}
+\pmcreated{2013-03-22 15:23:51}
+\pmmodified{2013-03-22 15:23:51}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{diamond lemma}
+\pmrecord{9}{37235}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{03C05}
+\pmrelated{TerminatingReduction}
+\pmrelated{NormalizingReduction}
+\pmdefines{reduction}
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{alg}{Algorithm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+% making logically defined graphics
+\usepackage[all]{xy}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\providecommand{\cprime}{\ensuremath{{}^\prime}}
+\providecommand*{\Dash}{%
+   \hspace*{0.166667em}\textemdash\hspace{0.166667em}%
+}
+\providecommand*{\Ldash}{%
+   \hspace{0.166667em}\textemdash\hspace*{0.166667em}%
+}
+\newcommand*{\setOf}[2]{%
+   \left\{ \, #1 \,\,\vrule\,\, #2 \, \right\}%
+}
+\begin{document}
+The diamond lemmas constitute a \PMlinkescapetext{class} of results about the existence 
+of a unique normal form. Diamond lemmas exist in many diverse areas of 
+mathematics, and as a result their technical contents can be quite 
+different, but they are easily recognisable from their overall 
+\PMlinkescapetext{structure} and basic idea\Dash the ``diamond'' condition 
+from which they inherit their name.
+
+\PMlinkescapeword{Theorem}
+\PMlinkescapeword{Lemma}
+\PMlinkescapeword{clear}
+\PMlinkescapeword{state}
+\PMlinkescapeword{origin}
+\PMlinkescapeword{even}
+
+
+\section{Newman's Diamond Lemma}
+
+The basic diamond lemma, that of Newman~\cite{Newman}, is today most 
+easily presented in \PMlinkescapetext{terms} of binary relations.
+
+\begin{thm} \label{S:NDL}
+  Let $X$ be a set and let $\rightarrow$ be a binary relation on $X$. 
+  If $\rightarrow$ is terminating, then the following conditions are equivalent:
+  \begin{enumerate}
+    \item \label{Cond:Diamond}
+      For all \(a,b,c \in X\) such that \(a \rightarrow b\) and \(a 
+      \rightarrow c\), then $b$ and $c$ are joinable.
+    \item \label{Cond:UniqueNF}
+      Every \(a \in X\) has a unique normal form.
+  \end{enumerate}
+\end{thm}
+
+Condition~\ref{Cond:Diamond} can be graphically drawn as
+$$
+  \xymatrix@-2ex{
+    & a \ar[dl] \ar[dr] \\
+    b \ar[dr]^>>>>{*} & & c \ar[dl]_>>>>{*} \\
+    & d
+  }
+$$
+where $\stackrel{*}{\rightarrow}$ denotes the reflexive transitive closure of $\rightarrow$.  This is the ``diamond'' from which the result derives its 
+name\Dash not crystallised carbon, but merely a square standing on one 
+corner. In relation to this picture, what the condition says is that 
+whenever one has \(a,b,c \in X\) forming the top two sides of such a 
+diagram, there is a fourth corner \(d \in X\) which completes the 
+diamond.
+
+\medskip
+
+The typical case to which one applies this theorem is that $X$ is a 
+set of formal terms on which one wishes to define an equivalence 
+relation $\sim$. The $\rightarrow$ relation encodes a set of 
+``elementary'' equivalences\Ldash an example in standard algebra of 
+such an elementary equivalence might be the instance 
+\(a(b +\nobreak c) \rightarrow ab + ac\) of the distributivity 
+axiom\Dash that generate the wanted $\sim$. It is 
+techincally possible to define the equivalence $\sim$ as the 
+reflexive--transitive--symmetric closure of $\rightarrow$, but 
+since $X$ is typically infinite that definition does not lead to 
+an effective method for determining whether \(x \sim y\). However 
+when the relation $\rightarrow$ satisfies the conditions in 
+Theorem~\ref{S:NDL}, there does exist an algorithm which given 
+$\rightarrow$ determines whether two arbitrary elements are related 
+by $\sim$.
+
+In a computational setting, the interpretation of \(x \rightarrow y\) 
+is usually that there exists a ``one-step simplification'' that 
+converts the expression $x$ to the expression $y$. The corresponding 
+interpretation of \(x \stackrel{*}{\rightarrow} y\) is thus that 
+there exists a finite sequence of ``simplifications'' that converts 
+$x$ to $y$. The formal term used for ``simplifications'' in this 
+sense is \emph{reductions}, so \(x \stackrel{*}{\rightarrow} y\) is 
+read as ``$x$ reduces to $y$'' or ``$x$ can be reduced to $y$''. 
+
+%\begin{definition}
+%  Let $X$ be a set and $\rightarrow$ a binary relation on $X$. An 
+%  element \(x \in X\) is said to be on \emph{normal form} with 
+%  respect to $\rightarrow$ if \(x \nrightarrow y\) for all \(y \in 
+%  X\), i.e., if there is no \(y \in X\) such that \(x \rightarrow 
+%  y\). To be \emph{irreducible} and to be \emph{terminal} are two 
+%  common synonyms of `to be on normal form'.
+%  
+%  Denote by $\stackrel{*}{\rightarrow}$ the reflexive--transitive 
+%  closure of $\rightarrow$. An element \(y \in X\) is said to 
+%  \emph{a normal form of} \(x \in X\) if $y$ is on normal form and 
+%  \(x \stackrel{*}{\rightarrow} y\).
+%\end{definition}
+%
+%In these terms, condition~\ref{Cond:UniqueNF} of 
+%Theorem~\ref{S:NDL} can be more succintly stated as ``every element 
+%of $X$ has a unique normal form''. 
+
+The theorem has several immediate 
+applications\Ldash first of all that there is a unique function 
+\(N\colon X \longrightarrow X\) which sends arbitrary elements of 
+$X$ to their normal forms\Dash and this leads to a test for whether 
+arbitrary elements are equivalent.
+
+\begin{lem} \label{L:EquivAndNF}
+  Let $X$ be a set and $\rightarrow$ a binary relation on $X$ such 
+  that all elements of $X$ has a unique normal form with respect to 
+  $\rightarrow$. Denote by $\sim$ the reflexive transitive symmetric 
+  closure of $\rightarrow$ and denote by $N$ the function 
+  \(X \longrightarrow X\) which sends every element to its normal 
+  form with respect to $\rightarrow$. Then for all \(x,y \in X\),
+  \begin{equation}
+     x \sim y \quad\text{if and only if}\quad N(x)=N(y) \text{.}
+  \end{equation}
+\end{lem}
+\begin{proof}
+  Denote by $\stackrel{*}{\rightarrow}$ the reflexive--transitive 
+  closure of $\rightarrow$ and denote by $\leftrightarrow$ the 
+  symmetrisation of $\rightarrow$. If \(N(x)=N(y)\) then obviously 
+  \(x \stackrel{*}{\rightarrow} N(x) = N(y) \stackrel{*}{\leftarrow} 
+  y\) and thus \(x \sim N(x) \sim y\) as claimed. If conversely \(x 
+  \sim y\) then there must exist some sequence
+  $$
+    z_0 \leftrightarrow z_1 \leftrightarrow \dotsb \leftrightarrow 
+    z_{n-1} \leftrightarrow z_n
+  $$
+  where \(z_0,\dotsc,z_n \in X\), \(z_0=x\), and \(z_n=y\). For every 
+  $z_k$ one of \(z_k \rightarrow z_{k+1}\) and \(z_k \leftarrow 
+  z_{k+1}\) must hold. In the former case \(z_k 
+  \stackrel{*}{\rightarrow} z_{k+1} \stackrel{*}{\rightarrow} 
+  N(z_{k+1})\) and thus by transitivity \(z_k \stackrel{*}{\rightarrow} 
+  N(z_{k+1})\), but this means $N(z_{k+1})$ is a normal form also 
+  of $z_k$. In the latter case one similarly shows that $N(z_k)$ is a 
+  normal form of $z_{k+1}$. Either way it follows from the uniqueness 
+  of the normal form that \(N(z_k) = N(z_{k+1})\). Thus \(N(z_0) = 
+  N(z_1) = \dotsb = N(z_{n-1}) = N(z_n)\) and hence \(N(x)=N(y)\) as 
+  claimed.
+\end{proof}
+
+
+Another application of normal forms is to serve as representatives of 
+the equivalence classes of $X$. Many mathematical constructions of 
+algebraic structures (e.g.~that of a quotient of a group) end up  
+producing a set $X/{\sim}$ of equivalence classes of some given set 
+$X$, but these are as a rule unfeasible for computational purposes. 
+What one can do instead is to choose an element from each equivalence 
+class and use these as representatives of their equivalence classes. 
+When normal forms are known to be unique, there trivially exists a 
+bijection from
+$$
+  X_{\mathrm{nf}} = \setOf{ x \in X }{ \text{$x$ is on normal form} }
+$$
+to $X/{\sim}$ given by \(x \mapsto [x]_\sim\), and its inverse can 
+thanks to Lemma~\ref{L:EquivAndNF} be defined in terms of the normal 
+form map $N$ as \([x]_\sim \mapsto N(x)\).
+
+How does one know that the normal form map $N$ is effective, though? 
+This is because of the terminating property on the binary relation 
+in Theorem~\ref{S:NDL}.
+
+%\begin{definition}
+%  Let $X$ be a set. A strict binary relation $\rightarrow$ on $X$ 
+%  is said to satisfy the \emph{descending chain condition} (or be 
+%  \emph{DCC} for short) if no infinite sequence 
+%  \(\{x_n\}_{n=1}^\infty \subseteq X\) satisfies 
+%  \(x_n \rightarrow x_{n+1}\) for all \(n \geqslant 1\).
+%\end{definition}
+%
+%In other words, $\rightarrow$ satisfies the descending chain 
+%condition if every (strictly) $\rightarrow$-descending sequence
+%$$
+%  x_1 \rightarrow x_2 \rightarrow x_3 \rightarrow \dotsb
+%$$
+%terminates after a finite number of steps. The business about 
+%strictness is because this is a definition that is suitable for 
+%strict inequality relations such as $>$. If one instead wishes to 
+%state the condition in terms of its non-strict counterpart 
+%$\geqslant$, one would rather say that $\geqslant$ satisfies the 
+%descending chain condition if every infinite $\geqslant$-descending 
+%sequence
+%$$
+%  x_1 \geqslant x_2 \geqslant x_3 \geqslant \dotsb
+%$$
+%is eventually constant, i.e., \(x_n = x_{n+1} = x_{n+2} = \dotsb\) 
+%for some natural number $n$. One consequence of $\rightarrow$ being 
+%DCC is that there cannot be any closed loops \(x_1 \rightarrow x_2 
+%\rightarrow \dotsb \rightarrow x_n \rightarrow x_1\), and from this 
+%follows that the reflexive--transitive closure 
+%$\stackrel{*}{\rightarrow}$ is a partial order (rather than a 
+%quasiorder). 
+
+The primary consequence of being terminating is that 
+$\stackrel{*}{\rightarrow}$ is well-founded, and it is no surprise that Theorem~\ref{S:NDL} is proved using well-founded induction. Being terminating is also what guarantees that the following algorithm ``terminates''.
+
+\begin{alg}[Normal form] \label{Alg:NormalForm}
+  Let $X$ be a set and $\rightarrow$ a strict binary relation on $X$ 
+  which satisfies the descending chain condition. 
+  \begin{description}
+    \item[Input]
+      An element \(x \in X\).
+    \item[Output]
+      A normal form of $x$.
+    \item[Procedure]
+      If $x$ is on normal form with respect to $\rightarrow$ then 
+      return $x$. Otherwise there is some \(y \in X\) such that \(x 
+      \rightarrow y\); pick one such $y$. Set \(x:=y\) and repeat 
+      the procedure from start.
+  \end{description}
+\end{alg}
+
+For \PMlinkescapetext{relations} $\rightarrow$ which 
+\PMlinkescapetext{satisfy} the descending chain 
+condition and have unique normal forms, Algorithm~\ref{Alg:NormalForm} 
+and Lemma~\ref{L:EquivAndNF} 
+combine to an algorithm for deciding the 
+relation $\sim$. A typical problem is however that uniqueness of the 
+normal form is a global condition that is very hard to establish 
+using elementary methods. 
+\emph{Theorem~\ref{S:NDL} offers an 
+equivalent local condition that often is straightforward to verify in 
+each particular case by explicit calculations.}
+
+
+\section{Diamond lemmas for algebraic structures}
+
+One disadvantage of the basic diamond lemma (Theorem~\ref{S:NDL}) is 
+that it requires all reductions to be explicit, whereas the 
+\PMlinkescapetext{average} mathematician probably expects it 
+to handle reduction schemas transparently. To illustate the 
+\PMlinkescapetext{difference}, consider again the 
+reduction \(a(b +\nobreak c) \rightarrow ab+ac\). This does 
+\emph{not} imply \((d +\nobreak e)(b +\nobreak c) \rightarrow 
+(d +\nobreak e)b + (d +\nobreak e)c\), or even \(2(b +\nobreak c) 
+\rightarrow 2b + 2c\), because all three left hand 
+\PMlinkescapetext{sides} are distinct as formulae 
+(i.e., as elements of $X$). In \PMlinkescapetext{order} to let $a$, $b$, and 
+$c$ be arbitrary, one need to explicitly state that e.g.\@ 
+``\(a(b +\nobreak c) \rightarrow ab+ac\) for all well-formed formulae 
+$a$, $b$, and $c$''. Even this may be less than what was intended, 
+since it is often the case that one wants it to follow from 
+\(a(b +\nobreak c) \rightarrow ab+ac\) also that 
+\(f\bigl( a(b +\nobreak c) \bigr) \rightarrow f(ab +\nobreak ac)\) 
+for arbitrary functionalised expressions $f$. Theorem~\ref{S:NDL} 
+requires its user to take care of such details explicitly.
+
+Moreover, the conditions in Theorem~\ref{S:NDL} are stated about 
+arbitrary elements of $X$, so even if one employs schemas in the 
+definition of $\rightarrow$, it is necessary to verify that 
+condition~\ref{Cond:Diamond} holds for every concrete triple $(a,b,c)$ 
+of elements of $X$ such that \(b \leftarrow a \rightarrow c\). This too 
+can be done collectively using proof schemas, but the situation is 
+complicated enough that it is often far from clear whether all cases 
+have been checked. It is furthermore common that trivial 
+verifications of a syntactic origin outnumber the verifications that 
+have interesting mathematical content. This makes it less likely that 
+mathematicians will actually bother to produce a 
+\PMlinkescapetext{complete} proof, and 
+more likely that they will skip it altogether by resorting to the 
+notorious ``It is easy to see that \dots''
+
+Finally, it is not always the case than one just wants an equivalence 
+relation. When the \PMlinkescapetext{base} set $X$ has an 
+established \PMlinkescapetext{algebraic} structure one typically 
+rather wants $\sim$ to be a congruence 
+relation, but the basic diamond lemma can of course not take such 
+sophistications into account. Therefore \emph{there exist also a number 
+of specialised diamond lemmas which are tailored to particular 
+\PMlinkescapetext{algebraic structures}} 
+and can make do with verifications of significantly fewer 
+cases than the basic diamond lemma.
+
+\medskip
+
+The most familiar such result is probably the \emph{diamond lemma for 
+ring theory} of Bergman~\cite{Bergman}, also known as the 
+\emph{composition lemma for associative algebras}~\cite{Bokut}.
+
+\bigskip
+
+[Give full statement of theorem? It's quite a mouthful.]
+
+[Write about relation to Gr\"obner basis theory.]
+
+
+
+\begin{thebibliography}{9}
+%
+\bibitem{Bergman} 
+   \textsc{G. M. Bergman}: 
+   The Diamond Lemma for Ring Theory, 
+   \textit{Adv.\ Math.} \textbf{29} (1978), 178--218.
+%
+\bibitem{Bokut}
+   \textsc{L. A. Bokut\cprime}:
+   Embeddings into simple associative algebras (Russian),
+   \textit{Algebra i Logika} \textbf{15}, no.~2 (1976), 
+   pp.~117--142 and~245.
+   English translation in \textit{Algebra and Logic}, pp.~73--90.
+%
+\bibitem{Newman} 
+   \textsc{M. H. A. Newman}: 
+   On theories with a combinatorial definition of ``equivalence'', 
+   \textit{Ann. of Math.} \textbf{43} (1942), 223--243.
+%
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

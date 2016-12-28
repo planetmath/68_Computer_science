@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PolynomialHierarchy}
+\pmcreated{2013-03-22 13:02:11}
+\pmmodified{2013-03-22 13:02:11}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{polynomial hierarchy}
+\pmrecord{6}{33437}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q15}
+\pmdefines{PH}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+The \emph{polynomial hierarchy} is a hierarchy of complexity classes generalizing the relationship between $\mathcal{P}$ and $\mathcal{NP}$.
+
+We let $\Sigma^p_0=\Pi^p_0=\Delta^p_0=\mathcal{P}$, then $\Delta^p_{i+1}=\mathcal{P}^{\Sigma^p_i}$ and $\Sigma^p_{i+1}=\mathcal{NP}^{\Sigma^p_i}$.  Define $\Pi^p_i$ to be  $co\Sigma^p_i$.
+
+For instance $\Sigma^p_1=\mathcal{NP}^\mathcal{P}=\mathcal{NP}$.
+
+The complexity class $\mathcal{PH}=\bigcup_{i\in\mathbb{N}} \Sigma^p_i$.
+
+The polynomial hierarchy is closely related to the arithmetical hierarchy; indeed, an alternate definition is almost identical to the definition of the arithmetical hierarchy but stricter rules on what quantifiers can be used.
+
+When there is no risk of confusion with the arithmetical hierarchy, the superscript $p$ can be dropped.
+%%%%%
+%%%%%
+\end{document}

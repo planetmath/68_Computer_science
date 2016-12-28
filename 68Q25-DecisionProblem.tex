@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DecisionProblem}
+\pmcreated{2013-03-22 13:01:33}
+\pmmodified{2013-03-22 13:01:33}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{decision problem}
+\pmrecord{12}{33423}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q25}
+\pmdefines{enumerates}
+\pmdefines{decide}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+Let $T$ be a Turing machine and let $L\subseteq\Gamma^+$ be a language.  We say $T$ \emph{decides} $L$ if for any $x\in L$, $T$ accepts $x$, and for any $x\notin L$, $T$ rejects $x$.
+
+We say $T$ \emph{enumerates} $L$ if:
+$$x\in L \text{ iff } T \text{ accepts } x$$
+
+For some Turing machines (for instance non-deterministic machines) these definitions are equivalent, but for others they are not.  For example, in order for a deterministic Turing machine $T$ to decide $L$, it must be that $T$ halts on every input.  On the other hand $T$ could enumerate $L$ if it does not halt on some strings which are not in $L$.
+
+$L$ is sometimes said to be a \emph{decision problem}, and a Turing machine which decides it is said to solve the decision problem.
+
+The set of strings which $T$ accepts is denoted $L(T)$.
+%%%%%
+%%%%%
+\end{document}

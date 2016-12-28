@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ContinuantPolynomial}
+\pmcreated{2013-03-22 18:03:36}
+\pmmodified{2013-03-22 18:03:36}
+\pmowner{veselin}{20506}
+\pmmodifier{veselin}{20506}
+\pmtitle{Continuant polynomial}
+\pmrecord{7}{40590}
+\pmprivacy{1}
+\pmauthor{veselin}{20506}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q01}
+%\pmkeywords{Continued Fraction}
+%\pmkeywords{Euclidean Algorithm}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+It is defined as follow
+$$
+K_n(x_1,x_2,\dots,x_n):=
+\left\{
+\begin{array}{ll}
+ 1, & {\rm if~} n=0;\\
+ x_1, & {\rm if~} n=1;\\
+ x_1 K_{n-1}(x_2,\dots,x_n) + K_{n-2}(x_3,\dots,x_n), & {\rm if~} n>1.\\
+\end{array}
+\right.
+$$
+
+It is easy to show, that
+$$
+K_n(x_1,x_2,\dots,x_n)=
+\det
+\left(
+ \begin{array}{rrrrrr}
+   x_n &  +1  &  0  & \dots &  0  &  0  \\
+    -1  &x_{n-1}&  +1  & \dots &  0  &  0  \\
+    0  &  -1  &  x_{n-2}  & \ddots &  0  &  0  \\
+
+   \vdots & \vdots & \ddots & \ddots & \vdots & \vdots \\
+
+    0  &  0  &  0  & \dots &  x_2  &  +1  \\
+    0  &  0  &  0  & \dots &  -1  &  x_1  \\
+ \end{array}
+\right).
+$$
+
+References: Knuth D.E. {\bf "The Art of Computer Programming, Volume 2: Seminumerical Algorithms}.
+%%%%%
+%%%%%
+\end{document}

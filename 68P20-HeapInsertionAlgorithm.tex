@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HeapInsertionAlgorithm}
+\pmcreated{2013-03-22 12:29:27}
+\pmmodified{2013-03-22 12:29:27}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{heap insertion algorithm}
+\pmrecord{9}{32715}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P20}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{68P05}
+\pmrelated{Heap}
+\pmrelated{HeapRemovalAlgorithm}
+\pmrelated{Heapsort}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{lbh-pseudocode}
+\usepackage{program}
+\begin{document}
+The \emph{heap insertion algorithm} inserts a new value into a heap, maintaining the heap property.  Let $H$ be a heap, storing $n$ elements over which the \PMlinkname{relation}{Relation} $\preceq$ imposes a total ordering.  Insertion of a value $x$ consists of initially adding $x$ to the bottom of the tree, and then \emph{sifting} it upwards until the heap property is regained.
+
+Sifting consists of comparing $x$ to its parent $y$.  If $x \preceq y$ holds, then the heap property is violated.  If this is the case, $x$ and $y$ are swapped and the operation is repeated for the new parent of $x$.
+
+Since $H$ is a balanced binary tree, it has a maximum depth of $\lceil\log_2n\rceil+1$.  Since the maximum number of times that the sift operation can occur is constrained by the depth of the tree, the worst case time complexity for heap insertion is $\mathcal{O}(\log n)$.
+This means that a heap can be built from scratch to hold a multiset of $n$ values in $\mathcal{O}(n\log n)$ time.
+
+What follows is the pseudocode for implementing a heap insertion.
+For the given pseudocode, we presume that the heap is actually represented implicitly in an array (see the binary tree entry for details).
+
+\begin{program}
+\mathrm{HeapInsert}(H, n, \preceq, x)
+\text{{\bf Input}: A heap $(H,\preceq)$ (represented as an array) containing $n$ values and a new value $x$ to be inserted into $H$.}
+\text{{\bf Output}: $H$ and $n$, with $x$ inserted and the heap property preserved.}
+\text{{\bf Procedure}:}
+n\gets n+1
+H[n] \gets x
+child \gets n
+parent \gets n \textrm{ div } 2
+\WHILE parent \ge 1 \DO
+  \IF H[child] \preceq H[parent]
+  \THEN child \gets parent
+        parent \gets parent \textrm{ div } 2
+  \ELSE parent \gets 0
+  \FI
+\OD
+\end{program}
+
+%%%%%
+%%%%%
+\end{document}

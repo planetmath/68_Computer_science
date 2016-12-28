@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Queue}
+\pmcreated{2013-03-22 16:14:50}
+\pmmodified{2013-03-22 16:14:50}
+\pmowner{Mravinci}{12996}
+\pmmodifier{Mravinci}{12996}
+\pmtitle{queue}
+\pmrecord{4}{38351}
+\pmprivacy{1}
+\pmauthor{Mravinci}{12996}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P05}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+A \emph{queue} is a one-dimensional data structure to which new members or elements are generally added (pushed or enqueued) at the end and removed (popped or dequeued) from the start. (Compare this to a stack).
+
+Obviously a new pushed element gets an index number one higher than the most recently pushed element. It depends on the actual implementation whether elements are re-indexed when the start element is popped. To give two real-world examples:
+
+a. When people queue up at the DMV by getting a number from the Take-A-Number dispenser, they give up their number ticket when they get up to the booth, but the number of the tickets of the people behind them in the queue are not changed to reflect their decreasing distance to the front of the queue. For example, when ticket 47 is called, the person with ticket 48 still has ticket 48 in their hands.
+
+b. When Netflix mails its customers the number 1 DVD on their queue, all the movies remaining in the queue are renumbered accordingly, automatically, by the website. Suppose for example a customer's queue goes something like this:
+
+1. {\it Proof}
+2. {\it Good Will Hunting}
+3. {\it A Beautiful Mind}
+4. {\it Pi}
+5. {\it Stand and Deliver}
+etc.
+
+Then Netflix sends them {\it Proof}, so the customer's queue changes like so:
+
+1. {\it Good Will Hunting}
+2. {\it A Beautiful Mind}
+3. {\it Pi}
+4. {\it Stand and Deliver}
+5. {\it Sneakers}
+etc.
+
+Of course there are always deviations. In a queue to get on a roller-coaster, someone might take cuts. Or it might in some cases even be institutionally permissible to ignore queue order somewhat. For example, in a triage situation, a doctor might choose to treat the second patient to arrive, an old woman who is coughing her lungs out, instead of the first patient, a young man with a paper cut. Or in the Netflix example, if all the copies of {\it Proof} are out with other customers, Netflix might send the example customer {\it Good Will Hunting} now and then {\it Proof} later.
+
+In practice, queues always have capacity limits. For example, a computer that is tied up with a very computationally intensive task (such as factoring a very large prime) might become sluggish in processing the keyboard buffer. The user might quickly type way more than the buffer can accomodate, and when the computer finally can process the keyboard buffer, only a few letters of what the user typed might show up in the output.
+%%%%%
+%%%%%
+\end{document}

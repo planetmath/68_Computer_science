@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Confluence}
+\pmcreated{2013-03-22 17:47:24}
+\pmmodified{2013-03-22 17:47:24}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{confluence}
+\pmrecord{14}{40251}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmrelated{ChurchRosserProperty}
+\pmrelated{AmalgamationProperty}
+\pmrelated{NormalizingReduction}
+\pmrelated{TerminatingReduction}
+\pmdefines{confluent}
+\pmdefines{joinable}
+\pmdefines{semi-confluent}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Call a binary relation $\to$ on a set $S$ a reduction.  Let $\to^*$ be the reflexive transitive closure of $\to$.  Two elements $a,b\in S$ are said to be \emph{joinable} if there is an element $c\in S$ such that $a\to^* c$ and $b\to^* c$.  Graphically, this means that 
+\begin{center}
+$
+\xymatrix@R-=10pt{
+a\ar[dr]^{*}\\
+&c\\
+b\ar[ur]_{*}
+}
+$
+\end{center}
+where the starred arrows represent 
+$$a\to a_1\to \cdots \to a_n \to c\qquad\mbox{ and }\qquad b\to b_1\to \cdots \to b_m \to c$$
+respectively ($m,n$ are non-negative integers).  The case $m=0$ (or $n=0$) means $a\to c$ (or $b\to c$).
+
+\textbf{Definition}.  $\to$ is said to be \emph{confluent} if whenever $x\to^* a$ and $x\to^*b$, then $a,b$ are joinable.   In other words, $\to$ is confluent iff $\to^*$ has the amalgamation property.  Graphically, this says that, whenever we have a diagram
+
+\begin{center}
+$
+\xymatrix@R-=10pt{
+&a\\
+x\ar[ur]^{*}\ar[dr]_{*} &\\
+&b
+}
+$
+\end{center}
+then it can be ``completed'' into a ``diamond'':
+\begin{center}
+$
+\xymatrix@R-=10pt{
+&a\ar[dr]^{*}\\
+x\ar[ur]^{*}\ar[dr]_{*} &&c\\
+&b\ar[ur]_{*}&
+}
+$
+\end{center}
+
+\textbf{Remark}.  A more general property than confluence, called \emph{semi-confluence} is defined as follows: $\to$ is \emph{semi-confluent} if for any triple $x,a,b\in S$ such that $x\to a$ and $x\to^* b$, then $a,b$ are joinable.  It turns out that this seemingly weaker notion is actually equivalent to the stronger notion of confluence.  In addition, it can be shown that $\to$ is confluent iff $\to$ has the Church-Rosser property.
+
+\begin{thebibliography}{8}
+\bibitem{bn} F. Baader, T. Nipkow, \emph{Term Rewriting and All That}, Cambridge University Press (1998).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

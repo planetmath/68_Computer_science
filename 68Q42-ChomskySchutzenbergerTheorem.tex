@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ChomskySchutzenbergerTheorem}
+\pmcreated{2013-03-22 18:55:40}
+\pmmodified{2013-03-22 18:55:40}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{Chomsky-Sch\"utzenberger theorem}
+\pmrecord{5}{41780}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+An important characterization of context-free languages is captured in what is known as the Chomsky-Sch\"utzenberger theorem.  It shows the intimate connection between context-free and parenthesis languages.
+
+\begin{thm}[Chomsky-Sch\"utzenberger]  A langauge $L$ over an alphabet $\Sigma$ is context-free iff for some $n\ge 0$, there there is a homomorphism $h:\Sigma_n^* \to \Sigma^*$ such that $$L=h(\boldsymbol{\operatorname{Paren}_n}\cap R),$$ where $\boldsymbol{\operatorname{Paren}_n}$ is the parenthesis language over $\Sigma_n$, and $R$ is a regular language (over $\Sigma_n$).
+\end{thm}
+
+Note that the ``if'' part is the trivial consequence of the following facts: parenthesis languages are context-free; any homomorphic image of a context-free language is context-free; any intersection of a context-free language with a regular language is context-free.
+
+\begin{thebibliography}{9}
+\bibitem{cs} N. Chomsky, M.P. Sch\"utzenberger, {\em The Algebraic Theory of Context-Free Languages, Computer Programming and Formal Systems}, North-Holland, Amsterdam (1963).
+\bibitem{dk} D. C. Kozen, {\em Automata and Computability}, Springer, New York (1997).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

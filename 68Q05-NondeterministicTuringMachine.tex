@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NondeterministicTuringMachine}
+\pmcreated{2013-03-22 13:01:25}
+\pmmodified{2013-03-22 13:01:25}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{non-deterministic Turing machine}
+\pmrecord{6}{33416}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmrelated{TuringMachine2}
+\pmdefines{certificate}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+The definition of a non-deterministic Turing machine is the same as the definition of a deterministic Turing machine except that $\delta$ is a relation,  not a function.  Hence, for any particular state and symbol, there may be multiple possible legal moves.
+
+If $S\in\Gamma^+$ we say $T$ accepts $S$ if, when $S$ is the input, there is some finite sequence of legal moves such that $\delta$ is undefined on the state and symbol pair which results from the last move in the sequence and such that the final state is an element of $F$.  If $T$ does not accept $S$ then it rejects $S$.
+
+An alternative definition of a non-deterministic Turing machine is as a deterministic Turing machine with an extra one-way, read-only tape, the guess tape.  Then we say $T$ accepts $S$ if there is any string $c(S)$ such that, when $c(S)$ is placed on the guess tape, $T$ accepts $S$.  We call $c(S)$ a \emph{certificate} for $S$, and otherwise that it rejects $S$.  In some cases the guess tape is allowed to be two-way; this generates different time and space complexity classes than the one-way case (the one-way case is equivalent to the original definition).
+%%%%%
+%%%%%
+\end{document}

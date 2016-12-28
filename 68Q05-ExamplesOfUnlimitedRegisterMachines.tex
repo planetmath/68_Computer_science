@@ -1,0 +1,367 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ExamplesOfUnlimitedRegisterMachines}
+\pmcreated{2013-03-22 19:03:13}
+\pmmodified{2013-03-22 19:03:13}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{examples of unlimited register machines}
+\pmrecord{8}{41933}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmclassification{msc}{03D10}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+\PMlinkescapeword{c}
+
+In this entry, we illustrate the basic computing power of unlimited register machines by giving some examples.
+
+\textbf{Example} (Addition).  Here, we show how the addition of two non-negative integers can be achieved by a URM.  Let $M$ be the URM with the instructions:
+$$I_1,I_2,I_3,I_4,I_5=J(2,3,5),S(1),S(3),J(1,1,1),Z(3)$$
+Let the input content be $a,b$ in the first two registers, and $0$ everywhere else.  Then the ouput content has $a+b,b$ in the first two registers, and $0$ everywhere else.  This is how the computation works:
+\begin{enumerate}
+\item compare the contents of registers 2 and 3,
+\item if they are different, increase the content of register 1 by 1,
+\item increase the content of register 3 by 1,
+\item jumps back to instruction 1 (loops here) and continue the computation until the contents of registers 2 and 3 are the same, then jump to instruction 5,
+\item erase the content of register 2,
+\item erase the content of register 3.
+\item the computation halts, because instruction 6 does not exist.
+\end{enumerate}
+Below is an actual computation carried out where $a=3$ and $b=2$:
+This is how a computation works with input 
+
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+\hspace{1 pt}
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$3$ & $2$ & $0$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+input
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_1$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$3$ & $2$ & $0$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_1$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_2$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$4$ & $2$ & $0$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_2$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_3$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$4$ & $2$ & $1$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_3$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_4$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$4$ & $2$ & $1$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_4$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_5$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$4$ & $2$ & $1$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_1$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_6$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$5$ & $2$ & $1$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_2$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_7$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$5$ & $2$ & $2$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_3$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_8$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$5$ & $2$ & $2$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_4$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_9$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$5$ & $2$ & $2$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_1$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_{10}$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c}
+\hline
+$5$ & $2$ & $0$ & $0$ & $0$ & $0$ & $0$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_5$
+\end{tabular}
+\end{center}
+
+Note that the last instruction $I_5$ above may be removed without affecting the outcome (in register $1$).
+
+\textbf{Example}.  Let $M$ be the URM with a single instruction $I_1=J(n,n,2)$.  This machine, when run, halts immediately after the first computation step.  If $I_1$ were $J(n,n,1)$ instead, then the machine loops forever when run, because it keeps jumping back to $I_1$.  In both cases, the tape contents do not change.  Nevertheless, we shall see that such instruction $J(n,n,p)$ is very useful in the next example.
+
+\textbf{Example} (Transfer Instruction).  Here, we show how the transfer instruction $T(m,n)$ may be simulated by other instructions.  Let $M$ be the URM with the following instructions:
+$$I_1,I_2,I_3,I_4,I_5=J(m,n,6),Z(n),S(n),J(m,n,6),J(m,m,3)$$
+When a computation is started with any input, 
+\begin{enumerate}
+\item $M$ first compares the contents of registers $m$ and $n$, if they are the same, it jumps to the 6th instruction, which does not exist, so the computation halts.  
+\item Otherwise, it goes to the next step, which reduces the content of register $n$ to $0$, 
+\item Then, step by step, $M$ increases the content of register $n$ by $1$.  
+\item During each increment, it compares the contents of registers $m$ and $n$.  If they are not the same, the loops back to instruction 3, and increases the content of $n$ by $1$.  
+\item However, if they are the same, then it jumps to instruction 6, so that the computation halts.
+\end{enumerate}
+
+Below is a computation of input where the contents of registers $m$ and $n$ are $9$ and $7$ respectively (assume $m<n$)
+
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+\hspace{1 pt}
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $9$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+input
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_1$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $9$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_1$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_2$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $0$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_2$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_3$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $1$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_3$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_4$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $1$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_4$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_5$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $1$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_5$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_6$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $2$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_3$
+\end{tabular}
+\end{center}
+\vspace{-0.5cm}
+$$\mbox{looping instructions 3,4,5 until content of register $m$ reads 9}$$
+\vspace{-0.5cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_{21}$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $7$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_3$
+\end{tabular}
+\end{center}
+\vspace{-0.75cm}
+\begin{center}
+\begin{tabular}{ p{0.5cm} }
+$c_{22}$
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline
+$r_1$ & $\cdots$ & $7$ & $\cdots$ & $7$ & $\cdots$ \\
+\hline
+\end{tabular}
+\begin{tabular}{ p{0.5cm} }
+$I_4$
+\end{tabular}
+\end{center}
+
+The result is precisely the same as running a URM with a single instruction $T(m,n)$.  However, without $T(m,n)$, it takes 28 steps to achieve the same goal.
+
+\begin{thebibliography}{9}
+\bibitem{SS} J. C. Shepherdson, H. E. Sturgis, {\em Computability of Recursive Functions}. Journal Assoc. Comput. Mach. 10, 217-255, (1963).
+\bibitem{nc} N. Cutland, {\em Computability: An Introduction to Recursive Function Theory}. Cambridge University Press, (1980).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{C1}
+\pmcreated{2013-03-22 16:51:34}
+\pmmodified{2013-03-22 16:51:34}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{C}
+\pmrecord{11}{39107}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N15}
+\pmsynonym{CPL}{C1}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+\usepackage{listings}
+\lstset{language=C}
+
+% define commands here
+
+\begin{document}
+{\em C} is a procedural compiled programming language devised by Dennis Ritchie at the Bell Labs in New Jersey in 1972, and standardized in 1983 by ANSI and again by ISO in 1999. The original purpose of C was to write systems software for UNIX, but soon it became the most popular programming language for writing DOS applications, a popularity overshadowed only by the success of using \PMlinkname{C++}{C} for Windows applications. From the beginning C provided access to certain lower level features of the computer and if that's not enough it also had simpler mechanisms for meshing with assembly language; for that reason C is sometimes compared to dangerous but powerful tools like a chainsaw (Banahan et al, 1991).
+
+The following C program takes two integers as inputs and outputs their greatest common divisor using Euclid's algorithm.
+
+\begin{verbatim}
+#include <stdio.h>
+#include <stdlib.h>
+
+int GCD(int x, int y) {
+    int wX = x;
+    int wY = y;
+    int tempX;
+    while ( wY > 0 ) {
+	  tempX = wX;
+	  wX = wY;
+	  wY = tempX % wY;
+    }
+    return(wX);
+}
+
+int main() {
+    int inputX;
+    int inputY;
+    int inputSuccess;
+    printf("Please enter x ");
+    inputSuccess = scanf("%d", &inputX);
+    printf("Please enter y ");
+    inputSuccess = scanf("%d", &inputY);
+    printf("GCD of %d and %d is %d\n", inputX, inputY, GCD(inputX,inputY));
+    exit(EXIT_SUCCESS);
+}
+\end{verbatim}
+
+This program was tested in Visual C++ 6.0, and it works. The compiler reported 0 errors and 0 warnings, and the program works as it should, at least as long as the inputs are both positive integers. For the pair 42 and $-21$, it incorrectly reports the GCD as 42. Note that \verb=printf= is not a reserved word of the C language, the way that \verb=PRINT= is in BASIC or Fortran. We can use it because we included the standard I/O library; theoretically, we could write our own \verb=printf= that tye-dyed the output onto a T-shirt as long as we wrote the appropriate library to take care of it.
+
+\begin{thebibliography}{1}
+\bibitem{mb} M. Banahan, D. Brady \& M. Doran, {\it The C book, featuring the ANSI C standard} Reading, Mass: Addison-Wesley Publishing (1991)
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

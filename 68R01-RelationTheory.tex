@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RelationTheory}
+\pmcreated{2013-10-08 21:04:11}
+\pmmodified{2013-10-08 21:04:11}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{relation theory}
+\pmrecord{55}{40282}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Topic}
+\pmcomment{delete autolink escapes & fix accent on It\^{o}}
+\pmclassification{msc}{68R01}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03E20}
+\pmclassification{msc}{03B10}
+\pmsynonym{theory of relations}{RelationTheory}
+\pmrelated{RelationComposition2}
+\pmrelated{RelationConstruction}
+\pmrelated{RelationReduction}
+\pmrelated{LogicalMatrix}
+\pmrelated{TriadicRelation}
+\pmrelated{SignRelation}
+\pmrelated{SignRelationalComplex}
+\pmrelated{SemioticEquivalenceRelation}
+\pmdefines{relation}
+\pmdefines{adicity}
+\pmdefines{arity}
+\pmdefines{domain}
+\pmdefines{graph}
+\pmdefines{type}
+\pmdefines{function}
+\pmdefines{prefunction}
+\pmdefines{partial function}
+\pmdefines{bijective}
+\pmdefines{injective}
+\pmdefines{surjective}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+This article treats \textbf{relations} from the perspective of combinatorics, in other words, as a subject matter in discrete mathematics, with special attention to finite structures and concrete set-theoretic constructions, many of which arise quite naturally in applications.  This approach to \textbf{relation theory}, or the \textbf{theory of relations}, is distinguished from, though closely related to, its study from the perspectives of abstract algebra on the one hand and formal logic on the other.
+
+\tableofcontents
+
+\section{Preliminaries}
+
+Two definitions of the relation concept are common in the literature.  Although it is usually clear in context which definition is being used at a given time, it tends to become less clear as contexts collide, or as discussion moves from one context to another.
+
+The same sort of ambiguity arose in the development of the function concept and it may save some effort to follow the pattern of resolution that worked itself out there.
+
+When we speak of a function $f : X \to Y$ we are thinking of a mathematical object whose articulation requires three pieces of data, specifying the set $X,$ the set $Y,$ and a particular subset of their cartesian product $X \times Y.$  So far so good.
+
+Let us write $f = (\operatorname{obj_1}f, \operatorname{obj_2}f, \operatorname{obj_{12}}f)$ to express what has been said so far.
+
+When it comes to parsing the notation $``f : X \to Y",$ everyone takes the part $``X \to Y"$ to specify the \textit{type} of the function, that is, the pair $(\operatorname{obj_1}f, \operatorname{obj_2}f),$ but $``f"$ is used equivocally to denote both the triple and the subset $\operatorname{obj_{12}}f$ that forms one part of it.  One way to resolve the ambiguity is to formalize a distinction between a function and its \textit{graph}, letting $\operatorname{graph}(f) := \operatorname{obj_{12}}f.$
+
+Another tactic treats the whole notation $``f : X \to Y"$ as sufficient denotation for the triple, letting $``f"$ denote $\operatorname{graph}(f).$
+
+In categorical and computational contexts, at least initially, the type is regarded as an essential attribute or an integral part of the function itself.  In other contexts it may be desirable to use a more abstract concept of function, treating a function as a mathematical object that appears in connection with many different types.
+
+Following the pattern of the functional case, let the notation $``L \subseteq X \times Y"$ bring to mind a mathematical object that is specified by three pieces of data, the set $X,$ the set $Y,$ and a particular subset of their cartesian product $X \times Y.$  As before we have two choices, either let $L = (X, Y, \operatorname{graph}(L))$ or let $``L"$ denote $\operatorname{graph}(L)$ and choose another name for the triple.
+
+\section{Definition}
+
+It is convenient to begin with the definition of a $k$\textbf{-place relation}, where $k$ is a positive integer.
+
+\textbf{Definition.}  A $k$\textbf{-place relation} $L \subseteq X_1 \times \ldots \times X_k$ over the nonempty sets $X_1, \ldots, X_k$ is a $(k+1)$-tuple $(X_1, \ldots, X_k, L)$ where $L$ is a subset of the cartesian product $X_1 \times \ldots \times X_k.$
+
+\section{Remarks}
+
+Though usage varies as usage will, there are several bits of optional language that are frequently useful in discussing relations.  The sets $X_1, \ldots, X_k$ are called the \textit{domains} of the relation $L \subseteq X_1 \times \ldots \times X_k,$ with $X_j$ being the $j^{\text{\small{th}}}$ domain.  If all of the $X_j$ are the same set $X,$ then $L \subseteq X_1 \times \ldots \times X_k$ is more simply described as a $k$-place relation over $X.$  The set $L$ is called the \textit{graph} of the relation $L \subseteq X_1 \times \ldots \times X_k,$ on analogy with the graph of a function.  If the sequence of sets $X_1, \ldots, X_k$ is constant throughout a given discussion or is otherwise determinate in context, then the relation $L \subseteq X_1 \times \ldots \times X_k$ is determined by its graph $L,$ making it acceptable to denote the relation by referring to its graph.  Other synonyms for the adjective $k$-\textit{place} are $k$-\textit{adic} and $k$-\textit{ary}, all of which leads to the integer $k$ being called the \textit{dimension}, the \textit{adicity}, or the \textit{arity} of the relation $L.$
+
+\section{Local incidence properties}
+
+A \textit{local incidence property} (LIP) of a relation $L$ is a property that depends in turn on the properties of special subsets of $L$ that are known as its \textit{local flags}.  The local flags of a relation are defined in the following way:
+
+Let $L$ be a $k$-place relation $L \subseteq X_1 \times \ldots \times X_k.$
+
+Select a relational domain $X_j$ and one of its elements $x.$  Then $L_{x@j}$ is a subset of $L$ that is referred to as the \textit{flag} of $L$ with $x$ at $j,$ or the $x@j$-flag of $L,$ an object that has the following definition:
+
+\[ L_{x@j} = \{ (x_1, \ldots, x_j, \ldots, x_k) \in L : x_j = x \}. \]
+
+Any property $C$ of the local flag $L_{x@j} \subseteq L$ is said to be a \textit{local incidence property} of $L$ with respect to the \textit{locus} $x @ j.$
+
+A $k$-adic relation $L \subseteq X_1 \times \ldots \times X_k$ is said to be $C$-\textit{regular} at $j$ if and only if every flag of $L$ with $x$ at $j$ has the property $C,$ where $x$ is taken to vary over the \textit{theme} of the fixed domain $X_j.$
+
+Expressed in symbols, $L$ is $C$-regular at $j$ if and only if $C(L_{x@j})$ is true for all $x$ in $X_j.$
+
+\section{Regional incidence properties}
+
+The definition of a local flag can be broadened from a point $x$ in $X_j$ to a subset $M$ of $X_j,$ arriving at the definition of a \textit{regional flag} in the following way:
+
+Suppose that $L \subseteq X_1 \times \ldots \times X_k,$ and choose a subset $M \subseteq X_j.$  Then $L_{M@j}$ is a subset of $L$ that is said to be the \textit{flag} of $L$ with $M$ at $j,$ or the $M@j$-flag of $L,$ an object which has the following  definition:
+
+\[ L_{M@j} = \{ (x_1, \ldots, x_j, \ldots, x_k) \in L : x_j \in M \}. \]
+
+\section{Numerical incidence properties}
+
+A \textit{numerical incidence property} (NIP) of a relation is a local incidence property that depends on the cardinalities of its local flags.
+
+For example, $L$ is said to be $c$-regular at $j$ if and only if the cardinality of the local flag $L_{x@j}$ is $c$ for all $x$ in $X_j,$ or, to write it in symbols, if and only if $|L_{x@j}| = c$ for all $x \in X_j.$
+
+In a similar fashion, one can define the NIPs, $(< c)$-regular at $j,$ $(> c)$-regular at $j,$ and so on.  For ease of reference, a few of these definitions are recorded here:
+
+\[ \begin{array}{ccccccccc}
+L & \text{is} & c\text{-regular} & \text{at}\ j & \text{if and only if} & |L_{x@j}| & = & c & \text{for all}\ x \in X_j. \\
+L & \text{is} & (< c)\text{-regular} & \text{at}\ j & \text{if and only if} & |L_{x@j}| & < & c & \text{for all}\ x \in X_j. \\
+L & \text{is} & (> c)\text{-regular} & \text{at}\ j & \text{if and only if} & |L_{x@j}| & > & c & \text{for all}\ x \in X_j. \\
+\end{array} \]
+
+\section{Species of 2-adic relations}
+
+Returning to 2-adic relations, it is useful to describe some familiar classes of objects in terms of their local and numerical incidence properties.  Let $L \subseteq S \times T$ be an arbitrary 2-adic relation.  The following properties of $L$ can be defined:
+
+\[ \begin{array}{ccccccccc}
+L & \text{is} & \text{total} & \text{at}\ S & \text{if and only if} & L & \text{is} & (\ge 1)\text{-regular} & \text{at}\ S . \\
+L & \text{is} & \text{total} & \text{at}\ T & \text{if and only if} & L & \text{is} & (\ge 1)\text{-regular} & \text{at}\ T . \\
+L & \text{is} & \text{tubular} & \text{at}\ S & \text{if and only if} & L & \text{is} & (\le 1)\text{-regular} & \text{at}\ S . \\
+L & \text{is} & \text{tubular} & \text{at}\ T & \text{if and only if} & L & \text{is} & (\le 1)\text{-regular} & \text{at}\ T . \\
+\end{array} \]
+
+If $L \subseteq S \times T$ is tubular at $S,$ then $L$ is called a \textit{partial function} or a \textit{prefunction} from $S$ to $T.$  This is sometimes indicated by giving $L$ an alternate name, say, ``$p$", and writing $L = p : S \rightharpoonup T.$
+
+Just by way of formalizing the definition:
+
+\[ \begin{array}{cccccccc}
+L & = & p : S \rightharpoonup T & \text{if and only if} & L & \text{is} & \text{tubular} & \text{at}\ S.
+\end{array} \]
+
+If $L$ is a prefunction $p : S \rightharpoonup T$ that happens to be total at $S,$ then $L$ is called a \textit{function} from $S$ to $T,$ indicated by writing $L = f : S \to T.$  To say that a relation $L \subseteq S \times T$ is \textit{totally tubular} at $S$ is to say that it is $1$-regular at $S.$  Thus, we may formalize the following definition:
+
+\[ \begin{array}{cccccccc}
+L & = & f : S \to T & \text{if and only if} & L & \text{is} & 1\text{-regular} & \text{at}\ S.
+\end{array} \]
+
+In the case of a function $f : S \to T,$ one has the following additional definitions:
+
+\[ \begin{array}{cccccccc}
+f & \text{is} & \text{surjective} & \text{if and only if} & f & \text{is} & \text{total}  & \text{at}\ T. \\
+f & \text{is} & \text{injective} & \text{if and only if} & f & \text{is} & \text{tubular} & \text{at}\ T. \\
+f & \text{is} & \text{bijective} & \text{if and only if} & f & \text{is} & 1\text{-regular} & \text{at}\ T. \\
+\end{array} \]
+
+\section{Variations}
+
+Because the concept of a relation has been developed quite literally from the beginnings of logic and mathematics, and because it has incorporated contributions from a diversity of thinkers from many different times and intellectual climes, there is a wide variety of terminology that the reader may run across in connection with the subject.
+
+One dimension of variation is reflected in the names that are given to $k$-place relations, for $k = 1, 2, 3, \ldots,$ with some writers using the Greek forms, \emph{medadic}, \emph{monadic}, \emph{dyadic}, \emph{triadic}, $k$-\emph{adic}, and other writers using the Latin forms, \emph{nullary}, \emph{unary}, \emph{binary}, \emph{ternary}, $k$-\emph{ary}.
+
+The cardinality of the relational ground, the set of relational domains, may be referred to as the \emph{adicity}, the \emph{arity}, or the \emph{dimension} of the relation.  Accordingly, one finds a relation on a finite number of domains described as a \emph{polyadic} relation or a \emph{finitary} relation, but others count infinitary relations among the polyadic.  If the number of domains is finite, say equal to $k,$ then the relation may be described as a $k$-\emph{adic} relation, a $k$-\emph{ary} relation, or a $k$-\emph{dimensional} relation, respectively.
+
+A more conceptual than nominal variation depends on whether one uses terms like \emph{predicate}, \emph{relation}, and even \emph{term} to refer to the formal object proper or else to the allied syntactic items that are used to denote them.  Compounded with this variation is still another, frequently associated with philosophical differences over the status in reality accorded formal objects.  Among those who speak of numbers, functions, properties, relations, and sets as being real, that is to say, as having objective properties, there are divergences as to whether some things are more real than others, especially whether particulars or properties are equally real or else which one is derivative in relationship to the other.  Historically speaking, just about every combination of modalities has been used by one school of thought or another, but it suffices here merely to indicate how the options are generated.
+
+\section{Bibliography}
+
+\begin{itemize}
+\item
+Barr, Michael, and Wells, Charles (1990), \textit{Category Theory for Computing Science}, Prentice Hall, Hemel Hempstead, UK.
+\item
+Bourbaki, Nicolas (1994), \textit{Elements of the History of Mathematics}, John Meldrum (trans.), Springer-Verlag, Berlin, Germany.
+\item
+Carnap, Rudolf (1958), \textit{Introduction to Symbolic Logic with Applications}, Dover Publications, New York, NY.
+\item
+Chang, C.C., and Keisler, H.J. (1973), \textit{Model Theory}, North-Holland, Amsterdam, Netherlands.
+\item
+van Dalen, Dirk (1980), \text{Logic and Structure}, 2nd edition, Springer-Verlag, Berlin, Germany.
+\item
+Devlin, Keith J. (1993), \textit{The Joy of Sets : Fundamentals of Contemporary Set Theory}, 2nd edition, Springer-Verlag, New York, NY.
+\item
+Halmos, Paul Richard (1960), \textit{Naive Set Theory}, D. Van Nostrand Company, Princeton, NJ.
+\item
+van Heijenoort, Jean (1967/1977), \textit{From Frege to G\"{o}del : A Source Book in Mathematical Logic, 1879--1931}, Harvard University Press, Cambridge, MA, 1967.  Reprinted with corrections, 1977.
+\item
+Kelley, John L. (1955), \textit{General Topology}, Van Nostrand Reinhold, New York, NY.
+\item
+Kneale, William; and Kneale, Martha (1962/1975), \textit{The Development of Logic}, Oxford University Press, Oxford, UK, 1962.  Reprinted with corrections, 1975.
+\item
+Lawvere, Francis William; and Rosebrugh, Robert (2003), \textit{Sets for Mathematics}, Cambridge University Press, Cambridge, UK.
+\item
+Lawvere, Francis William; and Schanuel, Stephen H. (1997/2000), \textit{Conceptual Mathematics : A First Introduction to Categories}, Cambridge University Press, Cambridge, UK, 1997.  Reprinted with corrections, 2000.
+\item
+Manin, Yu. I. (1977), \textit{A Course in Mathematical Logic}, Neal Koblitz (trans.), Springer-Verlag, New York, NY.
+\item
+Mathematical Society of Japan (1993), \textit{Encyclopedic Dictionary of Mathematics}, 2nd edition, 2 vols., Kiyosi It\^{o} (ed.), MIT Press, Cambridge, MA.
+\item
+Mili, A., Desharnais, J., Mili, F., with Frappier, M. (1994), \textit{Computer Program Construction}, Oxford University Press, New York, NY. -- Introduction to Tarskian relation theory and its applications within the relational programming paradigm.
+\item
+Mitchell, John C. (1996), \textit{Foundations for Programming Languages}, MIT Press, Cambridge, MA.
+\item
+Peirce, Charles Sanders (1870), ``Description of a Notation for the Logic of Relatives, Resulting from an Amplification of the Conceptions of Boole's Calculus of Logic", \textit{Memoirs of the American Academy of Arts and Sciences} 9 (1870), 317--378.  Reprinted (CP 3.45--149), (CE 2, 359--429).
+\item
+Peirce, Charles Sanders (1931--1935, 1958), \textit{Collected Papers of Charles Sanders Peirce}, vols. 1--6, Charles Hartshorne and Paul Weiss (eds.), vols. 7--8, Arthur W. Burks (ed.), Harvard University Press, Cambridge, MA.  Cited as (CP volume.paragraph).
+\item
+Peirce, Charles Sanders (1981--), \textit{Writings of Charles S. Peirce : A Chronological Edition}, Peirce Edition Project (eds.), Indiana University Press, Bloomington and Indianapolis, IN.  Cited as (CE volume, page).
+\item
+Poizat, Bruno (2000), \textit{A Course in Model Theory : An Introduction to Contemporary Mathematical Logic}, Moses Klein (trans.), Springer-Verlag, New York, NY.
+\item
+Quine, Willard Van Orman (1940/1981), \textit{Mathematical Logic}, 1940.  Revised edition, Harvard University Press, Cambridge, MA, 1951.  New preface, 1981.
+\item
+Royce, Josiah (1961), \textit{The Principles of Logic}, Philosophical Library, New York, NY.
+\item
+Runes, Dagobert D. (ed., 1962), \textit{Dictionary of Philosophy}, Littlefield, Adams, and Company, Totowa, NJ.
+\item
+Shoenfield, Joseph R. (1967), \textit{Mathematical Logic}, Addison-Wesley, Reading, MA.
+\item
+Styazhkin, N.I. (1969), \textit{History of Mathematical Logic from Leibniz to Peano}, MIT Press, Cambridge, MA.
+\item
+Suppes, Patrick (1957/1999), \textit{Introduction to Logic}, 1st published 1957.  Reprinted, Dover Publications, New York, NY, 1999.
+\item
+Suppes, Patrick (1960/1972), \textit{Axiomatic Set Theory}, 1st published 1960.  Reprinted, Dover Publications, New York, NY, 1972.
+\item
+Tarski, Alfred (1956/1983), \textit{Logic, Semantics, Metamathematics : Papers from 1923 to 1938}, J.H. Woodger (trans.), Oxford University Press, 1956.  2nd edition, J. Corcoran (ed.), Hackett Publishing, Indianapolis, IN, 1983.
+\item
+Ulam, Stanislaw Marcin; and Bednarek, A.R. (1977), ``On the Theory of Relational Structures and Schemata for Parallel Computation", pp. 477--508 in A.R. Bednarek and Fran\c{c}oise Ulam (eds.), \textit{Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators}, University of California Press, Berkeley, CA, 1990.
+\item
+Ulam, Stanislaw Marcin (1990), \textit{Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators}, A.R. Bednarek and Fran\c{c}oise Ulam (eds.), University of California Press, Berkeley, CA.
+\item
+Ullman, Jeffrey D. (1980), \textit{Principles of Database Systems}, Computer Science Press, Rockville, MD.
+\item
+Venetus, Paulus (1472/1984), \textit{Logica Parva : Translation of the 1472 Edition with Introduction and Notes}, Alan R. Perreiah (trans.), Philosophia Verlag, Munich, Germany.
+\end{itemize}
+
+%%%%%
+%%%%%
+\end{document}

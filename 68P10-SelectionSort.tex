@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{SelectionSort}
+\pmcreated{2013-03-22 11:44:42}
+\pmmodified{2013-03-22 11:44:42}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{selection sort}
+\pmrecord{8}{30182}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{05C50}
+\pmclassification{msc}{05C25}
+\pmclassification{msc}{83-01}
+\pmrelated{InsertionSort}
+\pmrelated{SortingProblem}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%%%%%\usepackage{xypic}
+\begin{document}
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+    \textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+    \textit{Input}: #3\newline
+    \textit{Output}: #4\newline
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+    \begin{figure}[#1]
+    \caption{#2}
+    \begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+    \end{Lalgorithm}
+    \end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}} 
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lfor}[2]{\textbf{for} #1 \textbf{do}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+
+\subsection*{The Problem}
+
+See the Sorting Problem.
+    
+\subsection*{The Algorithm}
+
+Suppose $L = \left\{ x_1, x_2, \dots, x_n\right\}$ is the initial list of unsorted elements.
+The \emph{selection sort} algorithm sorts this list in $n$ steps.  At each step $i$, find the largest
+element $L[j]$ such that $j < n - i + 1$, and swap it with the element at $L[n - i + 1]$.
+So, for the first step, find the largest value in the list and swap it with the last element in the list.
+For the second step, find the largest value in the list up to (but not including) the last element, and swap it
+with the next to last element.  This is continued for $n - 1$ steps.  Thus the selection sort algorithm is a
+very simple, in-place sorting algorithm.
+
+\subsection*{Pseudocode}
+
+\begin{Lalgorithm}{Selection\_Sort}{L, n}{A list $L$ of $n$ elements}{The list $L$ in sorted order}
+\Lgroup{
+    \Lfor{$i \gets n\mbox{ downto }2$}{\Lgroup{
+        $temp \gets L[i]$ \\
+        $max \gets 1$ \\
+        \Lfor{$j \gets 2\mbox{ to }i$}{\Lif{$L[j] > L[max]$}{$max \gets j$}} \\
+        $L[i] \gets L[max]$ \\
+        $L[max] \gets temp$
+    }
+}}
+\end{Lalgorithm}
+
+\subsection*{Analysis}
+
+The selection sort algorithm has the same runtime for any set of $n$ elements, no matter
+what the values or order of those elements are.  Finding the maximum element of a list of
+$i$ elements requires $i - 1$ comparisons.  Thus $T(n)$, the number of comparisons required to
+sort a list of $n$ elements with the selection sort, can be found:
+
+\begin{eqnarray*}
+    T(n) & = & \sum_{i=2}^n(i-1) \\
+         & = & \sum_{i=1}^ni-n-2 \\
+         & = & \frac{(n^2-n-4)}{2} \\
+         & = & \mathcal{O}(n^2)
+\end{eqnarray*}
+
+However, the number of data movements is the number of swaps required, which is $n-1$.  This
+algorithm is very similar to the insertion sort algorithm.  It requires fewer data movements,
+but requires more comparisons.
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\end{document}

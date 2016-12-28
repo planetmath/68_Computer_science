@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NotANumber}
+\pmcreated{2013-03-22 18:14:09}
+\pmmodified{2013-03-22 18:14:09}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{not a number}
+\pmrecord{4}{40824}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P01}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+In a computer, {\em not a number} (usually abbreviated {\em NaN}) indicates that an arithmetical operation has resulted in a value that is not a number understood (or representable) by the computer. Division by zero is one frequent cause of a result being NaN. Asking for the square root of a negative number is another operation that can result in NaN (unless the computer has been programmed to recognize imaginary numbers).
+
+NaN is not a specific value that can be tested for with the usual comparison operators. The programmer is advised to test for NaN with a special function provided by the programming language (such as \verb=isNaN(x)= in JavaScript.
+
+Generally, computer algebra systems do not report NaN results even if they do display an error message for a given operation.
+
+\begin{thebibliography}{1}
+\bibitem{df} David Flanagan, {\it JavaScript the Definitive Guide: The Definitive Guide}. New York: O'Reilly (2006): 24
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

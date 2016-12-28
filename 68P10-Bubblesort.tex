@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Bubblesort}
+\pmcreated{2013-03-22 12:31:07}
+\pmmodified{2013-03-22 12:31:07}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{bubblesort}
+\pmrecord{9}{32757}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmsynonym{bubble sort}{Bubblesort}
+\pmrelated{SortingProblem}
+\pmrelated{StableSortingAlgorithm}
+\pmrelated{InPlaceSortingAlgorithm}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{lbh-pseudocode}
+\usepackage{program}
+\begin{document}
+\PMlinkescapeword{even}
+\PMlinkescapeword{order}
+\PMlinkescapeword{scenario}
+The \emph{bubblesort} algorithm is a simple and na\"ive approach to the sorting problem.  Let $\le$ define a total ordering over a list $A$ of $n$ values.
+The bubblesort consists of advancing through $A$, swapping adjacent values $A[i]$ and $A[i+1]$ if $A[i+1]\le A[i]$ holds.  By going through all of $A$ in this manner $n$ times, one is guaranteed to achieve the proper ordering.
+
+\subsubsection*{Pseudocode}
+
+The following is pseudocode for the bubblesort algorithm.  Note that it keeps track of whether or not any swaps occur during a traversal, so that it may terminate as soon as $A$ is sorted.
+
+\begin{program}
+\mathrm{BubbleSort}(A, n, \le)
+\text{{\bf Input}: List $A$ of $n$ values.}
+\text{{\bf Output}: $A$ sorted with respect to relation $\le$.}
+\text{{\bf Procedure}:}
+done \gets \mathbf{false}
+\WHILE (\text{not\ } done) \DO
+  done \gets \mathbf{true}
+  \FOR i\gets 0 \TO n-1 \DO
+    \IF A[i+1]\le A[i]
+    \THEN \mathrm{swap}(A[i], A[i+1])
+          done \gets \mathbf{false}
+    \FI
+  \OD
+\OD    
+\end{program}
+
+\subsubsection*{Analysis}
+
+The worst-case scenario is when $A$ is given in reverse order.  In this case,
+exactly one element can be put in order during each traversal, and thus all $n$ traversals are required.  Since each traversal consists of $n-1$ comparisons, the worst-case complexity of bubblesort is $\mathcal{O}(n^2)$.
+ 
+Bubblesort is perhaps the simplest sorting algorithm to implement.  Unfortunately, it is also the least efficient, even among $\mathcal{O}(n^2)$ algorithms.  Bubblesort can be shown to be a stable sorting algorithm (since two items of equal keys are \emph{never} swapped, initial relative ordering of items of equal keys is preserved), and it is clearly an in-place sorting algorithm.
+%%%%%
+%%%%%
+\end{document}

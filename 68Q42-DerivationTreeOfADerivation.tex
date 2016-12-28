@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DerivationTreeOfADerivation}
+\pmcreated{2013-03-22 19:00:25}
+\pmmodified{2013-03-22 19:00:25}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{derivation tree of a derivation}
+\pmrecord{9}{41876}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\newcommand{\lab}{\operatorname{Lab}}
+\begin{document}
+\subsubsection*{Constructing a Derivation from a Derivation Tree}
+
+Let $G$ be a context-free grammar.  Given a (finite) derivation tree $T$ of $G$, we can construct a derivation $D$ of $G$.  There are two ways of doing this: top-down, or bottom-up.  
+
+The idea with the top-down approach is to build the derivation one derivation step at a time, starting from the root of the tree.  During each step, a node with children is picked so that the next derivation step is formed, thus creating a new derivation with the new derivation step attached.  Do this until all nodes of the tree are used.
+
+To facilitate the discussion, for each node $n$ of $T$, denote $[n]$ the label of $n$.
+
+The top-down approach works as follows:
+\begin{enumerate}
+\item Set $X_0=Y_0=:\lbrace r \rbrace$, and $D_0$ the derivation $\sigma=[r]$, where $r$ is the root of $T$.
+\item Suppose $X_i,Y_i$ and $D_i$ are defined for $i\ge 0$, and $Y_i = \lbrace n_1, \ldots, n_k \rbrace$ with $n_1 < \cdots < n_k$.  It is easy to see that $D_i$ is the derivation $\sigma \Rightarrow^* [n_1]\cdots [n_k]$.
+
+If none of the elements of $Y$ have children, then set $D:=D_i$.  Otherwise, pick a node $n_j \in Y_i$ with children $n_1', \ldots, n_m'$ such that $n_1' < \cdots < n_m'$.  Then set 
+\begin{itemize}
+\item $X_{i+1}:=X_i \cup \lbrace n_j \rbrace$, 
+\item $Y_{i+1} := (Y_i - \lbrace n_j \rbrace ) \cup \lbrace n_1' , \ldots, n_m'\rbrace$, and 
+\item $D_{i+1} :=D_i \Rightarrow [n_1] \cdots [n_{j-1}][n_1'] \cdots [n_m'] [n_{j+1}] \cdots [n_k]$.
+\end{itemize}
+\end{enumerate}
+Since $T$ is finite, $D$ can be constructed in a finite number of steps above.
+
+\textbf{Definition}.  A derivation tree $T$ is said to \emph{correspond to} a derivation $D$ if $D$ can be constructed from $T$ from the top-down.
+
+From the construction above, one sees that every derivation tree corresponds to at least one derivation.  But it may correspond to more than one derivation.  If, in the second step of the construction above, one always picks the smallest node with children in each step, then the corresponding derivation is the leftmost derivation.  Similarly, consistently picking the largest node in each step results in the rightmost derivation.  This shows that a derivation tree $T$ corresponds to a unique leftmost derivation (written $LD(T)$) as well as a unique rightmost derivation (written $RD(T)$).
+
+The bottom-up approach starts out with the result $u$ of the derivation tree $T$.  The result corresponds to leaves of $T$.  Partition the set of leaves into blocks, so that two leaves belonging to the same block if they have the same parent.  Pick a block $B$ of leaves, and form a new word $u_1$ from $u$ by replacing the labels of leaves in $B$ by the label of their parent.  Then $u_1\Rightarrow u$ is a derivation step.  Next, form a new tree $T_1$ from $T$ by removing the leaves of $T$ in $B$.  So $u_1$ is now the result of $T_1$.  Repeat the process just described, until all of the nodes are removed ($T_i=\varnothing$ for some $i$), which is possible since $T$ is finite.  What we end up with is a derivation.  We will leave the formal detail to the reader.
+
+\begin{prop}  A derivation can be constructed from the top-down iff it can be constructed from the bottom-up. \end{prop}
+
+\subsubsection*{Constructing a Derivation Tree from a Derivation}
+
+Conversely, given a derivation $D=\sigma \Rightarrow W_1 \Rightarrow \cdots \Rightarrow W_n$, one can construct a derivation tree $T$ such that $D$ corresponds to $T$.  The way this works is as follows: start with the tree with a single node whose label is $\sigma$.  At each derivation step, additional nodes are added from the tree constructed so far, until the last derivation step is processed.  The tree so constructed has a natural linear ordering, and hence is a derivation tree, which $D$ corresponds to.  This construction can be formalized as follows:
+
+\begin{enumerate}
+\item Defining nodes: (The nodes of the tree $T$ will be tuples of positive integers)
+\begin{enumerate}
+\item Set node $(1)$ whose label is $\sigma$.
+\item Suppose nodes are defined for symbols occurring in $W_i$.  Look at the derivation step $W_i \Rightarrow W_{i+1}$.  Suppose it is based on production $P\to Q$, and $(p_1, \ldots, p_m)$ is the node whose label is $P$.
+\begin{itemize}
+\item If $Q=N_1 \cdots N_k$, where each $N_j\in \Sigma$, then define nodes $$(p_1, \ldots, p_m,1),\ldots, (p_1, \ldots, p_m,k)$$ whose labels are $N_1, \ldots, N_k$ respectively.
+\item If $Q=\lambda$, then define one node $(p_1, \ldots, p_m,1)$ whose label is $\lambda$.
+\end{itemize}
+\item Continue (b) until nodes whose labels are symbols forming word $W_n$ are defined.
+\end{enumerate}
+\item Defining arrows: Given two nodes $p=(p_1,\ldots,p_r)$ and $q=(q_1,\ldots, q_s)$, an arrow is constructed from $p$ to $q$ iff $s=r+1$ and $p_1=q_1,\ldots, p_r=q_r$.
+\item Extending the partial order on $T$ to a linear order based on the nodes: see the entry on ordered tree for detail.
+\end{enumerate}
+
+The algorithm shows that the derivation tree is uniquely constructed.
+
+\textbf{Definition}.  Given a derivation $D$, the derivation tree of $D$, denoted by $T_D$, is the ordered tree constructed above from $D$.
+
+It is easy to see that $T_D$ corresponds to $D$.
+
+\textbf{Remark}.  Suppose $u$ is a word derived by a derivation $D$.  One can find the leftmost derivation $D'$ of $u$ using the methods provided above: first find $T_D$ of $D$, then find $LD(T_D)$, and set $D'=LD(T_D)$.
+
+\begin{thebibliography}{9}
+\bibitem{hlcp} H.R. Lewis, C.H. Papadimitriou, {\em Elements of the Theory of Computation}. Prentice-Hall, Englewood Cliffs, New Jersey (1981).
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\bibitem{hu} J.E. Hopcroft, J.D. Ullman, {\em Formal Languages and Their Relation to Automata}, Addison-Wesley, (1969).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

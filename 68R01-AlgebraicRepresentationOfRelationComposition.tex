@@ -1,0 +1,236 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{AlgebraicRepresentationOfRelationComposition}
+\pmcreated{2013-03-22 17:50:25}
+\pmmodified{2013-03-22 17:50:25}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{algebraic representation of relation composition}
+\pmrecord{5}{40311}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68R01}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03E20}
+\pmclassification{msc}{03B10}
+\pmrelated{GeometricRepresentationOfRelationComposition}
+\pmrelated{MatrixRepresentationOfRelationComposition}
+\pmrelated{GraphTheoreticRepresentationOfRelationComposition}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapephrase{ca}
+\PMlinkescapephrase{CA}
+\PMlinkescapephrase{dyadic}
+\PMlinkescapephrase{Dyadic}
+\PMlinkescapephrase{intersection}
+\PMlinkescapephrase{Intersection}
+\PMlinkescapephrase{ma}
+\PMlinkescapephrase{MA}
+\PMlinkescapephrase{onto}
+\PMlinkescapephrase{Onto}
+\PMlinkescapephrase{right}
+\PMlinkescapephrase{Right}
+
+The transition from a geometric picture of relation composition to an algebraic formulation is accomplished through the introduction of coordinates, in other words, identifiable names for the objects that are related through the various forms of relations, 2-adic and 3-adic in the present case.  Adding coordinates to the running Example produces the following Figure:
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. . . \ . . . . . . . . |
+| . . . . . . . .o. . . .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ . . / \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. ./.F.\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .*. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. /*\ ./. .|. . . . . . . . |
+| . . . . . . . .|. / \//*\\/ \ .|. . . . . . . . |
+| . . . . . . . .|./. /\/ \/\ .\.|. . . . . . . . |
+| . . . . . . . .|/ .///\ /\\\. \|. . . . . . . . |
+| . . . .o. . . .X. /// .Y. \\\ .Z. . . .o. . . . |
+| . . . .|\ . . .7\///. .|. .\\\/7. . . /|. . . . |
+| . . . .|.\. . . 6// . .|. . \\6 . . ./.|. . . . |
+| . . . .|. \ . .//5\ . .|. . /5\\. . / .|. . . . |
+| . . . .|. .\. /// 4\. .|. ./4 \\\ ./. .|. . . . |
+| . . . .|. . \///. .3\ .|. /3. .\\\/ . .|. . . . |
+| . . . .|. . /\/ . . 2\.|./2 . . \/\ . .|. . . . |
+| . . . .|. .*//\ . . .1\|/1. . . /\\*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y .\*. .Z. . . . |
+| . . . .7\ .*. .|7 . . . . . . 7| . *. /7. . . . |
+| . . . . 6\.G. .|6 . . . . . . 6| . H /6 . . . . |
+| . . . . .5\ . .|5 . . . . . . 5| . ./5. . . . . |
+| . . . . . 4\. .|4 . . . . . . 4| . /4 . . . . . |
+| . . . . . .3\ .|3 . . . . . . 3| ./3. . . . . . |
+| . . . . . . 2\.|2 . . . . . . 2| /2 . . . . . . |
+| . . . . . . .1\|1 . . . . . . 1|/1. . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 7.  F as the Intersection of tau(G) and tau(H)
+\end{verbatim}\end{quote}
+
+Thinking of relations in operational terms is facilitated by using a variant notation for tuples and sets of tuples, namely, the ordered pair $(x, y)$ is written $x:y$, the ordered triple $(x, y, z)$ is written $x:y:z$, and so on, and a set of tuples is conceived as a logical-algebraic sum, which can be written out in the smaller finite cases in forms like $a\mathrm{:}b + b\mathrm{:}c + c\mathrm{:}d$ and so on.
+
+For example, translating the relations $F \subseteq X  \times Y \times Z$, $G \subseteq X \times Y$, $H \subseteq Y \times Z$ into this notation produces the following summary of the data:
+
+\begin{quote}$\begin{array}{ccccccc}
+F & = & 4:3:4 & + & 4:4:4 & + & 4:5:4 \\
+G & = &  4:3  & + &  4:4  & + &  4:5  \\
+H & = &  3:4  & + &  4:4  & + &  5:4  \\
+\end{array}$\end{quote}
+
+As often happens with abstract notations for functions and relations, the \textit{type information}, in this case, the fact that $G$ and $H$ live in different spaces, is left implicit in the context of use.
+
+Let us now verify that all of the proposed definitions, formulas, and other relationships check out against the concrete data of the current composition example.  The ultimate goal is to develop a clearer picture of what is going on in the formula that expresses the relational composition of a couple of 2-adic relations in terms of the medial projection of the intersection of their tacit extensions:
+
+\begin{quote}
+$G \circ H = \mathrm{proj}_{XZ}(\tau_{XY}^Z(G)\ \cap\ \tau_{YZ}^X(H)).$
+\end{quote}
+
+Here is the big picture, with all of the pieces in place:
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . / \ . . . . . . . . . . . |
+| . . . . . . . . . . ./. .\. . . . . . . . . . . |
+| . . . . . . . . . . / . . \ . . . . . . . . . . |
+| . . . . . . . . . ./. . . .\. . . . . . . . . . |
+| . . . . . . . . . / . . . . \ . . . . . . . . . |
+| . . . . . . . . ./. . . . . .\. . . . . . . . . |
+| . . . . . . . . / . .G o H. . \ . . . . . . . . |
+| . . . . . . . .X. . . .*. . . .Z. . . . . . . . |
+| . . . . . . . .7\ . . /|\ . . /7. . . . . . . . |
+| . . . . . . . . 6\. ./.|.\. ./6 . . . . . . . . |
+| . . . . . . . . .5\ / .|. \ /5. . . . . . . . . |
+| . . . . . . . . . 4@. .|. .@4 . . . . . . . . . |
+| . . . . . . . . . .3\ .|. /3. . . . . . . . . . |
+| . . . . . . . . . . 2\.|./2 . . . . . . . . . . |
+| . . . . . . . . . . .1\|/1. . . . . . . . . . . |
+| . . . . . . . . . . . .|. . . . . . . . . . . . |
+| . . . . . . . . . . . .|. . . . . . . . . . . . |
+| . . . . . . . . . . . .|. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. . . \ . . . . . . . . |
+| . . . . . . . .o. . . .|. . . .o. . . . . . . . |
+| . . . . . . . .|\ . . /|\ . . /|. . . . . . . . |
+| . . . . . . . .|.\. ./.F.\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .*. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. /*\ ./. .|. . . . . . . . |
+| . . . . . . . .|. / \//*\\/ \ .|. . . . . . . . |
+| . . . . . . . .|./. /\/ \/\ .\.|. . . . . . . . |
+| . . . . . . . .|/ .///\ /\\\. \|. . . . . . . . |
+| . . . .o. . . .X. /// .Y. \\\ .Z. . . .o. . . . |
+| . . . .|\ . . .7\///. .|. .\\\/7. . . /|. . . . |
+| . . . .|.\. . . 6// . .|. . \\6 . . ./.|. . . . |
+| . . . .|. \ . .//5\ . .|. . /5\\. . / .|. . . . |
+| . . . .|. .\. /// 4\. .|. ./4 \\\ ./. .|. . . . |
+| . . . .|. . \///. .3\ .|. /3. .\\\/ . .|. . . . |
+| . . . .|. .G/\/ . . 2\.|./2 . . \/\H. .|. . . . |
+| . . . .|. .*//\ . . .1\|/1. . . /\\*. .|. . . . |
+| . . . .X. .*\ .Y. . . .o. . . .Y ./*. .Z. . . . |
+| . . . .7\ .*\\.|7 . . . . . . 7| //*. /7. . . . |
+| . . . . 6\.|\\\|6 . . . . . . 6|///| /6 . . . . |
+| . . . . .5\|.\\@5 . . . . . . 5@// |/5. . . . . |
+| . . . . . 4@. \@4 . . . . . . 4@/. @4 . . . . . |
+| . . . . . .3\ .@3 . . . . . . 3@ ./3. . . . . . |
+| . . . . . . 2\.|2 . . . . . . 2| /2 . . . . . . |
+| . . . . . . .1\|1 . . . . . . 1|/1. . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 8.  G o H  =  proj_XZ (tau(G) |^| tau(H))
+\end{verbatim}\end{quote}
+
+All that remains is to check the following collection of data and derivations against the situation represented in Figure 8.
+
+\begin{quote}$\begin{array}{ccccccc}
+F & = & 4:3:4 & + & 4:4:4 & + & 4:5:4 \\
+G & = &  4:3  & + &  4:4  & + &  4:5  \\
+H & = &  3:4  & + &  4:4  & + &  5:4  \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{lcc}
+G \circ H & = & (4\mbox{:}3 + 4\mbox{:}4 + 4\mbox{:}5)(3\mbox{:}4 + 4\mbox{:}4 + 5\mbox{:}4) \\
+          & = & 4\mbox{:}4 \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{lcc}
+\tau(G) & = & \tau_{XY}^Z(G) \\
+        & = & \sum_{z=1}^7 (4\mbox{:}3\mbox{:}z + 4\mbox{:}4\mbox{:}z + 4\mbox{:}5\mbox{:}z) \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{lccccccc}
+\tau(G) & = & 4\mbox{:}3\mbox{:}1 & + & 4\mbox{:}4\mbox{:}1 & + & 4\mbox{:}5\mbox{:}1 & + \\
+        &   & 4\mbox{:}3\mbox{:}2 & + & 4\mbox{:}4\mbox{:}2 & + & 4\mbox{:}5\mbox{:}2 & + \\
+        &   & 4\mbox{:}3\mbox{:}3 & + & 4\mbox{:}4\mbox{:}3 & + & 4\mbox{:}5\mbox{:}3 & + \\
+        &   & 4\mbox{:}3\mbox{:}4 & + & 4\mbox{:}4\mbox{:}4 & + & 4\mbox{:}5\mbox{:}4 & + \\
+        &   & 4\mbox{:}3\mbox{:}5 & + & 4\mbox{:}4\mbox{:}5 & + & 4\mbox{:}5\mbox{:}5 & + \\
+        &   & 4\mbox{:}3\mbox{:}6 & + & 4\mbox{:}4\mbox{:}6 & + & 4\mbox{:}5\mbox{:}6 & + \\
+        &   & 4\mbox{:}3\mbox{:}7 & + & 4\mbox{:}4\mbox{:}7 & + & 4\mbox{:}5\mbox{:}7 &   \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{lcc}
+\tau(H) & = & \tau_{YZ}^X(H) \\
+        & = & \sum_{x=1}^7 (x\mbox{:}3\mbox{:}4 + x\mbox{:}4\mbox{:}4 + x\mbox{:}5\mbox{:}4) \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{lccccccc}
+\tau(H) & = & 1\mbox{:}3\mbox{:}4 & + & 1\mbox{:}4\mbox{:}4 & + & 1\mbox{:}5\mbox{:}4 & + \\
+        &   & 2\mbox{:}3\mbox{:}4 & + & 2\mbox{:}4\mbox{:}4 & + & 2\mbox{:}5\mbox{:}4 & + \\
+        &   & 3\mbox{:}3\mbox{:}4 & + & 3\mbox{:}4\mbox{:}4 & + & 3\mbox{:}5\mbox{:}4 & + \\
+        &   & 4\mbox{:}3\mbox{:}4 & + & 4\mbox{:}4\mbox{:}4 & + & 4\mbox{:}5\mbox{:}4 & + \\
+        &   & 5\mbox{:}3\mbox{:}4 & + & 5\mbox{:}4\mbox{:}4 & + & 5\mbox{:}5\mbox{:}4 & + \\
+        &   & 6\mbox{:}3\mbox{:}4 & + & 6\mbox{:}4\mbox{:}4 & + & 6\mbox{:}5\mbox{:}4 & + \\
+        &   & 7\mbox{:}3\mbox{:}4 & + & 7\mbox{:}4\mbox{:}4 & + & 7\mbox{:}5\mbox{:}4 &   \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{cll}
+\tau(G) \cap \tau(H) & = & 4\mbox{:}3\mbox{:}4 + 4\mbox{:}4\mbox{:}4 + 4\mbox{:}5\mbox{:}4 \\
+G \circ H & = & \mbox{proj}_{XZ}(\tau(G) \cap \tau(H)) \\
+          & = & \mbox{proj}_{XZ}(4\mbox{:}3\mbox{:}4 + 4\mbox{:}4\mbox{:}4 + 4\mbox{:}5\mbox{:}4) \\
+          & = & 4:4 \\
+\end{array}$\end{quote}
+
+%%%%%
+%%%%%
+\end{document}

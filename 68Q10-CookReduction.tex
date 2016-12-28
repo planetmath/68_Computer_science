@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{CookReduction}
+\pmcreated{2013-03-22 13:01:41}
+\pmmodified{2013-03-22 13:01:41}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{Cook reduction}
+\pmrecord{7}{33426}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q10}
+\pmclassification{msc}{68Q05}
+\pmdefines{Karp reduction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+Given two (search or decision) problems $\pi_1$ and $\pi_2$ and a complexity class $\mathcal{C}$, a $\mathcal{C}$ \emph{Cook reduction} of $\pi_1$ to $\pi_2$ is a Turing machine appropriate for $\mathcal{C}$ which solves $\pi_1$ using $\pi_2$ as an oracle (the Cook reduction itself is not in $\mathcal{C}$, since it is a Turing machine, not a problem, but it should be the class of bounded Turing machines corresponding to $\mathcal{C}$).  The most common type are $\mathcal{P}$ Cook reductions, which are often just called Cook reductions.
+
+If a Cook reduction exists then $\pi_2$ is in some sense ``at least as hard'' as $\pi_1$, since a machine which solves $\pi_2$ could be used to construct one which solves $\pi_1$.  When $\mathcal{C}$ is closed under appropriate operations, if $\pi_2\in\mathcal{C}$ and $\pi_1$ is $\mathcal{C}$-Cook reducible to $\pi_2$ then $\pi_1\in\mathcal{C}$.
+
+A $\mathcal{C}$ \emph{Karp reduction} is a special kind of $\mathcal{C}$ Cook reduction for decision problems $L_1$ and $L_2$.  It is a function $g\in\mathcal{C}$ such that:
+$$x\in L_1\leftrightarrow g(x)\in L_2$$
+
+Again, $\mathcal{P}$ Karp reductions are just called Karp reductions.
+
+A Karp reduction provides a Cook reduction, since a Turing machine could decide $L_1$ by calculating $g(x)$ on any input and determining whether $g(x)\in L_2$.  Note that it is a stronger condition than a Cook reduction.  For instance, this machine requires only one use of the oracle.
+%%%%%
+%%%%%
+\end{document}

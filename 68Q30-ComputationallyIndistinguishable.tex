@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ComputationallyIndistinguishable}
+\pmcreated{2013-03-22 13:03:11}
+\pmmodified{2013-03-22 13:03:11}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{computationally indistinguishable}
+\pmrecord{5}{33457}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q30}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+If $\{D_n\}_{n\in\mathbb{N}}$ and $\{E_n\}_{n\in\mathbb{N}}$ are distribution ensembles (on $\Omega$) then we say they are \emph{computationally indistinguishable} if for any probabilistic, polynomial time algorithm $A$ and any polynomal function $f$ there is some $m$ such that for all $n>m$:
+
+$$|\operatorname{Prob}_A(D_n)=\operatorname{Prob}_A(E_n)|<\frac{1}{p(n)}$$
+
+where $\operatorname{Prob}_A(D_n)$ is the probability that $A$ accepts $x$ where $x$ is chosen according to the distribution $D_n$.
+%%%%%
+%%%%%
+\end{document}

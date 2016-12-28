@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{KolmogorovComplexity}
+\pmcreated{2013-03-22 13:43:41}
+\pmmodified{2013-03-22 13:43:41}
+\pmowner{tromp}{1913}
+\pmmodifier{tromp}{1913}
+\pmtitle{Kolmogorov complexity}
+\pmrecord{9}{34414}
+\pmprivacy{1}
+\pmauthor{tromp}{1913}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q30}
+\pmsynonym{algorithmic information theory}{KolmogorovComplexity}
+\pmsynonym{algorithmic entropy}{KolmogorovComplexity}
+%\pmkeywords{binary string}
+%\pmkeywords{information}
+%\pmkeywords{randomness}
+%\pmkeywords{entropy}
+%\pmkeywords{universal}
+%\pmkeywords{invariance}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\PMlinkescapeword{binary}
+\PMlinkescapeword{measure}
+\PMlinkescapeword{information}
+
+Consider flipping a coin 50 times to obtain the binary string
+000101000001010100010000010101000100000001010000010.
+Can we call this random? The string has rather an abundance of 0s,
+and on closer inspection every other bit is 0. We wouldn't expect even
+a biased coin to come up with such a pattern. Still, this string
+has probability $2^{-50}$, just like any other binary string of the same length,
+so how can we call it any less random?
+
+{\em Kolmogorov Complexity} provides an answer to these questions in the form
+of a measure of information content in individual objects. Objects with low
+information content may be considered non-random.
+The topic was founded in the 1960s independently by three people:
+Ray Solomonoff, Andrei Kolmogorov, and Gregory Chaitin.
+
+See Kolmogorov complexity function and invariance theorem for more details.
+%%%%%
+%%%%%
+\end{document}

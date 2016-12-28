@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FORTRAN}
+\pmcreated{2013-03-22 16:46:38}
+\pmmodified{2013-03-22 16:46:38}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{FORTRAN}
+\pmrecord{9}{39007}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68W30}
+\pmclassification{msc}{68N15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+{\em FORTRAN}{\footnote{Acronym that comes from \emph{For-mula Tran-slating.}}} (or {\em ForTran} or {\em Fortran}) is a computer programming language developed by IBM in the 1950s with a focus on scientific and engineering applications. FORTRAN is still in use today in the sciences despite the dominance of \PMlinkname{C++}{C} for most general applications and Mathematica and Maple for algebra applications. Sloane's On-Line Encyclopedia of Integer Sequences does not include FORTRAN source code but provides links to it. The current version is FORTRAN 2003; an international group of corporations and programmers is working on FORTRAN 2008. % update when applicable: a beta version is now available
+
+The following FORTRAN program takes two integers as inputs and outputs their greatest common divisor using Euclid's algorithm. It requires positive integers as inputs. NB is just a variable name that has nothing to do with Zentrums. The function NGCD is defined after the main program. It was written by Wikipedia user Rwwww:
+
+\begin{verbatim}
+*     euclid.f (FORTRAN 77)
+*     Find greatest common divisor using the Euclidean algorithm
+*     Written by: Wikipedia User:Rwwww
+
+      PROGRAM EUCLID
+        PRINT *, 'A?'
+        READ *, NA
+        IF (NA.LE.0) THEN
+          PRINT *, 'A must be a positive integer.'
+          STOP
+        END IF
+        PRINT *, 'B?'
+        READ *, NB
+        IF (NB.LE.0) THEN
+          PRINT *, 'B must be a positive integer.'
+          STOP
+        END IF
+        PRINT *, 'The GCD of', NA, ' and', NB, ' is', NGCD(NA, NB), '.'
+        STOP
+      END
+
+      FUNCTION NGCD(NA, NB)
+        IA = NA
+        IB = NB
+    1   IF (IB.NE.0) THEN
+          ITEMP = IA
+          IA = IB
+          IB = MOD(ITEMP, IB)
+          GOTO 1
+        END IF
+        NGCD = IA
+        RETURN
+      END
+\end{verbatim}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{AlternativeTreatmentOfConcatenation}
+\pmcreated{2013-03-22 17:24:10}
+\pmmodified{2013-03-22 17:24:10}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{alternative treatment of concatenation}
+\pmrecord{6}{39774}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{20M35}
+\pmrelated{Word}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+It is possible to define words and concatenation in terms of ordered sets.  Let $A$
+be a set, which we shall call our alphabet.  Define a \emph{word} on $A$ to be a map 
+from a totally ordered set into $A$.  (In order to have words in the usual sense, the
+ordered set should be finite but, as the definition presented here does not require 
+this condition, we do not impose it.)
+
+Suppose that we have totally ordered sets $(u,<)$ and $(v,\prec)$ and words $f \colon u \to A$
+and $g \colon v \to A$.  Let $u \coprod v$ denote the disjoint union of $u$ and $v$ and let
+$p \colon u \to u \coprod v$ and $q \colon u \to u \coprod v$ be the canonical maps.  Then
+we may define an order $\ll$ on $u \coprod v$ as follows:
+\begin{itemize}
+\item If $x \in u$ and $y \in u$, then $p(x) \ll p(y)$ if and only if $x < y$.
+\item If $x \in u$ and $y \in v$, then $p(x) \ll q(y)$.
+\item If $x \in v$ and $y \in v$, then $q(x) \ll q(y)$ if and only if $x \prec y$.
+\end{itemize}
+We define the \emph{concatenation} of $f$ and $g$, which will be denoted $f \circ g$, to be
+map from $u \coprod v$ to $A$ defined by the following conditions:
+\begin{itemize}
+\item If $x \in u$, then $(f \circ g) (p(x)) = f(x)$.
+\item If $y \in u$, then $(f \circ g) (q(x)) = g(x)$.
+\end{itemize}
+%%%%%
+%%%%%
+\end{document}

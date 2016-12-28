@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Haskell}
+\pmcreated{2013-03-22 16:47:13}
+\pmmodified{2013-03-22 16:47:13}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{Haskell}
+\pmrecord{6}{39019}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N15}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+{\em Haskell} is a computer programming language designed by a committee in 1990 to consolidate the best features of the many purely functional programming languages that were created in the late 1980s.  Haskell is thus neither a procedural programming language nor an object-oriented one, although it offers monads such as {\tt do} to support procedural programming and classes with inheritance to support object-oriented programming (there is also a variant of Haskell called O'Haskell which includes more support for object-oriented programming).  In general, Haskell programs are most naturally written declaratively.
+
+The standard version of the language is Haskell 98; Haskell 2007 hasn't been released yet but is expected to be only a minor revision of Haskell 98.
+
+The standard Haskell prelude includes the function {\tt gcd}, which computes the greatest common divisor of two integers.  The following Haskell code is a reimplementation of the {\tt gcd} function.
+
+% gcd.hs -- compute the gcd of two integers
+% Copyright (C) 2007 by Michael Slone.
+%
+% This program is free software.  You may read, study, 
+% copy, modify, and distribute modified copies of this
+% program according to the terms of the GNU General 
+% Public License, version 2.
+%
+% The first line,
+%   mygcd :: Int -> Int -> Int ,
+% is a type declaration.  It indicates that mygcd expects to
+% receive two integers and expects to return a single integer.
+% The function is defined using equations.  If no equation 
+% applies, an error occurs.  For example, trying ``mygcd 5 5.2''
+% yields the following error message in ghci.
+%
+% *Main> mygcd 5 5.2
+% 
+% <interactive>:1:8:
+%     No instance for (Fractional Int)
+%       arising from the literal `5.2' at <interactive>:1:8-10
+%     Probable fix: add an instance declaration for (Fractional Int)
+%     In the second argument of `mygcd', namely `5.2'
+%     In the definition of `it': it = mygcd 5 5.2
+%
+% Whitespace can matter in Haskell, so if you wish to use this 
+% code, please copy directly from the TeX source of this page 
+% instead of the HTML version.
+
+\begin{verbatim}
+-- gcd.hs -- compute the gcd of two integers
+-- View this page in TeX mode for documentation and license.
+
+mygcd :: Int -> Int -> Int
+mygcd m n
+  | (n < 0)   = mygcd m (abs n)
+  | (n == 0)  = m
+  | (m < n)   = mygcd n m
+  | otherwise = mygcd n (mymod m n)
+
+mydiv :: Int -> Int -> Int
+mydiv m n
+  | (m < 0)   = negate (mydiv (negate m) n)
+  | (n < 0)   = negate (mydiv m (negate n))
+  | (m < n)   = 0
+  | otherwise = 1 + mydiv (m-n) n
+
+mymod :: Int -> Int -> Int
+mymod m n = m - n * (mydiv m n)
+\end{verbatim}
+
+\PMlinkescapeword{classes}
+\PMlinkescapeword{code}
+\PMlinkescapeword{currying}
+\PMlinkescapeword{functional}
+\PMlinkescapeword{gcd}
+\PMlinkescapeword{information}
+\PMlinkescapeword{language}
+\PMlinkescapeword{languages}
+\PMlinkescapeword{line}
+\PMlinkescapeword{minor}
+\PMlinkescapeword{mode}
+\PMlinkescapeword{support}
+\PMlinkescapeword{type}
+
+%%%%%
+%%%%%
+\end{document}

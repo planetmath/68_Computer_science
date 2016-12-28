@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ShuntingYardAlgorithm}
+\pmcreated{2013-03-22 16:10:16}
+\pmmodified{2013-03-22 16:10:16}
+\pmowner{Mravinci}{12996}
+\pmmodifier{Mravinci}{12996}
+\pmtitle{shunting yard algorithm}
+\pmrecord{4}{38256}
+\pmprivacy{1}
+\pmauthor{Mravinci}{12996}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N17}
+\pmclassification{msc}{03B70}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+To convert from standard infix notation to reverse Polish notation, the Dutch computer programmer Edsger Dijkstra came up with the \emph{shunting yard algorithm}.
+
+Given a string of tokens, a token reader that ignores whitespace (except to delimit numbers), a number stack, an operator stack and an output queue execute the following steps:
+
+1. Read the tokens in order until end of line. Put number tokens on the output queue. Put operator tokens on the operator stack: if an operator is associative, and has lesser precedence than the operator below it on the operator stack, pop the lower operator off the operator stack and put it on the output queue. If the operator is a left parenthesis, push it onto the operator stack. If the operator is a right parenthesis, start popping operators off the operator stack and onto the output queue until a left parenthesis is encountered. If no left parenthesis is found, throw a mismatched parenthesis exception.
+2. At end of line, pop all operators off the operator stack and onto the output queue. If a left parenthesis is encountered during this process, throw a mismatched parenthesis exception.
+3. Send the contents of the output queue to the appropriate output device.
+
+What the mismatched parenthesis exception does depends on the device. In the case of a palm calculator, the exception might just turn on the error "E" and ignore input until the error clear key is pressed. In the case of a calculator implemented on a computer, the exception could give an appropriate message and ask the user to try again.
+%%%%%
+%%%%%
+\end{document}

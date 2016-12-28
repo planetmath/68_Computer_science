@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{AbstractFamilyOfLanguages}
+\pmcreated{2013-03-22 18:59:18}
+\pmmodified{2013-03-22 18:59:18}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{abstract family of languages}
+\pmrecord{11}{41854}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68Q45}
+\pmsynonym{AFL}{AbstractFamilyOfLanguages}
+\pmsynonym{full trio}{AbstractFamilyOfLanguages}
+\pmrelated{ClosurePropertiesOnLanguages}
+\pmdefines{cone}
+\pmdefines{full AFL}
+\pmdefines{trio}
+\pmdefines{ray}
+\pmdefines{cylinder}
+\pmdefines{anti-AFL}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{tabls}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Abstract families of languages are abstractions of the families of languages defined by the Chomsky hierarchy in that they are not necessarily defined by grammars, and yet share the same sets of closure operations as the Chomsky language families do.
+
+We begin with a word about a family of languages.  A family of languages is a defined as a pair $(V,\mathscr{L})$ of sets such that each $L\in \mathscr{L}$ is a language over some alphabet $\Sigma\subseteq V$.  In practice, we omit $V$ and denote $\mathscr{L}$ as a family of languages.  There is no restriction placed on the cardinality of $V$.  Note that if $V$ is finite, then $\mathscr{L}$ is just a subset of the set $\mathscr{L}(V)$ of all languages over $V$.  If $V$ is infinite, let us also denote $\mathscr{L}(V)$ to be the family of all languages over finite subsets of $V$.
+
+\textbf{Definition}.  Let $\mathscr{L}$ be a family of languages.  Then $\mathscr{L}$ is defined as a \emph{ray}, a \emph{cylinder}, a \emph{trio}, a \emph{cone}, an \emph{abstract family of language} or \emph{AFL}, or a \emph{full AFL}, if it contains a non-empty language, and is closed under the operations marked by X in the appropriate cells below.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline\hline
+operation & ray & cylinder & trio & cone & AFL & full AFL \\
+\hline\hline
+union & & & & & X & X \\
+\hline
+homomorphism & & & & X & & X\\
+\hline
+$\lambda$-free homomorphism & & & X & & X & \\
+\hline
+inverse homomorphism & X & X & X & X & X & X \\
+\hline
+intersection with a regular language & & X & X & X & X & X \\
+\hline
+Kleene plus & & & & & X & X \\
+\hline
+\end{tabular}
+\end{center}
+
+A cone is also called a \emph{full trio}.  It is clear that a family of languages is a full AFL iff it an AFL and a cone.  We also have the following obvious implications:
+$$\xymatrix@R-=2pt{
+\mbox{full AFL}\ar[rr] &&\mbox{cone} \ar[drr] &&&& \\
+&&&& \mbox{cylider} \ar[rr] &&\mbox{ray} \\
+\mbox{AFL}\ar[rr] &&\mbox{trio} \ar[urr] &&&&
+}$$
+However, none of the arrows can be reversed.
+
+Moreover, we have the following:
+\begin{prop}  The families $\mathscr{L}_i$ of languages, where $i=0,2,3$, defined by the Chomsky hierarchy, are all full AFL.  $\mathscr{L}_1$ is an AFL not a full AFL. \end{prop}
+
+There exists a cone that is not a full AFL (hence not an AFL).  There exists an AFL (full AFL) that is not one of the Chomsky language families: the family of recursive languages is an AFL not a full AFL, and the family of indexed languages is a full AFL.
+
+Below are some other closure properties related the specific families of languages defined above:
+\begin{itemize}
+\item properties implying cones, AFLs, or full AFLs: let $\mathscr{L}$ be a family of languages,
+\begin{itemize}
+\item if $\mathscr{L}$ contains a language containing a non-empty word, and is closed under union, Kleene plus, $\lambda$-free regular substitution, intersection with a regular language, and restricted homomorphism, then it is an AFL.
+\item if the restricted homomorphism in the above statement is replaced by an arbitrary homomorphism, then $\mathscr{L}$ is a full AFL
+\item if $\mathscr{L}$ is $\lambda$-free and contains all $\lambda$-free regular languages, and is closed under intersection with regular languages, $\lambda$-free substitution, and restricted homomorphism, then it is an AFL
+\item if $\mathscr{L}$ contains $\mathscr{L}_3$, the family of all regular languages, and is closed under intersection with a regular language and substitution, then it is a full AFL
+\end{itemize}
+\item characterizations of cones, AFLs, or full AFLs: let $\mathscr{L}$ be a family of languages,
+\begin{itemize}
+\item $\mathscr{L}$ is a cone iff it is closed under rational transduction
+\item suppose $\mathscr{L}$ contains a language containing a non-empty word, then $\mathscr{L}$ is an AFL iff it is closed under union, Kleene plus, $\lambda$-free regular substitution, intersection with a regular language, and restricted homomorphism
+\item again suppose $\mathscr{L}$ contains a language containing a non-empty word, then $\mathscr{L}$ is an AFL iff it is closed under union, Kleene star, regular substitution, intersection with a regular language, and homomorphism
+\end{itemize}
+\item properties of cones, AFLs, or full AFLs:
+\begin{itemize}
+\item Every cone contains $\mathscr{L}_3$.
+\item An AFL is closed under concatenation, and so is a full AFL.
+\item Every AFL contains the family of $\lambda$-free regular languages.  
+\item If the AFL is not $\lambda$-free (meaning it contains a language containing the empty word $\lambda$), then it contains $\mathscr{L}_3$.  Furthermore, such an AFL is closed under Kleene star.
+\item Every AFL is closed under $\lambda$-free GSM mapping.
+\item Every cone or full AFL is closed under GSM mapping.
+\end{itemize}
+\end{itemize}
+
+\textbf{Remark}.  When a family of languages satisfies none of the closure properties listed in the table above, it is said to be \emph{anti-AFL}.  For example, the family of languages generated by L-systems is anti-AFL.
+
+\begin{thebibliography}{9}
+\bibitem{GGH} S. Ginsburg, S. Greibach, J. Hopcroft, {\em Studies in Abstract Families of Language. Memoirs of the American Mathematical Society, No.87}, (1969).
+\bibitem{GS} S. Ginsburg, E. Spanier, {\em Substitution in families of languages.  Information Sci. 2}, (1970) pp 83-110.
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\bibitem{RS} A. Mateescu, A. Salomaa, {\em Handbook of Formal Languages: Volume 1. Word, Language, Grammar}, Springer, (1997).
+\bibitem{NP} N. Pippenger, {\em Theories of Computability}, Cambridge University Press (1997).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

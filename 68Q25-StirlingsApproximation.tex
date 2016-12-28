@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{StirlingsApproximation}
+\pmcreated{2013-03-22 12:00:36}
+\pmmodified{2013-03-22 12:00:36}
+\pmowner{drini}{3}
+\pmmodifier{drini}{3}
+\pmtitle{Stirling's approximation}
+\pmrecord{22}{30953}
+\pmprivacy{1}
+\pmauthor{drini}{3}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q25}
+\pmclassification{msc}{30E15}
+\pmclassification{msc}{41A60}
+\pmsynonym{Stirling's formula}{StirlingsApproximation}
+\pmsynonym{Stirling's approximation formula}{StirlingsApproximation}
+\pmrelated{MinkowskisConstant}
+\pmrelated{AsymptoticBoundsForFactorial}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%%%\usepackage{xypic}
+\begin{document}
+Stirling's formula gives an approximation for $n!$, the factorial \PMlinkescapetext{function}.  It is 
+
+$$ n! \approx \sqrt{2n\pi} n^n e^{-n} $$
+
+We can derive this from the gamma function.  Note that for large $x$, 
+
+\begin{equation}
+ \label{eq:glx}
+ \Gamma(x) = \sqrt{2\pi}x^{x-\frac{1}{2}} e^{-x + \mu(x)}
+\end{equation}
+
+where
+
+$$ \mu(x) = \sum_{n=0}^\infty \left(x+ n +\frac{1}{2}\right) \ln \left(1+ \frac{1}{x+n} \right) -1 = \frac{\theta}{12x} $$
+
+with $0 < \theta < 1$.  Taking $x=n$ and multiplying by $n$, we have
+
+\begin{equation}
+\label{eq:penult}
+ n! = \sqrt{2\pi} n^{n+\frac{1}{2}} e^{-n + \frac{\theta}{12n}}
+\end{equation}
+
+Taking the approximation for large $n$ gives us Stirling's formula.
+
+There is also a big-O notation version of Stirling's approximation:
+
+\begin{equation}
+\label{eq:bigover}
+n! = \left(\sqrt{2\pi n}\right)\left(\frac{n}{e}\right)^n \left(1+\mathcal{O}\left(\frac{1}{n}\right)\right)
+\end{equation}
+
+We can prove this equality starting from~\eqref{eq:penult}.  It is clear that the big-O portion of~\eqref{eq:bigover} must come from $e^{\frac{\theta}{12n}}$, so we must consider the asymptotic behavior of $e$.  
+
+First we observe that the Taylor series for $e^x$ is 
+
+$$ e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac {x^3}{3!} + \cdots $$
+
+But in our case we have $e$ to a vanishing exponent.   Note that if we vary $x$ as $\frac{1}{n}$, we have as $ n \longrightarrow \infty $
+
+$$ e^x = 1 + \mathcal{O}\left(\frac{1}{n}\right) $$
+
+We can then (almost) directly plug this in to~\eqref{eq:penult} to get~\eqref{eq:bigover} (note that the factor of 12 gets absorbed by the big-O notation.)
+%%%%%
+%%%%%
+%%%%%
+\end{document}

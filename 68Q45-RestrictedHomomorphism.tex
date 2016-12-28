@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RestrictedHomomorphism}
+\pmcreated{2013-03-22 18:59:11}
+\pmmodified{2013-03-22 18:59:11}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{restricted homomorphism}
+\pmrecord{7}{41852}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmsynonym{$k$-restricted homomorphism}{RestrictedHomomorphism}
+\pmsynonym{k-restricted homomorphism}{RestrictedHomomorphism}
+\pmrelated{LinearErasing}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $h$ be a homomorphism over an alphabet $\Sigma$.  Let $L$ be a language over $\Sigma$.  We say that $h$ is \emph{$k$-restricted} on $L$ if
+\begin{enumerate}
+\item there is a letter $b\in \operatorname{Alpha}(L)$ such that no word in $L$ begins with $b$ and contains more than $k-1$ consecutive occurrences of $b$ in it,
+\item for any $a\in \operatorname{Alpha}(L)$,
+\begin{displaymath}
+h(a) = \left\{
+\begin{array}{ll}
+\lambda & \textrm{if } a=b \\
+a & \textrm{otherwise.}
+\end{array}
+\right.
+\end{displaymath}
+\end{enumerate}
+Here, $\operatorname{Alpha}(L)$ is the set of all letters in $\Sigma$ that occur in words of $L$.
+
+It is easy to see that any $k$-restricted homomorphism on $L$ is a $k$-linear erasing on $L$, for if $u\in L$ is a non-empty word, then we may write $u=v_1 b^{m_1} v_2 b^{m_2} \cdots v_n b^{m_n}$, where each $0<m_i\le k-1$, and each $v_i$ is a non-empty word not containing any occurrences of $b$.  Then
+$$|u| = |v_1\cdots v_{n-1}| + \sum_{i=1}^n m_i \le |h(u)|+n(k-1) \le |h(u)|+(k-1)|h(u)| = k|h(u)|.$$
+Note that $n\le |h(u)|$ since $1\le |v_i|$ for each $i=1,\ldots, n$.  A $k$-linear erasing is in general not a $k$-restricted homomorphism, an example of which is the following: $L=\lbrace a,ab\rbrace^*$ and $h:\lbrace a,b\rbrace \to \lbrace a,b\rbrace$ given by $h(a)=a^2$ and $h(b)=\lambda$.  Then $h$ is a $1$-linear erasing, but not a $1$-restricted homomorphism, on $L$.
+
+A family $\mathscr{F}$ of languages is said to be \emph{closed under restricted homomorphism} if for every $L\in \mathscr{F}$, and every $k$-restricted homomorphism $h$ on $L$, $h(L)\in \mathscr{F}$.  By the previous paragraph, we see that if $\mathscr{F}$ is closed under linear erasing, it is closed under restricted homomorphism.  The converse of this is not necessarily true.
+
+\begin{thebibliography}{9}
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

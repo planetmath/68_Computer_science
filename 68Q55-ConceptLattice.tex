@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ConceptLattice}
+\pmcreated{2013-03-22 19:22:34}
+\pmmodified{2013-03-22 19:22:34}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{concept lattice}
+\pmrecord{10}{42330}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q55}
+\pmclassification{msc}{68P99}
+\pmclassification{msc}{08A70}
+\pmclassification{msc}{06B23}
+\pmclassification{msc}{03B70}
+\pmclassification{msc}{06A15}
+\pmdefines{object}
+\pmdefines{attribute}
+\pmdefines{context}
+\pmdefines{concept}
+\pmdefines{extent}
+\pmdefines{intent}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+
+\begin{document}
+Let $G$ and $M$ be sets whose elements we call \emph{objects} and \emph{attributes} respectively.  Let $I\subseteq G\times M$.  We say that object $g\in G$ has attribute $m\in M$ iff $(g,m)\in I$.  The triple $(G,M,I)$ is called a \emph{context}.  For any set $X\subseteq G$ of objects, define $$X':=\lbrace m\in M\mid (x,m)\in I \textrm{ for all }x\in G\rbrace.$$  In other words, $X'$ is the set of all attributes that are common to all objects in $X$.  Similarly, for any set $Y\subseteq M$ of attributes, set $$Y':=\lbrace g\in G\mid (g,y)\in I \textrm{ for all }y\in M\rbrace.$$  In other words, $Y'$ is the set of all objects having all the attributes in $M$.  We call a pair $(X,Y)\subseteq G\times M$ a \emph{concept} of the context $(G,M,I)$ provided that $$X'=Y \quad \textrm{and} \quad Y'=X.$$  If $(X,Y)$ is a concept, then $X$ is called the \emph{extent} of the concept and $Y$ the \emph{intent} of the concept.
+
+Given a context $(G,M,I)$.  Let $\mathbb{B}(G,M,I)$ be the set of all concepts of $(G,M,I)$.  Define a binary relation $\le$ on $\mathbb{B}(G,M,I)$ by $(X_1,Y_1)\le (X_2,Y_2)$ iff $X_1\subseteq X_2$.  Then $\le$ makes $\mathbb{B}(G,M,I)$ a lattice, and in fact a complete lattice.  $\mathbb{B}(G,M,I)$ together with $\le$ is called the \emph{concept latice} of the context $(G,M,I)$.
+
+%%%%%
+%%%%%
+\end{document}

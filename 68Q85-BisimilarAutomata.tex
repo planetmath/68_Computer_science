@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BisimilarAutomata}
+\pmcreated{2013-03-22 19:23:17}
+\pmmodified{2013-03-22 19:23:17}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{bisimilar automata}
+\pmrecord{14}{42343}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q85}
+\pmclassification{msc}{68Q10}
+\pmsynonym{strongly bisimilar automata}{BisimilarAutomata}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+
+\begin{document}
+Let $M=(S_M,\Sigma,\delta_M,I_M,F_M)$ and $N=(S_N,\Sigma,\delta_N,I_N,F_N)$ be two NDFA's (non-deterministic finite automata).  Let $\approx \subseteq S_M \times S_N$ be a binary relation between the states of the automata $M$ and $N$.  We may extend $\approx$ to a binary relation between subsets of the states of the automata, as follows: for any $P\subseteq S_M$ and $Q \subseteq S_N$, set
+$$C(P):=\lbrace q\in S_N\mid p\approx q\mbox{ for some }p\in P\rbrace\mbox{ and }C(Q):=\lbrace p\in S_M\mid p\approx q\mbox{ for some }q\in Q\rbrace.$$
+Then, using the same notation, define $\approx \subseteq P(S_M)\times P(S_N)$ by
+$$P \approx Q \mbox{ iff }P \subseteq C(Q)\mbox{ and }Q \subseteq C(P).$$
+
+\textbf{Definition}.  We say that $M$ is \emph{bisimilar} to $N$ if there is a binary relation $\approx \subseteq S_M \times S_N$ such that
+\begin{enumerate}
+\item $I_M \approx I_N$,
+\item if $p \approx q$, then $\delta_M(p,a) \approx \delta_N(q,a)$ for any $a\in \Sigma$,
+\item if $p \approx q$, then $p\in F_M$ iff $q\in F_N$.
+\end{enumerate}
+In other words, $M$ is bisimilar to $N$ as automata precisely when $M$ is bisimilar to $N$ as LTS, and satisfy conditions $1$ and $3$ above.
+
+Any NDFA $M=(S,\Sigma,\delta,I,F)$ is bisimilar to itself, for the identity relation is clearly a bisimulation.  Next, if $M$ is bisimilar to $N$ with bisimulation $\approx$, $N$ is bisimilar to $M$ with the converse relation $\approx^{-1}$.  Finally, if $M$ is bisimilar to $N$ with bisimulation $\approx_1$ and $N$ is bisimilar to $P$ with bisimulation $\approx_2$, $M$ is bisimilar to $N$ with bisimulation $\approx_1\circ \approx_2$.  Therefore, bisimilarity is an equivalence relation on the class of NDFA's.
+
+Another property of bisimulations on NDFA's is that the they are preserved by taking unions: an arbitrary non-empty union of bisimulations is again a bisimulation.  From this property, it is not hard to show that if $A\approx B$, then $\delta(A,x)\approx \delta(B,x)$ for any word over $\Sigma$.  As a result, bismilar NDFA's accept the same set of words.
+
+By taking the union of all bisimulations on a given NDFA $M=(S,\Sigma,\delta,I,F)$, we get a bisimulation that is also an equivalence relation on the set of states of $M$.  For each $p\in S$, let $[p]$ be the equivalence class containing $p$, and for any subset $A\subseteq S$, let $[A]:=\lbrace [p]\mid p\in A\rbrace$.  Then we get an NDFA $[M]:=([S],\Sigma,[\Delta],[I],[F])$, with $$[\Delta]([p],a):=[\delta(p,a)]$$ for any $a\in \Sigma$.  It can be shown that $[M]$ is minimal in the sense that $[[M]]$ is isomorphic to $[M]$, and that $M$ is bisimilar to $[M]$.  In addition, if $M$ has no inaccessible states, then $M$ is bisimilar to a unique minimal automaton, in the sense that, if $N$ is any minimal automaton bisimlar to $M$, then $N$ is isomorphic to $[M]$.
+
+%%%%%
+%%%%%
+\end{document}

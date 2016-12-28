@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DerivationTree}
+\pmcreated{2013-03-22 19:00:17}
+\pmmodified{2013-03-22 19:00:17}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{derivation tree}
+\pmrecord{10}{41873}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+\pmsynonym{generation tree}{DerivationTree}
+\pmdefines{parse tree}
+\pmdefines{result of a derivation tree}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Given a formal grammar $G=(\Sigma,N,P,\sigma)$, recall that a derivation from words $u$ to $v$ over $\Sigma$ can be visualized as a finite sequence of words over $\Sigma$, connected by the binary relation $\Rightarrow$:
+\begin{equation}
+u_0 \Rightarrow u_1 \Rightarrow \cdots \Rightarrow u_n
+\end{equation}
+where $u=u_0$ and $v=u_n$.  Each $u_i \Rightarrow u_{i+1}$ is a derivation step, which means that there is a production in $P$ which, when applied to $u_i$, yields $u_{i+1}$.  In other words, there is $A\to B$ in $P$ such that $u_i=xAy$ and $u_{i+1}=xBy$, where $x,y$ are words over $\Sigma$.
+
+When the formal grammar $G$ is context-free, a derivation can be represented by an ordered tree, revealing the structure behind the derivation that is usually not apparent in the linear representation $(1)$ above.  This ordered tree is variously known as a \emph{derivation tree} or a \emph{parse tree}, depending how it is being used.
+
+In the foregoing discussion, $G$ is context-free, and any derivation of $G$ begins with $\sigma$, the starting non-terminal.
+
+\textbf{Definition}.  A \emph{parse tree} of $G$ is an ordered tree $T$ such that
+\begin{enumerate}
+\item the nodes of $T$ are labeled by elements of $\Sigma$, or the empty word $\lambda$,
+\item if a node with label $A$ has children $N_1, \ldots, N_k$ such that $N_1 < \cdots < N_k$, and that each $N_i$ has label $A_i$, then $A \to A_1 \cdots A_k$ is a production of $P$.
+\end{enumerate}
+
+A parse tree such that the root has label $\sigma$ is called a \emph{derivation tree}, or a \emph{generation tree}.  Every subtree of a derivation tree is a parse tree.
+
+\textbf{Remark}.  Since $G$ is context-free, in a parse tree, any node that is not a leaf is labeled by a non-terminal symbol.
+
+For example, if $\Sigma = \lbrace \sigma, a, b, X, Y\rbrace$, $N=\lbrace \sigma, X, Y\rbrace$, and the productions of $P$ are $$\sigma \to aXY, \quad X\to bYb, \quad Y\to Xa, \quad Y\to a,$$ then 
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[scale=1]{dtree.eps}
+\end{figure}
+
+represents a derivation tree of $G$.  The tree represents the following derivations 
+\begin{itemize}
+\item $\sigma \Rightarrow aXY \Rightarrow abYbY \Rightarrow abXabY \Rightarrow abXabb$
+\item $\sigma \Rightarrow aXY \Rightarrow abYbY \Rightarrow abYbb \Rightarrow abXabb$
+\item $\sigma \Rightarrow aXY \Rightarrow aXb \Rightarrow abYbb \Rightarrow abXabb$
+\end{itemize}
+
+\textbf{Definition}.  If $\ell_1, \ldots, \ell_m$ are the leaves of a parse tree $T$, with $\ell_1 < \cdots < \ell_m$, then the \emph{result} of $T$ is the word $B_1\cdots B_m$, where $B_i\in \Sigma$ is the label of $\ell_i$.  A word over $\Sigma$ is said to \emph{correspond} to a parse tree if it is the result of the tree.
+
+In the example above, the result of the tree is $abXabb$.
+
+\textbf{Remark}.  A derivable word may correspond to several derivation trees.  See the entry ambiguous grammar for more detail.
+
+\begin{thebibliography}{9}
+\bibitem{hlcp} H.R. Lewis, C.H. Papadimitriou, {\em Elements of the Theory of Computation}. Prentice-Hall, Englewood Cliffs, New Jersey (1981).
+\bibitem{AS} A. Salomaa, {\em Formal Languages}, Academic Press, New York (1973).
+\bibitem{hu} J.E. Hopcroft, J.D. Ullman, {\em Formal Languages and Their Relation to Automata}, Addison-Wesley, (1969).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

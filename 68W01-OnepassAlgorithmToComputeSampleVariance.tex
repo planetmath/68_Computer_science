@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{OnepassAlgorithmToComputeSampleVariance}
+\pmcreated{2013-03-22 16:45:19}
+\pmmodified{2013-03-22 16:45:19}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{one-pass algorithm to compute sample variance}
+\pmrecord{9}{38981}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68W01}
+\pmclassification{msc}{65-00}
+\pmclassification{msc}{62-00}
+
+% The standard font packages
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% For neatly defining theorems and definitions
+%\usepackage{amsthm}
+
+% Including EPS/PDF graphics (\includegraphics)
+%\usepackage{graphicx}
+
+% Making matrix-based graphics
+%%%\usepackage{xypic}
+
+% Enumeration lists with different styles
+%\usepackage{enumerate}
+
+% Set up the theorem environments
+%\newtheorem{thm}{Theorem}
+%\newtheorem*{thm*}{Theorem}
+
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+% The standard number systems
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbb{Q}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\intset}{\mathbb{Z}}
+
+% Absolute values and norms
+% Normal, wide, and big versions of the delimeters
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+
+\newcommand{\xb}{\overline{x}}
+
+\begin{document}
+\PMlinkescapeword{derivation}
+\PMlinkescapeword{terms}
+\PMlinkescapeword{formula}
+
+In many situations it is desirable to calculate,
+in one iteration, the sample variance of many numbers, and without 
+having to have every number available
+in computer memory before beginning processing.
+
+Let $x_1, x_2, \dotsc$ denote the data.  
+The na\"ive formula for calculating the sample
+variance in one pass,
+\[
+v = \frac{1}{n-1} \sum_{i=1}^n (x_i - \xb)^2
+= \frac{\left( \sum_{i=1}^n x_i^2 \right) - n\xb^2}{n-1}
+\,, \quad \xb = \frac{1}{n} \sum_{i=1}^n x_i\,,
+\]
+suffers from computational round-off error.
+If the mean $\xb$ is large in absolute value,
+and $\sum_{i=1}^n x_i^2$ is close to $n \xb^2$,
+then the subtraction at the end will tend to lose
+significant digits on the result.
+Also, in rare cases, the sum of squares $\sum_{i=1}^n x_i^2$
+can overflow on a computer.
+
+A better alternative, though requiring more work per iteration,
+ is to calculate the running sample mean
+and variance instead,
+and update these as each datum is processed.
+Here we give the derivation of the one-pass algorithm --- which 
+involves nothing more than simple algebraic manipulations.
+
+Define the running arithmetic mean
+and the sum of squared residuals:
+\[
+a_n = \frac{1}{n} \sum_{i=1}^n x_i\,,
+\quad
+s_n = \sum_{i=1}^n (x_i - a_n)^2\,.
+\]
+We want to express $a_{n+1}$ and $s_{n+1}$
+in terms of the old values $a_n$ and $s_n$.
+
+For convenience, let $\delta = x_{n+1} - a_n$
+and $\gamma = a_{n+1} - a_n$.
+Then we have
+\[
+a_{n+1} = \frac{n a_n + x_{n+1}}{n+1} = 
+\frac{(n+1)a_n + x_{n+1} - a_n}{n+1}
+= a_n + \frac{\delta}{n+1}\,.
+\]
+
+For the variance calculation,
+we have
+\begin{align*}
+s_{n+1} &= \sum_{i=1}^n \bigl( (x_i - a_n) - \gamma \bigr)^2
++ (x_{n+1} - a_{n+1})^2
+\\
+&= \sum_{i=1}^n (x_i - a_n)^2 - 2\gamma \sum_{i=1}^n (x_i - a_n)
++ \sum_{i=1}^n \gamma^2 + (x_{n+1} - a_{n+1})^2 \\
+&= s_n + 0 + n \gamma^2 + (x_{n+1} - a_{n+1})^2\,.
+\end{align*}
+Now observe:
+\begin{align*}
+\gamma = \frac{\delta}{n+1}\,,
+\quad
+x_{n+1} - a_{n+1} = \delta - \gamma = (n+1) \gamma - \gamma = n\gamma\,;
+\end{align*}
+hence we obtain:
+\begin{align*}
+s_{n+1} = s_n + n\gamma^2 + n^2 \gamma^2
+= s_n + n(n+1) \gamma^2
+&= s_n + n \gamma \delta  \\
+&= 
+s_n + 
+( x_{n+1} - a_{n+1}) \delta\,.
+\end{align*}
+
+Note that the number to be added to $s_n$ is never negative,
+so no cancellation error will occur from this procedure.
+(However, there can still be computational round-off error if $s_{n+1} - s_n$
+happens to be very small compared to $s_n$.)
+
+\medskip
+
+The recurrence relation for the 
+sample covariance of two lists of numbers $x_1, x_2, \dotsc$
+and $y_1, y_2, \dotsc$
+can be derived similarly.
+If $a_n$ and $b_n$ denote the arithmetic means
+of first $n$ numbers of each of the two lists respectively,
+then the sum of adjusted products
+\[
+c_n = \sum_{i=1}^n (x_i - a_n)(y_i - b_n)
+\]
+can be incrementally updated by
+\[
+c_{n+1} = c_n + (y_{n+1} - b_{n+1}) \, (x_{n+1} - a_n)
+= c_n + (x_{n+1} - a_{n+1}) \, (y_{n+1} - b_n)\,.
+\]
+
+\begin{thebibliography}{3}
+\bibitem{Welford}
+B. P. Welford. ``Note on a Method for Calculating Corrected Sums of Squares and Products''. {\it Technometrics}, Vol. 4, No. 3 (Aug., 1962), p. 419-420.
+
+\bibitem{Wiki}
+``\PMlinkexternal{Algorithms for calculating variance}{http://en.wikipedia.org/wiki/Algorithms\_for\_calculating\_variance}''. {\it Wikipedia, The Free Encyclopedia}.  Accessed 25 February 2007.
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Nonogram}
+\pmcreated{2013-03-22 17:09:21}
+\pmmodified{2013-03-22 17:09:21}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{nonogram}
+\pmrecord{8}{39465}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q17}
+\pmclassification{msc}{15A36}
+\pmclassification{msc}{05B99}
+\pmclassification{msc}{00A08}
+\pmdefines{paint by number}
+\pmdefines{griddler}
+\pmdefines{another solution problem}
+\pmdefines{ASP}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+A \emph{nonogram}, also known as a \emph{paint by numbers puzzle} or a
+\emph{griddler}, is a puzzle in which the solver must reconstruct a
+picture drawn in a grid using clues which give the distribution of
+pixels in each row and column.
+
+The simplest nonograms use two colors, white (usually the background)
+and black (usually the foreground).  Here is a sample black and white
+nonogram:
+\begin{figure}[hh]
+\begin{center}
+\includegraphics{initial.epsi}
+\caption{A nonogram in its unsolved state.}
+\end{center}
+\end{figure}
+The numbers to the left of a row indicate how many runs of black
+squares there are in that row and how long each such run is.  The
+numbers above a column serve the same purpose for that column.
+
+For instance, the clue for the first row is $(1,1)$.  Since there are
+six different ways of selecting two nonadjacent squares in a row of
+length five, we cannot yet conclude anything from this clue.  The next
+clue, $(5)$, indicates that the second row is completely filled in
+with black squares.  Such clues are rare on real puzzles.  Slightly
+more common are clues such as the fourth row clue $(3)$.  Although we
+cannot yet know precisely where the run of three black squares is
+positioned, by the pigeonhole principle the middle square of that row
+must be black.  Finally, since two runs of black must be separated by
+at least one square of another color, the clue $(2,2)$ tells us that
+the fifth row has two black squares followed by a white square and
+then two more black squares. 
+
+Applying the information we have so far yields the following picture.
+\begin{figure}[hh]
+\begin{center}
+\includegraphics{stage1.epsi}
+\caption{The nonogram after some clues have been applied.}
+\end{center}
+\end{figure}
+With some of the squares filled in, the remaining clues give us more
+useful information.  For instance, the first vertical clue says that
+the first column has exactly two black squares, and we have already
+drawn two squares in that column, so the other three squares must all
+be white.  By using the positions of the squares in the second and
+fourth columns we can finish those columns as well.  By using only
+vertical clues, we can finish every column but the last.
+\begin{figure}[hh]
+\begin{center}
+\includegraphics{stage2.epsi}
+\caption{The nonogram in a nearly complete state.}
+\end{center}
+\end{figure}
+
+To complete the puzzle, we appeal to the fact that the first row must
+have two black squares while the third row only has one.  In the fifth
+row we therefore place a black square in the first position and a
+white square in the third position.
+\begin{figure}[hh]
+\begin{center}
+\includegraphics{stage3.epsi}
+\caption{A solved nonogram.}
+\end{center}
+\end{figure}
+We are done.
+
+Given a picture, it is straightforward to generate the clues for that
+picture: simply determine for each row and column the lengths of the
+runs of the non-background colors.  However, it is not always
+straightforward to recover the picture from the clues, and a designer
+can exploit this fact to make puzzles of varying levels of difficulty.
+A challenge facing the designer is the fact that not every puzzle has
+a unique solution.  In particular, if we view solutions as rectangular
+matrices with entries $0$ and $1$, where $0$ represents the background
+color and $1$ the foreground color, then any 5-by-5 permutation matrix
+is a solution to the following puzzle.
+\begin{figure}[hh]
+\begin{center}
+\includegraphics{ambiguous.epsi}
+\caption{An ambiguous nonogram.}
+\end{center}
+\end{figure}
+Logic puzzles with multiple solutions can be interesting for
+mathematical reasons, but they are unacceptable as puzzles.  The
+problem of determining whether a puzzle has a unique solution is
+sometimes called the \emph{Another Solution Problem}, or \emph{ASP},
+and is known to be NP-complete for many puzzles, including nonograms.
+
+% mention generalizations:
+%   (1) more colors 
+%   (2) more general graphs than grid graphs (arrangements of pseudolines?) 
+
+Nonograms as we have described them can be generalized by allowing
+more colors to be used in the picture.  The clues then must indicate
+both which non-background colors appear in which order in a row or
+column and how long each run is.  Another generalization is to use a
+non-square grid.  For example, there are \emph{triddlers}, which are
+nonograms on a grid tiled by equilateral triangles and which therefore
+require clues for three directions.  One could also imagine
+generalizations to higher dimensions, leading to building-block
+sculpture puzzles and the like.
+
+\begin{thebibliography}{99}
+\bibitem{UeNa}
+N.~Ueda and T.~Nagao. \emph{NP-completeness results for NONOGRAM via
+parsimonious reductions.} Technical Report TR96-0008, Department of
+Computer Science, Tokyo Institute of Technology, 1996.
+
+\bibitem{Ya}
+T.~Yato. \emph{Complexity and completeness of finding another solution
+and its application to puzzles}.  Thesis in information science, the
+University of Tokyo, 2003
+\end{thebibliography}
+
+\PMlinkescapeword{complete}
+\PMlinkescapeword{distribution}
+\PMlinkescapeword{generate}
+\PMlinkescapeword{information}
+\PMlinkescapeword{levels}
+\PMlinkescapeword{logic}
+\PMlinkescapeword{multiple}
+\PMlinkescapeword{order}
+\PMlinkescapeword{place}
+\PMlinkescapeword{real}
+\PMlinkescapeword{represents}
+\PMlinkescapeword{separated}
+\PMlinkescapeword{solution}
+\PMlinkescapeword{solutions}
+%%%%%
+%%%%%
+\end{document}

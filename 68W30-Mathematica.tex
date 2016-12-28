@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Mathematica}
+\pmcreated{2013-03-22 16:21:46}
+\pmmodified{2013-03-22 16:21:46}
+\pmowner{Mravinci}{12996}
+\pmmodifier{Mravinci}{12996}
+\pmtitle{Mathematica}
+\pmrecord{11}{38499}
+\pmprivacy{1}
+\pmauthor{Mravinci}{12996}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68W30}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+{\em Mathematica} is a computer algebra system produced by Wolfram Research. The first publically available version, 1.0, came out in 1988, the most recent, 5.2, in 2005. Although primarily intended for algebraic and arithmetic computations, Mathematica is also capable of text manipulation and graphics.
+
+The standard installation provides a kernel that does the work of performing the computations requested by the user and a front-end that displays the input and output; the two communicate using "MathLink." Wolfram provides an API for using a different kernel or front-end. 
+
+The standard front-end can execute commands whether they are written as they would in a programming language (e.g., ``\verb=Sqrt[Pi^e]='') or typeset using the palettes (e.g., ``$\sqrt{ \pi ^e}$'').
+
+Error messages are usually given in blue text but do not require clearance by a special key (as they would in a stand-alone calculator). Division by zero gives the error message ``Power::infy: Infinite expression $\frac{1}{0}$ encountered'' and the result ``ComplexInfinity''. $0^0$ gives the error message ``Power::indet::Indeterminate expression $0^0$ encountered'' and the result ``Indeterminate''. In some contexts Mathematica will attempt to guess what kind of result the user wants for these infinite or indeterminate expressions, such as when taking certain limits.
+
+Unix and Linux installations include a command-line front-end that can only accept commands in the former)
+
+Like Maple, Mathematica has its own field in the On-Line Encyclopedia of Integer Sequences.
+A detailed, critical review of Mathematica is given \PMlinkexternal{here}{http://www.cs.berkeley.edu/~fateman/papers/mma.review.pdf}.
+\PMlinkexternal{Official website}{http://www.wolfram.com/products/mathematica/index.html}
+
+\begin{thebibliography}{4}
+\bibitem{kc} Kevin R. Coombes, Brian R. Hunt, Ronald L. Lipsman, John E. Osborn \& Garrett J. Stuck, {\it The Mathematica Primer}. Cambridge: Cambridge University Press (1998)
+\bibitem{jg} Jerry Glynn \& Theodore Gray, {\it The Beginner's Guide to Mathematica Version 4}. Cambridge: Cambridge University Press (2000)
+\bibitem{bt} Bruce F. Torrence \& Eve A. Torrence, {\it The Student's Introduction to Mathematica: A Handbook for Precalculus, Calculus, and Linear Algebra}. Cambridge: Cambridge University Press (1999)
+\bibitem{sw} S. Wolfram, {\it The Mathematica Book}, 4th Ed. Cambridge: Cambridge University Press (1999): 3.1.8
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

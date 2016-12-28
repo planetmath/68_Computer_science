@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ChomskyNormalForm}
+\pmcreated{2013-03-22 16:21:13}
+\pmmodified{2013-03-22 16:21:13}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{Chomsky normal form}
+\pmrecord{7}{38488}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{68Q45}
+\pmrelated{GreibachNormalForm}
+\pmrelated{KurodaNormalForm}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+A grammar is said to be of \emph{Chomsky normal form} if every production
+has either of the two forms
+ \[A \to BC \qquad \mbox{ or } \qquad A \to a \]
+where $A,B,C$ are non-terminal symbols, and $a$ is a terminal symbol.
+
+Grammars of this sort are context-free, hence they describe context-free
+languages.  Moreover, given any context-free language not containing the empty word $\lambda$, there exists a
+Chomsky normal form grammar which describes it.
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BinaryGrayCode}
+\pmcreated{2013-03-22 12:30:09}
+\pmmodified{2013-03-22 12:30:09}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{binary Gray code}
+\pmrecord{9}{32733}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P30}
+\pmclassification{msc}{05C45}
+\pmsynonym{Gray code}{BinaryGrayCode}
+\pmdefines{cyclic Gray code}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic} 
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+An $n$-bit binary \emph{Gray code} is a non-repeating sequence of the integers from $0$ to $2^n-1$ inclusive such that the binary representation of each number in the sequence differs by exactly one bit from the binary representation of the previous number: that is, the Hamming distance between consecutive elements is $1$.  In addition, we also define a \emph{cyclic Gray code} to be a Gray code where an extra condition is imposed:  The last number in the sequence must differ by exactly one bit from the first number in the sequence.
+
+For example, one $3$-bit cyclic Gray code is:
+
+$$000_2$$
+$$010_2$$
+$$011_2$$
+$$001_2$$
+$$101_2$$
+$$111_2$$
+$$110_2$$
+$$100_2$$
+
+There is a one-to-one correspondence between all possible $n$-bit Gray codes and all possible Hamiltonian cycles on an $n$-dimensional hypercube.  (To see why this is so, imagine assigning a binary number to each vertex of a hypercube where an edge joins each pair of vertices that differ by exactly one bit.)
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Quicksort}
+\pmcreated{2013-03-22 13:59:19}
+\pmmodified{2013-03-22 13:59:19}
+\pmowner{thouis}{3290}
+\pmmodifier{thouis}{3290}
+\pmtitle{quicksort}
+\pmrecord{13}{34763}
+\pmprivacy{1}
+\pmauthor{thouis}{3290}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+%\pmkeywords{comparison sort}
+%\pmkeywords{quick-sort}
+\pmrelated{SortingProblem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need 
+
+% define commands here
+\begin{document}
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+\textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+\textit{Input}: #3\newline
+\textit{Output}: #4\newline
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+\begin{figure}[#1]
+\caption{#2}
+\begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+\end{Lalgorithm}
+\end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lfor}[2]{\textbf{for} #1 \textbf{do}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+
+Quicksort is a divide-and-conquer algorithm for sorting in the
+comparison model.    Its expected running time is $O(n\lg n)$ for
+sorting $n$ values. 
+
+
+\subsection*{Algorithm}
+
+Quicksort can be implemented recursively, as follows:
+
+
+
+\begin{Lalgorithm}{Quicksort}{$L$}{A list $L$ of $n$ elements}{The list $L$ in sorted order}
+\Lif{$n > 1$}{
+   $p \gets \mbox{ random element of } L$\\
+   $A \gets \{x | x \in L, x < p\}$\\
+   $B \gets \{z | z \in L, z = p\}$\\
+   $C \gets \{y | y \in L, y > p\}$\\
+   $S_A \gets Quicksort(A)$\\
+   $S_C \gets Quicksort(C)$\\
+   {\bf return} $Concatenate(S_A,B,S_C)$
+}\\
+\Lelse{{\bf return} $L$}
+\end{Lalgorithm}
+
+\subsection*{Analysis}
+The behavior of quicksort can be analyzed by considering the
+computation as a binary tree.  Each node of the tree corresponds to
+one recursive call to the quicksort procedure.   
+
+Consider the initial input to the algorithm, some list $L$.  Call the
+Sorted list $S,$ with $i$th and $j$th elements $S_i$ and $S_j.$  These
+two elements will be compared with some probability $p_{ij}$.  This
+probability can be determined by considering two preconditions on
+$S_i$ and $S_j$ being compared: 
+\begin{itemize}
+\item $S_i$ or $S_j$ must be chosen as a pivot $p$, since comparisons
+only occur against the pivot.
+\item No element between $S_i$ and $S_j$ can have already been chosen
+as a pivot before $S_i$ or $S_j$ is chosen. Otherwise, would be
+separated into different sublists in the recursion.
+\end{itemize}
+
+The probability of any particular element being chosen as the pivot is
+uniform.  Therefore, the chance that $S_i$ or $S_j$ is chosen as the
+pivot before any element between them is $2/(j-i+1)$.  This is
+precisely $p_{ij}.$
+
+The expected number of comparisons is just the summation over all
+possible comparisons of the probability of that particular comparison
+occurring.  By linearity of expectation, no independence assumptions
+are necessary.  The expected number of comparisons is therefore
+
+\begin{eqnarray}
+\sum_{i=1}^{n}\sum_{j>i}^{n}p_{ij} & = & \sum_{i=1}^{n}\sum_{j>i}^{n}\frac{2}{j-i+1} \\
+ & = & \sum_{i=1}^{n}\sum_{k=2}^{n-i+1}\frac{2}{k}\\
+ & \le & 2\sum_{i=1}^{n}\sum_{k=1}^{n}\frac{1}{k}\\
+ & = & 2nH_n = O(n\lg n),
+\end{eqnarray}
+
+where $H_n$ is the $n$th Harmonic number.
+
+The worst case behavior is $\Theta(n^2)$, but this almost never occurs (with high probability it does not occur) with random pivots.
+%%%%%
+%%%%%
+\end{document}

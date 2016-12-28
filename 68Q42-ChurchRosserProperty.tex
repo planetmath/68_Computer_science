@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ChurchRosserProperty}
+\pmcreated{2013-03-22 17:47:28}
+\pmmodified{2013-03-22 17:47:28}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{Church-Rosser property}
+\pmrecord{9}{40252}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmrelated{Confluence}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\to$ be a reduction (a binary relation) on a set $S$, and let $\leftrightarrow^*$ be the reflexive transitive symmetric closure of $\to$.  The reduction $\to$ is said to have the \emph{Church-Rosser property} provided that $a\leftrightarrow^* b$ implies that $a$ and $b$ are joinable, for any $a,b\in S$.
+
+In terms of diagrams, the Church-Rosser property means the following, for any $a,b\in S$, if
+$$a\leftrightarrow x_1 \leftrightarrow x_2 \leftrightarrow \cdots \leftrightarrow x_n \leftrightarrow b$$ 
+where $u\leftrightarrow v$ means $u\to v$ or $u\leftarrow v$ ($:=v\to u$), then there is some $x\in S$ such that 
+$$a \to a_1 \cdots \to a_p \to x \leftarrow b_q \leftarrow \cdots \leftarrow b_1 \leftarrow b.$$
+
+\textbf{Remark}.  It can be shown that $\to$ has the Church-Rosser property iff it is confluent.
+
+\begin{thebibliography}{8}
+\bibitem{bn} F. Baader, T. Nipkow, \emph{Term Rewriting and All That}, Cambridge University Press (1998).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

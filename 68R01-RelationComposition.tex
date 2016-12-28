@@ -1,0 +1,154 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RelationComposition}
+\pmcreated{2013-10-24 16:58:43}
+\pmmodified{2013-10-24 16:58:43}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{relation composition}
+\pmrecord{40}{40288}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68R01}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03E20}
+\pmclassification{msc}{03B10}
+\pmsynonym{composition of relations}{RelationComposition}
+\pmsynonym{relational composition}{RelationComposition}
+\pmsynonym{relative multiplication}{RelationComposition}
+\pmrelated{RelationTheory}
+\pmrelated{RelationConstruction}
+\pmrelated{RelationReduction}
+\pmrelated{TacitExtension}
+\pmrelated{LogicalMatrix}
+\pmdefines{relation composition}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\textbf{Relation composition}, or the \textbf{composition of relations}, is the generalization of function composition, or the composition of functions.  The following treatment of relation composition takes the ``strongly typed'' approach to relations that is outlined in the entry on \PMlinkname{relation theory}{RelationTheory}.
+
+\tableofcontents
+
+\section{Preliminaries}
+
+The first order of business is to define the operation on relations that is variously known as the \textit{composition of relations}, \textit{relational composition}, or \textit{relative multiplication}.  In approaching the more general constructions, it pays to begin with the composition of 2-adic and 3-adic relations.
+
+As an incidental observation on usage, there are many different conventions of syntax for denoting the application and composition of relations, with perhaps even more options in general use than are common for the application and composition of functions.  In this case there is little chance of standardization, since the convenience of conventions is relative to the context of use, and the same writers use different styles of syntax in different settings, depending on the ease of analysis and computation.
+
+\begin{itemize}
+\item
+The first dimension of variation in syntax has to do with the correspondence between the order of operation and the linear order of terms on the page.
+\item
+The second dimension of variation in syntax has to do with the automatic assumptions in place about the associations of terms in the absence of associations marked by parentheses.  This becomes a significant factor with relations in general because the usual property of associativity is lost as both the complexities of compositions and the dimensions of relations increase.
+\item
+These two factors together generate the following four styles of syntax:
+
+\begin{quote}
+Left application, Left association (LALA).
+
+Left application, Right association (LARA).
+
+Right application, Left association (RALA).
+
+Right application, Right association (RARA).
+\end{quote}
+
+\end{itemize}
+
+\section{Definition}
+
+A notion of relational composition is to be defined that generalizes the usual notion of functional composition:
+
+\begin{itemize}
+\item
+Composing \textit{on the right}, $f : X \to Y$ followed by $g : Y \to Z$ results in a \textit{composite function} formulated as $fg : X \to Z$.
+\item
+Composing \textit{on the left}, $f : X \to Y$ followed by $g :  Y \to Z$ results in a \textit{composite function} formulated as $gf : X \to Z$.
+\end{itemize}
+
+Note on notation.  The ordinary symbol for functional composition is the \textit{composition sign}, a small circle ``$\circ$" written between the names of the functions being composed, as $f \circ g$, but the sign is often omitted if there is no risk of confusing the composition of functions with their algebraic product.  In contexts where both compositions and products occur, either the composition is marked on each occasion or else the product is marked by means of a \textit{raised dot sign} ``$\cdot$", as $f \cdot g$.
+ 
+Generalizing the paradigm along parallel lines, the \textit{composition} of a pair of 2-adic relations is formulated in the following two ways:
+
+\begin{itemize}
+\item
+Composing \textit{on the right}, $P \subseteq X \times Y$ followed by $Q \subseteq Y \times Z$ results in a \textit{composite relation} formulated as $PQ \subseteq X \times Z$.
+\item
+Composing \textit{on the left}, $P \subseteq X \times Y$ followed by $Q \subseteq Y \times Z$ results in a \textit{composite relation} formulated as $QP \subseteq X \times Z$.
+\end{itemize}
+
+In the rest of this discussion 2-adic relations will be composed \textit{on the right}, leading to the following definition of $PQ = P \circ Q$ for the composable pair of relations, $P \subseteq X \times Y$ and $Q \subseteq Y \times Z$.
+
+\begin{quote}
+\textbf{Definition.}  $P \circ Q = \{ (x, z) \in X \times Z : (x, y) \in P\ \mathrm{and}\ (y, z) \in Q \}.$
+\end{quote}
+
+\section{Geometric construction}
+
+There is a neat way of defining relational compositions in geometric terms, not only showing their relationship to the projection operations that come with any cartesian product, but also suggesting natural directions for generalizing relational compositions beyond the 2-adic case, and even beyond relations that have any fixed arity, in effect, to the general case of formal languages as generalized relations.
+
+This way of looking at relational compositions is sometimes referred to as \textit{Tarski's trick}, on account of Alfred Tarski having put it to especially good use in his work (Ulam and Bednarek, 1977).  It supplies the imagination with a geometric way of visualizing the relational composition of a pair of 2-adic relations, doing this by attaching concrete imagery to the basic set-theoretic operations, namely, intersections, projections, and a certain class of operations inverse to projections, here called \textit{\PMlinkname{tacit extensions}{TacitExtension}}.
+
+See \PMlinkname{main entry}{GeometricRepresentationOfRelationComposition} for details. 
+
+\section{Algebraic construction}
+
+The transition from a geometric picture of relation composition to an algebraic formulation is accomplished through the introduction of coordinates, in other words, identifiable names for the objects that are related through the various forms of relations, 2-adic and 3-adic in the present case.
+
+See \PMlinkname{main entry}{AlgebraicRepresentationOfRelationComposition} for details.
+
+\section{Matrix representation}
+
+We have it within our reach to pick up another way of representing 2-adic relations, namely, the representation as logical matrices, and also to grasp the analogy between relational composition and ordinary matrix multiplication as it appears in linear algebra.
+
+See \PMlinkname{main entry}{MatrixRepresentationOfRelationComposition} for details.
+
+\section{Graph-theoretic picture}
+
+There is another form of representation for 2-adic relations that is useful to keep in mind, especially for its ability to render the logic of many complex formulas almost instantly understandable to the mind's eye.  This is the representation in terms of \textit{\PMlinkname{bipartite graphs}{BipartiteGraph}}, or \textit{bigraphs} for short.
+
+See \PMlinkname{main entry}{GraphTheoreticRepresentationOfRelationComposition} for details.
+
+\section{Relation reduction}
+
+See \PMlinkname{main entry}{RelationReduction} for details.
+
+\section{References}
+
+\begin{itemize}
+\item
+Ulam, Stanislaw Marcin; and Bednarek, A.R. (1977), ``On the Theory of Relational Structures and Schemata for Parallel Computation".  Reprinted, pp. 477--508 in Ulam (1990).
+\item
+Ulam, Stanislaw Marcin (1990), \textit{Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators}, A.R. Bednarek and Fran\c{c}oise Ulam (eds.), University of California Press, Berkeley, CA.
+\end{itemize}
+
+%%%%%
+%%%%%
+\end{document}

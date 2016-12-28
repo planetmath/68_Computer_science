@@ -1,0 +1,300 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MatrixRepresentationOfRelationComposition}
+\pmcreated{2013-03-22 17:50:28}
+\pmmodified{2013-03-22 17:50:28}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{matrix representation of relation composition}
+\pmrecord{21}{40312}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68R01}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03E20}
+\pmclassification{msc}{03B10}
+\pmrelated{RelationTheory}
+\pmrelated{AlgebraicRepresentationOfRelationComposition}
+\pmrelated{GeometricRepresentationOfRelationComposition}
+\pmrelated{GraphTheoreticRepresentationOfRelationComposition}
+\pmrelated{LogicalMatrix}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapephrase{composition}
+\PMlinkescapephrase{Composition}
+\PMlinkescapephrase{order}
+\PMlinkescapephrase{Order}
+\PMlinkescapephrase{reflect}
+\PMlinkescapephrase{Reflect}
+\PMlinkescapephrase{relation}
+\PMlinkescapephrase{Relation}
+\PMlinkescapephrase{relational composition}
+\PMlinkescapephrase{Relational composition}
+\PMlinkescapephrase{representation}
+\PMlinkescapephrase{Representation}
+\PMlinkescapephrase{simple}
+\PMlinkescapephrase{Simple}
+
+We have it within our reach to pick up another way of representing 2-adic \PMlinkname{relations}{RelationTheory}, namely, the representation as logical matrices, and also to grasp the analogy between \PMlinkname{relational composition}{RelationComposition2} and ordinary matrix multiplication as it appears in linear algebra.
+
+First of all, while we still have the data of a very simple concrete case in mind, let us reflect on what we did in our last Example in order to find the composition $G \circ H$ of the 2-adic relations $G$ and $H$.
+
+Here is the setup that we had before:
+
+\begin{quote}$\begin{array}{lllllll}
+X & = & Y & = & Z & = & \mathrm{ \{ 1, 2, 3, 4, 5, 6, 7 \} }
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{lllllllllll}
+G & = & 4:3 & + & 4:4 & + & 4:5 & \subseteq & X \times Y & = & X \times X \\
+H & = & 3:4 & + & 4:4 & + & 5:4 & \subseteq & Y \times Z & = & X \times X \\
+\end{array}$\end{quote}
+
+Let us recall the rule for finding the relational composition of a pair of 2-adic relations.  Given the 2-adic relations $P \subseteq X \times Y$ and $Q \subseteq Y \times Z$, the relational composition of $P$ and $Q$, in that order, is written as $P \circ Q$, or more simply as $PQ$, and obtained as follows:
+
+To compute $PQ$, in general, where $P$ and $Q$ are 2-adic relations, simply multiply out the two sums in the ordinary distributive algebraic way, but subject to the following rule for finding the product of two elementary relations of shapes $a:b$ and $c:d$.
+
+\begin{quote}$\begin{array}{lccc}
+(a:b)(c:d) & = & (a:d) & \mathrm{if}\ b = c \\
+\\
+(a:b)(c:d) & = &   0   & \mathrm{otherwise} \\
+\end{array}$\end{quote}
+
+To find the relational composition $G \circ H$, one may begin by writing it as a quasi-algebraic product:
+
+\begin{quote}
+$G \circ H = (4\mathrm{:}3 + 4\mathrm{:}4 + 4\mathrm{:}5)(3\mathrm{:}4 + 4\mathrm{:}4 + 5\mathrm{:}4)$
+\end{quote}
+
+Multiplying this out in accord with the applicable form of distributive law one obtains the following expansion:
+
+\begin{quote}$\begin{array}{lccccccc}
+G \circ H & = & (4:3)(3:4) & + & (4:3)(4:4) & + & (4:3)(5:4) & + \\
+          &   & (4:4)(3:4) & + & (4:4)(4:4) & + & (4:4)(5:4) & + \\
+          &   & (4:5)(3:4) & + & (4:5)(4:4) & + & (4:5)(5:4) &   \\
+\end{array}$\end{quote}
+
+Applying the rule that determines the product of elementary relations produces the following array:
+
+\begin{quote}$\begin{array}{lccccccc}
+G \circ H & = & (4:4) & + &   0   & + &   0   & + \\
+          &   &   0   & + & (4:4) & + &   0   & + \\
+          &   &   0   & + &   0   & + & (4:4) &   \\
+\end{array}$\end{quote}
+
+Since the plus sign in this context represents an operation of logical disjunction or set-theoretic aggregation, all of the positive multiplicities count as one, and this gives the ultimate result:
+
+\begin{quote}
+$G \circ H = (4:4)$
+\end{quote}
+
+With an eye toward extracting a general formula for relation composition, viewed here on analogy with algebraic multiplication, let us examine what we did in multiplying the 2-adic relations $G$ and $H$ together to obtain their relational composite $G \circ H$.
+
+\section{Arrangement}
+
+Given the space $X = \{ 1, 2, 3, 4, 5, 6, 7 \}$, whose cardinality $|X|$ is $7$, there are $|X \times X| = |X| \cdot |X| = 7 \cdot 7 = 49$ elementary relations of the form $i:j$, where $i$ and $j$ range over the space $X$.  Although they might be organized in many different ways, it is convenient to regard the collection of elementary relations as being arranged in a lexicographic block of the following form:
+
+\begin{quote}$\begin{array}{lllllll}
+1\mathrm{:}1 & 1\mathrm{:}2 & 1\mathrm{:}3 & 1\mathrm{:}4 & 1\mathrm{:}5 & 1\mathrm{:}6 & 1\mathrm{:}7 \\
+2\mathrm{:}1 & 2\mathrm{:}2 & 2\mathrm{:}3 & 2\mathrm{:}4 & 2\mathrm{:}5 & 2\mathrm{:}6 & 2\mathrm{:}7 \\
+3\mathrm{:}1 & 3\mathrm{:}2 & 3\mathrm{:}3 & 3\mathrm{:}4 & 3\mathrm{:}5 & 3\mathrm{:}6 & 3\mathrm{:}7 \\
+4\mathrm{:}1 & 4\mathrm{:}2 & 4\mathrm{:}3 & 4\mathrm{:}4 & 4\mathrm{:}5 & 4\mathrm{:}6 & 4\mathrm{:}7 \\
+5\mathrm{:}1 & 5\mathrm{:}2 & 5\mathrm{:}3 & 5\mathrm{:}4 & 5\mathrm{:}5 & 5\mathrm{:}6 & 5\mathrm{:}7 \\
+6\mathrm{:}1 & 6\mathrm{:}2 & 6\mathrm{:}3 & 6\mathrm{:}4 & 6\mathrm{:}5 & 6\mathrm{:}6 & 6\mathrm{:}7 \\
+7\mathrm{:}1 & 7\mathrm{:}2 & 7\mathrm{:}3 & 7\mathrm{:}4 & 7\mathrm{:}5 & 7\mathrm{:}6 & 7\mathrm{:}7 \\
+\end{array}$\end{quote}
+
+\section{Expansion}
+
+The relations $G$ and $H$ may then be regarded as logical sums of the following forms:
+
+\begin{quote}
+$G = \sum_{ij} G_{ij}(i:j)$
+\\
+$H = \sum_{ij} H_{ij}(i:j)$
+\end{quote}
+
+The notation $\sum_{ij}$ indicates a logical sum over the collection of elementary relations $i:j$, while the factors $G_{ij}$ and $H_{ij}$ are values in the boolean domain $\mathbb{B} = \{ 0, 1 \}$ that are known as the \textit{coefficients} of the relations $G$ and $H$, respectively, with regard to the corresponding elementary relations $i:j$.
+
+In general, for a 2-adic relation $L$, the coefficient $L_{ij}$ of the elementary relation $i:j$ in the relation $L$ will be 0 or 1, respectively, as $i:j$ is excluded from or included in $L$.
+
+With these conventions in place, the expansions of $G$ and $H$ may be written out as follows:
+
+\begin{quote}$\begin{array}{cccccccccccccccc}
+G & & = & & 4:3 & + & 4:4 & + & 4:5 & & = \\
+\\
+0(1\mathrm{:}1) & + & 0(1\mathrm{:}2) & + & 0(1\mathrm{:}3) & + & 0(1\mathrm{:}4) & + & 0(1\mathrm{:}5) & + & 0(1\mathrm{:}6) & + & 0(1\mathrm{:}7) & + \\
+0(2\mathrm{:}1) & + & 0(2\mathrm{:}2) & + & 0(2\mathrm{:}3) & + & 0(2\mathrm{:}4) & + & 0(2\mathrm{:}5) & + & 0(2\mathrm{:}6) & + & 0(2\mathrm{:}7) & + \\
+0(3\mathrm{:}1) & + & 0(3\mathrm{:}2) & + & 0(3\mathrm{:}3) & + & 0(3\mathrm{:}4) & + & 0(3\mathrm{:}5) & + & 0(3\mathrm{:}6) & + & 0(3\mathrm{:}7) & + \\
+0(4\mathrm{:}1) & + & 0(4\mathrm{:}2) & + & 1(4\mathrm{:}3) & + & 1(4\mathrm{:}4) & + & 1(4\mathrm{:}5) & + & 0(4\mathrm{:}6) & + & 0(4\mathrm{:}7) & + \\
+0(5\mathrm{:}1) & + & 0(5\mathrm{:}2) & + & 0(5\mathrm{:}3) & + & 0(5\mathrm{:}4) & + & 0(5\mathrm{:}5) & + & 0(5\mathrm{:}6) & + & 0(5\mathrm{:}7) & + \\
+0(6\mathrm{:}1) & + & 0(6\mathrm{:}2) & + & 0(6\mathrm{:}3) & + & 0(6\mathrm{:}4) & + & 0(6\mathrm{:}5) & + & 0(6\mathrm{:}6) & + & 0(6\mathrm{:}7) & + \\
+0(7\mathrm{:}1) & + & 0(7\mathrm{:}2) & + & 0(7\mathrm{:}3) & + & 0(7\mathrm{:}4) & + & 0(7\mathrm{:}5) & + & 0(7\mathrm{:}6) & + & 0(7\mathrm{:}7) &   \\
+\end{array}$\end{quote}
+
+\begin{quote}$\begin{array}{cccccccccccccccc}
+H & & = & & 3:4 & + & 4:4 & + & 5:4 & & = \\
+\\
+0(1\mathrm{:}1) & + & 0(1\mathrm{:}2) & + & 0(1\mathrm{:}3) & + & 0(1\mathrm{:}4) & + & 0(1\mathrm{:}5) & + & 0(1\mathrm{:}6) & + & 0(1\mathrm{:}7) & + \\
+0(2\mathrm{:}1) & + & 0(2\mathrm{:}2) & + & 0(2\mathrm{:}3) & + & 0(2\mathrm{:}4) & + & 0(2\mathrm{:}5) & + & 0(2\mathrm{:}6) & + & 0(2\mathrm{:}7) & + \\
+0(3\mathrm{:}1) & + & 0(3\mathrm{:}2) & + & 0(3\mathrm{:}3) & + & 1(3\mathrm{:}4) & + & 0(3\mathrm{:}5) & + & 0(3\mathrm{:}6) & + & 0(3\mathrm{:}7) & + \\
+0(4\mathrm{:}1) & + & 0(4\mathrm{:}2) & + & 0(4\mathrm{:}3) & + & 1(4\mathrm{:}4) & + & 0(4\mathrm{:}5) & + & 0(4\mathrm{:}6) & + & 0(4\mathrm{:}7) & + \\
+0(5\mathrm{:}1) & + & 0(5\mathrm{:}2) & + & 0(5\mathrm{:}3) & + & 1(5\mathrm{:}4) & + & 0(5\mathrm{:}5) & + & 0(5\mathrm{:}6) & + & 0(5\mathrm{:}7) & + \\
+0(6\mathrm{:}1) & + & 0(6\mathrm{:}2) & + & 0(6\mathrm{:}3) & + & 0(6\mathrm{:}4) & + & 0(6\mathrm{:}5) & + & 0(6\mathrm{:}6) & + & 0(6\mathrm{:}7) & + \\
+0(7\mathrm{:}1) & + & 0(7\mathrm{:}2) & + & 0(7\mathrm{:}3) & + & 0(7\mathrm{:}4) & + & 0(7\mathrm{:}5) & + & 0(7\mathrm{:}6) & + & 0(7\mathrm{:}7) &   \\
+\end{array}$\end{quote}
+
+\section{Extraction}
+
+Stripping down to the bare essentials, one obtains the following matrices of coefficients for the relations $G$ and $H$.
+
+\begin{quote}$G =
+\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]$\end{quote}
+
+\begin{quote}$H =
+\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]$\end{quote}
+
+These are the logical matrix representations of the 2-adic relations $G$ and $H$.
+
+If the 2-adic relations $G$ and $H$ are viewed as logical sums, then their relational composition $G \circ H$ can be regarded as a product of sums, a fact that can be indicated as follows:
+
+\begin{quote}
+$G \circ H = (\sum_{ij} G_{ij}(i:j))(\sum_{ij} H_{ij}(i:j)).$
+\end{quote}
+
+The composite relation $G \circ H$ is itself a 2-adic relation over the same space $X$, in other words, $G \circ H \subseteq X \times X$, and this means that $G \circ H$ must be amenable to being written as a logical sum of the following form:
+
+\begin{quote}
+$G \circ H = \sum_{ij}(G \circ H)_{ij}(i:j).$
+\end{quote}
+
+In this formula, $(G \circ H)_{ij}$ is the coefficient of $G \circ H$ with respect to the elementary relation $i:j$.
+
+One of the best ways to reason out what $G \circ H$ should be is to ask oneself what its coefficient $(G \circ H)_{ij}$ should be for each of the elementary relations $i:j$ in turn.
+
+So let us pose the question:
+
+\begin{quote}$\begin{array}{lll}
+(G \circ H)_{ij} & = & \operatorname{What}?
+\end{array}$\end{quote}
+
+In order to answer this question, it helps to realize that the indicated product given above can be written in the following equivalent form:
+
+\begin{quote}
+$G \circ H = (\sum_{ik} G_{ik}(i:k))(\sum_{kj} H_{kj}(k:j)).$
+\end{quote}
+
+A moment's thought will tell us that $(G \circ H)_{ij} = 1$ if and only if there is an element $k$ in $X$ such that $G_{ik} = 1$ and $H_{kj} = 1$.
+
+Consequently, we have the result:
+
+\begin{quote}
+$(G \circ H)_{ij} = \sum_{k} G_{ik} H_{kj}.$
+\end{quote}
+
+This follows from the properties of logical products and sums, specifically, from the fact that the product $G_{ik} H_{kj}$ is 1 if and only if both $G_{ik}$ and $H_{kj}$ are 1, and from the fact that $\sum_{k} F_{k}$ is equal to 1 just in case some $F_{k}$ is 1.
+
+All that remains in order to obtain a computational formula for the relational composite $G \circ H$ of the 2-adic relations $G$ and $H$ is to collect the coefficients $(G \circ H)_{ij} $ over the appropriate basis of elementary relations $i:j$, as $i$ and $j$ range through $X$.
+
+\begin{quote}
+$G \circ H = \sum_{ij}(G \circ H)_{ij}(i:j) = \sum_{ij}(\sum_{k} G_{ik} H_{kj})(i:j).$
+\end{quote}
+
+This is the logical analogue of matrix multiplication in linear algebra, the difference in the logical setting being that all of the operations performed on coefficients take place in a system of logical arithmetic where summation corresponds to logical disjunction and multiplication corresponds to logical conjunction.
+
+By way of disentangling this formula, one may notice that the form $\sum_{k} G_{ik} H_{kj}$ is what is usually called a \textit{scalar product}.  In this case it is the scalar product of the $i^{\mbox{\small{th}}}$ row of $G$ with the $j^{\mbox{\small{th}}}$ column of $H$.
+
+To make this statement more concrete, let us go back to the particular examples of $G$ and $H$ that we came in with:
+
+\begin{quote}$G =
+\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]$\end{quote}
+
+\begin{quote}$H =
+\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]$\end{quote}
+
+The formula for computing $G \circ H$ says the following:
+
+\begin{quote}$\begin{array}{cl}
+(G \circ H)_{ij} \\
+= & \mbox{the}\ ij^{\mbox{\small{th}}}\ \mbox{entry in the matrix representation for}\ G \circ H \\
+= & \mbox{the entry in the}\ i^{\mbox{\small{th}}}\ \mbox{row and the}\ j^{\mbox{\small{th}}}\ \mbox{column of}\ G \circ H \\
+= & \mbox{the scalar product of the}\ i^{\mbox{\small{th}}}\ \mbox{row of}\ G\ \mbox{with the }\ j^{\mbox{\small{th}}}\ \mbox{column of}\ H \\
+= & \sum_{k} G_{ik} H_{kj} \\
+\end{array}$\end{quote}
+
+As it happens, it is possible to make exceedingly light work of this example, since there is only one row of $G$ and one column of $H$ that are not all zeroes.  Taking the scalar product, in a logical way, of the fourth row of $G$ with the fourth column of $H$ produces the sole non-zero entry for the matrix of $G \circ H$.
+
+\begin{quote}$G \circ H =
+\left[\begin{array}{ccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}\right]$\end{quote}
+
+%%%%%
+%%%%%
+\end{document}

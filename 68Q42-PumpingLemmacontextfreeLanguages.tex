@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PumpingLemmacontextfreeLanguages}
+\pmcreated{2013-03-22 16:21:10}
+\pmmodified{2013-03-22 16:21:10}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{pumping lemma (context-free languages)}
+\pmrecord{8}{38487}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmsynonym{pumping lemma}{PumpingLemmacontextfreeLanguages}
+\pmrelated{PumpingLemmaRegularLanguages}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $L$ be a context-free language (a.k.a. type 2 language).  Then there exist
+two integers $m$ and $n$ such that, if the length of a word $W$ is greater
+than $m$, then $W = ABCDE$ where $A,B,C,D,E$ are subwords such that
+\begin{enumerate}
+\item The length of the subword $BCD$ is less than $n$.
+\item $BD$ is not be empty.
+\item For all integers $k > 0$, it is the case that $AB^kCD^kE$ belongs to $L$,
+where exponentiation denotes repetition of a subword $k$ times.
+\end{enumerate}
+
+An important use of this lemma is that it allows one to show that a language
+is not context-free. (Remember, just because a language happens to be described 
+in terms of a context-sensitive grammar does not automatically preclude the
+possibility of describing the same language also  by a 
+context-free language.)  The idea is to assume that the language is
+context-free, then arrive at a contradiction via this lemma.
+
+As an illustrative example, consider the following language, which consists of
+but one terminal symbol, `x' and which consists of all strings of `x' 's whose
+length is a perfect square.  Were this a context-free language, there would 
+exist integers $m$ and $n$ as above.  Choose an integer $h$ such that $h^2 > m$.
+Then the word $x^{h^2}$ belongs to our language and the lemma tells us that
+it can be written as $ABCDE$ so as to satisfy the conditions enumerated above.
+Write $A = x^a$, $B = x^b$, $C = x^c$, $D = x^d$, $E = x^e$ for suitable nonnegative integers $a,b,c,d,e$.  Then we have $a + b + c + d + e = k^2$;
+by condition , $b + d > 0$ and, by condition , $a + kb + c + kd + e$ would 
+have to be a perfect square because $AB^kCD^kE$ would be a word of the
+language.  This, however, leads to a contradiction: $h^2 + k (b + d)$ 
+could not possibly be a perfect square for all $k$ unless $b + d = 0$.
+
+As an exercise, the reader may consider constructing a context-sensitive
+grammar for this language and posting it as an attachment to this entry 
+(at which time this sentence will come down).
+%%%%%
+%%%%%
+\end{document}

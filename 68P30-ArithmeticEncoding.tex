@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ArithmeticEncoding}
+\pmcreated{2013-03-22 12:32:20}
+\pmmodified{2013-03-22 12:32:20}
+\pmowner{vampyr}{22}
+\pmmodifier{vampyr}{22}
+\pmtitle{arithmetic encoding}
+\pmrecord{4}{32781}
+\pmprivacy{1}
+\pmauthor{vampyr}{22}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P30}
+\pmclassification{msc}{94A24}
+\pmsynonym{arithmetic coding}{ArithmeticEncoding}
+\pmsynonym{arithmetic encoder}{ArithmeticEncoding}
+\pmsynonym{arithmetic coder}{ArithmeticEncoding}
+\pmrelated{HuffmanCoding}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic} 
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\emph{Arithmetic coding} is a technique for achieving near-optimal entropy encoding.
+
+An arithmetic encoder takes a string of symbols as input and produces a rational number in the interval $[0, 1)$ as output.  As each symbol is processed, the encoder will restrict the output to a smaller interval.
+
+Let $N$ be the number of distinct symbols in the input; let $x_1, x_2 \dots x_N$ represent the symbols, and let $P_1, P_2 \dots P_N$ represent the probability of each symbol appearing.  At each step in the process, the output is restricted to the current interval $[y, y + R)$.  Partition this interval into $N$ disjoint subintervals:
+
+$$I_1 = [y, y + P_1R)$$
+$$I_2 = [y+P_1R, y + P_1R + P_2R)$$
+$$\vdots$$
+$$I_N = \left[y+\sum_{i=1}^{N-1}P_iR, y + R\right)$$
+
+Therefore the \PMlinkescapetext{size} of $I_i$ is $P_iR$.  If the next symbol is $x_i$, then restrict the output to the new interval $I_i$.
+
+Note that at each stage, all the possible intervals are pairwise disjoint.  Therefore a specific sequence of symbols produces exactly one unique output range, and the process can be reversed.
+
+Since arithmetic encoders are typically implemented on binary computers, the actual output of the encoder is generally the shortest sequence of bits representing the fractional part of a rational number in the final interval.
+
+Suppose our entire input string contains $M$ symbols: then $x_i$ appears exactly $P_iM$ times in the input.  Therefore, the size of the final interval will be
+$$R_f = \prod_{i=1}^N P_i^{P_iM}$$
+The number of bits necessary to write a binary fraction in this range is
+\begin{eqnarray*}
+-\log_2 R_f& =& -\log_2 \prod_{i=1}^N P_i^{P_iM} \\
+&=& \sum_{i=1}^N -\log_2 P_i^{P_iM} \\
+&=& \sum_{i=1}^N -P_iM\log_2 P_i
+\end{eqnarray*}
+
+By Shannon's theorem, this is the total entropy of the original message.  Therefore arithmetic encoding is near-optimal entropy encoding.
+%%%%%
+%%%%%
+\end{document}

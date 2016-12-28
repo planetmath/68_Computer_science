@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PseudorandomGenerator}
+\pmcreated{2013-03-22 13:03:16}
+\pmmodified{2013-03-22 13:03:16}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{pseudorandom generator}
+\pmrecord{6}{33460}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q30}
+\pmdefines{stretch function}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+Let $G$ be a deterministic polynomial-time function from $\mathbb{N}^{<\omega}$ to $\mathbb{N}^{<\omega}$ with \emph{stretch function} $l:\mathbb{N}\rightarrow\mathbb{N}$, so that if $x$ has length $n$ then $G(x)$ has length $l(n)$.  Then let $G_n$ be the distribution on strings of length $l(n)$ defined by the output of $G$ on a randomly selected string of length $n$ selected by the uniform distribution.
+
+Then we say $G$ is \emph{pseudorandom generator} if $\{G_n\}_{n\in\mathbb{N}}$ is pseudorandom.
+
+In effect, $G$ translates a random input of length $n$ to a pseudorandom output of length $l(n)$.  Assuming $l(n)>n$, this expands a random sequence (and can be applied multiple times, since $G_n$ can be replaced by the distribution of $G(G(x))$).
+%%%%%
+%%%%%
+\end{document}

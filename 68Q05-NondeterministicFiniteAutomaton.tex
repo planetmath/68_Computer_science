@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NondeterministicFiniteAutomaton}
+\pmcreated{2013-03-22 12:26:40}
+\pmmodified{2013-03-22 12:26:40}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{non-deterministic finite automaton}
+\pmrecord{14}{32557}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q05}
+\pmclassification{msc}{68Q42}
+\pmclassification{msc}{03D10}
+\pmsynonym{NDFA}{NondeterministicFiniteAutomaton}
+\pmrelated{DeterministicFiniteAutomaton}
+\pmrelated{Automaton}
+\pmrelated{RegularLanguage}
+\pmrelated{ContextFreeLanguage}
+\pmrelated{Language}
+\pmrelated{PushdownAutomaton}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\begin{document}
+A non-deterministic finite automaton (or NDFA) can be formally defined as a 5-tuple $(S, \Sigma, \delta, q_0, F)$, where 
+\begin{enumerate}
+\item $S$ is a non-empty finite set of \emph{states},
+\item $\Sigma$ is the alphabet (defining what set of input strings the automaton operates on), 
+\item $\delta : S\times \Sigma \rightarrow\mathcal{P}(S)$ is a function called the \emph{transition function}, 
+\item $q_0\in Q$ is the starting state, and 
+\item $F\subseteq S$ is a set of final (or accepting) states.  
+\end{enumerate}
+Some authors also relax the fourth condition by permitting multiple starting states (see remark below).
+
+Note how this definition differs from that of a deterministic finite automaton (DFA) only by the definition of the transition function $\delta$.  Operation of the NDFA begins at $q_0$, and movement from state to state is governed by the transition function $\delta$.
+
+The transition function takes the first symbol of the (remaining) input string and the current state as its input, and after the transition this first symbol is removed only if the transition is defined for a symbol in $\Sigma$ instead of $\lambda$.  Conceptually, all possible transitions from a current state are followed \emph{simultaneously} (hence the non-determinism).  Once every possible transition has been executed, the NDFA is halted.   If any of the states reached upon halting are in $F$ for some input string, \emph{and} the entire input string is consumed to reach that state, then the NDFA accepts that string.
+
+An NDFA can be represented visually as a directed graph called the state diagram.  Circular vertices denote states, and the set of directed edges, labelled by symbols in $\Sigma\cup\lambda$, denotes $T$.  The starting state $q_0$ is usually denoted by an arrow pointing to it that points from no other vertex. States in $F$ are usually denoted by double circles.
+
+NDFAs accept regular languages, and can be used to test whether any string in $\Sigma^*$ is in the language it represents.  Given an NDFA $M$, the language accepted by $M$ is denoted by $L(M)$.
+
+Consider the following regular language over the alphabet $\Sigma := \left\{ \verb*.a., \verb*.b. \right\}$ (represented by the regular expression \verb=aa*b=):
+
+\begin{eqnarray*}
+\verb.<.S\verb.>. & \verb.::=. & \verb=a=\,A \\
+\verb.<.A\verb.>. & \verb.::=. & \lambda\,B\,\verb.|.\,\verb=a=\,A \\
+\verb.<.B\verb.>. & \verb.::=. & \verb=b=
+\end{eqnarray*}
+
+This language can be represented by the NDFA with state diagram:
+
+$$
+\UseComputerModernTips
+\xymatrix{
+\ar[r] &
+*+[o][F-]{0} \ar[r]_a &
+*+[o][F-]{1} \ar@(r,u)[]^a \ar[r]_\lambda &
+*+[o][F-]{2} \ar[r]_b &
+*++[o][F=]{3}}
+$$
+
+The vertex 0 is the initial state $q_0$, and the vertex 3 is the only state in $F$.
+
+If given the string \verb=aaab= as input, operation of the NDFA is as follows.
+Let $X\subseteq S\times\Sigma^*$ indicate the set of ``current'' states and the remaining input associated with them.  Initially $$X := \left\{ (0, \verb=aaab=) \right\}.$$
+For state 0 with a leading \verb=a= as its input, the only possible transition to follow is to 1 (which consumes the \verb=a=).  This transforms $X$ to
+$$\left\{ (1, \verb=aab=) \right\}.$$  Now there are two possible transitions to follow for state 1 with a leading \verb=a=.  One transition is back to 1, consuming the \verb=a=, while the other is to 2, leaving the \verb=a=.  Thus
+$X$ is then $$\left\{ (1, \verb=ab=), (2, \verb=aab=) \right\}.$$
+Again, the same transitions are possible for state 1, while no transition at all is available for state 2 with a leading \verb=a=, so $X$ is then
+$$\left\{ (1, \verb=b=), (2, \verb=aab=), (2, \verb=ab=) \right\}.$$
+At this point, there is still no possible transition from 2, and the only possible transition from 1 is to 2 (leaving the input string as it is).  This then gives $$\left\{ (2, \verb=aab=), (2, \verb=ab=), (2, \verb=b=) \right\}.$$
+Only state 2 with remaining input of \verb=b= has a transition leading from it,
+giving $$\left\{ (2, \verb=aab=), (2, \verb=ab=), (3, \lambda) \right\}.$$  At this point no further transitions are possible, and so the NDFA is halted.  Since 3 is in $F$, and the input string can be reduced to $\lambda$ when it reached 3, the NDFA accepts \verb=aaab=.
+
+If the input string were instead \verb=aaaba=, processing would occur as before until \\ $$\left\{ (2, \verb=aaba=), (2, \verb=aba=), (3, \verb=a=) \right\}$$ is reached and the NDFA halts.  Although 3 is in $F$, it is not possible to reduce the input string completely before reaching 3.  Therefore \verb=aaaba= is \emph{not} accepted by this NDFA.
+
+Any regular grammar can be represented by an NDFA.  Any string accepted by the NDFA is in the language represented by that NDFA.  Furthermore, it is a straight-forward process to generate an NDFA for any regular grammar.
+Actual operation of an NDFA is generally intractable, but there is a simple process to transform any NDFA into a DFA, the operation of which is very tractable.  Regular expression matchers tend to operate in this manner.
+
+\textbf{Remarks}.  
+\begin{itemize}
+\item
+Instead of a single starting state, one may more generally consider an NDFA $M$ with a set $I$ of starting states.  However, this is not necessary, as an NDFA $M'$ with a single starting state can be constructed from $M$ such that $L(M')=L(M)$.  This is done by adding an extra symbol $\sigma$ not in the state set $Q$ of $M$, and using it as the starting state of $M'$.  Additionally, the transition function $T'$ of $M'$ extends the transition function $T$ of $M$ such that $T'(\sigma,a)=I$ for all $a\in \Sigma\cup \lambda$.
+\item
+Another possible generalization is to include the so-called \PMlinkname{\emph{$\epsilon$-transitions}}{EpsilonTransition}.  Nevertheless, it can be shown that any NDFA with $\epsilon$-transitions is equivalent to one without any $\epsilon$-transitions.
+\end{itemize}
+%%%%%
+%%%%%
+\end{document}

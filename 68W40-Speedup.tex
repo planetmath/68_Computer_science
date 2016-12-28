@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Speedup}
+\pmcreated{2013-03-22 12:04:12}
+\pmmodified{2013-03-22 12:04:12}
+\pmowner{akrowne}{2}
+\pmmodifier{akrowne}{2}
+\pmtitle{speedup}
+\pmrecord{6}{31132}
+\pmprivacy{1}
+\pmauthor{akrowne}{2}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68W40}
+\pmclassification{msc}{68W10}
+%\pmkeywords{parallel computing}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%%%\usepackage{xypic}
+\begin{document}
+\emph{Speedup} is a way to quantify the advantage of using a parallel algorithm over a sequential algorithm.  The speedup $S$ is defined as
+
+$$ S = \frac{R}{P} $$
+Where $R$ is the running time of the best available sequential algorithm and $P$ is the running time of the parallel algorithm.  
+
+Ideally, on a system with $N$ processors, the speedup for any algorithm would be $N$.  Amdahl's law deals with the speedup in more realistic situations.
+%%%%%
+%%%%%
+%%%%%
+\end{document}

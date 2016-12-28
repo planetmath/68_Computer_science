@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NormalizingReduction}
+\pmcreated{2013-03-22 17:57:35}
+\pmmodified{2013-03-22 17:57:35}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{normalizing reduction}
+\pmrecord{10}{40460}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmrelated{TerminatingReduction}
+\pmrelated{DiamondLemma}
+\pmdefines{normal form}
+\pmdefines{irreducible}
+\pmdefines{normalizing}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\theoremstyle{definition}
+\newtheorem{definition}[thm]{Definition}
+\begin{document}
+\begin{definition}
+Let $X$ be a set and $\rightarrow$ a reduction (binary relation) on $X$. An element \(x \in X\) is said to be in \emph{normal form} with respect to $\rightarrow$ if \(x \nrightarrow y\) for all \(y \in X\), i.e., if there is no \(y \in X\) such that \(x \rightarrow y\). Equivalently, $x$ is in normal form with respect to $\to$ iff $x\notin \operatorname{dom}(\to)$.  To be \emph{irreducible} is a common synonym for `to be in normal form'.
+  
+Denote by $\stackrel{*}{\rightarrow}$ the reflexive transitive closure of $\rightarrow$. An element \(y \in X\) is said to be \emph{a normal form of} \(x \in X\) if $y$ is in normal form and \(x \stackrel{*}{\rightarrow} y\).
+
+A reduction $\to$ on $X$ is said to be \emph{normalizing} if every element $x\in X$ has a normal form.
+\end{definition}
+
+\textbf{Examples}.  
+\begin{itemize}
+\item
+Let $X$ be any set.  Then no elements in $X$ are in normal form with respect to any reduction that is either reflexive.  If $\to$ is a symmetric relation, then $x\in X$ is in normal form with respect to $\to$ iff $x$ is not in the domain (or range) of $\to$.
+\item
+Let $X=\lbrace a,b,c,d\rbrace$ and $\to = \lbrace (a,a),(a,b),(a,c),(b,c),(a,d)\rbrace$.  Then $c$ and $d$ are both in normal form.  In addition, they are both normal forms of $a$, while $d$ is a normal form only for $a$.  However, $X$ is not normalizing because neither $c$ nor $d$ have normal forms.
+\item
+Let $X$ be the set of all positive integers greater than $1$.  Define the reduction $\to$ on $X$ as follows: $a\to b$ if there is an element $c\in X$ such that $a=bc$.  Then it is clear that every prime number is in normal form.  Furthermore, every element $x$ in $X$ has $n$ normal forms, where $n$ is the number of prime divisors of $x$.  Clearly, $n\ge 1$ for every $x\in X$.  As a result, $X$ is normalizing.
+\end{itemize}
+%%%%%
+%%%%%
+\end{document}

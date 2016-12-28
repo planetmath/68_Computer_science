@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HuffmansAlgorithm}
+\pmcreated{2013-03-22 12:32:17}
+\pmmodified{2013-03-22 12:32:17}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{Huffman's algorithm}
+\pmrecord{9}{32780}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P30}
+\pmrelated{MinimumWeightedPathLength}
+\pmrelated{HuffmanCoding}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+%\usepackage{lbh-pseudocode}
+% \usepackage{program}
+\begin{document}
+\PMlinkescapeword{circled}
+
+\emph{Huffman's algorithm} is a method for building an extended binary tree with a minimum weighted path length from a set of given weights.  Initially construct a forest of singleton trees, one associated with each weight.  If there are at least two trees, choose the two trees with the least weight associated with their roots and replace them with a new tree, constructed by creating a root node whose weight is the sum of the weights of the roots of the two trees removed, and setting the two trees just removed as this new node's children.  This process is repeated until the forest consists of one tree.
+
+\subsubsection*{Pseudocode}
+
+%\begin{program}
+%\mathrm{Huffman}(W, n)
+%\text{{\bf Input}: A list $W$ of $n$ (positive) weights.}
+% \text{{\bf Output}: An extended binary tree $T$ with weights taken from $W$ that gives the minimum weighted path length.}
+% \text{{\bf Procedure}:}
+% \text{Create list $F$ from singleton trees formed from elements of $W$}
+% \WHILE (F \text{\ has more than one element}) \DO
+%  \text{Find $T_1$, $T_2$ in $F$ that have minimum values associated with their roots}
+%  \text{Construct new tree $T$ by creating a new node and setting $T_1$ and $T_2$ as its children}
+%  \text{Let the sum of the values associated with the roots of $T_1$ and $T_2$ be associated with the root of $T$}
+%  \text{Add $T$ to $F$}
+% \OD
+% \mathrm{Huffman} \gets \text{\ tree stored in\ } F
+% \end{program}
+
+\begin{verbatim}
+Huffman(W, n)
+Input: A list W of n (positive) weights.
+Output: An extended binary tree T with weights
+   taken from W that gives the minimum weighted path length.
+Procedure:
+ Create list F from singleton trees formed from elements of W
+WHILE (F has more than one element) DO
+  Find T1, T2 in F that have minimum values associated with their roots
+  Construct new tree T by creating a new node and setting T1 and T2 as its children
+  Let the sum of the values associated with the roots of T1 and T2 be associated with the root of T
+  Add T to F
+OD
+Huffman := tree stored in F
+\end{verbatim}
+
+
+\subsubsection*{Example}
+
+Let us work through an example for the set of weights $\{ 1, 2, 3, 3, 4 \}$.  In these intermediate steps we will display the temporary weights assigned by the algorithm in the circled nodes.  Initially our forest is
+
+\begin{center}
+\includegraphics{tree.5}
+\end{center}
+
+During the first step, the two trees with weights 1 and 2 are merged, to create a new tree with a root of weight 3.
+
+\begin{center}
+\includegraphics{tree.6}
+\end{center}
+
+We now have three trees with weights of 3 at their roots.  It does not matter which two we choose to merge.  Let us choose the tree we just created and one of the singleton nodes of weight 3.
+
+\begin{center}
+\includegraphics{tree.7}
+\end{center}
+
+Now our two minimum trees are the two singleton nodes of weights 3 and 4.  We will combine these to form a new tree of weight 7.
+
+\begin{center}
+\includegraphics{tree.8}
+\end{center}
+
+Finally we merge our last two remaining trees.
+
+\begin{center}
+\includegraphics{tree.9}
+\end{center}
+
+The result is an extended binary tree of minimum weighted path length 29.  In the following diagram each circled node is marked with its weighted path length.
+
+\begin{center}
+\includegraphics{tree.10}
+\end{center}
+
+\subsubsection*{Analysis}
+
+Each iteration of Huffman's algorithm reduces the size of the problem by 1,
+and so there are exactly $n$ iterations.
+The $i$th iteration consists of locating the two minimum values in a list
+of length $n - i + 1$.  This is a linear operation, and so Huffman's algorithm  clearly has a time complexity of $\mathcal{O}(n^2)$.
+
+However, it would be faster to sort the weights initially, and then maintain two lists.  The first list consists of weights that have not yet been combined, and the second list consists of trees that have been formed by combining weights.  
+This initial ordering is obtained at a cost of $\mathcal{O}(n\log n)$.
+Obtaining the minimum two trees at each step then consists of two comparisons (compare the heads of the two lists, and then compare the larger to the item after the smaller).  The ordering of the second list can be maintained cheaply by using a binary search to insert new elements.  Since at step $i$ there are $i-1$ elements in the second list, $\mathcal{O}(\log i)$ comparisons are needed for insertion.
+Over the entire duration of the algorithm the cost of keeping this list sorted is $\mathcal{O}(n\log n)$.  Therefore the overall time complexity of Huffman's algorithm is $\mathcal{O}(n\log n)$.
+
+In terms of space complexity, the algorithm constructs a complete binary tree with exactly $n$ leaves.  Therefore the output can only have \emph{at most} $2n-1$ nodes.  Thus Huffman's algorithm requires linear space.
+%%%%%
+%%%%%
+\end{document}

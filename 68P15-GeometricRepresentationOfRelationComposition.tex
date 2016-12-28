@@ -1,0 +1,433 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{GeometricRepresentationOfRelationComposition}
+\pmcreated{2013-03-22 17:50:20}
+\pmmodified{2013-03-22 17:50:20}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{geometric representation of relation composition}
+\pmrecord{6}{40310}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03E20}
+\pmclassification{msc}{03B10}
+\pmclassification{msc}{68R01}
+\pmrelated{AlgebraicRepresentationOfRelationComposition}
+\pmrelated{MatrixRepresentationOfRelationComposition}
+\pmrelated{GraphTheoreticRepresentationOfRelationComposition}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapephrase{ca}
+\PMlinkescapephrase{CA}
+\PMlinkescapephrase{dyadic}
+\PMlinkescapephrase{Dyadic}
+\PMlinkescapephrase{ma}
+\PMlinkescapephrase{MA}
+\PMlinkescapephrase{onto}
+\PMlinkescapephrase{Onto}
+\PMlinkescapephrase{right}
+\PMlinkescapephrase{Right}
+
+There is a neat way of defining relational compositions in geometric terms, not only showing their relationship to the projection operations that come with any cartesian product, but also suggesting natural directions for generalizing relational compositions beyond the 2-adic case, and even beyond relations that have any fixed arity, in effect, to the general case of formal languages as generalized relations.
+
+This way of looking at relational compositions is sometimes referred to as \textit{Tarski's trick}, on account of Alfred Tarski having put it to especially good use in his work (Ulam and Bednarek, 1977).  It supplies the imagination with a geometric way of visualizing the relational composition of a pair of 2-adic relations, doing this by attaching concrete imagery to the basic set-theoretic operations, namely, intersections, projections, and a certain class of operations inverse to projections, here called \textit{\PMlinkname{tacit extensions}{TacitExtension}}.
+
+The stage is set for Tarski's trick by highlighting the links between two topics that are likely to appear wholly unrelated at first, namely:
+
+\begin{itemize}
+\item
+The use of logical conjunction, as denoted by the symbol ``$\land$" in expressions of the form $F(x, y, z) = G(x, y) \land H(y, z)$, to define a 3-adic relation $F$ in terms of a pair of 2-adic relations $G$ and $H$.
+\item
+The concepts of \textit{2-adic projection} and \textit{projective determination} that are invoked in the notion of \textit{projective reducibility}.
+\end{itemize}
+
+The relational composition $G \circ H$ of a pair of 2-adic relations $G$ and $H$ will be constructed in three stages, first, by taking the tacit extensions of $G$ and $H$ to 3-adic relations that reside in the same space, next, by taking the intersection of these extensions, tantamount to the maximal 3-adic relation that is consistent with the \textit{prima facie} 2-adic relation data, finally, by projecting this intersection on a suitable plane to form a third 2-adic relation, constituting in fact the relational composition $G \circ H$ of the relations $G$ and $H$.
+
+The construction of a relational composition in a specifically mathematical setting normally begins with mathematical relations at a higher level of abstraction than the corresponding objects in linguistic or logical settings.  This is due to the fact that mathematical objects are typically specified only \textit{up to isomorphism} as the conventional saying goes, that is, any objects that have the `same form' are generally regarded as the being the same thing, for most all intents and mathematical purposes.  Thus, the mathematical construction of a relational composition begins by default with a pair of 2-adic relations that reside, without loss of generality, in the same plane, say, $G, H \subseteq X \times Y$, as depicted in Figure 1.
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . .o. . . . . . . . . . . .o. . . . . . . . |
+| . . . .|\ . . . . . . . . . . .|\ . . . . . . . |
+| . . . .|.\. . . . . . . . . . .|.\. . . . . . . |
+| . . . .|. \ . . . . . . . . . .|. \ . . . . . . |
+| . . . .|. .\. . . . . . . . . .|. .\. . . . . . |
+| . . . .|. . \ . . . . . . . . .|. . \ . . . . . |
+| . . . .|. . .\. . . . . . . . .|. . .\. . . . . |
+| . . . .|. .*. \ . . . . . . . .|. .*. \ . . . . |
+| . . . .X. .*. .Y. . . . . . . .X. .*. .Y. . . . |
+| . . . . \ .*. .|. . . . . . . . \ .*. .|. . . . |
+| . . . . .\.G. .|. . . . . . . . .\.H. .|. . . . |
+| . . . . . \ . .|. . . . . . . . . \ . .|. . . . |
+| . . . . . .\. .|. . . . . . . . . .\. .|. . . . |
+| . . . . . . \ .|. . . . . . . . . . \ .|. . . . |
+| . . . . . . .\.|. . . . . . . . . . .\.|. . . . |
+| . . . . . . . \|. . . . . . . . . . . \|. . . . |
+| . . . . . . . .o. . . . . . . . . . . .o. . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 1.  Dyadic Relations G, H c X x Y
+\end{verbatim}\end{quote}
+
+The 2-adic relations $G$ and $H$ cannot be composed at all at this point, not without additional information or further stipulation.  In order for their relational composition to be possible, one of two types of cases has to happen:
+
+\begin{itemize}
+\item
+The first type of case occurs when $X = Y$.  In this case both of the compositions $G \circ H$ and $H \circ G$ are defined.
+\item
+The second type of case occurs when $X$ and $Y$ are distinct, but when it nevertheless makes sense to speak of a 2-adic relation $H'$ that is isomorphic to $H$, but living in the plane $YZ$, that is, in the space of the cartesian product $Y \times Z$, for some set $Z$.
+\end{itemize}
+
+Whether you view isomorphic things to be the same things or not, you still have to specify the exact isomorphisms that are needed to transform any given representation of a thing into a required representation of the same thing.  Let us imagine that we have done this, and say how later:
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . .o. . . . . . . . . . . . . . . .o. . . . |
+| . . . .|\ . . . . . . . . . . . . . . /|. . . . |
+| . . . .|.\. . . . . . . . . . . . . ./.|. . . . |
+| . . . .|. \ . . . . . . . . . . . . / .|. . . . |
+| . . . .|. .\. . . . . . . . . . . ./. .|. . . . |
+| . . . .|. . \ . . . . . . . . . . / . .|. . . . |
+| . . . .|. . .\. . . . . . . . . ./. . .|. . . . |
+| . . . .|. .*. \ . . . . . . . . / .*. .|. . . . |
+| . . . .X. .*. .Y. . . . . . . .Y. .*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .|. .*. / . . . . |
+| . . . . .\.G. .|. . . . . . . .|. .H'/. . . . . |
+| . . . . . \ . .|. . . . . . . .|. . / . . . . . |
+| . . . . . .\. .|. . . . . . . .|. ./. . . . . . |
+| . . . . . . \ .|. . . . . . . .|. / . . . . . . |
+| . . . . . . .\.|. . . . . . . .|./. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 2.  Dyadic Relations G c X x Y and H' c Y x Z
+\end{verbatim}\end{quote}
+
+With the required spaces carefully swept out, the stage is set for the presentation of Tarski's trick, and the invocation of the following symbolic formula, claimed to be a definition of the relational composition $P \circ Q$ of a pair of 2-adic relations $P, Q \subseteq X \times X$.
+
+\begin{quote}
+\textbf{Definition.}  $P \circ Q = \mathrm{proj}_{13}(P \times X\ \cap\ X \times Q).$
+\end{quote}
+
+To get this drift of this definition, one needs to understand that it's written within a school of thought that holds that all 2-adic relations are, \textit{without loss of generality}, covered well enough, `for all practical purposes', under the aegis of subsets of a suitable cartesian square, and thus of the form $L \subseteq X \times X$.  So, if one has started out with a 2-adic relation of the shape $L \subseteq U \times V$, one merely lets $X = U \cup V$, trading in the initial $L$ for a new $L \subseteq X \times X$ as need be.
+
+The projection $\mathrm{proj}_{13}$ is just the projection of the cartesian cube $X \times X \times X$ on the space of shape $X \times X$ that is spanned by the first and the third domains, but since they now have the same names and the same contents it is necessary to distinguish them by numbering their relational places.
+
+Finally, the notation of the cartesian product sign ``$\times$" is extended to signify two other products with respect to a 2-adic relation $L \subseteq X \times X$ and a subset $W \subseteq X$, as follows:
+
+\begin{quote}
+\textbf{Definition.}  $L \times W = \{ (x, y, z) \in X^3 : (x, y) \in L\ \mathrm{and}\ z \in W \}.$
+
+\textbf{Definition.}  $W \times L = \{ (x, y, z) \in X^3 : x \in W\ \mathrm{and}\ (y, z) \in L \}.$
+\end{quote}
+
+Applying these definitions to the case $P, Q \subseteq X \times X$, the two 2-adic relations whose relational composition $P \circ Q \subseteq X \times X$ is about to be defined, one finds:
+
+\begin{quote}
+$P \times X = \{ (x, y, z) \in X^3 : (x, y) \in P\ \mathrm{and}\ z \in X \},$
+
+$X \times Q = \{ (x, y, z) \in X^3 : x \in X\ \mathrm{and}\ (y, z) \in Q \}.$
+\end{quote}
+
+These are just the appropriate special cases of the tacit extensions already defined.
+
+\begin{quote}
+$P \times X = \tau_{12}^3(P),$
+
+$X \times Q = \tau_{23}^1(Q).$
+\end{quote}
+
+In summary, then, the expression:
+
+\begin{quote}
+$\mathrm{proj}_{13}(P \times X\ \cap\ X \times Q)$
+\end{quote}
+
+is equivalent to the expression:
+
+\begin{quote}
+$\mathrm{proj}_{13}(\tau_{12}^3(P)\ \cap\ \tau_{23}^1(Q)),$
+\end{quote}
+
+and this form is generalized --- although, relative to one's school of thought, perhaps inessentially so --- by the form that was given above as follows:
+
+\begin{quote}
+\textbf{Definition.}  $P \circ Q = \mathrm{proj}_{XZ}(\tau_{XY}^Z(P)\ \cap\ \tau_{YZ}^X(Q)).$
+\end{quote}
+
+Figure 3 presents a geometric picture of what is involved in formulating a definition of the 3-adic relation $F \subseteq X \times Y \times Z$ by way of a conjunction of the 2-adic relation $G \subseteq X \times Y$ and the 2-adic relation $H \subseteq Y \times Z$, as done for example by means of an expression of the following form:
+
+\begin{quote}
+$F(x, y, z) = G(x, y)\ \land\ H(y, z).$
+\end{quote}
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. . . \ . . . . . . . . |
+| . . . . . . . .o. . . .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ . . / \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. ./.F.\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .*. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. /*\ ./. .|. . . . . . . . |
+| . . . . . . . .|. / \//*\\/ \ .|. . . . . . . . |
+| . . . . . . . .|./. /\/ \/\ .\.|. . . . . . . . |
+| . . . . . . . .|/ .///\ /\\\. \|. . . . . . . . |
+| . . . .o. . . .X. /// .Y. \\\ .Z. . . .o. . . . |
+| . . . .|\ . . . \///. .|. .\\\/ . . . /|. . . . |
+| . . . .|.\. . . /// . .|. . \\\ . . ./.|. . . . |
+| . . . .|. \ . .///\ . .|. . /\\\. . / .|. . . . |
+| . . . .|. .\. /// .\. .|. ./. \\\ ./. .|. . . . |
+| . . . .|. . \///. . \ .|. / . .\\\/ . .|. . . . |
+| . . . .|. . /\/ . . .\.|./. . . \/\ . .|. . . . |
+| . . . .|. .*//\ . . . \|/ . . . /\\*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y .\*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .| . *. / . . . . |
+| . . . . .\.G. .|. . . . . . . .| . H /. . . . . |
+| . . . . . \ . .|. . . . . . . .| . ./ . . . . . |
+| . . . . . .\. .|. . . . . . . .| . /. . . . . . |
+| . . . . . . \ .|. . . . . . . .| ./ . . . . . . |
+| . . . . . . .\.|. . . . . . . .| /. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 3.  Projections of F onto G and H
+\end{verbatim}\end{quote}
+
+To interpret the Figure, visualize the 3-adic relation $F \subseteq X \times Y \times Z$ as a body in $XYZ$-space, while $G$ is a figure in $XY$-space and $H$ is a figure in $YZ$-space.
+
+The 2-adic \textit{projections} that accompany a 3-adic relation over $X$, $Y$, $Z$ are defined as follows:
+
+\begin{quote}
+$\mathrm{proj}_{XY}(L) := \{ (x, y) \in X \times Y : (x, y, z) \in L\ \exists (z \in Z)\},$
+
+$\mathrm{proj}_{XZ}(L) := \{ (x, z) \in X \times Z : (x, y, z) \in L\ \exists (y \in Y) \},$
+
+$\mathrm{proj}_{YZ}(L) := \{ (y, z) \in Y \times Z : (x, y, z) \in L\ \exists (x \in X)\}.$
+\end{quote}
+
+For many purposes it suffices to indicate the 2-adic projections of a 3-adic relation $L$ by means of the briefer equivalents listed here:
+
+\begin{quote}
+$L_{XY} := \mathrm{proj}_{XY}(L),\ L_{XZ} := \mathrm{proj}_{XZ}(L),\ L_{YZ} := \mathrm{proj}_{YZ}(L).$
+\end{quote}
+
+In light of these definitions, $\mathrm{proj}_{XY}$ is a mapping from the set $\mathcal{L}_{XYZ}$ of 3-adic relations over $X$, $Y$, $Z$ to the set $\mathcal{L}_{XY}$ of 2-adic relations over $X$ and $Y$, with similar relationships holding for the other projections.  To formalize these relationships in a concise but explicit manner, it serves to add a few more definitions.
+
+The set $\mathcal{L}_{XYZ}$, whose membership is just the 3-adic relations over $X$, $Y$, $Z$, can be recognized as the set of all subsets of the cartesian product $X \times Y \times Z$, also known as the \textit{power set} of $X \times Y \times Z$, and notated here as $\mathrm{Pow}(X \times Y \times Z)$.
+
+\begin{quote}
+$\mathcal{L}_{XYZ} := \{ L : L \subseteq X \times Y \times Z \} = \mathrm{Pow}(X \times Y \times Z).$
+\end{quote}
+
+Likewise, the power sets of the pairwise cartesian products encompass all of the 2-adic relations on pairs of distinct domains that can be chosen from $\{ X, Y, Z \}$.
+
+\begin{quote}
+$\mathcal{L}_{XY} := \{ L : L \subseteq X \times Y \} = \mathrm{Pow}(X \times Y),$
+
+$\mathcal{L}_{XZ} := \{ L : L \subseteq X \times Z \} = \mathrm{Pow}(X \times Z),$
+
+$\mathcal{L}_{YZ} := \{ L : L \subseteq Y \times Z \} = \mathrm{Pow}(Y \times Z).$
+\end{quote}
+
+The inverse relation corresponding to a projection map is usually called an \textit{extension}.  To avoid confusion with other senses of the word, however, it is probably best for the sake of this discussion to stick with the more specific term \textit{tacit extension}.
+
+The \textit{tacit extensions} $\tau_{XY}^Z$, $\tau_{XZ}^Y$, $\tau_{YZ}^X$, of the 2-adic relations $U \subseteq X \times Y$, $V \subseteq X \times Z$, $W \subseteq Y \times Z$, respectively, are defined in the following way:
+
+\begin{quote}
+$\tau_{XY}^Z(U) := \{ (x, y, z) \in X \times Y \times Z : (x, y) \in U \},$
+
+$\tau_{XZ}^Y(V) := \{ (x, y, z) \in X \times Y \times Z : (x, z) \in V \},$
+
+$\tau_{YZ}^X(W) := \{ (x, y, z) \in X \times Y \times Z : (y, z) \in W \}.$
+\end{quote}
+
+So long as the intended indices attaching to the tacit extensions can be gathered from context, it is usually clear enough to use the abbreviated forms, $\tau(U)$, $\tau(V)$, $\tau(W)$.
+
+The definition and illustration of relational composition presently under way makes use of the tacit extension of $G \subseteq X \times Y$ to $\tau(G) \subseteq X \times Y \times Z$ and the tacit extension of $H \subseteq Y \times Z$ to $\tau(H) \subseteq X \times Y \times Z$, only.
+
+Geometric illustrations of $\tau(G)$ and $\tau(H)$ are afforded by Figures 4 and 5, respectively.
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. .*. \ . . . . . . . . |
+| . . . . . . . .o. . . .o. **. .o. . . . . . . . |
+| . . . . . . . .|\ . . / \***. /|. . . . . . . . |
+| . . . . . . . .|.\. ./. *** ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .***\ / .|. . . . . . . . |
+| . . . . . . . .|. .\. *** ./. .|. . . . . . . . |
+| . . . . . . . .|. / \***. / \ .|. . . . . . . . |
+| . . . . . . . .|./. *** ./. .\.|. . . . . . . . |
+| . . . . . . . .|/ .***\ / . . \|. . . . . . . . |
+| . . . .o. . . .X. /** .Y. . . .Z. . . .o. . . . |
+| . . . .|\ . . . \//*. .|. . . / . . . /|. . . . |
+| . . . .|.\. . . /// . .|. . ./. . . ./.|. . . . |
+| . . . .|. \ . .///\ . .|. . / . . . / .|. . . . |
+| . . . .|. .\. /// .\. .|. ./. . . ./. .|. . . . |
+| . . . .|. . \///. . \ .|. / . . . / . .|. . . . |
+| . . . .|. . /\/ . . .\.|./. . . ./. . .|. . . . |
+| . . . .|. .*//\ . . . \|/ . . . / .*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y. .*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .|. .*. / . . . . |
+| . . . . .\.G. .|. . . . . . . .|. .H./. . . . . |
+| . . . . . \ . .|. . . . . . . .|. . / . . . . . |
+| . . . . . .\. .|. . . . . . . .|. ./. . . . . . |
+| . . . . . . \ .|. . . . . . . .|. / . . . . . . |
+| . . . . . . .\.|. . . . . . . .|./. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 4.  Tacit Extension of G to X x Y x Z
+\end{verbatim}\end{quote}
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / .*. .|. . . \ . . . . . . . . |
+| . . . . . . . .o. .** .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ .***/ \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. *** .\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ /***. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. *** ./. .|. . . . . . . . |
+| . . . . . . . .|. / \ .***/ \ .|. . . . . . . . |
+| . . . . . . . .|./. .\. *** .\.|. . . . . . . . |
+| . . . . . . . .|/ . . \ /***. \|. . . . . . . . |
+| . . . .o. . . .X. . . .Y. **\ .Z. . . .o. . . . |
+| . . . .|\ . . . \ . . .|. .*\\/ . . . /|. . . . |
+| . . . .|.\. . . .\. . .|. . \\\ . . ./.|. . . . |
+| . . . .|. \ . . . \ . .|. . /\\\. . / .|. . . . |
+| . . . .|. .\. . . .\. .|. ./. \\\ ./. .|. . . . |
+| . . . .|. . \ . . . \ .|. / . .\\\/ . .|. . . . |
+| . . . .|. . .\. . . .\.|./. . . \/\ . .|. . . . |
+| . . . .|. .*. \ . . . \|/ . . . /\\*. .|. . . . |
+| . . . .X. .*. .Y. . . .o. . . .Y. \*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .|. .*. / . . . . |
+| . . . . .\.G. .|. . . . . . . .|. .H./. . . . . |
+| . . . . . \ . .|. . . . . . . .|. . / . . . . . |
+| . . . . . .\. .|. . . . . . . .|. ./. . . . . . |
+| . . . . . . \ .|. . . . . . . .|. / . . . . . . |
+| . . . . . . .\.|. . . . . . . .|./. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 5.  Tacit Extension of H to X x Y x Z
+\end{verbatim}\end{quote}
+
+A geometric interpretation can now be given that fleshes out in graphic form the meaning of a logical formula like the following:
+
+\begin{quote}
+$F(x, y, z) = G(x, y)\ \land\ H(y, z).$
+\end{quote}
+
+The conjunction that is indicated by ``$\land$" corresponds as usual to an intersection of two sets, however, in this case it is the intersection of the tacit extensions $\tau(G)$ and $\tau(H)$.
+
+\begin{quote}\begin{verbatim}
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. . . \ . . . . . . . . |
+| . . . . . . . .o. . . .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ . . / \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. ./.F.\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .*. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. /*\ ./. .|. . . . . . . . |
+| . . . . . . . .|. / \//*\\/ \ .|. . . . . . . . |
+| . . . . . . . .|./. /\/ \/\ .\.|. . . . . . . . |
+| . . . . . . . .|/ .///\ /\\\. \|. . . . . . . . |
+| . . . .o. . . .X. /// .Y. \\\ .Z. . . .o. . . . |
+| . . . .|\ . . . \///. .|. .\\\/ . . . /|. . . . |
+| . . . .|.\. . . /// . .|. . \\\ . . ./.|. . . . |
+| . . . .|. \ . .///\ . .|. . /\\\. . / .|. . . . |
+| . . . .|. .\. /// .\. .|. ./. \\\ ./. .|. . . . |
+| . . . .|. . \///. . \ .|. / . .\\\/ . .|. . . . |
+| . . . .|. . /\/ . . .\.|./. . . \/\ . .|. . . . |
+| . . . .|. .*//\ . . . \|/ . . . /\\*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y .\*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .| . *. / . . . . |
+| . . . . .\.G. .|. . . . . . . .| . H /. . . . . |
+| . . . . . \ . .|. . . . . . . .| . ./ . . . . . |
+| . . . . . .\. .|. . . . . . . .| . /. . . . . . |
+| . . . . . . \ .|. . . . . . . .| ./ . . . . . . |
+| . . . . . . .\.|. . . . . . . .| /. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 6.  F as the Intersection of tau(G) and tau(H)
+\end{verbatim}\end{quote}
+
+\section{References}
+
+\begin{itemize}
+\item
+Ulam, Stanislaw Marcin; and Bednarek, A.R. (1977), ``On the Theory of Relational Structures and Schemata for Parallel Computation".  Reprinted, pp. 477--508 in Ulam (1990).
+\item
+Ulam, Stanislaw Marcin (1990), \textit{Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators}, A.R. Bednarek and Fran\c{c}oise Ulam (eds.), University of California Press, Berkeley, CA.
+\end{itemize}
+
+%%%%%
+%%%%%
+\end{document}

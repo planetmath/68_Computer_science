@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ShuffleOfLanguages}
+\pmcreated{2013-03-22 18:56:16}
+\pmmodified{2013-03-22 18:56:16}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{shuffle of languages}
+\pmrecord{11}{41792}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{68Q45}
+\pmsynonym{shuffle product}{ShuffleOfLanguages}
+\pmsynonym{shuffle-closed}{ShuffleOfLanguages}
+\pmsynonym{shuffle-closure}{ShuffleOfLanguages}
+\pmrelated{PqShuffle}
+\pmrelated{DeletionOperationOnLanguages}
+\pmrelated{InsertionOperationOnLanguages}
+\pmdefines{shuffle}
+\pmdefines{shuffle closed}
+\pmdefines{shuffle closure}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+\PMlinkescapeword{order}
+
+Let $\Sigma$ be an alphabet and $u,v$ words over $\Sigma$.  A \emph{shuffle} $w$ of $u$ and $v$ can be loosely defined as a word that is obtained by first decomposing $u$ and $v$ into individual pieces, and then combining (by concatenation) the pieces to form $w$, in a way that the order of the pieces in each of $u$ and $v$ is preserved.  
+
+More precisely, a \emph{shuffle} of $u$ and $v$ is a word of the form
+$$u_1v_1\cdots u_k v_k$$
+where $u=u_1\cdots u_n$ and $v=v_1\cdots v_n$.  In other words, a shuffle of $u$ and $v$ is either a $k$-insertion of either $u$ into $v$ or $v$ into $u$, for some positive integer $k$.
+
+The set of all shuffles of $u$ and $v$ is called \emph{the} shuffle of $u$ and $v$, and is denoted by $$u \diamond v.$$  The shuffle operation can be more generally applied to languages.  If $L_1, L_2$ are languages, the shuffle of $L_1$ and $L_2$, denoted by $L_1 \diamond L_2$, is the set of all shuffles of words in $L_1$ and $L_2$.  In short, 
+$$L_1\diamond L_2 = \bigcup \lbrace u \diamond v \mid u\in L_1, v\in L_2 \rbrace.$$
+
+Clearly, $u\diamond v = \lbrace u\rbrace \diamond \lbrace v\rbrace$.  We shall also identify $L\diamond u$ and $u \diamond L$ with $L \diamond \lbrace u\rbrace$ and $\lbrace u \rbrace \diamond L$ respectively.
+
+A language $L$ is said to be \emph{shuffle closed} if $L\diamond L\subseteq L$.  Clearly $\Sigma^*$ is shuffle closed, and arbitrary intersections shuffle closed languages are shuffle closed.  Given any language $L$, the smallest shuffle closed containing $L$ is called the \emph{shuffle closure} of $L$, and is denoted by $L^{\diamond}$.
+
+It is easy to see that $\diamond$ is a commutative operation: $u\diamond v = v\diamond u$.  It is also not hard to see that $\diamond$ is associative: $(u\diamond v)\diamond w = u\diamond (v\diamond w)$.
+
+In addition, the shuffle operation has the following recursive property: for any $u,v$ over $\Sigma$, and any $a,b\in \Sigma$:
+\begin{enumerate}
+\item $u \diamond \lambda = \lbrace u \rbrace$,
+\item $\lambda \diamond v = \lbrace v \rbrace$,
+\item $ua \diamond vb = (ua \diamond v)\lbrace b\rbrace \cup (u\diamond vb)\lbrace a\rbrace$.
+\end{enumerate}
+
+For example, suppose $u=aba$, $v=bab$.  Then
+\begin{eqnarray*}
+u\diamond v &=& [aba \diamond ba]\lbrace b\rbrace \cup [ab \diamond bab]\lbrace a\rbrace \\
+&=& [(aba \diamond b) \cup (ab \diamond ba) ]\lbrace ab\rbrace \cup [(ab \diamond ba) \cup (a \diamond bab) ]\lbrace ba\rbrace \\
+&=& (ab \diamond ba)\lbrace ab,ba\rbrace \cup (aba\diamond b)\lbrace ab\rbrace \cup (a\diamond bab)\lbrace ba\rbrace \\
+&=& \lbrace abba, baab, abab, baba\rbrace \lbrace ab,ba\rbrace \cup \lbrace baba, abba, abab \rbrace \lbrace ab\rbrace \cup \lbrace abab, baab, baba \rbrace \lbrace ba \rbrace \\
+&=& \lbrace abba, baab, abab, baba\rbrace \lbrace ab,ba\rbrace \\
+&=& \lbrace abbaab, baabab, ababab, babaab, abbaba, baabba, ababba, bababa \rbrace
+\end{eqnarray*}
+
+\textbf{Remark}.  Some closure properties with respect to the shuffle operation: let $\mathscr{R}$ be the family of regular languages, and $\mathscr{F}$ the family of context-free languages.  Then $\mathscr{R}$ is closed under $\diamond$.  $\mathscr{F}$ is not closed under $\diamond$.  However, if $L_1\in \mathscr{R}$ and $L_2\in \mathscr{F}$, then $L_1 \diamond L_2 \in \mathscr{F}$.  The proofs of these closure properties can be found in the reference.
+
+\begin{thebibliography}{9}
+\bibitem{mi} M. Ito, {\em Algebraic Theory of Automata and Languages}, World Scientific, Singapore (2004).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

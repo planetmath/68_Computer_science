@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{StableSortingAlgorithm}
+\pmcreated{2013-03-22 12:31:04}
+\pmmodified{2013-03-22 12:31:04}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{stable sorting algorithm}
+\pmrecord{9}{32756}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmsynonym{stable algorithm}{StableSortingAlgorithm}
+\pmrelated{Bubblesort}
+\pmdefines{unstable sorting algorithm}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic} 
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\PMlinkescapeword{stable}
+
+A \emph{stable sorting algorithm} is any sorting algorithm that preserves the relative ordering of items with equal values.  For instance, consider a list of ordered pairs 
+\begin{align*}
+L := \left\{ (A, 3), (B, 5), (C, 2), (D, 5), (E, 4) \right\}.
+\end{align*}
+If a stable sorting algorithm sorts $L$ on the second value in each pair using the $\leq$ relation, then the result is \emph{guaranteed} to be
+$\left\{ (C, 2), (A, 3), (E, 4), (B, 5), (D, 5) \right\}$.  However, if an algorithm is not stable, then it is possible that $(D, 5)$ may come before $(B, 5)$ in the sorted output.
+
+Some examples of stable sorting algorithms are bubblesort and mergesort (although the stability of mergesort is dependent upon how it is implemented).  Some examples of unstable sorting algorithms are heapsort and quicksort (quicksort could be made stable, but then it wouldn't be quick any more).
+Stability is a useful property when the total ordering relation is dependent upon initial position.  Using a stable sorting algorithm means that sorting by ascending position for equal keys is built-in, and need not be implemented explicitly in the comparison operator.
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Semiautomaton}
+\pmcreated{2013-03-22 17:46:21}
+\pmmodified{2013-03-22 17:46:21}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{semiautomaton}
+\pmrecord{19}{40229}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q70}
+\pmclassification{msc}{20M35}
+\pmclassification{msc}{03D05}
+\pmclassification{msc}{68Q45}
+\pmsynonym{fsm}{Semiautomaton}
+\pmsynonym{finite state machine}{Semiautomaton}
+\pmsynonym{state machine}{Semiautomaton}
+\pmrelated{Automaton}
+\pmrelated{StateOutputMachine}
+\pmdefines{semiautomata}
+\pmdefines{state diagram}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{tabls}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+A semiautomaton is basically an automaton without designated sets of starting and final states.  Formally, a \emph{semiautomaton} $A$ is a triple $(S,\Sigma,\delta)$ where
+\begin{itemize}
+\item $S$ is a non-empty set whose elements are called \emph{states}
+\item $\Sigma$ is a non-empty set whose elements are called \emph{input symbols}, and
+\item $\delta$ is a \emph{transition function} that assigns each pair $(s,a)$ of state $s$ and input symbol $a$ a subset $\delta(s,a)$ of states in $S$. 
+\end{itemize}
+A semiautomaton $A$ is said to be \emph{deterministic} if $\delta(s,a)$ is a singleton for each $(s,a)\in S\times \Sigma$.   In otherwords, $\delta$ is a function from $S\times \Sigma$ to $S$.  Otherwise, it is \emph{non-deterministic}.  A deterministic semiautomaton is also called a \emph{state machine}.  A semiautomaton is said to be \emph{finite} if both $S$ and $\Sigma$ are finite.  A \emph{finite state machine} (\emph{fsm} for short) is a state machine that is finite.
+
+A finite semiautomaton $A$ can be visualized by what is known as the \emph{state diagram} $G_A$ of $A$.  Given $A$, the state diagram can be constructed as follows: the vertices of $G_A$ are the states of $A$.  Given two vertices $s,t$, an edge from $s$ to $t$ is constructed iff $t\in \delta(s,a)$ for some $a\in \Sigma$.  The edge is then labeled $a$.
+
+For example, let $A$ be defined as follows: $S=\lbrace r,s,t\rbrace$, $\Sigma = \lbrace a, b, c\rbrace$, and the transition function $\delta$ is given by the following table:
+\begin{center}
+\begin{tabular}{|c||c|c|c|}
+\hline
+& $a$ & $b$ & $c$ \\
+\hline\hline
+$r$ & $s$ & $r$ & $t$  \\
+\hline
+$s$ & $\varnothing$ & $t$ & $r$  \\
+\hline
+$t$ & $t$ & $s$ & $r,s$  \\
+\hline
+\end{tabular}
+\end{center}
+Then the state diagram $G_A$ is given by
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.70]{semiautomaton.eps}
+\end{figure}
+
+What we would like to do is to extend the transition function $\delta$ so it is applicable to all finite strings over $\Sigma$.  This is done in two steps: 
+\begin{itemize}
+\item extend $\delta$ to a function $\delta': P(S)\times \Sigma \to P(S)$ via the subset construction,
+\item extend $\delta'$ to a function $\delta_1: P(S)\times \Sigma^*\to P(S)$ recursively, given by 
+\begin{displaymath}
+\delta_1(Q,u):= \left\{
+\begin{array}{ll}
+Q & \textrm{if $u=\lambda$, the empty word}\\
+\delta'(Q,u) & \textrm{if $u\in \Sigma$}\\
+\delta'(\delta'(Q,v),a) & \textrm{if $u=v a$ with $v\in \Sigma^*,a\in \Sigma.$}
+\end{array}
+\right.
+\end{displaymath}
+\end{itemize}
+Without causing any confusion, we may identify $\delta_1$ with $\delta$.  Basically, when a string $u=a_1a_2\cdots a_n$ is fed into a semiautomaton $A$ in state $s$, $\delta$ takes the first symbol $a_1$ and computes the next states $\delta(s,a_1)$.  Then it takes the next symbol $a_2$ and computes the next states $\delta(\delta(s,a_1),a_2)$, and so on.  It continues to do this until the last symbol $a_n$ has been consumed, and the next states corresponding to $(s,u)$ is $\delta(s,u)$.  From the recursive definition above, it is not hard to see that $$\delta(Q,uv)=\delta(\delta(Q,u),v)$$ for any $u,v\in \Sigma^*,$ as the concatenation operation is associative.
+
+In the case of a deterministic semiautomaton, $\delta$ is just a function $S\times \Sigma^*$ to $S$.
+
+\textbf{Remark}.  Like groups and rings, semiautomata can be considered as algebraic objects, so that concepts such as subsemiautomata and homomorphisms between semiautomata may be defined.  However, unlike groups and rings, which are defined based on a single set, semiautomata are two-sorted, in that two sets are needed for the definition.
+
+\begin{thebibliography}{8}
+\bibitem{ag} A. Ginzburg, {\em Algebraic Theory of Automata}, Academic Press (1968).
+\bibitem{mi} M. Ito, \emph{Algebraic Theory of Automata and Languages}, World Scientific (2004).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

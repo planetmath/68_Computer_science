@@ -1,0 +1,358 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RelationReduction}
+\pmcreated{2013-10-24 16:56:16}
+\pmmodified{2013-10-24 16:56:16}
+\pmowner{Jon Awbrey}{15246}
+\pmmodifier{Jon Awbrey}{15246}
+\pmtitle{relation reduction}
+\pmrecord{36}{40290}
+\pmprivacy{1}
+\pmauthor{Jon Awbrey}{15246}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68R01}
+\pmclassification{msc}{68P15}
+\pmclassification{msc}{08A02}
+\pmclassification{msc}{05C65}
+\pmclassification{msc}{05B30}
+\pmclassification{msc}{05B20}
+\pmclassification{msc}{03B10}
+\pmclassification{msc}{03E20}
+\pmsynonym{relation identification}{RelationReduction}
+\pmsynonym{relation reconstruction}{RelationReduction}
+\pmrelated{RelationTheory}
+\pmrelated{RelationComposition2}
+\pmrelated{RelationConstruction}
+\pmrelated{TacitExtension}
+\pmdefines{relational reducibility}
+\pmdefines{relational irreducibility}
+\pmdefines{reductand}
+\pmdefines{reduction base}
+\pmdefines{reduction method}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\textbf{Relation reduction} and \textbf{relational reducibility} have to do with the extent to which a given relation is determined by an indexed family or a sequence of other relations, called the \textit{relation dataset}.  The relation under examination is called the \textit{reductand}.  The relation dataset typically consists of a specified set of other relations, simpler in some measure than the reductand, called the \textit{reduction base}, plus a specified operation on relations, called the \textit{reduction method} or the \textit{reduction step}.
+
+A question of relation reduction or relational reducibility is sometimes posed as a question of \textbf{relation reconstruction} or \textbf{relational reconstructibility}, since a useful way of stating the question is to ask whether the reductand can be reconstructed from the relational dataset.
+
+A relation that is not uniquely determined by a particular relation dataset is said to be irreducible in just that respect.  A relation that is not uniquely determined by any relation dataset in a particular class of relation datasets is said to be irreducible in respect of that class.
+
+\tableofcontents
+
+\section{Discussion}
+
+The main thing that keeps the general problem of relational reducibility from being fully well-defined is that one would have to survey all of the conceivable ways of ``getting new relations from old" in order to say precisely what is meant by the claim that the relation $L$ is reducible to the set of relations $\{ L_j : j \in J \}$.  This is tantamount to claiming that if one is given a set of ``simpler" relations $L_j$, for indices $j$ in some set $J$, that this collection of data would somehow or other fix the original relation $L$ that one is seeking to analyze, to determine, to specify, or to synthesize.
+
+In practice, however, apposite discussion of a particular application typically settles on either one of two different notions of reducibility as capturing the pertinent issues, namely:
+
+\begin{itemize}
+\item
+Reduction under \PMlinkname{composition}{RelationComposition}.
+\item
+Reduction under projections.
+\end{itemize}
+
+As it happens, there is an interesting relationship between these two notions of reducibility, the implications of which may be taken up partly in parallel with the discussion of the basic concepts.
+
+\section{Projective reducibility of relations}
+
+It is convenient to begin with the \textit{projective reduction} of relations, partly because this type of reduction is simpler and more intuitive (in the visual sense), but also because a number of conceptual tools that are needed in any case arise quite naturally in the projective setting.
+
+The work of intuiting how projections operate on multidimensional relations is often facilitated by keeping in mind the following sort of geometric image:
+
+\begin{itemize}
+\item
+Picture a $k$-adic relation $L$ as a body that resides in a $k$-dimensional space $X$.  If the domains of the relation $L$ are $X_1, \ldots, X_k$, then the \textit{extension} of the relation $L$ is a subset of the cartesian product $X = X_1 \times \ldots \times X_k$.
+\end{itemize}
+
+In this setting, the interval $K = [1, k] = \{ 1, \ldots, k \}$ is called the \textit{index set} of the \textit{indexed family} of sets $X_1, \ldots, X_k$.
+
+For any subset $F$ of the index set $K$, there is the corresponding subfamily of sets, $\{ X_j : j \in F \}$, and there is the corresponding cartesian product over this subfamily, notated and defined as $X_F = \prod_{j \in F} X_j$.
+
+For any point $x$ in $X$, the \textit{projection} of $x$ on the subspace $X_F$ is notated as $\operatorname{proj}_{F}(x)$, or still more simply as $\operatorname{proj}_{F}x.$
+
+More generally, for any relation $L \subseteq X$, the projection of $L$ on the subspace $X_F$ is written as $\operatorname{proj}_{F}(L)$, or still more simply as $\operatorname{proj}_{F}L.$
+
+The question of \textit{projective reduction} for $k$-adic relations can be stated with moderate generality in the following way:
+
+\begin{itemize}
+\item
+Given a set of $k$-place relations in the same space $X$ and a set of projections from $X$ to the associated subspaces, do the projections afford sufficient data to tell the different relations apart?
+\end{itemize}
+
+\section{Projective reducibility of triadic relations}
+
+See \PMlinkname{main entry}{TriadicRelation} on triadic relations.
+
+By way of illustrating the different sorts of things that can occur in considering the projective reducibility of relations, it is convenient to reuse the four examples of 3-adic relations that are discussed in the main entry on that subject.
+
+\subsection{Examples of projectively irreducible relations}
+
+The 3-adic relations $L_0$ and $L_1$ are shown in the next two Tables:
+
+\begin{quote}\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{$L_0 = \{ (x, y, z) \in \mathbb{B}^3 : x + y + z = 0 \}$} \\
+\hline\
+$X$ & $Y$ & $Z$ \\
+\hline\hline
+ 0  &  0  &  0  \\
+\hline
+ 0  &  1  &  1  \\
+\hline
+ 1  &  0  &  1  \\
+\hline
+ 1  &  1  &  0  \\
+\hline
+\end{tabular}\end{quote}
+
+\begin{quote}\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{$L_1 = \{ (x, y, z) \in \mathbb{B}^3 : x + y + z = 1 \}$} \\
+\hline
+$X$ & $Y$ & $Z$ \\
+\hline\hline
+ 0  &  0  &  1  \\
+\hline
+ 0  &  1  &  0  \\
+\hline
+ 1  &  0  &  0  \\
+\hline
+ 1  &  1  &  1  \\
+\hline
+\end{tabular}\end{quote}
+
+Viewed in terms of operations on relational data tables, a 2-adic projection of a 3-adic relation $L$ is the 2-adic relation that results from deleting one column of the table for $L$ and then deleting all but one row of any resulting rows that happen to be identical in content.  In other words, the multiplicity of any repeated row is ignored.
+
+In the case of the above two relations, $L_0, L_1 \subseteq X \times Y \times Z \cong \mathbb{B}^3$, the 2-adic projections are indexed by the columns or domains that remain, as shown in the following Tables.
+
+\begin{quote}\begin{tabular}{|c|c|p{2cm}|c|c|p{2cm}|c|c|}
+\multicolumn{2}{c}{$\operatorname{proj}_{XY}L_0$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{XZ}L_0$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{YZ}L_0$} \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$X$ & $Y$ & & $X$ & $Z$ & & $Y$ & $Z$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 0  &  0  & &  0  &  0  & &  0  &  0  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 0  &  1  & &  0  &  1  & &  1  &  1  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 1  &  0  & &  1  &  1  & &  0  &  1  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 1  &  1  & &  1  &  0  & &  1  &  0  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+\end{tabular}\end{quote}
+
+\begin{quote}\begin{tabular}{|c|c|p{2cm}|c|c|p{2cm}|c|c|}
+\multicolumn{2}{c}{$\operatorname{proj}_{XY}L_1$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{XZ}L_1$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{YZ}L_1$} \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$X$ & $Y$ & & $X$ & $Z$ & & $Y$ & $Z$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 0  &  0  & &  0  &  1  & &  0  &  1  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 0  &  1  & &  0  &  0  & &  1  &  0  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 1  &  0  & &  1  &  0  & &  0  &  0  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+ 1  &  1  & &  1  &  1  & &  1  &  1  \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+\end{tabular}\end{quote}
+
+It is clear on inspection that the following three equations hold:
+
+\begin{quote}$\begin{array}{lcr}
+\operatorname{proj}_{XY}L_0 = \operatorname{proj}_{XY}L_1, &
+\operatorname{proj}_{XZ}L_0 = \operatorname{proj}_{XZ}L_1, &
+\operatorname{proj}_{YZ}L_0 = \operatorname{proj}_{YZ}L_1. \\
+\end{array}$\end{quote}
+
+These equations say that $L_0$ and $L_1$ cannot be distinguished from each other solely on the basis of their 2-adic projection data.  In such a case, either relation is said to be \textit{irreducible with respect to 2-adic projections}.  Since reducibility with respect to 2-adic projections is the only interesting case where it concerns the reduction of 3-adic relations, it is customary to say more simply of such a relation that it is \textit{projectively irreducible}, the 2-adic basis being understood.  It is immediate from the definition that projectively irreducible relations always arise in non-trivial multiplets of mutually indiscernible relations.
+
+\subsection{Examples of projectively reducible relations}
+
+The 3-adic sign relations $L_{\mathrm{A}}$ and $L_{\mathrm{B}}$ are shown in the next two Tables:
+
+\begin{quote}\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{$L_{\mathrm{A}}$ = Sign Relation of Interpreter A} \\
+\hline\
+Object       & Sign            & Interpretant     \\
+\hline\hline
+$\mathrm{A}$ & $\mathrm{``A"}$ & $\mathrm{``A"}$  \\
+\hline
+$\mathrm{A}$ & $\mathrm{``A"}$ & $\mathrm{``i"}$  \\
+\hline
+$\mathrm{A}$ & $\mathrm{``i"}$ & $\mathrm{``A"}$  \\
+\hline
+$\mathrm{A}$ & $\mathrm{``i"}$ & $\mathrm{``i"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``B"}$ & $\mathrm{``B"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``B"}$ & $\mathrm{``u"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``u"}$ & $\mathrm{``B"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``u"}$ & $\mathrm{``u"}$  \\
+\hline
+\end{tabular}\end{quote}
+
+\begin{quote}\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{$L_{\mathrm{B}}$ = Sign Relation of Interpreter B} \\
+\hline\
+Object       & Sign            & Interpretant     \\
+\hline\hline
+$\mathrm{A}$ & $\mathrm{``A"}$ & $\mathrm{``A"}$  \\
+\hline
+$\mathrm{A}$ & $\mathrm{``A"}$ & $\mathrm{``u"}$  \\
+\hline
+$\mathrm{A}$ & $\mathrm{``u"}$ & $\mathrm{``A"}$  \\
+\hline
+$\mathrm{A}$ & $\mathrm{``u"}$ & $\mathrm{``u"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``B"}$ & $\mathrm{``B"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``B"}$ & $\mathrm{``i"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``i"}$ & $\mathrm{``B"}$  \\
+\hline
+$\mathrm{B}$ & $\mathrm{``i"}$ & $\mathrm{``i"}$  \\
+\hline
+\end{tabular}\end{quote}
+
+In the case of the two sign relations, $L_{\mathrm{A}}, L_{\mathrm{B}} \subseteq X \times Y \times Z \cong O \times S \times I$, the 2-adic projections are indexed by the columns or domains that remain, as shown in the following Tables.
+
+\begin{quote}\begin{tabular}{|c|c|p{1cm}|c|c|p{1cm}|c|c|}
+\multicolumn{2}{c}{$\operatorname{proj}_{OS}L_{\mathrm{A}}$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{OI}L_{\mathrm{A}}$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{SI}L_{\mathrm{A}}$} \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+Object & Sign & & Object & Interpretant & & Sign & Interpretant \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{A}$ & $\mathrm{``A"}$ & &
+$\mathrm{A}$ & $\mathrm{``A"}$ & &
+$\mathrm{``A"}$ & $\mathrm{``A"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{A}$ & $\mathrm{``i"}$ & &
+$\mathrm{A}$ & $\mathrm{``i"}$ & &
+$\mathrm{``A"}$ & $\mathrm{``i"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{B}$ & $\mathrm{``B"}$ & &
+$\mathrm{B}$ & $\mathrm{``B"}$ & &
+$\mathrm{``i"}$ & $\mathrm{``A"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{B}$ & $\mathrm{``u"}$ & &
+$\mathrm{B}$ & $\mathrm{``u"}$ & &
+$\mathrm{``i"}$ & $\mathrm{``i"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``B"}$ & $\mathrm{``B"}$ \\
+\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``B"}$ & $\mathrm{``u"}$ \\
+\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``u"}$ & $\mathrm{``B"}$ \\
+\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``u"}$ & $\mathrm{``u"}$ \\
+\cline{7-8}
+\end{tabular}\end{quote}
+
+\begin{quote}\begin{tabular}{|c|c|p{1cm}|c|c|p{1cm}|c|c|}
+\multicolumn{2}{c}{$\operatorname{proj}_{OS}L_{\mathrm{B}}$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{OI}L_{\mathrm{B}}$} &
+\multicolumn{1}{c}{ } &
+\multicolumn{2}{c}{$\operatorname{proj}_{SI}L_{\mathrm{B}}$} \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+Object & Sign & & Object & Interpretant & & Sign & Interpretant \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{A}$ & $\mathrm{``A"}$ & &
+$\mathrm{A}$ & $\mathrm{``A"}$ & &
+$\mathrm{``A"}$ & $\mathrm{``A"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{A}$ & $\mathrm{``u"}$ & &
+$\mathrm{A}$ & $\mathrm{``u"}$ & &
+$\mathrm{``A"}$ & $\mathrm{``u"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{B}$ & $\mathrm{``B"}$ & &
+$\mathrm{B}$ & $\mathrm{``B"}$ & &
+$\mathrm{``u"}$ & $\mathrm{``A"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+$\mathrm{B}$ & $\mathrm{``i"}$ & &
+$\mathrm{B}$ & $\mathrm{``i"}$ & &
+$\mathrm{``u"}$ & $\mathrm{``u"}$ \\
+\cline{1-2}\cline{4-5}\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``B"}$ & $\mathrm{``B"}$ \\
+\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``B"}$ & $\mathrm{``i"}$ \\
+\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``i"}$ & $\mathrm{``B"}$ \\
+\cline{7-8}
+\multicolumn{6}{c|}{~} & $\mathrm{``i"}$ & $\mathrm{``i"}$ \\
+\cline{7-8}
+\end{tabular}\end{quote}
+
+It is clear on inspection that the following three inequations hold:
+
+\begin{quote}$\begin{array}{lcr}
+\operatorname{proj}_{OS}L_{\mathrm{A}} \ne \operatorname{proj}_{OS}L_{\mathrm{B}}, &
+\operatorname{proj}_{OI}L_{\mathrm{A}} \ne \operatorname{proj}_{OI}L_{\mathrm{B}}, &
+\operatorname{proj}_{SI}L_{\mathrm{A}} \ne \operatorname{proj}_{SI}L_{\mathrm{B}}. \\
+\end{array}$\end{quote}
+
+These inequations say that $L_{\mathrm{A}}$ and $L_{\mathrm{B}}$ can be distinguished from each other solely on the basis of their 2-adic projection data.  But this is not enough to say that either one of them is projectively reducible to their 2-adic projection data.  To say that a 3-adic relation is projectively reducible in that respect, one has to show that it can be distinguished from \textit{every} other 3-adic relation on the basis of the 2-adic projection data alone.
+
+In other words, to show that a 3-adic relation $L$ on $O \times S \times I$ is \textit{reducible} or \textit{reconstructible} in the 2-adic projective sense, it is necessary to show that no distinct $L'$ on $O \times S \times I$ exists such that $L$ and $L'$ have the same set of projections.  Proving this takes a much more comprehensive or exhaustive investigation of the space of possible relations on $O \times S \times I$ than looking merely at one or two relations at a time.
+
+\textbf{Fact.}  As it happens, each of the relations $L_{\mathrm{A}}$ and $L_{\mathrm{B}}$ is uniquely determined by its 2-adic projections.  This can be seen by following the proof that is given below.
+
+Before tackling the proof, however, it will speed things along to recall a few ideas and notations from other articles.
+
+\begin{itemize}
+\item
+If $L$ is a relation over a set of domains that includes the domains $U$ and $V$, then the abbreviated notation $L_{UV}$ can be used for the projection $\operatorname{proj}_{UV}L$.
+\item
+The operation of reversing a projection asks what elements of a bigger space project onto given elements of a smaller space.  The set of elements that project onto $x$ under a given projection $f$ is called the \textit{fiber} of $x$ under $f$ and is written $f^{-1}(x)$ or $f^{-1}x$.
+\item
+If $X$ is a finite set, the \textit{cardinality} of $X$, written $\operatorname{card}(X)$ or $|X|$, means the number of elements in $X$.
+\end{itemize}
+
+\textbf{Proof.}  Let $L$ be either one of the relations $L_{\mathrm{A}}$ or $L_{\mathrm{B}}$.  Consider any coordinate position $(s, i)$ in the $SI$-plane $S \times I$.  If $(s, i)$ is not in $L_{SI}$ then there can be no element $(o, s, i)$ in $L$, therefore we may restrict our attention to positions $(s, i)$ in $L_{SI}$, knowing that there exist at least $|L_{SI}| = 8$ elements in $L$, and seeking only to determine what objects $o$ exist such that $(o, s, i)$ is an element in the fiber of $(s, i)$.  In other words, for what $o$ in $O$ is $(o, s, i)$ in the fiber $\operatorname{proj}_{SI}^{-1}(s, i)$?  Now, the circumstance that $L_{OS}$ has exactly one element $(o, s)$ for each coordinate $s$ in $S$ and that $L_{OI}$ has exactly one element $(o, i)$ for each coordinate $i$ in $I$, plus the ``coincidence" of it being the same $o$ at any one choice for $(s, i)$, tells us that $L$ has just the one element $(o, s, i)$ over each point of $S \times I$.  All together, this proves that both $L_{\mathrm{A}}$ and $L_{\mathrm{B}}$ are reducible in an informative sense to 3-tuples of 2-adic relations, that is, they are \textit{projectively 2-adically reducible}.
+
+\subsection{Summary}
+
+The \textit{projective analysis} of 3-adic relations, illustrated by means of concrete examples, has been pursued just far enough at this point to state this clearly demonstrated result:
+
+\begin{itemize}
+\item
+Some 3-adic relations are, and other 3-adic relations are not, reducible to, or reconstructible from, their 2-adic projection data.  In short, some 3-adic relations are projectively reducible and some 3-adic relations are projectively irreducible.
+\end{itemize}
+
+%%%%%
+%%%%%
+\end{document}

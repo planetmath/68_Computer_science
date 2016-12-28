@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PromiseProblem}
+\pmcreated{2013-03-22 13:02:27}
+\pmmodified{2013-03-22 13:02:27}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{promise problem}
+\pmrecord{4}{33443}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q25}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+A \emph{promise problem} is a generalization of a decision problem.  It is defined by two decision problems $L_1$ and $L_2$ with $L_1\cap L_2=\emptyset$.  A Turing machine decides a promise problem if, for any $x\in L_1\cup L_2$, it accepts when $x\in L_1$ and rejects if $x\in L_2$.  Behavior is undefined when $x\notin L_1\cup L_2$ (this is the promise: that $x$ is in one of the two sets).
+
+If $L_2=\Gamma^+\setminus L_1$ then this is just the decision problem for $L_1$.
+%%%%%
+%%%%%
+\end{document}

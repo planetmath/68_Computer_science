@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DescriptiveMetadataSpecification}
+\pmcreated{2013-03-22 15:31:29}
+\pmmodified{2013-03-22 15:31:29}
+\pmowner{yi6604}{10640}
+\pmmodifier{yi6604}{10640}
+\pmtitle{descriptive metadata specification}
+\pmrecord{5}{37399}
+\pmprivacy{1}
+\pmauthor{yi6604}{10640}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P20}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Let $L$ = $\cup$ $Dk$ be a set of literals defined as the union of
+domains $Dk$ of simple datatypes (e.g., strings, numbers, dates, etc.). Let also $R$ and $P$ represent sets of labels for resources and properties respectively. A descriptive metadata specification is a structure ($G$, $R$ $\cup$ $L$ $\cup$ $P$, $F$), where:
+(1) $F$ : $(V$  $\cup$ $ E)$ $â†’$ $(R$ $\cup$ $L$ $\cup$ $P$) can assign general labels $R$ $\cup$ $P$ and literals from $L$ to nodes of the graph structure;
+(2) for each directed edge $e$ = ($vi$ , $vj$) of $G$, $F$($vi$) $\in$ $R$ $\cup$ $L$, $F$($vj$ ) $\in$ $R$ $\cup$ $L$ and $F(e)$ $\in$ $P$;
+(3) $F(vk)$ $\in$ $L$ if and only if node vk has outdegree 0.
+%%%%%
+%%%%%
+\end{document}

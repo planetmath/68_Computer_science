@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RangeProblem}
+\pmcreated{2013-03-22 13:02:25}
+\pmmodified{2013-03-22 13:02:25}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{range problem}
+\pmrecord{5}{33442}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q25}
+\pmdefines{strong range problem}
+\pmdefines{strong range}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+A \emph{range problem} is a weakened form of a search problem.  It consists of two functions $f_l$ and $f_u$ (the lower and upper bounds) and a linear ordering $<$ on the ranges of $f_1$ and $f_2$.  A Turing machine solves a range problem if, for any $x$, the machine eventually halts with an output $y$ such that $f_1(x)<y<f_2(x)$.
+
+For example, given any function $f$ with range in $\mathbb{R}$ and any $g:\mathbb{N}\rightarrow\mathbb{R}$, the \emph{strong range problem} $\operatorname{StrongRange}_g(f)$ is given by lower bound $f(x)\cdot(1-\frac{1}{1-g(|x|)})$ and upper bound $f(x)\cdot(1-\frac{1}{1+g(|x|)})$ (note that $g$ is passed the length of $x$, not the value, which need not even be a number).
+%%%%%
+%%%%%
+\end{document}

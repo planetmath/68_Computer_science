@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HomomorphismOfLanguages}
+\pmcreated{2013-03-22 18:55:06}
+\pmmodified{2013-03-22 18:55:06}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{homomorphism of languages}
+\pmrecord{12}{41769}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmsynonym{$\epsilon$-free}{HomomorphismOfLanguages}
+\pmsynonym{non-erasing}{HomomorphismOfLanguages}
+\pmrelated{StringSubstitution}
+\pmrelated{Substitution}
+\pmdefines{homomorphism}
+\pmdefines{antihomomorphism}
+\pmdefines{$\lambda$-free}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $\Sigma_1$ and $\Sigma_2$ be two alphabets.  A function $h: \Sigma_1^* \to \Sigma_2^*$ is called a \emph{homomorphism} if it is a semigroup homomorphism from semigroups $\Sigma_1^*$ to $\Sigma_2^*$.  This means that
+\begin{itemize}
+\item $h$ preserves the empty word: $h(\lambda)=\lambda$, and
+\item $h$ preserves concatenation: $h(\alpha\beta)=h(\alpha)h(\beta)$ for any words $\alpha,\beta\in \Sigma_1^*$.
+\end{itemize}
+
+Since the alphabet $\Sigma_1$ freely generates $\Sigma_1^*$, $h$ is uniquely determined by its restriction to $\Sigma_1$.  Conversely, any function from $\Sigma_1$ extends to a unique homomorphism from $\Sigma_1^*$ to $\Sigma_2^*$.  In other words, it is enough to know what $h(a)$ is for each symbol $a$ in $\Sigma_1$.  Since every word $w$ over $\Sigma$ is just a concatenation of symbols in $\Sigma$, $h(w)$ can be computed using the second condition above.  The first condition takes care of the case when $w$ is the empty word.
+
+Suppose $h:\Sigma_1^* \to \Sigma_2^*$ is a homomorphism, $L_1\subseteq \Sigma_1^*$ and $L_2\subseteq \Sigma_2^*$.  Define $$h(L_1):=\lbrace h(w)\mid w\in L\rbrace \qquad\mbox{and}\qquad h^{-1}(L_2):=\lbrace v\mid h(v)\in L_2\rbrace.$$  If $L_1,L_2$ belong to a certain family of languages, one is often interested to know if $h(L_1)$ or $h^{-1}(L_2)$ belongs to that same family.  We have the following result:
+\begin{enumerate}
+\item If $L_1$ and $L_2$ are regular, so are $h(L_1)$ and $h^{-1}(L_2)$.
+\item If $L_1$ and $L_2$ are context-free, so are $h(L_1)$ and $h^{-1}(L_2)$.
+\item If $L_1$ and $L_2$ are type-0, so are $h(L_1)$ and $h^{-1}(L_2)$.
+\end{enumerate}
+
+However, the family $\mathscr{F}$ of context-sensitive languages is not closed under homomorphisms, nor inverse homomorphisms.  Nevertheless, it can be shown that $\mathscr{F}$ is closed under a restricted class of homomorphisms, namely, $\lambda$-free homomorphisms.  A homomorphism is said to be \emph{$\lambda$-free} or \emph{non-erasing} if $h(a)\ne \lambda$ for any $a\in \Sigma_1$.
+
+\textbf{Remarks}.  
+\begin{itemize}
+\item
+Every homomorphism induces a substitution in a trivial way: if $h:\Sigma_1^* \to \Sigma_2^*$ is a homomorphism, then $h_s:\Sigma_1\to P(\Sigma_2^*)$ defined by $h_s(a)=\lbrace h(a) \rbrace$ is a substitution.
+\item
+One can likewise introduce the notion of antihomomorphism of languages.  A map $g:\Sigma_1^* \to \Sigma_2^*$ is an antihomomorphism if $g(\alpha\beta)=g(\beta)g(\alpha)$, for any words $\alpha,\beta$ over $\Sigma_1$.  It is easy to see that $g$ is an antihomomorphism iff $g\circ \operatorname{rev}$ is a homomorphism, where $\operatorname{rev}$ is the reversal operator. Closure under antihomomorphisms for a family of languages follows the closure under homomorphisms, provided that the family is closed under reversal.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{sg} S. Ginsburg, {\em The Mathematical Theory of Context-Free Languages}, McGraw-Hill, New York (1966).
+\bibitem{hlcp} H.R. Lewis, C.H. Papadimitriou {\em Elements of the Theory of Computation}. Prentice-Hall, Englewood Cliffs, New Jersey (1981).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

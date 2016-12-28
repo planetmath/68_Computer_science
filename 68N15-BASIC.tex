@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BASIC}
+\pmcreated{2013-03-22 16:47:18}
+\pmmodified{2013-03-22 16:47:18}
+\pmowner{PrimeFan}{13766}
+\pmmodifier{PrimeFan}{13766}
+\pmtitle{BASIC}
+\pmrecord{8}{39021}
+\pmprivacy{1}
+\pmauthor{PrimeFan}{13766}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N15}
+\pmsynonym{Beginner's All-purpose Symbolic Instruction Code}{BASIC}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+\PMlinkescapeword{positive}
+
+{\em BASIC} (an acronym for {\em Beginner's All-purpose Symbolic Instruction Code}) is a computer procedure-oriented programming language designed by John Kemeny and Thomas Kurtz in the 1960s to be easily learned by anyone. Over the years, various companies made their own proprietary versions and included them in their computers (and \PMlinkescapetext{even} Texas Instruments made their own version, TI-BASIC, which is included in some of their calculators). Microsoft's Visual Basic is the programming language of choice for in-house programming at small businesses. But in mathematics and physics, BASIC is little used outside of the classroom.
+
+The following BASIC program takes two integers as inputs and outputs their greatest common divisor using Euclid's algorithm:
+
+\begin{verbatim}
+100 REM Program Greatest Common Divisor Using Euclidean algorithm
+110 INPUT "Please enter a positive integer A"; A
+115 INPUT "Please enter a positive integer B"; B
+120 WHILE B > 0
+121 TEMPA = B
+122 A = B
+123 B = TEMPA MOD B
+124 WEND
+130 PRINT "The GCD is "; A
+140 END
+
+\end{verbatim}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{HeapRemovalAlgorithm}
+\pmcreated{2013-03-22 12:29:30}
+\pmmodified{2013-03-22 12:29:30}
+\pmowner{mps}{409}
+\pmmodifier{mps}{409}
+\pmtitle{heap removal algorithm}
+\pmrecord{11}{32716}
+\pmprivacy{1}
+\pmauthor{mps}{409}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P20}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{68P05}
+\pmrelated{Heap}
+\pmrelated{HeapInsertionAlgorithm}
+\pmrelated{Heapsort}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{lbh-pseudocode}
+\usepackage{program} % ok
+%\usepackage{pseudocode}
+\begin{document}
+\PMlinkescapeword{depth}
+
+\section*{Definition}
+
+Let $H$ be a heap storing $n$ elements, and let $\preceq$ be an operator that defines a total order over all of the values in $H$.
+If $H$ is non-empty, then there is a value $x$ in $H$ such that $x\preceq y$ holds for all values in $H$.
+The \emph{heap removal algorithm} removes $x$ from $H$ and returns it,
+while maintaining the heap property of $H$.
+
+The process of this algorithm is similar in nature to that of the heap insertion algorithm.  First, if $H$ only holds one value, then that value is $x$, which can simply be removed and returned.
+Otherwise, let $z$ be the value stored in the right-most leaf of $H$.
+Since $x$ is defined by the heap property to be the root of the tree,
+the value of $x$ is saved, $z$ is removed, and the value at the root of the tree is set to $z$.  Then $z$ is \emph{sifted} downwards into the tree until the heap property is regained.
+
+The sifting process is similar to that of the heap insertion algorithm, only in reverse.  First, if $z$ is a leaf, the process ends.  Otherwise, let $a, b$ be the two children of $z$, chosen such that $a \preceq b$ holds.  If $z \preceq a$ holds, the process ends.  Otherwise, $a$ and $z$ are swapped and the process repeats for $z$.
+
+\section*{Analysis}
+
+Since $H$ is a balanced binary tree, it has a maximum depth of $\lceil\log_2n\rceil+1$.  Since the maximum number of times the sift operation can occur is constrained by the depth of the tree, the worst-case time complexity for heap insertion is $\mathcal{O}(\log n)$.
+
+\clearpage
+\section*{Pseudocode}
+
+What follows is the pseudocode for implementing heap removal.  For the given
+pseudocode, we presume that the heap is actually represented implicitly in
+an array (see the binary tree entry for details), and that the heap contains at least one value.
+
+\begin{program}
+\mathrm{HeapRemove}(H, n, \preceq)
+\text{{\bf Input}.  A heap $(H,\preceq)$ (represented as an array) containing $n>0$ values.}
+\text{{\bf Output}. Removes and returns a value $x$ from $H$ such that $x\preceq y$ holds for all $y$ in $H$.}
+\text{{\bf Procedure}:}
+top \gets H[0]
+n \gets n - 1
+H[0] \gets H[n]
+parent \gets 0
+child \gets 1
+\WHILE child < n \DO
+  \IF child+1 < n 
+  \THEN
+  \IF H[child+1]\preceq H[child] 
+  \THEN
+    child \gets child+1
+  \FI 
+  \FI
+  \IF H[parent]\not\preceq H[child]
+  \THEN \mathrm{swap}(H[parent],H[child])
+        parent \gets child
+        child \gets 2\cdot child + 1
+  \ELSE child \gets n
+  \FI
+\OD
+\end{program}
+
+%%%%%
+%%%%%
+\end{document}

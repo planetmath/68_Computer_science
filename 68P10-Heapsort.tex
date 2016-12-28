@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Heapsort}
+\pmcreated{2013-03-22 12:31:02}
+\pmmodified{2013-03-22 12:31:02}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{heapsort}
+\pmrecord{9}{32755}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmrelated{HeapInsertionAlgorithm}
+\pmrelated{HeapRemovalAlgorithm}
+\pmrelated{Heap}
+\pmrelated{SortingProblem}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\begin{document}
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+    \textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+    \textit{Input}: #3\newline
+    \textit{Output}: #4\newline
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+    \begin{figure}[#1]
+    \caption{#2}
+    \begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+    \end{Lalgorithm}
+    \end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}} 
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lfor}[2]{\textbf{for} #1 \textbf{do}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+\PMlinkescapeword{ideal}
+\PMlinkescapeword{loops}
+\PMlinkescapeword{simple}
+The \emph{heapsort} algorithm is an elegant application of the heap data structure to the sorting problem.  It consists of building a heap out of some list of $n$ elements, and the removing a maximal value one at a time.
+
+\subsubsection*{The Algorithm}
+
+The following pseudocode illustrates the heapsort algorithm.  It builds upon the heap insertion and heap removal algorithms.
+
+\begin{Lalgorithm}
+  {HeapSort}
+  {$(A,\preceq,n)$}
+  {List $A$ of $n$ elements}
+  {$A$ sorted, such that $\preceq$ is a total order over $A$}
+\Lgroup{
+  \Lfor{$i\gets2\bf{ to }n$}{\bf{HeapInsert}$(A,\preceq,i-1,A[i])$}
+  \Lfor{$i\gets n\bf{ downto }2$}{$A[i-1]\gets\bf{HeapRemove}(H,i,\preceq)$}}
+\end{Lalgorithm}
+
+\subsubsection*{Analysis}
+
+Note that the algorithm given is based on a top-down heap insertion algorithm.
+It is possible to get better results through bottom-up heap construction.
+
+Each step of each of the two \textbf{for} loops in this algorithm has a runtime complexity of $\mathcal{O}(\log i)$.  Thus overall the heapsort algorithm is $\mathcal{O}(n\log n)$.
+
+Heapsort is not quite as fast as quicksort in general, but it is not much slower, either.  Also, like quicksort, heapsort is an in-place sorting algorithm, but not a stable sorting algorithm.
+Unlike quicksort, its performance is guaranteed, so despite the ordering of its input its worst-case complexity is $\mathcal{O}(n\log n)$.
+Given its simple implementation and reasonable performance, heapsort is ideal for quickly implementing a decent sorting algorithm.
+%%%%%
+%%%%%
+\end{document}

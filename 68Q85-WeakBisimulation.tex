@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{WeakBisimulation}
+\pmcreated{2013-03-22 19:30:55}
+\pmmodified{2013-03-22 19:30:55}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{weak bisimulation}
+\pmrecord{10}{42490}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q85}
+\pmsynonym{invisible step}{WeakBisimulation}
+\pmdefines{silent step}
+\pmdefines{weak simulation}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+
+\begin{document}
+Let $M=(S,\Sigma,\rightarrow)$ be a labelled state transition system (LTS).  Recall that for each label $\alpha \in \Sigma$, there is an associated binary relation $\stackrel{\alpha}{\rightarrow}$ on $S$.  Single out a label $\tau\in \Sigma$, and call it the \emph{silent step}.  Define the following relations:
+\begin{enumerate}
+\item Let $\Rightarrow$ be the reflexive and transitive closures of $\stackrel{\tau}{\rightarrow}$.  In other words, $p \Rightarrow q$ iff either $p=q$, or there is a positive integer $n>1$ and states $r_1,\ldots, r_n$ such that $p= r_1$ and $q=r_n$ and $r_i \stackrel{\tau}{\rightarrow}  r_{i+1}$, where $i=1,\ldots, n-1$.
+\item Next, for any label $\alpha$ that is not the silent step $\tau$ in $\Sigma$, define $$\stackrel{\alpha}{\Rightarrow}\;\;\; := \;\;\; \stackrel{\alpha}{\rightarrow} \circ \Rightarrow \circ \stackrel{\alpha}{\rightarrow},$$
+where $\circ$ denotes the relational composition operation.  In other words, $p \stackrel{\alpha}{\Rightarrow} q$ iff there are states $r$ and $s$ such that $p \stackrel{\alpha}{\rightarrow} r$, $r \Rightarrow s$, and $s \stackrel{\alpha}{\rightarrow} q$.
+\item Finally, for any label $\alpha\in \Sigma$, let 
+\begin{displaymath}
+\stackrel{(\alpha)}{\Rightarrow}\;\;\; := \;\;\; \left\{
+\begin{array}{ll}
+\Rightarrow & \mbox{if }\alpha=\tau\\
+\stackrel{\alpha}{\Rightarrow} & \textrm{otherwise.}
+\end{array}
+\right.
+\end{displaymath}
+\end{enumerate}
+
+\textbf{Definition}.  Let $M=(S_1,\Sigma,\rightarrow_1)$ and $N=(S_2,\Sigma,\rightarrow_2)$ be two labelled state transition systems, with $\tau \in \Sigma$ the silent step.  A relation $\approx \subseteq S_1 \times S_2$ is called a \emph{weak simulation} if whenever $p \approx q$ and any labelled transition $p \stackrel{\alpha}{\rightarrow}_1 p'$, there is a state $q'\in S_2$ such that $p' \approx q'$ and $p' \stackrel{(\alpha)}{\Rightarrow}_2 q$.  $\approx$ is a \emph{weak bisimulation} if both $\approx$ and its converse $\approx^{-1}$ are weak simulations.
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{InsertionSort}
+\pmcreated{2013-03-22 11:44:38}
+\pmmodified{2013-03-22 11:44:38}
+\pmowner{mathcam}{2727}
+\pmmodifier{mathcam}{2727}
+\pmtitle{insertion sort}
+\pmrecord{16}{30181}
+\pmprivacy{1}
+\pmauthor{mathcam}{2727}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68P10}
+\pmclassification{msc}{55U40}
+\pmclassification{msc}{55U99}
+\pmclassification{msc}{55U15}
+\pmclassification{msc}{55U10}
+\pmclassification{msc}{55P20}
+\pmclassification{msc}{55-00}
+\pmclassification{msc}{85-00}
+\pmclassification{msc}{83-02}
+\pmrelated{SortingProblem}
+\pmrelated{BinarySearch}
+\pmrelated{SelectionSort}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\ol}{\overline}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\nor}{\vartriangleleft}
+\newcommand{\Gal}{\text{Gal}}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\Z}{\mb{Z}}
+\newcommand{\R}{\mb{R}}
+\newcommand{\Q}{\mb{Q}}
+\newcommand{\C}{\mb{C}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\begin{document}
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+    \textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+    \textit{Input}: #3\newline
+    \textit{Output}: #4\newline
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+    \begin{figure}[#1]
+    \caption{#2}
+    \begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+    \end{Lalgorithm}
+    \end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}} 
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\newcommand{\Lfor}[2]{\textbf{for} #1 \textbf{do}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+
+
+\subsection*{The Problem}
+
+See the sorting problem.
+
+\subsection*{The Algorithm}
+
+Suppose $L = \left\{ x_1, x_2, \dots, x_n\right\}$ is the initial list of unsorted elements.
+The \emph{insertion sort} algorithm will construct a new list, containing the
+elements of $L$ in order, which we will call $L'$.  The algorithm constructs this list one element at a time.
+
+Initially $L'$ is empty.  We then take the first element of $L$ and put it in $L'$.
+We then take the second element of $L$ and also add it to $L'$, placing it before any elements in $L'$ that should
+come after it.  This is done one element at a time until all $n$ elements of $L$ are in $L'$, in sorted order.
+Thus, each step $i$ consists of looking up the position in $L'$ where the element $x_i$ should be placed
+and inserting it there (hence the name of the algorithm).
+This requires a search, and then the shifting of all the elements in $L'$
+that come after $x_i$ (if $L'$ is stored in an array).  If storage is in an array, then the binary search algorithm
+can be used to quickly find $x_i$'s new position in $L'$.
+
+Since at step $i$, the length of list $L'$ is $i$ and the length of list $L$ is $n - i$, we can implement this
+algorithm as an in-place sorting algorithm.  Each step $i$ results in $L[1..i]$ becoming fully sorted.
+
+\subsection*{Pseudocode}
+
+This algorithm uses a modified binary search algorithm to find the position in $L$ where an element $key$
+should be placed to maintain ordering.
+                                                                                                           
+\begin{Lalgorithm}{Insertion\_Sort}{L, n}{A list $L$ of $n$ elements}{The list $L$ in sorted order}        
+\Lgroup{
+    \Lfor{$i \gets 1\mbox{ to }n$}{\Lgroup{
+        $value \gets L[i]$ \\
+        $position \gets Binary\_Search(L, 1, i , value)$ \\
+        \Lfor{$j \gets i\mbox{ downto }position$}{$L[j] \gets L[j - 1]$} \\
+        $L[position] \gets value$
+    }}
+} \\
+\\
+\textbf{function} Binary\_Search(L, bottom, top, key) \\
+\Lgroup{
+    \Lif{$bottom >= top$}{$Binary\_Search \gets bottom$}
+    \Lelse{\Lgroup{
+        $middle \gets (bottom + top) / 2$ \\
+        \Lif{$key < L[middle]$}{$Binary\_Search \gets Binary\_Search(L, bottom, middle - 1, key)$}
+        \Lelse{$Binary\_Search \gets Binary\_Search(L, middle + 1, top, key)$}
+    }}
+}
+\end{Lalgorithm}
+
+\subsection*{Analysis}
+
+In the worst case, each step $i$ requires a shift of $i - 1$ elements for the insertion (consider an input
+list that is sorted in reverse order).  Thus the runtime complexity is $\mathcal{O}(n^2)$.  Even the optimization
+of using a binary search does not help us here, because the deciding factor in this case is the insertion.
+It is possible to use a data type with $\mathcal{O}(\log{n})$ insertion time, giving $\mathcal{O}(n\log{n})$ runtime,
+but then the algorithm can no longer be done as an in-place sorting algorithm.  Such data structures are also quite
+complicated.
+
+A similar algorithm to the insertion sort is the selection sort, which requires fewer data movements than the insertion
+sort, but requires more comparisons.
+
+\PMlinkescapeword{type}
+\PMlinkescapeword{order}
+\PMlinkescapeword{structure}
+\PMlinkescapeword{factor}
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\end{document}

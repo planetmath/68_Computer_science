@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TerminatingReduction}
+\pmcreated{2013-03-22 17:57:41}
+\pmmodified{2013-03-22 17:57:41}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{terminating reduction}
+\pmrecord{11}{40463}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmrelated{NormalizingReduction}
+\pmrelated{Confluence}
+\pmrelated{DiamondLemma}
+\pmdefines{terminating}
+\pmdefines{descending chain condition}
+\pmdefines{DCC}
+\pmdefines{convergent reduction}
+\pmdefines{acyclic}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $X$ be a set and $\to$ a reduction (binary relation) on $X$.  A \emph{chain} with respect to $\to$ is a sequence of elements $x_1,x_2,x_3,\ldots$ in $X$ such that $x_1\to x_2$, $x_2\to x_3$, etc... A chain with respect to $\to$ is usually written $$x_1\to x_2 \to x_3 \to \cdots \to x_n \to \cdots.$$
+The length of a chain is the cardinality of its underlying sequence.  A chain is finite if its length is finite.  Otherwise, it is infinite.  
+
+\textbf{Definition}.  A reduction $\to$ on a set $X$ is said to be \emph{terminating} if it has no infinite chains.  In other words, every chain \emph{terminates}.
+
+\textbf{Examples}.
+\begin{itemize}
+\item If $\to$ is reflexive, or non-trivial symmetric, then it is never terminating.
+\item Let $X$ be the set of all positive integers greater than $1$.  Define $\to$ on $X$ so that $a\to b$ means that $a=bc$ for some $c\in X$.  Then $\to$ is a terminating reduction.  By the way, $\to$ is also a normalizing reduction.
+\item In fact, it is easy to see that a terminating reduction is normalizing: if $a$ has no normal form, then we may form an infinite chain starting from $a$.
+\item On the other hand, not all normalizing reduction is terminating.  A canonical example is the set of all non-negative integers with the reduction $\to$ defined by $a\to b$ if and only if
+\begin{itemize}
+\item either $a,b\ne 0$, $a\ne b$, and $a<b$,
+\item or $a\ne 0$ and $b=0$. 
+\end{itemize}
+The infinite chain is given by $1\to 2\to 3\to \cdots $, so that $\to$ is not terminating.  However, $n\to 0$ for every positive integer $n$.  Thus every integer has $0$ as its normal form, so that $\to$ is normalizing.
+\end{itemize}
+
+\textbf{Remarks}.  
+\begin{itemize}
+\item
+A reduction is said to be \emph{convergent} if it is both terminating and confluent.
+\item
+A relation is terminating iff the transitive closure of its inverse is well-founded.  
+
+To see this, first let $R$ be terminating on the set $X$.  And let $S$ be the transitive closure of $R^{-1}$.  Suppose $A$ is a non-empty subset of $X$ that contains no $S$-minimal elements.  Pick $x_0 \in A$.   Then we can find $x_1\in A$ with $x_1\ne x_0$, such that $x_1 S x_0$.  By the assumption on $A$, this process can be iterated indefinitely.  So we have a sequence $x_0, x_1, x_2, \ldots$ such that $x_{i+1} S x_i$ with $x_i\ne x_{i+1}$.  Since each pair $(x_i,x_{i+1})$ can be expanded into a finite chain with respect to $R$, we have produced an infinite chain containing elements $x_0, x_1, x_2, \ldots$, contradicting the assumption that $R$ is terminating.  
+
+On the other hand, suppose the transitive closure $S$ of $R^{-1}$ is well-founded.  If the chain $x_0 R x_1 R x_2 R \cdots$ is infinite, then the set $\lbrace x_0, x_1, x_2, \ldots \rbrace$ has no $S$-minimal elements, as $x_i S x_j$ whenever $i>j$, and $j$ arbitrary.
+\item
+The reflexive transitive closure of a terminating relation is a partial order.
+\end{itemize}
+
+A closely related concept is the descending chain condition (DCC).  A reduction $\to$ on $X$ is said to satisfy the \emph{descending chain condition (DCC)} if the only infinite chains on $X$ are those that are eventually constant.  A chain $x_1\to x_2 \to x_3 \to \cdots $ is eventually constant if there is a positive integer $N$ such that for all $n\ge N$, $x_n=x_N$.  Every terminating relation satisfies DCC.  The converse is obviously not true, as a reflexive reduction illustrates.
+
+Another related concept is acyclicity.  Let $\to$ be a reduction on $X$.  A chain $x_0\to x_1 \to \cdots x_n$ is said to be cyclic if $x_i=x_j$ for some $0\le i < j\le n$.  This means that there is a ``closed loop'' in the chain.  The reduction $\to$ is said to be \emph{acyclic} if there are no cyclic chains with respect to $\to$.  Every terminating relation is acyclic, but not conversely.  The usual strict inequality relation on the set of positive integers is an example of an acyclic but non-terminating relation.
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ReversePolishNotation}
+\pmcreated{2013-03-22 16:10:04}
+\pmmodified{2013-03-22 16:10:04}
+\pmowner{Mravinci}{12996}
+\pmmodifier{Mravinci}{12996}
+\pmtitle{reverse Polish notation}
+\pmrecord{6}{38251}
+\pmprivacy{1}
+\pmauthor{Mravinci}{12996}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68N17}
+\pmclassification{msc}{03B70}
+\pmsynonym{postfix notation}{ReversePolishNotation}
+\pmsynonym{RPN}{ReversePolishNotation}
+\pmsynonym{Zciweisakul notation}{ReversePolishNotation}
+\pmsynonym{reverse-Polish}{ReversePolishNotation}
+\pmsynonym{reverse-Polish notation}{ReversePolishNotation}
+\pmrelated{PolishNotation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Whereas operators are traditionally placed between operands, with parentheses used to override operator precedence, it is possible to place operators to the right of operands, thus eliminating ambiguity and the need for parentheses, and even the need for rules of operator precedence. This is known as \emph{reverse Polish notation} (after the Polish mathematician Jan \L{}ukasiewicz who came up with Polish notation, abbreviated \emph{RPN}), or \emph{postfix notation}. Invented by Australian philosopher Charles Hamblin, reverse Polish notation requires that the number of operands of a given operator be defined in advance.
+
+For example, $3 \times 16 - 1$ probably means 47, but if the possibility exists that the author meant but neglected to put in parentheses, the expression could actually mean $3 \times (16 - 1) = 45$. In reverse Polish notation, we could define the basic arithmetic operators to all be binary, and write $3 \quad 16 \times 1 -$ with the confidence that it will evaluate to 47 and not 45.
+
+Reverse Polish notation is particularly advantageous for stack-based programming languages like Forth and Adobe PostScript. Most Hewlett-Packard calculators use reverse Polish notation (though a few, such as the HP-38G, use the sort of infix notation conventional to most calculators). Some beginning programming language courses give as an exercise to the student the implementation of an RPN calculator. Instead of having to remember multiple addresses for different variables and constants, most RPN implementations use a stack and a stack pointer to keep track of data.
+
+The factorial notation (e.g., $n!$) is a fairly common use of postfix notation in mostly infix contexts. (Most unary operators in C++ are prefix).
+
+To convert from standard infix notation to reverse Polish notation, the Dutch computer programmer Edsger Dijkstra came up with the shunting yard algorithm.
+%%%%%
+%%%%%
+\end{document}

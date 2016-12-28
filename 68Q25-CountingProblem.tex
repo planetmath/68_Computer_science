@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{CountingProblem}
+\pmcreated{2013-03-22 13:02:17}
+\pmmodified{2013-03-22 13:02:17}
+\pmowner{Henry}{455}
+\pmmodifier{Henry}{455}
+\pmtitle{counting problem}
+\pmrecord{6}{33439}
+\pmprivacy{1}
+\pmauthor{Henry}{455}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q25}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+%\PMlinkescapeword{theory}
+\begin{document}
+If $R$ is a search problem then $c_R(x)=|\{y\mid R(x)\}|$ is the corresponding counting function and $\#R=\{(x,y)\mid y\leq c_R(x)\}$ denotes the corresponding \emph{counting problem}.  Note that $c_R$ is a search problem while $\#R$ is a decision problem, however $c_R$ can be $\mathcal{C}$ Cook reduced to $\#R$ (for appropriate $\mathcal{C}$) using a binary search (the reason $\#R$ is defined the way it is, rather than being the graph of $c_R$, is to make this binary search possible).
+%%%%%
+%%%%%
+\end{document}

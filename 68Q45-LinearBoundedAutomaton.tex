@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LinearBoundedAutomaton}
+\pmcreated{2013-03-22 18:57:40}
+\pmmodified{2013-03-22 18:57:40}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{linear bounded automaton}
+\pmrecord{10}{41819}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q45}
+\pmsynonym{LBA}{LinearBoundedAutomaton}
+\pmsynonym{NLBA}{LinearBoundedAutomaton}
+\pmsynonym{DLBA}{LinearBoundedAutomaton}
+\pmsynonym{deterministic LBA}{LinearBoundedAutomaton}
+\pmrelated{ContextSensitiveGrammar}
+\pmrelated{ContextSensitiveLanguage}
+\pmdefines{deterministic linear bounded automaton}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+A \emph{linear bounded automaton}, or LBA for short, is a restricted form of a non-deterministic Turing machine with a single tape and a single tape head, such that, given an input word on the tape, the tape head can only scan and rewrite symbols on the cells occupied by the initial input word.
+
+Formally, a \emph{linear bounded automaton} is a 9-tuple $M=(Q,\Sigma,\Gamma,\delta,q_0,B,F,\Yleft,\Yright)$, where
+\begin{enumerate}
+\item $Q$ is the state alphabet
+\item $\Sigma$ is the input alphabet
+\item $\Gamma$ is the tape alphabet and $\Sigma\subset\Gamma$
+\item $\Yleft,\Yright \in \Sigma$ are the left and right end markers.
+\item $\delta$ is a function from $Q\times \Gamma$ to $P(Q\times \Gamma\times \lbrace L,R\rbrace)$, called the \emph{next move function}
+\item $q_0\in Q$ is the start state
+\item $B\in \Gamma-\Sigma$ is the blank symbol
+\item $F\subset Q$ is the set of final states
+\end{enumerate}
+The interpretation of $(q,b,D)\in \delta(p,a)$ is the same as that of a non-deterministic TM: if the $M$ is in state $p$ and the tape head is reading a tape cell containing $a$, then it replaces $a$ by $b$ in that tape cell, and move in the direction of $D$ ($D=L$ for left, and $D=R$ for right), and changes its state to $q$.  In addition, the next move function $\delta$ has the following properties: 
+\begin{itemize}
+\item if $(q,b,D)\in \delta(p,\Yleft)$, then $b=\Yleft$ and $D=R$, and 
+\item if $(q,b,D)\in \delta(p,\Yright)$, then $b=\Yright$ and $D=L$.
+\item if $(q,b,D)\in \delta(p,a)$ and $a\notin \lbrace \Yleft, \Yright\rbrace$, then $b \notin \lbrace \Yleft, \Yright\rbrace$.
+\end{itemize}
+In other words, if the tape head is reading the left end marker $\Yleft$, then if it has a next move, it can only move right without replacing the end marker $\Yleft$.  Similarly, if it is reading the right end marker $\Yright$, then it can only move left if it has any next move at all, without replacing $\Yright$.  Furthermore, no symbol can be replaced by an end marker unless the symbol itself is the end marker.
+
+An LBA is also known as a non-deterministic LBA, or NLBA for short.  An LBA is said to be \emph{deterministic} (abbreviated as DLBA) if $\delta(p,a)$ is at most a singleton for every pair $(p,a)\in Q\times \Gamma$.
+
+A configuration of $M$ is a triple $(p,u,i)$, where $p\in Q$ is the current state of $M$, $u\in \lbrace \Yleft \rbrace \Gamma^* \lbrace \Yright \rbrace$ is the content of the tape (including the end markers), and $i$ a non-negative integer, the position of the tape head, where $i=0$ is the position of $\Yleft$, the left end marker.
+
+Define a binary relation $\Rightarrow$ on the set of all configurations of $M$: for $a_i,b\in \Gamma$,
+$$(p,a_0\cdots a_{i-1} a a_{i+1} \cdots a_{n+1},i)\Rightarrow (q,a_0 \cdots a_{i-1} b a_{i+1} \cdots a_{n+1},j),$$ 
+where $i=1,\ldots,n$ and $n$ a non-negative integer, iff any one of the following holds: 
+$$(q,b,L)\in \delta(p,a_i)\mbox{ and }j=i-1 \qquad \mbox{or} \qquad (q,b,R)\in \delta(p,a_i)\mbox{ and }j=i+1.$$
+Notice that $a_0=\Yleft$ and $a_{n+1}=\Yright$.  If $i=0$, then the former case can not happen, and if $i=n+1$, then the latter case can not happen.
+
+Take the reflexive transitive closure $\Rightarrow^*$ of $\Rightarrow$, and set $$L(M):=\lbrace u\in \Sigma^* \mid (q_0,\Yleft u \Yright, 0)\Rightarrow^* (q,\Yleft v \Yright,j) \mbox{ for some } q\in F\rbrace$$ the language accepted by $M$.
+
+\textbf{Remarks}
+\begin{itemize}
+\item For a given input word $u$, the workspace $w(u)$ of an LBA is defined as the portion of the tape between the end markers (including the end markers).  In the definition above, we see that $|w(u)|=|u|+2$, where $|\cdot|$ is the length function.  One can enlarge the workspace so that $|w(u)|=r|u|+s$, where $r,s$ are positive integers with $r\ge 1$ and $s\ge 2$.  This is the reason for the name ``linear bounded'' in LBA.  However, the computational power of an LBA with enlarged workspace is not increased: the language accepted by such an LBA can be accepted by an LBA defined above.
+\item A language is context-sensitive iff it can be accepted by an LBA.
+\item Every context-free language can be accepted by a DLBA, but not conversely.
+\item It is an open question whether every context-sensitive language can be accepted by a DLBA.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{hu} J.E. Hopcroft, J.D. Ullman, {\em Formal Languages and Their Relation to Automata}, Addison-Wesley, (1969).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

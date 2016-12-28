@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PumpingLemmaregularLanguages}
+\pmcreated{2013-03-22 16:21:17}
+\pmmodified{2013-03-22 16:21:17}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{pumping lemma (regular languages)}
+\pmrecord{9}{38489}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{68Q42}
+\pmsynonym{pumping lemma}{PumpingLemmaregularLanguages}
+\pmrelated{PumpingLemma}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newtheorem{lemma}{Lemma}
+\begin{document}
+\begin{lemma}
+Let $L$ be a regular language (a.k.a. type 3 language). Then there exist
+an integer $n$ such that, if the length of a word $W$ is greater
+than $n$, then $W = ABC$ where $A,B,C$ are subwords such that
+\begin{enumerate}
+\item The length of the subword $B$ is less than $n$.
+\item The subword $B$ cannot be empty (although one of $A$ or $C$ might
+happen to be empty).
+\item For all integers $k > 0$, it is the case that $AB^kC$ belongs to $L$,
+where exponentiation denotes repetition of a subword $k$ times.
+\end{enumerate}
+\end{lemma}
+
+An important use of this lemma is to show that a language
+is not regular. (Remember, just because a language happens to be described
+in terms of an irregular grammar does not automatically preclude the
+possibility of describing the same language also by a
+regular grammar.) The idea is to assume that the language is
+regular, then arrive at a contradiction via this lemma.
+
+An example of such a use of this lemma is afforded by the language
+ \[ L = \{0^p 1^q 0^p \mid p,q > 0 \}.\]
+Let $n$ be the number whose existence is guaranteed by the lemma.  
+Now, consider the word $W = 0^{n+1} 1^{n+1} 0^{n+1}$.  There must 
+exist subwords $A,B,C$ such that $W = ABC$ and $B$ must be of length less than $n$.  The only possibilities are the following
+\begin{enumerate}
+\item $A = 0^u, B = 0^v, C = 0^{n+1-u-v} 1^{n+1} 0^{n+1}$
+\item $A = 0^{n+1-u}, B = 0^u 1^v, C = 1^{n+1-v} 0^{n+1}$
+\item $A = 0^{n+1} 1^v, B = 1^u, C = 1^{n+1-u-v} 0^{n+1}$
+\item $A = 0^{n+1} 1^{n+1-v}, B = 1^v 0^u, C = 0^{n+1-u}$
+\item $A = 0^{n+1} 1^{n+1} 0^u, B = 0^v, C = 0^{n+1-u-v}$
+\end{enumerate}
+In these cases, $AB^2C$ would have the following form:
+\begin{enumerate}
+\item $AB^2C = 0^{n+1+v} 1^{n+1} 0^{n+1}$
+\item $AB^2C = 0^{n+1} 1^v 0^u 1^{n+1} 0^{n+1}$
+\item $AB^2C = 0^{n+1} 1^{n+1+u} 0^{n+1}$
+\item $AB^2C = 0^{n+1} 1^{n+1} 0^u 1^v 0^{n+1}$
+\item $AB^2C = 0^{n+1} 1^{n+1} 0^{n+1+u}$
+\end{enumerate}
+
+It is easy to see that, in each of these five cases, $AB^2C \notin L$.
+Hence $L$ cannot be a regular language.
+
+
+%%%%%
+%%%%%
+\end{document}
