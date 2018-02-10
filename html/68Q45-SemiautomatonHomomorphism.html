@@ -1,0 +1,247 @@
+<!DOCTYPE html><html>
+<head>
+<title>semiautomaton homomorphism</title>
+<!--Generated on Sat Feb 10 12:47:07 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">semiautomaton homomorphism</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Just like groups and rings, a semiautomaton can be viewed as an algebraic structure. As such, one may define algebraic constructs such as subalgebras and homomorphisms. In this entry, we will briefly discuss the later.</p>
+</div>
+<section id="S0.SS0.SSSx1" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Definition</h2>
+
+<div id="S0.SS0.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">homomorphism</em> from a semiautomaton <math id="S0.SS0.SSSx1.p1.m1" class="ltx_Math" alttext="M=(S,\Sigma,\delta)" display="inline"><mrow><mi>M</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow></mrow></math> to a semiautomaton <math id="S0.SS0.SSSx1.p1.m2" class="ltx_Math" alttext="N=(T,\Gamma,\gamma)" display="inline"><mrow><mi>N</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo>,</mo><mi mathvariant="normal">Γ</mi><mo>,</mo><mi>γ</mi><mo stretchy="false">)</mo></mrow></mrow></math> is a pair of maps <math id="S0.SS0.SSSx1.p1.m3" class="ltx_Math" alttext="h:=(f:S\to T,g:\Sigma\to\Gamma)" display="inline"><mrow><mi>h</mi><mo>:=</mo><mrow><mo stretchy="false">(</mo><mi>f</mi><mo>:</mo><mi>S</mi><mo>→</mo><mi>T</mi><mo>,</mo><mi>g</mi><mo>:</mo><mi mathvariant="normal">Σ</mi><mo>→</mo><mi mathvariant="normal">Γ</mi><mo stretchy="false">)</mo></mrow></mrow></math> such that</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="f(\delta(s,a))=\gamma(f(s),g(a))" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">image</em> of the homomorphism <math id="S0.SS0.SSSx1.p1.m4" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> is the subsemiautomaton <math id="S0.SS0.SSSx1.p1.m5" class="ltx_Math" alttext="h(M):=(f(S),g(\Sigma),\gamma^{\prime})" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><msup><mi>γ</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></math> of <math id="S0.SS0.SSSx1.p1.m6" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, where <math id="S0.SS0.SSSx1.p1.m7" class="ltx_Math" alttext="\gamma^{\prime}" display="inline"><msup><mi>γ</mi><mo>′</mo></msup></math> is the restriction of <math id="S0.SS0.SSSx1.p1.m8" class="ltx_Math" alttext="\gamma" display="inline"><mi>γ</mi></math> to <math id="S0.SS0.SSSx1.p1.m9" class="ltx_Math" alttext="f(S)\times g(\Sigma)" display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow><mo>×</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo stretchy="false">)</mo></mrow></mrow></math>, also known as the <em class="ltx_emph ltx_font_italic">homomorphic image</em> of <math id="S0.SS0.SSSx1.p1.m10" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> under <math id="S0.SS0.SSSx1.p1.m11" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>.</p>
+</div>
+<div id="S0.SS0.SSSx1.p2" class="ltx_para">
+<p class="ltx_p">In general, a semiautomaton <math id="S0.SS0.SSSx1.p2.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> is said to be a homomorphic image of a semiautomaton <math id="S0.SS0.SSSx1.p2.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, if there is a homomorphism <math id="S0.SS0.SSSx1.p2.m3" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> such that <math id="S0.SS0.SSSx1.p2.m4" class="ltx_Math" alttext="h(M)=N" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>N</mi></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx1.p3" class="ltx_para">
+<p class="ltx_p">When comparing two semiautomata <math id="S0.SS0.SSSx1.p3.m1" class="ltx_Math" alttext="M,N" display="inline"><mrow><mi>M</mi><mo>,</mo><mi>N</mi></mrow></math>, it is customary to identify the two corresponding input alphabets <math id="S0.SS0.SSSx1.p3.m2" class="ltx_Math" alttext="\Sigma,\Gamma" display="inline"><mrow><mi mathvariant="normal">Σ</mi><mo>,</mo><mi mathvariant="normal">Γ</mi></mrow></math>, especially when one wants to study the interaction between the states of <math id="S0.SS0.SSSx1.p3.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> and the states of <math id="S0.SS0.SSSx1.p3.m4" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>. This can be done by taking <math id="S0.SS0.SSSx1.p3.m5" class="ltx_Math" alttext="\Delta:=\Sigma\cup\Gamma" display="inline"><mrow><mi mathvariant="normal">Δ</mi><mo>:=</mo><mrow><mi mathvariant="normal">Σ</mi><mo>∪</mo><mi mathvariant="normal">Γ</mi></mrow></mrow></math>, and extend the corresponding transition functions so that they are identities on the extended portions of the input alphabets. Call the extended semiautomata <math id="S0.SS0.SSSx1.p3.m6" class="ltx_Math" alttext="M^{\prime},N^{\prime}" display="inline"><mrow><msup><mi>M</mi><mo>′</mo></msup><mo>,</mo><msup><mi>N</mi><mo>′</mo></msup></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx1.p4" class="ltx_para">
+<p class="ltx_p">If <math id="S0.SS0.SSSx1.p4.m1" class="ltx_Math" alttext="h:M\to N" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><mi>M</mi><mo>→</mo><mi>N</mi></mrow></mrow></math> is a homomorphism, then <math id="S0.SS0.SSSx1.p4.m2" class="ltx_Math" alttext="h^{\prime}:M^{\prime}\to N^{\prime}" display="inline"><mrow><msup><mi>h</mi><mo>′</mo></msup><mo>:</mo><mrow><msup><mi>M</mi><mo>′</mo></msup><mo>→</mo><msup><mi>N</mi><mo>′</mo></msup></mrow></mrow></math> extends <math id="S0.SS0.SSSx1.p4.m3" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> in a natural way: <math id="S0.SS0.SSSx1.p4.m4" class="ltx_Math" alttext="f^{\prime}=f" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>=</mo><mi>f</mi></mrow></math>, and <math id="S0.SS0.SSSx1.p4.m5" class="ltx_Math" alttext="g^{\prime}:\Delta\to\Delta" display="inline"><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>:</mo><mrow><mi mathvariant="normal">Δ</mi><mo>→</mo><mi mathvariant="normal">Δ</mi></mrow></mrow></math> given by <math id="S0.SS0.SSSx1.p4.m6" class="ltx_Math" alttext="g^{\prime}(a)=g(a)" display="inline"><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> if <math id="S0.SS0.SSSx1.p4.m7" class="ltx_Math" alttext="a\in\Sigma" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow></math>, and <math id="S0.SS0.SSSx1.p4.m8" class="ltx_Math" alttext="g^{\prime}(a)=a" display="inline"><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>a</mi></mrow></math> if <math id="S0.SS0.SSSx1.p4.m9" class="ltx_Math" alttext="a\in\Gamma-\Sigma" display="inline"><mrow><mi>a</mi><mo>∈</mo><mrow><mi mathvariant="normal">Γ</mi><mo>-</mo><mi mathvariant="normal">Σ</mi></mrow></mrow></math>. Routine verification shows that <math id="S0.SS0.SSSx1.p4.m10" class="ltx_Math" alttext="h^{\prime}" display="inline"><msup><mi>h</mi><mo>′</mo></msup></math> is indeed a homomorphism: if <math id="S0.SS0.SSSx1.p4.m11" class="ltx_Math" alttext="a\in\Sigma" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow></math>,</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="f^{\prime}(\delta^{\prime}(s,a))=f(\delta^{\prime}(s,a))=f(\delta(s,a))=\gamma%
+(f(s),g(a))=\gamma^{\prime}(f(s),g(a))=\gamma^{\prime}(f^{\prime}(s),g^{\prime%
+}(a))," display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>γ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>γ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and if <math id="S0.SS0.SSSx1.p4.m12" class="ltx_Math" alttext="a\in\Gamma-\Sigma" display="inline"><mrow><mi>a</mi><mo>∈</mo><mrow><mi mathvariant="normal">Γ</mi><mo>-</mo><mi mathvariant="normal">Σ</mi></mrow></mrow></math>, then</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="f^{\prime}(\delta^{\prime}(s,a))=f(\delta^{\prime}(s,a))=f(s)=\gamma^{\prime}(%
+f(s),a)=\gamma^{\prime}(f^{\prime}(s),a)=\gamma^{\prime}(f^{\prime}(s),g^{%
+\prime}(a))." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>γ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>γ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>γ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SS0.SSSx1.p5" class="ltx_para">
+<p class="ltx_p">A homomorphism <math id="S0.SS0.SSSx1.p5.m1" class="ltx_Math" alttext="h=(f,g):M\to N" display="inline"><mrow><mrow><mi>h</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:</mo><mrow><mi>M</mi><mo>→</mo><mi>N</mi></mrow></mrow></math> is an <em class="ltx_emph ltx_font_italic">isomorphism</em> if both <math id="S0.SS0.SSSx1.p5.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> and <math id="S0.SS0.SSSx1.p5.m3" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> are bijections. As discussed above, if we identify the input alphabets of <math id="S0.SS0.SSSx1.p5.m4" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> and <math id="S0.SS0.SSSx1.p5.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, and treat <math id="S0.SS0.SSSx1.p5.m6" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> as the identity map on the input alphabet, then <math id="S0.SS0.SSSx1.p5.m7" class="ltx_Math" alttext="(S,\Sigma,\delta)" display="inline"><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow></math> and <math id="S0.SS0.SSSx1.p5.m8" class="ltx_Math" alttext="(T,\Sigma,\gamma)" display="inline"><mrow><mo stretchy="false">(</mo><mi>T</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>γ</mi><mo stretchy="false">)</mo></mrow></math> are isomorphic if there is a bijection <math id="S0.SS0.SSSx1.p5.m9" class="ltx_Math" alttext="f:S\to T" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>S</mi><mo>→</mo><mi>T</mi></mrow></mrow></math> such that <math id="S0.SS0.SSSx1.p5.m10" class="ltx_Math" alttext="f(\delta(s,a))=\gamma(f(s),a)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</section>
+<section id="S0.SS0.SSSx2" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Specializations to Other Machines</h2>
+
+<div id="S0.SS0.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">Computing devices derived from semiautomata such as automata and state-output machines may also be considered as algebras. We record the definitions of homomorphisms with respect to these objects here.</p>
+</div>
+<div id="S0.SS0.SSSx2.p2" class="ltx_para">
+<p class="ltx_p">We adopt the following notations: given an automaton <math id="S0.SS0.SSSx2.p2.m1" class="ltx_Math" alttext="A=(S,\Sigma,\delta,I,F)" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow></math> and a state-output machine <math id="S0.SS0.SSSx2.p2.m2" class="ltx_Math" alttext="M=(S,\Sigma,\Delta,\delta,\lambda)" display="inline"><mrow><mi>M</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi mathvariant="normal">Δ</mi><mo>,</mo><mi>δ</mi><mo>,</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math>, let <math id="S0.SS0.SSSx2.p2.m3" class="ltx_Math" alttext="A^{\prime}" display="inline"><msup><mi>A</mi><mo>′</mo></msup></math> and <math id="S0.SS0.SSSx2.p2.m4" class="ltx_Math" alttext="M^{\prime}" display="inline"><msup><mi>M</mi><mo>′</mo></msup></math> be the associated semiautomaton <math id="S0.SS0.SSSx2.p2.m5" class="ltx_Math" alttext="(S,\Sigma,\delta)" display="inline"><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow></math>. So <math id="S0.SS0.SSSx2.p2.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> and <math id="S0.SS0.SSSx2.p2.m7" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> may be written <math id="S0.SS0.SSSx2.p2.m8" class="ltx_Math" alttext="(A^{\prime},I,F)" display="inline"><mrow><mo stretchy="false">(</mo><msup><mi>A</mi><mo>′</mo></msup><mo>,</mo><mi>I</mi><mo>,</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></math> and <math id="S0.SS0.SSSx2.p2.m9" class="ltx_Math" alttext="(M^{\prime},\Delta,\lambda)" display="inline"><mrow><mo stretchy="false">(</mo><msup><mi>M</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Δ</mi><mo>,</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></math> respectively.</p>
+</div>
+<div id="S0.SS0.SSSx2.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition (automaton)</span>. Given automata <math id="S0.SS0.SSSx2.p3.m1" class="ltx_Math" alttext="A=(A^{\prime},I,F)" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msup><mi>A</mi><mo>′</mo></msup><mo>,</mo><mi>I</mi><mo>,</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="S0.SS0.SSSx2.p3.m2" class="ltx_Math" alttext="B=(B^{\prime},J,G)" display="inline"><mrow><mi>B</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msup><mi>B</mi><mo>′</mo></msup><mo>,</mo><mi>J</mi><mo>,</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Then</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="h=(f,g):A\to B" display="block"><mrow><mrow><mi>h</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:</mo><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">is a <em class="ltx_emph ltx_font_italic">homomorphism</em> if</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="h:A^{\prime}\to B^{\prime}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msup><mi>A</mi><mo>′</mo></msup><mo>→</mo><msup><mi>B</mi><mo>′</mo></msup></mrow></mrow></math> is a semiautomaton homomorphism, such that
+</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="f(I)\subseteq J" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mi>J</mi></mrow></math>, and <math id="I1.i2.p1.m2" class="ltx_Math" alttext="f(F)\subseteq G" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mi>G</mi></mrow></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">A homomorphism <math id="S0.SS0.SSSx2.p3.m3" class="ltx_Math" alttext="h:A\to B" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></mrow></math> is an isomorphism if <math id="S0.SS0.SSSx2.p3.m4" class="ltx_Math" alttext="h:A^{\prime}\to B^{\prime}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msup><mi>A</mi><mo>′</mo></msup><mo>→</mo><msup><mi>B</mi><mo>′</mo></msup></mrow></mrow></math> is an isomorphism such that <math id="S0.SS0.SSSx2.p3.m5" class="ltx_Math" alttext="f(I)=J" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>J</mi></mrow></math> and <math id="S0.SS0.SSSx2.p3.m6" class="ltx_Math" alttext="f(F)=G" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>G</mi></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx2.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition (state-output machine)</span>. Given state-output machines <math id="S0.SS0.SSSx2.p4.m1" class="ltx_Math" alttext="M=(M^{\prime},\Delta,\lambda)" display="inline"><mrow><mi>M</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msup><mi>M</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Δ</mi><mo>,</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="S0.SS0.SSSx2.p4.m2" class="ltx_Math" alttext="N=(N^{\prime},\Omega,\pi)" display="inline"><mrow><mi>N</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msup><mi>N</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Ω</mi><mo>,</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Then</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\phi=(h,k):M\to N" display="block"><mrow><mrow><mi>ϕ</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:</mo><mrow><mi>M</mi><mo>→</mo><mi>N</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">is a homomorphism if</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="h:M^{\prime}\to N^{\prime}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msup><mi>M</mi><mo>′</mo></msup><mo>→</mo><msup><mi>N</mi><mo>′</mo></msup></mrow></mrow></math> is a semiautomaton homomorphism, and</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="k:\Delta\to\Omega" display="inline"><mrow><mi>k</mi><mo>:</mo><mrow><mi mathvariant="normal">Δ</mi><mo>→</mo><mi mathvariant="normal">Ω</mi></mrow></mrow></math>, such that</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="k(\lambda(s,a))=\pi(f(s),g(a))," display="block"><mrow><mrow><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>λ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>π</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">for all <math id="I2.i2.p1.m2" class="ltx_Math" alttext="(s,a)\in S\times\Sigma" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow></mrow></math>, where <math id="I2.i2.p1.m3" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> and <math id="I2.i2.p1.m4" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> are the state and input alphabets of <math id="I2.i2.p1.m5" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">A homomorphism <math id="S0.SS0.SSSx2.p4.m3" class="ltx_Math" alttext="\phi:A\to B" display="inline"><mrow><mi>ϕ</mi><mo>:</mo><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></mrow></math> is an isomorphism if <math id="S0.SS0.SSSx2.p4.m4" class="ltx_Math" alttext="h:M^{\prime}\to N^{\prime}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msup><mi>M</mi><mo>′</mo></msup><mo>→</mo><msup><mi>N</mi><mo>′</mo></msup></mrow></mrow></math> is an isomorphism and <math id="S0.SS0.SSSx2.p4.m5" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> is a bijection.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> A. Ginzburg, <span class="ltx_text ltx_font_italic">Algebraic Theory of Automata</span>, Academic Press (1968).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">semiautomaton homomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SemiautomatonHomomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:01:07</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:01:07</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">7</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 20M35</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03D05</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q70</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">homomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">homomorphic image</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">isomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">automaton homomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">machine homomorphism</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:47:07 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

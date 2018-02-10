@@ -1,0 +1,208 @@
+<!DOCTYPE html><html>
+<head>
+<title>selection sort</title>
+<!--Generated on Sat Feb 10 12:38:32 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">selection sort</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SSx1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">The Problem</h2>
+
+<div id="S0.SSx1.p1" class="ltx_para">
+<p class="ltx_p">See the Sorting Problem.</p>
+</div>
+</section>
+<section id="S0.SSx2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">The Algorithm</h2>
+
+<div id="S0.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Suppose <math id="S0.SSx2.p1.m1" class="ltx_Math" alttext="L=\left\{x_{1},x_{2},\dots,x_{n}\right\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo>{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>}</mo></mrow></mrow></math> is the initial list of unsorted elements.
+The <em class="ltx_emph ltx_font_italic">selection sort</em> algorithm sorts this list in <math id="S0.SSx2.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> steps. At each step <math id="S0.SSx2.p1.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>, find the largest
+element <math id="S0.SSx2.p1.m4" class="ltx_Math" alttext="L[j]" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow></mrow></math> such that <math id="S0.SSx2.p1.m5" class="ltx_Math" alttext="j&lt;n-i+1" display="inline"><mrow><mi>j</mi><mo>&lt;</mo><mrow><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>, and swap it with the element at <math id="S0.SSx2.p1.m6" class="ltx_Math" alttext="L[n-i+1]" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></math>.
+So, for the first step, find the largest value in the list and swap it with the last element in the list.
+For the second step, find the largest value in the list up to (but not including) the last element, and swap it
+with the next to last element. This is continued for <math id="S0.SSx2.p1.m7" class="ltx_Math" alttext="n-1" display="inline"><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></math> steps. Thus the selection sort algorithm is a
+very simple, in-place sorting algorithm.</p>
+</div>
+</section>
+<section id="S0.SSx3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Pseudocode</h2>
+
+<div id="S0.SSx3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm</span> <span class="ltx_text ltx_font_smallcaps">Selection_Sort</span><span class="ltx_text ltx_font_typewriter">(L, n)
+<br class="ltx_break"></span><span class="ltx_text ltx_font_italic">Input</span>: A list <math id="S0.SSx3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> of <math id="S0.SSx3.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements
+<br class="ltx_break"><span class="ltx_text ltx_font_italic">Output</span>: The list <math id="S0.SSx3.p1.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> in sorted order
+<br class="ltx_break"></p>
+</div>
+<div id="S0.SSx3.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">begin
+<br class="ltx_break"></span>         
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">for</span> <math id="S0.SSx3.p2.m1" class="ltx_Math" alttext="i\leftarrow n\mbox{ downto }2" display="inline"><mrow><mi>i</mi><mo>←</mo><mrow><mi>n</mi><mo>⁢</mo><mtext> downto </mtext><mo>⁢</mo><mn>2</mn></mrow></mrow></math> <span class="ltx_text ltx_font_bold">do</span></span>
+</span></p>
+</div>
+<div id="S0.SSx3.p3" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><span class="ltx_text ltx_font_bold">begin</span></p>
+</div>
+<div id="S0.SSx3.p4" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p4.m1" class="ltx_Math" alttext="temp\leftarrow L[i]" display="inline"><mrow><mrow><mi>t</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mi>p</mi></mrow><mo>←</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p5" class="ltx_para">
+<p class="ltx_p"><math id="S0.SSx3.p5.m1" class="ltx_Math" alttext="max\leftarrow 1" display="inline"><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>x</mi></mrow><mo>←</mo><mn>1</mn></mrow></math></p>
+</div>
+<div id="S0.SSx3.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">for</span> <math id="S0.SSx3.p6.m1" class="ltx_Math" alttext="j\leftarrow 2\mbox{ to }i" display="inline"><mrow><mi>j</mi><mo>←</mo><mrow><mn>2</mn><mo>⁢</mo><mtext> to </mtext><mo>⁢</mo><mi>i</mi></mrow></mrow></math> <span class="ltx_text ltx_font_bold">do</span></p>
+</div>
+<div id="S0.SSx3.p7" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><span class="ltx_text ltx_font_bold">if</span> <math id="S0.SSx3.p7.m1" class="ltx_Math" alttext="L[j]&gt;L[max]" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow></mrow><mo>&gt;</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math> <span class="ltx_text ltx_font_bold">then</span></p>
+</div>
+<div id="S0.SSx3.p8" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p8.m1" class="ltx_Math" alttext="max\leftarrow j" display="inline"><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>x</mi></mrow><mo>←</mo><mi>j</mi></mrow></math></p>
+</div>
+<div id="S0.SSx3.p9" class="ltx_para">
+<p class="ltx_p"><math id="S0.SSx3.p9.m1" class="ltx_Math" alttext="L[i]\leftarrow L[max]" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow><mo>←</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p10" class="ltx_para">
+<p class="ltx_p"><math id="S0.SSx3.p10.m1" class="ltx_Math" alttext="L[max]\leftarrow temp" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>←</mo><mrow><mi>t</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mi>p</mi></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">end</span>
+
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">end</span></p>
+</div>
+</section>
+<section id="S0.SSx4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Analysis</h2>
+
+<div id="S0.SSx4.p1" class="ltx_para">
+<p class="ltx_p">The selection sort algorithm has the same runtime for any set of <math id="S0.SSx4.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements, no matter
+what the values or order of those elements are. Finding the maximum element of a list of
+<math id="S0.SSx4.p1.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> elements requires <math id="S0.SSx4.p1.m3" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> comparisons. Thus <math id="S0.SSx4.p1.m4" class="ltx_Math" alttext="T(n)" display="inline"><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math>, the number of comparisons required to
+sort a list of <math id="S0.SSx4.p1.m5" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements with the selection sort, can be found:</p>
+</div>
+<div id="S0.SSx4.p2" class="ltx_para">
+<table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_eqnarray ltx_eqn_table">
+
+<tr id="S0.Ex4" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\displaystyle T(n)" display="inline"><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex1.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex1.m3" class="ltx_Math" alttext="\displaystyle\sum_{i=2}^{n}(i-1)" display="inline"><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>2</mn></mrow><mi>n</mi></munderover></mstyle><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex2.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex2.m3" class="ltx_Math" alttext="\displaystyle\sum_{i=1}^{n}i-n-2" display="inline"><mrow><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><mi>i</mi></mrow><mo>-</mo><mi>n</mi><mo>-</mo><mn>2</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex3.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex3.m3" class="ltx_Math" alttext="\displaystyle\frac{(n^{2}-n-4)}{2}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false">(</mo><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>-</mo><mi>n</mi><mo>-</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mstyle></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex4.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex4.m3" class="ltx_Math" alttext="\displaystyle\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SSx4.p3" class="ltx_para">
+<p class="ltx_p">However, the number of data movements is the number of swaps required, which is <math id="S0.SSx4.p3.m1" class="ltx_Math" alttext="n-1" display="inline"><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></math>. This
+algorithm is very similar to the insertion sort algorithm. It requires fewer data movements,
+but requires more comparisons.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">selection sort</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SelectionSort</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:42</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:42</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">8</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C50</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C25</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 83-01</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">InsertionSort</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">SortingProblem</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:32 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

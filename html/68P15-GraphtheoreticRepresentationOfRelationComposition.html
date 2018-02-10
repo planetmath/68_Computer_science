@@ -1,0 +1,382 @@
+<!DOCTYPE html><html>
+<head>
+<title>graph-theoretic representation of relation composition</title>
+<!--Generated on Sat Feb 10 12:38:42 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">graph-theoretic representation of relation composition</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break"><span class="ltx_ERROR undefined">\PMlinkescapephrase</span>
+<p class="ltx_p">complex
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Complex
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>dyadic
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Dyadic</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">There is another form of representation for 2-adic relations that is useful to keep in mind, especially for its ability to render the logic of many complex formulas almost instantly understandable to the mind’s eye. This is the representation in terms of <span class="ltx_text ltx_font_italic">bipartite graphs (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/BipartiteGraph</span>)</span>, or <span class="ltx_text ltx_font_italic">bigraphs</span> for short.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Here is what <math id="p3.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p3.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> look like in the bigraph picture:</p>
+</div>
+<div id="p4" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . ./|\. . . . . . . . . . |
+| . . . . . . . / | \ . . . . . . .G. . |
+| . . . . . . ./. | .\. . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 9.  G = 4:3 + 4:4 + 4:5
+</pre>
+</blockquote>
+</div>
+<div id="p5" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . .\. | ./. . . . . . . . . |
+| . . . . . . . \ | / . . . . . . .H. . |
+| . . . . . . . .\|/. . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 10.  H = 3:4 + 4:4 + 5:4
+</pre>
+</blockquote>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">These graphs may be read to say:</p>
+</div>
+<div id="p7" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p7.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> puts <math id="p7.m2" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math> in relation to <math id="p7.m3" class="ltx_Math" alttext="3,4,5" display="inline"><mrow><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn></mrow></math>.
+
+<br class="ltx_break">
+<math id="p7.m4" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> puts <math id="p7.m5" class="ltx_Math" alttext="3,4,5" display="inline"><mrow><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn></mrow></math> in relation to <math id="p7.m6" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math>.</p>
+</blockquote>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">To form the composite relation (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/CompositionOfRelations</span>) <math id="p8.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math>, one simply follows the bigraph for <math id="p8.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> by the bigraph for <math id="p8.m3" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>, here arranging the bigraphs in order down the page, and then treats any non-empty set of paths of length two between two nodes as being equivalent to a single directed edge between those nodes in the composite bigraph for <math id="p8.m4" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math>.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Here’s how it looks in pictures:</p>
+</div>
+<div id="p10" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . ./|\. . . . . . . . . . |
+| . . . . . . . / | \ . . . . . . .G. . |
+| . . . . . . ./. | .\. . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . .\. | ./. . . . . . . . . |
+| . . . . . . . \ | / . . . . . . .H. . |
+| . . . . . . . .\|/. . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 11.  G Followed By H
+</pre>
+</blockquote>
+</div>
+<div id="p11" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . . | . . . . . . . . . . |
+| . . . . . . . . | . . . . . . .G o H. |
+| . . . . . . . . | . . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 12.  G Composed With H
+</pre>
+</blockquote>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">Once again we find that <math id="p12.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> = <math id="p12.m2" class="ltx_Math" alttext="4:4" display="inline"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></math>.</p>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p">To see the utility of the bigraph picture of 2-adic relations, let us devise a slightly more complex example of a composition problem, and use it to illustrate the logic of the matrix multiplication formula.</p>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">Keeping to the same space <math id="p14.m1" class="ltx_Math" alttext="X=\{1,2,3,4,5,6,7\}" display="inline"><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo stretchy="false">}</mo></mrow></mrow></math>, define the 2-adic relations <math id="p14.m2" class="ltx_Math" alttext="M,N\subseteq X\times X" display="inline"><mrow><mrow><mi>M</mi><mo>,</mo><mi>N</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math> as follows:</p>
+</div>
+<div id="p15" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p15.m1" class="ltx_Math" alttext="\begin{array}[]{lcccccc}M&amp;=&amp;2\mathrm{:}1+2\mathrm{:}2+2\mathrm{:}3+4\mathrm{:}%
+3&amp;+&amp;4\mathrm{:}4&amp;+&amp;4\mathrm{:}5+6\mathrm{:}5+6\mathrm{:}6+6\mathrm{:}7\\
+N&amp;=&amp;1\mathrm{:}1+2\mathrm{:}1+3\mathrm{:}3+4\mathrm{:}3&amp;&amp;+&amp;&amp;4\mathrm{:}5+5%
+\mathrm{:}5+6\mathrm{:}7+7\mathrm{:}7\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mi>M</mi></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mn>2</mn><mo>:</mo><mrow><mn>1</mn><mo>+</mo><mn>2</mn></mrow><mo>:</mo><mrow><mn>2</mn><mo>+</mo><mn>2</mn></mrow><mo>:</mo><mrow><mn>3</mn><mo>+</mo><mn>4</mn></mrow><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mrow><mn>5</mn><mo>+</mo><mn>6</mn></mrow><mo>:</mo><mrow><mn>5</mn><mo>+</mo><mn>6</mn></mrow><mo>:</mo><mrow><mn>6</mn><mo>+</mo><mn>6</mn></mrow><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mi>N</mi></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mo>:</mo><mrow><mn>1</mn><mo>+</mo><mn>2</mn></mrow><mo>:</mo><mrow><mn>1</mn><mo>+</mo><mn>3</mn></mrow><mo>:</mo><mrow><mn>3</mn><mo>+</mo><mn>4</mn></mrow><mo>:</mo><mn>3</mn></mrow></mtd><mtd></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mrow><mn>5</mn><mo>+</mo><mn>5</mn></mrow><mo>:</mo><mrow><mn>5</mn><mo>+</mo><mn>6</mn></mrow><mo>:</mo><mrow><mn>7</mn><mo>+</mo><mn>7</mn></mrow><mo>:</mo><mn>7</mn></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p">Here are the bigraph pictures:</p>
+</div>
+<div id="p17" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./|\. . ./|\. . ./|\. . . . . . |
+| . . . / | \ . / | \ . / | \ . . .M. . |
+| . . ./. | .\./. | .\./. | .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 13.  Dyadic Relation M
+</pre>
+</blockquote>
+</div>
+<div id="p18" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . | ./. . | ./.\. | . .\. | . . . . |
+| . . | / . . | / . \ | . . \ | . .N. . |
+| . . |/. . . |/. . .\| . . .\| . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 14.  Dyadic Relation N
+</pre>
+</blockquote>
+</div>
+<div id="p19" class="ltx_para">
+<p class="ltx_p">To form the composite relation <math id="p19.m1" class="ltx_Math" alttext="M\circ N" display="inline"><mrow><mi>M</mi><mo>∘</mo><mi>N</mi></mrow></math>, one simply follows the bigraph for <math id="p19.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> by the bigraph for <math id="p19.m3" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, here arranging the bigraphs in order down the page, and then counts any non-empty set of paths of length two between two nodes as being equivalent to a single directed edge between those two nodes in the composite bigraph for <math id="p19.m4" class="ltx_Math" alttext="M\circ N" display="inline"><mrow><mi>M</mi><mo>∘</mo><mi>N</mi></mrow></math>.</p>
+</div>
+<div id="p20" class="ltx_para">
+<p class="ltx_p">Here’s how it looks in pictures:</p>
+</div>
+<div id="p21" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./|\. . ./|\. . ./|\. . . . . . |
+| . . . / | \ . / | \ . / | \ . . .M. . |
+| . . ./. | .\./. | .\./. | .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . | ./. . | ./ \. | . .\. | . . . . |
+| . . | / . . | / . \ | . . \ | . .N. . |
+| . . |/. . . |/. . .\| . . .\| . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 15.  M Followed By N
+</pre>
+</blockquote>
+</div>
+<div id="p22" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./.\. . ./.\. . ./.\. . . . . . |
+| . . . / . \ . / . \ . / . \ . .M o N. |
+| . . ./. . .\./. . .\./. . .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 16.  M Composed With N
+</pre>
+</blockquote>
+</div>
+<div id="p23" class="ltx_para">
+<p class="ltx_p">Let us hark back to that mysterious matrix multiplication formula, and see how it appears in the light of the bigraph representation.
+</p>
+</div>
+<div id="p24" class="ltx_para">
+<p class="ltx_p">The coefficient of the composition <math id="p24.m1" class="ltx_Math" alttext="M\circ N" display="inline"><mrow><mi>M</mi><mo>∘</mo><mi>N</mi></mrow></math> between <math id="p24.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and <math id="p24.m3" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> in <math id="p24.m4" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is given as follows:</p>
+</div>
+<div id="p25" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p25.m1" class="ltx_Math" alttext="(M\circ N)_{ij}=\sum_{k}M_{ik}N_{kj}." display="inline"><mrow><mrow><msub><mrow><mo stretchy="false">(</mo><mrow><mi>M</mi><mo>∘</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub><mrow><msub><mi>M</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>⁢</mo><msub><mi>N</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p26" class="ltx_para">
+<p class="ltx_p">Graphically interpreted, this is a <span class="ltx_text ltx_font_italic">sum over paths</span>. Starting at the node <math id="p26.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>, <math id="p26.m2" class="ltx_Math" alttext="M_{ik}" display="inline"><msub><mi>M</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub></math> being 1 indicates that there is an edge in the bigraph of <math id="p26.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> from node <math id="p26.m4" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> to node <math id="p26.m5" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>, and <math id="p26.m6" class="ltx_Math" alttext="N_{kj}" display="inline"><msub><mi>N</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> being 1 indicates that there is an edge in the bigraph of <math id="p26.m7" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> from node <math id="p26.m8" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> to node <math id="p26.m9" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>. So the <math id="p26.m10" class="ltx_Math" alttext="\sum_{k}" display="inline"><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub></math> ranges over all possible intermediaries <math id="p26.m11" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>, ascending from 0 to 1 just as soon as there happens to be some path of length two between nodes <math id="p26.m12" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and <math id="p26.m13" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>.</p>
+</div>
+<div id="p27" class="ltx_para">
+<p class="ltx_p">It is instructive at this point to compute the other possible composition that can be formed from <math id="p27.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> and <math id="p27.m2" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, namely, the composition <math id="p27.m3" class="ltx_Math" alttext="N\circ M" display="inline"><mrow><mi>N</mi><mo>∘</mo><mi>M</mi></mrow></math>, that takes <math id="p27.m4" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> and <math id="p27.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> in the opposite order. Here is the graphic computation:</p>
+</div>
+<div id="p28" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . | ./. . | ./.\. | . .\. | . . . . |
+| . . | / . . | / . \ | . . \ | . .N. . |
+| . . |/. . . |/. . .\| . . .\| . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . ./|\. . ./|\. . ./|\. . . . . . |
+| . . . / | \ . / | \ . / | \ . . .M. . |
+| . . ./. | .\./. | .\./. | .\. . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 17.  N Followed By M
+</pre>
+</blockquote>
+</div>
+<div id="p29" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o---------------------------------------o
+| . . . . . . . . . . . . . . . . . . . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . . . . . .N o M. |
+| . . . . . . . . . . . . . . . . . . . |
+| . . o . o . o . o . o . o . o . .X. . |
+| . . 1 . 2 . 3 . 4 . 5 . 6 . 7 . . . . |
+| . . . . . . . . . . . . . . . . . . . |
+o---------------------------------------o
+Figure 18.  N Composed With M
+</pre>
+</blockquote>
+</div>
+<div id="p30" class="ltx_para">
+<p class="ltx_p">In sum, <math id="p30.m1" class="ltx_Math" alttext="N\circ M=0" display="inline"><mrow><mrow><mi>N</mi><mo>∘</mo><mi>M</mi></mrow><mo>=</mo><mn>0</mn></mrow></math>. This example affords sufficient evidence that relational composition, just like its kindred, matrix multiplication, is a non-commutative algebraic operation.</p>
+</div>
+<div id="p31" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">graph-theoretic representation of relation composition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">GraphtheoreticRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:50:36</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:50:36</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">9</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Example</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 08A02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03E20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03B10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68R01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">AlgebraicRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">GeometricRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">MatrixRepresentationOfRelationComposition</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:42 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

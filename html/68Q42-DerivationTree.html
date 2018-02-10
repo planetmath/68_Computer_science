@@ -1,0 +1,209 @@
+<!DOCTYPE html><html>
+<head>
+<title>derivation tree</title>
+<!--Generated on Sat Feb 10 12:43:33 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">derivation tree</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Given a formal grammar <math id="p1.m1" class="ltx_Math" alttext="G=(\Sigma,N,P,\sigma)" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>P</mi><mo>,</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow></mrow></math>, recall that a derivation from words <math id="p1.m2" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> to <math id="p1.m3" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> over <math id="p1.m4" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> can be visualized as a finite sequence of words over <math id="p1.m5" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, connected by the binary relation <math id="p1.m6" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo>⇒</mo></math>:</p>
+<table id="S0.E1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E1.m1" class="ltx_Math" alttext="u_{0}\Rightarrow u_{1}\Rightarrow\cdots\Rightarrow u_{n}" display="block"><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>⇒</mo><msub><mi>u</mi><mn>1</mn></msub><mo>⇒</mo><mi mathvariant="normal">⋯</mi><mo>⇒</mo><msub><mi>u</mi><mi>n</mi></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="p1.m7" class="ltx_Math" alttext="u=u_{0}" display="inline"><mrow><mi>u</mi><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow></math> and <math id="p1.m8" class="ltx_Math" alttext="v=u_{n}" display="inline"><mrow><mi>v</mi><mo>=</mo><msub><mi>u</mi><mi>n</mi></msub></mrow></math>. Each <math id="p1.m9" class="ltx_Math" alttext="u_{i}\Rightarrow u_{i+1}" display="inline"><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>⇒</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math> is a derivation step, which means that there is a production in <math id="p1.m10" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> which, when applied to <math id="p1.m11" class="ltx_Math" alttext="u_{i}" display="inline"><msub><mi>u</mi><mi>i</mi></msub></math>, yields <math id="p1.m12" class="ltx_Math" alttext="u_{i+1}" display="inline"><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></math>. In other words, there is <math id="p1.m13" class="ltx_Math" alttext="A\to B" display="inline"><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></math> in <math id="p1.m14" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> such that <math id="p1.m15" class="ltx_Math" alttext="u_{i}=xAy" display="inline"><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math> and <math id="p1.m16" class="ltx_Math" alttext="u_{i+1}=xBy" display="inline"><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>B</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math>, where <math id="p1.m17" class="ltx_Math" alttext="x,y" display="inline"><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></math> are words over <math id="p1.m18" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">When the formal grammar <math id="p2.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is context-free, a derivation can be represented by an ordered tree, revealing the structure behind the derivation that is usually not apparent in the linear representation <math id="p2.m2" class="ltx_Math" alttext="(1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math> above. This ordered tree is variously known as a <em class="ltx_emph ltx_font_italic">derivation tree</em> or a <em class="ltx_emph ltx_font_italic">parse tree</em>, depending how it is being used.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">In the foregoing discussion, <math id="p3.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is context-free, and any derivation of <math id="p3.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> begins with <math id="p3.m3" class="ltx_Math" alttext="\sigma" display="inline"><mi>σ</mi></math>, the starting non-terminal.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A <em class="ltx_emph ltx_font_italic">parse tree</em> of <math id="p4.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is an ordered tree <math id="p4.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> such that</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">the nodes of <math id="I1.i1.p1.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> are labeled by elements of <math id="I1.i1.p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, or the empty word <math id="I1.i1.p1.m3" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>,</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">if a node with label <math id="I1.i2.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> has children <math id="I1.i2.p1.m2" class="ltx_Math" alttext="N_{1},\ldots,N_{k}" display="inline"><mrow><msub><mi>N</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>N</mi><mi>k</mi></msub></mrow></math> such that <math id="I1.i2.p1.m3" class="ltx_Math" alttext="N_{1}&lt;\cdots&lt;N_{k}" display="inline"><mrow><msub><mi>N</mi><mn>1</mn></msub><mo>&lt;</mo><mi mathvariant="normal">⋯</mi><mo>&lt;</mo><msub><mi>N</mi><mi>k</mi></msub></mrow></math>, and that each <math id="I1.i2.p1.m4" class="ltx_Math" alttext="N_{i}" display="inline"><msub><mi>N</mi><mi>i</mi></msub></math> has label <math id="I1.i2.p1.m5" class="ltx_Math" alttext="A_{i}" display="inline"><msub><mi>A</mi><mi>i</mi></msub></math>, then <math id="I1.i2.p1.m6" class="ltx_Math" alttext="A\to A_{1}\cdots A_{k}" display="inline"><mrow><mi>A</mi><mo>→</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msub><mi>A</mi><mi>k</mi></msub></mrow></mrow></math> is a production of <math id="I1.i2.p1.m7" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">A parse tree such that the root has label <math id="p5.m1" class="ltx_Math" alttext="\sigma" display="inline"><mi>σ</mi></math> is called a <em class="ltx_emph ltx_font_italic">derivation tree</em>, or a <em class="ltx_emph ltx_font_italic">generation tree</em>. Every subtree of a derivation tree is a parse tree.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark</span>. Since <math id="p6.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is context-free, in a parse tree, any node that is not a leaf is labeled by a non-terminal symbol.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">For example, if <math id="p7.m1" class="ltx_Math" alttext="\Sigma=\{\sigma,a,b,X,Y\}" display="inline"><mrow><mi mathvariant="normal">Σ</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>σ</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">}</mo></mrow></mrow></math>, <math id="p7.m2" class="ltx_Math" alttext="N=\{\sigma,X,Y\}" display="inline"><mrow><mi>N</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>σ</mi><mo>,</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">}</mo></mrow></mrow></math>, and the productions of <math id="p7.m3" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> are</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\sigma\to aXY,\quad X\to bYb,\quad Y\to Xa,\quad Y\to a," display="block"><mrow><mrow><mrow><mi>σ</mi><mo>→</mo><mrow><mi>a</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mrow><mi>X</mi><mo>→</mo><mrow><mi>b</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mrow><mi>Y</mi><mo>→</mo><mrow><mi>X</mi><mo>⁢</mo><mi>a</mi></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>Y</mi><mo>→</mo><mi>a</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">then</p>
+</div>
+<figure id="fig1" class="ltx_figure"><img src="dtree.eps" id="g1" class="ltx_graphics ltx_centering" alt="">
+</figure>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">represents a derivation tree of <math id="p8.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math>. The tree represents the following derivations</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="\sigma\Rightarrow aXY\Rightarrow abYbY\Rightarrow abXabY\Rightarrow abXabb" display="inline"><mrow><mi>σ</mi><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\sigma\Rightarrow aXY\Rightarrow abYbY\Rightarrow abYbb\Rightarrow abXabb" display="inline"><mrow><mi>σ</mi><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="\sigma\Rightarrow aXY\Rightarrow aXb\Rightarrow abYbb\Rightarrow abXabb" display="inline"><mrow><mi>σ</mi><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi></mrow></mrow></math></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. If <math id="p9.m1" class="ltx_Math" alttext="\ell_{1},\ldots,\ell_{m}" display="inline"><mrow><msub><mi mathvariant="normal">ℓ</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi mathvariant="normal">ℓ</mi><mi>m</mi></msub></mrow></math> are the leaves of a parse tree <math id="p9.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, with <math id="p9.m3" class="ltx_Math" alttext="\ell_{1}&lt;\cdots&lt;\ell_{m}" display="inline"><mrow><msub><mi mathvariant="normal">ℓ</mi><mn>1</mn></msub><mo>&lt;</mo><mi mathvariant="normal">⋯</mi><mo>&lt;</mo><msub><mi mathvariant="normal">ℓ</mi><mi>m</mi></msub></mrow></math>, then the <em class="ltx_emph ltx_font_italic">result</em> of <math id="p9.m4" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is the word <math id="p9.m5" class="ltx_Math" alttext="B_{1}\cdots B_{m}" display="inline"><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msub><mi>B</mi><mi>m</mi></msub></mrow></math>, where <math id="p9.m6" class="ltx_Math" alttext="B_{i}\in\Sigma" display="inline"><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow></math> is the label of <math id="p9.m7" class="ltx_Math" alttext="\ell_{i}" display="inline"><msub><mi mathvariant="normal">ℓ</mi><mi>i</mi></msub></math>. A word over <math id="p9.m8" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is said to <em class="ltx_emph ltx_font_italic">correspond</em> to a parse tree if it is the result of the tree.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">In the example above, the result of the tree is <math id="p10.m1" class="ltx_Math" alttext="abXabb" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>X</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi></mrow></math>.</p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark</span>. A derivable word may correspond to several derivation trees. See the entry ambiguous grammar for more detail.</p>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> H.R. Lewis, C.H. Papadimitriou, <span class="ltx_text ltx_font_italic">Elements of the Theory of Computation</span>. Prentice-Hall, Englewood Cliffs, New Jersey (1981).
+
+</span>
+      </li>
+      
+<li id="bib.bib2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">2</span>
+        
+<span class="ltx_bibblock"> A. Salomaa, <span class="ltx_text ltx_font_italic">Formal Languages</span>, Academic Press, New York (1973).
+
+</span>
+      </li>
+      
+<li id="bib.bib3" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">3</span>
+        
+<span class="ltx_bibblock"> J.E. Hopcroft, J.D. Ullman, <span class="ltx_text ltx_font_italic">Formal Languages and Their Relation to Automata</span>, Addison-Wesley, (1969).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p12" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">derivation tree</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">DerivationTree</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:00:17</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:00:17</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q42</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">generation tree</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">parse tree</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">result of a derivation tree</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:43:33 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

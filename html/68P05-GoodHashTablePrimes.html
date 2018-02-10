@@ -1,0 +1,292 @@
+<!DOCTYPE html><html>
+<head>
+<title>good hash table primes</title>
+<!--Generated on Sat Feb 10 12:37:49 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">good hash table primes</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">In the course of designing a good hashing configuration, it is helpful to have a list of prime numbers for the hash table size.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">The following is such a list. It has the properties that:</p>
+</div>
+<div id="p4" class="ltx_para">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">each number in the list is prime</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">each number is slightly less than twice the size of the previous</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">each number is as far as possible from the nearest two powers of two</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Using primes for hash tables is a good idea because it minimizes clustering in the hashed table. Item (2) is nice because it is convenient for growing a hash table in the face of expanding data. Item (3) has, allegedly, been shown to yield especially good results in practice.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">And here is the list:</p>
+</div>
+<div id="p7" class="ltx_para ltx_centering">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column">lwr</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column">upr</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column">% err</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column">prime</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><math id="p7.m1" class="ltx_Math" alttext="2^{5}" display="inline"><msup><mn>2</mn><mn>5</mn></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><math id="p7.m2" class="ltx_Math" alttext="2^{6}" display="inline"><msup><mn>2</mn><mn>6</mn></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_border_t">10.416667</td>
+<td class="ltx_td ltx_align_center ltx_border_t">53</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m3" class="ltx_Math" alttext="2^{6}" display="inline"><msup><mn>2</mn><mn>6</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m4" class="ltx_Math" alttext="2^{7}" display="inline"><msup><mn>2</mn><mn>7</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">1.041667</td>
+<td class="ltx_td ltx_align_center">97</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m5" class="ltx_Math" alttext="2^{7}" display="inline"><msup><mn>2</mn><mn>7</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m6" class="ltx_Math" alttext="2^{8}" display="inline"><msup><mn>2</mn><mn>8</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.520833</td>
+<td class="ltx_td ltx_align_center">193</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m7" class="ltx_Math" alttext="2^{8}" display="inline"><msup><mn>2</mn><mn>8</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m8" class="ltx_Math" alttext="2^{9}" display="inline"><msup><mn>2</mn><mn>9</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">1.302083</td>
+<td class="ltx_td ltx_align_center">389</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m9" class="ltx_Math" alttext="2^{9}" display="inline"><msup><mn>2</mn><mn>9</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m10" class="ltx_Math" alttext="2^{10}" display="inline"><msup><mn>2</mn><mn>10</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.130208</td>
+<td class="ltx_td ltx_align_center">769</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m11" class="ltx_Math" alttext="2^{10}" display="inline"><msup><mn>2</mn><mn>10</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m12" class="ltx_Math" alttext="2^{11}" display="inline"><msup><mn>2</mn><mn>11</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.455729</td>
+<td class="ltx_td ltx_align_center">1543</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m13" class="ltx_Math" alttext="2^{11}" display="inline"><msup><mn>2</mn><mn>11</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m14" class="ltx_Math" alttext="2^{12}" display="inline"><msup><mn>2</mn><mn>12</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.227865</td>
+<td class="ltx_td ltx_align_center">3079</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m15" class="ltx_Math" alttext="2^{12}" display="inline"><msup><mn>2</mn><mn>12</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m16" class="ltx_Math" alttext="2^{13}" display="inline"><msup><mn>2</mn><mn>13</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.113932</td>
+<td class="ltx_td ltx_align_center">6151</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m17" class="ltx_Math" alttext="2^{13}" display="inline"><msup><mn>2</mn><mn>13</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m18" class="ltx_Math" alttext="2^{14}" display="inline"><msup><mn>2</mn><mn>14</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.008138</td>
+<td class="ltx_td ltx_align_center">12289</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m19" class="ltx_Math" alttext="2^{14}" display="inline"><msup><mn>2</mn><mn>14</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m20" class="ltx_Math" alttext="2^{15}" display="inline"><msup><mn>2</mn><mn>15</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.069173</td>
+<td class="ltx_td ltx_align_center">24593</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m21" class="ltx_Math" alttext="2^{15}" display="inline"><msup><mn>2</mn><mn>15</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m22" class="ltx_Math" alttext="2^{16}" display="inline"><msup><mn>2</mn><mn>16</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.010173</td>
+<td class="ltx_td ltx_align_center">49157</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m23" class="ltx_Math" alttext="2^{16}" display="inline"><msup><mn>2</mn><mn>16</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m24" class="ltx_Math" alttext="2^{17}" display="inline"><msup><mn>2</mn><mn>17</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.013224</td>
+<td class="ltx_td ltx_align_center">98317</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m25" class="ltx_Math" alttext="2^{17}" display="inline"><msup><mn>2</mn><mn>17</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m26" class="ltx_Math" alttext="2^{18}" display="inline"><msup><mn>2</mn><mn>18</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.002543</td>
+<td class="ltx_td ltx_align_center">196613</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m27" class="ltx_Math" alttext="2^{18}" display="inline"><msup><mn>2</mn><mn>18</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m28" class="ltx_Math" alttext="2^{19}" display="inline"><msup><mn>2</mn><mn>19</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.006358</td>
+<td class="ltx_td ltx_align_center">393241</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m29" class="ltx_Math" alttext="2^{19}" display="inline"><msup><mn>2</mn><mn>19</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m30" class="ltx_Math" alttext="2^{20}" display="inline"><msup><mn>2</mn><mn>20</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000127</td>
+<td class="ltx_td ltx_align_center">786433</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m31" class="ltx_Math" alttext="2^{20}" display="inline"><msup><mn>2</mn><mn>20</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m32" class="ltx_Math" alttext="2^{21}" display="inline"><msup><mn>2</mn><mn>21</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000318</td>
+<td class="ltx_td ltx_align_center">1572869</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m33" class="ltx_Math" alttext="2^{21}" display="inline"><msup><mn>2</mn><mn>21</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m34" class="ltx_Math" alttext="2^{22}" display="inline"><msup><mn>2</mn><mn>22</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000350</td>
+<td class="ltx_td ltx_align_center">3145739</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m35" class="ltx_Math" alttext="2^{22}" display="inline"><msup><mn>2</mn><mn>22</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m36" class="ltx_Math" alttext="2^{23}" display="inline"><msup><mn>2</mn><mn>23</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000207</td>
+<td class="ltx_td ltx_align_center">6291469</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m37" class="ltx_Math" alttext="2^{23}" display="inline"><msup><mn>2</mn><mn>23</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m38" class="ltx_Math" alttext="2^{24}" display="inline"><msup><mn>2</mn><mn>24</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000040</td>
+<td class="ltx_td ltx_align_center">12582917</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m39" class="ltx_Math" alttext="2^{24}" display="inline"><msup><mn>2</mn><mn>24</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m40" class="ltx_Math" alttext="2^{25}" display="inline"><msup><mn>2</mn><mn>25</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000075</td>
+<td class="ltx_td ltx_align_center">25165843</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m41" class="ltx_Math" alttext="2^{25}" display="inline"><msup><mn>2</mn><mn>25</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m42" class="ltx_Math" alttext="2^{26}" display="inline"><msup><mn>2</mn><mn>26</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000010</td>
+<td class="ltx_td ltx_align_center">50331653</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m43" class="ltx_Math" alttext="2^{26}" display="inline"><msup><mn>2</mn><mn>26</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m44" class="ltx_Math" alttext="2^{27}" display="inline"><msup><mn>2</mn><mn>27</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000023</td>
+<td class="ltx_td ltx_align_center">100663319</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m45" class="ltx_Math" alttext="2^{27}" display="inline"><msup><mn>2</mn><mn>27</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m46" class="ltx_Math" alttext="2^{28}" display="inline"><msup><mn>2</mn><mn>28</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000009</td>
+<td class="ltx_td ltx_align_center">201326611</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m47" class="ltx_Math" alttext="2^{28}" display="inline"><msup><mn>2</mn><mn>28</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m48" class="ltx_Math" alttext="2^{29}" display="inline"><msup><mn>2</mn><mn>29</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000001</td>
+<td class="ltx_td ltx_align_center">402653189</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m49" class="ltx_Math" alttext="2^{29}" display="inline"><msup><mn>2</mn><mn>29</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m50" class="ltx_Math" alttext="2^{30}" display="inline"><msup><mn>2</mn><mn>30</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000011</td>
+<td class="ltx_td ltx_align_center">805306457</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left"><math id="p7.m51" class="ltx_Math" alttext="2^{30}" display="inline"><msup><mn>2</mn><mn>30</mn></msup></math></td>
+<td class="ltx_td ltx_align_left"><math id="p7.m52" class="ltx_Math" alttext="2^{31}" display="inline"><msup><mn>2</mn><mn>31</mn></msup></math></td>
+<td class="ltx_td ltx_align_left">0.000000</td>
+<td class="ltx_td ltx_align_center">1610612741</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">The columns are, in order, the lower bounding power of two, the upper bounding power of two, the relative deviation (in percent) of the prime number from the optimal middle of the first two, and finally the prime itself.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Happy hashing!
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">good hash table primes</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">GoodHashTablePrimes</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:57:37</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:57:37</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">akrowne (2)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">akrowne (2)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">akrowne (2)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Result</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">msc 68P20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:37:49 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html><html>
+<head>
+<title>semi-Thue system</title>
+<!--Generated on Sat Feb 10 12:44:54 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">semi-Thue system</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">semi-Thue system</em> <math id="p1.m1" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> is a pair <math id="p1.m2" class="ltx_Math" alttext="(\Sigma,P)" display="inline"><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>P</mi><mo stretchy="false">)</mo></mrow></math> where <math id="p1.m3" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is an alphabet and <math id="p1.m4" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> is a non-empty finite binary relation on <math id="p1.m5" class="ltx_Math" alttext="\Sigma^{*}" display="inline"><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></math>, the Kleene star of <math id="p1.m6" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Elements of <math id="p2.m1" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> are variously called <em class="ltx_emph ltx_font_italic">defining relations</em>, <em class="ltx_emph ltx_font_italic">productions</em>, or <em class="ltx_emph ltx_font_italic">rewrite rules</em>, and <math id="p2.m2" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> itself is also known as a <em class="ltx_emph ltx_font_italic">rewriting system</em>. If <math id="p2.m3" class="ltx_Math" alttext="(x,y)\in P" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>P</mi></mrow></math>, we call <math id="p2.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> the <em class="ltx_emph ltx_font_italic">antecedent</em>, and <math id="p2.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> the <em class="ltx_emph ltx_font_italic">consequent</em>. Instead of writing <math id="p2.m6" class="ltx_Math" alttext="(x,y)\in P" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>P</mi></mrow></math> or <math id="p2.m7" class="ltx_Math" alttext="xPy" display="inline"><mrow><mi>x</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mi>y</mi></mrow></math>, we usually write</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="x\to y." display="block"><mrow><mrow><mi>x</mi><mo>→</mo><mi>y</mi></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Let <math id="p3.m1" class="ltx_Math" alttext="\mathfrak{S}=(\Sigma,P)" display="inline"><mrow><mi>𝔖</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>P</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a semi-Thue system. Given a word <math id="p3.m2" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> over <math id="p3.m3" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, we say that a word <math id="p3.m4" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> over <math id="p3.m5" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is <em class="ltx_emph ltx_font_italic">immediately derivable</em> from <math id="p3.m6" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> if there is a defining relation <math id="p3.m7" class="ltx_Math" alttext="x\to y" display="inline"><mrow><mi>x</mi><mo>→</mo><mi>y</mi></mrow></math> such that</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="u=rxs\qquad\mbox{ and }\qquad v=rys," display="block"><mrow><mrow><mrow><mi>u</mi><mo>=</mo><mrow><mrow><mi>r</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>s</mi></mrow><mo mathvariant="italic" separator="true">  </mo><mtext> and </mtext></mrow></mrow><mo mathvariant="italic" separator="true">  </mo><mrow><mi>v</mi><mo>=</mo><mrow><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>s</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">for some words <math id="p3.m8" class="ltx_Math" alttext="r,s" display="inline"><mrow><mi>r</mi><mo>,</mo><mi>s</mi></mrow></math> (which may be empty) over <math id="p3.m9" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>. If <math id="p3.m10" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is immediately derivable from <math id="p3.m11" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, we write</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="u\Rightarrow v." display="block"><mrow><mrow><mi>u</mi><mo>⇒</mo><mi>v</mi></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Let <math id="p3.m12" class="ltx_Math" alttext="P^{\prime}" display="inline"><msup><mi>P</mi><mo>′</mo></msup></math> be the set of all pairs <math id="p3.m13" class="ltx_Math" alttext="(u,v)\in\Sigma^{*}\times\Sigma^{*}" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup><mo>×</mo><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></mrow></mrow></math> such that <math id="p3.m14" class="ltx_Math" alttext="u\Rightarrow v" display="inline"><mrow><mi>u</mi><mo>⇒</mo><mi>v</mi></mrow></math>. Then <math id="p3.m15" class="ltx_Math" alttext="P\subseteq P^{\prime}" display="inline"><mrow><mi>P</mi><mo>⊆</mo><msup><mi>P</mi><mo>′</mo></msup></mrow></math>, and</p>
+<blockquote class="ltx_quote">
+<p class="ltx_p ltx_align_center">If <math id="p3.m16" class="ltx_Math" alttext="u\Rightarrow v" display="inline"><mrow><mi>u</mi><mo>⇒</mo><mi>v</mi></mrow></math>, then <math id="p3.m17" class="ltx_Math" alttext="wu\Rightarrow wv" display="inline"><mrow><mrow><mi>w</mi><mo>⁢</mo><mi>u</mi></mrow><mo>⇒</mo><mrow><mi>w</mi><mo>⁢</mo><mi>v</mi></mrow></mrow></math> and <math id="p3.m18" class="ltx_Math" alttext="uw\Rightarrow vw" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>w</mi></mrow><mo>⇒</mo><mrow><mi>v</mi><mo>⁢</mo><mi>w</mi></mrow></mrow></math> for any word <math id="p3.m19" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>.</p>
+</blockquote>
+<p class="ltx_p">Next, take the reflexive transitive closure <math id="p3.m20" class="ltx_Math" alttext="P^{\prime\prime}" display="inline"><msup><mi>P</mi><mo>′′</mo></msup></math> of <math id="p3.m21" class="ltx_Math" alttext="P^{\prime}" display="inline"><msup><mi>P</mi><mo>′</mo></msup></math>. Write <math id="p3.m22" class="ltx_Math" alttext="a\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}b" display="inline"><mrow><mi>a</mi><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mi>b</mi></mrow></math> for <math id="p3.m23" class="ltx_Math" alttext="(a,b)\in P^{\prime\prime}" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>P</mi><mo>′′</mo></msup></mrow></math>. So <math id="p3.m24" class="ltx_Math" alttext="a\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}b" display="inline"><mrow><mi>a</mi><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mi>b</mi></mrow></math> means that either <math id="p3.m25" class="ltx_Math" alttext="a=b" display="inline"><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow></math>, or there is a finite chain <math id="p3.m26" class="ltx_Math" alttext="a=a_{1},\ldots,a_{n}=b" display="inline"><mrow><mrow><mi>a</mi><mo>=</mo><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></mrow><mo>,</mo><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>b</mi></mrow></mrow></math> such that <math id="p3.m27" class="ltx_Math" alttext="a_{i}\Rightarrow a_{i+1}" display="inline"><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>⇒</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math> for <math id="p3.m28" class="ltx_Math" alttext="i=1,\ldots,n-1" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math>. When <math id="p3.m29" class="ltx_Math" alttext="a\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}b" display="inline"><mrow><mi>a</mi><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mi>b</mi></mrow></math>, we say that <math id="p3.m30" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> is <em class="ltx_emph ltx_font_italic">derivable</em> from <math id="p3.m31" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>. Concatenation preserves derivability:</p>
+<blockquote class="ltx_quote">
+<p class="ltx_p ltx_align_center"><math id="p3.m32" class="ltx_Math" alttext="a\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}b" display="inline"><mrow><mi>a</mi><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mi>b</mi></mrow></math> and <math id="p3.m33" class="ltx_Math" alttext="c\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}d" display="inline"><mrow><mi>c</mi><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mi>d</mi></mrow></math> imply <math id="p3.m34" class="ltx_Math" alttext="ac\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}bd" display="inline"><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mrow><mi>b</mi><mo>⁢</mo><mi>d</mi></mrow></mrow></math>.</p>
+</blockquote>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example</span>. Let <math id="p4.m1" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> be a semi-Thue system over the alphabet <math id="p4.m2" class="ltx_Math" alttext="\Sigma=\{a,b,c\}" display="inline"><mrow><mi mathvariant="normal">Σ</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false">}</mo></mrow></mrow></math>, with the set of defining relations given by <math id="p4.m3" class="ltx_Math" alttext="P=\{ab\to bc,bc\to cb\}" display="inline"><mrow><mi>P</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>a</mi><mi>b</mi><mo>→</mo><mi>b</mi><mi>c</mi><mo>,</mo><mi>b</mi><mi>c</mi><mo>→</mo><mi>c</mi><mi>b</mi><mo stretchy="false">}</mo></mrow></mrow></math>. Then words <math id="p4.m4" class="ltx_Math" alttext="ac^{3}b" display="inline"><mrow><mi>a</mi><mo>⁢</mo><msup><mi>c</mi><mn>3</mn></msup><mo>⁢</mo><mi>b</mi></mrow></math>, <math id="p4.m5" class="ltx_Math" alttext="a^{2}c^{2}b" display="inline"><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi></mrow></math> and
+as <math id="p4.m6" class="ltx_Math" alttext="bc^{4}" display="inline"><mrow><mi>b</mi><mo>⁢</mo><msup><mi>c</mi><mn>4</mn></msup></mrow></math> are all derivable from <math id="p4.m7" class="ltx_Math" alttext="a^{2}bc^{2}" display="inline"><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></math>:</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="a^{2}bc^{2}\Rightarrow a(bc)c^{2}\Rightarrow ac(bc)c\Rightarrow ac^{2}(cb)=ac^%
+{3}b" display="inline"><mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>c</mi></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>c</mi><mn>3</mn></msup><mo>⁢</mo><mi>b</mi></mrow></mrow></math>,</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="a^{2}bc^{2}\Rightarrow a^{2}(cb)c\Rightarrow a^{2}c(cb)=a^{2}c^{2}b" display="inline"><mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mo>⇒</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>c</mi></mrow><mo>⇒</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi></mrow></mrow></math>, and</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="a^{2}bc^{2}\Rightarrow a(bc)c^{2}\Rightarrow(bc)cc^{2}=bc^{4}" display="inline"><mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mo>⇒</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mo>⇒</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>c</mi><mo>⁢</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mo>=</mo><mrow><mi>b</mi><mo>⁢</mo><msup><mi>c</mi><mn>4</mn></msup></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Under <math id="p4.m8" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math>, we see that if <math id="p4.m9" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is derivable from <math id="p4.m10" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, then they have the same length: <math id="p4.m11" class="ltx_Math" alttext="|u|=|v|" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>u</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mrow><mo stretchy="false">|</mo><mi>v</mi><mo stretchy="false">|</mo></mrow></mrow></math>. Furthermore, if we denote <math id="p4.m12" class="ltx_Math" alttext="|a|_{u}" display="inline"><msub><mrow><mo stretchy="false">|</mo><mi>a</mi><mo stretchy="false">|</mo></mrow><mi>u</mi></msub></math> the number of occurrences of letter <math id="p4.m13" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> in a word <math id="p4.m14" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, then <math id="p4.m15" class="ltx_Math" alttext="|a|_{v}\leq|a|_{u}" display="inline"><mrow><msub><mrow><mo stretchy="false">|</mo><mi>a</mi><mo stretchy="false">|</mo></mrow><mi>v</mi></msub><mo>≤</mo><msub><mrow><mo stretchy="false">|</mo><mi>a</mi><mo stretchy="false">|</mo></mrow><mi>u</mi></msub></mrow></math>, <math id="p4.m16" class="ltx_Math" alttext="|c|_{v}\geq|c|_{u}" display="inline"><mrow><msub><mrow><mo stretchy="false">|</mo><mi>c</mi><mo stretchy="false">|</mo></mrow><mi>v</mi></msub><mo>≥</mo><msub><mrow><mo stretchy="false">|</mo><mi>c</mi><mo stretchy="false">|</mo></mrow><mi>u</mi></msub></mrow></math>, and <math id="p4.m17" class="ltx_Math" alttext="|b|_{v}=|b|_{u}" display="inline"><mrow><msub><mrow><mo stretchy="false">|</mo><mi>b</mi><mo stretchy="false">|</mo></mrow><mi>v</mi></msub><mo>=</mo><msub><mrow><mo stretchy="false">|</mo><mi>b</mi><mo stretchy="false">|</mo></mrow><mi>u</mi></msub></mrow></math>. Also, in order for a word <math id="p4.m18" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> to have a non-trivial word <math id="p4.m19" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> (non-trivial in the sense that <math id="p4.m20" class="ltx_Math" alttext="u\neq v" display="inline"><mrow><mi>u</mi><mo>≠</mo><mi>v</mi></mrow></math>) derivable from it, <math id="p4.m21" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> must have either <math id="p4.m22" class="ltx_Math" alttext="ab" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></math> or <math id="p4.m23" class="ltx_Math" alttext="bc" display="inline"><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi></mrow></math> as a subword. Therefore, words like <math id="p4.m24" class="ltx_Math" alttext="a^{3}" display="inline"><msup><mi>a</mi><mn>3</mn></msup></math> or <math id="p4.m25" class="ltx_Math" alttext="c^{3}b^{4}a^{2}" display="inline"><mrow><msup><mi>c</mi><mn>3</mn></msup><mo>⁢</mo><msup><mi>b</mi><mn>4</mn></msup><mo>⁢</mo><msup><mi>a</mi><mn>2</mn></msup></mrow></math> have no non-trivial derived words from them.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remarks</span>.</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Given a semi-Thue system <math id="I2.i1.p1.m1" class="ltx_Math" alttext="\mathfrak{S}=(\Sigma,P)" display="inline"><mrow><mi>𝔖</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>P</mi><mo stretchy="false">)</mo></mrow></mrow></math>, one can associate a subset <math id="I2.i1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> of <math id="I2.i1.p1.m3" class="ltx_Math" alttext="\Sigma^{*}" display="inline"><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></math> whose elements we call <em class="ltx_emph ltx_font_italic">axioms</em> of <math id="I2.i1.p1.m4" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math>. Any word <math id="I2.i1.p1.m5" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> that is derivable from an axiom <math id="I2.i1.p1.m6" class="ltx_Math" alttext="a\in A" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></math> is called a <em class="ltx_emph ltx_font_italic">theorem</em> (of <math id="I2.i1.p1.m7" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math>). If <math id="I2.i1.p1.m8" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is a theorem, we write <math id="I2.i1.p1.m9" class="ltx_Math" alttext="A\vdash_{\mathfrak{S}}v" display="inline"><mrow><mi>A</mi><msub><mo>⊢</mo><mi>𝔖</mi></msub><mi>v</mi></mrow></math>. The set of all theorems is written <math id="I2.i1.p1.m10" class="ltx_Math" alttext="L_{\mathfrak{S}}(A)" display="inline"><mrow><msub><mi>L</mi><mi>𝔖</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></math>, and is called the language (over <math id="I2.i1.p1.m11" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>) generated by <math id="I2.i1.p1.m12" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="I2.i2.p1.m1" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> and <math id="I2.i2.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> be defined as above, and <math id="I2.i2.p1.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> any alphabet. Call the elements of <math id="I2.i2.p1.m4" class="ltx_Math" alttext="T\cap\Sigma" display="inline"><mrow><mi>T</mi><mo>∩</mo><mi mathvariant="normal">Σ</mi></mrow></math> the <em class="ltx_emph ltx_font_italic">terminals</em> of <math id="I2.i2.p1.m5" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math>. The set</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="L_{\mathfrak{S}}(A)\cap T^{*}" display="block"><mrow><mrow><msub><mi>L</mi><mi>𝔖</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><msup><mi>T</mi><mo>*</mo></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">is called the <em class="ltx_emph ltx_font_italic">language generated by <math id="I2.i2.p1.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> over <math id="I2.i2.p1.m7" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math></em>, and written <math id="I2.i2.p1.m8" class="ltx_Math" alttext="L_{\mathfrak{S}}(A,T)" display="inline"><mrow><msub><mi>L</mi><mi>𝔖</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>,</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow></math>. It is easy to see that <math id="I2.i2.p1.m9" class="ltx_Math" alttext="L_{\mathfrak{S}}(A,T)=L_{\mathfrak{S}}(A,T\cap\Sigma)" display="inline"><mrow><mrow><msub><mi>L</mi><mi>𝔖</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>,</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>L</mi><mi>𝔖</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>,</mo><mrow><mi>T</mi><mo>∩</mo><mi mathvariant="normal">Σ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">A language <math id="I2.i3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> over an alphabet <math id="I2.i3.p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is said to be <em class="ltx_emph ltx_font_italic">generable by a semi-Thue system</em> if there is a semi-Thue system <math id="I2.i3.p1.m3" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> and a finite set of axioms <math id="I2.i3.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> of <math id="I2.i3.p1.m5" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> such that <math id="I2.i3.p1.m6" class="ltx_Math" alttext="L=L_{\mathfrak{S}}(A,\Sigma)" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><msub><mi>L</mi><mi>𝔖</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p">Semi-Thue systems are “equivalent” to formal grammars in the following sense:</p>
+<blockquote class="ltx_quote">
+<p class="ltx_p">a language is generable by a formal grammar iff it is semi-Thue generable.</p>
+</blockquote>
+<p class="ltx_p">The idea is to turn every defining relation <math id="I2.i4.p1.m1" class="ltx_Math" alttext="x\to y" display="inline"><mrow><mi>x</mi><mo>→</mo><mi>y</mi></mrow></math> in <math id="I2.i4.p1.m2" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> into a production <math id="I2.i4.p1.m3" class="ltx_Math" alttext="SxT\to SyT" display="inline"><mrow><mrow><mi>S</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>T</mi></mrow><mo>→</mo><mrow><mi>S</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>T</mi></mrow></mrow></math>, where <math id="I2.i4.p1.m4" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> and <math id="I2.i4.p1.m5" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> are non-terminals or variables. As such, a production of the form <math id="I2.i4.p1.m6" class="ltx_Math" alttext="SxT\to SyT" display="inline"><mrow><mrow><mi>S</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>T</mi></mrow><mo>→</mo><mrow><mi>S</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>T</mi></mrow></mrow></math> is sometimes called a <em class="ltx_emph ltx_font_italic">semi-Thue production</em>.</p>
+</div>
+</li>
+<li id="I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">5.</span> 
+<div id="I2.i5.p1" class="ltx_para">
+<p class="ltx_p">Given a semi-Thue system <math id="I2.i5.p1.m1" class="ltx_Math" alttext="\mathfrak{S}=(\Sigma,P)" display="inline"><mrow><mi>𝔖</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>P</mi><mo stretchy="false">)</mo></mrow></mrow></math>, the <em class="ltx_emph ltx_font_italic">word problem</em> for <math id="I2.i5.p1.m2" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> asks whether or not for any pair of words <math id="I2.i5.p1.m3" class="ltx_Math" alttext="u,v" display="inline"><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow></math> over <math id="I2.i5.p1.m4" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, one can determine in a finite number of steps (an algorithm) that <math id="I2.i5.p1.m5" class="ltx_Math" alttext="u\lx@stackrel{{\scriptstyle*}}{{\Rightarrow}}v" display="inline"><mrow><mi>u</mi><mover><mo movablelimits="false">⇒</mo><mo>*</mo></mover><mi>v</mi></mrow></math>. If such an algorithm exists, we say that the word problem for <math id="I2.i5.p1.m6" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> is solvable. It turns out there exists a semi-Thue system such that the word problem for it is unsolvable.</p>
+</div>
+</li>
+<li id="I2.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">6.</span> 
+<div id="I2.i6.p1" class="ltx_para">
+<p class="ltx_p">The word problem for a specific <math id="I2.i6.p1.m1" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> is the same as finding an algorithm to determine whether <math id="I2.i6.p1.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is a theorem based on a singleton axiom <math id="I2.i6.p1.m3" class="ltx_Math" alttext="\{u\}" display="inline"><mrow><mo stretchy="false">{</mo><mi>u</mi><mo stretchy="false">}</mo></mrow></math> for arbitrary words <math id="I2.i6.p1.m4" class="ltx_Math" alttext="u,v" display="inline"><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">7.</span> 
+<div id="I2.i7.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">The word problem for semi-Thue systems</em> asks whether or not, given <em class="ltx_emph ltx_font_italic">any</em> semi-Thue system <math id="I2.i7.p1.m1" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math>, the word problem for <math id="I2.i7.p1.m2" class="ltx_Math" alttext="\mathfrak{S}" display="inline"><mi>𝔖</mi></math> is solvable. From the previous remark, we see the word problem for semi-Thue systems is unsolvable.</p>
+</div>
+</li>
+</ol>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> M. Davis, <span class="ltx_text ltx_font_italic">Computability and Unsolvability</span>. Dover Publications, New York (1982).
+
+</span>
+      </li>
+      
+<li id="bib.bib2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">2</span>
+        
+<span class="ltx_bibblock"> H. Hermes, <span class="ltx_text ltx_font_italic">Enumerability, Decidability, Computability: An Introduction to the Theory of Recursive Functions</span>. Springer, New York, (1969).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p6" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">semi-Thue system</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SemiThueSystem</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:33:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:33:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">21</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q42</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03D40</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 20M35</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03D03</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">rewriting rule</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">rewrite rule</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">rewriting system</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">semi-Thue generable</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">FormalGrammar</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LabelledStateTransitionSystem</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">antecedent</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">consequent</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">immediately derivable</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">derivable</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">defining relation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">word problem for semi-Thue systems</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">semi-Thue production</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">generable by a semi-Thue system</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:44:54 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

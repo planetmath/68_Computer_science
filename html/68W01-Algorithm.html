@@ -1,0 +1,243 @@
+<!DOCTYPE html><html>
+<head>
+<title>algorithm</title>
+<!--Generated on Sat Feb 10 12:50:31 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">algorithm</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SSx1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Intuitive Introduction</h2>
+
+<div id="S0.SSx1.p1" class="ltx_para">
+<p class="ltx_p">An algorithm, generally speaking, is a collection of instructions that provides a step-by-step procedure on how to complete a particular task. Examples of algorithms in real life range from a simple recipe on how to bake a fruit pie, to an owner’s manual of a newly purchased television, to the complicated process of producing an automobile in an assembly line.</p>
+</div>
+<div id="S0.SSx1.p2" class="ltx_para">
+<p class="ltx_p">In mathematics, an algorithm can be thought of, in a narrower sense, as a set of mathematical instructions on how to complete a mathematical task. For example, if we were interested in determining that, given an integral quadratic equation</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="ax^{2}+bx+c=0,\mbox{ where }a,b,c\in\mathbb{Z}\mbox{ and }a\neq 0" display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mrow><mtext> where </mtext><mo>⁢</mo><mi>a</mi></mrow><mo>,</mo><mi>b</mi></mrow></mrow><mo>,</mo><mrow><mi>c</mi><mo>∈</mo><mrow><mi>ℤ</mi><mo>⁢</mo><mtext> and </mtext><mo>⁢</mo><mi>a</mi></mrow><mo>≠</mo><mn>0</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">if an integral solution for <math id="S0.SSx1.p2.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> exists, a possible algorithm for solving this problem would be</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">first of all, check if <math id="I1.i1.p1.m1" class="ltx_Math" alttext="b^{2}-4ac" display="inline"><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>-</mo><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></math> is some square <math id="I1.i1.p1.m2" class="ltx_Math" alttext="d^{2}" display="inline"><msup><mi>d</mi><mn>2</mn></msup></math> with <math id="I1.i1.p1.m3" class="ltx_Math" alttext="d\in\mathbb{Z}" display="inline"><mrow><mi>d</mi><mo>∈</mo><mi>ℤ</mi></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If not, then no integral solutions exist.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">If so, check next if <math id="I1.i3.p1.m1" class="ltx_Math" alttext="2a" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></math> divides either <math id="I1.i3.p1.m2" class="ltx_Math" alttext="-b+d" display="inline"><mrow><mrow><mo>-</mo><mi>b</mi></mrow><mo>+</mo><mi>d</mi></mrow></math> or <math id="I1.i3.p1.m3" class="ltx_Math" alttext="-b-d" display="inline"><mrow><mrow><mo>-</mo><mi>b</mi></mrow><mo>-</mo><mi>d</mi></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">If not, then no integral solutions exist.</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">5.</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p">If so, then yes, an integral solution exists.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">Algorithms abound in mathematics, from the familiar adding and multiplying two integers, to solving a system of linear equations, to processes much more complicated, such as determining if two groups are isomorphic.</p>
+</div>
+<div id="S0.SSx1.p3" class="ltx_para">
+<p class="ltx_p">To understand algorithms a little better, let us see what all of the algorithms mentioned so far have in common. Three essential features of a typical algorithm that come to mind are</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">(a)</span> 
+<div id="I2.ix1.p1" class="ltx_para">
+<p class="ltx_p">the set of instructions must be <em class="ltx_emph ltx_font_italic">finite</em>, and</p>
+</div>
+</li>
+<li id="I2.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">(b)</span> 
+<div id="I2.ix2.p1" class="ltx_para">
+<p class="ltx_p">each instruction must be precise with no ambiguity.</p>
+</div>
+</li>
+<li id="I2.ix3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">(c)</span> 
+<div id="I2.ix3.p1" class="ltx_para">
+<p class="ltx_p">the algorithm must be re-usable.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Feature (a) says that, in order to be able to solve a problem using an algorithm, there must not be an infinite list of instructions, lest we will never be able to get to a solution. This is different from saying that, given an input, the <em class="ltx_emph ltx_font_italic">actual computation</em> of an algorithm is finite. For example, given any positive integer, one can calculate its squared root. An algorithm exists to carry out this computation. However, unless the integer is a square, the actual computation will go on indefinitely, with a more accurate approximation of the actual value after each iteration. Feature (b) simply means that, given an input, if we were to give the corresponding algorithm to someone to carry out the computations to arrive at an output, the person (or machine) carrying out the steps should have no trouble in doing so. For example, if we were to give the algorithm above to a math student, he/she should have no trouble in following each of the instructions. However, if we were to hand the algorithm to someone who has never studied math before, we are in trouble. What does it mean for an integer to be a square? What does it mean for a number to divide another number? We would have to break down the instructions into even simpler ones, until there is no ambiguity in the solver’s mind what they are. Finally, feature (c) means that if a particular input is given, then it does not matter when the computations are carried out, and we will always get the same output. For example, if <math id="S0.SSx1.p3.m1" class="ltx_Math" alttext="x^{2}-4x+3" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow></math> has integral solutions, as determined by algorithm <math id="S0.SSx1.p3.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, then we would not expect to find that <math id="S0.SSx1.p3.m3" class="ltx_Math" alttext="x^{2}-4x+3" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow></math> has <em class="ltx_emph ltx_font_italic">no</em> integral solutions two days later again using <math id="S0.SSx1.p3.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
+</div>
+<div id="S0.SSx1.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark</span>. The last feature is sometimes relaxed so that “re-usable” means that the output is <em class="ltx_emph ltx_font_italic">as expected</em>. This means that an algorithm may include an instruction to, say, toss a coin, or to use a random number generator, in order to move forward with a computation. A common example of an algorithm involving a random device is the algorithm to draw a simple random sample from a given population. One computation results in a sample that is almost guaranteed to be different from the sample produced by a later computation. Nevertheless, if a certain sample size is asked for, that sample size will be constant from one computation to the next.</p>
+</div>
+</section>
+<section id="S0.SSx2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Algorithms and Computations</h2>
+
+<div id="S0.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Closely associated with the notion of an algorithm is the notion of computation, mentioned earlier but not formally introduced. Given an input <math id="S0.SSx2.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, <em class="ltx_emph ltx_font_italic">computation</em> is the actual execution of the given <math id="S0.SSx2.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> using instructions in some algorithm <math id="S0.SSx2.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. Each step in the computation is a <em class="ltx_emph ltx_font_italic">computation step</em>. Depending on the input, the computation either terminates or halts, after a finite number of computation steps, or goes on indefinitely. When the computation terminates, an output <math id="S0.SSx2.p1.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> is produced, and we say that the computation is <em class="ltx_emph ltx_font_italic">effective</em>, or that the output <math id="S0.SSx2.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> can be <em class="ltx_emph ltx_font_italic">effectively computed</em> (with respect to the algorithm <math id="S0.SSx2.p1.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>). A function <math id="S0.SSx2.p1.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is said to be <math id="S0.SSx2.p1.m8" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>-<em class="ltx_emph ltx_font_italic">computable</em> if, for each input <math id="S0.SSx2.p1.m9" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in the domain of <math id="S0.SSx2.p1.m10" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, the output <math id="S0.SSx2.p1.m11" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> can be effectively computed. Furthermore, <math id="S0.SSx2.p1.m12" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is <em class="ltx_emph ltx_font_italic">effectively computable</em> if there is an algorithm <math id="S0.SSx2.p1.m13" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> such that <math id="S0.SSx2.p1.m14" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is <math id="S0.SSx2.p1.m15" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>-computable. An <em class="ltx_emph ltx_font_italic">effective procedure</em> is another way of calling an algorithm. For example, addition of two integer is effectively computable. Given two integers <math id="S0.SSx2.p1.m16" class="ltx_Math" alttext="a,b" display="inline"><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></math>, there is an algorithm <math id="S0.SSx2.p1.m17" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> such that, when a computation is carried out using <math id="S0.SSx2.p1.m18" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, the result <math id="S0.SSx2.p1.m19" class="ltx_Math" alttext="a+b" display="inline"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></math> will be produced.</p>
+</div>
+<div id="S0.SSx2.p2" class="ltx_para">
+<p class="ltx_p">Are there any functions that are not effectively computable? More generally, are there (mathematical) problems which can not be solved using algorithms? This is basically equivalent to asking: are there functions that are not effectively computable? Intuition tells us that there are. For example, if we want to generalize the procedure of determining the existence of integral solutions to a quadratic equations to a general polynomial equations of degree <math id="S0.SSx2.p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, we would most likely not succeed. In fact, this is a special case of a more general problem known as Hilbert’s 10th Problem:</p>
+<blockquote class="ltx_quote">
+<p class="ltx_p">given a diophantine equation, can one determine if it has any integral solutions using an algorithm?</p>
+</blockquote>
+<p class="ltx_p">How does one prove this rigorously? Of course, to answer such a question, one needs to treat an “algorithm” itself as a mathematical object, since the informal heuristic description above is inadequate.</p>
+</div>
+</section>
+<section id="S0.SSx3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Abstractions of Algorithms</h2>
+
+<div id="S0.SSx3.p1" class="ltx_para">
+<p class="ltx_p">During the early and middle part of the 1900’s, various proposals of what an algorithm is were put forth. These include
+include:</p>
+<dl id="I3" class="ltx_description">
+<dt id="I3.ix1" class="ltx_item"><span class="ltx_tag ltx_tag_description">T</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix1.p1" class="ltx_para">
+<p class="ltx_p">Turing machine (Turing)</p>
+</div>
+</dd>
+<dt id="I3.ix2" class="ltx_item"><span class="ltx_tag ltx_tag_description">R</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix2.p1" class="ltx_para">
+<p class="ltx_p">partial recursive functions (Kleene)</p>
+</div>
+</dd>
+<dt id="I3.ix3" class="ltx_item"><span class="ltx_tag ltx_tag_description">L</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.ix3.p1.m1" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-calculus (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/LambdaCalculus</span>) (Church)</p>
+</div>
+</dd>
+<dt id="I3.ix4" class="ltx_item"><span class="ltx_tag ltx_tag_description">M</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix4.p1" class="ltx_para">
+<p class="ltx_p">Markov algorithm (Markov)</p>
+</div>
+</dd>
+<dt id="I3.ix5" class="ltx_item"><span class="ltx_tag ltx_tag_description">P</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix5.p1" class="ltx_para">
+<p class="ltx_p">Post system (Post)</p>
+</div>
+</dd>
+<dt id="I3.ix6" class="ltx_item"><span class="ltx_tag ltx_tag_description">S</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix6.p1" class="ltx_para">
+<p class="ltx_p">semi-Thue system (Thue)</p>
+</div>
+</dd>
+<dt id="I3.ix7" class="ltx_item"><span class="ltx_tag ltx_tag_description">U</span></dt>
+<dd class="ltx_item">
+<div id="I3.ix7.p1" class="ltx_para">
+<p class="ltx_p">unlimited register machine, or URM (Shepherdson and Sturgis)</p>
+</div>
+</dd>
+</dl>
+<p class="ltx_p">Some, like <span class="ltx_text ltx_font_bold">T</span> and <span class="ltx_text ltx_font_bold">U</span>, have more of a resemblance of the intuitive notion of an algorithm described earlier, while some, like <span class="ltx_text ltx_font_bold">M</span>, <span class="ltx_text ltx_font_bold">P</span> and <span class="ltx_text ltx_font_bold">S</span>, are based on the realization that input and instructions are nothing but strings of symbols, and computation is nothing more than transforming one string into another string. Nevertheless, in each of the above proposals, it is possible to rigorously define the notion of “computability” informally described earlier. As it turns out, the class of computable functions according to each of the proposals turns out to be identical! In other words, Turing computability is equivalent to Markov computability, etc…</p>
+</div>
+<div id="S0.SSx3.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark</span>. Although it was generally suspected that Hilbert’s 10th Problem was false, it was not until 1970, that Yuri Matiyasevič proved the 10th Problem in the negative. This fact is now known as Matiyasevič’s theorem.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:15:23</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:15:23</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">jk81 (17362)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">jk81 (17362)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">15</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">jk81 (17362)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68W01</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">effective procedure</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Matiyasevich’s theorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">computable function</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Hilbert’s 10th problem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Matiyasevič’s theorem</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:50:31 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html><html>
+<head>
+<title>nonogram</title>
+<!--Generated on Sat Feb 10 12:41:43 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">nonogram</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">nonogram</em>, also known as a <em class="ltx_emph ltx_font_italic">paint by numbers puzzle</em> or a
+<em class="ltx_emph ltx_font_italic">griddler</em>, is a puzzle in which the solver must reconstruct a
+picture drawn in a grid using clues which give the distribution of
+pixels in each row and column.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">The simplest nonograms use two colors, white (usually the background)
+and black (usually the foreground). Here is a sample black and white
+nonogram:</p>
+</div>
+<figure id="S0.F1" class="ltx_figure"><img src="initial.epsi" id="S0.F1.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>A nonogram in its unsolved state.</figcaption>
+</figure>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">The numbers to the left of a row indicate how many runs of black
+squares there are in that row and how long each such run is. The
+numbers above a column serve the same purpose for that column.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">For instance, the clue for the first row is <math id="p4.m1" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math>. Since there are
+six different ways of selecting two nonadjacent squares in a row of
+length five, we cannot yet conclude anything from this clue. The next
+clue, <math id="p4.m2" class="ltx_Math" alttext="(5)" display="inline"><mrow><mo stretchy="false">(</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></math>, indicates that the second row is completely filled in
+with black squares. Such clues are rare on real puzzles. Slightly
+more common are clues such as the fourth row clue <math id="p4.m3" class="ltx_Math" alttext="(3)" display="inline"><mrow><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></math>. Although we
+cannot yet know precisely where the run of three black squares is
+positioned, by the pigeonhole principle the middle square of that row
+must be black. Finally, since two runs of black must be separated by
+at least one square of another color, the clue <math id="p4.m4" class="ltx_Math" alttext="(2,2)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></math> tells us that
+the fifth row has two black squares followed by a white square and
+then two more black squares.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Applying the information we have so far yields the following picture.</p>
+</div>
+<figure id="S0.F2" class="ltx_figure"><img src="stage1.epsi" id="S0.F2.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2: </span>The nonogram after some clues have been applied.</figcaption>
+</figure>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">With some of the squares filled in, the remaining clues give us more
+useful information. For instance, the first vertical clue says that
+the first column has exactly two black squares, and we have already
+drawn two squares in that column, so the other three squares must all
+be white. By using the positions of the squares in the second and
+fourth columns we can finish those columns as well. By using only
+vertical clues, we can finish every column but the last.</p>
+</div>
+<figure id="S0.F3" class="ltx_figure"><img src="stage2.epsi" id="S0.F3.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>The nonogram in a nearly complete state.</figcaption>
+</figure>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">To complete the puzzle, we appeal to the fact that the first row must
+have two black squares while the third row only has one. In the fifth
+row we therefore place a black square in the first position and a
+white square in the third position.</p>
+</div>
+<figure id="S0.F4" class="ltx_figure"><img src="stage3.epsi" id="S0.F4.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 4: </span>A solved nonogram.</figcaption>
+</figure>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">We are done.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Given a picture, it is straightforward to generate the clues for that
+picture: simply determine for each row and column the lengths of the
+runs of the non-background colors. However, it is not always
+straightforward to recover the picture from the clues, and a designer
+can exploit this fact to make puzzles of varying levels of difficulty.
+A challenge facing the designer is the fact that not every puzzle has
+a unique solution. In particular, if we view solutions as rectangular
+matrices with entries <math id="p9.m1" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> and <math id="p9.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>, where <math id="p9.m3" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> represents the background
+color and <math id="p9.m4" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> the foreground color, then any 5-by-5 permutation matrix
+is a solution to the following puzzle.</p>
+</div>
+<figure id="S0.F5" class="ltx_figure"><img src="ambiguous.epsi" id="S0.F5.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 5: </span>An ambiguous nonogram.</figcaption>
+</figure>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Logic puzzles with multiple solutions can be interesting for
+mathematical reasons, but they are unacceptable as puzzles. The
+problem of determining whether a puzzle has a unique solution is
+sometimes called the <em class="ltx_emph ltx_font_italic">Another Solution Problem</em>, or <em class="ltx_emph ltx_font_italic">ASP</em>,
+and is known to be NP-complete for many puzzles, including nonograms.</p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">Nonograms as we have described them can be generalized by allowing
+more colors to be used in the picture. The clues then must indicate
+both which non-background colors appear in which order in a row or
+column and how long each run is. Another generalization is to use a
+non-square grid. For example, there are <em class="ltx_emph ltx_font_italic">triddlers</em>, which are
+nonograms on a grid tiled by equilateral triangles and which therefore
+require clues for three directions. One could also imagine
+generalizations to higher dimensions, leading to building-block
+sculpture puzzles and the like.</p>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock">
+N. Ueda and T. Nagao. <em class="ltx_emph ltx_font_italic">NP-completeness results for NONOGRAM via
+parsimonious reductions.</em> Technical Report TR96-0008, Department of
+Computer Science, Tokyo Institute of Technology, 1996.
+
+</span>
+      </li>
+      
+<li id="bib.bib2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">2</span>
+        
+<span class="ltx_bibblock">
+T. Yato. <em class="ltx_emph ltx_font_italic">Complexity and completeness of finding another solution
+and its application to puzzles</em>. Thesis in information science, the
+University of Tokyo, 2003
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p12" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">nonogram</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Nonogram</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:09:21</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:09:21</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mps (409)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mps (409)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">8</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mps (409)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q17</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 15A36</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B99</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 00A08</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">paint by number</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">griddler</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">another solution problem</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">ASP</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:41:43 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

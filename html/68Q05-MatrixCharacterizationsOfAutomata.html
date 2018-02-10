@@ -1,0 +1,219 @@
+<!DOCTYPE html><html>
+<head>
+<title>matrix characterizations of automata</title>
+<!--Generated on Sat Feb 10 12:40:10 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">matrix characterizations of automata</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Let <math id="p1.m1" class="ltx_Math" alttext="A=(S,\Sigma,\delta,I,F)" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a finite automaton. Recall that <math id="p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> can be visualized by a directed graph <math id="p1.m3" class="ltx_Math" alttext="G_{A}" display="inline"><msub><mi>G</mi><mi>A</mi></msub></math> called the state diagram of <math id="p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. The nodes of <math id="p1.m5" class="ltx_Math" alttext="G_{A}" display="inline"><msub><mi>G</mi><mi>A</mi></msub></math> are the states of <math id="p1.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> (elements of <math id="p1.m7" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>), and the edges of <math id="p1.m8" class="ltx_Math" alttext="G_{A}" display="inline"><msub><mi>G</mi><mi>A</mi></msub></math> are labeled by the input symbols of <math id="p1.m9" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> (elements of <math id="p1.m10" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>).</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Suppose <math id="p2.m1" class="ltx_Math" alttext="S=\{s_{1},\ldots,s_{n}\}" display="inline"><mrow><mi>S</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>s</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></mrow></math>. For each symbol <math id="p2.m2" class="ltx_Math" alttext="a\in\Sigma" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow></math>, we define an <math id="p2.m3" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></math> matrix <math id="p2.m4" class="ltx_Math" alttext="M(a)" display="inline"><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> over the non-negative integers as follows: the cell</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="M_{ij}:=\left\{\begin{array}[]{ll}1&amp;\textrm{if }s_{j}\in\delta(s_{i},a),\\
+0&amp;\textrm{otherwise.}\end{array}\right." display="block"><mrow><msub><mi>M</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>if </mtext><mo>⁢</mo><msub><mi>s</mi><mi>j</mi></msub></mrow><mo>∈</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mtext>otherwise.</mtext></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">In other words, <math id="p2.m5" class="ltx_Math" alttext="M(a)" display="inline"><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> is a matrix composed of <math id="p2.m6" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>’s and <math id="p2.m7" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>’s, such that cell <math id="p2.m8" class="ltx_Math" alttext="(i,j)" display="inline"><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow></math> is <math id="p2.m9" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> provided that there is an edge from node <math id="p2.m10" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi>s</mi><mi>i</mi></msub></math> to <math id="p2.m11" class="ltx_Math" alttext="s_{j}" display="inline"><msub><mi>s</mi><mi>j</mi></msub></math> with label <math id="p2.m12" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>. <math id="p2.m13" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> may be viewed as a function from <math id="p2.m14" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> to the set <math id="p2.m15" class="ltx_Math" alttext="\mathfrak{M}(n)" display="inline"><mrow><mi>𝔐</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> of <math id="p2.m16" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></math> matrices whose entries are <math id="p2.m17" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>’s and <math id="p2.m18" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>’s, mapping <math id="p2.m19" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> to <math id="p2.m20" class="ltx_Math" alttext="M(a)" display="inline"><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> just described.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">To completely describe <math id="p3.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, we use two <math id="p3.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-dimensional vectors <math id="p3.m3" class="ltx_Math" alttext="v_{I}" display="inline"><msub><mi>v</mi><mi>I</mi></msub></math> and <math id="p3.m4" class="ltx_Math" alttext="v_{F}" display="inline"><msub><mi>v</mi><mi>F</mi></msub></math> to specify <math id="p3.m5" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> and <math id="p3.m6" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> respectively. The <math id="p3.m7" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>-th component of <math id="p3.m8" class="ltx_Math" alttext="v_{I}" display="inline"><msub><mi>v</mi><mi>I</mi></msub></math> is <math id="p3.m9" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> if and only if <math id="p3.m10" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi>s</mi><mi>i</mi></msub></math> is a start state. Otherwise, it is a <math id="p3.m11" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>. <math id="p3.m12" class="ltx_Math" alttext="v_{F}" display="inline"><msub><mi>v</mi><mi>F</mi></msub></math> is defined similarly. Thus, the triple <math id="p3.m13" class="ltx_Math" alttext="(M,v_{I},v_{F})" display="inline"><mrow><mo stretchy="false">(</mo><mi>M</mi><mo>,</mo><msub><mi>v</mi><mi>I</mi></msub><mo>,</mo><msub><mi>v</mi><mi>F</mi></msub><mo stretchy="false">)</mo></mrow></math> describes <math id="p3.m14" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">The following is the state diagram of an automaton with two states <math id="p4.m1" class="ltx_Math" alttext="s_{1},s_{2}" display="inline"><mrow><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><msub><mi>s</mi><mn>2</mn></msub></mrow></math> over <math id="p4.m2" class="ltx_Math" alttext="\{a,b\}" display="inline"><mrow><mo stretchy="false">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">}</mo></mrow></math>, and its description by matrices:</p>
+</div>
+<figure id="fig1" class="ltx_figure">
+<p class="ltx_p ltx_align_center"><svg version="1.1" height="20" width="50" fragid="pic1" viewBox="-5 -1 45 19" overflow="visible"><g transform="translate(0,9.0)"><g transform="scale(1 -1)"><g transform="scale(1.0)"><g transform="scale(1 -1) translate(-5,-10)"><foreignObject width="50" height="20" overflow="visible"><img src="automaton_mat.eps" id="pic1.g1" class="ltx_graphics" alt=""></foreignObject></g></g></g></g></svg></p>
+</figure>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Conversely, given a triple <math id="p5.m1" class="ltx_Math" alttext="(M,v,w)" display="inline"><mrow><mo stretchy="false">(</mo><mi>M</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>w</mi><mo stretchy="false">)</mo></mrow></math>, where <math id="p5.m2" class="ltx_Math" alttext="M:\Sigma\to\mathfrak{M}(n)" display="inline"><mrow><mi>M</mi><mo>:</mo><mrow><mi mathvariant="normal">Σ</mi><mo>→</mo><mrow><mi>𝔐</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math> is a function, and <math id="p5.m3" class="ltx_Math" alttext="v,w" display="inline"><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow></math> are two <math id="p5.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-dimensional vectors <math id="p5.m5" class="ltx_Math" alttext="\{0,1\}" display="inline"><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow></math>, we can construct an automaton <math id="p5.m6" class="ltx_Math" alttext="A_{M}" display="inline"><msub><mi>A</mi><mi>M</mi></msub></math> as follows: <math id="p5.m7" class="ltx_Math" alttext="A_{M}=(S,\Sigma,\delta,I,F)" display="inline"><mrow><msub><mi>A</mi><mi>M</mi></msub><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow></math> where</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> has <math id="I1.i1.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements <math id="I1.i1.p1.m3" class="ltx_Math" alttext="s_{1},\ldots,s_{n}" display="inline"><mrow><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>s</mi><mi>n</mi></msub></mrow></math>;</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> is a subset of <math id="I1.i2.p1.m2" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> such that <math id="I1.i2.p1.m3" class="ltx_Math" alttext="s_{i}\in I" display="inline"><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>∈</mo><mi>I</mi></mrow></math> iff the <math id="I1.i2.p1.m4" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>-th component of <math id="I1.i2.p1.m5" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is <math id="I1.i2.p1.m6" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>;</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> is a subset of <math id="I1.i3.p1.m2" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> such that <math id="I1.i3.p1.m3" class="ltx_Math" alttext="s_{j}\in F" display="inline"><mrow><msub><mi>s</mi><mi>j</mi></msub><mo>∈</mo><mi>F</mi></mrow></math> iff the <math id="I1.i3.p1.m4" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>-th component of <math id="I1.i3.p1.m5" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is <math id="I1.i3.p1.m6" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>;</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">for each pair <math id="I1.i4.p1.m1" class="ltx_Math" alttext="(s_{i},a)\in S\times\Sigma" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow></mrow></math>, <math id="I1.i4.p1.m2" class="ltx_Math" alttext="\delta(s_{i},a)" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the subset of <math id="I1.i4.p1.m3" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> such that <math id="I1.i4.p1.m4" class="ltx_Math" alttext="s_{j}\in\delta(s_{i},a)" display="inline"><mrow><msub><mi>s</mi><mi>j</mi></msub><mo>∈</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> iff cell <math id="I1.i4.p1.m5" class="ltx_Math" alttext="(i,j)" display="inline"><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false">)</mo></mrow></math> of <math id="I1.i4.p1.m6" class="ltx_Math" alttext="m(a)" display="inline"><mrow><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> is <math id="I1.i4.p1.m7" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Let us look more closely now at the function <math id="p6.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>. Given a function <math id="p6.m2" class="ltx_Math" alttext="M:\Sigma\to\mathfrak{M}(n)" display="inline"><mrow><mi>M</mi><mo>:</mo><mrow><mi mathvariant="normal">Σ</mi><mo>→</mo><mrow><mi>𝔐</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, we may extend it in a unique way to a homomorphism from <math id="p6.m3" class="ltx_Math" alttext="\Sigma^{*}" display="inline"><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></math> to <math id="p6.m4" class="ltx_Math" alttext="\mathfrak{M}(n)^{*}" display="inline"><mrow><mi>𝔐</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><mo>*</mo></msup></mrow></math>, the monoid of <math id="p6.m5" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></math> matrices generated by <math id="p6.m6" class="ltx_Math" alttext="\mathfrak{M}(n)" display="inline"><mrow><mi>𝔐</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math>, where the multiplication is defined by the ordinary matrix multiplication. In other words, if <math id="p6.m7" class="ltx_Math" alttext="u_{1},u_{2}" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><msub><mi>u</mi><mn>2</mn></msub></mrow></math> are words over <math id="p6.m8" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>,</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="m(u_{1}u_{2})=m(u_{1})m(u_{2})," display="block"><mrow><mrow><mrow><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>u</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">the product of matrices <math id="p6.m9" class="ltx_Math" alttext="m(u_{1})" display="inline"><mrow><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p6.m10" class="ltx_Math" alttext="m(u_{2})" display="inline"><mrow><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math>. We use the same notation <math id="p6.m11" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> for this extension. In the example above, we see that</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="M(a^{2})=\left(\begin{array}[]{ccc}0&amp;1\\
+0&amp;1\end{array}\right),\quad M(ab)=\left(\begin{array}[]{ccc}1&amp;0\\
+1&amp;0\end{array}\right),\quad\mbox{and}\quad M(b^{2})=\left(\begin{array}[]{ccc}%
+0&amp;0\\
+0&amp;0\end{array}\right)." display="block"><mrow><mrow><mrow><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>a</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mrow><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd></mtd></mtr></mtable><mo>)</mo></mrow><mo rspace="12.5pt">,</mo><mtext>and</mtext></mrow></mrow><mo mathvariant="italic" separator="true"> </mo><mrow><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>b</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">The following two lemmas are some consequences:</p>
+</div>
+<div id="Thmlem1" class="ltx_theorem ltx_theorem_lem">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Lemma 1</span>.</h6>
+<div id="Thmlem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">For any word <math id="Thmlem1.p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> over <math id="Thmlem1.p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, cell <math id="Thmlem1.p1.m3" class="ltx_Math" alttext="(i,j)" display="inline"><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>i</mi><mo mathvariant="normal">,</mo><mi>j</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></math> of the matrix <math id="Thmlem1.p1.m4" class="ltx_Math" alttext="M(u)" display="inline"><mrow><mi>M</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>u</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math> is the number of paths from <math id="Thmlem1.p1.m5" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi>s</mi><mi>i</mi></msub></math> to <math id="Thmlem1.p1.m6" class="ltx_Math" alttext="s_{j}" display="inline"><msub><mi>s</mi><mi>j</mi></msub></math> with label <math id="Thmlem1.p1.m7" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>.</span></p>
+</div>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Treating <math id="p8.m1" class="ltx_Math" alttext="v_{I}" display="inline"><msub><mi>v</mi><mi>I</mi></msub></math> as a row vector and <math id="p8.m2" class="ltx_Math" alttext="v_{F}" display="inline"><msub><mi>v</mi><mi>F</mi></msub></math> as a column vector, we get</p>
+</div>
+<div id="Thmlem2" class="ltx_theorem ltx_theorem_lem">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Lemma 2</span>.</h6>
+<div id="Thmlem2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">For any word <math id="Thmlem2.p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> over <math id="Thmlem2.p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>,</span></p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_italic">•</span></span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">the </span><math id="I2.i1.p1.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math><span class="ltx_text ltx_font_italic">-th component of the row vector </span><math id="I2.i1.p1.m2" class="ltx_Math" alttext="v_{I}M(u)" display="inline"><mrow><msub><mi>v</mi><mi>I</mi></msub><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow></math><span class="ltx_text ltx_font_italic"> is the number of paths from a start state to </span><math id="I2.i1.p1.m3" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi>s</mi><mi>i</mi></msub></math><span class="ltx_text ltx_font_italic"> with label </span><math id="I2.i1.p1.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_italic">•</span></span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">the </span><math id="I2.i2.p1.m1" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math><span class="ltx_text ltx_font_italic">-th component of the column vector </span><math id="I2.i2.p1.m2" class="ltx_Math" alttext="M(u)v_{F}" display="inline"><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>v</mi><mi>F</mi></msub></mrow></math><span class="ltx_text ltx_font_italic"> is the number of paths from </span><math id="I2.i2.p1.m3" class="ltx_Math" alttext="s_{j}" display="inline"><msub><mi>s</mi><mi>j</mi></msub></math><span class="ltx_text ltx_font_italic"> to a final state with label </span><math id="I2.i2.p1.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_italic">•</span></span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="v_{I}M(u)v_{F}" display="inline"><mrow><msub><mi>v</mi><mi>I</mi></msub><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>v</mi><mi>F</mi></msub></mrow></math><span class="ltx_text ltx_font_italic"> is the number of paths from a start state to a final state with label </span><math id="I2.i3.p1.m2" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Combining the two lemmas, it is easy to see that</p>
+</div>
+<div id="Thmprop1" class="ltx_theorem ltx_theorem_prop">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Proposition 1</span>.</h6>
+<div id="Thmprop1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">A language <math id="Thmprop1.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> over <math id="Thmprop1.p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is regular iff it can be expressed by a triple <math id="Thmprop1.p1.m3" class="ltx_Math" alttext="(M,v,w)" display="inline"><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>M</mi><mo mathvariant="normal">,</mo><mi>v</mi><mo mathvariant="normal">,</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></math> described above in the following sense:</span></p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="R=\{u\in\Sigma^{*}\mid vM(u)w&gt;0\}" display="block"><mrow><mi>R</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>u</mi><mo>∈</mo><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></mrow><mo>∣</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>w</mi></mrow><mo>&gt;</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">where <math id="Thmprop1.p1.m4" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is written as a row vector, and <math id="Thmprop1.p1.m5" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is written as a column vector.</span></p>
+</div>
+</div>
+<div id="p10" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">matrix characterizations of automata</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">MatrixCharacterizationsOfAutomata</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:02:13</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:02:13</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">7</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q42</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">msc 03D10</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:40:10 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

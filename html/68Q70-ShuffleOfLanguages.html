@@ -1,0 +1,253 @@
+<!DOCTYPE html><html>
+<head>
+<title>shuffle of languages</title>
+<!--Generated on Sat Feb 10 12:49:26 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">shuffle of languages</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Let <math id="p2.m1" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> be an alphabet and <math id="p2.m2" class="ltx_Math" alttext="u,v" display="inline"><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow></math> words over <math id="p2.m3" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>. A <em class="ltx_emph ltx_font_italic">shuffle</em> <math id="p2.m4" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> of <math id="p2.m5" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p2.m6" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> can be loosely defined as a word that is obtained by first decomposing <math id="p2.m7" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p2.m8" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> into individual pieces, and then combining (by concatenation) the pieces to form <math id="p2.m9" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>, in a way that the order of the pieces in each of <math id="p2.m10" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p2.m11" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is preserved.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">More precisely, a <em class="ltx_emph ltx_font_italic">shuffle</em> of <math id="p3.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p3.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is a word of the form</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="u_{1}v_{1}\cdots u_{k}v_{k}" display="block"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msub><mi>u</mi><mi>k</mi></msub><mo>⁢</mo><msub><mi>v</mi><mi>k</mi></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="p3.m3" class="ltx_Math" alttext="u=u_{1}\cdots u_{n}" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msub><mi>u</mi><mi>n</mi></msub></mrow></mrow></math> and <math id="p3.m4" class="ltx_Math" alttext="v=v_{1}\cdots v_{n}" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msub><mi>v</mi><mi>n</mi></msub></mrow></mrow></math>. In other words, a shuffle of <math id="p3.m5" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p3.m6" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is either a <math id="p3.m7" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-insertion of either <math id="p3.m8" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> into <math id="p3.m9" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> or <math id="p3.m10" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> into <math id="p3.m11" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, for some positive integer <math id="p3.m12" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">The set of all shuffles of <math id="p4.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p4.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is called <em class="ltx_emph ltx_font_italic">the</em> shuffle of <math id="p4.m3" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p4.m4" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math>, and is denoted by</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="u\diamond v." display="block"><mrow><mrow><mi>u</mi><mo>⋄</mo><mi>v</mi></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The shuffle operation can be more generally applied to languages. If <math id="p4.m5" class="ltx_Math" alttext="L_{1},L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math> are languages, the shuffle of <math id="p4.m6" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> and <math id="p4.m7" class="ltx_Math" alttext="L_{2}" display="inline"><msub><mi>L</mi><mn>2</mn></msub></math>, denoted by <math id="p4.m8" class="ltx_Math" alttext="L_{1}\diamond L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⋄</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math>, is the set of all shuffles of words in <math id="p4.m9" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> and <math id="p4.m10" class="ltx_Math" alttext="L_{2}" display="inline"><msub><mi>L</mi><mn>2</mn></msub></math>. In short,</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="L_{1}\diamond L_{2}=\bigcup\{u\diamond v\mid u\in L_{1},v\in L_{2}\}." display="block"><mrow><mrow><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⋄</mo><msub><mi>L</mi><mn>2</mn></msub></mrow><mo>=</mo><mrow><mo largeop="true" mathsize="160%" movablelimits="false" stretchy="false" symmetric="true">⋃</mo><mrow><mo stretchy="false">{</mo><mrow><mi>u</mi><mo>⋄</mo><mi>v</mi></mrow><mo>∣</mo><mrow><mrow><mi>u</mi><mo>∈</mo><msub><mi>L</mi><mn>1</mn></msub></mrow><mo>,</mo><mrow><mi>v</mi><mo>∈</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Clearly, <math id="p5.m1" class="ltx_Math" alttext="u\diamond v=\{u\}\diamond\{v\}" display="inline"><mrow><mrow><mi>u</mi><mo>⋄</mo><mi>v</mi></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">{</mo><mi>u</mi><mo stretchy="false">}</mo></mrow><mo>⋄</mo><mrow><mo stretchy="false">{</mo><mi>v</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></math>. We shall also identify <math id="p5.m2" class="ltx_Math" alttext="L\diamond u" display="inline"><mrow><mi>L</mi><mo>⋄</mo><mi>u</mi></mrow></math> and <math id="p5.m3" class="ltx_Math" alttext="u\diamond L" display="inline"><mrow><mi>u</mi><mo>⋄</mo><mi>L</mi></mrow></math> with <math id="p5.m4" class="ltx_Math" alttext="L\diamond\{u\}" display="inline"><mrow><mi>L</mi><mo>⋄</mo><mrow><mo stretchy="false">{</mo><mi>u</mi><mo stretchy="false">}</mo></mrow></mrow></math> and <math id="p5.m5" class="ltx_Math" alttext="\{u\}\diamond L" display="inline"><mrow><mrow><mo stretchy="false">{</mo><mi>u</mi><mo stretchy="false">}</mo></mrow><mo>⋄</mo><mi>L</mi></mrow></math> respectively.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">A language <math id="p6.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is said to be <em class="ltx_emph ltx_font_italic">shuffle closed</em> if <math id="p6.m2" class="ltx_Math" alttext="L\diamond L\subseteq L" display="inline"><mrow><mrow><mi>L</mi><mo>⋄</mo><mi>L</mi></mrow><mo>⊆</mo><mi>L</mi></mrow></math>. Clearly <math id="p6.m3" class="ltx_Math" alttext="\Sigma^{*}" display="inline"><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></math> is shuffle closed, and arbitrary intersections shuffle closed languages are shuffle closed. Given any language <math id="p6.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, the smallest shuffle closed containing <math id="p6.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is called the <em class="ltx_emph ltx_font_italic">shuffle closure</em> of <math id="p6.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, and is denoted by <math id="p6.m7" class="ltx_Math" alttext="L^{\diamond}" display="inline"><msup><mi>L</mi><mo>⋄</mo></msup></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">It is easy to see that <math id="p7.m1" class="ltx_Math" alttext="\diamond" display="inline"><mo>⋄</mo></math> is a commutative operation: <math id="p7.m2" class="ltx_Math" alttext="u\diamond v=v\diamond u" display="inline"><mrow><mrow><mi>u</mi><mo>⋄</mo><mi>v</mi></mrow><mo>=</mo><mrow><mi>v</mi><mo>⋄</mo><mi>u</mi></mrow></mrow></math>. It is also not hard to see that <math id="p7.m3" class="ltx_Math" alttext="\diamond" display="inline"><mo>⋄</mo></math> is associative: <math id="p7.m4" class="ltx_Math" alttext="(u\diamond v)\diamond w=u\diamond(v\diamond w)" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>⋄</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⋄</mo><mi>w</mi></mrow><mo>=</mo><mrow><mi>u</mi><mo>⋄</mo><mrow><mo stretchy="false">(</mo><mrow><mi>v</mi><mo>⋄</mo><mi>w</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">In addition, the shuffle operation has the following recursive property: for any <math id="p8.m1" class="ltx_Math" alttext="u,v" display="inline"><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow></math> over <math id="p8.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, and any <math id="p8.m3" class="ltx_Math" alttext="a,b\in\Sigma" display="inline"><mrow><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow></math>:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="u\diamond\lambda=\{u\}" display="inline"><mrow><mrow><mi>u</mi><mo>⋄</mo><mi>λ</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>u</mi><mo stretchy="false">}</mo></mrow></mrow></math>,</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="\lambda\diamond v=\{v\}" display="inline"><mrow><mrow><mi>λ</mi><mo>⋄</mo><mi>v</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>v</mi><mo stretchy="false">}</mo></mrow></mrow></math>,</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="ua\diamond vb=(ua\diamond v)\{b\}\cup(u\diamond vb)\{a\}" display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>a</mi></mrow><mo>⋄</mo><mrow><mi>v</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>a</mi></mrow><mo>⋄</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mi>b</mi><mo stretchy="false">}</mo></mrow></mrow><mo>∪</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>⋄</mo><mrow><mi>v</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mi>a</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">For example, suppose <math id="p9.m1" class="ltx_Math" alttext="u=aba" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></mrow></math>, <math id="p9.m2" class="ltx_Math" alttext="v=bab" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></mrow></math>. Then</p>
+<table id="A0.EGx1" class="ltx_equationgroup ltx_eqn_eqnarray ltx_eqn_table">
+
+<tr id="S0.Ex9" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\displaystyle u\diamond v" display="inline"><mrow><mi>u</mi><mo>⋄</mo><mi>v</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex4.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex4.m3" class="ltx_Math" alttext="\displaystyle[aba\diamond ba]\{b\}\cup[ab\diamond bab]\{a\}" display="inline"><mrow><mrow><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></mrow><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mi>b</mi><mo stretchy="false">}</mo></mrow></mrow><mo>∪</mo><mrow><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mi>a</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex5.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex5.m3" class="ltx_Math" alttext="\displaystyle[(aba\diamond b)\cup(ab\diamond ba)]\{ab\}\cup[(ab\diamond ba)%
+\cup(a\diamond bab)]\{ba\}" display="inline"><mrow><mrow><mrow><mo stretchy="false">[</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo>⋄</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>∪</mo><mrow><mrow><mo stretchy="false">[</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex6.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex6.m3" class="ltx_Math" alttext="\displaystyle(ab\diamond ba)\{ab,ba\}\cup(aba\diamond b)\{ab\}\cup(a\diamond
+bab%
+)\{ba\}" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo>,</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>∪</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo>⋄</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>∪</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⋄</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">{</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex7.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex7.m3" class="ltx_Math" alttext="\displaystyle\{abba,baab,abab,baba\}\{ab,ba\}\cup\{baba,abba,abab\}\{ab\}\cup%
+\{abab,baab,baba\}\{ba\}" display="inline"><mrow><mi mathvariant="normal">{</mi><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo><mo stretchy="false">{</mo><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo><mo>∪</mo><mo stretchy="false">{</mo><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mo stretchy="false">}</mo><mo stretchy="false">{</mo><mi>a</mi><mi>b</mi><mo stretchy="false">}</mo><mo>∪</mo><mo stretchy="false">{</mo><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo><mo stretchy="false">{</mo><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex8.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex8.m3" class="ltx_Math" alttext="\displaystyle\{abba,baab,abab,baba\}\{ab,ba\}" display="inline"><mrow><mi mathvariant="normal">{</mi><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo><mo stretchy="false">{</mo><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex9.m2" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex9.m3" class="ltx_Math" alttext="\displaystyle\{abbaab,baabab,ababab,babaab,abbaba,baabba,ababba,bababa\}" display="inline"><mrow><mi mathvariant="normal">{</mi><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mi>b</mi><mi>a</mi><mo>,</mo><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mi>b</mi><mi>a</mi><mo stretchy="false">}</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark</span>. Some closure properties with respect to the shuffle operation: let <math id="p10.m1" class="ltx_Math" alttext="\mathscr{R}" display="inline"><mi class="ltx_font_mathscript">ℛ</mi></math> be the family of regular languages, and <math id="p10.m2" class="ltx_Math" alttext="\mathscr{F}" display="inline"><mi class="ltx_font_mathscript">ℱ</mi></math> the family of context-free languages. Then <math id="p10.m3" class="ltx_Math" alttext="\mathscr{R}" display="inline"><mi class="ltx_font_mathscript">ℛ</mi></math> is closed under <math id="p10.m4" class="ltx_Math" alttext="\diamond" display="inline"><mo>⋄</mo></math>. <math id="p10.m5" class="ltx_Math" alttext="\mathscr{F}" display="inline"><mi class="ltx_font_mathscript">ℱ</mi></math> is not closed under <math id="p10.m6" class="ltx_Math" alttext="\diamond" display="inline"><mo>⋄</mo></math>. However, if <math id="p10.m7" class="ltx_Math" alttext="L_{1}\in\mathscr{R}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>∈</mo><mi class="ltx_font_mathscript">ℛ</mi></mrow></math> and <math id="p10.m8" class="ltx_Math" alttext="L_{2}\in\mathscr{F}" display="inline"><mrow><msub><mi>L</mi><mn>2</mn></msub><mo>∈</mo><mi class="ltx_font_mathscript">ℱ</mi></mrow></math>, then <math id="p10.m9" class="ltx_Math" alttext="L_{1}\diamond L_{2}\in\mathscr{F}" display="inline"><mrow><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⋄</mo><msub><mi>L</mi><mn>2</mn></msub></mrow><mo>∈</mo><mi class="ltx_font_mathscript">ℱ</mi></mrow></math>. The proofs of these closure properties can be found in the reference.</p>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> M. Ito, <span class="ltx_text ltx_font_italic">Algebraic Theory of Automata and Languages</span>, World Scientific, Singapore (2004).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p11" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">shuffle of languages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">ShuffleOfLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:56:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:56:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">11</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q70</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">shuffle product</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">shuffle-closed</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">shuffle-closure</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">PqShuffle</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">DeletionOperationOnLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">InsertionOperationOnLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">shuffle</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">shuffle closed</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">shuffle closure</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:49:26 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

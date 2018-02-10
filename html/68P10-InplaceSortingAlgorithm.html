@@ -1,0 +1,107 @@
+<!DOCTYPE html><html>
+<head>
+<title>in-place sorting algorithm</title>
+<!--Generated on Sat Feb 10 12:38:17 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">in-place sorting algorithm</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">A sorting algorithm is said to be <em class="ltx_emph ltx_font_italic">in-place</em> if it requires very little additional space besides the initial array holding the elements that are to be sorted. Normally “very little” is taken to mean that for sorting <math id="p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements, <math id="p1.m2" class="ltx_Math" alttext="O(\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> extra space is required.<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>In fact, one should really allow any polynomial in <math id="p1.m3" class="ltx_Math" alttext="\log n" display="inline"><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></math> in order for  to qualify. So perhaps the condition should be expressed as <math id="p1.m4" class="ltx_Math" alttext="O(n^{\epsilon})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mi>ϵ</mi></msup><mo stretchy="false">)</mo></mrow></mrow></math> for every <math id="p1.m5" class="ltx_Math" alttext="\epsilon&gt;0" display="inline"><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow></math>. These are distinctions in complexity that are almost always ignored since they are dwarfed in practical problems by implementation differences.</span></span></span> This is reasonable because in a purely mathematical analysis of the algorithms, <em class="ltx_emph ltx_font_italic">any</em> sorting algorithm that operates on a contiguous array requires <math id="p1.m6" class="ltx_Math" alttext="O(\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> extra space, since this is the number of bite required to represent an index into the array. Normally one ignores this as in most algorithms one treats integers as a data type requiring constant space and constant time for basic operations. An exception are number theoretic algorithms often encountered in cryptography (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/NumberTheoryAndCryptography</span>).</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Of course, the efficiency of any algorithm will depend on how the data is stored; usually, the elementary discussion of sorting algorithms focuses on sorting elements stored in a contiguous array (which has constant-time access and swap operations but takes a long time to do shifts). In this context, Heapsort is an in-place sorting algorithm, since it requires constant additional space. Quicksort is also considered in-place, although it requires an amount of extra space logarithmic in the size of the array. Most implementations of Quicksort are recursive, and each recursive call needs to store some local variables on the stack; the depth of the recursion is usually <math id="p2.m1" class="ltx_Math" alttext="O(\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>, but can be <math id="p2.m2" class="ltx_Math" alttext="O(n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> in degenerate cases. If you try to convert Quicksort to a non-recursive algorithm, you will find that it is necessary to store some intermediatde indexes on a stack, which usually grows up to size <math id="p2.m3" class="ltx_Math" alttext="O(\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> but may grow up to size <math id="p2.m4" class="ltx_Math" alttext="O(n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Mergesort is a sorting algorithm with running time <math id="p2.m5" class="ltx_Math" alttext="O(n\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> which is not in-place when dealing with arrays.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">On the other hand, if one is sorting linked lists, looking up a general element by index requires <math id="p3.m1" class="ltx_Math" alttext="O(n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> steps, so Quicksort and Heapsort need to be drastically modified to run in even <math id="p3.m2" class="ltx_Math" alttext="O(n^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>; this is not a natural context to use these algorithms. Mergesort, on the other hand, retains its <math id="p3.m3" class="ltx_Math" alttext="O(n\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> time complexity and requires only <math id="p3.m4" class="ltx_Math" alttext="O(\log n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> extra space.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">In-place sorting is often useful when dealing with truly enormous data sets, where <math id="p4.m1" class="ltx_Math" alttext="O(n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> extra space is truly difficult to work with. In-place sorting algorithms may or may not have better locality of reference than other sorting algorithms. Truly enormous data sets are usually stored on media where random access of data is very expensive but extra storage space is realtively inexpensive (such as disks); in these cases, whether an algorithm is in-place is less relevant. In fact, even when dealing with data stored as arrays Mergesort is much more efficient for disk-based sorting than the other algorithms because of its better locality of reference.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">It should be pointed out in any analysis of the standard sorting algorithms that they are based on an assumption that is almost never true: they assume that the only operation possible on keys is comparison. Sorting methods taking advantage of the structure of keys (say, they are strings) can be much faster both asymptotically and in practice; they are generally not in-place, but the extra space is often worth the time advantage.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">in-place sorting algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">InplaceSortingAlgorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:31</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:31</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">archibal (4430)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">archibal (4430)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">archibal (4430)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 16L30</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">in-situ sorting algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SortingProblem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">TotalOrder</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Bubblesort</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:17 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

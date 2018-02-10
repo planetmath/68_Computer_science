@@ -1,0 +1,338 @@
+<!DOCTYPE html><html>
+<head>
+<title>hashing</title>
+<!--Generated on Sat Feb 10 12:37:52 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">hashing</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Hashing</em> refers to an information storage and retrieval technique which is very widely used in real-world applications. There many more potential places it could profitably be applied as well. In fact, some programming languages these days (such as Perl) are designed with hashing built-in, so the programmer does not even have to know about them (or know much about them) to benefit.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">Hashing is inspired by both the classical searching and sorting problems. We know that with comparison-based sorting, the quickest we can put a set of n items in lexicographic order is <math id="S1.p2.m1" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. We can then update the sorted structure with new values either by clumsy reallocations of memory and shifting of elements, or by maintaining list structures. Searching for an item in a sorted set of <math id="S1.p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> items is then no faster than <math id="S1.p2.m3" class="ltx_Math" alttext="\mathcal{O}(\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p class="ltx_p">While fast compared to other common algorithms, these time complexities pose some problems for very large data sets and real-time applications. In addition, there is no hassle-free way to add items to a sorted list of elements; some overhead always must be maintained.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p class="ltx_p">Hashing provides a better way, utilizing a bit of simple mathematics. With hashing, we can typically achieve an average-case time complexity of <math id="S1.p4.m1" class="ltx_Math" alttext="\mathcal{O}(1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math> for storage and retrieval, with none of the updating overhead we see for either lists or arrays.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>The Basics of Hashing</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">We begin with a set of objects which are referenced by keys. The keys are just handles or labels which uniquely describe the objects. The objects could be any sort of digital information, from a single number to an entire book worth of text<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>In fact, modern filesystems use hashing. The keys are the file names, and the objects are the files themselves.</span></span></span>. The key could also be anything (textual, or numerical), but what is important for hashing is that it can be efficiently reduced to a numerical representation. The invariance of hashing with respect to the character of the underlying data is one of the main reasons it is such a useful technique.
+</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">We “hash” an object by using a function <math id="S2.p2.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> to place it in a hash table (which is just an array). Thus, <math id="S2.p2.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> takes the object’s key and returns a memory location in a hash table. If our set of keys is contained in a key space <math id="S2.p2.m3" class="ltx_Math" alttext="K" display="inline"><mi>K</mi></math>, and <math id="S2.p2.m4" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is the set of memory locations in the hash table, then we have</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<table id="S2.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex1.m1" class="ltx_Math" alttext="h:K\mapsto T" display="block"><mrow><mi>h</mi><mo>:</mo><mrow><mi>K</mi><mo>↦</mo><mi>T</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">Since <math id="S2.p4.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is memory locations, we must have <math id="S2.p4.m2" class="ltx_Math" alttext="T\subseteq Z" display="inline"><mrow><mi>T</mi><mo>⊆</mo><mi>Z</mi></mrow></math>.</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">Since the size of the object set (<math id="S2.p5.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>) has nothing to do with <math id="S2.p5.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>, evaluating <math id="S2.p5.m3" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> is <math id="S2.p5.m4" class="ltx_Math" alttext="\mathcal{O}(1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math> in <math id="S2.p5.m5" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>. In other words, optimally we can keep throwing stuff into the hash table (until it’s full) without expecting any slowdown.</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">Similarly, we can “look up” an element in <math id="S2.p6.m1" class="ltx_Math" alttext="\mathcal{O}(1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math> time, because our query consists of (1) sending our query key through <math id="S2.p6.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>, and then (2) checking to see if anything is in the hash table location.</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p class="ltx_p">Of course, in order to be able to tell if a location in the hash table is occupied, we need a special value called a “tombstone” to delimit an empty spot. A value such as “0” will do, assuming the objects we are storing cannot possibly have the digital representation “0”<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup>An abstract hash table implementation, however, will have to go to extra lengths to ensure that the tombstone is an “out-of-band” value so that no extra restrictions are put on the values of the objects which the client can store in the hash table.</span></span></span>.</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>The Hash Function</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">The hash function<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup>There is another kind of “hash” commonly referred to that has nothing to do with storage and retrieval, but instead is commonly used for checksums and verification. This kind of hash has to do with the production of a summary key for (usually large) sized objects. This kind of hash function maps the digital object space (infinitely large, but working with some functional range of sizes) into a much smaller but still astronomically large key space (typically something like 128 bits). Like the hash functions discussed above, these hash functions are also very sensitive to change in the input data, so a single bit changed is likely to drastrically change the output of the hash. This is the reason they are useful for verification. As for collisions, they are possible, but rather than being routine, the chances of them are infitesimally small because of the large size of the output key space.</span></span></span> has two main characteristics:</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">it should evaluate in a small amount of time (it should be mathematically simple)</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">it should be relatively unlikely that two different keys are mapped to the same hash table location.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">There are two classes of hash functions, those that use integer modulo (<em class="ltx_emph ltx_font_italic">division hashing</em>) and those which use multiplication by a real number and then a truncation to integer (<em class="ltx_emph ltx_font_italic">multiplication hashing</em>). In general, division hash functions look like:</p>
+</div>
+<div id="S3.p4" class="ltx_para">
+<table id="S3.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex2.m1" class="ltx_Math" alttext="h(k)=f(k)\pmod{n}" display="block"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mspace width="veryverythickmathspace"></mspace><mrow><mo lspace="8.1pt" stretchy="false">(</mo><mrow><mo movablelimits="false">mod</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p class="ltx_p">Where <math id="S3.p5.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> is the hash table size and <math id="S3.p5.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is a function which expresses the key in numerical form.</p>
+</div>
+<div id="S3.p6" class="ltx_para">
+<p class="ltx_p">This works because the value of <math id="S3.p6.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> mod <math id="S3.p6.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> will be a “random” number between</p>
+</div>
+<div id="S3.p7" class="ltx_para">
+<p class="ltx_p">For example, <math id="S3.p7.m1" class="ltx_Math" alttext="f(k)=k" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>k</mi></mrow></math> (<math id="S3.p7.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> integer values) and <math id="S3.p7.m3" class="ltx_Math" alttext="n=p" display="inline"><mrow><mi>n</mi><mo>=</mo><mi>p</mi></mrow></math> (a prime) is a very simple and widely used class of hash function. Were <math id="S3.p7.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> a different type of data than integer (say, strings), we’d need a more complicated <math id="S3.p7.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> to produce integers.</p>
+</div>
+<div id="S3.p8" class="ltx_para">
+<p class="ltx_p">Multiplication hash functions look like:</p>
+</div>
+<div id="S3.p9" class="ltx_para">
+<table id="S3.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex3.m1" class="ltx_Math" alttext="h(k)=\lfloor n\cdot((f(k)\cdot r)\pmod{1})\rfloor" display="block"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">⌊</mo><mrow><mi>n</mi><mo>⋅</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⋅</mo><mi>r</mi></mrow><mo stretchy="false">)</mo></mrow><mspace width="veryverythickmathspace"></mspace><mrow><mo lspace="8.1pt" stretchy="false">(</mo><mrow><mo movablelimits="false">mod</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">⌋</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S3.p10" class="ltx_para">
+<p class="ltx_p">Where <math id="S3.p10.m1" class="ltx_Math" alttext="0&lt;r&lt;1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mn>1</mn></mrow></math>.</p>
+</div>
+<div id="S3.p11" class="ltx_para">
+<p class="ltx_p">Intuitively, we can expect that multiplying a “random” real number between 0 and 1 with an integer key should give us another “random” real number. Taking the decimal part of this should give us most of the digits of precision (i.e., randomness) of the original, and at the same time act as the analog of the modulo in the division hash to restrict output to a range of values. Multiplying the resulting “random” number between 0 and 1 with the size of the hash table (<math id="S3.p11.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>) should then give us a “random” index into it.</p>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Collision</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">In general, the hash function is not a one-to-one function. This means two different keys can hash to the same table entry. Because of this, some policy for placing a colliding key is needed. This is called a <em class="ltx_emph ltx_font_italic">collision resolution policy</em>.</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">The collision resolution policy must be designed such that if there is a free space in the hash table, it must eventually find it. If not, it must indicate failure.</p>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p class="ltx_p">One collision resolution policy is to use a <em class="ltx_emph ltx_font_italic">collision resolution function</em> to compute a new location. A simple collision resolution function is to add a constant integer to the hash table location until a free space is found (<em class="ltx_emph ltx_font_italic">linear probing</em>). In order to guarantee that this will eventually get us to an empty space, hashing using this policy works best with a prime-sized hash table.
+</p>
+</div>
+<div id="S4.p4" class="ltx_para">
+<p class="ltx_p">Collisions are the reason the hash function needs to spread the objects out in the hash table so they are distant from each other and “evenly” distributed. The more bunched-up they are, the more likely collisions are. If <math id="S4.p4.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> is the hash table size and <math id="S4.p4.m2" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math> is the number of places in the hash table which are taken, then the value</p>
+</div>
+<div id="S4.p5" class="ltx_para">
+<table id="S4.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S4.Ex4.m1" class="ltx_Math" alttext="l=\frac{t}{h}" display="block"><mrow><mi>l</mi><mo>=</mo><mfrac><mi>t</mi><mi>h</mi></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S4.p6" class="ltx_para">
+<p class="ltx_p">is called <em class="ltx_emph ltx_font_italic">load factor</em> of the hash table, and tells us how “full” it is. As the load factor nears 1, collisions are unavoidable, and the collision resolution policy will be invoked more often.</p>
+</div>
+<div id="S4.p7" class="ltx_para">
+<p class="ltx_p">There are three ways to avoid this quagmire:</p>
+</div>
+<div id="S4.p8" class="ltx_para">
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Make the hash table much bigger than the object set.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Maintain a list at each hash table location instead of individual objects.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">Use a special hash function which is one-to-one.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S4.p9" class="ltx_para">
+<p class="ltx_p">Option 1 makes it statistically unlikely that we will have to use the collision resolution function. This is the most common solution. If the key space is <math id="S4.p9.m1" class="ltx_Math" alttext="K" display="inline"><mi>K</mi></math>, the set of actual keys we are hashing is <math id="S4.p9.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> (<math id="S4.p9.m3" class="ltx_Math" alttext="A\subseteq K" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>K</mi></mrow></math>), and the table space is <math id="S4.p9.m4" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, then this solution can be phrased as:</p>
+</div>
+<div id="S4.p10" class="ltx_para">
+<table id="S4.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S4.Ex5.m1" class="ltx_Math" alttext="|A|&lt;c\;|T|" display="block"><mrow><mrow><mo stretchy="false">|</mo><mi>A</mi><mo stretchy="false">|</mo></mrow><mo>&lt;</mo><mrow><mpadded width="+2.8pt"><mi>c</mi></mpadded><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mi>T</mi><mo stretchy="false">|</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S4.p11" class="ltx_para">
+<p class="ltx_p">with <math id="S4.p11.m1" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> some fractional constant. In practice, <math id="S4.p11.m2" class="ltx_Math" alttext="1/2&lt;c&lt;3/4" display="inline"><mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow><mo>&lt;</mo><mi>c</mi><mo>&lt;</mo><mrow><mn>3</mn><mo>/</mo><mn>4</mn></mrow></mrow></math> gives good results<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup>For <math id="S4.p11.m3" class="ltx_Math" alttext="|T|" display="inline"><mrow><mo stretchy="false">|</mo><mi>T</mi><mo stretchy="false">|</mo></mrow></math> prime, this condition inspires a search for “good primes” that are approximately one-half greater or double <math id="S4.p11.m4" class="ltx_Math" alttext="|A|" display="inline"><mrow><mo stretchy="false">|</mo><mi>A</mi><mo stretchy="false">|</mo></mrow></math>. Finding large primes is a non-trivial task; one cannot just make one up on the spot. See good hash table primes.</span></span></span>.</p>
+</div>
+<div id="S4.p12" class="ltx_para">
+<p class="ltx_p">Option 2 is called <em class="ltx_emph ltx_font_italic">chaining</em> and eliminates the need for a collision resolution function<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup>It also allows over-unity load factors, since we can have more items “in” the hash table than actual “locations” in the hash table.</span></span></span>. Note that to the extent that it is not combined with #1, we are replacing a pure hashing solution with a hash-and-list hybrid solution. Whether this is useful depends on the application.</p>
+</div>
+<div id="S4.p13" class="ltx_para">
+<p class="ltx_p">Option 3 is referring to a perfect hash function, and also eliminates the need for a collision resolution function. Depending on how much data we have and how much memory is available to us, it may be possible to select such a hash function. For a trivial example, <math id="S4.p13.m1" class="ltx_Math" alttext="h(k)=k" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>k</mi></mrow></math> suffices as a perfect hash function if our keys are integers and our hash table is an array which is larger than the key space. The downside to perfect hash functions is that you can never use them in the generic case; you always have to know something about the keyspace and the data set size to guarantee perfectness.</p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Variations</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">In addition to perfect hash functions, there is also a class of hash functions called minimal perfect hash functions. These functions are one-to-one and onto. Thus, they map a key space of size <math id="S5.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> to a hash table space of size <math id="S5.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, all of our objects will map perfectly to hash table locations, and there will be no leftover spots wasted and no collisions. Once again an array indexed by integers is a simple example, but obviously there is more utility to be had from keys which are not identical to array indices. Minimal perfect hash functions may seem too good to be true– but they are only applicable in special situations.</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p class="ltx_p">There is also a class of hash functions called order-preserving hash functions. This just means that the lexicographic order of the hashed object locations is the same as the lexicographic order of the keys:</p>
+</div>
+<div id="S5.p3" class="ltx_para">
+<table id="S5.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex6.m1" class="ltx_Math" alttext="k_{1}&lt;k_{2}\implies h(k_{1})&lt;h(k_{2})" display="block"><mrow><msub><mi>k</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>k</mi><mn>2</mn></msub><mo>⟹</mo><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>k</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S5.p4" class="ltx_para">
+<p class="ltx_p">for keys <math id="S5.p4.m1" class="ltx_Math" alttext="k_{1}" display="inline"><msub><mi>k</mi><mn>1</mn></msub></math> and <math id="S5.p4.m2" class="ltx_Math" alttext="k_{2}" display="inline"><msub><mi>k</mi><mn>2</mn></msub></math>.</p>
+</div>
+<div id="S5.p5" class="ltx_para">
+<p class="ltx_p">The benefit of an order-preserving hash is that it performs a sort with no “extra” work<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup>In other words, we escape the <math id="S5.p5.m1" class="ltx_Math" alttext="\mathcal{O}(n\log{n})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> bounds on sorting because we aren’t doing a comparison-based sort at all.</span></span></span>; we can print out the hashed objects in sorted order simply by scanning the table linearly.</p>
+</div>
+<div id="S5.p6" class="ltx_para">
+<p class="ltx_p">In principle, an order-preserving hash is always possible when the used key space is smaller than the hash table size. However, it may be tricky to design the right hash function, and it is sure to be very specific to the key space. In addition, some complexity is likely to be introduced in the hash function which will slow down its evaluation.</p>
+</div>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>References</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p class="ltx_p">Coming soon!
+</p>
+<table class="ltx_tabular ltx_align_right ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">hashing</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Hashing</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:57:34</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:57:34</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">akrowne (2)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">akrowne (2)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">8</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">akrowne (2)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Topic</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P05</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">load factor</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">hash table</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">collision resolution policy</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">collision resolution function</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">linear probing</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">chaining</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:37:52 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

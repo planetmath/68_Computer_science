@@ -1,0 +1,352 @@
+<!DOCTYPE html><html>
+<head>
+<title>closure properties on languages</title>
+<!--Generated on Sat Feb 10 12:41:28 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">closure properties on languages</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">This entry lists some common closure properties on the families of languages corresponding to the Chomsky hierarchy, as well as other related families.</p>
+</div>
+<div id="p2" class="ltx_para ltx_centering">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_tt">operation</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">REG</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">DCFL</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">CFL</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">CSL</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">RC</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">RE</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt">union</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">intersection</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">set difference</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">complementation</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">intersection with a regular language</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">concatenation</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Kleene star</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Kleene plus</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">reversal</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">
+<math id="p2.m1" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-free homomorphism</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">homomorphism</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">inverse homomorphism</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">
+<math id="p2.m2" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-free substitution</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">substitution</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">
+<math id="p2.m3" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-free GSM mapping</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">GSM mapping</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">inverse GSM mapping</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">
+<math id="p2.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> limited erasing</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">rational transduction</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">right quotient with a regular language</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Y</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">left quotient with a regular language</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">Y</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">N</td>
+<td class="ltx_td ltx_border_b ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">Y</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"><math id="p2.m5" class="ltx_Math" alttext="{{{{{{{}\end{center}%
+wherethedefinitionsofthecellsinthetoprowarethefollowinglanguagefamilies:%
+\inner@par\inner@par\begin{center}\begin{tabular}[]{|c|c|}\hline\hline
+abbreviation%
+&amp;name\\
+\hline\hline REG&amp;regular\\
+\hline DCFL&amp;deterministic context-free\\
+\hline CFL&amp;context-free\\
+\hline CSL&amp;context-sensitive\\
+\hline RC&amp;recursive\\
+\hline RE&amp;recursively enumerable\\
+\hline}\end{tabular}}$}\end{center}\inner@par\textbf{Remarks}.%
+Basedonthetableabove,%
+studiesinclosurepropertieshavebeenexpandedinotherdirections,suchas%
+\begin{itemize}
+\itemize@item closure properties of the above operations on more families of %
+languages, such as linear languages, indexed languages, and mildly context-%
+sensitive languages
+\itemize@item given that an \emph{arbitrary} family of languages is closed %
+under a subset of operations above, what more can one say about the family? %
+what other closure properties can be deduced? This is known as AFL (abstract %
+family of languages) theory.
+\itemize@item closure properties of yet more operations on languages, such as %
+commutative closures, shuffle closures, insertion closures, deletion closures,%
+ subword extensions, prefix extensions, and suffix extensions.
+\itemize@item knowing that a closure property of an operation is not satisfied%
+ for a given language family, study the closure of the property on the family.%
+ For example, what is the Boolean closure of context-free languages?
+\itemize@item knowning the a closure property of an operation is not satisfied%
+ for a given language family, study whether it is decidable that taking the %
+operation on language(s) leads to a language in the family. For example, is it%
+ decidable that the intersection of two context-free languages is context-free%
+? Furthermore, if the problem is decidable, what is its complexity?
+\end{itemize}\inner@par\thebibliography\bibitem{AP}A.P.Parkes,{\em
+IntroductiontoLanguages%
+,Machines,andLogic},Springer(2002).\bibitem{AS}A.Salomaa,{\em FormalLanguages}%
+,AcademicPress,NewYork(1973).\bibitem{hu}J.E.Hopcroft,J.D.Ullman,{\em
+FormalLanguagesandTheirRelationtoAutomata%
+},Addison-Wesley,(1969).\endthebibliography\begin{flushright}\begin{tabular}[]%
+{|ll|}\hline Title&amp;closure properties on languages\\
+Canonical name&amp;ClosurePropertiesOnLanguages\\
+Date of creation&amp;2013-03-22 18:59:36\\
+Last modified on&amp;2013-03-22 18:59:36\\
+Owner&amp;CWoo (3771)\\
+Last modified by&amp;CWoo (3771)\\
+Numerical id&amp;6\\
+Author&amp;CWoo (3771)\\
+Entry type&amp;Feature\\
+Classification&amp;msc 68Q15\\
+Classification&amp;msc 03D55\\
+Related topic&amp;AbstractFamilyOfLanguages\\
+\hline}\end{tabular}}$}\end{flushright}\end{document}" display="inline"><mrow><mi>w</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>d</mi><mi>e</mi><mi>f</mi><mi>i</mi><mi>n</mi><mi>i</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>o</mi><mi>f</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>e</mi><mi>l</mi><mi>l</mi><mi>s</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>t</mi><mi>o</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>w</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>f</mi><mi>o</mi><mi>l</mi><mi>l</mi><mi>o</mi><mi>w</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>l</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>u</mi><mi>a</mi><mi>g</mi><mi>e</mi><mi>f</mi><mi>a</mi><mi>m</mi><mi>i</mi><mi>l</mi><mi>i</mi><mi>e</mi><mi>s</mi><mo>:</mo><mrow><mtext>
+<span class="ltx_inline-block">
+<span class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<span class="ltx_thead">
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_tt">abbreviation</span>
+<span class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">name</span></span>
+</span>
+<span class="ltx_tbody">
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt">REG</span>
+<span class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">regular</span></span>
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">DCFL</span>
+<span class="ltx_td ltx_align_center ltx_border_r ltx_border_t">deterministic context-free</span></span>
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">CFL</span>
+<span class="ltx_td ltx_align_center ltx_border_r ltx_border_t">context-free</span></span>
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">CSL</span>
+<span class="ltx_td ltx_align_center ltx_border_r ltx_border_t">context-sensitive</span></span>
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">RC</span>
+<span class="ltx_td ltx_align_center ltx_border_r ltx_border_t">recursive</span></span>
+<span class="ltx_tr">
+<span class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">RE</span>
+<span class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">recursively enumerable</span></span>
+</span>
+</span>
+</span></mtext><mtext mathcolor="red">
+<br class="ltx_break"></mtext><mtext>𝐑𝐞𝐦𝐚𝐫𝐤𝐬</mtext></mrow><mo>.</mo><mi>B</mi><mi>a</mi><mi>s</mi><mi>e</mi><mi>d</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>t</mi><mi>a</mi><mi>b</mi><mi>l</mi><mi>e</mi><mi>a</mi><mi>b</mi><mi>o</mi><mi>v</mi><mi>e</mi><mo>,</mo><mi>s</mi><mi>t</mi><mi>u</mi><mi>d</mi><mi>i</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>n</mi><mi>c</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>e</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>i</mi><mi>e</mi><mi>s</mi><mi>h</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>b</mi><mi>e</mi><mi>e</mi><mi>n</mi><mi>e</mi><mi>x</mi><mi>p</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>d</mi><mi>i</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi><mo>,</mo><mi>s</mi><mi>u</mi><mi>c</mi><mi>h</mi><mi>a</mi><mi>s</mi><mtext> •
+              
+                closure properties of the above operations on more families of languages, such as linear languages, indexed languages, and mildly context-sensitive languages
+              
+            
+            
+              •
+              
+                given that an arbitrary family of languages is closed under a subset of operations above, what more can one say about the family? what other closure properties can be deduced? This is known as AFL (abstract family of languages) theory.
+              
+            
+            
+              •
+              
+                closure properties of yet more operations on languages, such as commutative closures, shuffle closures, insertion closures, deletion closures, subword extensions, prefix extensions, and suffix extensions.
+              
+            
+            
+              •
+              
+                knowing that a closure property of an operation is not satisfied for a given language family, study the closure of the property on the family. For example, what is the Boolean closure of context-free languages?
+
+              
+            
+            
+              •
+              
+                knowning the a closure property of an operation is not satisfied for a given language family, study whether it is decidable that taking the operation on language(s) leads to a language in the family. For example, is it decidable that the intersection of two context-free languages is context-free? Furthermore, if the problem is decidable, what is its complexity? </mtext><mtext> References
+            
+              
+                1 </mtext><mi>A</mi><mo>.</mo><mi>P</mi><mo>.</mo><mi>P</mi><mi>a</mi><mi>r</mi><mi>k</mi><mi>e</mi><mi>s</mi><mo>,</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mo>,</mo><mi mathvariant="normal">M</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mo>,</mo><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mo>,</mo><mi>S</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>e</mi><mi>r</mi><mrow><mo stretchy="false">(</mo><mn>2002</mn><mo stretchy="false">)</mo></mrow><mo>.</mo><mtext> 2 </mtext><mi>A</mi><mo>.</mo><mi>S</mi><mi>a</mi><mi>l</mi><mi>o</mi><mi>m</mi><mi>a</mi><mi>a</mi><mo>,</mo><mi mathvariant="normal">F</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mo>,</mo><mi>A</mi><mi>c</mi><mi>a</mi><mi>d</mi><mi>e</mi><mi>m</mi><mi>i</mi><mi>c</mi><mi>P</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>s</mi><mo>,</mo><mi>N</mi><mi>e</mi><mi>w</mi><mi>Y</mi><mi>o</mi><mi>r</mi><mi>k</mi><mrow><mo stretchy="false">(</mo><mn>1973</mn><mo stretchy="false">)</mo></mrow><mo>.</mo><mtext> 3 </mtext><mi>J</mi><mo>.</mo><mi>E</mi><mo>.</mo><mi>H</mi><mi>o</mi><mi>p</mi><mi>c</mi><mi>r</mi><mi>o</mi><mi>f</mi><mi>t</mi><mo>,</mo><mi>J</mi><mo>.</mo><mi>D</mi><mo>.</mo><mi>U</mi><mi>l</mi><mi>l</mi><mi>m</mi><mi>a</mi><mi>n</mi><mo>,</mo><mi mathvariant="normal">F</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">A</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mo>,</mo><mi>A</mi><mi>d</mi><mi>d</mi><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mo>-</mo><mi>W</mi><mi>e</mi><mi>s</mi><mi>l</mi><mi>e</mi><mi>y</mi><mo>,</mo><mrow><mo stretchy="false">(</mo><mn>1969</mn><mo stretchy="false">)</mo></mrow><mo>.</mo><mtable class="ltx_align_right ltx_guessed_headers" columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_border_l ltx_border_t ltx_th_row" columnalign="left"><mtext>Title</mtext></mtd><mtd class="ltx_border_r ltx_border_t" columnalign="left"><mtext>closure properties on languages</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Canonical name</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>ClosurePropertiesOnLanguages</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Date of creation</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>2013-03-22 18:59:36</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Last modified on</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>2013-03-22 18:59:36</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Owner</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>CWoo (3771)</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Last modified by</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>CWoo (3771)</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Numerical id</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>6</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Author</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>CWoo (3771)</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Entry type</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>Feature</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Classification</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>msc 68Q15</mtext></mtd></mtr><mtr><mtd class="ltx_border_l ltx_th_row" columnalign="left"><mtext>Classification</mtext></mtd><mtd class="ltx_border_r" columnalign="left"><mtext>msc 03D55</mtext></mtd></mtr><mtr><mtd class="ltx_border_b ltx_border_l ltx_th_row" columnalign="left"><mtext>Related topic</mtext></mtd><mtd class="ltx_border_b ltx_border_r" columnalign="left"><mtext>AbstractFamilyOfLanguages</mtext></mtd></mtr></mtable></mrow></math></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:41:28 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

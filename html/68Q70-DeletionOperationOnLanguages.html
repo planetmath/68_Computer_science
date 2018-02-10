@@ -1,0 +1,218 @@
+<!DOCTYPE html><html>
+<head>
+<title>deletion operation on languages</title>
+<!--Generated on Sat Feb 10 12:48:15 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">deletion operation on languages</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Let <math id="p1.m1" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> be an alphabet and <math id="p1.m2" class="ltx_Math" alttext="u,v" display="inline"><mrow><mi>u</mi><mo>,</mo><mi>v</mi></mrow></math> be words over <math id="p1.m3" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>. A <em class="ltx_emph ltx_font_italic">deletion</em> of <math id="p1.m4" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> from <math id="p1.m5" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> is a word of the form <math id="p1.m6" class="ltx_Math" alttext="u_{1}u_{2}" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>u</mi><mn>2</mn></msub></mrow></math>, where <math id="p1.m7" class="ltx_Math" alttext="u=u_{1}vu_{2}" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mi>v</mi><mo>⁢</mo><msub><mi>u</mi><mn>2</mn></msub></mrow></mrow></math>. If <math id="p1.m8" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is a deletion of <math id="p1.m9" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> from <math id="p1.m10" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, then <math id="p1.m11" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> is an insertion of <math id="p1.m12" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> into <math id="p1.m13" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">The deletion</em> of <math id="p2.m1" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> from <math id="p2.m2" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> is the set of all deletions of <math id="p2.m3" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> from <math id="p2.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, and is denoted by <math id="p2.m5" class="ltx_Math" alttext="u\longrightarrow v" display="inline"><mrow><mi>u</mi><mo>⟶</mo><mi>v</mi></mrow></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">For example, if <math id="p3.m1" class="ltx_Math" alttext="u=(ab)^{6}" display="inline"><mrow><mi>u</mi><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mn>6</mn></msup></mrow></math> and <math id="p3.m2" class="ltx_Math" alttext="v=aba" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></mrow></math>, then</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="u\longrightarrow v=\{(ba)^{4}b,ab(ba)^{3}b,(ab)^{2}(ba)^{2}b,(ab)^{3}bab,(ab)^%
+{4}b\}." display="block"><mrow><mrow><mi>u</mi><mo>⟶</mo><mi>v</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mo>⁢</mo><mi>b</mi></mrow><mo>,</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mo>⁢</mo><mi>b</mi></mrow><mo>,</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><mi>b</mi></mrow><mo>,</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo>,</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">More generally, given two languages <math id="p4.m1" class="ltx_Math" alttext="L_{1},L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math> over <math id="p4.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, the <em class="ltx_emph ltx_font_italic">deletion</em> of <math id="p4.m3" class="ltx_Math" alttext="L_{2}" display="inline"><msub><mi>L</mi><mn>2</mn></msub></math> from <math id="p4.m4" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> is the set</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="L_{1}\longrightarrow L_{2}:=\bigcup\{u\longrightarrow v\mid u\in L_{1},v\in L_%
+{2}\}." display="block"><mrow><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>2</mn></msub><mo>:=</mo><mrow><mo largeop="true" mathsize="160%" movablelimits="false" stretchy="false" symmetric="true">⋃</mo><mrow><mo stretchy="false">{</mo><mrow><mi>u</mi><mo>⟶</mo><mi>v</mi></mrow><mo>∣</mo><mrow><mrow><mi>u</mi><mo>∈</mo><msub><mi>L</mi><mn>1</mn></msub></mrow><mo>,</mo><mrow><mi>v</mi><mo>∈</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">For example, if <math id="p5.m1" class="ltx_Math" alttext="L_{1}=\{(ab)^{n}\mid n\geq 0\}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mi>n</mi></msup><mo>∣</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math> and <math id="p5.m2" class="ltx_Math" alttext="L_{2}=\{a^{n}b^{n}\mid n\geq 0\}" display="inline"><mrow><msub><mi>L</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mi>a</mi><mi>n</mi></msup><mo>⁢</mo><msup><mi>b</mi><mi>n</mi></msup></mrow><mo>∣</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, then <math id="p5.m3" class="ltx_Math" alttext="L_{1}\longrightarrow L_{2}=L_{1}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>2</mn></msub><mo>=</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></math>, and <math id="p5.m4" class="ltx_Math" alttext="L_{2}\longrightarrow L_{1}=L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>2</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>1</mn></msub><mo>=</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math>. If <math id="p5.m5" class="ltx_Math" alttext="L_{3}=\{a^{n}\mid n\geq 0\}" display="inline"><mrow><msub><mi>L</mi><mn>3</mn></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><msup><mi>a</mi><mi>n</mi></msup><mo>∣</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, then <math id="p5.m6" class="ltx_Math" alttext="L_{2}\longrightarrow L_{3}=a^{m}b^{n}\mid n\geq m\geq 0\}" display="inline"><mrow><msub><mi>L</mi><mn>2</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>3</mn></msub><mo>=</mo><msup><mi>a</mi><mi>m</mi></msup><msup><mi>b</mi><mi>n</mi></msup><mo>∣</mo><mi>n</mi><mo>≥</mo><mi>m</mi><mo>≥</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></math>, and <math id="p5.m7" class="ltx_Math" alttext="L_{3}\longrightarrow L_{2}=L_{3}" display="inline"><mrow><msub><mi>L</mi><mn>3</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>2</mn></msub><mo>=</mo><msub><mi>L</mi><mn>3</mn></msub></mrow></math>.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">A language <math id="p6.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is said to be <em class="ltx_emph ltx_font_italic">deletion-closed</em> if <math id="p6.m2" class="ltx_Math" alttext="L\longrightarrow L\subseteq L" display="inline"><mrow><mi>L</mi><mo>⟶</mo><mi>L</mi><mo>⊆</mo><mi>L</mi></mrow></math>. <math id="p6.m3" class="ltx_Math" alttext="L_{1},L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math>, and <math id="p6.m4" class="ltx_Math" alttext="L_{3}" display="inline"><msub><mi>L</mi><mn>3</mn></msub></math> from above are all deletion closed, as well as the most obvious example: <math id="p6.m5" class="ltx_Math" alttext="\Sigma^{*}" display="inline"><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></math>. <math id="p6.m6" class="ltx_Math" alttext="L_{2}\longrightarrow L_{3}" display="inline"><mrow><msub><mi>L</mi><mn>2</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>3</mn></msub></mrow></math> is not deletion closed, for <math id="p6.m7" class="ltx_Math" alttext="a^{3}b^{4}\longrightarrow ab^{3}=\{a^{2}b\}\nsubseteq L_{2}\longrightarrow L_{3}" display="inline"><mrow><mrow><msup><mi>a</mi><mn>3</mn></msup><mo>⁢</mo><msup><mi>b</mi><mn>4</mn></msup></mrow><mo>⟶</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>b</mi><mn>3</mn></msup></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">}</mo></mrow><mo>⊈</mo><msub><mi>L</mi><mn>2</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>3</mn></msub></mrow></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">It is easy to see that arbitrary intersections of deletion-closed languages is deletion-closed.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Given a language <math id="p8.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, the intersection of all deletion-closed languages containing <math id="p8.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, denoted by <math id="p8.m3" class="ltx_Math" alttext="\operatorname{Del}(L)" display="inline"><mrow><mi>Del</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></math>, is called the <em class="ltx_emph ltx_font_italic">deletion-closure</em> of <math id="p8.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>. In other words, <math id="p8.m5" class="ltx_Math" alttext="\operatorname{Del}(L)" display="inline"><mrow><mi>Del</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the smallest deletion-closed language containing <math id="p8.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">The deletion-closure of a language <math id="p9.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> can be constructed from <math id="p9.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, as follows:</p>
+<table id="A0.EGx1" class="ltx_equationgroup ltx_eqn_eqnarray ltx_eqn_table">
+
+<tr id="S0.Ex3" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex3.m1" class="ltx_Math" alttext="\displaystyle L_{0}" display="inline"><msub><mi>L</mi><mn>0</mn></msub></math></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex3.m2" class="ltx_Math" alttext="\displaystyle:=" display="inline"><mo>:=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex3.m3" class="ltx_Math" alttext="\displaystyle L" display="inline"><mi>L</mi></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex4" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\displaystyle L_{n+1}" display="inline"><msub><mi>L</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></math></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex4.m2" class="ltx_Math" alttext="\displaystyle:=" display="inline"><mo>:=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex4.m3" class="ltx_Math" alttext="\displaystyle L_{n}\longrightarrow(L_{n}\cup\{\lambda\})" display="inline"><mrow><msub><mi>L</mi><mi>n</mi></msub><mo>⟶</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>L</mi><mi>n</mi></msub><mo>∪</mo><mrow><mo stretchy="false">{</mo><mi>λ</mi><mo stretchy="false">}</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex5" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\displaystyle L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex5.m2" class="ltx_Math" alttext="\displaystyle:=" display="inline"><mo>:=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex5.m3" class="ltx_Math" alttext="\displaystyle\bigcup_{i=0}^{\infty}L_{i}" display="inline"><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" mathsize="160%" movablelimits="false" stretchy="false" symmetric="true">⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><msub><mi>L</mi><mi>i</mi></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Then <math id="p9.m3" class="ltx_Math" alttext="\operatorname{Del}(L)=L^{\prime}" display="inline"><mrow><mrow><mi>Del</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>L</mi><mo>′</mo></msup></mrow></math>.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">For example, if <math id="p10.m1" class="ltx_Math" alttext="L=\{a^{p}\mid p\mbox{ is a prime number }\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><msup><mi>a</mi><mi>p</mi></msup><mo>∣</mo><mrow><mi>p</mi><mo>⁢</mo><mtext> is a prime number </mtext></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, then <math id="p10.m2" class="ltx_Math" alttext="\operatorname{Del}(L)=\{a^{n}\mid n\geq 0\}" display="inline"><mrow><mrow><mi>Del</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><msup><mi>a</mi><mi>n</mi></msup><mo>∣</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, and if <math id="p10.m3" class="ltx_Math" alttext="L=\{a^{m}b^{n}\mid m\geq n\geq 0\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mi>a</mi><mi>m</mi></msup><mo>⁢</mo><msup><mi>b</mi><mi>n</mi></msup></mrow><mo>∣</mo><mrow><mi>m</mi><mo>≥</mo><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, then <math id="p10.m4" class="ltx_Math" alttext="\operatorname{Del}(L)=\{a^{m}b^{n}\mid m,n\geq 0\}" display="inline"><mrow><mrow><mi>Del</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mi>a</mi><mi>m</mi></msup><mo>⁢</mo><msup><mi>b</mi><mi>n</mi></msup></mrow><mo>∣</mo><mrow><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>.
+</p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remarks</span>.</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I1.i1.p1.m1" class="ltx_Math" alttext="L_{1},L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math> are regular languages, so is <math id="I1.i1.p1.m2" class="ltx_Math" alttext="L_{1}\longrightarrow L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⟶</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math>. In other words, the family <math id="I1.i1.p1.m3" class="ltx_Math" alttext="\mathscr{R}" display="inline"><mi class="ltx_font_mathscript">ℛ</mi></math> of regular languages is closed under the deletion binary operation.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">In addition, <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\mathscr{R}" display="inline"><mi class="ltx_font_mathscript">ℛ</mi></math> is closed under deletion closure: if <math id="I1.i2.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is regular, so is <math id="I1.i2.p1.m3" class="ltx_Math" alttext="\operatorname{Del}(L)" display="inline"><mrow><mi>Del</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">However, <math id="I1.i3.p1.m1" class="ltx_Math" alttext="\mathscr{F}" display="inline"><mi class="ltx_font_mathscript">ℱ</mi></math>, the family of context-free languages, is neither closed under deletion, nor under deletion closure.</p>
+</div>
+</li>
+</ul>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> M. Ito, <span class="ltx_text ltx_font_italic">Algebraic Theory of Automata and Languages</span>, World Scientific, Singapore (2004).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p12" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">deletion operation on languages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">DeletionOperationOnLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:56:23</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:56:23</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">8</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q70</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">deletion-closed</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">deletion-closure</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">ShuffleOfLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">InsertionOperationOnLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">deletion</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">deletion closed</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">deletion closure</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:48:15 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

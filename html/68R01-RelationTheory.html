@@ -1,0 +1,631 @@
+<!DOCTYPE html><html>
+<head>
+<title>relation theory</title>
+<!--Generated on Sat Feb 10 12:50:15 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">relation theory</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">This article treats <span class="ltx_text ltx_font_bold">relations</span> from the perspective of combinatorics, in other words, as a subject matter in discrete mathematics, with special attention to finite structures and concrete set-theoretic constructions, many of which arise quite naturally in applications. This approach to <span class="ltx_text ltx_font_bold">relation theory</span>, or the <span class="ltx_text ltx_font_bold">theory of relations</span>, is distinguished from, though closely related to, its study from the perspectives of abstract algebra on the one hand and formal logic on the other.</p>
+</div>
+<div class="ltx_TOC ltx_role_contents">
+<h6>Contents:</h6>
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="1 Preliminaries ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Preliminaries</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S2" title="2 Definition ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Definition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S3" title="3 Remarks ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Remarks</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S4" title="4 Local incidence properties ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Local incidence properties</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S5" title="5 Regional incidence properties ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Regional incidence properties</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S6" title="6 Numerical incidence properties ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Numerical incidence properties</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S7" title="7 Species of 2-adic relations ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Species of 2-adic relations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S8" title="8 Variations ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Variations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S9" title="9 Bibliography ‣ relation theory" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Bibliography</span></a></li>
+</ul>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Preliminaries</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">Two definitions of the relation concept are common in the literature. Although it is usually clear in context which definition is being used at a given time, it tends to become less clear as contexts collide, or as discussion moves from one context to another.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">The same sort of ambiguity arose in the development of the function concept and it may save some effort to follow the pattern of resolution that worked itself out there.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p class="ltx_p">When we speak of a function <math id="S1.p3.m1" class="ltx_Math" alttext="f:X\to Y" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mi>Y</mi></mrow></mrow></math> we are thinking of a mathematical object whose articulation requires three pieces of data, specifying the set <math id="S1.p3.m2" class="ltx_Math" alttext="X," display="inline"><mrow><mi>X</mi><mo>,</mo></mrow></math> the set <math id="S1.p3.m3" class="ltx_Math" alttext="Y," display="inline"><mrow><mi>Y</mi><mo>,</mo></mrow></math> and a particular subset of their cartesian product <math id="S1.p3.m4" class="ltx_Math" alttext="X\times Y." display="inline"><mrow><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><mo>.</mo></mrow></math> So far so good.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p class="ltx_p">Let us write <math id="S1.p4.m1" class="ltx_Math" alttext="f=(\operatorname{obj_{1}}f,\operatorname{obj_{2}}f,\operatorname{obj_{12}}f)" display="inline"><mrow><mi>f</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>obj</mi><mn>1</mn></msub><mo>⁡</mo><mi>f</mi></mrow><mo>,</mo><mrow><msub><mi>obj</mi><mn>2</mn></msub><mo>⁡</mo><mi>f</mi></mrow><mo>,</mo><mrow><msub><mi>obj</mi><mn>12</mn></msub><mo>⁡</mo><mi>f</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> to express what has been said so far.</p>
+</div>
+<div id="S1.p5" class="ltx_para">
+<p class="ltx_p">When it comes to parsing the notation <math id="S1.p5.m1" class="ltx_Math" alttext='``f:X\to Y",' display="inline"><mrow><mrow><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>f</mi></mrow><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mrow><mi>Y</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></mrow></mrow><mo>,</mo></mrow></math> everyone takes the part <math id="S1.p5.m2" class="ltx_Math" alttext='``X\to Y"' display="inline"><mrow><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>X</mi></mrow><mo>→</mo><mrow><mi>Y</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></mrow></math> to specify the <span class="ltx_text ltx_font_italic">type</span> of the function, that is, the pair <math id="S1.p5.m3" class="ltx_Math" alttext="(\operatorname{obj_{1}}f,\operatorname{obj_{2}}f)," display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>obj</mi><mn>1</mn></msub><mo>⁡</mo><mi>f</mi></mrow><mo>,</mo><mrow><msub><mi>obj</mi><mn>2</mn></msub><mo>⁡</mo><mi>f</mi></mrow><mo stretchy="false">)</mo></mrow><mo>,</mo></mrow></math> but <math id="S1.p5.m4" class="ltx_Math" alttext='``f"' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math> is used equivocally to denote both the triple and the subset <math id="S1.p5.m5" class="ltx_Math" alttext="\operatorname{obj_{12}}f" display="inline"><mrow><msub><mi>obj</mi><mn>12</mn></msub><mo>⁡</mo><mi>f</mi></mrow></math> that forms one part of it. One way to resolve the ambiguity is to formalize a distinction between a function and its <span class="ltx_text ltx_font_italic">graph</span>, letting <math id="S1.p5.m6" class="ltx_Math" alttext="\operatorname{graph}(f):=\operatorname{obj_{12}}f." display="inline"><mrow><mrow><mrow><mi>graph</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><msub><mi>obj</mi><mn>12</mn></msub><mo>⁡</mo><mi>f</mi></mrow></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S1.p6" class="ltx_para">
+<p class="ltx_p">Another tactic treats the whole notation <math id="S1.p6.m1" class="ltx_Math" alttext='``f:X\to Y"' display="inline"><mrow><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>f</mi></mrow><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mrow><mi>Y</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></mrow></mrow></math> as sufficient denotation for the triple, letting <math id="S1.p6.m2" class="ltx_Math" alttext='``f"' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math> denote <math id="S1.p6.m3" class="ltx_Math" alttext="\operatorname{graph}(f)." display="inline"><mrow><mrow><mi>graph</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">)</mo></mrow></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S1.p7" class="ltx_para">
+<p class="ltx_p">In categorical and computational contexts, at least initially, the type is regarded as an essential attribute or an integral part of the function itself. In other contexts it may be desirable to use a more abstract concept of function, treating a function as a mathematical object that appears in connection with many different types.</p>
+</div>
+<div id="S1.p8" class="ltx_para">
+<p class="ltx_p">Following the pattern of the functional case, let the notation <math id="S1.p8.m1" class="ltx_Math" alttext='``L\subseteq X\times Y"' display="inline"><mrow><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>L</mi></mrow><mo>⊆</mo><mrow><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></mrow></math> bring to mind a mathematical object that is specified by three pieces of data, the set <math id="S1.p8.m2" class="ltx_Math" alttext="X," display="inline"><mrow><mi>X</mi><mo>,</mo></mrow></math> the set <math id="S1.p8.m3" class="ltx_Math" alttext="Y," display="inline"><mrow><mi>Y</mi><mo>,</mo></mrow></math> and a particular subset of their cartesian product <math id="S1.p8.m4" class="ltx_Math" alttext="X\times Y." display="inline"><mrow><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><mo>.</mo></mrow></math> As before we have two choices, either let <math id="S1.p8.m5" class="ltx_Math" alttext="L=(X,Y,\operatorname{graph}(L))" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mrow><mi>graph</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> or let <math id="S1.p8.m6" class="ltx_Math" alttext='``L"' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math> denote <math id="S1.p8.m7" class="ltx_Math" alttext="\operatorname{graph}(L)" display="inline"><mrow><mi>graph</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></math> and choose another name for the triple.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Definition</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">It is convenient to begin with the definition of a <math id="S2.p1.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math><span class="ltx_text ltx_font_bold">-place relation</span>, where <math id="S2.p1.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> is a positive integer.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition.</span> A <math id="S2.p2.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math><span class="ltx_text ltx_font_bold">-place relation</span> <math id="S2.p2.m2" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow></math> over the nonempty sets <math id="S2.p2.m3" class="ltx_Math" alttext="X_{1},\ldots,X_{k}" display="inline"><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></math> is a <math id="S2.p2.m4" class="ltx_Math" alttext="(k+1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>-tuple <math id="S2.p2.m5" class="ltx_Math" alttext="(X_{1},\ldots,X_{k},L)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>X</mi><mi>k</mi></msub><mo>,</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></math> where <math id="S2.p2.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is a subset of the cartesian product <math id="S2.p2.m7" class="ltx_Math" alttext="X_{1}\times\ldots\times X_{k}." display="inline"><mrow><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow><mo>.</mo></mrow></math></p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Remarks</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">Though usage varies as usage will, there are several bits of optional language that are frequently useful in discussing relations. The sets <math id="S3.p1.m1" class="ltx_Math" alttext="X_{1},\ldots,X_{k}" display="inline"><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></math> are called the <span class="ltx_text ltx_font_italic">domains</span> of the relation <math id="S3.p1.m2" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}," display="inline"><mrow><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow><mo>,</mo></mrow></math> with <math id="S3.p1.m3" class="ltx_Math" alttext="X_{j}" display="inline"><msub><mi>X</mi><mi>j</mi></msub></math> being the <math id="S3.p1.m4" class="ltx_Math" alttext="j^{\text{\small{th}}}" display="inline"><msup><mi>j</mi><mtext mathsize="128%">th</mtext></msup></math> domain. If all of the <math id="S3.p1.m5" class="ltx_Math" alttext="X_{j}" display="inline"><msub><mi>X</mi><mi>j</mi></msub></math> are the same set <math id="S3.p1.m6" class="ltx_Math" alttext="X," display="inline"><mrow><mi>X</mi><mo>,</mo></mrow></math> then <math id="S3.p1.m7" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow></math> is more simply described as a <math id="S3.p1.m8" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-place relation over <math id="S3.p1.m9" class="ltx_Math" alttext="X." display="inline"><mrow><mi>X</mi><mo>.</mo></mrow></math> The set <math id="S3.p1.m10" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is called the <span class="ltx_text ltx_font_italic">graph</span> of the relation <math id="S3.p1.m11" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}," display="inline"><mrow><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow><mo>,</mo></mrow></math> on analogy with the graph of a function. If the sequence of sets <math id="S3.p1.m12" class="ltx_Math" alttext="X_{1},\ldots,X_{k}" display="inline"><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></math> is constant throughout a given discussion or is otherwise determinate in context, then the relation <math id="S3.p1.m13" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow></math> is determined by its graph <math id="S3.p1.m14" class="ltx_Math" alttext="L," display="inline"><mrow><mi>L</mi><mo>,</mo></mrow></math> making it acceptable to denote the relation by referring to its graph. Other synonyms for the adjective <math id="S3.p1.m15" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<span class="ltx_text ltx_font_italic">place</span> are <math id="S3.p1.m16" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<span class="ltx_text ltx_font_italic">adic</span> and <math id="S3.p1.m17" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<span class="ltx_text ltx_font_italic">ary</span>, all of which leads to the integer <math id="S3.p1.m18" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> being called the <span class="ltx_text ltx_font_italic">dimension</span>, the <span class="ltx_text ltx_font_italic">adicity</span>, or the <span class="ltx_text ltx_font_italic">arity</span> of the relation <math id="S3.p1.m19" class="ltx_Math" alttext="L." display="inline"><mrow><mi>L</mi><mo>.</mo></mrow></math>
+</p>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Local incidence properties</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_font_italic">local incidence property</span> (LIP) of a relation <math id="S4.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is a property that depends in turn on the properties of special subsets of <math id="S4.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> that are known as its <span class="ltx_text ltx_font_italic">local flags</span>. The local flags of a relation are defined in the following way:</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">Let <math id="S4.p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> be a <math id="S4.p2.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-place relation <math id="S4.p2.m3" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}." display="inline"><mrow><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p class="ltx_p">Select a relational domain <math id="S4.p3.m1" class="ltx_Math" alttext="X_{j}" display="inline"><msub><mi>X</mi><mi>j</mi></msub></math> and one of its elements <math id="S4.p3.m2" class="ltx_Math" alttext="x." display="inline"><mrow><mi>x</mi><mo>.</mo></mrow></math> Then <math id="S4.p3.m3" class="ltx_Math" alttext="L_{x@j}" display="inline"><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> is a subset of <math id="S4.p3.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> that is referred to as the <span class="ltx_text ltx_font_italic">flag</span> of <math id="S4.p3.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> with <math id="S4.p3.m6" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> at <math id="S4.p3.m7" class="ltx_Math" alttext="j," display="inline"><mrow><mi>j</mi><mo>,</mo></mrow></math> or the <math id="S4.p3.m8" class="ltx_Math" alttext="x@j" display="inline"><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></math>-flag of <math id="S4.p3.m9" class="ltx_Math" alttext="L," display="inline"><mrow><mi>L</mi><mo>,</mo></mrow></math> an object that has the following definition:</p>
+</div>
+<div id="S4.p4" class="ltx_para">
+<table id="S4.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S4.Ex1.m1" class="ltx_Math" alttext="L_{x@j}=\{(x_{1},\ldots,x_{j},\ldots,x_{k})\in L:x_{j}=x\}." display="block"><mrow><mrow><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>j</mi></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>L</mi></mrow><mo>:</mo><mrow><msub><mi>x</mi><mi>j</mi></msub><mo>=</mo><mi>x</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S4.p5" class="ltx_para">
+<p class="ltx_p">Any property <math id="S4.p5.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> of the local flag <math id="S4.p5.m2" class="ltx_Math" alttext="L_{x@j}\subseteq L" display="inline"><mrow><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>⊆</mo><mi>L</mi></mrow></math> is said to be a <span class="ltx_text ltx_font_italic">local incidence property</span> of <math id="S4.p5.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> with respect to the <span class="ltx_text ltx_font_italic">locus</span> <math id="S4.p5.m4" class="ltx_Math" alttext="x@j." display="inline"><mrow><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S4.p6" class="ltx_para">
+<p class="ltx_p">A <math id="S4.p6.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-adic relation <math id="S4.p6.m2" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow></math> is said to be <math id="S4.p6.m3" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>-<span class="ltx_text ltx_font_italic">regular</span> at <math id="S4.p6.m4" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> if and only if every flag of <math id="S4.p6.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> with <math id="S4.p6.m6" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> at <math id="S4.p6.m7" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> has the property <math id="S4.p6.m8" class="ltx_Math" alttext="C," display="inline"><mrow><mi>C</mi><mo>,</mo></mrow></math> where <math id="S4.p6.m9" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> is taken to vary over the <span class="ltx_text ltx_font_italic">theme</span> of the fixed domain <math id="S4.p6.m10" class="ltx_Math" alttext="X_{j}." display="inline"><mrow><msub><mi>X</mi><mi>j</mi></msub><mo>.</mo></mrow></math></p>
+</div>
+<div id="S4.p7" class="ltx_para">
+<p class="ltx_p">Expressed in symbols, <math id="S4.p7.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is <math id="S4.p7.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>-regular at <math id="S4.p7.m3" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> if and only if <math id="S4.p7.m4" class="ltx_Math" alttext="C(L_{x@j})" display="inline"><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math> is true for all <math id="S4.p7.m5" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S4.p7.m6" class="ltx_Math" alttext="X_{j}." display="inline"><mrow><msub><mi>X</mi><mi>j</mi></msub><mo>.</mo></mrow></math></p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Regional incidence properties</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">The definition of a local flag can be broadened from a point <math id="S5.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S5.p1.m2" class="ltx_Math" alttext="X_{j}" display="inline"><msub><mi>X</mi><mi>j</mi></msub></math> to a subset <math id="S5.p1.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> of <math id="S5.p1.m4" class="ltx_Math" alttext="X_{j}," display="inline"><mrow><msub><mi>X</mi><mi>j</mi></msub><mo>,</mo></mrow></math> arriving at the definition of a <span class="ltx_text ltx_font_italic">regional flag</span> in the following way:</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p class="ltx_p">Suppose that <math id="S5.p2.m1" class="ltx_Math" alttext="L\subseteq X_{1}\times\ldots\times X_{k}," display="inline"><mrow><mrow><mi>L</mi><mo>⊆</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow><mo>,</mo></mrow></math> and choose a subset <math id="S5.p2.m2" class="ltx_Math" alttext="M\subseteq X_{j}." display="inline"><mrow><mrow><mi>M</mi><mo>⊆</mo><msub><mi>X</mi><mi>j</mi></msub></mrow><mo>.</mo></mrow></math> Then <math id="S5.p2.m3" class="ltx_Math" alttext="L_{M@j}" display="inline"><msub><mi>L</mi><mrow><mi>M</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> is a subset of <math id="S5.p2.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> that is said to be the <span class="ltx_text ltx_font_italic">flag</span> of <math id="S5.p2.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> with <math id="S5.p2.m6" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> at <math id="S5.p2.m7" class="ltx_Math" alttext="j," display="inline"><mrow><mi>j</mi><mo>,</mo></mrow></math> or the <math id="S5.p2.m8" class="ltx_Math" alttext="M@j" display="inline"><mrow><mi>M</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></math>-flag of <math id="S5.p2.m9" class="ltx_Math" alttext="L," display="inline"><mrow><mi>L</mi><mo>,</mo></mrow></math> an object which has the following definition:</p>
+</div>
+<div id="S5.p3" class="ltx_para">
+<table id="S5.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex2.m1" class="ltx_Math" alttext="L_{M@j}=\{(x_{1},\ldots,x_{j},\ldots,x_{k})\in L:x_{j}\in M\}." display="block"><mrow><mrow><msub><mi>L</mi><mrow><mi>M</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>j</mi></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>L</mi></mrow><mo>:</mo><mrow><msub><mi>x</mi><mi>j</mi></msub><mo>∈</mo><mi>M</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Numerical incidence properties</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_font_italic">numerical incidence property</span> (NIP) of a relation is a local incidence property that depends on the cardinalities of its local flags.</p>
+</div>
+<div id="S6.p2" class="ltx_para">
+<p class="ltx_p">For example, <math id="S6.p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is said to be <math id="S6.p2.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math>-regular at <math id="S6.p2.m3" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> if and only if the cardinality of the local flag <math id="S6.p2.m4" class="ltx_Math" alttext="L_{x@j}" display="inline"><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> is <math id="S6.p2.m5" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> for all <math id="S6.p2.m6" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S6.p2.m7" class="ltx_Math" alttext="X_{j}," display="inline"><mrow><msub><mi>X</mi><mi>j</mi></msub><mo>,</mo></mrow></math> or, to write it in symbols, if and only if <math id="S6.p2.m8" class="ltx_Math" alttext="|L_{x@j}|=c" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow><mo>=</mo><mi>c</mi></mrow></math> for all <math id="S6.p2.m9" class="ltx_Math" alttext="x\in X_{j}." display="inline"><mrow><mrow><mi>x</mi><mo>∈</mo><msub><mi>X</mi><mi>j</mi></msub></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S6.p3" class="ltx_para">
+<p class="ltx_p">In a similar fashion, one can define the NIPs, <math id="S6.p3.m1" class="ltx_Math" alttext="(&lt;c)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mi></mi><mo>&lt;</mo><mi>c</mi></mrow><mo stretchy="false">)</mo></mrow></math>-regular at <math id="S6.p3.m2" class="ltx_Math" alttext="j," display="inline"><mrow><mi>j</mi><mo>,</mo></mrow></math> <math id="S6.p3.m3" class="ltx_Math" alttext="(&gt;c)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mi></mi><mo>&gt;</mo><mi>c</mi></mrow><mo stretchy="false">)</mo></mrow></math>-regular at <math id="S6.p3.m4" class="ltx_Math" alttext="j," display="inline"><mrow><mi>j</mi><mo>,</mo></mrow></math> and so on. For ease of reference, a few of these definitions are recorded here:</p>
+</div>
+<div id="S6.p4" class="ltx_para">
+<table id="S6.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S6.Ex3.m1" class="ltx_Math" alttext="\begin{array}[]{ccccccccc}L&amp;\text{is}&amp;c\text{-regular}&amp;\text{at}\ j&amp;\text{if %
+and only if}&amp;|L_{x@j}|&amp;=&amp;c&amp;\text{for all}\ x\in X_{j}.\\
+L&amp;\text{is}&amp;(&lt;c)\text{-regular}&amp;\text{at}\ j&amp;\text{if and only if}&amp;|L_{x@j}|&amp;&lt;%
+&amp;c&amp;\text{for all}\ x\in X_{j}.\\
+L&amp;\text{is}&amp;(&gt;c)\text{-regular}&amp;\text{at}\ j&amp;\text{if and only if}&amp;|L_{x@j}|&amp;&gt;%
+&amp;c&amp;\text{for all}\ x\in X_{j}.\\
+\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mi>c</mi><mo>⁢</mo><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>j</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mrow><mo stretchy="false">|</mo><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mi>c</mi></mtd><mtd columnalign="center"><mrow><mrow><mrow><mpadded width="+5pt"><mtext>for all</mtext></mpadded><mo>⁢</mo><mi>x</mi></mrow><mo>∈</mo><msub><mi>X</mi><mi>j</mi></msub></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mo>&lt;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>j</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mrow><mo stretchy="false">|</mo><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow></mtd><mtd columnalign="center"><mo>&lt;</mo></mtd><mtd columnalign="center"><mi>c</mi></mtd><mtd columnalign="center"><mrow><mrow><mrow><mpadded width="+5pt"><mtext>for all</mtext></mpadded><mo>⁢</mo><mi>x</mi></mrow><mo>∈</mo><msub><mi>X</mi><mi>j</mi></msub></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mo>&gt;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>j</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mrow><mo stretchy="false">|</mo><msub><mi>L</mi><mrow><mi>x</mi><mo>⁢</mo><mi mathvariant="normal">@</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow></mtd><mtd columnalign="center"><mo>&gt;</mo></mtd><mtd columnalign="center"><mi>c</mi></mtd><mtd columnalign="center"><mrow><mrow><mrow><mpadded width="+5pt"><mtext>for all</mtext></mpadded><mo>⁢</mo><mi>x</mi></mrow><mo>∈</mo><msub><mi>X</mi><mi>j</mi></msub></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="S7" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">7 </span>Species of 2-adic relations</h2>
+
+<div id="S7.p1" class="ltx_para">
+<p class="ltx_p">Returning to 2-adic relations, it is useful to describe some familiar classes of objects in terms of their local and numerical incidence properties. Let <math id="S7.p1.m1" class="ltx_Math" alttext="L\subseteq S\times T" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>S</mi><mo>×</mo><mi>T</mi></mrow></mrow></math> be an arbitrary 2-adic relation. The following properties of <math id="S7.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> can be defined:</p>
+</div>
+<div id="S7.p2" class="ltx_para">
+<table id="S7.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S7.Ex4.m1" class="ltx_Math" alttext="\begin{array}[]{ccccccccc}L&amp;\text{is}&amp;\text{total}&amp;\text{at}\ S&amp;\text{if and %
+only if}&amp;L&amp;\text{is}&amp;(\geq 1)\text{-regular}&amp;\text{at}\ S.\\
+L&amp;\text{is}&amp;\text{total}&amp;\text{at}\ T&amp;\text{if and only if}&amp;L&amp;\text{is}&amp;(\geq 1%
+)\text{-regular}&amp;\text{at}\ T.\\
+L&amp;\text{is}&amp;\text{tubular}&amp;\text{at}\ S&amp;\text{if and only if}&amp;L&amp;\text{is}&amp;(%
+\leq 1)\text{-regular}&amp;\text{at}\ S.\\
+L&amp;\text{is}&amp;\text{tubular}&amp;\text{at}\ T&amp;\text{if and only if}&amp;L&amp;\text{is}&amp;(%
+\leq 1)\text{-regular}&amp;\text{at}\ T.\\
+\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>total</mtext></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>S</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mo>≥</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>S</mi></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>total</mtext></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mo>≥</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>tubular</mtext></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>S</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mo>≤</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>S</mi></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>tubular</mtext></mtd><mtd columnalign="center"><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mo>≤</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S7.p3" class="ltx_para">
+<p class="ltx_p">If <math id="S7.p3.m1" class="ltx_Math" alttext="L\subseteq S\times T" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>S</mi><mo>×</mo><mi>T</mi></mrow></mrow></math> is tubular at <math id="S7.p3.m2" class="ltx_Math" alttext="S," display="inline"><mrow><mi>S</mi><mo>,</mo></mrow></math> then <math id="S7.p3.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is called a <span class="ltx_text ltx_font_italic">partial function</span> or a <span class="ltx_text ltx_font_italic">prefunction</span> from <math id="S7.p3.m4" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> to <math id="S7.p3.m5" class="ltx_Math" alttext="T." display="inline"><mrow><mi>T</mi><mo>.</mo></mrow></math> This is sometimes indicated by giving <math id="S7.p3.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> an alternate name, say, “<math id="S7.p3.m7" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>”, and writing <math id="S7.p3.m8" class="ltx_Math" alttext="L=p:S\rightharpoonup T." display="inline"><mrow><mrow><mrow><mi>L</mi><mo>=</mo><mi>p</mi></mrow><mo>:</mo><mrow><mi>S</mi><mo>⇀</mo><mi>T</mi></mrow></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S7.p4" class="ltx_para">
+<p class="ltx_p">Just by way of formalizing the definition:</p>
+</div>
+<div id="S7.p5" class="ltx_para">
+<table id="S7.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S7.Ex5.m1" class="ltx_Math" alttext="\begin{array}[]{cccccccc}L&amp;=&amp;p:S\rightharpoonup T&amp;\text{if and only if}&amp;L&amp;%
+\text{is}&amp;\text{tubular}&amp;\text{at}\ S.\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true"><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mi>p</mi><mo>:</mo><mrow><mi>S</mi><mo>⇀</mo><mi>T</mi></mrow></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>tubular</mtext></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>S</mi></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S7.p6" class="ltx_para">
+<p class="ltx_p">If <math id="S7.p6.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is a prefunction <math id="S7.p6.m2" class="ltx_Math" alttext="p:S\rightharpoonup T" display="inline"><mrow><mi>p</mi><mo>:</mo><mrow><mi>S</mi><mo>⇀</mo><mi>T</mi></mrow></mrow></math> that happens to be total at <math id="S7.p6.m3" class="ltx_Math" alttext="S," display="inline"><mrow><mi>S</mi><mo>,</mo></mrow></math> then <math id="S7.p6.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is called a <span class="ltx_text ltx_font_italic">function</span> from <math id="S7.p6.m5" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> to <math id="S7.p6.m6" class="ltx_Math" alttext="T," display="inline"><mrow><mi>T</mi><mo>,</mo></mrow></math> indicated by writing <math id="S7.p6.m7" class="ltx_Math" alttext="L=f:S\to T." display="inline"><mrow><mrow><mrow><mi>L</mi><mo>=</mo><mi>f</mi></mrow><mo>:</mo><mrow><mi>S</mi><mo>→</mo><mi>T</mi></mrow></mrow><mo>.</mo></mrow></math> To say that a relation <math id="S7.p6.m8" class="ltx_Math" alttext="L\subseteq S\times T" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>S</mi><mo>×</mo><mi>T</mi></mrow></mrow></math> is <span class="ltx_text ltx_font_italic">totally tubular</span> at <math id="S7.p6.m9" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> is to say that it is <math id="S7.p6.m10" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>-regular at <math id="S7.p6.m11" class="ltx_Math" alttext="S." display="inline"><mrow><mi>S</mi><mo>.</mo></mrow></math> Thus, we may formalize the following definition:</p>
+</div>
+<div id="S7.p7" class="ltx_para">
+<table id="S7.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S7.Ex6.m1" class="ltx_Math" alttext="\begin{array}[]{cccccccc}L&amp;=&amp;f:S\to T&amp;\text{if and only if}&amp;L&amp;\text{is}&amp;1\text%
+{-regular}&amp;\text{at}\ S.\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true"><mtr><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mi>f</mi><mo>:</mo><mrow><mi>S</mi><mo>→</mo><mi>T</mi></mrow></mrow></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>L</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mn>1</mn><mo>⁢</mo><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>S</mi></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S7.p8" class="ltx_para">
+<p class="ltx_p">In the case of a function <math id="S7.p8.m1" class="ltx_Math" alttext="f:S\to T," display="inline"><mrow><mrow><mi>f</mi><mo>:</mo><mrow><mi>S</mi><mo>→</mo><mi>T</mi></mrow></mrow><mo>,</mo></mrow></math> one has the following additional definitions:</p>
+</div>
+<div id="S7.p9" class="ltx_para">
+<table id="S7.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S7.Ex7.m1" class="ltx_Math" alttext="\begin{array}[]{cccccccc}f&amp;\text{is}&amp;\text{surjective}&amp;\text{if and only if}&amp;f%
+&amp;\text{is}&amp;\text{total}&amp;\text{at}\ T.\\
+f&amp;\text{is}&amp;\text{injective}&amp;\text{if and only if}&amp;f&amp;\text{is}&amp;\text{tubular}&amp;%
+\text{at}\ T.\\
+f&amp;\text{is}&amp;\text{bijective}&amp;\text{if and only if}&amp;f&amp;\text{is}&amp;1\text{-regular%
+}&amp;\text{at}\ T.\\
+\end{array}" display="block"><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>surjective</mtext></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>total</mtext></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>injective</mtext></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>tubular</mtext></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow><mo>.</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mtext>bijective</mtext></mtd><mtd columnalign="center"><mtext>if and only if</mtext></mtd><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mtext>is</mtext></mtd><mtd columnalign="center"><mrow><mn>1</mn><mo>⁢</mo><mtext>-regular</mtext></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mtext>at</mtext></mpadded><mo>⁢</mo><mi>T</mi></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="S8" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">8 </span>Variations</h2>
+
+<div id="S8.p1" class="ltx_para">
+<p class="ltx_p">Because the concept of a relation has been developed quite literally from the beginnings of logic and mathematics, and because it has incorporated contributions from a diversity of thinkers from many different times and intellectual climes, there is a wide variety of terminology that the reader may run across in connection with the subject.
+</p>
+</div>
+<div id="S8.p2" class="ltx_para">
+<p class="ltx_p">One dimension of variation is reflected in the names that are given to <math id="S8.p2.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-place relations, for <math id="S8.p2.m2" class="ltx_Math" alttext="k=1,2,3,\ldots," display="inline"><mrow><mrow><mi>k</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi mathvariant="normal">…</mi></mrow></mrow><mo>,</mo></mrow></math> with some writers using the Greek forms, <em class="ltx_emph ltx_font_italic">medadic</em>, <em class="ltx_emph ltx_font_italic">monadic</em>, <em class="ltx_emph ltx_font_italic">dyadic</em>, <em class="ltx_emph ltx_font_italic">triadic</em>, <math id="S8.p2.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<em class="ltx_emph ltx_font_italic">adic</em>, and other writers using the Latin forms, <em class="ltx_emph ltx_font_italic">nullary</em>, <em class="ltx_emph ltx_font_italic">unary</em>, <em class="ltx_emph ltx_font_italic">binary</em>, <em class="ltx_emph ltx_font_italic">ternary</em>, <math id="S8.p2.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<em class="ltx_emph ltx_font_italic">ary</em>.</p>
+</div>
+<div id="S8.p3" class="ltx_para">
+<p class="ltx_p">The cardinality of the relational ground, the set of relational domains, may be referred to as the <em class="ltx_emph ltx_font_italic">adicity</em>, the <em class="ltx_emph ltx_font_italic">arity</em>, or the <em class="ltx_emph ltx_font_italic">dimension</em> of the relation. Accordingly, one finds a relation on a finite number of domains described as a <em class="ltx_emph ltx_font_italic">polyadic</em> relation or a <em class="ltx_emph ltx_font_italic">finitary</em> relation, but others count infinitary relations among the polyadic. If the number of domains is finite, say equal to <math id="S8.p3.m1" class="ltx_Math" alttext="k," display="inline"><mrow><mi>k</mi><mo>,</mo></mrow></math> then the relation may be described as a <math id="S8.p3.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<em class="ltx_emph ltx_font_italic">adic</em> relation, a <math id="S8.p3.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<em class="ltx_emph ltx_font_italic">ary</em> relation, or a <math id="S8.p3.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-<em class="ltx_emph ltx_font_italic">dimensional</em> relation, respectively.</p>
+</div>
+<div id="S8.p4" class="ltx_para">
+<p class="ltx_p">A more conceptual than nominal variation depends on whether one uses terms like <em class="ltx_emph ltx_font_italic">predicate</em>, <em class="ltx_emph ltx_font_italic">relation</em>, and even <em class="ltx_emph ltx_font_italic">term</em> to refer to the formal object proper or else to the allied syntactic items that are used to denote them. Compounded with this variation is still another, frequently associated with philosophical differences over the status in reality accorded formal objects. Among those who speak of numbers, functions, properties, relations, and sets as being real, that is to say, as having objective properties, there are divergences as to whether some things are more real than others, especially whether particulars or properties are equally real or else which one is derivative in relationship to the other. Historically speaking, just about every combination of modalities has been used by one school of thought or another, but it suffices here merely to indicate how the options are generated.</p>
+</div>
+</section>
+<section id="S9" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">9 </span>Bibliography</h2>
+
+<div id="S9.p1" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Barr, Michael, and Wells, Charles (1990), <span class="ltx_text ltx_font_italic">Category Theory for Computing Science</span>, Prentice Hall, Hemel Hempstead, UK.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Bourbaki, Nicolas (1994), <span class="ltx_text ltx_font_italic">Elements of the History of Mathematics</span>, John Meldrum (trans.), Springer-Verlag, Berlin, Germany.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Carnap, Rudolf (1958), <span class="ltx_text ltx_font_italic">Introduction to Symbolic Logic with Applications</span>, Dover Publications, New York, NY.</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Chang, C.C., and Keisler, H.J. (1973), <span class="ltx_text ltx_font_italic">Model Theory</span>, North-Holland, Amsterdam, Netherlands.</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p">van Dalen, Dirk (1980), Logic and Structure, 2nd edition, Springer-Verlag, Berlin, Germany.</p>
+</div>
+</li>
+<li id="I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i6.p1" class="ltx_para">
+<p class="ltx_p">Devlin, Keith J. (1993), <span class="ltx_text ltx_font_italic">The Joy of Sets : Fundamentals of Contemporary Set Theory</span>, 2nd edition, Springer-Verlag, New York, NY.</p>
+</div>
+</li>
+<li id="I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i7.p1" class="ltx_para">
+<p class="ltx_p">Halmos, Paul Richard (1960), <span class="ltx_text ltx_font_italic">Naive Set Theory</span>, D. Van Nostrand Company, Princeton, NJ.</p>
+</div>
+</li>
+<li id="I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i8.p1" class="ltx_para">
+<p class="ltx_p">van Heijenoort, Jean (1967/1977), <span class="ltx_text ltx_font_italic">From Frege to Gödel : A Source Book in Mathematical Logic, 1879–1931</span>, Harvard University Press, Cambridge, MA, 1967. Reprinted with corrections, 1977.</p>
+</div>
+</li>
+<li id="I1.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i9.p1" class="ltx_para">
+<p class="ltx_p">Kelley, John L. (1955), <span class="ltx_text ltx_font_italic">General Topology</span>, Van Nostrand Reinhold, New York, NY.</p>
+</div>
+</li>
+<li id="I1.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i10.p1" class="ltx_para">
+<p class="ltx_p">Kneale, William; and Kneale, Martha (1962/1975), <span class="ltx_text ltx_font_italic">The Development of Logic</span>, Oxford University Press, Oxford, UK, 1962. Reprinted with corrections, 1975.</p>
+</div>
+</li>
+<li id="I1.i11" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i11.p1" class="ltx_para">
+<p class="ltx_p">Lawvere, Francis William; and Rosebrugh, Robert (2003), <span class="ltx_text ltx_font_italic">Sets for Mathematics</span>, Cambridge University Press, Cambridge, UK.</p>
+</div>
+</li>
+<li id="I1.i12" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i12.p1" class="ltx_para">
+<p class="ltx_p">Lawvere, Francis William; and Schanuel, Stephen H. (1997/2000), <span class="ltx_text ltx_font_italic">Conceptual Mathematics : A First Introduction to Categories</span>, Cambridge University Press, Cambridge, UK, 1997. Reprinted with corrections, 2000.</p>
+</div>
+</li>
+<li id="I1.i13" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i13.p1" class="ltx_para">
+<p class="ltx_p">Manin, Yu. I. (1977), <span class="ltx_text ltx_font_italic">A Course in Mathematical Logic</span>, Neal Koblitz (trans.), Springer-Verlag, New York, NY.</p>
+</div>
+</li>
+<li id="I1.i14" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i14.p1" class="ltx_para">
+<p class="ltx_p">Mathematical Society of Japan (1993), <span class="ltx_text ltx_font_italic">Encyclopedic Dictionary of Mathematics</span>, 2nd edition, 2 vols., Kiyosi Itô (ed.), MIT Press, Cambridge, MA.</p>
+</div>
+</li>
+<li id="I1.i15" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i15.p1" class="ltx_para">
+<p class="ltx_p">Mili, A., Desharnais, J., Mili, F., with Frappier, M. (1994), <span class="ltx_text ltx_font_italic">Computer Program Construction</span>, Oxford University Press, New York, NY. – Introduction to Tarskian relation theory and its applications within the relational programming paradigm.</p>
+</div>
+</li>
+<li id="I1.i16" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i16.p1" class="ltx_para">
+<p class="ltx_p">Mitchell, John C. (1996), <span class="ltx_text ltx_font_italic">Foundations for Programming Languages</span>, MIT Press, Cambridge, MA.</p>
+</div>
+</li>
+<li id="I1.i17" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i17.p1" class="ltx_para">
+<p class="ltx_p">Peirce, Charles Sanders (1870), “Description of a Notation for the Logic of Relatives, Resulting from an Amplification of the Conceptions of Boole’s Calculus of Logic”, <span class="ltx_text ltx_font_italic">Memoirs of the American Academy of Arts and Sciences</span> 9 (1870), 317–378. Reprinted (CP 3.45–149), (CE 2, 359–429).</p>
+</div>
+</li>
+<li id="I1.i18" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i18.p1" class="ltx_para">
+<p class="ltx_p">Peirce, Charles Sanders (1931–1935, 1958), <span class="ltx_text ltx_font_italic">Collected Papers of Charles Sanders Peirce</span>, vols. 1–6, Charles Hartshorne and Paul Weiss (eds.), vols. 7–8, Arthur W. Burks (ed.), Harvard University Press, Cambridge, MA. Cited as (CP volume.paragraph).</p>
+</div>
+</li>
+<li id="I1.i19" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i19.p1" class="ltx_para">
+<p class="ltx_p">Peirce, Charles Sanders (1981–), <span class="ltx_text ltx_font_italic">Writings of Charles S. Peirce : A Chronological Edition</span>, Peirce Edition Project (eds.), Indiana University Press, Bloomington and Indianapolis, IN. Cited as (CE volume, page).</p>
+</div>
+</li>
+<li id="I1.i20" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i20.p1" class="ltx_para">
+<p class="ltx_p">Poizat, Bruno (2000), <span class="ltx_text ltx_font_italic">A Course in Model Theory : An Introduction to Contemporary Mathematical Logic</span>, Moses Klein (trans.), Springer-Verlag, New York, NY.
+</p>
+</div>
+</li>
+<li id="I1.i21" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i21.p1" class="ltx_para">
+<p class="ltx_p">Quine, Willard Van Orman (1940/1981), <span class="ltx_text ltx_font_italic">Mathematical Logic</span>, 1940. Revised edition, Harvard University Press, Cambridge, MA, 1951. New preface, 1981.</p>
+</div>
+</li>
+<li id="I1.i22" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i22.p1" class="ltx_para">
+<p class="ltx_p">Royce, Josiah (1961), <span class="ltx_text ltx_font_italic">The Principles of Logic</span>, Philosophical Library, New York, NY.</p>
+</div>
+</li>
+<li id="I1.i23" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i23.p1" class="ltx_para">
+<p class="ltx_p">Runes, Dagobert D. (ed., 1962), <span class="ltx_text ltx_font_italic">Dictionary of Philosophy</span>, Littlefield, Adams, and Company, Totowa, NJ.</p>
+</div>
+</li>
+<li id="I1.i24" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i24.p1" class="ltx_para">
+<p class="ltx_p">Shoenfield, Joseph R. (1967), <span class="ltx_text ltx_font_italic">Mathematical Logic</span>, Addison-Wesley, Reading, MA.</p>
+</div>
+</li>
+<li id="I1.i25" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i25.p1" class="ltx_para">
+<p class="ltx_p">Styazhkin, N.I. (1969), <span class="ltx_text ltx_font_italic">History of Mathematical Logic from Leibniz to Peano</span>, MIT Press, Cambridge, MA.</p>
+</div>
+</li>
+<li id="I1.i26" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i26.p1" class="ltx_para">
+<p class="ltx_p">Suppes, Patrick (1957/1999), <span class="ltx_text ltx_font_italic">Introduction to Logic</span>, 1st published 1957. Reprinted, Dover Publications, New York, NY, 1999.</p>
+</div>
+</li>
+<li id="I1.i27" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i27.p1" class="ltx_para">
+<p class="ltx_p">Suppes, Patrick (1960/1972), <span class="ltx_text ltx_font_italic">Axiomatic Set Theory</span>, 1st published 1960. Reprinted, Dover Publications, New York, NY, 1972.</p>
+</div>
+</li>
+<li id="I1.i28" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i28.p1" class="ltx_para">
+<p class="ltx_p">Tarski, Alfred (1956/1983), <span class="ltx_text ltx_font_italic">Logic, Semantics, Metamathematics : Papers from 1923 to 1938</span>, J.H. Woodger (trans.), Oxford University Press, 1956. 2nd edition, J. Corcoran (ed.), Hackett Publishing, Indianapolis, IN, 1983.</p>
+</div>
+</li>
+<li id="I1.i29" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i29.p1" class="ltx_para">
+<p class="ltx_p">Ulam, Stanislaw Marcin; and Bednarek, A.R. (1977), “On the Theory of Relational Structures and Schemata for Parallel Computation”, pp. 477–508 in A.R. Bednarek and Françoise Ulam (eds.), <span class="ltx_text ltx_font_italic">Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators</span>, University of California Press, Berkeley, CA, 1990.</p>
+</div>
+</li>
+<li id="I1.i30" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i30.p1" class="ltx_para">
+<p class="ltx_p">Ulam, Stanislaw Marcin (1990), <span class="ltx_text ltx_font_italic">Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators</span>, A.R. Bednarek and Françoise Ulam (eds.), University of California Press, Berkeley, CA.</p>
+</div>
+</li>
+<li id="I1.i31" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i31.p1" class="ltx_para">
+<p class="ltx_p">Ullman, Jeffrey D. (1980), <span class="ltx_text ltx_font_italic">Principles of Database Systems</span>, Computer Science Press, Rockville, MD.</p>
+</div>
+</li>
+<li id="I1.i32" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i32.p1" class="ltx_para">
+<p class="ltx_p">Venetus, Paulus (1472/1984), <span class="ltx_text ltx_font_italic">Logica Parva : Translation of the 1472 Edition with Introduction and Notes</span>, Alan R. Perreiah (trans.), Philosophia Verlag, Munich, Germany.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S9.p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">relation theory</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationTheory</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-10-08 21:04:11</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-10-08 21:04:11</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">55</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Topic</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68R01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 08A02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03E20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03B10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">theory of relations</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationComposition2</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationConstruction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationReduction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LogicalMatrix</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TriadicRelation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SignRelation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SignRelationalComplex</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SemioticEquivalenceRelation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">adicity</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">arity</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">domain</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">graph</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">type</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">function</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">prefunction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">partial function</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">bijective</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">injective</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">surjective</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:50:15 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

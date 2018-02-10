@@ -1,0 +1,600 @@
+<!DOCTYPE html><html>
+<head>
+<title>geometric representation of relation composition</title>
+<!--Generated on Sat Feb 10 12:38:40 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">geometric representation of relation composition</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break"><span class="ltx_ERROR undefined">\PMlinkescapephrase</span>
+<p class="ltx_p">ca
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>CA
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>dyadic
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Dyadic
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>ma
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>MA
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>onto
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Onto
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>right
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Right</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">There is a neat way of defining relational compositions in geometric terms, not only showing their relationship to the projection operations that come with any cartesian product, but also suggesting natural directions for generalizing relational compositions beyond the 2-adic case, and even beyond relations that have any fixed arity, in effect, to the general case of formal languages as generalized relations.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">This way of looking at relational compositions is sometimes referred to as <span class="ltx_text ltx_font_italic">Tarski’s trick</span>, on account of Alfred Tarski having put it to especially good use in his work (Ulam and Bednarek, 1977). It supplies the imagination with a geometric way of visualizing the relational composition of a pair of 2-adic relations, doing this by attaching concrete imagery to the basic set-theoretic operations, namely, intersections, projections, and a certain class of operations inverse to projections, here called <span class="ltx_text ltx_font_italic">tacit extensions (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/TacitExtension</span>)</span>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">The stage is set for Tarski’s trick by highlighting the links between two topics that are likely to appear wholly unrelated at first, namely:</p>
+</div>
+<div id="p5" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">The use of logical conjunction, as denoted by the symbol “<math id="I1.i1.p1.m1" class="ltx_Math" alttext="\land" display="inline"><mo>∧</mo></math>” in expressions of the form <math id="I1.i1.p1.m2" class="ltx_Math" alttext="F(x,y,z)=G(x,y)\land H(y,z)" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>G</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∧</mo><mrow><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, to define a 3-adic relation <math id="I1.i1.p1.m3" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> in terms of a pair of 2-adic relations <math id="I1.i1.p1.m4" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="I1.i1.p1.m5" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">The concepts of <span class="ltx_text ltx_font_italic">2-adic projection</span> and <span class="ltx_text ltx_font_italic">projective determination</span> that are invoked in the notion of <span class="ltx_text ltx_font_italic">projective reducibility</span>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">The relational composition <math id="p6.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> of a pair of 2-adic relations <math id="p6.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p6.m3" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> will be constructed in three stages, first, by taking the tacit extensions of <math id="p6.m4" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p6.m5" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> to 3-adic relations that reside in the same space, next, by taking the intersection of these extensions, tantamount to the maximal 3-adic relation that is consistent with the <span class="ltx_text ltx_font_italic">prima facie</span> 2-adic relation data, finally, by projecting this intersection on a suitable plane to form a third 2-adic relation, constituting in fact the relational composition <math id="p6.m6" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> of the relations <math id="p6.m7" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p6.m8" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">The construction of a relational composition in a specifically mathematical setting normally begins with mathematical relations at a higher level of abstraction than the corresponding objects in linguistic or logical settings. This is due to the fact that mathematical objects are typically specified only <span class="ltx_text ltx_font_italic">up to isomorphism</span> as the conventional saying goes, that is, any objects that have the ‘same form’ are generally regarded as the being the same thing, for most all intents and mathematical purposes. Thus, the mathematical construction of a relational composition begins by default with a pair of 2-adic relations that reside, without loss of generality, in the same plane, say, <math id="p7.m1" class="ltx_Math" alttext="G,H\subseteq X\times Y" display="inline"><mrow><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math>, as depicted in Figure 1.</p>
+</div>
+<div id="p8" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . .o. . . . . . . . . . . .o. . . . . . . . |
+| . . . .|\ . . . . . . . . . . .|\ . . . . . . . |
+| . . . .|.\. . . . . . . . . . .|.\. . . . . . . |
+| . . . .|. \ . . . . . . . . . .|. \ . . . . . . |
+| . . . .|. .\. . . . . . . . . .|. .\. . . . . . |
+| . . . .|. . \ . . . . . . . . .|. . \ . . . . . |
+| . . . .|. . .\. . . . . . . . .|. . .\. . . . . |
+| . . . .|. .*. \ . . . . . . . .|. .*. \ . . . . |
+| . . . .X. .*. .Y. . . . . . . .X. .*. .Y. . . . |
+| . . . . \ .*. .|. . . . . . . . \ .*. .|. . . . |
+| . . . . .\.G. .|. . . . . . . . .\.H. .|. . . . |
+| . . . . . \ . .|. . . . . . . . . \ . .|. . . . |
+| . . . . . .\. .|. . . . . . . . . .\. .|. . . . |
+| . . . . . . \ .|. . . . . . . . . . \ .|. . . . |
+| . . . . . . .\.|. . . . . . . . . . .\.|. . . . |
+| . . . . . . . \|. . . . . . . . . . . \|. . . . |
+| . . . . . . . .o. . . . . . . . . . . .o. . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 1.  Dyadic Relations G, H c X x Y
+</pre>
+</blockquote>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">The 2-adic relations <math id="p9.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p9.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> cannot be composed at all at this point, not without additional information or further stipulation. In order for their relational composition to be possible, one of two types of cases has to happen:</p>
+</div>
+<div id="p10" class="ltx_para">
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The first type of case occurs when <math id="I2.i1.p1.m1" class="ltx_Math" alttext="X=Y" display="inline"><mrow><mi>X</mi><mo>=</mo><mi>Y</mi></mrow></math>. In this case both of the compositions <math id="I2.i1.p1.m2" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> and <math id="I2.i1.p1.m3" class="ltx_Math" alttext="H\circ G" display="inline"><mrow><mi>H</mi><mo>∘</mo><mi>G</mi></mrow></math> are defined.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">The second type of case occurs when <math id="I2.i2.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> and <math id="I2.i2.p1.m2" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math> are distinct, but when it nevertheless makes sense to speak of a 2-adic relation <math id="I2.i2.p1.m3" class="ltx_Math" alttext="H^{\prime}" display="inline"><msup><mi>H</mi><mo>′</mo></msup></math> that is isomorphic to <math id="I2.i2.p1.m4" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>, but living in the plane <math id="I2.i2.p1.m5" class="ltx_Math" alttext="YZ" display="inline"><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></math>, that is, in the space of the cartesian product <math id="I2.i2.p1.m6" class="ltx_Math" alttext="Y\times Z" display="inline"><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></math>, for some set <math id="I2.i2.p1.m7" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">Whether you view isomorphic things to be the same things or not, you still have to specify the exact isomorphisms that are needed to transform any given representation of a thing into a required representation of the same thing. Let us imagine that we have done this, and say how later:</p>
+</div>
+<div id="p12" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . .o. . . . . . . . . . . . . . . .o. . . . |
+| . . . .|\ . . . . . . . . . . . . . . /|. . . . |
+| . . . .|.\. . . . . . . . . . . . . ./.|. . . . |
+| . . . .|. \ . . . . . . . . . . . . / .|. . . . |
+| . . . .|. .\. . . . . . . . . . . ./. .|. . . . |
+| . . . .|. . \ . . . . . . . . . . / . .|. . . . |
+| . . . .|. . .\. . . . . . . . . ./. . .|. . . . |
+| . . . .|. .*. \ . . . . . . . . / .*. .|. . . . |
+| . . . .X. .*. .Y. . . . . . . .Y. .*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .|. .*. / . . . . |
+| . . . . .\.G. .|. . . . . . . .|. .H'/. . . . . |
+| . . . . . \ . .|. . . . . . . .|. . / . . . . . |
+| . . . . . .\. .|. . . . . . . .|. ./. . . . . . |
+| . . . . . . \ .|. . . . . . . .|. / . . . . . . |
+| . . . . . . .\.|. . . . . . . .|./. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 2.  Dyadic Relations G c X x Y and H' c Y x Z
+</pre>
+</blockquote>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p">With the required spaces carefully swept out, the stage is set for the presentation of Tarski’s trick, and the invocation of the following symbolic formula, claimed to be a definition of the relational composition <math id="p13.m1" class="ltx_Math" alttext="P\circ Q" display="inline"><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow></math> of a pair of 2-adic relations <math id="p13.m2" class="ltx_Math" alttext="P,Q\subseteq X\times X" display="inline"><mrow><mrow><mi>P</mi><mo>,</mo><mi>Q</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math>.</p>
+</div>
+<div id="p14" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition.</span> <math id="p14.m1" class="ltx_Math" alttext="P\circ Q=\mathrm{proj}_{13}(P\times X\ \cap\ X\times Q)." display="inline"><mrow><mrow><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow><mo>=</mo><mrow><msub><mi>proj</mi><mn>13</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>P</mi><mo>×</mo><mpadded width="+5pt"><mi>X</mi></mpadded></mrow><mo rspace="7.5pt">∩</mo><mrow><mi>X</mi><mo>×</mo><mi>Q</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p15" class="ltx_para">
+<p class="ltx_p">To get this drift of this definition, one needs to understand that it’s written within a school of thought that holds that all 2-adic relations are, <span class="ltx_text ltx_font_italic">without loss of generality</span>, covered well enough, ‘for all practical purposes’, under the aegis of subsets of a suitable cartesian square, and thus of the form <math id="p15.m1" class="ltx_Math" alttext="L\subseteq X\times X" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math>. So, if one has started out with a 2-adic relation of the shape <math id="p15.m2" class="ltx_Math" alttext="L\subseteq U\times V" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>U</mi><mo>×</mo><mi>V</mi></mrow></mrow></math>, one merely lets <math id="p15.m3" class="ltx_Math" alttext="X=U\cup V" display="inline"><mrow><mi>X</mi><mo>=</mo><mrow><mi>U</mi><mo>∪</mo><mi>V</mi></mrow></mrow></math>, trading in the initial <math id="p15.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> for a new <math id="p15.m5" class="ltx_Math" alttext="L\subseteq X\times X" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math> as need be.</p>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p">The projection <math id="p16.m1" class="ltx_Math" alttext="\mathrm{proj}_{13}" display="inline"><msub><mi>proj</mi><mn>13</mn></msub></math> is just the projection of the cartesian cube <math id="p16.m2" class="ltx_Math" alttext="X\times X\times X" display="inline"><mrow><mi>X</mi><mo>×</mo><mi>X</mi><mo>×</mo><mi>X</mi></mrow></math> on the space of shape <math id="p16.m3" class="ltx_Math" alttext="X\times X" display="inline"><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></math> that is spanned by the first and the third domains, but since they now have the same names and the same contents it is necessary to distinguish them by numbering their relational places.</p>
+</div>
+<div id="p17" class="ltx_para">
+<p class="ltx_p">Finally, the notation of the cartesian product sign “<math id="p17.m1" class="ltx_Math" alttext="\times" display="inline"><mo>×</mo></math>” is extended to signify two other products with respect to a 2-adic relation <math id="p17.m2" class="ltx_Math" alttext="L\subseteq X\times X" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math> and a subset <math id="p17.m3" class="ltx_Math" alttext="W\subseteq X" display="inline"><mrow><mi>W</mi><mo>⊆</mo><mi>X</mi></mrow></math>, as follows:</p>
+</div>
+<div id="p18" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition.</span> <math id="p18.m1" class="ltx_Math" alttext="L\times W=\{(x,y,z)\in X^{3}:(x,y)\in L\ \mathrm{and}\ z\in W\}." display="inline"><mrow><mrow><mrow><mi>L</mi><mo>×</mo><mi>W</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>X</mi><mn>3</mn></msup></mrow><mo>:</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mpadded width="+5pt"><mi>L</mi></mpadded><mo>⁢</mo><mpadded width="+5pt"><mi>and</mi></mpadded><mo>⁢</mo><mi>z</mi></mrow><mo>∈</mo><mi>W</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math>
+
+<br class="ltx_break">
+<span class="ltx_text ltx_font_bold">Definition.</span> <math id="p18.m2" class="ltx_Math" alttext="W\times L=\{(x,y,z)\in X^{3}:x\in W\ \mathrm{and}\ (y,z)\in L\}." display="inline"><mrow><mrow><mrow><mi>W</mi><mo>×</mo><mi>L</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>X</mi><mn>3</mn></msup></mrow><mo>:</mo><mrow><mi>x</mi><mo>∈</mo><mrow><mpadded width="+5pt"><mi>W</mi></mpadded><mo>⁢</mo><mpadded width="+5pt"><mi>and</mi></mpadded><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mi>L</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p19" class="ltx_para">
+<p class="ltx_p">Applying these definitions to the case <math id="p19.m1" class="ltx_Math" alttext="P,Q\subseteq X\times X" display="inline"><mrow><mrow><mi>P</mi><mo>,</mo><mi>Q</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math>, the two 2-adic relations whose relational composition <math id="p19.m2" class="ltx_Math" alttext="P\circ Q\subseteq X\times X" display="inline"><mrow><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math> is about to be defined, one finds:</p>
+</div>
+<div id="p20" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p20.m1" class="ltx_Math" alttext="P\times X=\{(x,y,z)\in X^{3}:(x,y)\in P\ \mathrm{and}\ z\in X\}," display="inline"><mrow><mrow><mrow><mi>P</mi><mo>×</mo><mi>X</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>X</mi><mn>3</mn></msup></mrow><mo>:</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mpadded width="+5pt"><mi>P</mi></mpadded><mo>⁢</mo><mpadded width="+5pt"><mi>and</mi></mpadded><mo>⁢</mo><mi>z</mi></mrow><mo>∈</mo><mi>X</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p20.m2" class="ltx_Math" alttext="X\times Q=\{(x,y,z)\in X^{3}:x\in X\ \mathrm{and}\ (y,z)\in Q\}." display="inline"><mrow><mrow><mrow><mi>X</mi><mo>×</mo><mi>Q</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>X</mi><mn>3</mn></msup></mrow><mo>:</mo><mrow><mi>x</mi><mo>∈</mo><mrow><mpadded width="+5pt"><mi>X</mi></mpadded><mo>⁢</mo><mpadded width="+5pt"><mi>and</mi></mpadded><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mi>Q</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p21" class="ltx_para">
+<p class="ltx_p">These are just the appropriate special cases of the tacit extensions already defined.</p>
+</div>
+<div id="p22" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p22.m1" class="ltx_Math" alttext="P\times X=\tau_{12}^{3}(P)," display="inline"><mrow><mrow><mrow><mi>P</mi><mo>×</mo><mi>X</mi></mrow><mo>=</mo><mrow><msubsup><mi>τ</mi><mn>12</mn><mn>3</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>P</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p22.m2" class="ltx_Math" alttext="X\times Q=\tau_{23}^{1}(Q)." display="inline"><mrow><mrow><mrow><mi>X</mi><mo>×</mo><mi>Q</mi></mrow><mo>=</mo><mrow><msubsup><mi>τ</mi><mn>23</mn><mn>1</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p23" class="ltx_para">
+<p class="ltx_p">In summary, then, the expression:
+</p>
+</div>
+<div id="p24" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p24.m1" class="ltx_Math" alttext="\mathrm{proj}_{13}(P\times X\ \cap\ X\times Q)" display="inline"><mrow><msub><mi>proj</mi><mn>13</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>P</mi><mo>×</mo><mpadded width="+5pt"><mi>X</mi></mpadded></mrow><mo rspace="7.5pt">∩</mo><mrow><mi>X</mi><mo>×</mo><mi>Q</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="p25" class="ltx_para">
+<p class="ltx_p">is equivalent to the expression:</p>
+</div>
+<div id="p26" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p26.m1" class="ltx_Math" alttext="\mathrm{proj}_{13}(\tau_{12}^{3}(P)\ \cap\ \tau_{23}^{1}(Q))," display="inline"><mrow><mrow><msub><mi>proj</mi><mn>13</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msubsup><mi>τ</mi><mn>12</mn><mn>3</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>P</mi><mo rspace="7.5pt" stretchy="false">)</mo></mrow></mrow><mo rspace="7.5pt">∩</mo><mrow><msubsup><mi>τ</mi><mn>23</mn><mn>1</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p27" class="ltx_para">
+<p class="ltx_p">and this form is generalized — although, relative to one’s school of thought, perhaps inessentially so — by the form that was given above as follows:</p>
+</div>
+<div id="p28" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition.</span> <math id="p28.m1" class="ltx_Math" alttext="P\circ Q=\mathrm{proj}_{XZ}(\tau_{XY}^{Z}(P)\ \cap\ \tau_{YZ}^{X}(Q))." display="inline"><mrow><mrow><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow><mo>=</mo><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msubsup><mi>τ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mi>Z</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>P</mi><mo rspace="7.5pt" stretchy="false">)</mo></mrow></mrow><mo rspace="7.5pt">∩</mo><mrow><msubsup><mi>τ</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow><mi>X</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p29" class="ltx_para">
+<p class="ltx_p">Figure 3 presents a geometric picture of what is involved in formulating a definition of the 3-adic relation <math id="p29.m1" class="ltx_Math" alttext="F\subseteq X\times Y\times Z" display="inline"><mrow><mi>F</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math> by way of a conjunction of the 2-adic relation <math id="p29.m2" class="ltx_Math" alttext="G\subseteq X\times Y" display="inline"><mrow><mi>G</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math> and the 2-adic relation <math id="p29.m3" class="ltx_Math" alttext="H\subseteq Y\times Z" display="inline"><mrow><mi>H</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>, as done for example by means of an expression of the following form:</p>
+</div>
+<div id="p30" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p30.m1" class="ltx_Math" alttext="F(x,y,z)=G(x,y)\ \land\ H(y,z)." display="inline"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>G</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo rspace="7.5pt" stretchy="false">)</mo></mrow></mrow><mo rspace="7.5pt">∧</mo><mrow><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p31" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. . . \ . . . . . . . . |
+| . . . . . . . .o. . . .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ . . / \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. ./.F.\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .*. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. /*\ ./. .|. . . . . . . . |
+| . . . . . . . .|. / \//*\\/ \ .|. . . . . . . . |
+| . . . . . . . .|./. /\/ \/\ .\.|. . . . . . . . |
+| . . . . . . . .|/ .///\ /\\\. \|. . . . . . . . |
+| . . . .o. . . .X. /// .Y. \\\ .Z. . . .o. . . . |
+| . . . .|\ . . . \///. .|. .\\\/ . . . /|. . . . |
+| . . . .|.\. . . /// . .|. . \\\ . . ./.|. . . . |
+| . . . .|. \ . .///\ . .|. . /\\\. . / .|. . . . |
+| . . . .|. .\. /// .\. .|. ./. \\\ ./. .|. . . . |
+| . . . .|. . \///. . \ .|. / . .\\\/ . .|. . . . |
+| . . . .|. . /\/ . . .\.|./. . . \/\ . .|. . . . |
+| . . . .|. .*//\ . . . \|/ . . . /\\*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y .\*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .| . *. / . . . . |
+| . . . . .\.G. .|. . . . . . . .| . H /. . . . . |
+| . . . . . \ . .|. . . . . . . .| . ./ . . . . . |
+| . . . . . .\. .|. . . . . . . .| . /. . . . . . |
+| . . . . . . \ .|. . . . . . . .| ./ . . . . . . |
+| . . . . . . .\.|. . . . . . . .| /. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 3.  Projections of F onto G and H
+</pre>
+</blockquote>
+</div>
+<div id="p32" class="ltx_para">
+<p class="ltx_p">To interpret the Figure, visualize the 3-adic relation <math id="p32.m1" class="ltx_Math" alttext="F\subseteq X\times Y\times Z" display="inline"><mrow><mi>F</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math> as a body in <math id="p32.m2" class="ltx_Math" alttext="XYZ" display="inline"><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></math>-space, while <math id="p32.m3" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is a figure in <math id="p32.m4" class="ltx_Math" alttext="XY" display="inline"><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></math>-space and <math id="p32.m5" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> is a figure in <math id="p32.m6" class="ltx_Math" alttext="YZ" display="inline"><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></math>-space.</p>
+</div>
+<div id="p33" class="ltx_para">
+<p class="ltx_p">The 2-adic <span class="ltx_text ltx_font_italic">projections</span> that accompany a 3-adic relation over <math id="p33.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, <math id="p33.m2" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>, <math id="p33.m3" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math> are defined as follows:</p>
+</div>
+<div id="p34" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p34.m1" class="ltx_Math" alttext="\mathrm{proj}_{XY}(L):=\{(x,y)\in X\times Y:(x,y,z)\in L\ \exists(z\in Z)\}," display="inline"><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>X</mi><mo>×</mo><mi>Y</mi><mo>:</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mpadded width="+5pt"><mi>L</mi></mpadded><mo>∃</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo>∈</mo><mi>Z</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">}</mo></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p34.m2" class="ltx_Math" alttext="\mathrm{proj}_{XZ}(L):=\{(x,z)\in X\times Z:(x,y,z)\in L\ \exists(y\in Y)\}," display="inline"><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>X</mi><mo>×</mo><mi>Z</mi><mo>:</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mpadded width="+5pt"><mi>L</mi></mpadded><mo>∃</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>∈</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">}</mo></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p34.m3" class="ltx_Math" alttext="\mathrm{proj}_{YZ}(L):=\{(y,z)\in Y\times Z:(x,y,z)\in L\ \exists(x\in X)\}." display="inline"><mrow><msub><mi>proj</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>Y</mi><mo>×</mo><mi>Z</mi><mo>:</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mpadded width="+5pt"><mi>L</mi></mpadded><mo>∃</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>∈</mo><mi>X</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">}</mo></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p35" class="ltx_para">
+<p class="ltx_p">For many purposes it suffices to indicate the 2-adic projections of a 3-adic relation <math id="p35.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> by means of the briefer equivalents listed here:</p>
+</div>
+<div id="p36" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p36.m1" class="ltx_Math" alttext="L_{XY}:=\mathrm{proj}_{XY}(L),\ L_{XZ}:=\mathrm{proj}_{XZ}(L),\ L_{YZ}:=%
+\mathrm{proj}_{YZ}(L)." display="inline"><mrow><mrow><mrow><msub><mi>L</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>:=</mo><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="7.5pt">,</mo><mrow><mrow><msub><mi>L</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>:=</mo><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="7.5pt">,</mo><mrow><msub><mi>L</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>:=</mo><mrow><msub><mi>proj</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p37" class="ltx_para">
+<p class="ltx_p">In light of these definitions, <math id="p37.m1" class="ltx_Math" alttext="\mathrm{proj}_{XY}" display="inline"><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub></math> is a mapping from the set <math id="p37.m2" class="ltx_Math" alttext="\mathcal{L}_{XYZ}" display="inline"><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub></math> of 3-adic relations over <math id="p37.m3" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, <math id="p37.m4" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>, <math id="p37.m5" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math> to the set <math id="p37.m6" class="ltx_Math" alttext="\mathcal{L}_{XY}" display="inline"><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub></math> of 2-adic relations over <math id="p37.m7" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> and <math id="p37.m8" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>, with similar relationships holding for the other projections. To formalize these relationships in a concise but explicit manner, it serves to add a few more definitions.</p>
+</div>
+<div id="p38" class="ltx_para">
+<p class="ltx_p">The set <math id="p38.m1" class="ltx_Math" alttext="\mathcal{L}_{XYZ}" display="inline"><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub></math>, whose membership is just the 3-adic relations over <math id="p38.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, <math id="p38.m3" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>, <math id="p38.m4" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math>, can be recognized as the set of all subsets of the cartesian product <math id="p38.m5" class="ltx_Math" alttext="X\times Y\times Z" display="inline"><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></math>, also known as the <span class="ltx_text ltx_font_italic">power set</span> of <math id="p38.m6" class="ltx_Math" alttext="X\times Y\times Z" display="inline"><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></math>, and notated here as <math id="p38.m7" class="ltx_Math" alttext="\mathrm{Pow}(X\times Y\times Z)" display="inline"><mrow><mi>Pow</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="p39" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p39.m1" class="ltx_Math" alttext="\mathcal{L}_{XYZ}:=\{L:L\subseteq X\times Y\times Z\}=\mathrm{Pow}(X\times Y%
+\times Z)." display="inline"><mrow><mrow><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>:=</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>:</mo><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo stretchy="false">}</mo></mrow><mo>=</mo><mrow><mi>Pow</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p40" class="ltx_para">
+<p class="ltx_p">Likewise, the power sets of the pairwise cartesian products encompass all of the 2-adic relations on pairs of distinct domains that can be chosen from <math id="p40.m1" class="ltx_Math" alttext="\{X,Y,Z\}" display="inline"><mrow><mo stretchy="false">{</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo>,</mo><mi>Z</mi><mo stretchy="false">}</mo></mrow></math>.</p>
+</div>
+<div id="p41" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p41.m1" class="ltx_Math" alttext="\mathcal{L}_{XY}:=\{L:L\subseteq X\times Y\}=\mathrm{Pow}(X\times Y)," display="inline"><mrow><mrow><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>:=</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>:</mo><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow><mo stretchy="false">}</mo></mrow><mo>=</mo><mrow><mi>Pow</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p41.m2" class="ltx_Math" alttext="\mathcal{L}_{XZ}:=\{L:L\subseteq X\times Z\}=\mathrm{Pow}(X\times Z)," display="inline"><mrow><mrow><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>:=</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>:</mo><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo stretchy="false">}</mo></mrow><mo>=</mo><mrow><mi>Pow</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>X</mi><mo>×</mo><mi>Z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p41.m3" class="ltx_Math" alttext="\mathcal{L}_{YZ}:=\{L:L\subseteq Y\times Z\}=\mathrm{Pow}(Y\times Z)." display="inline"><mrow><mrow><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>:=</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>:</mo><mrow><mi>L</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo stretchy="false">}</mo></mrow><mo>=</mo><mrow><mi>Pow</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p42" class="ltx_para">
+<p class="ltx_p">The inverse relation corresponding to a projection map is usually called an <span class="ltx_text ltx_font_italic">extension</span>. To avoid confusion with other senses of the word, however, it is probably best for the sake of this discussion to stick with the more specific term <span class="ltx_text ltx_font_italic">tacit extension</span>.</p>
+</div>
+<div id="p43" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_font_italic">tacit extensions</span> <math id="p43.m1" class="ltx_Math" alttext="\tau_{XY}^{Z}" display="inline"><msubsup><mi>τ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mi>Z</mi></msubsup></math>, <math id="p43.m2" class="ltx_Math" alttext="\tau_{XZ}^{Y}" display="inline"><msubsup><mi>τ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow><mi>Y</mi></msubsup></math>, <math id="p43.m3" class="ltx_Math" alttext="\tau_{YZ}^{X}" display="inline"><msubsup><mi>τ</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow><mi>X</mi></msubsup></math>, of the 2-adic relations <math id="p43.m4" class="ltx_Math" alttext="U\subseteq X\times Y" display="inline"><mrow><mi>U</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math>, <math id="p43.m5" class="ltx_Math" alttext="V\subseteq X\times Z" display="inline"><mrow><mi>V</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>, <math id="p43.m6" class="ltx_Math" alttext="W\subseteq Y\times Z" display="inline"><mrow><mi>W</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>, respectively, are defined in the following way:</p>
+</div>
+<div id="p44" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p44.m1" class="ltx_Math" alttext="\tau_{XY}^{Z}(U):=\{(x,y,z)\in X\times Y\times Z:(x,y)\in U\}," display="inline"><mrow><mrow><mrow><msubsup><mi>τ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow><mi>Z</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>U</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo>:</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>U</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p44.m2" class="ltx_Math" alttext="\tau_{XZ}^{Y}(V):=\{(x,y,z)\in X\times Y\times Z:(x,z)\in V\}," display="inline"><mrow><mrow><mrow><msubsup><mi>τ</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow><mi>Y</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo>:</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>V</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>,</mo></mrow></math>
+
+<br class="ltx_break">
+<math id="p44.m3" class="ltx_Math" alttext="\tau_{YZ}^{X}(W):=\{(x,y,z)\in X\times Y\times Z:(y,z)\in W\}." display="inline"><mrow><mrow><mrow><msubsup><mi>τ</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow><mi>X</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>W</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo>:</mo><mrow><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>W</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p45" class="ltx_para">
+<p class="ltx_p">So long as the intended indices attaching to the tacit extensions can be gathered from context, it is usually clear enough to use the abbreviated forms, <math id="p45.m1" class="ltx_Math" alttext="\tau(U)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>U</mi><mo stretchy="false">)</mo></mrow></mrow></math>, <math id="p45.m2" class="ltx_Math" alttext="\tau(V)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></mrow></mrow></math>, <math id="p45.m3" class="ltx_Math" alttext="\tau(W)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>W</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="p46" class="ltx_para">
+<p class="ltx_p">The definition and illustration of relational composition presently under way makes use of the tacit extension of <math id="p46.m1" class="ltx_Math" alttext="G\subseteq X\times Y" display="inline"><mrow><mi>G</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math> to <math id="p46.m2" class="ltx_Math" alttext="\tau(G)\subseteq X\times Y\times Z" display="inline"><mrow><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math> and the tacit extension of <math id="p46.m3" class="ltx_Math" alttext="H\subseteq Y\times Z" display="inline"><mrow><mi>H</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math> to <math id="p46.m4" class="ltx_Math" alttext="\tau(H)\subseteq X\times Y\times Z" display="inline"><mrow><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>, only.</p>
+</div>
+<div id="p47" class="ltx_para">
+<p class="ltx_p">Geometric illustrations of <math id="p47.m1" class="ltx_Math" alttext="\tau(G)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p47.m2" class="ltx_Math" alttext="\tau(H)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo></mrow></mrow></math> are afforded by Figures 4 and 5, respectively.</p>
+</div>
+<div id="p48" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. .*. \ . . . . . . . . |
+| . . . . . . . .o. . . .o. **. .o. . . . . . . . |
+| . . . . . . . .|\ . . / \***. /|. . . . . . . . |
+| . . . . . . . .|.\. ./. *** ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .***\ / .|. . . . . . . . |
+| . . . . . . . .|. .\. *** ./. .|. . . . . . . . |
+| . . . . . . . .|. / \***. / \ .|. . . . . . . . |
+| . . . . . . . .|./. *** ./. .\.|. . . . . . . . |
+| . . . . . . . .|/ .***\ / . . \|. . . . . . . . |
+| . . . .o. . . .X. /** .Y. . . .Z. . . .o. . . . |
+| . . . .|\ . . . \//*. .|. . . / . . . /|. . . . |
+| . . . .|.\. . . /// . .|. . ./. . . ./.|. . . . |
+| . . . .|. \ . .///\ . .|. . / . . . / .|. . . . |
+| . . . .|. .\. /// .\. .|. ./. . . ./. .|. . . . |
+| . . . .|. . \///. . \ .|. / . . . / . .|. . . . |
+| . . . .|. . /\/ . . .\.|./. . . ./. . .|. . . . |
+| . . . .|. .*//\ . . . \|/ . . . / .*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y. .*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .|. .*. / . . . . |
+| . . . . .\.G. .|. . . . . . . .|. .H./. . . . . |
+| . . . . . \ . .|. . . . . . . .|. . / . . . . . |
+| . . . . . .\. .|. . . . . . . .|. ./. . . . . . |
+| . . . . . . \ .|. . . . . . . .|. / . . . . . . |
+| . . . . . . .\.|. . . . . . . .|./. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 4.  Tacit Extension of G to X x Y x Z
+</pre>
+</blockquote>
+</div>
+<div id="p49" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / .*. .|. . . \ . . . . . . . . |
+| . . . . . . . .o. .** .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ .***/ \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. *** .\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ /***. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. *** ./. .|. . . . . . . . |
+| . . . . . . . .|. / \ .***/ \ .|. . . . . . . . |
+| . . . . . . . .|./. .\. *** .\.|. . . . . . . . |
+| . . . . . . . .|/ . . \ /***. \|. . . . . . . . |
+| . . . .o. . . .X. . . .Y. **\ .Z. . . .o. . . . |
+| . . . .|\ . . . \ . . .|. .*\\/ . . . /|. . . . |
+| . . . .|.\. . . .\. . .|. . \\\ . . ./.|. . . . |
+| . . . .|. \ . . . \ . .|. . /\\\. . / .|. . . . |
+| . . . .|. .\. . . .\. .|. ./. \\\ ./. .|. . . . |
+| . . . .|. . \ . . . \ .|. / . .\\\/ . .|. . . . |
+| . . . .|. . .\. . . .\.|./. . . \/\ . .|. . . . |
+| . . . .|. .*. \ . . . \|/ . . . /\\*. .|. . . . |
+| . . . .X. .*. .Y. . . .o. . . .Y. \*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .|. .*. / . . . . |
+| . . . . .\.G. .|. . . . . . . .|. .H./. . . . . |
+| . . . . . \ . .|. . . . . . . .|. . / . . . . . |
+| . . . . . .\. .|. . . . . . . .|. ./. . . . . . |
+| . . . . . . \ .|. . . . . . . .|. / . . . . . . |
+| . . . . . . .\.|. . . . . . . .|./. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 5.  Tacit Extension of H to X x Y x Z
+</pre>
+</blockquote>
+</div>
+<div id="p50" class="ltx_para">
+<p class="ltx_p">A geometric interpretation can now be given that fleshes out in graphic form the meaning of a logical formula like the following:</p>
+</div>
+<div id="p51" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p51.m1" class="ltx_Math" alttext="F(x,y,z)=G(x,y)\ \land\ H(y,z)." display="inline"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>G</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo rspace="7.5pt" stretchy="false">)</mo></mrow></mrow><mo rspace="7.5pt">∧</mo><mrow><mi>H</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="p52" class="ltx_para">
+<p class="ltx_p">The conjunction that is indicated by “<math id="p52.m1" class="ltx_Math" alttext="\land" display="inline"><mo>∧</mo></math>” corresponds as usual to an intersection of two sets, however, in this case it is the intersection of the tacit extensions <math id="p52.m2" class="ltx_Math" alttext="\tau(G)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p52.m3" class="ltx_Math" alttext="\tau(H)" display="inline"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="p53" class="ltx_para">
+<blockquote class="ltx_quote">
+<pre class="ltx_verbatim ltx_font_typewriter">
+o-------------------------------------------------o
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+| . . . . . . . . . . . .o. . . . . . . . . . . . |
+| . . . . . . . . . . . /|\ . . . . . . . . . . . |
+| . . . . . . . . . . ./.|.\. . . . . . . . . . . |
+| . . . . . . . . . . / .|. \ . . . . . . . . . . |
+| . . . . . . . . . ./. .|. .\. . . . . . . . . . |
+| . . . . . . . . . / . .|. . \ . . . . . . . . . |
+| . . . . . . . . ./. . .|. . .\. . . . . . . . . |
+| . . . . . . . . / . . .|. . . \ . . . . . . . . |
+| . . . . . . . .o. . . .o. . . .o. . . . . . . . |
+| . . . . . . . .|\ . . / \ . . /|. . . . . . . . |
+| . . . . . . . .|.\. ./.F.\. ./.|. . . . . . . . |
+| . . . . . . . .|. \ / .*. \ / .|. . . . . . . . |
+| . . . . . . . .|. .\. /*\ ./. .|. . . . . . . . |
+| . . . . . . . .|. / \//*\\/ \ .|. . . . . . . . |
+| . . . . . . . .|./. /\/ \/\ .\.|. . . . . . . . |
+| . . . . . . . .|/ .///\ /\\\. \|. . . . . . . . |
+| . . . .o. . . .X. /// .Y. \\\ .Z. . . .o. . . . |
+| . . . .|\ . . . \///. .|. .\\\/ . . . /|. . . . |
+| . . . .|.\. . . /// . .|. . \\\ . . ./.|. . . . |
+| . . . .|. \ . .///\ . .|. . /\\\. . / .|. . . . |
+| . . . .|. .\. /// .\. .|. ./. \\\ ./. .|. . . . |
+| . . . .|. . \///. . \ .|. / . .\\\/ . .|. . . . |
+| . . . .|. . /\/ . . .\.|./. . . \/\ . .|. . . . |
+| . . . .|. .*//\ . . . \|/ . . . /\\*. .|. . . . |
+| . . . .X. .*/ .Y. . . .o. . . .Y .\*. .Z. . . . |
+| . . . . \ .*. .|. . . . . . . .| . *. / . . . . |
+| . . . . .\.G. .|. . . . . . . .| . H /. . . . . |
+| . . . . . \ . .|. . . . . . . .| . ./ . . . . . |
+| . . . . . .\. .|. . . . . . . .| . /. . . . . . |
+| . . . . . . \ .|. . . . . . . .| ./ . . . . . . |
+| . . . . . . .\.|. . . . . . . .| /. . . . . . . |
+| . . . . . . . \|. . . . . . . .|/ . . . . . . . |
+| . . . . . . . .o. . . . . . . .o. . . . . . . . |
+| . . . . . . . . . . . . . . . . . . . . . . . . |
+o-------------------------------------------------o
+Figure 6.  F as the Intersection of tau(G) and tau(H)
+</pre>
+</blockquote>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>References</h2>
+
+<div id="S1.p1" class="ltx_para">
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Ulam, Stanislaw Marcin; and Bednarek, A.R. (1977), “On the Theory of Relational Structures and Schemata for Parallel Computation”. Reprinted, pp. 477–508 in Ulam (1990).</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Ulam, Stanislaw Marcin (1990), <span class="ltx_text ltx_font_italic">Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators</span>, A.R. Bednarek and Françoise Ulam (eds.), University of California Press, Berkeley, CA.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S1.p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">geometric representation of relation composition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">GeometricRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:50:20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:50:20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">6</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Example</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 08A02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03E20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03B10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68R01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">AlgebraicRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">MatrixRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">GraphTheoreticRepresentationOfRelationComposition</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:40 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

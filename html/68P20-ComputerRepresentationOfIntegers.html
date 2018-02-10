@@ -1,0 +1,161 @@
+<!DOCTYPE html><html>
+<head>
+<title>computer representation of integers</title>
+<!--Generated on Sat Feb 10 12:38:47 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">computer representation of integers</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Computer systems that use a hardware binary representation for integral values typically have one of two choices available to them for the representation of negative integers: one’s complement or two’s complement.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Generally the high-order bit of a binary representation is used as a sign bit. If the value is <math id="p2.m1" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>, then the number is negative, while if the value is <math id="p2.m2" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>, the number is nonnegative.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">In a computer that uses one’s complement notation, the representation of a negative number is the one’s complement of the representation of a positive number. In other words, the negation of an integer can be accomplished by exclusive or’ing its value with a word consisting of all 1’s. So, in one’s complement, assuming a 4-bit word for compactness,</p>
+<table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex1" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\displaystyle 1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex1.m2" class="ltx_Math" alttext="\displaystyle=0001" display="inline"><mrow><mi></mi><mo>=</mo><mn>0001</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex2" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex2.m1" class="ltx_Math" alttext="\displaystyle 4" display="inline"><mn>4</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex2.m2" class="ltx_Math" alttext="\displaystyle=0100" display="inline"><mrow><mi></mi><mo>=</mo><mn>0100</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex3" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex3.m1" class="ltx_Math" alttext="\displaystyle-1" display="inline"><mrow><mo>-</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex3.m2" class="ltx_Math" alttext="\displaystyle=1110" display="inline"><mrow><mi></mi><mo>=</mo><mn>1110</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex4" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\displaystyle-2" display="inline"><mrow><mo>-</mo><mn>2</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex4.m2" class="ltx_Math" alttext="\displaystyle=1101" display="inline"><mrow><mi></mi><mo>=</mo><mn>1101</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Two’s complement, as its name implies, represents negative integers by taking their complement with respect to the next higher power of <math id="p4.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>. Thus, in a <math id="p4.m2" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math>-bit world, the negative of a value is found by subtracting it from <math id="p4.m3" class="ltx_Math" alttext="2^{5}" display="inline"><msup><mn>2</mn><mn>5</mn></msup></math> (as a bit string). Thus, for example, <math id="p4.m4" class="ltx_Math" alttext="1=0001" display="inline"><mrow><mn>1</mn><mo>=</mo><mn>0001</mn></mrow></math>, so <math id="p4.m5" class="ltx_Math" alttext="-1=10000-0001\ =1111" display="inline"><mrow><mrow><mo>-</mo><mn>1</mn></mrow><mo>=</mo><mrow><mn>10000</mn><mo>-</mo><mpadded width="+5pt"><mn>0001</mn></mpadded></mrow><mo>=</mo><mn>1111</mn></mrow></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">An unfortunate result of using one’s complement notation is that zero has two distinct representations:</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="0=0000=1111" display="block"><mrow><mn>0</mn><mo>=</mo><mn>0000</mn><mo>=</mo><mn>1111</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Two’s complement fixes this, since <math id="p5.m1" class="ltx_Math" alttext="-0=10000-0000=10000" display="inline"><mrow><mrow><mo>-</mo><mn>0</mn></mrow><mo>=</mo><mrow><mn>10000</mn><mo>-</mo><mn>0000</mn></mrow><mo>=</mo><mn>10000</mn></mrow></math>, which gets truncated in 4 bits to <math id="p5.m2" class="ltx_Math" alttext="0000" display="inline"><mn>0000</mn></math>. However, it introduces an asymmetry in the representational range. While a <math id="p5.m3" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math>-bit one’s complement number can represent any integer from <math id="p5.m4" class="ltx_Math" alttext="-7" display="inline"><mrow><mo>-</mo><mn>7</mn></mrow></math> to <math id="p5.m5" class="ltx_Math" alttext="+7" display="inline"><mrow><mo>+</mo><mn>7</mn></mrow></math>, a <math id="p5.m6" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math>-bit two’s complement number can represent integers from <math id="p5.m7" class="ltx_Math" alttext="-8" display="inline"><mrow><mo>-</mo><mn>8</mn></mrow></math> to <math id="p5.m8" class="ltx_Math" alttext="+7" display="inline"><mrow><mo>+</mo><mn>7</mn></mrow></math>, <math id="p5.m9" class="ltx_Math" alttext="-8" display="inline"><mrow><mo>-</mo><mn>8</mn></mrow></math> being represented by the value <math id="p5.m10" class="ltx_Math" alttext="1000" display="inline"><mn>1000</mn></math>.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">In addition, two’s complement is in some sense more natural than one’s complement since if you regard the representation as an unsigned number, its value modulo <math id="p6.m1" class="ltx_Math" alttext="2^{\text{word size}}" display="inline"><msup><mn>2</mn><mtext>word size</mtext></msup></math> is in fact the value it represents. In other words, for example, consider again a <math id="p6.m2" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math>-bit word size. Then the representation of <math id="p6.m3" class="ltx_Math" alttext="-2" display="inline"><mrow><mo>-</mo><mn>2</mn></mrow></math> in two’s complement is <math id="p6.m4" class="ltx_Math" alttext="1110" display="inline"><mn>1110</mn></math>. Thinking of <math id="p6.m5" class="ltx_Math" alttext="1110" display="inline"><mn>1110</mn></math> as an unsigned number, its value is <math id="p6.m6" class="ltx_Math" alttext="14" display="inline"><mn>14</mn></math>, which is in fact <math id="p6.m7" class="ltx_Math" alttext="-2\pmod{2^{4}}" display="inline"><mrow><mrow><mo>-</mo><mn>2</mn></mrow><mspace width="veryverythickmathspace"></mspace><mrow><mo lspace="8.1pt" stretchy="false">(</mo><mrow><mo>mod</mo><msup><mn>2</mn><mn>4</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">This fact means that multiplication of two’s complement representations is quite easy - one need only multiply the bit patterns together as if they were unsigned, and consider the rightmost bits of the result (thus taking the result modulo the word size).</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Using one’s complement notation, no such simple algorithm is possible. Thus, for example, in one’s complement one has</p>
+<table id="S0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex6" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex6.m1" class="ltx_Math" alttext="\displaystyle-1" display="inline"><mrow><mo>-</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex6.m2" class="ltx_Math" alttext="\displaystyle=1110" display="inline"><mrow><mi></mi><mo>=</mo><mn>1110</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex7" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex7.m1" class="ltx_Math" alttext="\displaystyle-2" display="inline"><mrow><mo>-</mo><mn>2</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex7.m2" class="ltx_Math" alttext="\displaystyle=1101" display="inline"><mrow><mi></mi><mo>=</mo><mn>1101</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex8" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex8.m1" class="ltx_Math" alttext="\displaystyle 2=-1\cdot-2" display="inline"><mrow><mn>2</mn><mo>=</mo><mo>-</mo><mn>1</mn><mo>⋅</mo><mo>-</mo><mn>2</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex8.m2" class="ltx_Math" alttext="\displaystyle=0010" display="inline"><mrow><mi></mi><mo>=</mo><mn>0010</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">yet mutiplying the unsigned values and truncating results in <math id="p8.m1" class="ltx_Math" alttext="0110" display="inline"><mn>0110</mn></math>, or <math id="p8.m2" class="ltx_Math" alttext="6" display="inline"><mn>6</mn></math>.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">This inefficiency in required multiplication algorithms, together with the obvious problem of having multiple representations of zero, has led to the almost complete abandonment of one’s complement notation today.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">computer representation of integers</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">ComputerRepresentationOfIntegers</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:55:55</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:55:55</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">rm50 (10146)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">rm50 (10146)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">5</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">rm50 (10146)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Topic</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P20</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">msc 11A63</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:47 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

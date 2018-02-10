@@ -1,0 +1,264 @@
+<!DOCTYPE html><html>
+<head>
+<title>primitive recursive encoding</title>
+<!--Generated on Sat Feb 10 12:40:30 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">primitive recursive encoding</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Recall that an encoding of a set <math id="p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> of words over some alphabet <math id="p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is defined as an injective function <math id="p1.m3" class="ltx_Math" alttext="E:L\to\mathbb{N}" display="inline"><mrow><mi>E</mi><mo>:</mo><mrow><mi>L</mi><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>, the set of natural numbers (including <math id="p1.m4" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> here).</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Finite sequences over <math id="p2.m1" class="ltx_Math" alttext="\mathbb{N}" display="inline"><mi>ℕ</mi></math> can be thought of as words over the “infinite” alphabet <math id="p2.m2" class="ltx_Math" alttext="\mathbb{N}" display="inline"><mi>ℕ</mi></math>. So the notion of word encoding directly carries over to encoding of finite sequences of natural numbers. Let <math id="p2.m3" class="ltx_Math" alttext="\mathbb{N}^{*}" display="inline"><msup><mi>ℕ</mi><mo>*</mo></msup></math> be the set of all finite sequences over <math id="p2.m4" class="ltx_Math" alttext="\mathbb{N}" display="inline"><mi>ℕ</mi></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Let <math id="p3.m1" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> be an encoding for <math id="p3.m2" class="ltx_Math" alttext="\mathbb{N}^{*}" display="inline"><msup><mi>ℕ</mi><mo>*</mo></msup></math>. A number is called a <em class="ltx_emph ltx_font_italic">sequence number</em> if it is in the range of <math id="p3.m3" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math>. Since <math id="p3.m4" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> is injective, we say that <math id="p3.m5" class="ltx_Math" alttext="E(a)" display="inline"><mrow><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> is <em class="ltx_emph ltx_font_italic">the</em> sequence number of the sequence <math id="p3.m6" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Once <math id="p4.m1" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> is fixed, we also use the notation <math id="p4.m2" class="ltx_Math" alttext="\langle a_{1},\ldots,a_{k}\rangle" display="inline"><mrow><mo stretchy="false">⟨</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>a</mi><mi>k</mi></msub><mo stretchy="false">⟩</mo></mrow></math> to mean the sequence number of the sequence <math id="p4.m3" class="ltx_Math" alttext="a_{1},\ldots,a_{k}" display="inline"><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>a</mi><mi>k</mi></msub></mrow></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Define the following operations on <math id="p5.m1" class="ltx_Math" alttext="\mathbb{N}" display="inline"><mi>ℕ</mi></math> associated with a given <math id="p5.m2" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math>:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="E_{n}:=E|\mathbb{N}^{*}_{n}" display="inline"><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>:=</mo><mi>E</mi><mo stretchy="false">|</mo><msubsup><mi>ℕ</mi><mi>n</mi><mo>*</mo></msubsup></mrow></math>, the restriction of <math id="I1.i1.p1.m2" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> to the set <math id="I1.i1.p1.m3" class="ltx_Math" alttext="\mathbb{N}^{*}_{n}" display="inline"><msubsup><mi>ℕ</mi><mi>n</mi><mo>*</mo></msubsup></math> of all sequences of length <math id="I1.i1.p1.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, and <math id="I1.i1.p1.m5" class="ltx_Math" alttext="E_{0}" display="inline"><msub><mi>E</mi><mn>0</mn></msub></math> is defined as the number <math id="I1.i1.p1.m6" class="ltx_Math" alttext="\langle\rangle" display="inline"><mrow><mo stretchy="false">⟨</mo><mo stretchy="false">⟩</mo></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">the <em class="ltx_emph ltx_font_italic">length function</em>: <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\operatorname{lh}:\mathbb{N}\to\mathbb{N}" display="inline"><mrow><mi>lh</mi><mo>:</mo><mrow><mi>ℕ</mi><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>:</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\operatorname{lh}(x):=\left\{\begin{array}[]{ll}z,&amp;\textrm{if }E^{-1}(x)%
+\textrm{ exists, and has length }z,\\
+0,&amp;\textrm{otherwise}.\end{array}\right." display="block"><mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mi>z</mi><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mtext>if </mtext><mo>⁢</mo><msup><mi>E</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mtext> exists, and has length </mtext><mo>⁢</mo><mi>z</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mtext>otherwise</mtext><mo>.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="(\cdot)_{\cdot}:\mathbb{N}^{2}\to\mathbb{N}" display="inline"><mrow><msub><mrow><mo stretchy="false">(</mo><mo>⋅</mo><mo stretchy="false">)</mo></mrow><mo>⋅</mo></msub><mo>:</mo><mrow><msup><mi>ℕ</mi><mn>2</mn></msup><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>, such that</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="(x)_{y}:=\left\{\begin{array}[]{ll}z,&amp;\textrm{if }E^{-1}(x)\textrm{ exists, %
+has length }\geq y\textrm{, with }z\textrm{ its }y\textrm{-th number},\\
+0,&amp;\textrm{otherwise}.\end{array}\right." display="block"><mrow><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mi>y</mi></msub><mo>:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mi>z</mi><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>if </mtext><mo>⁢</mo><msup><mi>E</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mtext> exists, has length </mtext></mrow><mo>≥</mo><mrow><mi>y</mi><mo>⁢</mo><mtext>, with </mtext><mo>⁢</mo><mi>z</mi><mo>⁢</mo><mtext> its </mtext><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mtext>-th number</mtext></mrow></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mtext>otherwise</mtext><mo>.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i4.p1.m1" class="ltx_Math" alttext="*:\mathbb{N}^{2}\to\mathbb{N}" display="inline"><mrow><mo>*</mo><mo>:</mo><msup><mi>ℕ</mi><mn>2</mn></msup><mo>→</mo><mi>ℕ</mi></mrow></math>, such that</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="x*y:=\left\{\begin{array}[]{ll}E(ab),&amp;\textrm{where }E(a)=x\textrm{ and }E(b)=%
+y,\\
+0,&amp;\textrm{otherwise}.\end{array}\right." display="block"><mrow><mrow><mi>x</mi><mo>*</mo><mi>y</mi></mrow><mo>:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mrow><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>where </mtext><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mtext> and </mtext><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>y</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mtext>otherwise</mtext><mo>.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The notation <math id="I1.i4.p1.m2" class="ltx_Math" alttext="ab" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></math> stands for the concatenation of the sequences <math id="I1.i4.p1.m3" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> and <math id="I1.i4.p1.m4" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">5.</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i5.p1.m1" class="ltx_Math" alttext="\operatorname{ext}:\mathbb{N}^{2}\to\mathbb{N}" display="inline"><mrow><mi>ext</mi><mo>:</mo><mrow><msup><mi>ℕ</mi><mn>2</mn></msup><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>, such that</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\operatorname{ext}(x,y):=\left\{\begin{array}[]{ll}E(ay),&amp;\textrm{where }E(a)=%
+x,\\
+0,&amp;\textrm{otherwise}.\end{array}\right." display="block"><mrow><mrow><mi>ext</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mrow><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>where </mtext><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mtext>otherwise</mtext><mo>.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The notation <math id="I1.i5.p1.m2" class="ltx_Math" alttext="ay" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mi>y</mi></mrow></math> stands for the sequence <math id="I1.i5.p1.m3" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>, extended by appending <math id="I1.i5.p1.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> to the right of <math id="I1.i5.p1.m5" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">6.</span> 
+<div id="I1.i6.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i6.p1.m1" class="ltx_Math" alttext="\operatorname{red}:\mathbb{N}\to\mathbb{N}" display="inline"><mrow><mi>red</mi><mo>:</mo><mrow><mi>ℕ</mi><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>, such that</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\operatorname{red}(x):=\left\{\begin{array}[]{ll}z,&amp;\textrm{where }E(a)=x%
+\textrm{ and }E(b)=z\textrm{ such that }a=bc\textrm{ and }c\in\mathbb{N},\\
+0,&amp;\textrm{otherwise}.\end{array}\right." display="block"><mrow><mrow><mi>red</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mi>z</mi><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>where </mtext><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mtext> and </mtext><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>z</mi><mo>⁢</mo><mtext> such that </mtext><mo>⁢</mo><mi>a</mi></mrow><mo>=</mo><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mtext> and </mtext><mo>⁢</mo><mi>c</mi></mrow><mo>∈</mo><mi>ℕ</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mtext>otherwise</mtext><mo>.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">In other words, <math id="I1.i6.p1.m2" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is the sequence number of the sequence obtained by removing the last (rightmost) number (if any) in the sequence whose sequence number is <math id="I1.i6.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, provided that <math id="I1.i6.p1.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> is a sequence number.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. An encoding <math id="p6.m1" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> for <math id="p6.m2" class="ltx_Math" alttext="\mathbb{N}^{*}" display="inline"><msup><mi>ℕ</mi><mo>*</mo></msup></math> is said to be <em class="ltx_emph ltx_font_italic">primitive recursive</em> if</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="E(\mathbb{N}^{*})" display="inline"><mrow><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>ℕ</mi><mo>*</mo></msup><mo stretchy="false">)</mo></mrow></mrow></math> is a primitive recursive set, and</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">the first three types of functions defined above are primitive recursive.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Thmprop1" class="ltx_theorem ltx_theorem_prop">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Proposition 1</span>.</h6>
+<div id="Thmprop1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If <math id="Thmprop1.p1.m1" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> is primitive recursive, so are the functions <math id="Thmprop1.p1.m2" class="ltx_Math" alttext="*,\operatorname{ext}" display="inline"><mrow><mo mathvariant="normal">*</mo><mo mathvariant="normal">,</mo><mi mathvariant="normal">ext</mi></mrow></math>, and <math id="Thmprop1.p1.m3" class="ltx_Math" alttext="\operatorname{red}" display="inline"><mi mathvariant="normal">red</mi></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Let <math id="p7.m1" class="ltx_Math" alttext="\chi(x)" display="inline"><mrow><mi>χ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> be the characteristic function of the predicate “<math id="p7.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> is a sequence number” (via <math id="p7.m3" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math>). It is primitive recursive by assumption.</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="I3.i1.p1.m1" class="ltx_Math" alttext="n=\operatorname{lh}(x)+\operatorname{lh}(y)" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>. Then <math id="I3.i1.p1.m2" class="ltx_Math" alttext="x*y=E_{n}((x)_{1},\ldots,(x)_{\operatorname{lh}(x)},(y)_{1},\ldots,(y)_{%
+\operatorname{lh}(y)})\cdot\chi(x)\chi(y)" display="inline"><mrow><mrow><mi>x</mi><mo>*</mo><mi>y</mi></mrow><mo>=</mo><mrow><mrow><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></msub><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>⋅</mo><mi>χ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>χ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, which is primitive recursive.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="I3.i2.p1.m1" class="ltx_Math" alttext="n=\operatorname{lh}(x)+1" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>. Then <math id="I3.i2.p1.m2" class="ltx_Math" alttext="\operatorname{ext}(x,y)=E_{n}((x)_{1},\ldots,(x)_{\operatorname{lh}(x)},y)\chi%
+(x)" display="inline"><mrow><mrow><mi>ext</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></msub><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>χ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, which is primitive recursive.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="I3.i3.p1.m1" class="ltx_Math" alttext="n=\operatorname{lh}(x)\dot{-}1" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mover accent="true"><mo>-</mo><mo>˙</mo></mover><mo>⁢</mo><mn>1</mn></mrow></mrow></math>. Then</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="\operatorname{red}(x)=\left\{\begin{array}[]{ll}E_{n}((x)_{1},\ldots,(x)_{%
+\operatorname{lh}(x)\dot{-}1}),&amp;\textrm{if }\operatorname{lh}(x)&gt;1\textrm{, %
+and }\chi(x)=1\\
+\langle\rangle,&amp;\textrm{if }\operatorname{lh}(x)=1\textrm{, and }\chi(x)=1\\
+0,&amp;\textrm{otherwise},\end{array}\right." display="block"><mrow><mrow><mi>red</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mover accent="true"><mo>-</mo><mo>˙</mo></mover><mo>⁢</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mtext>if </mtext><mo>⁢</mo><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>&gt;</mo><mrow><mn>1</mn><mo>⁢</mo><mtext>, and </mtext><mo>⁢</mo><mi>χ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo stretchy="false">⟨</mo><mo stretchy="false">⟩</mo></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mtext>if </mtext><mo>⁢</mo><mrow><mi>lh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>⁢</mo><mtext>, and </mtext><mo>⁢</mo><mi>χ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>0</mn><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mtext>otherwise</mtext><mo>,</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">which is primitive recursive.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Examples of primitive recursive encoding can be found in the parent entry (methods 2, 3, and 7).
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">primitive recursive encoding</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimitiveRecursiveEncoding</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:06:20</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:06:20</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">7</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03D20</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 94A60</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">sequence number</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p ltx_align_right"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:40:30 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html><html>
+<head>
+<title>matrix representation of relation composition</title>
+<!--Generated on Sat Feb 10 12:50:02 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">matrix representation of relation composition</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break"><span class="ltx_ERROR undefined">\PMlinkescapephrase</span>
+<p class="ltx_p">composition
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Composition
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>order
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Order
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>reflect
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Reflect
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>relation
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Relation
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>relational composition
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Relational composition
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>representation
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Representation
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>simple
+<span class="ltx_ERROR undefined">\PMlinkescapephrase</span>Simple</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">We have it within our reach to pick up another way of representing 2-adic relations (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/RelationTheory</span>), namely, the representation as logical matrices, and also to grasp the analogy between relational composition (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/RelationComposition2</span>) and ordinary matrix multiplication as it appears in linear algebra.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">First of all, while we still have the data of a very simple concrete case in mind, let us reflect on what we did in our last Example in order to find the composition <math id="p3.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> of the 2-adic relations <math id="p3.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p3.m3" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Here is the setup that we had before:</p>
+</div>
+<div id="p5" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p5.m1" class="ltx_Math" alttext="\begin{array}[]{lllllll}X&amp;=&amp;Y&amp;=&amp;Z&amp;=&amp;\mathrm{\{1,2,3,4,5,6,7\}}\end{array}" display="inline"><mtable columnspacing="5pt"><mtr><mtd columnalign="left"><mi>X</mi></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mi>Y</mi></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mi>Z</mi></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo stretchy="false">}</mo></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="p6" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p6.m1" class="ltx_Math" alttext="\begin{array}[]{lllllllllll}G&amp;=&amp;4:3&amp;+&amp;4:4&amp;+&amp;4:5&amp;\subseteq&amp;X\times Y&amp;=&amp;X\times X%
+\\
+H&amp;=&amp;3:4&amp;+&amp;4:4&amp;+&amp;5:4&amp;\subseteq&amp;Y\times Z&amp;=&amp;X\times X\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mi>G</mi></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mo>⊆</mo></mtd><mtd columnalign="left"><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mtd></mtr><mtr><mtd columnalign="left"><mi>H</mi></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mo>⊆</mo></mtd><mtd columnalign="left"><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Let us recall the rule for finding the relational composition of a pair of 2-adic relations. Given the 2-adic relations <math id="p7.m1" class="ltx_Math" alttext="P\subseteq X\times Y" display="inline"><mrow><mi>P</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math> and <math id="p7.m2" class="ltx_Math" alttext="Q\subseteq Y\times Z" display="inline"><mrow><mi>Q</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>, the relational composition of <math id="p7.m3" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> and <math id="p7.m4" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math>, in that order, is written as <math id="p7.m5" class="ltx_Math" alttext="P\circ Q" display="inline"><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow></math>, or more simply as <math id="p7.m6" class="ltx_Math" alttext="PQ" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mi>Q</mi></mrow></math>, and obtained as follows:</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">To compute <math id="p8.m1" class="ltx_Math" alttext="PQ" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mi>Q</mi></mrow></math>, in general, where <math id="p8.m2" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> and <math id="p8.m3" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math> are 2-adic relations, simply multiply out the two sums in the ordinary distributive algebraic way, but subject to the following rule for finding the product of two elementary relations of shapes <math id="p8.m4" class="ltx_Math" alttext="a:b" display="inline"><mrow><mi>a</mi><mo>:</mo><mi>b</mi></mrow></math> and <math id="p8.m5" class="ltx_Math" alttext="c:d" display="inline"><mrow><mi>c</mi><mo>:</mo><mi>d</mi></mrow></math>.</p>
+</div>
+<div id="p9" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p9.m1" class="ltx_Math" alttext="\begin{array}[]{lccc}(a:b)(c:d)&amp;=&amp;(a:d)&amp;\mathrm{if}\ b=c\\
+\\
+(a:b)(c:d)&amp;=&amp;0&amp;\mathrm{otherwise}\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>:</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>c</mi><mo>:</mo><mi>d</mi><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>:</mo><mi>d</mi></mrow><mo stretchy="false">)</mo></mrow></mtd><mtd columnalign="center"><mrow><mrow><mpadded width="+5pt"><mi>if</mi></mpadded><mo>⁢</mo><mi>b</mi></mrow><mo>=</mo><mi>c</mi></mrow></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>:</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>c</mi><mo>:</mo><mi>d</mi><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mi>otherwise</mi></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">To find the relational composition <math id="p10.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math>, one may begin by writing it as a quasi-algebraic product:</p>
+</div>
+<div id="p11" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p11.m1" class="ltx_Math" alttext="G\circ H=(4\mathrm{:}3+4\mathrm{:}4+4\mathrm{:}5)(3\mathrm{:}4+4\mathrm{:}4+5%
+\mathrm{:}4)" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo>+</mo><mn>4</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>4</mn><mo>+</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">Multiplying this out in accord with the applicable form of distributive law one obtains the following expansion:
+</p>
+</div>
+<div id="p13" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p13.m1" class="ltx_Math" alttext="\begin{array}[]{lccccccc}G\circ H&amp;=&amp;(4:3)(3:4)&amp;+&amp;(4:3)(4:4)&amp;+&amp;(4:3)(5:4)&amp;+\\
+&amp;&amp;(4:4)(3:4)&amp;+&amp;(4:4)(4:4)&amp;+&amp;(4:4)(5:4)&amp;+\\
+&amp;&amp;(4:5)(3:4)&amp;+&amp;(4:5)(4:4)&amp;+&amp;(4:5)(5:4)&amp;\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">Applying the rule that determines the product of elementary relations produces the following array:</p>
+</div>
+<div id="p15" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p15.m1" class="ltx_Math" alttext="\begin{array}[]{lccccccc}G\circ H&amp;=&amp;(4:4)&amp;+&amp;0&amp;+&amp;0&amp;+\\
+&amp;&amp;0&amp;+&amp;(4:4)&amp;+&amp;0&amp;+\\
+&amp;&amp;0&amp;+&amp;0&amp;+&amp;(4:4)&amp;\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="center"><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>+</mo></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>+</mo></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mo stretchy="false">(</mo><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mtd><mtd></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p">Since the plus sign in this context represents an operation of logical disjunction or set-theoretic aggregation, all of the positive multiplicities count as one, and this gives the ultimate result:</p>
+</div>
+<div id="p17" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="p17.m1" class="ltx_Math" alttext="G\circ H=(4:4)" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="p18" class="ltx_para">
+<p class="ltx_p">With an eye toward extracting a general formula for relation composition, viewed here on analogy with algebraic multiplication, let us examine what we did in multiplying the 2-adic relations <math id="p18.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="p18.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> together to obtain their relational composite <math id="p18.m3" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math>.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Arrangement</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">Given the space <math id="S1.p1.m1" class="ltx_Math" alttext="X=\{1,2,3,4,5,6,7\}" display="inline"><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo stretchy="false">}</mo></mrow></mrow></math>, whose cardinality <math id="S1.p1.m2" class="ltx_Math" alttext="|X|" display="inline"><mrow><mo stretchy="false">|</mo><mi>X</mi><mo stretchy="false">|</mo></mrow></math> is <math id="S1.p1.m3" class="ltx_Math" alttext="7" display="inline"><mn>7</mn></math>, there are <math id="S1.p1.m4" class="ltx_Math" alttext="|X\times X|=|X|\cdot|X|=7\cdot 7=49" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow><mo stretchy="false">|</mo></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">|</mo><mi>X</mi><mo stretchy="false">|</mo></mrow><mo>⋅</mo><mrow><mo stretchy="false">|</mo><mi>X</mi><mo stretchy="false">|</mo></mrow></mrow><mo>=</mo><mrow><mn>7</mn><mo>⋅</mo><mn>7</mn></mrow><mo>=</mo><mn>49</mn></mrow></math> elementary relations of the form <math id="S1.p1.m5" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math>, where <math id="S1.p1.m6" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and <math id="S1.p1.m7" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> range over the space <math id="S1.p1.m8" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>. Although they might be organized in many different ways, it is convenient to regard the collection of elementary relations as being arranged in a lexicographic block of the following form:</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S1.p2.m1" class="ltx_Math" alttext="\begin{array}[]{lllllll}1\mathrm{:}1&amp;1\mathrm{:}2&amp;1\mathrm{:}3&amp;1\mathrm{:}4&amp;1%
+\mathrm{:}5&amp;1\mathrm{:}6&amp;1\mathrm{:}7\\
+2\mathrm{:}1&amp;2\mathrm{:}2&amp;2\mathrm{:}3&amp;2\mathrm{:}4&amp;2\mathrm{:}5&amp;2\mathrm{:}6&amp;%
+2\mathrm{:}7\\
+3\mathrm{:}1&amp;3\mathrm{:}2&amp;3\mathrm{:}3&amp;3\mathrm{:}4&amp;3\mathrm{:}5&amp;3\mathrm{:}6&amp;%
+3\mathrm{:}7\\
+4\mathrm{:}1&amp;4\mathrm{:}2&amp;4\mathrm{:}3&amp;4\mathrm{:}4&amp;4\mathrm{:}5&amp;4\mathrm{:}6&amp;%
+4\mathrm{:}7\\
+5\mathrm{:}1&amp;5\mathrm{:}2&amp;5\mathrm{:}3&amp;5\mathrm{:}4&amp;5\mathrm{:}5&amp;5\mathrm{:}6&amp;%
+5\mathrm{:}7\\
+6\mathrm{:}1&amp;6\mathrm{:}2&amp;6\mathrm{:}3&amp;6\mathrm{:}4&amp;6\mathrm{:}5&amp;6\mathrm{:}6&amp;%
+6\mathrm{:}7\\
+7\mathrm{:}1&amp;7\mathrm{:}2&amp;7\mathrm{:}3&amp;7\mathrm{:}4&amp;7\mathrm{:}5&amp;7\mathrm{:}6&amp;%
+7\mathrm{:}7\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>4</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>6</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>2</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>:</mo><mn>7</mn></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Expansion</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">The relations <math id="S2.p1.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S2.p1.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> may then be regarded as logical sums of the following forms:</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S2.p2.m1" class="ltx_Math" alttext="G=\sum_{ij}G_{ij}(i:j)" display="inline"><mrow><mi>G</mi><mo>=</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+
+<br class="ltx_break">
+<math id="S2.p2.m2" class="ltx_Math" alttext="H=\sum_{ij}H_{ij}(i:j)" display="inline"><mrow><mi>H</mi><mo>=</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mi>H</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">The notation <math id="S2.p3.m1" class="ltx_Math" alttext="\sum_{ij}" display="inline"><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> indicates a logical sum over the collection of elementary relations <math id="S2.p3.m2" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math>, while the factors <math id="S2.p3.m3" class="ltx_Math" alttext="G_{ij}" display="inline"><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> and <math id="S2.p3.m4" class="ltx_Math" alttext="H_{ij}" display="inline"><msub><mi>H</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> are values in the boolean domain <math id="S2.p3.m5" class="ltx_Math" alttext="\mathbb{B}=\{0,1\}" display="inline"><mrow><mi>𝔹</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow></mrow></math> that are known as the <span class="ltx_text ltx_font_italic">coefficients</span> of the relations <math id="S2.p3.m6" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S2.p3.m7" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>, respectively, with regard to the corresponding elementary relations <math id="S2.p3.m8" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math>.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">In general, for a 2-adic relation <math id="S2.p4.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, the coefficient <math id="S2.p4.m2" class="ltx_Math" alttext="L_{ij}" display="inline"><msub><mi>L</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> of the elementary relation <math id="S2.p4.m3" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math> in the relation <math id="S2.p4.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> will be 0 or 1, respectively, as <math id="S2.p4.m5" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math> is excluded from or included in <math id="S2.p4.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>.
+</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">With these conventions in place, the expansions of <math id="S2.p5.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S2.p5.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> may be written out as follows:</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S2.p6.m1" class="ltx_Math" alttext="\begin{array}[]{cccccccccccccccc}G&amp;&amp;=&amp;&amp;4:3&amp;+&amp;4:4&amp;+&amp;4:5&amp;&amp;=\\
+\\
+0(1\mathrm{:}1)&amp;+&amp;0(1\mathrm{:}2)&amp;+&amp;0(1\mathrm{:}3)&amp;+&amp;0(1\mathrm{:}4)&amp;+&amp;0(1%
+\mathrm{:}5)&amp;+&amp;0(1\mathrm{:}6)&amp;+&amp;0(1\mathrm{:}7)&amp;+\\
+0(2\mathrm{:}1)&amp;+&amp;0(2\mathrm{:}2)&amp;+&amp;0(2\mathrm{:}3)&amp;+&amp;0(2\mathrm{:}4)&amp;+&amp;0(2%
+\mathrm{:}5)&amp;+&amp;0(2\mathrm{:}6)&amp;+&amp;0(2\mathrm{:}7)&amp;+\\
+0(3\mathrm{:}1)&amp;+&amp;0(3\mathrm{:}2)&amp;+&amp;0(3\mathrm{:}3)&amp;+&amp;0(3\mathrm{:}4)&amp;+&amp;0(3%
+\mathrm{:}5)&amp;+&amp;0(3\mathrm{:}6)&amp;+&amp;0(3\mathrm{:}7)&amp;+\\
+0(4\mathrm{:}1)&amp;+&amp;0(4\mathrm{:}2)&amp;+&amp;1(4\mathrm{:}3)&amp;+&amp;1(4\mathrm{:}4)&amp;+&amp;1(4%
+\mathrm{:}5)&amp;+&amp;0(4\mathrm{:}6)&amp;+&amp;0(4\mathrm{:}7)&amp;+\\
+0(5\mathrm{:}1)&amp;+&amp;0(5\mathrm{:}2)&amp;+&amp;0(5\mathrm{:}3)&amp;+&amp;0(5\mathrm{:}4)&amp;+&amp;0(5%
+\mathrm{:}5)&amp;+&amp;0(5\mathrm{:}6)&amp;+&amp;0(5\mathrm{:}7)&amp;+\\
+0(6\mathrm{:}1)&amp;+&amp;0(6\mathrm{:}2)&amp;+&amp;0(6\mathrm{:}3)&amp;+&amp;0(6\mathrm{:}4)&amp;+&amp;0(6%
+\mathrm{:}5)&amp;+&amp;0(6\mathrm{:}6)&amp;+&amp;0(6\mathrm{:}7)&amp;+\\
+0(7\mathrm{:}1)&amp;+&amp;0(7\mathrm{:}2)&amp;+&amp;0(7\mathrm{:}3)&amp;+&amp;0(7\mathrm{:}4)&amp;+&amp;0(7%
+\mathrm{:}5)&amp;+&amp;0(7\mathrm{:}6)&amp;+&amp;0(7\mathrm{:}7)&amp;\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>G</mi></mtd><mtd></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mn>3</mn></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mn>5</mn></mrow></mtd><mtd></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="S2.p7" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S2.p7.m1" class="ltx_Math" alttext="\begin{array}[]{cccccccccccccccc}H&amp;&amp;=&amp;&amp;3:4&amp;+&amp;4:4&amp;+&amp;5:4&amp;&amp;=\\
+\\
+0(1\mathrm{:}1)&amp;+&amp;0(1\mathrm{:}2)&amp;+&amp;0(1\mathrm{:}3)&amp;+&amp;0(1\mathrm{:}4)&amp;+&amp;0(1%
+\mathrm{:}5)&amp;+&amp;0(1\mathrm{:}6)&amp;+&amp;0(1\mathrm{:}7)&amp;+\\
+0(2\mathrm{:}1)&amp;+&amp;0(2\mathrm{:}2)&amp;+&amp;0(2\mathrm{:}3)&amp;+&amp;0(2\mathrm{:}4)&amp;+&amp;0(2%
+\mathrm{:}5)&amp;+&amp;0(2\mathrm{:}6)&amp;+&amp;0(2\mathrm{:}7)&amp;+\\
+0(3\mathrm{:}1)&amp;+&amp;0(3\mathrm{:}2)&amp;+&amp;0(3\mathrm{:}3)&amp;+&amp;1(3\mathrm{:}4)&amp;+&amp;0(3%
+\mathrm{:}5)&amp;+&amp;0(3\mathrm{:}6)&amp;+&amp;0(3\mathrm{:}7)&amp;+\\
+0(4\mathrm{:}1)&amp;+&amp;0(4\mathrm{:}2)&amp;+&amp;0(4\mathrm{:}3)&amp;+&amp;1(4\mathrm{:}4)&amp;+&amp;0(4%
+\mathrm{:}5)&amp;+&amp;0(4\mathrm{:}6)&amp;+&amp;0(4\mathrm{:}7)&amp;+\\
+0(5\mathrm{:}1)&amp;+&amp;0(5\mathrm{:}2)&amp;+&amp;0(5\mathrm{:}3)&amp;+&amp;1(5\mathrm{:}4)&amp;+&amp;0(5%
+\mathrm{:}5)&amp;+&amp;0(5\mathrm{:}6)&amp;+&amp;0(5\mathrm{:}7)&amp;+\\
+0(6\mathrm{:}1)&amp;+&amp;0(6\mathrm{:}2)&amp;+&amp;0(6\mathrm{:}3)&amp;+&amp;0(6\mathrm{:}4)&amp;+&amp;0(6%
+\mathrm{:}5)&amp;+&amp;0(6\mathrm{:}6)&amp;+&amp;0(6\mathrm{:}7)&amp;+\\
+0(7\mathrm{:}1)&amp;+&amp;0(7\mathrm{:}2)&amp;+&amp;0(7\mathrm{:}3)&amp;+&amp;0(7\mathrm{:}4)&amp;+&amp;0(7%
+\mathrm{:}5)&amp;+&amp;0(7\mathrm{:}6)&amp;+&amp;0(7\mathrm{:}7)&amp;\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>H</mi></mtd><mtd></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd></mtd><mtd columnalign="center"><mrow><mn>3</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>4</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>5</mn><mo>:</mo><mn>4</mn></mrow></mtd><mtd></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>4</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="center"><mo>+</mo></mtd><mtd columnalign="center"><mrow><mn>0</mn><mrow><mo stretchy="false">(</mo><mn>7</mn><mo>:</mo><mn>7</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Extraction</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">Stripping down to the bare essentials, one obtains the following matrices of coefficients for the relations <math id="S3.p1.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S3.p1.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p2.m1" class="ltx_Math" alttext="G=\left[\begin{array}[]{ccccccc}0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;1&amp;1&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+\end{array}\right]" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p3" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p3.m1" class="ltx_Math" alttext="H=\left[\begin{array}[]{ccccccc}0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+\end{array}\right]" display="inline"><mrow><mi>H</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p class="ltx_p">These are the logical matrix representations of the 2-adic relations <math id="S3.p4.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S3.p4.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>.</p>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p class="ltx_p">If the 2-adic relations <math id="S3.p5.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S3.p5.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> are viewed as logical sums, then their relational composition <math id="S3.p5.m3" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> can be regarded as a product of sums, a fact that can be indicated as follows:</p>
+</div>
+<div id="S3.p6" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p6.m1" class="ltx_Math" alttext="G\circ H=(\sum_{ij}G_{ij}(i:j))(\sum_{ij}H_{ij}(i:j))." display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mi>H</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p7" class="ltx_para">
+<p class="ltx_p">The composite relation <math id="S3.p7.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> is itself a 2-adic relation over the same space <math id="S3.p7.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, in other words, <math id="S3.p7.m3" class="ltx_Math" alttext="G\circ H\subseteq X\times X" display="inline"><mrow><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>X</mi></mrow></mrow></math>, and this means that <math id="S3.p7.m4" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> must be amenable to being written as a logical sum of the following form:</p>
+</div>
+<div id="S3.p8" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p8.m1" class="ltx_Math" alttext="G\circ H=\sum_{ij}(G\circ H)_{ij}(i:j)." display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi><mo>=</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mrow><mo stretchy="false">(</mo><mi>G</mi><mo>∘</mo><mi>H</mi><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p9" class="ltx_para">
+<p class="ltx_p">In this formula, <math id="S3.p9.m1" class="ltx_Math" alttext="(G\circ H)_{ij}" display="inline"><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> is the coefficient of <math id="S3.p9.m2" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> with respect to the elementary relation <math id="S3.p9.m3" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math>.</p>
+</div>
+<div id="S3.p10" class="ltx_para">
+<p class="ltx_p">One of the best ways to reason out what <math id="S3.p10.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> should be is to ask oneself what its coefficient <math id="S3.p10.m2" class="ltx_Math" alttext="(G\circ H)_{ij}" display="inline"><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> should be for each of the elementary relations <math id="S3.p10.m3" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math> in turn.</p>
+</div>
+<div id="S3.p11" class="ltx_para">
+<p class="ltx_p">So let us pose the question:</p>
+</div>
+<div id="S3.p12" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p12.m1" class="ltx_Math" alttext="\begin{array}[]{lll}(G\circ H)_{ij}&amp;=&amp;\operatorname{What}?\end{array}" display="inline"><mtable columnspacing="5pt"><mtr><mtd columnalign="left"><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mi>What</mi><mo>⁡</mo><mi mathvariant="normal">?</mi></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="S3.p13" class="ltx_para">
+<p class="ltx_p">In order to answer this question, it helps to realize that the indicated product given above can be written in the following equivalent form:</p>
+</div>
+<div id="S3.p14" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p14.m1" class="ltx_Math" alttext="G\circ H=(\sum_{ik}G_{ik}(i:k))(\sum_{kj}H_{kj}(k:j))." display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>k</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p15" class="ltx_para">
+<p class="ltx_p">A moment’s thought will tell us that <math id="S3.p15.m1" class="ltx_Math" alttext="(G\circ H)_{ij}=1" display="inline"><mrow><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></math> if and only if there is an element <math id="S3.p15.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> in <math id="S3.p15.m3" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> such that <math id="S3.p15.m4" class="ltx_Math" alttext="G_{ik}=1" display="inline"><mrow><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></math> and <math id="S3.p15.m5" class="ltx_Math" alttext="H_{kj}=1" display="inline"><mrow><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></math>.</p>
+</div>
+<div id="S3.p16" class="ltx_para">
+<p class="ltx_p">Consequently, we have the result:</p>
+</div>
+<div id="S3.p17" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p17.m1" class="ltx_Math" alttext="(G\circ H)_{ij}=\sum_{k}G_{ik}H_{kj}." display="inline"><mrow><mrow><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub><mrow><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>⁢</mo><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mrow></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p18" class="ltx_para">
+<p class="ltx_p">This follows from the properties of logical products and sums, specifically, from the fact that the product <math id="S3.p18.m1" class="ltx_Math" alttext="G_{ik}H_{kj}" display="inline"><mrow><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>⁢</mo><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mrow></math> is 1 if and only if both <math id="S3.p18.m2" class="ltx_Math" alttext="G_{ik}" display="inline"><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub></math> and <math id="S3.p18.m3" class="ltx_Math" alttext="H_{kj}" display="inline"><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> are 1, and from the fact that <math id="S3.p18.m4" class="ltx_Math" alttext="\sum_{k}F_{k}" display="inline"><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub><msub><mi>F</mi><mi>k</mi></msub></mrow></math> is equal to 1 just in case some <math id="S3.p18.m5" class="ltx_Math" alttext="F_{k}" display="inline"><msub><mi>F</mi><mi>k</mi></msub></math> is 1.</p>
+</div>
+<div id="S3.p19" class="ltx_para">
+<p class="ltx_p">All that remains in order to obtain a computational formula for the relational composite <math id="S3.p19.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> of the 2-adic relations <math id="S3.p19.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S3.p19.m3" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> is to collect the coefficients <math id="S3.p19.m4" class="ltx_Math" alttext="(G\circ H)_{ij}" display="inline"><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> over the appropriate basis of elementary relations <math id="S3.p19.m5" class="ltx_Math" alttext="i:j" display="inline"><mrow><mi>i</mi><mo>:</mo><mi>j</mi></mrow></math>, as <math id="S3.p19.m6" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and <math id="S3.p19.m7" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> range through <math id="S3.p19.m8" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>.</p>
+</div>
+<div id="S3.p20" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p20.m1" class="ltx_Math" alttext="G\circ H=\sum_{ij}(G\circ H)_{ij}(i:j)=\sum_{ij}(\sum_{k}G_{ik}H_{kj})(i:j)." display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi><mo>=</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><msub><mrow><mo stretchy="false">(</mo><mi>G</mi><mo>∘</mo><mi>H</mi><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="false">(</mo><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>:</mo><mi>j</mi><mo stretchy="false">)</mo></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p21" class="ltx_para">
+<p class="ltx_p">This is the logical analogue of matrix multiplication in linear algebra, the difference in the logical setting being that all of the operations performed on coefficients take place in a system of logical arithmetic where summation corresponds to logical disjunction and multiplication corresponds to logical conjunction.
+</p>
+</div>
+<div id="S3.p22" class="ltx_para">
+<p class="ltx_p">By way of disentangling this formula, one may notice that the form <math id="S3.p22.m1" class="ltx_Math" alttext="\sum_{k}G_{ik}H_{kj}" display="inline"><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub><mrow><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>⁢</mo><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mrow></mrow></math> is what is usually called a <span class="ltx_text ltx_font_italic">scalar product</span>. In this case it is the scalar product of the <math id="S3.p22.m2" class="ltx_Math" alttext="i^{\mbox{\small{th}}}" display="inline"><msup><mi>i</mi><mtext mathsize="128%">th</mtext></msup></math> row of <math id="S3.p22.m3" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> with the <math id="S3.p22.m4" class="ltx_Math" alttext="j^{\mbox{\small{th}}}" display="inline"><msup><mi>j</mi><mtext mathsize="128%">th</mtext></msup></math> column of <math id="S3.p22.m5" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>.</p>
+</div>
+<div id="S3.p23" class="ltx_para">
+<p class="ltx_p">To make this statement more concrete, let us go back to the particular examples of <math id="S3.p23.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and <math id="S3.p23.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> that we came in with:</p>
+</div>
+<div id="S3.p24" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p24.m1" class="ltx_Math" alttext="G=\left[\begin{array}[]{ccccccc}0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;1&amp;1&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+\end{array}\right]" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p25" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p25.m1" class="ltx_Math" alttext="H=\left[\begin{array}[]{ccccccc}0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+\end{array}\right]" display="inline"><mrow><mi>H</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p26" class="ltx_para">
+<p class="ltx_p">The formula for computing <math id="S3.p26.m1" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math> says the following:</p>
+</div>
+<div id="S3.p27" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p27.m1" class="ltx_Math" alttext="\begin{array}[]{cl}(G\circ H)_{ij}\\
+=&amp;\mbox{the}\ ij^{\mbox{\small{th}}}\ \mbox{entry in the matrix representation%
+ for}\ G\circ H\\
+=&amp;\mbox{the entry in the}\ i^{\mbox{\small{th}}}\ \mbox{row and the}\ j^{\mbox%
+{\small{th}}}\ \mbox{column of}\ G\circ H\\
+=&amp;\mbox{the scalar product of the}\ i^{\mbox{\small{th}}}\ \mbox{row of}\ G\ %
+\mbox{with the }\ j^{\mbox{\small{th}}}\ \mbox{column of}\ H\\
+=&amp;\sum_{k}G_{ik}H_{kj}\\
+\end{array}" display="inline"><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><msub><mrow><mo stretchy="false">(</mo><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mtd><mtd></mtd></mtr><mtr><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mrow><mpadded width="+5pt"><mtext>the</mtext></mpadded><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mpadded width="+5pt"><msup><mi>j</mi><mtext mathsize="128%">th</mtext></msup></mpadded><mo>⁢</mo><mpadded width="+5pt"><mtext>entry in the matrix representation for</mtext></mpadded><mo>⁢</mo><mi>G</mi></mrow><mo>∘</mo><mi>H</mi></mrow></mtd></mtr><mtr><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mrow><mpadded width="+5pt"><mtext>the entry in the</mtext></mpadded><mo>⁢</mo><mpadded width="+5pt"><msup><mi>i</mi><mtext mathsize="128%">th</mtext></msup></mpadded><mo>⁢</mo><mpadded width="+5pt"><mtext>row and the</mtext></mpadded><mo>⁢</mo><mpadded width="+5pt"><msup><mi>j</mi><mtext mathsize="128%">th</mtext></msup></mpadded><mo>⁢</mo><mpadded width="+5pt"><mtext>column of</mtext></mpadded><mo>⁢</mo><mi>G</mi></mrow><mo>∘</mo><mi>H</mi></mrow></mtd></mtr><mtr><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><mrow><mpadded width="+5pt"><mtext>the scalar product of the</mtext></mpadded><mo>⁢</mo><mpadded width="+5pt"><msup><mi>i</mi><mtext mathsize="128%">th</mtext></msup></mpadded><mo>⁢</mo><mpadded width="+5pt"><mtext>row of</mtext></mpadded><mo>⁢</mo><mpadded width="+5pt"><mi>G</mi></mpadded><mo>⁢</mo><mpadded width="+5pt"><mtext>with the </mtext></mpadded><mo>⁢</mo><mpadded width="+5pt"><msup><mi>j</mi><mtext mathsize="128%">th</mtext></msup></mpadded><mo>⁢</mo><mpadded width="+5pt"><mtext>column of</mtext></mpadded><mo>⁢</mo><mi>H</mi></mrow></mtd></mtr><mtr><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mi>k</mi></msub><mrow><msub><mi>G</mi><mrow><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow></msub><mo>⁢</mo><msub><mi>H</mi><mrow><mi>k</mi><mo>⁢</mo><mi>j</mi></mrow></msub></mrow></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="S3.p28" class="ltx_para">
+<p class="ltx_p">As it happens, it is possible to make exceedingly light work of this example, since there is only one row of <math id="S3.p28.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> and one column of <math id="S3.p28.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> that are not all zeroes. Taking the scalar product, in a logical way, of the fourth row of <math id="S3.p28.m3" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> with the fourth column of <math id="S3.p28.m4" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> produces the sole non-zero entry for the matrix of <math id="S3.p28.m5" class="ltx_Math" alttext="G\circ H" display="inline"><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow></math>.</p>
+</div>
+<div id="S3.p29" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.p29.m1" class="ltx_Math" alttext="G\circ H=\left[\begin{array}[]{ccccccc}0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+\end{array}\right]" display="inline"><mrow><mrow><mi>G</mi><mo>∘</mo><mi>H</mi></mrow><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></p>
+</blockquote>
+</div>
+<div id="S3.p30" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">matrix representation of relation composition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">MatrixRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:50:28</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:50:28</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">21</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Example</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68R01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 08A02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03E20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03B10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationTheory</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">AlgebraicRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">GeometricRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">GraphTheoreticRepresentationOfRelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">LogicalMatrix</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:50:02 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

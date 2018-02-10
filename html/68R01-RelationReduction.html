@@ -1,0 +1,802 @@
+<!DOCTYPE html><html>
+<head>
+<title>relation reduction</title>
+<!--Generated on Sat Feb 10 12:50:10 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">relation reduction</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Relation reduction</span> and <span class="ltx_text ltx_font_bold">relational reducibility</span> have to do with the extent to which a given relation is determined by an indexed family or a sequence of other relations, called the <span class="ltx_text ltx_font_italic">relation dataset</span>. The relation under examination is called the <span class="ltx_text ltx_font_italic">reductand</span>. The relation dataset typically consists of a specified set of other relations, simpler in some measure than the reductand, called the <span class="ltx_text ltx_font_italic">reduction base</span>, plus a specified operation on relations, called the <span class="ltx_text ltx_font_italic">reduction method</span> or the <span class="ltx_text ltx_font_italic">reduction step</span>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">A question of relation reduction or relational reducibility is sometimes posed as a question of <span class="ltx_text ltx_font_bold">relation reconstruction</span> or <span class="ltx_text ltx_font_bold">relational reconstructibility</span>, since a useful way of stating the question is to ask whether the reductand can be reconstructed from the relational dataset.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">A relation that is not uniquely determined by a particular relation dataset is said to be irreducible in just that respect. A relation that is not uniquely determined by any relation dataset in a particular class of relation datasets is said to be irreducible in respect of that class.</p>
+</div>
+<div class="ltx_TOC ltx_role_contents">
+<h6>Contents:</h6>
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="1 Discussion ‣ relation reduction" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Discussion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S2" title="2 Projective reducibility of relations ‣ relation reduction" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Projective reducibility of relations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S3" title="3 Projective reducibility of triadic relations ‣ relation reduction" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Projective reducibility of triadic relations</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS1" title="3.1 Examples of projectively irreducible relations ‣ 3 Projective reducibility of triadic relations ‣ relation reduction" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Examples of projectively irreducible relations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS2" title="3.2 Examples of projectively reducible relations ‣ 3 Projective reducibility of triadic relations ‣ relation reduction" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Examples of projectively reducible relations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS3" title="3.3 Summary ‣ 3 Projective reducibility of triadic relations ‣ relation reduction" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Summary</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Discussion</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The main thing that keeps the general problem of relational reducibility from being fully well-defined is that one would have to survey all of the conceivable ways of “getting new relations from old” in order to say precisely what is meant by the claim that the relation <math id="S1.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is reducible to the set of relations <math id="S1.p1.m2" class="ltx_Math" alttext="\{L_{j}:j\in J\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>L</mi><mi>j</mi></msub><mo>:</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow><mo stretchy="false">}</mo></mrow></math>. This is tantamount to claiming that if one is given a set of “simpler” relations <math id="S1.p1.m3" class="ltx_Math" alttext="L_{j}" display="inline"><msub><mi>L</mi><mi>j</mi></msub></math>, for indices <math id="S1.p1.m4" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> in some set <math id="S1.p1.m5" class="ltx_Math" alttext="J" display="inline"><mi>J</mi></math>, that this collection of data would somehow or other fix the original relation <math id="S1.p1.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> that one is seeking to analyze, to determine, to specify, or to synthesize.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">In practice, however, apposite discussion of a particular application typically settles on either one of two different notions of reducibility as capturing the pertinent issues, namely:</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Reduction under composition (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/RelationComposition</span>).</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Reduction under projections.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p class="ltx_p">As it happens, there is an interesting relationship between these two notions of reducibility, the implications of which may be taken up partly in parallel with the discussion of the basic concepts.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Projective reducibility of relations</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">It is convenient to begin with the <span class="ltx_text ltx_font_italic">projective reduction</span> of relations, partly because this type of reduction is simpler and more intuitive (in the visual sense), but also because a number of conceptual tools that are needed in any case arise quite naturally in the projective setting.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">The work of intuiting how projections operate on multidimensional relations is often facilitated by keeping in mind the following sort of geometric image:</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Picture a <math id="I2.i1.p1.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-adic relation <math id="I2.i1.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> as a body that resides in a <math id="I2.i1.p1.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-dimensional space <math id="I2.i1.p1.m4" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>. If the domains of the relation <math id="I2.i1.p1.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> are <math id="I2.i1.p1.m6" class="ltx_Math" alttext="X_{1},\ldots,X_{k}" display="inline"><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></math>, then the <span class="ltx_text ltx_font_italic">extension</span> of the relation <math id="I2.i1.p1.m7" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is a subset of the cartesian product <math id="I2.i1.p1.m8" class="ltx_Math" alttext="X=X_{1}\times\ldots\times X_{k}" display="inline"><mrow><mi>X</mi><mo>=</mo><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>×</mo><mi mathvariant="normal">…</mi><mo>×</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">In this setting, the interval <math id="S2.p4.m1" class="ltx_Math" alttext="K=[1,k]=\{1,\ldots,k\}" display="inline"><mrow><mi>K</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>,</mo><mi>k</mi><mo stretchy="false">]</mo></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>k</mi><mo stretchy="false">}</mo></mrow></mrow></math> is called the <span class="ltx_text ltx_font_italic">index set</span> of the <span class="ltx_text ltx_font_italic">indexed family</span> of sets <math id="S2.p4.m2" class="ltx_Math" alttext="X_{1},\ldots,X_{k}" display="inline"><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>X</mi><mi>k</mi></msub></mrow></math>.</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">For any subset <math id="S2.p5.m1" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> of the index set <math id="S2.p5.m2" class="ltx_Math" alttext="K" display="inline"><mi>K</mi></math>, there is the corresponding subfamily of sets, <math id="S2.p5.m3" class="ltx_Math" alttext="\{X_{j}:j\in F\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>X</mi><mi>j</mi></msub><mo>:</mo><mrow><mi>j</mi><mo>∈</mo><mi>F</mi></mrow><mo stretchy="false">}</mo></mrow></math>, and there is the corresponding cartesian product over this subfamily, notated and defined as <math id="S2.p5.m4" class="ltx_Math" alttext="X_{F}=\prod_{j\in F}X_{j}" display="inline"><mrow><msub><mi>X</mi><mi>F</mi></msub><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∏</mo><mrow><mi>j</mi><mo>∈</mo><mi>F</mi></mrow></msub><msub><mi>X</mi><mi>j</mi></msub></mrow></mrow></math>.</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">For any point <math id="S2.p6.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S2.p6.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, the <span class="ltx_text ltx_font_italic">projection</span> of <math id="S2.p6.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> on the subspace <math id="S2.p6.m4" class="ltx_Math" alttext="X_{F}" display="inline"><msub><mi>X</mi><mi>F</mi></msub></math> is notated as <math id="S2.p6.m5" class="ltx_Math" alttext="\operatorname{proj}_{F}(x)" display="inline"><mrow><msub><mi>proj</mi><mi>F</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, or still more simply as <math id="S2.p6.m6" class="ltx_Math" alttext="\operatorname{proj}_{F}x." display="inline"><mrow><mrow><msub><mi>proj</mi><mi>F</mi></msub><mo>⁡</mo><mi>x</mi></mrow><mo>.</mo></mrow></math></p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p class="ltx_p">More generally, for any relation <math id="S2.p7.m1" class="ltx_Math" alttext="L\subseteq X" display="inline"><mrow><mi>L</mi><mo>⊆</mo><mi>X</mi></mrow></math>, the projection of <math id="S2.p7.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> on the subspace <math id="S2.p7.m3" class="ltx_Math" alttext="X_{F}" display="inline"><msub><mi>X</mi><mi>F</mi></msub></math> is written as <math id="S2.p7.m4" class="ltx_Math" alttext="\operatorname{proj}_{F}(L)" display="inline"><mrow><msub><mi>proj</mi><mi>F</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></math>, or still more simply as <math id="S2.p7.m5" class="ltx_Math" alttext="\operatorname{proj}_{F}L." display="inline"><mrow><mrow><msub><mi>proj</mi><mi>F</mi></msub><mo>⁡</mo><mi>L</mi></mrow><mo>.</mo></mrow></math>
+</p>
+</div>
+<div id="S2.p8" class="ltx_para">
+<p class="ltx_p">The question of <span class="ltx_text ltx_font_italic">projective reduction</span> for <math id="S2.p8.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-adic relations can be stated with moderate generality in the following way:</p>
+</div>
+<div id="S2.p9" class="ltx_para">
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Given a set of <math id="I3.i1.p1.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-place relations in the same space <math id="I3.i1.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> and a set of projections from <math id="I3.i1.p1.m3" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> to the associated subspaces, do the projections afford sufficient data to tell the different relations apart?</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Projective reducibility of triadic relations</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">See main entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/TriadicRelation</span>) on triadic relations.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">By way of illustrating the different sorts of things that can occur in considering the projective reducibility of relations, it is convenient to reuse the four examples of 3-adic relations that are discussed in the main entry on that subject.</p>
+</div>
+<section id="S3.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1 </span>Examples of projectively irreducible relations</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p class="ltx_p">The 3-adic relations <math id="S3.SS1.p1.m1" class="ltx_Math" alttext="L_{0}" display="inline"><msub><mi>L</mi><mn>0</mn></msub></math> and <math id="S3.SS1.p1.m2" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> are shown in the next two Tables:</p>
+</div>
+<div id="S3.SS1.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="3"><math id="S3.SS1.p2.m1" class="ltx_Math" alttext="L_{0}=\{(x,y,z)\in\mathbb{B}^{3}:x+y+z=0\}" display="inline"><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>𝔹</mi><mn>3</mn></msup></mrow><mo>:</mo><mrow><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"> <math id="S3.SS1.p2.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>
+</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p2.m3" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p2.m4" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">0</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS1.p3" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="3"><math id="S3.SS1.p3.m1" class="ltx_Math" alttext="L_{1}=\{(x,y,z)\in\mathbb{B}^{3}:x+y+z=1\}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>𝔹</mi><mn>3</mn></msup></mrow><mo>:</mo><mrow><mrow><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS1.p3.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p3.m3" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p3.m4" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt">1</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS1.p4" class="ltx_para">
+<p class="ltx_p">Viewed in terms of operations on relational data tables, a 2-adic projection of a 3-adic relation <math id="S3.SS1.p4.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is the 2-adic relation that results from deleting one column of the table for <math id="S3.SS1.p4.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and then deleting all but one row of any resulting rows that happen to be identical in content. In other words, the multiplicity of any repeated row is ignored.</p>
+</div>
+<div id="S3.SS1.p5" class="ltx_para">
+<p class="ltx_p">In the case of the above two relations, <math id="S3.SS1.p5.m1" class="ltx_Math" alttext="L_{0},L_{1}\subseteq X\times Y\times Z\cong\mathbb{B}^{3}" display="inline"><mrow><mrow><msub><mi>L</mi><mn>0</mn></msub><mo>,</mo><msub><mi>L</mi><mn>1</mn></msub></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow><mo>≅</mo><msup><mi>𝔹</mi><mn>3</mn></msup></mrow></math>, the 2-adic projections are indexed by the columns or domains that remain, as shown in the following Tables.</p>
+</div>
+<div id="S3.SS1.p6" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS1.p6.m1" class="ltx_Math" alttext="\operatorname{proj}_{XY}L_{0}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>0</mn></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS1.p6.m2" class="ltx_Math" alttext="\operatorname{proj}_{XZ}L_{0}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>0</mn></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS1.p6.m3" class="ltx_Math" alttext="\operatorname{proj}_{YZ}L_{0}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>0</mn></msub></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS1.p6.m4" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS1.p6.m5" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p6.m6" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS1.p6.m7" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p6.m8" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p6.m9" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS1.p7" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS1.p7.m1" class="ltx_Math" alttext="\operatorname{proj}_{XY}L_{1}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS1.p7.m2" class="ltx_Math" alttext="\operatorname{proj}_{XZ}L_{1}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS1.p7.m3" class="ltx_Math" alttext="\operatorname{proj}_{YZ}L_{1}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS1.p7.m4" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS1.p7.m5" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p7.m6" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS1.p7.m7" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p7.m8" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS1.p7.m9" class="ltx_Math" alttext="Z" display="inline"><mi>Z</mi></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_rr ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS1.p8" class="ltx_para">
+<p class="ltx_p">It is clear on inspection that the following three equations hold:</p>
+</div>
+<div id="S3.SS1.p9" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.SS1.p9.m1" class="ltx_Math" alttext="\begin{array}[]{lcr}\operatorname{proj}_{XY}L_{0}=\operatorname{proj}_{XY}L_{1%
+},&amp;\operatorname{proj}_{XZ}L_{0}=\operatorname{proj}_{XZ}L_{1},&amp;\operatorname{%
+proj}_{YZ}L_{0}=\operatorname{proj}_{YZ}L_{1}.\\
+\end{array}" display="inline"><mtable columnspacing="5pt"><mtr><mtd columnalign="left"><mrow><mrow><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><mo>=</mo><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Y</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="center"><mrow><mrow><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><mo>=</mo><mrow><msub><mi>proj</mi><mrow><mi>X</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="right"><mrow><mrow><mrow><msub><mi>proj</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><mo>=</mo><mrow><msub><mi>proj</mi><mrow><mi>Y</mi><mo>⁢</mo><mi>Z</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mn>1</mn></msub></mrow></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="S3.SS1.p10" class="ltx_para">
+<p class="ltx_p">These equations say that <math id="S3.SS1.p10.m1" class="ltx_Math" alttext="L_{0}" display="inline"><msub><mi>L</mi><mn>0</mn></msub></math> and <math id="S3.SS1.p10.m2" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> cannot be distinguished from each other solely on the basis of their 2-adic projection data. In such a case, either relation is said to be <span class="ltx_text ltx_font_italic">irreducible with respect to 2-adic projections</span>. Since reducibility with respect to 2-adic projections is the only interesting case where it concerns the reduction of 3-adic relations, it is customary to say more simply of such a relation that it is <span class="ltx_text ltx_font_italic">projectively irreducible</span>, the 2-adic basis being understood. It is immediate from the definition that projectively irreducible relations always arise in non-trivial multiplets of mutually indiscernible relations.</p>
+</div>
+</section>
+<section id="S3.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2 </span>Examples of projectively reducible relations</h3>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<p class="ltx_p">The 3-adic sign relations <math id="S3.SS2.p1.m1" class="ltx_Math" alttext="L_{\mathrm{A}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></math> and <math id="S3.SS2.p1.m2" class="ltx_Math" alttext="L_{\mathrm{B}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></math> are shown in the next two Tables:</p>
+</div>
+<div id="S3.SS2.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="3">
+<math id="S3.SS2.p2.m1" class="ltx_Math" alttext="L_{\mathrm{A}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></math> = Sign Relation of Interpreter A</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"> Object</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Sign</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Interpretant</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt"><math id="S3.SS2.p2.m2" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math id="S3.SS2.p2.m3" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math id="S3.SS2.p2.m4" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m5" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m6" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m7" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m8" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m9" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m10" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m11" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m12" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m13" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m14" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m15" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m16" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m17" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m18" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m19" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m20" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m21" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m22" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m23" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m24" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p2.m25" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS2.p3" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="3">
+<math id="S3.SS2.p3.m1" class="ltx_Math" alttext="L_{\mathrm{B}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></math> = Sign Relation of Interpreter B</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"> Object</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Sign</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Interpretant</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_tt"><math id="S3.SS2.p3.m2" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math id="S3.SS2.p3.m3" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math id="S3.SS2.p3.m4" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m5" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m6" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m7" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m8" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m9" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m10" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m11" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m12" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m13" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m14" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m15" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m16" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m17" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m18" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m19" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m20" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m21" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m22" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m23" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m24" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p3.m25" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS2.p4" class="ltx_para">
+<p class="ltx_p">In the case of the two sign relations, <math id="S3.SS2.p4.m1" class="ltx_Math" alttext="L_{\mathrm{A}},L_{\mathrm{B}}\subseteq X\times Y\times Z\cong O\times S\times I" display="inline"><mrow><mrow><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub><mo>,</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow><mo>≅</mo><mrow><mi>O</mi><mo>×</mo><mi>S</mi><mo>×</mo><mi>I</mi></mrow></mrow></math>, the 2-adic projections are indexed by the columns or domains that remain, as shown in the following Tables.</p>
+</div>
+<div id="S3.SS2.p5" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS2.p5.m1" class="ltx_Math" alttext="\operatorname{proj}_{OS}L_{\mathrm{A}}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>S</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS2.p5.m2" class="ltx_Math" alttext="\operatorname{proj}_{OI}L_{\mathrm{A}}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS2.p5.m3" class="ltx_Math" alttext="\operatorname{proj}_{SI}L_{\mathrm{A}}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Object</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">Sign</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Object</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">Interpretant</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Sign</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Interpretant</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m4" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m5" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m6" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m7" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m8" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m9" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m10" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m11" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m12" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m13" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m14" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m15" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m16" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m17" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m18" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m19" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m20" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m21" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m22" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m23" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m24" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p5.m25" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m26" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m27" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m28" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m29" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m30" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m31" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m32" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m33" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m34" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p5.m35" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS2.p6" class="ltx_para">
+<blockquote class="ltx_quote">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS2.p6.m1" class="ltx_Math" alttext="\operatorname{proj}_{OS}L_{\mathrm{B}}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>S</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS2.p6.m2" class="ltx_Math" alttext="\operatorname{proj}_{OI}L_{\mathrm{B}}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center" colspan="2"><math id="S3.SS2.p6.m3" class="ltx_Math" alttext="\operatorname{proj}_{SI}L_{\mathrm{B}}" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Object</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">Sign</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Object</td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t">Interpretant</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Sign</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Interpretant</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m4" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m5" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m6" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m7" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m8" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m9" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m10" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m11" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m12" class="ltx_Math" alttext="\mathrm{A}" display="inline"><mi mathvariant="normal">A</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m13" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m14" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m15" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m16" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m17" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m18" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m19" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m20" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m21" class="ltx_Math" alttext='\mathrm{``A"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">A</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m22" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m23" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m24" class="ltx_Math" alttext="\mathrm{B}" display="inline"><mi mathvariant="normal">B</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_rr ltx_border_t"><math id="S3.SS2.p6.m25" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m26" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m27" class="ltx_Math" alttext='\mathrm{``u"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">u</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m28" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m29" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m30" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m31" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m32" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m33" class="ltx_Math" alttext='\mathrm{``B"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">B</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r" colspan="4"></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m34" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S3.SS2.p6.m35" class="ltx_Math" alttext='\mathrm{``i"}' display="inline"><mrow><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">`</mi><mo>⁢</mo><mi mathvariant="normal">i</mi><mo>⁢</mo><mi mathvariant="normal">"</mi></mrow></math></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div id="S3.SS2.p7" class="ltx_para">
+<p class="ltx_p">It is clear on inspection that the following three inequations hold:</p>
+</div>
+<div id="S3.SS2.p8" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><math id="S3.SS2.p8.m1" class="ltx_Math" alttext="\begin{array}[]{lcr}\operatorname{proj}_{OS}L_{\mathrm{A}}\neq\operatorname{%
+proj}_{OS}L_{\mathrm{B}},&amp;\operatorname{proj}_{OI}L_{\mathrm{A}}\neq%
+\operatorname{proj}_{OI}L_{\mathrm{B}},&amp;\operatorname{proj}_{SI}L_{\mathrm{A}}%
+\neq\operatorname{proj}_{SI}L_{\mathrm{B}}.\\
+\end{array}" display="inline"><mtable columnspacing="5pt"><mtr><mtd columnalign="left"><mrow><mrow><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>S</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></mrow><mo>≠</mo><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>S</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="center"><mrow><mrow><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></mrow><mo>≠</mo><mrow><msub><mi>proj</mi><mrow><mi>O</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow></mrow><mo>,</mo></mrow></mtd><mtd columnalign="right"><mrow><mrow><mrow><msub><mi>proj</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></mrow><mo>≠</mo><mrow><msub><mi>proj</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo>⁡</mo><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></mrow></mrow><mo>.</mo></mrow></mtd></mtr></mtable></math></p>
+</blockquote>
+</div>
+<div id="S3.SS2.p9" class="ltx_para">
+<p class="ltx_p">These inequations say that <math id="S3.SS2.p9.m1" class="ltx_Math" alttext="L_{\mathrm{A}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></math> and <math id="S3.SS2.p9.m2" class="ltx_Math" alttext="L_{\mathrm{B}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></math> can be distinguished from each other solely on the basis of their 2-adic projection data. But this is not enough to say that either one of them is projectively reducible to their 2-adic projection data. To say that a 3-adic relation is projectively reducible in that respect, one has to show that it can be distinguished from <span class="ltx_text ltx_font_italic">every</span> other 3-adic relation on the basis of the 2-adic projection data alone.</p>
+</div>
+<div id="S3.SS2.p10" class="ltx_para">
+<p class="ltx_p">In other words, to show that a 3-adic relation <math id="S3.SS2.p10.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> on <math id="S3.SS2.p10.m2" class="ltx_Math" alttext="O\times S\times I" display="inline"><mrow><mi>O</mi><mo>×</mo><mi>S</mi><mo>×</mo><mi>I</mi></mrow></math> is <span class="ltx_text ltx_font_italic">reducible</span> or <span class="ltx_text ltx_font_italic">reconstructible</span> in the 2-adic projective sense, it is necessary to show that no distinct <math id="S3.SS2.p10.m3" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> on <math id="S3.SS2.p10.m4" class="ltx_Math" alttext="O\times S\times I" display="inline"><mrow><mi>O</mi><mo>×</mo><mi>S</mi><mo>×</mo><mi>I</mi></mrow></math> exists such that <math id="S3.SS2.p10.m5" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and <math id="S3.SS2.p10.m6" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> have the same set of projections. Proving this takes a much more comprehensive or exhaustive investigation of the space of possible relations on <math id="S3.SS2.p10.m7" class="ltx_Math" alttext="O\times S\times I" display="inline"><mrow><mi>O</mi><mo>×</mo><mi>S</mi><mo>×</mo><mi>I</mi></mrow></math> than looking merely at one or two relations at a time.</p>
+</div>
+<div id="S3.SS2.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Fact.</span> As it happens, each of the relations <math id="S3.SS2.p11.m1" class="ltx_Math" alttext="L_{\mathrm{A}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></math> and <math id="S3.SS2.p11.m2" class="ltx_Math" alttext="L_{\mathrm{B}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></math> is uniquely determined by its 2-adic projections. This can be seen by following the proof that is given below.</p>
+</div>
+<div id="S3.SS2.p12" class="ltx_para">
+<p class="ltx_p">Before tackling the proof, however, it will speed things along to recall a few ideas and notations from other articles.</p>
+</div>
+<div id="S3.SS2.p13" class="ltx_para">
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I4.i1.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is a relation over a set of domains that includes the domains <math id="I4.i1.p1.m2" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> and <math id="I4.i1.p1.m3" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math>, then the abbreviated notation <math id="I4.i1.p1.m4" class="ltx_Math" alttext="L_{UV}" display="inline"><msub><mi>L</mi><mrow><mi>U</mi><mo>⁢</mo><mi>V</mi></mrow></msub></math> can be used for the projection <math id="I4.i1.p1.m5" class="ltx_Math" alttext="\operatorname{proj}_{UV}L" display="inline"><mrow><msub><mi>proj</mi><mrow><mi>U</mi><mo>⁢</mo><mi>V</mi></mrow></msub><mo>⁡</mo><mi>L</mi></mrow></math>.</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p">The operation of reversing a projection asks what elements of a bigger space project onto given elements of a smaller space. The set of elements that project onto <math id="I4.i2.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> under a given projection <math id="I4.i2.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is called the <span class="ltx_text ltx_font_italic">fiber</span> of <math id="I4.i2.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> under <math id="I4.i2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> and is written <math id="I4.i2.p1.m5" class="ltx_Math" alttext="f^{-1}(x)" display="inline"><mrow><msup><mi>f</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> or <math id="I4.i2.p1.m6" class="ltx_Math" alttext="f^{-1}x" display="inline"><mrow><msup><mi>f</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>x</mi></mrow></math>.</p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I4.i3.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is a finite set, the <span class="ltx_text ltx_font_italic">cardinality</span> of <math id="I4.i3.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, written <math id="I4.i3.p1.m3" class="ltx_Math" alttext="\operatorname{card}(X)" display="inline"><mrow><mi>card</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mrow></math> or <math id="I4.i3.p1.m4" class="ltx_Math" alttext="|X|" display="inline"><mrow><mo stretchy="false">|</mo><mi>X</mi><mo stretchy="false">|</mo></mrow></math>, means the number of elements in <math id="I4.i3.p1.m5" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S3.SS2.p14" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Proof.</span> Let <math id="S3.SS2.p14.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> be either one of the relations <math id="S3.SS2.p14.m2" class="ltx_Math" alttext="L_{\mathrm{A}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></math> or <math id="S3.SS2.p14.m3" class="ltx_Math" alttext="L_{\mathrm{B}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></math>. Consider any coordinate position <math id="S3.SS2.p14.m4" class="ltx_Math" alttext="(s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> in the <math id="S3.SS2.p14.m5" class="ltx_Math" alttext="SI" display="inline"><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></math>-plane <math id="S3.SS2.p14.m6" class="ltx_Math" alttext="S\times I" display="inline"><mrow><mi>S</mi><mo>×</mo><mi>I</mi></mrow></math>. If <math id="S3.SS2.p14.m7" class="ltx_Math" alttext="(s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> is not in <math id="S3.SS2.p14.m8" class="ltx_Math" alttext="L_{SI}" display="inline"><msub><mi>L</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub></math> then there can be no element <math id="S3.SS2.p14.m9" class="ltx_Math" alttext="(o,s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> in <math id="S3.SS2.p14.m10" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, therefore we may restrict our attention to positions <math id="S3.SS2.p14.m11" class="ltx_Math" alttext="(s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> in <math id="S3.SS2.p14.m12" class="ltx_Math" alttext="L_{SI}" display="inline"><msub><mi>L</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub></math>, knowing that there exist at least <math id="S3.SS2.p14.m13" class="ltx_Math" alttext="|L_{SI}|=8" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>L</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow></msub><mo stretchy="false">|</mo></mrow><mo>=</mo><mn>8</mn></mrow></math> elements in <math id="S3.SS2.p14.m14" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, and seeking only to determine what objects <math id="S3.SS2.p14.m15" class="ltx_Math" alttext="o" display="inline"><mi>o</mi></math> exist such that <math id="S3.SS2.p14.m16" class="ltx_Math" alttext="(o,s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> is an element in the fiber of <math id="S3.SS2.p14.m17" class="ltx_Math" alttext="(s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math>. In other words, for what <math id="S3.SS2.p14.m18" class="ltx_Math" alttext="o" display="inline"><mi>o</mi></math> in <math id="S3.SS2.p14.m19" class="ltx_Math" alttext="O" display="inline"><mi>O</mi></math> is <math id="S3.SS2.p14.m20" class="ltx_Math" alttext="(o,s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> in the fiber <math id="S3.SS2.p14.m21" class="ltx_Math" alttext="\operatorname{proj}_{SI}^{-1}(s,i)" display="inline"><mrow><msubsup><mi>proj</mi><mrow><mi>S</mi><mo>⁢</mo><mi>I</mi></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msubsup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow></math>? Now, the circumstance that <math id="S3.SS2.p14.m22" class="ltx_Math" alttext="L_{OS}" display="inline"><msub><mi>L</mi><mrow><mi>O</mi><mo>⁢</mo><mi>S</mi></mrow></msub></math> has exactly one element <math id="S3.SS2.p14.m23" class="ltx_Math" alttext="(o,s)" display="inline"><mrow><mo stretchy="false">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></math> for each coordinate <math id="S3.SS2.p14.m24" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> in <math id="S3.SS2.p14.m25" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> and that <math id="S3.SS2.p14.m26" class="ltx_Math" alttext="L_{OI}" display="inline"><msub><mi>L</mi><mrow><mi>O</mi><mo>⁢</mo><mi>I</mi></mrow></msub></math> has exactly one element <math id="S3.SS2.p14.m27" class="ltx_Math" alttext="(o,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>o</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> for each coordinate <math id="S3.SS2.p14.m28" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> in <math id="S3.SS2.p14.m29" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, plus the “coincidence” of it being the same <math id="S3.SS2.p14.m30" class="ltx_Math" alttext="o" display="inline"><mi>o</mi></math> at any one choice for <math id="S3.SS2.p14.m31" class="ltx_Math" alttext="(s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math>, tells us that <math id="S3.SS2.p14.m32" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> has just the one element <math id="S3.SS2.p14.m33" class="ltx_Math" alttext="(o,s,i)" display="inline"><mrow><mo stretchy="false">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></math> over each point of <math id="S3.SS2.p14.m34" class="ltx_Math" alttext="S\times I" display="inline"><mrow><mi>S</mi><mo>×</mo><mi>I</mi></mrow></math>. All together, this proves that both <math id="S3.SS2.p14.m35" class="ltx_Math" alttext="L_{\mathrm{A}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">A</mi></msub></math> and <math id="S3.SS2.p14.m36" class="ltx_Math" alttext="L_{\mathrm{B}}" display="inline"><msub><mi>L</mi><mi mathvariant="normal">B</mi></msub></math> are reducible in an informative sense to 3-tuples of 2-adic relations, that is, they are <span class="ltx_text ltx_font_italic">projectively 2-adically reducible</span>.</p>
+</div>
+</section>
+<section id="S3.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.3 </span>Summary</h3>
+
+<div id="S3.SS3.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_font_italic">projective analysis</span> of 3-adic relations, illustrated by means of concrete examples, has been pursued just far enough at this point to state this clearly demonstrated result:</p>
+</div>
+<div id="S3.SS3.p2" class="ltx_para">
+<ul id="I5" class="ltx_itemize">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p">Some 3-adic relations are, and other 3-adic relations are not, reducible to, or reconstructible from, their 2-adic projection data. In short, some 3-adic relations are projectively reducible and some 3-adic relations are projectively irreducible.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S3.SS3.p3" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">relation reduction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationReduction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-10-24 16:56:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-10-24 16:56:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">36</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68R01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 08A02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03B10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03E20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relation identification</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relation reconstruction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationTheory</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationComposition2</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationConstruction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TacitExtension</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relational reducibility</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relational irreducibility</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">reductand</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">reduction base</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">reduction method</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:50:10 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

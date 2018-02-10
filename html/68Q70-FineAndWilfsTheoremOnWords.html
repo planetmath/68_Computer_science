@@ -1,0 +1,158 @@
+<!DOCTYPE html><html>
+<head>
+<title>Fine and Wilf’s theorem on words</title>
+<!--Generated on Sat Feb 10 12:48:18 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Fine and Wilf’s theorem on words</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Let <math id="p1.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> be a word on an alphabet <math id="p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> and let <math id="p1.m3" class="ltx_Math" alttext="|w|" display="inline"><mrow><mo stretchy="false">|</mo><mi>w</mi><mo stretchy="false">|</mo></mrow></math> be its length.
+A period of <math id="p1.m4" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is a value <math id="p1.m5" class="ltx_Math" alttext="p&gt;0" display="inline"><mrow><mi>p</mi><mo>&gt;</mo><mn>0</mn></mrow></math>
+such that <math id="p1.m6" class="ltx_Math" alttext="w_{i+p}=w_{i}" display="inline"><mrow><msub><mi>w</mi><mrow><mi>i</mi><mo>+</mo><mi>p</mi></mrow></msub><mo>=</mo><msub><mi>w</mi><mi>i</mi></msub></mrow></math> for every <math id="p1.m7" class="ltx_Math" alttext="i\in\{1,2,\ldots,|w|-p\}" display="inline"><mrow><mi>i</mi><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mrow><mo stretchy="false">|</mo><mi>w</mi><mo stretchy="false">|</mo></mrow><mo>-</mo><mi>p</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></math>.
+This is the same as saying that <math id="p1.m8" class="ltx_Math" alttext="w=u^{k}r" display="inline"><mrow><mi>w</mi><mo>=</mo><mrow><msup><mi>u</mi><mi>k</mi></msup><mo>⁢</mo><mi>r</mi></mrow></mrow></math>
+for some <math id="p1.m9" class="ltx_Math" alttext="u,r\in A^{\ast}" display="inline"><mrow><mrow><mi>u</mi><mo>,</mo><mi>r</mi></mrow><mo>∈</mo><msup><mi>A</mi><mo>∗</mo></msup></mrow></math> and <math id="p1.m10" class="ltx_Math" alttext="k\in\mathbb{N}" display="inline"><mrow><mi>k</mi><mo>∈</mo><mi>ℕ</mi></mrow></math>
+such that <math id="p1.m11" class="ltx_Math" alttext="|u|=p" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>u</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mi>p</mi></mrow></math> and <math id="p1.m12" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> is a prefix of <math id="p1.m13" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Fine and Wilf’s theorem
+gives a condition on the length of the periods a word can have.</p>
+</div>
+<div id="Thmtheorem1" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Theorem 1</span></h6>
+<div id="Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="Thmtheorem1.p1.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> be a word on an alphabet <math id="Thmtheorem1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> having periods <math id="Thmtheorem1.p1.m3" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> and <math id="Thmtheorem1.p1.m4" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math>.
+If <math id="Thmtheorem1.p1.m5" class="ltx_Math" alttext="|w|\geq p+q-\gcd(p,q)" display="inline"><mrow><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal">≥</mo><mrow><mrow><mi>p</mi><mo mathvariant="normal">+</mo><mi>q</mi></mrow><mo mathvariant="normal">-</mo><mrow><mi mathvariant="normal">gcd</mi><mo mathvariant="italic">⁡</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>p</mi><mo mathvariant="normal">,</mo><mi>q</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>,
+then <math id="Thmtheorem1.p1.m6" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> has period <math id="Thmtheorem1.p1.m7" class="ltx_Math" alttext="\gcd(p,q)" display="inline"><mrow><mi mathvariant="normal">gcd</mi><mo mathvariant="italic">⁡</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>p</mi><mo mathvariant="normal">,</mo><mi>q</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math>.
+The value <math id="Thmtheorem1.p1.m8" class="ltx_Math" alttext="p+q-\gcd(p,q)" display="inline"><mrow><mrow><mi>p</mi><mo mathvariant="normal">+</mo><mi>q</mi></mrow><mo mathvariant="normal">-</mo><mrow><mi mathvariant="normal">gcd</mi><mo mathvariant="italic">⁡</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>p</mi><mo mathvariant="normal">,</mo><mi>q</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mrow></math>
+is the smallest one that makes the theorem true.</span></p>
+</div>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">As a counterexample showing that the condition on <math id="p3.m1" class="ltx_Math" alttext="|w|" display="inline"><mrow><mo stretchy="false">|</mo><mi>w</mi><mo stretchy="false">|</mo></mrow></math> is necessary,
+the word <math id="p3.m2" class="ltx_Math" alttext="aaabaaa" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>a</mi></mrow></math> has periods <math id="p3.m3" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math> and <math id="p3.m4" class="ltx_Math" alttext="6" display="inline"><mn>6</mn></math>, but not <math id="p3.m5" class="ltx_Math" alttext="2=\gcd(4,6)" display="inline"><mrow><mn>2</mn><mo>=</mo><mrow><mi>gcd</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.
+This can happen because its length is <math id="p3.m6" class="ltx_Math" alttext="7&lt;4+6-2=8" display="inline"><mrow><mn>7</mn><mo>&lt;</mo><mrow><mrow><mn>4</mn><mo>+</mo><mn>6</mn></mrow><mo>-</mo><mn>2</mn></mrow><mo>=</mo><mn>8</mn></mrow></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Observe that Theorem <a href="#Thmtheorem1" title="Theorem 1 ‣ Fine and Wilf’s theorem on words" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> can be restated as follows
+(cf. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib1" title="" class="ltx_ref">1</a>]</cite>).</p>
+</div>
+<div id="Thmtheorem2" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Theorem 2</span></h6>
+<div id="Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="Thmtheorem2.p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="Thmtheorem2.p1.m2" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> be words over an alphabet <math id="Thmtheorem2.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.
+Suppose <math id="Thmtheorem2.p1.m4" class="ltx_Math" alttext="u^{h}" display="inline"><msup><mi>u</mi><mi>h</mi></msup></math> and <math id="Thmtheorem2.p1.m5" class="ltx_Math" alttext="w^{k}" display="inline"><msup><mi>w</mi><mi>k</mi></msup></math>, for some <math id="Thmtheorem2.p1.m6" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> and <math id="Thmtheorem2.p1.m7" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>,
+have a common prefix of length
+<math id="Thmtheorem2.p1.m8" class="ltx_Math" alttext="|u|+|w|-\gcd(|u|,|w|)." display="inline"><mrow><mrow><mrow><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>u</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal">+</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow></mrow><mo mathvariant="normal">-</mo><mrow><mi mathvariant="normal">gcd</mi><mo mathvariant="italic">⁡</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>u</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal">,</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mrow><mo mathvariant="normal">.</mo></mrow></math>
+Then there exists <math id="Thmtheorem2.p1.m9" class="ltx_Math" alttext="z\in A^{\ast}" display="inline"><mrow><mi>z</mi><mo mathvariant="normal">∈</mo><msup><mi>A</mi><mo mathvariant="normal">∗</mo></msup></mrow></math> of length <math id="Thmtheorem2.p1.m10" class="ltx_Math" alttext="\gcd(|u|,|w|)" display="inline"><mrow><mi mathvariant="normal">gcd</mi><mo mathvariant="italic">⁡</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>u</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal">,</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math>
+such that <math id="Thmtheorem2.p1.m11" class="ltx_Math" alttext="u,w\in z^{\ast}" display="inline"><mrow><mrow><mi>u</mi><mo mathvariant="normal">,</mo><mi>w</mi></mrow><mo mathvariant="normal">∈</mo><msup><mi>z</mi><mo mathvariant="normal">∗</mo></msup></mrow></math>.
+The value
+<math id="Thmtheorem2.p1.m12" class="ltx_Math" alttext="|u|+|w|-\gcd(|u|,|w|)" display="inline"><mrow><mrow><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>u</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal">+</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow></mrow><mo mathvariant="normal">-</mo><mrow><mi mathvariant="normal">gcd</mi><mo mathvariant="italic">⁡</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>u</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal">,</mo><mrow><mo mathvariant="normal" stretchy="false">|</mo><mi>w</mi><mo mathvariant="normal" stretchy="false">|</mo></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mrow></math>
+is also the smallest one that makes the theorem true.</span></p>
+</div>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">In fact, Theorem <a href="#Thmtheorem1" title="Theorem 1 ‣ Fine and Wilf’s theorem on words" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> clearly implies Theorem <a href="#Thmtheorem2" title="Theorem 2 ‣ Fine and Wilf’s theorem on words" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>.
+Now, suppose Theorem <a href="#Thmtheorem2" title="Theorem 2 ‣ Fine and Wilf’s theorem on words" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a> is true.
+Suppose <math id="p5.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> has periods <math id="p5.m2" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> and <math id="p5.m3" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math>
+and length at least <math id="p5.m4" class="ltx_Math" alttext="p+q-\gcd(p,q)" display="inline"><mrow><mrow><mi>p</mi><mo>+</mo><mi>q</mi></mrow><mo>-</mo><mrow><mi>gcd</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>:
+write <math id="p5.m5" class="ltx_Math" alttext="w=u^{k}r=v^{h}s" display="inline"><mrow><mi>w</mi><mo>=</mo><mrow><msup><mi>u</mi><mi>k</mi></msup><mo>⁢</mo><mi>r</mi></mrow><mo>=</mo><mrow><msup><mi>v</mi><mi>h</mi></msup><mo>⁢</mo><mi>s</mi></mrow></mrow></math> with
+<math id="p5.m6" class="ltx_Math" alttext="|u|=p" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>u</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mi>p</mi></mrow></math>, <math id="p5.m7" class="ltx_Math" alttext="|v|=q" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>v</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mi>q</mi></mrow></math>, <math id="p5.m8" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> prefix of <math id="p5.m9" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, <math id="p5.m10" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> prefix of <math id="p5.m11" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math>.
+Let <math id="p5.m12" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> be a common multiple of <math id="p5.m13" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> and <math id="p5.m14" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math> greater than <math id="p5.m15" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>, <math id="p5.m16" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math>, and <math id="p5.m17" class="ltx_Math" alttext="|w|" display="inline"><mrow><mo stretchy="false">|</mo><mi>w</mi><mo stretchy="false">|</mo></mrow></math>:
+then <math id="p5.m18" class="ltx_Math" alttext="u^{M/p}" display="inline"><msup><mi>u</mi><mrow><mi>M</mi><mo>/</mo><mi>p</mi></mrow></msup></math> and <math id="p5.m19" class="ltx_Math" alttext="v^{M/q}" display="inline"><msup><mi>v</mi><mrow><mi>M</mi><mo>/</mo><mi>q</mi></mrow></msup></math> have the common prefix <math id="p5.m20" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>,
+so they also have a common prefix of length <math id="p5.m21" class="ltx_Math" alttext="p+q-\gcd(u,v)" display="inline"><mrow><mrow><mi>p</mi><mo>+</mo><mi>q</mi></mrow><mo>-</mo><mrow><mi>gcd</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.
+Then <math id="p5.m22" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> and <math id="p5.m23" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> are powers of a word <math id="p5.m24" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> of length <math id="p5.m25" class="ltx_Math" alttext="\gcd(p,q)" display="inline"><mrow><mi>gcd</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false">)</mo></mrow></mrow></math>,
+and it is easy to see that <math id="p5.m26" class="ltx_Math" alttext="w=z^{m}t" display="inline"><mrow><mi>w</mi><mo>=</mo><mrow><msup><mi>z</mi><mi>m</mi></msup><mo>⁢</mo><mi>t</mi></mrow></mrow></math>
+for some <math id="p5.m27" class="ltx_Math" alttext="m&gt;0" display="inline"><mrow><mi>m</mi><mo>&gt;</mo><mn>0</mn></mrow></math> and some prefix <math id="p5.m28" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math> of <math id="p5.m29" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>.</p>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock">
+M. Lothaire.
+<span class="ltx_text ltx_font_italic">Combinatorics on words.</span>
+Cambridge University Press 1997.
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p6" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Fine and Wilf’s theorem on words</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">FineAndWilfsTheoremOnWords</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:00:39</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:00:39</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Ziosilvio (18733)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Ziosilvio (18733)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">18</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Ziosilvio (18733)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Theorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q70</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">msc 68R15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:48:18 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

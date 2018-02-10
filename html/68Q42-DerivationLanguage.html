@@ -1,0 +1,316 @@
+<!DOCTYPE html><html>
+<head>
+<title>derivation language</title>
+<!--Generated on Sat Feb 10 12:43:23 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">derivation language</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SS0.SSSx1" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Background</h2>
+
+<div id="S0.SS0.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="S0.SS0.SSSx1.p1.m1" class="ltx_Math" alttext="G=(\Sigma,N,P,\sigma)" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>P</mi><mo>,</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow></mrow></math> be a formal grammar. A pair <math id="S0.SS0.SSSx1.p1.m2" class="ltx_Math" alttext="(W_{1},W_{2})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>W</mi><mn>1</mn></msub><mo>,</mo><msub><mi>W</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></math> of words over <math id="S0.SS0.SSSx1.p1.m3" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is said to correspond to the production <math id="S0.SS0.SSSx1.p1.m4" class="ltx_Math" alttext="p\to q" display="inline"><mrow><mi>p</mi><mo>→</mo><mi>q</mi></mrow></math> if</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="W_{1}=u_{1}pv_{1}\qquad\mbox{and}\qquad W_{2}=u_{2}qv_{2}" display="block"><mrow><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mi>p</mi><mo>⁢</mo><msub><mi>v</mi><mn>1</mn></msub></mrow><mo mathvariant="italic" separator="true">  </mo><mtext>and</mtext></mrow></mrow><mo mathvariant="italic" separator="true">  </mo><mrow><msub><mi>W</mi><mn>2</mn></msub><mo>=</mo><mrow><msub><mi>u</mi><mn>2</mn></msub><mo>⁢</mo><mi>q</mi><mo>⁢</mo><msub><mi>v</mi><mn>2</mn></msub></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">for some words <math id="S0.SS0.SSSx1.p1.m5" class="ltx_Math" alttext="u_{i},v_{j}" display="inline"><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>,</mo><msub><mi>v</mi><mi>j</mi></msub></mrow></math> over <math id="S0.SS0.SSSx1.p1.m6" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>. We also say that <math id="S0.SS0.SSSx1.p1.m7" class="ltx_Math" alttext="(W_{1},W_{2})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>W</mi><mn>1</mn></msub><mo>,</mo><msub><mi>W</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></math> is a derivation step, and write <math id="S0.SS0.SSSx1.p1.m8" class="ltx_Math" alttext="W_{1}\to W_{2}" display="inline"><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>→</mo><msub><mi>W</mi><mn>2</mn></msub></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx1.p2" class="ltx_para">
+<p class="ltx_p">Recall that a derivation in <math id="S0.SS0.SSSx1.p2.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is a finite sequence of words</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="W_{1},W_{2},\ldots,W_{n}" display="block"><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>,</mo><msub><mi>W</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>W</mi><mi>n</mi></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">over <math id="S0.SS0.SSSx1.p2.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> such that <math id="S0.SS0.SSSx1.p2.m3" class="ltx_Math" alttext="W_{i}\Rightarrow W_{i+1}" display="inline"><mrow><msub><mi>W</mi><mi>i</mi></msub><mo>⇒</mo><msub><mi>W</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math>, for <math id="S0.SS0.SSSx1.p2.m4" class="ltx_Math" alttext="i=1,\ldots,n-1" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math>. The derivation is also written</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="W_{1}\Rightarrow W_{2}\Rightarrow\cdots\Rightarrow W_{n}." display="block"><mrow><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>⇒</mo><msub><mi>W</mi><mn>2</mn></msub><mo>⇒</mo><mi mathvariant="normal">⋯</mi><mo>⇒</mo><msub><mi>W</mi><mi>n</mi></msub></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The derivation above has <math id="S0.SS0.SSSx1.p2.m5" class="ltx_Math" alttext="n-1" display="inline"><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></math> steps. Zero-step derivations are also permitted. These are just words over <math id="S0.SS0.SSSx1.p2.m6" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>.
+</p>
+</div>
+<div id="S0.SS0.SSSx1.p3" class="ltx_para">
+<p class="ltx_p">The reflexive transitive closure of <math id="S0.SS0.SSSx1.p3.m1" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo>⇒</mo></math> is <math id="S0.SS0.SSSx1.p3.m2" class="ltx_Math" alttext="\Rightarrow^{*}" display="inline"><msup><mo>⇒</mo><mo>*</mo></msup></math>. Thus, <math id="S0.SS0.SSSx1.p3.m3" class="ltx_Math" alttext="V\Rightarrow^{*}W" display="inline"><mrow><mi>V</mi><msup><mo>⇒</mo><mo>*</mo></msup><mi>W</mi></mrow></math> means that there is a derivation starting with <math id="S0.SS0.SSSx1.p3.m4" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> and ending with <math id="S0.SS0.SSSx1.p3.m5" class="ltx_Math" alttext="W" display="inline"><mi>W</mi></math>. There may be more than one derivation from <math id="S0.SS0.SSSx1.p3.m6" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> to <math id="S0.SS0.SSSx1.p3.m7" class="ltx_Math" alttext="W" display="inline"><mi>W</mi></math>.</p>
+</div>
+<div id="S0.SS0.SSSx1.p4" class="ltx_para">
+<p class="ltx_p">If we consider each production as a “letter” in the alphabet <math id="S0.SS0.SSSx1.p4.m1" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math>, then the above derivation can be represented by a “word” over <math id="S0.SS0.SSSx1.p4.m2" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> in the following manner: the “word” is formed by taking concatenations of the “letters”, where concatenations correspond to successive applications of productions in <math id="S0.SS0.SSSx1.p4.m3" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math>:</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="[p_{1}\to q_{1}][p_{2}\to q_{2}]\cdots[p_{n-1}\to q_{n-1}]." display="block"><mrow><mrow><mo stretchy="false">[</mo><msub><mi>p</mi><mn>1</mn></msub><mo>→</mo><msub><mi>q</mi><mn>1</mn></msub><mo stretchy="false">]</mo></mrow><mrow><mo stretchy="false">[</mo><msub><mi>p</mi><mn>2</mn></msub><mo>→</mo><msub><mi>q</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mrow><mi mathvariant="normal">⋯</mi><mrow><mo stretchy="false">[</mo><msub><mi>p</mi><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msub><mo>→</mo><msub><mi>q</mi><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msub><mo stretchy="false">]</mo></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Derivation language is thus a certain collection of derivation words, formally defined below.</p>
+</div>
+</section>
+<section id="S0.SS0.SSSx2" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Definitions</h2>
+
+<div id="S0.SS0.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">Treating productions as “letters” is really nothing more than labeling each production with some symbol. Formally, call a <em class="ltx_emph ltx_font_italic">labeling</em> of an alphabet <math id="S0.SS0.SSSx2.p1.m1" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> a surjection <math id="S0.SS0.SSSx2.p1.m2" class="ltx_Math" alttext="f:F\to P" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>F</mi><mo>→</mo><mi>P</mi></mrow></mrow></math>, where <math id="S0.SS0.SSSx2.p1.m3" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> is some alphabet. For any <math id="S0.SS0.SSSx2.p1.m4" class="ltx_Math" alttext="p\in P" display="inline"><mrow><mi>p</mi><mo>∈</mo><mi>P</mi></mrow></math>, a label for <math id="S0.SS0.SSSx2.p1.m5" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> is an element <math id="S0.SS0.SSSx2.p1.m6" class="ltx_Math" alttext="x\in F" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>F</mi></mrow></math> such that <math id="S0.SS0.SSSx2.p1.m7" class="ltx_Math" alttext="f(x)=p" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>p</mi></mrow></math>. We will only be interested in injective labeling (hence a bijection) from now on.</p>
+</div>
+<div id="S0.SS0.SSSx2.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Suppose we are given a labeling <math id="S0.SS0.SSSx2.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> of the set <math id="S0.SS0.SSSx2.p2.m2" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> of productions in the grammar <math id="S0.SS0.SSSx2.p2.m3" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math>. Given a derivation <math id="S0.SS0.SSSx2.p2.m4" class="ltx_Math" alttext="D:W_{1}\Rightarrow W_{2}\Rightarrow\ldots\Rightarrow W_{n}" display="inline"><mrow><mi>D</mi><mo>:</mo><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>⇒</mo><msub><mi>W</mi><mn>2</mn></msub><mo>⇒</mo><mi mathvariant="normal">…</mi><mo>⇒</mo><msub><mi>W</mi><mi>n</mi></msub></mrow></mrow></math>, a <em class="ltx_emph ltx_font_italic">derivation word</em> <math id="S0.SS0.SSSx2.p2.m5" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> for <math id="S0.SS0.SSSx2.p2.m6" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> is defined inductively as follows:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">if <math id="I1.i1.p1.m1" class="ltx_Math" alttext="n=1" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow></math>, then the empty word <math id="I1.i1.p1.m2" class="ltx_Math" alttext="U:=\lambda" display="inline"><mrow><mi>U</mi><mo>:=</mo><mi>λ</mi></mrow></math>,</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">if <math id="I1.i2.p1.m1" class="ltx_Math" alttext="n=2" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow></math>, then <math id="I1.i2.p1.m2" class="ltx_Math" alttext="U:=x\in F" display="inline"><mrow><mi>U</mi><mo>:=</mo><mi>x</mi><mo>∈</mo><mi>F</mi></mrow></math> is a label for a production that <math id="I1.i2.p1.m3" class="ltx_Math" alttext="W_{1}\Rightarrow W_{2}" display="inline"><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>⇒</mo><msub><mi>W</mi><mn>2</mn></msub></mrow></math> corresponds to,</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">if <math id="I1.i3.p1.m1" class="ltx_Math" alttext="n&gt;2" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mn>2</mn></mrow></math>, then <math id="I1.i3.p1.m2" class="ltx_Math" alttext="U:=U_{1}U_{2}" display="inline"><mrow><mi>U</mi><mo>:=</mo><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>U</mi><mn>2</mn></msub></mrow></mrow></math>, where</p>
+<ul id="I1.I1" class="ltx_itemize">
+<li id="I1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="I1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.I1.i1.p1.m1" class="ltx_Math" alttext="U_{1}" display="inline"><msub><mi>U</mi><mn>1</mn></msub></math> is a derivation word for the derivation <math id="I1.I1.i1.p1.m2" class="ltx_Math" alttext="W_{1}\Rightarrow\cdots\Rightarrow W_{i}" display="inline"><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>⇒</mo><mi mathvariant="normal">⋯</mi><mo>⇒</mo><msub><mi>W</mi><mi>i</mi></msub></mrow></math>,</p>
+</div>
+</li>
+<li id="I1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="I1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.I1.i2.p1.m1" class="ltx_Math" alttext="U_{2}" display="inline"><msub><mi>U</mi><mn>2</mn></msub></math> is a derivation word for the derivation <math id="I1.I1.i2.p1.m2" class="ltx_Math" alttext="W_{i}\Rightarrow\cdots\Rightarrow W_{n}" display="inline"><mrow><msub><mi>W</mi><mi>i</mi></msub><mo>⇒</mo><mi mathvariant="normal">⋯</mi><mo>⇒</mo><msub><mi>W</mi><mi>n</mi></msub></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<p class="ltx_p">If <math id="S0.SS0.SSSx2.p2.m7" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> is a derivation word for derivation <math id="S0.SS0.SSSx2.p2.m8" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math>, let us abbreviate this by writing <math id="S0.SS0.SSSx2.p2.m9" class="ltx_Math" alttext="f[U]=D" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>U</mi><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mi>D</mi></mrow></math>. Note that we are not applying the labeling <math id="S0.SS0.SSSx2.p2.m10" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> to <math id="S0.SS0.SSSx2.p2.m11" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math>, it is merely a notational convenience.</p>
+</div>
+<div id="S0.SS0.SSSx2.p3" class="ltx_para">
+<p class="ltx_p">A derivation word is sometimes called a <em class="ltx_emph ltx_font_italic">control word</em>, for it defines or controls whether and how a word may be derived from another word. Note that any <math id="S0.SS0.SSSx2.p3.m1" class="ltx_Math" alttext="W_{1}\Rightarrow^{*}W_{2}" display="inline"><mrow><msub><mi>W</mi><mn>1</mn></msub><msup><mo>⇒</mo><mo>*</mo></msup><msub><mi>W</mi><mn>2</mn></msub></mrow></math> may correspond to several distinct derivations, and hence several distinct derivation words. Also, the same derivation word may correspond to distinct derivations.</p>
+</div>
+<div id="S0.SS0.SSSx2.p4" class="ltx_para">
+<p class="ltx_p">For example, let <math id="S0.SS0.SSSx2.p4.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> be a grammar over two symbols <math id="S0.SS0.SSSx2.p4.m2" class="ltx_Math" alttext="(" display="inline"><mo stretchy="false">(</mo></math> and <math id="S0.SS0.SSSx2.p4.m3" class="ltx_Math" alttext=")" display="inline"><mo stretchy="false">)</mo></math> with productions <math id="S0.SS0.SSSx2.p4.m4" class="ltx_Math" alttext="\sigma\to\lambda" display="inline"><mrow><mi>σ</mi><mo>→</mo><mi>λ</mi></mrow></math>, <math id="S0.SS0.SSSx2.p4.m5" class="ltx_Math" alttext="\sigma\to(\sigma)" display="inline"><mrow><mi>σ</mi><mo>→</mo><mrow><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow></mrow></math>, and <math id="S0.SS0.SSSx2.p4.m6" class="ltx_Math" alttext="\sigma\to\sigma\sigma" display="inline"><mrow><mi>σ</mi><mo>→</mo><mrow><mi>σ</mi><mo>⁢</mo><mi>σ</mi></mrow></mrow></math> (<math id="S0.SS0.SSSx2.p4.m7" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> generates the parenthesis language <math id="S0.SS0.SSSx2.p4.m8" class="ltx_Math" alttext="\boldsymbol{\operatorname{Paren}_{1}}" display="inline"><msub><mi>𝐏𝐚𝐫𝐞𝐧</mi><mn>𝟏</mn></msub></math>) Label the productions as <math id="S0.SS0.SSSx2.p4.m9" class="ltx_Math" alttext="a,b,c" display="inline"><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow></math> respectively. Then the derivation <math id="S0.SS0.SSSx2.p4.m10" class="ltx_Math" alttext="\sigma\Rightarrow^{*}(()())" display="inline"><mrow><mi>σ</mi><msup><mo>⇒</mo><mo>*</mo></msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> correspond to derivation words <math id="S0.SS0.SSSx2.p4.m11" class="ltx_Math" alttext="bcbbaa" display="inline"><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>a</mi></mrow></math> and <math id="S0.SS0.SSSx2.p4.m12" class="ltx_Math" alttext="bcbaba" display="inline"><mrow><mi>b</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>a</mi></mrow></math>. Notice that <math id="S0.SS0.SSSx2.p4.m13" class="ltx_Math" alttext="\sigma\sigma\Rightarrow(\sigma)\sigma" display="inline"><mrow><mrow><mi>σ</mi><mo>⁢</mo><mi>σ</mi></mrow><mo>⇒</mo><mrow><mrow><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>σ</mi></mrow></mrow></math> and <math id="S0.SS0.SSSx2.p4.m14" class="ltx_Math" alttext="\sigma\sigma\Rightarrow\sigma(\sigma)" display="inline"><mrow><mrow><mi>σ</mi><mo>⁢</mo><mi>σ</mi></mrow><mo>⇒</mo><mrow><mi>σ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> both correspond to the derivation word <math id="S0.SS0.SSSx2.p4.m15" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>.</p>
+</div>
+<div id="S0.SS0.SSSx2.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. The <em class="ltx_emph ltx_font_italic">derivation language</em> of a grammar <math id="S0.SS0.SSSx2.p5.m1" class="ltx_Math" alttext="G=(\Sigma,N,P,\sigma)" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>P</mi><mo>,</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the set of all derivation words for derivations on words generated by <math id="S0.SS0.SSSx2.p5.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math>. In other words, consider the labeling <math id="S0.SS0.SSSx2.p5.m3" class="ltx_Math" alttext="f:F\to P" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>F</mi><mo>→</mo><mi>P</mi></mrow></mrow></math>. The derivation language of <math id="S0.SS0.SSSx2.p5.m4" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is the set</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\{U\in F^{*}\mid f[U]\mbox{ is a derivation of the form }\sigma\Rightarrow^{*}%
+u\mbox{ for some }u\in N^{*}\}." display="block"><mrow><mrow><mo stretchy="false">{</mo><mrow><mi>U</mi><mo>∈</mo><msup><mi>F</mi><mo>*</mo></msup></mrow><mo>∣</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>U</mi><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mtext> is a derivation of the form </mtext><mo>⁢</mo><mi>σ</mi></mrow><msup><mo>⇒</mo><mo>*</mo></msup><mrow><mi>u</mi><mo>⁢</mo><mtext> for some </mtext><mo>⁢</mo><mi>u</mi></mrow><mo>∈</mo><msup><mi>N</mi><mo>*</mo></msup></mrow><mo stretchy="false">}</mo></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The derivation language of <math id="S0.SS0.SSSx2.p5.m5" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is also called the <em class="ltx_emph ltx_font_italic">Szilard language</em> of <math id="S0.SS0.SSSx2.p5.m6" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math>, named after its inventor, and is denoted by <math id="S0.SS0.SSSx2.p5.m7" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx2.p6" class="ltx_para">
+<p class="ltx_p">For example, let <math id="S0.SS0.SSSx2.p6.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> be the grammar over a the letter <math id="S0.SS0.SSSx2.p6.m2" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>, with productions given by <math id="S0.SS0.SSSx2.p6.m3" class="ltx_Math" alttext="\sigma\to\sigma" display="inline"><mrow><mi>σ</mi><mo>→</mo><mi>σ</mi></mrow></math>, <math id="S0.SS0.SSSx2.p6.m4" class="ltx_Math" alttext="\sigma\to a" display="inline"><mrow><mi>σ</mi><mo>→</mo><mi>a</mi></mrow></math>. If the productions are labeled <math id="S0.SS0.SSSx2.p6.m5" class="ltx_Math" alttext="b,c" display="inline"><mrow><mi>b</mi><mo>,</mo><mi>c</mi></mrow></math>, then <math id="S0.SS0.SSSx2.p6.m6" class="ltx_Math" alttext="\operatorname{Sz}(G)=\{b^{n}c\mid n\geq 0\}" display="inline"><mrow><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mi>b</mi><mi>n</mi></msup><mo>⁢</mo><mi>c</mi></mrow><mo>∣</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>. Note that <math id="S0.SS0.SSSx2.p6.m7" class="ltx_Math" alttext="L(G)=\{a\}" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>a</mi><mo stretchy="false">}</mo></mrow></mrow></math>. Likewise, if <math id="S0.SS0.SSSx2.p6.m8" class="ltx_Math" alttext="G^{\prime}" display="inline"><msup><mi>G</mi><mo>′</mo></msup></math> is the grammar over <math id="S0.SS0.SSSx2.p6.m9" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>, with productions <math id="S0.SS0.SSSx2.p6.m10" class="ltx_Math" alttext="\sigma\to A\sigma" display="inline"><mrow><mi>σ</mi><mo>→</mo><mrow><mi>A</mi><mo>⁢</mo><mi>σ</mi></mrow></mrow></math>, <math id="S0.SS0.SSSx2.p6.m11" class="ltx_Math" alttext="A\to\lambda" display="inline"><mrow><mi>A</mi><mo>→</mo><mi>λ</mi></mrow></math>, and <math id="S0.SS0.SSSx2.p6.m12" class="ltx_Math" alttext="\sigma\to a" display="inline"><mrow><mi>σ</mi><mo>→</mo><mi>a</mi></mrow></math>, labeled <math id="S0.SS0.SSSx2.p6.m13" class="ltx_Math" alttext="p,q,r" display="inline"><mrow><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi></mrow></math> respectively, then <math id="S0.SS0.SSSx2.p6.m14" class="ltx_Math" alttext="L(G^{\prime})=\{a\}" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>G</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>a</mi><mo stretchy="false">}</mo></mrow></mrow></math>. However, <math id="S0.SS0.SSSx2.p6.m15" class="ltx_Math" alttext="\operatorname{Sz}(G^{\prime})" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msup><mi>G</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></math> is quite different from <math id="S0.SS0.SSSx2.p6.m16" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math>:</p>
+<table id="A0.EGx1" class="ltx_equationgroup ltx_eqn_eqnarray ltx_eqn_table">
+
+<tr id="S0.Ex7" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex6.m1" class="ltx_Math" alttext="\displaystyle\operatorname{Sz}(G^{\prime})" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msup><mi>G</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"><math id="S0.Ex6.m2" class="ltx_Math" alttext="\displaystyle=\{u\in F^{*}\mid" display="inline"><mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>u</mi><mo>∈</mo><msup><mi>F</mi><mo>*</mo></msup><mo>∣</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex6.m3" class="ltx_Math" alttext="\displaystyle u=vrw\mbox{, where }v\in\{p,q\}^{*},w\in\{q\}^{*}," display="inline"><mrow><mrow><mrow><mi>u</mi><mo>=</mo><mrow><mi>v</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>w</mi><mo>⁢</mo><mtext>, where </mtext><mo>⁢</mo><mi>v</mi></mrow><mo>∈</mo><msup><mrow><mo stretchy="false">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo stretchy="false">}</mo></mrow><mo>*</mo></msup></mrow><mo>,</mo><mrow><mi>w</mi><mo>∈</mo><msup><mrow><mo stretchy="false">{</mo><mi>q</mi><mo stretchy="false">}</mo></mrow><mo>*</mo></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr class="ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_center ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex7.m3" class="ltx_Math" alttext="\displaystyle\#_{u}(p)=\#_{u}(q)\mbox{ and }\#_{x}(p)\geq\#_{x}(q)\mbox{ for %
+all }x\leq u\}" display="inline"><mrow><msub><mi mathvariant="normal">#</mi><mi>u</mi></msub><mrow><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><msub><mi mathvariant="normal">#</mi><mi>u</mi></msub><mrow><mo stretchy="false">(</mo><mi>q</mi><mo stretchy="false">)</mo></mrow><mtext> and </mtext><msub><mi mathvariant="normal">#</mi><mi>x</mi></msub><mrow><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><mo>≥</mo><msub><mi mathvariant="normal">#</mi><mi>x</mi></msub><mrow><mo stretchy="false">(</mo><mi>q</mi><mo stretchy="false">)</mo></mrow><mtext> for all </mtext><mi>x</mi><mo>≤</mo><mi>u</mi><mo stretchy="false">}</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="F=\{p,q,r\}" display="inline"><mrow><mi>F</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo stretchy="false">}</mo></mrow></mrow></math>,</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\#_{u}(r)" display="inline"><mrow><msub><mi mathvariant="normal">#</mi><mi>u</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow></math> means the number of occurrences of <math id="I2.i2.p1.m2" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> in word <math id="I2.i2.p1.m3" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>,</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="v\leq u" display="inline"><mrow><mi>v</mi><mo>≤</mo><mi>u</mi></mrow></math> means that <math id="I2.i3.p1.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> is a prefix of <math id="I2.i3.p1.m3" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S0.SS0.SSSx2.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remarks</span>. Let <math id="S0.SS0.SSSx2.p7.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> be a formal grammar.</p>
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Some properties of <math id="I3.i1.p1.m1" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math>:</p>
+<ol id="I3.I1" class="ltx_enumerate">
+<li id="I3.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">(a)</span> 
+<div id="I3.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.I1.i1.p1.m1" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> is always context-sensitive.</p>
+</div>
+</li>
+<li id="I3.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">(b)</span> 
+<div id="I3.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I3.I1.i2.p1.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is regular, so is <math id="I3.I1.i2.p1.m2" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math>.
+</p>
+</div>
+</li>
+<li id="I3.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">(c)</span> 
+<div id="I3.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">if <math id="I3.I1.i3.p1.m1" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> is context-free, <math id="I3.I1.i3.p1.m2" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> may not be; in fact, for any context-free language <math id="I3.I1.i3.p1.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, there is a context-free grammar <math id="I3.I1.i3.p1.m4" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> such that <math id="I3.I1.i3.p1.m5" class="ltx_Math" alttext="L=L(G)" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> but <math id="I3.I1.i3.p1.m6" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> is not context-free.</p>
+</div>
+</li>
+<li id="I3.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">(d)</span> 
+<div id="I3.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">There exists a context-free language <math id="I3.I1.i4.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> such that <math id="I3.I1.i4.p1.m2" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> is not context-free for any grammar <math id="I3.I1.i4.p1.m3" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> generating <math id="I3.I1.i4.p1.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">However, if one considers the subset <math id="I3.i2.p1.m1" class="ltx_Math" alttext="\operatorname{Sz}_{L}(G)" display="inline"><mrow><msub><mi>Sz</mi><mi>L</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> of <math id="I3.i2.p1.m2" class="ltx_Math" alttext="\operatorname{Sz}(G)" display="inline"><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> consisting of all derivation words corresponding to leftmost derivations, then <math id="I3.i2.p1.m3" class="ltx_Math" alttext="\operatorname{Sz}_{L}(G)" display="inline"><mrow><msub><mi>Sz</mi><mi>L</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math> is context-free.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p">It is an open question that, given any (context-sensitive) language <math id="I3.i3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, whether there is a grammar <math id="I3.i3.p1.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math> such that <math id="I3.i3.p1.m3" class="ltx_Math" alttext="L=\operatorname{Sz}(G)" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mi>Sz</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> A. Salomaa, <span class="ltx_text ltx_font_italic">Formal Languages</span>, Academic Press, New York (1973).
+
+</span>
+      </li>
+      
+<li id="bib.bib2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">2</span>
+        
+<span class="ltx_bibblock"> G. E. Révész, <span class="ltx_text ltx_font_italic">Introduction to Formal Languages</span>, Dover Publications (1991).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">derivation language</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">DerivationLanguage</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:58:15</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:58:15</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">13</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q42</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Szilard language</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:43:23 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

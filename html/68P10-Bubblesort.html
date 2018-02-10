@@ -1,0 +1,120 @@
+<!DOCTYPE html><html>
+<head>
+<title>bubblesort</title>
+<!--Generated on Sat Feb 10 12:38:08 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">bubblesort</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">bubblesort</em> algorithm is a simple and naïve approach to the sorting problem. Let <math id="p1.m1" class="ltx_Math" alttext="\leq" display="inline"><mo>≤</mo></math> define a total ordering over a list <math id="p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> of <math id="p1.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> values.
+The bubblesort consists of advancing through <math id="p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, swapping adjacent values <math id="p1.m5" class="ltx_Math" alttext="A[i]" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></math> and <math id="p1.m6" class="ltx_Math" alttext="A[i+1]" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></math> if <math id="p1.m7" class="ltx_Math" alttext="A[i+1]\leq A[i]" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>≤</mo><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></math> holds. By going through all of <math id="p1.m8" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> in this manner <math id="p1.m9" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> times, one is guaranteed to achieve the proper ordering.</p>
+</div>
+<section id="S0.SS0.SSSx1" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Pseudocode</h2>
+
+<div id="S0.SS0.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">The following is pseudocode for the bubblesort algorithm. Note that it keeps track of whether or not any swaps occur during a traversal, so that it may terminate as soon as <math id="S0.SS0.SSSx1.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is sorted.</p>
+</div>
+<div id="S0.SS0.SSSx1.p2" class="ltx_para">
+<ul class="ltx_itemize">
+<li class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize"></span> <span class="ltx_ERROR undefined">\@startfield</span>
+<div id="S0.SS0.SSSx1.p2.p1" class="ltx_para">
+<p class="ltx_p"><math id="S0.SS0.SSSx1.p2.p1.m1" class="ltx_Math" alttext="\mathrm{BubbleSort}(A,n,\leq)" display="inline"><mrow><mi>BubbleSort</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>,</mo><mi>n</mi><mo>,</mo><mo>≤</mo><mo stretchy="false">)</mo></mrow></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_text ltx_markedasmath"><span class="ltx_text ltx_font_bold">Input</span>: List <math id="S0.SS0.SSSx1.p2.p1.m2.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> of <math id="S0.SS0.SSSx1.p2.p1.m2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> values.</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_text ltx_markedasmath"><span class="ltx_text ltx_font_bold">Output</span>: <math id="S0.SS0.SSSx1.p2.p1.m3.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> sorted with respect to relation <math id="S0.SS0.SSSx1.p2.p1.m3.m2" class="ltx_Math" alttext="\leq" display="inline"><mo>≤</mo></math>.</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_text ltx_markedasmath"><span class="ltx_text ltx_font_bold">Procedure</span>:</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m5" class="ltx_Math" alttext="done\leftarrow\mathbf{false}" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi></mrow><mo>←</mo><mi>𝐟𝐚𝐥𝐬𝐞</mi></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m6" class="ltx_Math" alttext="\mbox{\rm\bf\sf while}\ " display="inline"><mpadded width="+5pt"><mtext>𝗐𝗁𝗂𝗅𝖾</mtext></mpadded></math><span class="ltx_ERROR undefined">\=</span><span class="ltx_ERROR undefined">\+</span><math id="S0.SS0.SSSx1.p2.p1.m7" class="ltx_Math" alttext="(\text{not\ }done)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mtext>not </mtext><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi></mrow><mo stretchy="false">)</mo></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m8" class="ltx_Math" alttext="\@ifatmargin\ \mbox{\rm\bf\sf do}\ " display="inline"><mrow><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror><mo>⁢</mo><mpadded width="+5pt"><mtext>𝖽𝗈</mtext></mpadded></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m9" class="ltx_Math" alttext="done\leftarrow\mathbf{true}" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi></mrow><mo>←</mo><mi>𝐭𝐫𝐮𝐞</mi></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m10" class="ltx_Math" alttext="\mbox{\rm\bf\sf for}\ " display="inline"><mpadded width="+5pt"><mtext>𝖿𝗈𝗋</mtext></mpadded></math><span class="ltx_ERROR undefined">\=</span><span class="ltx_ERROR undefined">\+</span><math id="S0.SS0.SSSx1.p2.p1.m11" class="ltx_Math" alttext="i\leftarrow 0" display="inline"><mrow><mi>i</mi><mo>←</mo><mn>0</mn></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m12" class="ltx_Math" alttext="\@ifatmargin\ \mbox{\rm\bf\sf to}\ n-1" display="inline"><mrow><mrow><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror><mo>⁢</mo><mpadded width="+5pt"><mtext>𝗍𝗈</mtext></mpadded><mo>⁢</mo><mi>n</mi></mrow><mo>-</mo><mn>1</mn></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m13" class="ltx_Math" alttext="\@ifatmargin\ \mbox{\rm\bf\sf do}\ " display="inline"><mrow><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror><mo>⁢</mo><mpadded width="+5pt"><mtext>𝖽𝗈</mtext></mpadded></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m14" class="ltx_Math" alttext="\mbox{\rm\bf\sf if}\ " display="inline"><mpadded width="+5pt"><mtext>𝗂𝖿</mtext></mpadded></math><span class="ltx_ERROR undefined">\=</span><span class="ltx_ERROR undefined">\+</span><math id="S0.SS0.SSSx1.p2.p1.m15" class="ltx_Math" alttext="A[i+1]\leq A[i]" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>≤</mo><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m17" class="ltx_Math" alttext="\@ifatmargin\ \mbox{\rm\bf\sf then}\ " display="inline"><mrow><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror><mo>⁢</mo><mpadded width="+5pt"><mtext>𝗍𝗁𝖾𝗇</mtext></mpadded></mrow></math><span class="ltx_ERROR undefined">\=</span><span class="ltx_ERROR undefined">\+</span><math id="S0.SS0.SSSx1.p2.p1.m18" class="ltx_Math" alttext="\mathrm{swap}(A[i],A[i+1])" display="inline"><mrow><mi>swap</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow><mo>,</mo><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m19" class="ltx_Math" alttext="done\leftarrow\mathbf{false}" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>e</mi></mrow><mo>←</mo><mi>𝐟𝐚𝐥𝐬𝐞</mi></mrow></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m21" class="ltx_Math" alttext="\@ifatmargin\ " display="inline"><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@ifatmargin</span><span class="ltx_ERROR undefined">\@ltab</span><span class="ltx_ERROR undefined">\-</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@ifatmargin</span><span class="ltx_ERROR undefined">\@ltab</span><span class="ltx_ERROR undefined">\-</span><span class="ltx_text ltx_markedasmath ltx_font_sansserif">fi</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m25" class="ltx_Math" alttext="\@ifatmargin\ " display="inline"><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@ifatmargin</span><span class="ltx_ERROR undefined">\@ltab</span><span class="ltx_ERROR undefined">\-</span><span class="ltx_text ltx_markedasmath ltx_font_sansserif">od</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><math id="S0.SS0.SSSx1.p2.p1.m28" class="ltx_Math" alttext="\@ifatmargin\ " display="inline"><merror class="ltx_ERROR undefined undefined"><mtext>\@ifatmargin</mtext></merror></math><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@ifatmargin</span><span class="ltx_ERROR undefined">\@ltab</span><span class="ltx_ERROR undefined">\-</span><span class="ltx_text ltx_markedasmath ltx_font_sansserif">od</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span><span class="ltx_ERROR undefined">\@startfield</span><span class="ltx_ERROR undefined">\@stopfield</span><span class="ltx_ERROR undefined">\@addfield</span></p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S0.SS0.SSSx2" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Analysis</h2>
+
+<div id="S0.SS0.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">The worst-case scenario is when <math id="S0.SS0.SSSx2.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is given in reverse order. In this case,
+exactly one element can be put in order during each traversal, and thus all <math id="S0.SS0.SSSx2.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> traversals are required. Since each traversal consists of <math id="S0.SS0.SSSx2.p1.m3" class="ltx_Math" alttext="n-1" display="inline"><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></math> comparisons, the worst-case complexity of bubblesort is <math id="S0.SS0.SSSx2.p1.m4" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx2.p2" class="ltx_para">
+<p class="ltx_p">Bubblesort is perhaps the simplest sorting algorithm to implement. Unfortunately, it is also the least efficient, even among <math id="S0.SS0.SSSx2.p2.m1" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> algorithms. Bubblesort can be shown to be a stable sorting algorithm (since two items of equal keys are <em class="ltx_emph ltx_font_italic">never</em> swapped, initial relative ordering of items of equal keys is preserved), and it is clearly an in-place sorting algorithm.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">bubblesort</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Bubblesort</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:31:07</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:31:07</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">9</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">bubble sort</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SortingProblem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">StableSortingAlgorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">InPlaceSortingAlgorithm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:08 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html><html>
+<head>
+<title>combining URMs</title>
+<!--Generated on Sat Feb 10 12:39:35 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">combining URMs</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SS0.SSSx1" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Combining URMs</h2>
+
+<div id="S0.SS0.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">The basic idea of combining existing URMs is to produce URMs that can perform more complicated computations. Suppose we are given two URMs <math id="S0.SS0.SSSx1.p1.m1" class="ltx_Math" alttext="M=I_{1},\ldots,I_{m}" display="inline"><mrow><mi>M</mi><mo>=</mo><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>I</mi><mi>m</mi></msub></mrow></mrow></math> and <math id="S0.SS0.SSSx1.p1.m2" class="ltx_Math" alttext="N=I_{1}^{\prime},\ldots,I_{n}^{\prime}" display="inline"><mrow><mi>N</mi><mo>=</mo><mrow><msubsup><mi>I</mi><mn>1</mn><mo>′</mo></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>I</mi><mi>n</mi><mo>′</mo></msubsup></mrow></mrow></math>, define <math id="S0.SS0.SSSx1.p1.m3" class="ltx_Math" alttext="M,N" display="inline"><mrow><mi>M</mi><mo>,</mo><mi>N</mi></mrow></math> to be the URM</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="M,N:=I_{1},I_{2},\ldots,I_{m+n}" display="block"><mrow><mrow><mrow><mi>M</mi><mo>,</mo><mi>N</mi></mrow><mo>:=</mo><msub><mi>I</mi><mn>1</mn></msub></mrow><mo>,</mo><mrow><msub><mi>I</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>I</mi><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="S0.SS0.SSSx1.p1.m4" class="ltx_Math" alttext="I_{m+i}=I_{i}^{\prime}" display="inline"><mrow><msub><mi>I</mi><mrow><mi>m</mi><mo>+</mo><mi>i</mi></mrow></msub><mo>=</mo><msubsup><mi>I</mi><mi>i</mi><mo>′</mo></msubsup></mrow></math>, where <math id="S0.SS0.SSSx1.p1.m5" class="ltx_Math" alttext="i\in\{1,\ldots,n\}" display="inline"><mrow><mi>i</mi><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi><mo stretchy="false">}</mo></mrow></mrow></math>. In other words, the instructions of <math id="S0.SS0.SSSx1.p1.m6" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> are re-indexed and appended to the last instruction of <math id="S0.SS0.SSSx1.p1.m7" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>.</p>
+</div>
+<div id="S0.SS0.SSSx1.p2" class="ltx_para">
+<p class="ltx_p">In theory, we would like <math id="S0.SS0.SSSx1.p2.m1" class="ltx_Math" alttext="M,N" display="inline"><mrow><mi>M</mi><mo>,</mo><mi>N</mi></mrow></math> to first go through the instructions of <math id="S0.SS0.SSSx1.p2.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, and if the computations of <math id="S0.SS0.SSSx1.p2.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> terminate, go through the computations of <math id="S0.SS0.SSSx1.p2.m4" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>. In order to achieve this goal, modifications to <math id="S0.SS0.SSSx1.p2.m5" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> and <math id="S0.SS0.SSSx1.p2.m6" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> need to be made so computations of <math id="S0.SS0.SSSx1.p2.m7" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> are kept apart from the computations of <math id="S0.SS0.SSSx1.p2.m8" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>:</p>
+</div>
+<div id="S0.SS0.SSSx1.p3" class="ltx_para">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I1.i1.p1.m1" class="ltx_Math" alttext="I_{k}=J(i,j,q)" display="inline"><mrow><msub><mi>I</mi><mi>k</mi></msub><mo>=</mo><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>q</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> is in <math id="I1.i1.p1.m2" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, then change <math id="I1.i1.p1.m3" class="ltx_Math" alttext="I_{k}" display="inline"><msub><mi>I</mi><mi>k</mi></msub></math> to <math id="I1.i1.p1.m4" class="ltx_Math" alttext="J(i,j,q+m)" display="inline"><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mrow><mi>q</mi><mo>+</mo><mi>m</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. This is clearly necessary as the indices of the instructions of <math id="I1.i1.p1.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> have been shifted by <math id="I1.i1.p1.m6" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math>. Let the modified <math id="I1.i1.p1.m7" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> be denoted by <math id="I1.i1.p1.m8" class="ltx_Math" alttext="N(m)" display="inline"><mrow><mi>N</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I1.i2.p1.m1" class="ltx_Math" alttext="I_{k}=J(i,j,p)" display="inline"><mrow><msub><mi>I</mi><mi>k</mi></msub><mo>=</mo><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>p</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> is in <math id="I1.i2.p1.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, and <math id="I1.i2.p1.m3" class="ltx_Math" alttext="p&gt;m" display="inline"><mrow><mi>p</mi><mo>&gt;</mo><mi>m</mi></mrow></math>, then change <math id="I1.i2.p1.m4" class="ltx_Math" alttext="I_{k}" display="inline"><msub><mi>I</mi><mi>k</mi></msub></math> to <math id="I1.i2.p1.m5" class="ltx_Math" alttext="J(i,j,m+1)" display="inline"><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. The purpose of this change is to ensure that computations of <math id="I1.i2.p1.m6" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> do not accidentally jump to an instruction of <math id="I1.i2.p1.m7" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>. Furthermore, when <math id="I1.i2.p1.m8" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> halts, <math id="I1.i2.p1.m9" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> starts. Call this modified machine <math id="I1.i2.p1.m10" class="ltx_Math" alttext="M^{\prime}" display="inline"><msup><mi>M</mi><mo>′</mo></msup></math>. It is easy to see that every <math id="I1.i2.p1.m11" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> can be modified to <math id="I1.i2.p1.m12" class="ltx_Math" alttext="M^{\prime}" display="inline"><msup><mi>M</mi><mo>′</mo></msup></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S0.SS0.SSSx1.p4" class="ltx_para">
+<p class="ltx_p">When <math id="S0.SS0.SSSx1.p4.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> computes a function <math id="S0.SS0.SSSx1.p4.m2" class="ltx_Math" alttext="f:\mathbb{N}^{n}\to\mathbb{N}" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><msup><mi>ℕ</mi><mi>n</mi></msup><mo>→</mo><mi>ℕ</mi></mrow></mrow></math> and <math id="S0.SS0.SSSx1.p4.m3" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> computes a function <math id="S0.SS0.SSSx1.p4.m4" class="ltx_Math" alttext="g:\mathbb{N}\to\mathbb{N}" display="inline"><mrow><mi>g</mi><mo>:</mo><mrow><mi>ℕ</mi><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>, we would further want the combined machine to compute <math id="S0.SS0.SSSx1.p4.m5" class="ltx_Math" alttext="g\circ f" display="inline"><mrow><mi>g</mi><mo>∘</mo><mi>f</mi></mrow></math>. In essence, if <math id="S0.SS0.SSSx1.p4.m6" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> is an input, and if <math id="S0.SS0.SSSx1.p4.m7" class="ltx_Math" alttext="f(r)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow></math> is computed by <math id="S0.SS0.SSSx1.p4.m8" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, we want <math id="S0.SS0.SSSx1.p4.m9" class="ltx_Math" alttext="f(r)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow></math> to be the input of the machine <math id="S0.SS0.SSSx1.p4.m10" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, so that <math id="S0.SS0.SSSx1.p4.m11" class="ltx_Math" alttext="g(f(r))" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> may be computed. To get the desired result, one more modification should be made:</p>
+</div>
+<div id="S0.SS0.SSSx1.p5" class="ltx_para">
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I2.ix1.p1" class="ltx_para">
+<p class="ltx_p">Suppose <math id="I2.ix1.p1.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> computes <math id="I2.ix1.p1.m2" class="ltx_Math" alttext="f:\mathbb{N}^{n}\to\mathbb{N}" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><msup><mi>ℕ</mi><mi>n</mi></msup><mo>→</mo><mi>ℕ</mi></mrow></mrow></math>. Define <math id="I2.ix1.p1.m3" class="ltx_Math" alttext="k=\max(n,\rho(M))" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>,</mo><mrow><mi>ρ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Then <math id="I2.ix1.p1.m4" class="ltx_Math" alttext="M^{*}" display="inline"><msup><mi>M</mi><mo>*</mo></msup></math> is defined as the URM <math id="I2.ix1.p1.m5" class="ltx_Math" alttext="M^{\prime},Z[k]" display="inline"><mrow><msup><mi>M</mi><mo>′</mo></msup><mo>,</mo><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>k</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></math>, where <math id="I2.ix1.p1.m6" class="ltx_Math" alttext="M^{\prime}" display="inline"><msup><mi>M</mi><mo>′</mo></msup></math> is defined in 2. above, and <math id="I2.ix1.p1.m7" class="ltx_Math" alttext="Z[k]" display="inline"><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>k</mi><mo stretchy="false">]</mo></mrow></mrow></math> is the machine with instructions <math id="I2.ix1.p1.m8" class="ltx_Math" alttext="Z(2),Z(3),\cdots,Z(k)" display="inline"><mrow><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">In other words, whenever <math id="S0.SS0.SSSx1.p5.m1" class="ltx_Math" alttext="f(r)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow></math> is computed by <math id="S0.SS0.SSSx1.p5.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, <math id="S0.SS0.SSSx1.p5.m3" class="ltx_Math" alttext="M^{*}" display="inline"><msup><mi>M</mi><mo>*</mo></msup></math> resets the contents of all registers potentially used by <math id="S0.SS0.SSSx1.p5.m4" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> to <math id="S0.SS0.SSSx1.p5.m5" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>, except the first one, which contains the result <math id="S0.SS0.SSSx1.p5.m6" class="ltx_Math" alttext="f(r)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow></math>. As a result, the input for <math id="S0.SS0.SSSx1.p5.m7" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> has <math id="S0.SS0.SSSx1.p5.m8" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> in all but possibly the first register.</p>
+</div>
+<div id="S0.SS0.SSSx1.p6" class="ltx_para">
+<p class="ltx_p">With the three modifications above, let us define <math id="S0.SS0.SSSx1.p6.m1" class="ltx_Math" alttext="M\circ N" display="inline"><mrow><mi>M</mi><mo>∘</mo><mi>N</mi></mrow></math> to be the machine <math id="S0.SS0.SSSx1.p6.m2" class="ltx_Math" alttext="M^{*},N(|M|)" display="inline"><mrow><msup><mi>M</mi><mo>*</mo></msup><mo>,</mo><mrow><mi>N</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo stretchy="false">|</mo><mi>M</mi><mo stretchy="false">|</mo></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. It is easy to see that <math id="S0.SS0.SSSx1.p6.m3" class="ltx_Math" alttext="\circ" display="inline"><mo>∘</mo></math> is an associative operation. We can summarize our discussion above into the following:</p>
+</div>
+<div id="Thmprop1" class="ltx_theorem ltx_theorem_prop">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Proposition 1</span>.</h6>
+<div id="Thmprop1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="Thmprop1.p1.m1" class="ltx_Math" alttext="M,N" display="inline"><mrow><mi>M</mi><mo mathvariant="normal">,</mo><mi>N</mi></mrow></math> be URMs that compute <math id="Thmprop1.p1.m2" class="ltx_Math" alttext="f:\mathbb{N}^{n}\to\mathbb{N}" display="inline"><mrow><mi>f</mi><mo mathvariant="normal">:</mo><mrow><msup><mi mathvariant="normal">N</mi><mi>n</mi></msup><mo mathvariant="normal">→</mo><mi mathvariant="normal">N</mi></mrow></mrow></math> and <math id="Thmprop1.p1.m3" class="ltx_Math" alttext="g:\mathbb{N}\to\mathbb{N}" display="inline"><mrow><mi>g</mi><mo mathvariant="normal">:</mo><mrow><mi mathvariant="normal">N</mi><mo mathvariant="normal">→</mo><mi mathvariant="normal">N</mi></mrow></mrow></math> respectively, then <math id="Thmprop1.p1.m4" class="ltx_Math" alttext="M\circ N" display="inline"><mrow><mi>M</mi><mo mathvariant="normal">∘</mo><mi>N</mi></mrow></math> computes <math id="Thmprop1.p1.m5" class="ltx_Math" alttext="g\circ f" display="inline"><mrow><mi>g</mi><mo mathvariant="normal">∘</mo><mi>f</mi></mrow></math>. In other words, if <math id="Thmprop1.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> and <math id="Thmprop1.p1.m7" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> are URM computable, so is <math id="Thmprop1.p1.m8" class="ltx_Math" alttext="g\circ f" display="inline"><mrow><mi>g</mi><mo mathvariant="normal">∘</mo><mi>f</mi></mrow></math>.</span></p>
+</div>
+</div>
+<div id="S0.SS0.SSSx1.p7" class="ltx_para">
+<p class="ltx_p">For example, if <math id="S0.SS0.SSSx1.p7.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> computes <math id="S0.SS0.SSSx1.p7.m2" class="ltx_Math" alttext="f(r,s):=r+s" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>r</mi><mo>+</mo><mi>s</mi></mrow></mrow></math> for any <math id="S0.SS0.SSSx1.p7.m3" class="ltx_Math" alttext="r,s\in\mathbb{N}" display="inline"><mrow><mrow><mi>r</mi><mo>,</mo><mi>s</mi></mrow><mo>∈</mo><mi>ℕ</mi></mrow></math>, and <math id="S0.SS0.SSSx1.p7.m4" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> computes <math id="S0.SS0.SSSx1.p7.m5" class="ltx_Math" alttext="g(r):=r\dot{-}1" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>r</mi><mo>⁢</mo><mover accent="true"><mo>-</mo><mo>˙</mo></mover><mo>⁢</mo><mn>1</mn></mrow></mrow></math> for any <math id="S0.SS0.SSSx1.p7.m6" class="ltx_Math" alttext="r\in\mathbb{N}" display="inline"><mrow><mi>r</mi><mo>∈</mo><mi>ℕ</mi></mrow></math>, then <math id="S0.SS0.SSSx1.p7.m7" class="ltx_Math" alttext="M\circ N" display="inline"><mrow><mi>M</mi><mo>∘</mo><mi>N</mi></mrow></math> computes <math id="S0.SS0.SSSx1.p7.m8" class="ltx_Math" alttext="(g\circ f)(r,s)=(r+s)\dot{-}1" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>g</mi><mo>∘</mo><mi>f</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>r</mi><mo>+</mo><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mo>-</mo><mo>˙</mo></mover><mo>⁢</mo><mn>1</mn></mrow></mrow></math>. In addition, with input <math id="S0.SS0.SSSx1.p7.m9" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math>, the URM</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="\underbrace{N\circ N\circ\cdots\circ N}_{s}" display="block"><munder><munder accentunder="true"><mrow><mi>N</mi><mo movablelimits="false">∘</mo><mi>N</mi><mo movablelimits="false">∘</mo><mi mathvariant="normal">⋯</mi><mo movablelimits="false">∘</mo><mi>N</mi></mrow><mo movablelimits="false">⏟</mo></munder><mi>s</mi></munder></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">computes <math id="S0.SS0.SSSx1.p7.m10" class="ltx_Math" alttext="g^{s}(r):=r\dot{-}s" display="inline"><mrow><mrow><msup><mi>g</mi><mi>s</mi></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>r</mi><mo>⁢</mo><mover accent="true"><mo>-</mo><mo>˙</mo></mover><mo>⁢</mo><mi>s</mi></mrow></mrow></math>. Note that <math id="S0.SS0.SSSx1.p7.m11" class="ltx_Math" alttext="g^{s}" display="inline"><msup><mi>g</mi><mi>s</mi></msup></math> is unary, and therefore not the same as the binary operation <math id="S0.SS0.SSSx1.p7.m12" class="ltx_Math" alttext="h(r,s):=r\dot{-}s" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>r</mi><mo>⁢</mo><mover accent="true"><mo>-</mo><mo>˙</mo></mover><mo>⁢</mo><mi>s</mi></mrow></mrow></math>. To construct a URM computing <math id="S0.SS0.SSSx1.p7.m13" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> using the URM <math id="S0.SS0.SSSx1.p7.m14" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, the method described above does not work, and a more general construction is needed.</p>
+</div>
+</section>
+<section id="S0.SS0.SSSx2" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">URM as a Subroutine</h2>
+
+<div id="S0.SS0.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">Another way of generating URMs from existing ones is by inserting the existing URMs, so called subroutines, as part of a larger URM. Given a URM <math id="S0.SS0.SSSx2.p1.m1" class="ltx_Math" alttext="M=I_{1},\ldots,I_{m}" display="inline"><mrow><mi>M</mi><mo>=</mo><mrow><msub><mi>I</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>I</mi><mi>m</mi></msub></mrow></mrow></math>, a <em class="ltx_emph ltx_font_italic">subroutine</em> of <math id="S0.SS0.SSSx2.p1.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> is defined as a block of consecutive instructions in <math id="S0.SS0.SSSx2.p1.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>. Based on this definition, we see that combining machines can be seen as a special case: the URMs <math id="S0.SS0.SSSx2.p1.m4" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> and <math id="S0.SS0.SSSx2.p1.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> are subroutines of the URM <math id="S0.SS0.SSSx2.p1.m6" class="ltx_Math" alttext="M,N" display="inline"><mrow><mi>M</mi><mo>,</mo><mi>N</mi></mrow></math>. In fact, each instruction in a URM can be considered as a subroutine.</p>
+</div>
+<div id="S0.SS0.SSSx2.p2" class="ltx_para">
+<p class="ltx_p">As in the case with combining two URMs, when inserting a URM as a subroutine in a larger URM, one would like to keep the computations done within the subroutine isolated from the remaining computations. Since only one tape is allowed, one can allocate a portion of the tape reserved only for subroutine computations, another portion for storage, while the rest for computations by the main program. This can be done as follows:</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.ix1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I3.ix1.p1" class="ltx_para">
+<p class="ltx_p">For any URM <math id="I3.ix1.p1.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, define <math id="I3.ix1.p1.m2" class="ltx_Math" alttext="\rho^{*}(N):=\max(\rho(N),n(N))" display="inline"><mrow><mrow><msup><mi>ρ</mi><mo>*</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>ρ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, where <math id="I3.ix1.p1.m3" class="ltx_Math" alttext="\rho(N)" display="inline"><mrow><mi>ρ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the number of registers used for computations by <math id="I3.ix1.p1.m4" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, and <math id="I3.ix1.p1.m5" class="ltx_Math" alttext="n(N)" display="inline"><mrow><mi>n</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the arity of the function computed by <math id="I3.ix1.p1.m6" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>.</p>
+</div>
+</li>
+<li id="I3.ix2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">5.</span> 
+<div id="I3.ix2.p1" class="ltx_para">
+<p class="ltx_p">Suppose <math id="I3.ix2.p1.m1" class="ltx_Math" alttext="N_{1},\ldots,N_{k}" display="inline"><mrow><msub><mi>N</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>N</mi><mi>k</mi></msub></mrow></math> are to be inserted as subroutines in a program <math id="I3.ix2.p1.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, define</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="n:=\max\{\rho^{*}(N_{i})\mid i=1,\ldots,k\}." display="block"><mrow><mrow><mi>n</mi><mo>:=</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mrow><msup><mi>ρ</mi><mo>*</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>N</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>∣</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>k</mi><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Allocate the first <math id="I3.ix2.p1.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> registers for computations by the subroutines <math id="I3.ix2.p1.m4" class="ltx_Math" alttext="N_{i}" display="inline"><msub><mi>N</mi><mi>i</mi></msub></math>.</p>
+</div>
+</li>
+<li id="I3.ix3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">6.</span> 
+<div id="I3.ix3.p1" class="ltx_para">
+<p class="ltx_p">Allocate the next <math id="I3.ix3.p1.m1" class="ltx_Math" alttext="n^{*}" display="inline"><msup><mi>n</mi><mo>*</mo></msup></math> registers for storage, where <math id="I3.ix3.p1.m2" class="ltx_Math" alttext="n^{*}=n_{1}+\cdots+n_{k}" display="inline"><mrow><msup><mi>n</mi><mo>*</mo></msup><mo>=</mo><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><msub><mi>n</mi><mi>k</mi></msub></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I3.ix4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">7.</span> 
+<div id="I3.ix4.p1" class="ltx_para">
+<p class="ltx_p">For any URM <math id="I3.ix4.p1.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>, and any positive integers <math id="I3.ix4.p1.m2" class="ltx_Math" alttext="R_{1},\ldots,R_{s},R_{t}" display="inline"><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>R</mi><mi>s</mi></msub><mo>,</mo><msub><mi>R</mi><mi>t</mi></msub></mrow></math>, define the following URM:</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="N[R_{1},\ldots,R_{s};R_{t}]:=T(R_{1},1),T(R_{2},2),\ldots,T(R_{s},s),N,T(1,R_{%
+t}),Z(1),\ldots,Z(k)," display="block"><mrow><mrow><mrow><mi>N</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>R</mi><mi>s</mi></msub><mo>;</mo><msub><mi>R</mi><mi>t</mi></msub><mo stretchy="false">]</mo></mrow></mrow><mo>:=</mo><mrow><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>R</mi><mn>2</mn></msub><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>R</mi><mi>s</mi></msub><mo>,</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>N</mi><mo>,</mo><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><msub><mi>R</mi><mi>t</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>Z</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="I3.ix4.p1.m3" class="ltx_Math" alttext="k=\rho^{*}(N)" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><msup><mi>ρ</mi><mo>*</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I3.ix5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">8.</span> 
+<div id="I3.ix5.p1" class="ltx_para">
+<p class="ltx_p">Computations of by the remaining instructions of <math id="I3.ix5.p1.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> will take place in registers <math id="I3.ix5.p1.m2" class="ltx_Math" alttext="n+n^{*}+1" display="inline"><mrow><mi>n</mi><mo>+</mo><msup><mi>n</mi><mo>*</mo></msup><mo>+</mo><mn>1</mn></mrow></math> or beyond.</p>
+</div>
+</li>
+<li id="I3.ix6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">9.</span> 
+<div id="I3.ix6.p1" class="ltx_para">
+<p class="ltx_p">For each <math id="I3.ix6.p1.m1" class="ltx_Math" alttext="N_{i}" display="inline"><msub><mi>N</mi><mi>i</mi></msub></math> to be inserted, insert <math id="I3.ix6.p1.m2" class="ltx_Math" alttext="N[R_{1},\ldots,R_{s};R_{t}]" display="inline"><mrow><mi>N</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>R</mi><mi>s</mi></msub><mo>;</mo><msub><mi>R</mi><mi>t</mi></msub><mo stretchy="false">]</mo></mrow></mrow></math> instead, where each <math id="I3.ix6.p1.m3" class="ltx_Math" alttext="R_{j}" display="inline"><msub><mi>R</mi><mi>j</mi></msub></math> is determined by the computations done by instructions just prior to the point of insertion.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">The above only serves as a guideline, not a definite rule to follow. The following example serves as an illustration: let <math id="S0.SS0.SSSx2.p2.m1" class="ltx_Math" alttext="N_{1},\ldots,N_{k}" display="inline"><mrow><msub><mi>N</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>N</mi><mi>k</mi></msub></mrow></math> be URMs that compute <math id="S0.SS0.SSSx2.p2.m2" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math>-ary functions <math id="S0.SS0.SSSx2.p2.m3" class="ltx_Math" alttext="f_{1},\ldots,f_{k}" display="inline"><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>f</mi><mi>k</mi></msub></mrow></math>, and let <math id="S0.SS0.SSSx2.p2.m4" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> be a URM that computes a <math id="S0.SS0.SSSx2.p2.m5" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ary function <math id="S0.SS0.SSSx2.p2.m6" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math>. Define an <math id="S0.SS0.SSSx2.p2.m7" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math>-ary function <math id="S0.SS0.SSSx2.p2.m8" class="ltx_Math" alttext="h:\mathbb{N}^{m}\to\mathbb{N}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msup><mi>ℕ</mi><mi>m</mi></msup><mo>→</mo><mi>ℕ</mi></mrow></mrow></math> as the composition of the <math id="S0.SS0.SSSx2.p2.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>’s and <math id="S0.SS0.SSSx2.p2.m10" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math>:</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="h(r_{1},\ldots,r_{m}):=g(f_{1}(r_{1},\ldots,r_{m}),\ldots,f_{k}(r_{1},\ldots,r%
+_{m}))," display="block"><mrow><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>f</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">provided, of course, that the right hand side is defined. We show that <math id="S0.SS0.SSSx2.p2.m11" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> is URM-computable by finding a suitable URM <math id="S0.SS0.SSSx2.p2.m12" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> that computes <math id="S0.SS0.SSSx2.p2.m13" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>:</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p">Given input <math id="I4.i1.p1.m1" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> occupying the first <math id="I4.i1.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> registers, first copy contents of the input to the storage area by the following instructions:</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="P_{1}:=T(1,n+1),T(2,n+2),\ldots,T(m,n+m)" display="block"><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>:=</mo><mrow><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p">Insert programs</p>
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="P_{2}:=N_{1}[n+1,\ldots,n+m;n+m+1],\ldots,N_{k}[n+1,\ldots,n+m;n+m+k]" display="block"><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>:=</mo><mrow><mrow><msub><mi>N</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi></mrow><mo>;</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>N</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi></mrow><mo>;</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mi>k</mi></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">This has the effect of computing <math id="I4.i2.p1.m1" class="ltx_Math" alttext="f_{1}(r_{1},\ldots,r_{m}),\ldots,f_{k}(r_{1},\ldots,r_{m})" display="inline"><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>f</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, and putting the results in registers <math id="I4.i2.p1.m2" class="ltx_Math" alttext="n+m+1,n+m+2,\ldots,n+m+k" display="inline"><mrow><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mn>2</mn></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mi>k</mi></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p">Insert the program</p>
+<table id="S0.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex8.m1" class="ltx_Math" alttext="P_{3}:=M[n+m+1,\ldots,n+m+k;1]" display="block"><mrow><msub><mi>P</mi><mn>3</mn></msub><mo>:=</mo><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mi>m</mi><mo>+</mo><mi>k</mi></mrow><mo>;</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">so the results are copied to the first <math id="I4.i3.p1.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> registers, and <math id="I4.i3.p1.m2" class="ltx_Math" alttext="g(f_{1}(r_{1},\ldots,r_{m}),\ldots,f_{k}(r_{1},\ldots,r_{m}))" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>f</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is computed.</p>
+</div>
+</li>
+<li id="I4.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I4.i4.p1" class="ltx_para">
+<p class="ltx_p">Then <math id="I4.i4.p1.m1" class="ltx_Math" alttext="P:=P_{1},P_{2},P_{3}" display="inline"><mrow><mi>P</mi><mo>:=</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>,</mo><msub><mi>P</mi><mn>2</mn></msub><mo>,</mo><msub><mi>P</mi><mn>3</mn></msub></mrow></mrow></math> computes <math id="I4.i4.p1.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">Note that <math id="S0.SS0.SSSx2.p2.m14" class="ltx_Math" alttext="r\in\operatorname{dom}(h)" display="inline"><mrow><mi>r</mi><mo>∈</mo><mrow><mi>dom</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> iff <math id="S0.SS0.SSSx2.p2.m15" class="ltx_Math" alttext="N_{1}(r)\downarrow,\ldots,N_{k}(r)\downarrow" display="inline"><mrow><msub><mi>N</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><mo>↓</mo><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>N</mi><mi>k</mi></msub><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><mo>↓</mo></mrow></math> and <math id="S0.SS0.SSSx2.p2.m16" class="ltx_Math" alttext="M(f_{1}(r_{1},\ldots,r_{m}),\ldots,f_{k}(r_{1},\ldots,r_{m}))\downarrow" display="inline"><mrow><mrow><mi>M</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>f</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>r</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>↓</mo><mi></mi></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx2.p3" class="ltx_para">
+<p class="ltx_p">What we have shown above is summarized as follows:</p>
+</div>
+<div id="Thmprop2" class="ltx_theorem ltx_theorem_prop">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Proposition 2</span>.</h6>
+<div id="Thmprop2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If <math id="Thmprop2.p1.m1" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math>-ary functions <math id="Thmprop2.p1.m2" class="ltx_Math" alttext="f_{1},\ldots,f_{k}" display="inline"><mrow><msub><mi>f</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">,</mo><mi mathvariant="normal">…</mi><mo mathvariant="normal">,</mo><msub><mi>f</mi><mi>k</mi></msub></mrow></math> and a <math id="Thmprop2.p1.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ary function <math id="Thmprop2.p1.m4" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> are URM-computable, then so is <math id="Thmprop2.p1.m5" class="ltx_Math" alttext="g(f_{1},\ldots,f_{k})" display="inline"><mrow><mi>g</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><msub><mi>f</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">,</mo><mi mathvariant="normal">…</mi><mo mathvariant="normal">,</mo><msub><mi>f</mi><mi>k</mi></msub><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math>.</span></p>
+</div>
+</div>
+<div id="S0.SS0.SSSx2.p4" class="ltx_para">
+<p class="ltx_p">As a corollary, the following function is URM-computable:</p>
+</div>
+<div id="Thmcor1" class="ltx_theorem ltx_theorem_cor">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Corollary 1</span>.</h6>
+<div id="Thmcor1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If <math id="Thmcor1.p1.m1" class="ltx_Math" alttext="f(x_{1},\ldots,x_{n})" display="inline"><mrow><mi>f</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><msub><mi>x</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">,</mo><mi mathvariant="normal">…</mi><mo mathvariant="normal">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math> is URM-computable, so is <math id="Thmcor1.p1.m2" class="ltx_Math" alttext="f(x_{\sigma(1)},\ldots,x_{\sigma(n)})" display="inline"><mrow><mi>f</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>σ</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mn mathvariant="normal">1</mn><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></msub><mo mathvariant="normal">,</mo><mi mathvariant="normal">…</mi><mo mathvariant="normal">,</mo><msub><mi>x</mi><mrow><mi>σ</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi>n</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></msub><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math>, where <math id="Thmcor1.p1.m3" class="ltx_Math" alttext="\sigma" display="inline"><mi>σ</mi></math> is a permutation on <math id="Thmcor1.p1.m4" class="ltx_Math" alttext="\{1,\ldots,n\}" display="inline"><mrow><mo mathvariant="normal" stretchy="false">{</mo><mn mathvariant="normal">1</mn><mo mathvariant="normal">,</mo><mi mathvariant="normal">…</mi><mo mathvariant="normal">,</mo><mi>n</mi><mo mathvariant="normal" stretchy="false">}</mo></mrow></math>.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S0.SS0.SSSx2.p5" class="ltx_para">
+<p class="ltx_p">For each <math id="S0.SS0.SSSx2.p5.m1" class="ltx_Math" alttext="i\in\{1,\ldots,n\}" display="inline"><mrow><mi>i</mi><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi><mo stretchy="false">}</mo></mrow></mrow></math>, the function <math id="S0.SS0.SSSx2.p5.m2" class="ltx_Math" alttext="g_{i}(x_{1},\ldots,x_{n})=x_{\sigma(i)}" display="inline"><mrow><mrow><msub><mi>g</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>x</mi><mrow><mi>σ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow></msub></mrow></math> is computed by <math id="S0.SS0.SSSx2.p5.m3" class="ltx_Math" alttext="T(\sigma(i),1)" display="inline"><mrow><mi>T</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>σ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math>, and <math id="S0.SS0.SSSx2.p5.m4" class="ltx_Math" alttext="f(x_{\sigma(1)},\ldots,x_{\sigma(n)})=f(g_{1},\ldots,g_{n})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>σ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>σ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>g</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>g</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. ∎</p>
+</div>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> N. Cutland, <span class="ltx_text ltx_font_italic">Computability: An Introduction to Recursive Function Theory</span>. Cambridge University Press, (1980).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">combining URMs</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CombiningURMs</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:04:07</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:04:07</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">16</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Application</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">msc 03D10</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:39:35 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html><html>
+<head>
+<title>relation composition</title>
+<!--Generated on Sat Feb 10 12:50:05 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">relation composition</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Relation composition</span>, or the <span class="ltx_text ltx_font_bold">composition of relations</span>, is the generalization of function composition, or the composition of functions. The following treatment of relation composition takes the “strongly typed” approach to relations that is outlined in the entry on relation theory (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/RelationTheory</span>).</p>
+</div>
+<div class="ltx_TOC ltx_role_contents">
+<h6>Contents:</h6>
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="1 Preliminaries ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Preliminaries</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S2" title="2 Definition ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Definition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S3" title="3 Geometric construction ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Geometric construction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S4" title="4 Algebraic construction ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Algebraic construction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S5" title="5 Matrix representation ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Matrix representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S6" title="6 Graph-theoretic picture ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Graph-theoretic picture</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S7" title="7 Relation reduction ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Relation reduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S8" title="8 References ‣ relation composition" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>References</span></a></li>
+</ul>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Preliminaries</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The first order of business is to define the operation on relations that is variously known as the <span class="ltx_text ltx_font_italic">composition of relations</span>, <span class="ltx_text ltx_font_italic">relational composition</span>, or <span class="ltx_text ltx_font_italic">relative multiplication</span>. In approaching the more general constructions, it pays to begin with the composition of 2-adic and 3-adic relations.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">As an incidental observation on usage, there are many different conventions of syntax for denoting the application and composition of relations, with perhaps even more options in general use than are common for the application and composition of functions. In this case there is little chance of standardization, since the convenience of conventions is relative to the context of use, and the same writers use different styles of syntax in different settings, depending on the ease of analysis and computation.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">The first dimension of variation in syntax has to do with the correspondence between the order of operation and the linear order of terms on the page.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">The second dimension of variation in syntax has to do with the automatic assumptions in place about the associations of terms in the absence of associations marked by parentheses. This becomes a significant factor with relations in general because the usual property of associativity is lost as both the complexities of compositions and the dimensions of relations increase.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">These two factors together generate the following four styles of syntax:</p>
+</div>
+<div id="I1.i3.p2" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p">Left application, Left association (LALA).
+
+<br class="ltx_break">
+Left application, Right association (LARA).
+
+<br class="ltx_break">
+Right application, Left association (RALA).
+
+<br class="ltx_break">
+Right application, Right association (RARA).</p>
+</blockquote>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Definition</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">A notion of relational composition is to be defined that generalizes the usual notion of functional composition:</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Composing <span class="ltx_text ltx_font_italic">on the right</span>, <math id="I2.i1.p1.m1" class="ltx_Math" alttext="f:X\to Y" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mi>Y</mi></mrow></mrow></math> followed by <math id="I2.i1.p1.m2" class="ltx_Math" alttext="g:Y\to Z" display="inline"><mrow><mi>g</mi><mo>:</mo><mrow><mi>Y</mi><mo>→</mo><mi>Z</mi></mrow></mrow></math> results in a <span class="ltx_text ltx_font_italic">composite function</span> formulated as <math id="I2.i1.p1.m3" class="ltx_Math" alttext="fg:X\to Z" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mi>g</mi></mrow><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mi>Z</mi></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Composing <span class="ltx_text ltx_font_italic">on the left</span>, <math id="I2.i2.p1.m1" class="ltx_Math" alttext="f:X\to Y" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mi>Y</mi></mrow></mrow></math> followed by <math id="I2.i2.p1.m2" class="ltx_Math" alttext="g:Y\to Z" display="inline"><mrow><mi>g</mi><mo>:</mo><mrow><mi>Y</mi><mo>→</mo><mi>Z</mi></mrow></mrow></math> results in a <span class="ltx_text ltx_font_italic">composite function</span> formulated as <math id="I2.i2.p1.m3" class="ltx_Math" alttext="gf:X\to Z" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mi>f</mi></mrow><mo>:</mo><mrow><mi>X</mi><mo>→</mo><mi>Z</mi></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">Note on notation. The ordinary symbol for functional composition is the <span class="ltx_text ltx_font_italic">composition sign</span>, a small circle “<math id="S2.p3.m1" class="ltx_Math" alttext="\circ" display="inline"><mo>∘</mo></math>” written between the names of the functions being composed, as <math id="S2.p3.m2" class="ltx_Math" alttext="f\circ g" display="inline"><mrow><mi>f</mi><mo>∘</mo><mi>g</mi></mrow></math>, but the sign is often omitted if there is no risk of confusing the composition of functions with their algebraic product. In contexts where both compositions and products occur, either the composition is marked on each occasion or else the product is marked by means of a <span class="ltx_text ltx_font_italic">raised dot sign</span> “<math id="S2.p3.m3" class="ltx_Math" alttext="\cdot" display="inline"><mo>⋅</mo></math>”, as <math id="S2.p3.m4" class="ltx_Math" alttext="f\cdot g" display="inline"><mrow><mi>f</mi><mo>⋅</mo><mi>g</mi></mrow></math>.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">Generalizing the paradigm along parallel lines, the <span class="ltx_text ltx_font_italic">composition</span> of a pair of 2-adic relations is formulated in the following two ways:</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Composing <span class="ltx_text ltx_font_italic">on the right</span>, <math id="I3.i1.p1.m1" class="ltx_Math" alttext="P\subseteq X\times Y" display="inline"><mrow><mi>P</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math> followed by <math id="I3.i1.p1.m2" class="ltx_Math" alttext="Q\subseteq Y\times Z" display="inline"><mrow><mi>Q</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math> results in a <span class="ltx_text ltx_font_italic">composite relation</span> formulated as <math id="I3.i1.p1.m3" class="ltx_Math" alttext="PQ\subseteq X\times Z" display="inline"><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>Q</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Composing <span class="ltx_text ltx_font_italic">on the left</span>, <math id="I3.i2.p1.m1" class="ltx_Math" alttext="P\subseteq X\times Y" display="inline"><mrow><mi>P</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math> followed by <math id="I3.i2.p1.m2" class="ltx_Math" alttext="Q\subseteq Y\times Z" display="inline"><mrow><mi>Q</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math> results in a <span class="ltx_text ltx_font_italic">composite relation</span> formulated as <math id="I3.i2.p1.m3" class="ltx_Math" alttext="QP\subseteq X\times Z" display="inline"><mrow><mrow><mi>Q</mi><mo>⁢</mo><mi>P</mi></mrow><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">In the rest of this discussion 2-adic relations will be composed <span class="ltx_text ltx_font_italic">on the right</span>, leading to the following definition of <math id="S2.p6.m1" class="ltx_Math" alttext="PQ=P\circ Q" display="inline"><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>Q</mi></mrow><mo>=</mo><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow></mrow></math> for the composable pair of relations, <math id="S2.p6.m2" class="ltx_Math" alttext="P\subseteq X\times Y" display="inline"><mrow><mi>P</mi><mo>⊆</mo><mrow><mi>X</mi><mo>×</mo><mi>Y</mi></mrow></mrow></math> and <math id="S2.p6.m3" class="ltx_Math" alttext="Q\subseteq Y\times Z" display="inline"><mrow><mi>Q</mi><mo>⊆</mo><mrow><mi>Y</mi><mo>×</mo><mi>Z</mi></mrow></mrow></math>.</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<blockquote class="ltx_quote">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition.</span> <math id="S2.p7.m1" class="ltx_Math" alttext="P\circ Q=\{(x,z)\in X\times Z:(x,y)\in P\ \mathrm{and}\ (y,z)\in Q\}." display="inline"><mrow><mrow><mrow><mi>P</mi><mo>∘</mo><mi>Q</mi></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mi>X</mi><mo>×</mo><mi>Z</mi></mrow></mrow><mo>:</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mpadded width="+5pt"><mi>P</mi></mpadded><mo>⁢</mo><mpadded width="+5pt"><mi>and</mi></mpadded><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mi>Q</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>.</mo></mrow></math></p>
+</blockquote>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Geometric construction</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">There is a neat way of defining relational compositions in geometric terms, not only showing their relationship to the projection operations that come with any cartesian product, but also suggesting natural directions for generalizing relational compositions beyond the 2-adic case, and even beyond relations that have any fixed arity, in effect, to the general case of formal languages as generalized relations.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">This way of looking at relational compositions is sometimes referred to as <span class="ltx_text ltx_font_italic">Tarski’s trick</span>, on account of Alfred Tarski having put it to especially good use in his work (Ulam and Bednarek, 1977). It supplies the imagination with a geometric way of visualizing the relational composition of a pair of 2-adic relations, doing this by attaching concrete imagery to the basic set-theoretic operations, namely, intersections, projections, and a certain class of operations inverse to projections, here called <span class="ltx_text ltx_font_italic">tacit extensions (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/TacitExtension</span>)</span>.</p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">See main entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/GeometricRepresentationOfRelationComposition</span>) for details.</p>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Algebraic construction</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">The transition from a geometric picture of relation composition to an algebraic formulation is accomplished through the introduction of coordinates, in other words, identifiable names for the objects that are related through the various forms of relations, 2-adic and 3-adic in the present case.</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">See main entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/AlgebraicRepresentationOfRelationComposition</span>) for details.</p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Matrix representation</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">We have it within our reach to pick up another way of representing 2-adic relations, namely, the representation as logical matrices, and also to grasp the analogy between relational composition and ordinary matrix multiplication as it appears in linear algebra.</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p class="ltx_p">See main entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/MatrixRepresentationOfRelationComposition</span>) for details.</p>
+</div>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Graph-theoretic picture</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p class="ltx_p">There is another form of representation for 2-adic relations that is useful to keep in mind, especially for its ability to render the logic of many complex formulas almost instantly understandable to the mind’s eye. This is the representation in terms of <span class="ltx_text ltx_font_italic">bipartite graphs (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/BipartiteGraph</span>)</span>, or <span class="ltx_text ltx_font_italic">bigraphs</span> for short.</p>
+</div>
+<div id="S6.p2" class="ltx_para">
+<p class="ltx_p">See main entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/GraphTheoreticRepresentationOfRelationComposition</span>) for details.</p>
+</div>
+</section>
+<section id="S7" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">7 </span>Relation reduction</h2>
+
+<div id="S7.p1" class="ltx_para">
+<p class="ltx_p">See main entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/RelationReduction</span>) for details.</p>
+</div>
+</section>
+<section id="S8" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">8 </span>References</h2>
+
+<div id="S8.p1" class="ltx_para">
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p">Ulam, Stanislaw Marcin; and Bednarek, A.R. (1977), “On the Theory of Relational Structures and Schemata for Parallel Computation”. Reprinted, pp. 477–508 in Ulam (1990).
+</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p">Ulam, Stanislaw Marcin (1990), <span class="ltx_text ltx_font_italic">Analogies Between Analogies : The Mathematical Reports of S.M. Ulam and His Los Alamos Collaborators</span>, A.R. Bednarek and Françoise Ulam (eds.), University of California Press, Berkeley, CA.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S8.p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">relation composition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationComposition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-10-24 16:58:43</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-10-24 16:58:43</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">40</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Jon Awbrey (15246)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Topic</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68R01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 08A02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05C65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 05B20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03E20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03B10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">composition of relations</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relational composition</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Synonym</td>
+<td class="ltx_td ltx_align_left ltx_border_r">relative multiplication</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationTheory</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationConstruction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">RelationReduction</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TacitExtension</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LogicalMatrix</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">relation composition</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:50:05 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

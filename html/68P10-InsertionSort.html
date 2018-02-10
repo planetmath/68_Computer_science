@@ -1,0 +1,242 @@
+<!DOCTYPE html><html>
+<head>
+<title>insertion sort</title>
+<!--Generated on Sat Feb 10 12:38:20 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">insertion sort</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SSx1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">The Problem</h2>
+
+<div id="S0.SSx1.p1" class="ltx_para">
+<p class="ltx_p">See the sorting problem.</p>
+</div>
+</section>
+<section id="S0.SSx2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">The Algorithm</h2>
+
+<div id="S0.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Suppose <math id="S0.SSx2.p1.m1" class="ltx_Math" alttext="L=\left\{x_{1},x_{2},\dots,x_{n}\right\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo>{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>}</mo></mrow></mrow></math> is the initial list of unsorted elements.
+The <em class="ltx_emph ltx_font_italic">insertion sort</em> algorithm will construct a new list, containing the
+elements of <math id="S0.SSx2.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> in order, which we will call <math id="S0.SSx2.p1.m3" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>. The algorithm constructs this list one element at a time.</p>
+</div>
+<div id="S0.SSx2.p2" class="ltx_para">
+<p class="ltx_p">Initially <math id="S0.SSx2.p2.m1" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> is empty. We then take the first element of <math id="S0.SSx2.p2.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and put it in <math id="S0.SSx2.p2.m3" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>.
+We then take the second element of <math id="S0.SSx2.p2.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and also add it to <math id="S0.SSx2.p2.m5" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>, placing it before any elements in <math id="S0.SSx2.p2.m6" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> that should
+come after it. This is done one element at a time until all <math id="S0.SSx2.p2.m7" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements of <math id="S0.SSx2.p2.m8" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> are in <math id="S0.SSx2.p2.m9" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>, in sorted order.
+Thus, each step <math id="S0.SSx2.p2.m10" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> consists of looking up the position in <math id="S0.SSx2.p2.m11" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> where the element <math id="S0.SSx2.p2.m12" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math> should be placed
+and inserting it there (hence the name of the algorithm).
+This requires a search, and then the shifting of all the elements in <math id="S0.SSx2.p2.m13" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>
+that come after <math id="S0.SSx2.p2.m14" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math> (if <math id="S0.SSx2.p2.m15" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> is stored in an array). If storage is in an array, then the binary search algorithm
+can be used to quickly find <math id="S0.SSx2.p2.m16" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math>’s new position in <math id="S0.SSx2.p2.m17" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>.</p>
+</div>
+<div id="S0.SSx2.p3" class="ltx_para">
+<p class="ltx_p">Since at step <math id="S0.SSx2.p3.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>, the length of list <math id="S0.SSx2.p3.m2" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> is <math id="S0.SSx2.p3.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and the length of list <math id="S0.SSx2.p3.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is <math id="S0.SSx2.p3.m5" class="ltx_Math" alttext="n-i" display="inline"><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow></math>, we can implement this
+algorithm as an in-place sorting algorithm. Each step <math id="S0.SSx2.p3.m6" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> results in <math id="S0.SSx2.p3.m7" class="ltx_Math" alttext="L[1..i]" display="inline"><mrow><mi>L</mi><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></math> becoming fully sorted.</p>
+</div>
+</section>
+<section id="S0.SSx3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Pseudocode</h2>
+
+<div id="S0.SSx3.p1" class="ltx_para">
+<p class="ltx_p">This algorithm uses a modified binary search algorithm to find the position in <math id="S0.SSx3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> where an element <math id="S0.SSx3.p1.m2" class="ltx_Math" alttext="key" display="inline"><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></math>
+should be placed to maintain ordering.</p>
+</div>
+<div id="S0.SSx3.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm</span> <span class="ltx_text ltx_font_smallcaps">Insertion_Sort</span><span class="ltx_text ltx_font_typewriter">(L, n)
+<br class="ltx_break"></span><span class="ltx_text ltx_font_italic">Input</span>: A list <math id="S0.SSx3.p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> of <math id="S0.SSx3.p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements
+<br class="ltx_break"><span class="ltx_text ltx_font_italic">Output</span>: The list <math id="S0.SSx3.p2.m3" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> in sorted order
+<br class="ltx_break"></p>
+</div>
+<div id="S0.SSx3.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">begin
+<br class="ltx_break"></span>         
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">for</span> <math id="S0.SSx3.p3.m1" class="ltx_Math" alttext="i\leftarrow 1\mbox{ to }n" display="inline"><mrow><mi>i</mi><mo>←</mo><mrow><mn>1</mn><mo>⁢</mo><mtext> to </mtext><mo>⁢</mo><mi>n</mi></mrow></mrow></math> <span class="ltx_text ltx_font_bold">do</span></span>
+</span></p>
+</div>
+<div id="S0.SSx3.p4" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><span class="ltx_text ltx_font_bold">begin</span></p>
+</div>
+<div id="S0.SSx3.p5" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p5.m1" class="ltx_Math" alttext="value\leftarrow L[i]" display="inline"><mrow><mrow><mi>v</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>e</mi></mrow><mo>←</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p6" class="ltx_para">
+<p class="ltx_p"><math id="S0.SSx3.p6.m1" class="ltx_Math" alttext="position\leftarrow Binary\_Search(L,1,i,value)" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo>←</mo><mrow><mi>B</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>i</mi><mo>,</mo><mrow><mi>v</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>e</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">for</span> <math id="S0.SSx3.p7.m1" class="ltx_Math" alttext="j\leftarrow i\mbox{ downto }position" display="inline"><mrow><mi>j</mi><mo>←</mo><mrow><mi>i</mi><mo>⁢</mo><mtext> downto </mtext><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></math> <span class="ltx_text ltx_font_bold">do</span></p>
+</div>
+<div id="S0.SSx3.p8" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p8.m1" class="ltx_Math" alttext="L[j]\leftarrow L[j-1]" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow></mrow><mo>←</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>j</mi><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p9" class="ltx_para">
+<p class="ltx_p"><math id="S0.SSx3.p9.m1" class="ltx_Math" alttext="L[position]\leftarrow value" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>p</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>←</mo><mrow><mi>v</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>e</mi></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">end</span>
+
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">end</span> 
+<br class="ltx_break">
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">function</span> Binary_Search(L, bottom, top, key) 
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">begin
+<br class="ltx_break"></span>         
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">if</span> <math id="S0.SSx3.p10.m1" class="ltx_Math" alttext="bottom&gt;=top" display="inline"><mrow><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>≥</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow></mrow></math> <span class="ltx_text ltx_font_bold">then</span></span>
+</span></p>
+</div>
+<div id="S0.SSx3.p11" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p11.m1" class="ltx_Math" alttext="Binary\_Search\leftarrow bottom" display="inline"><mrow><mrow><mi>B</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi></mrow><mo>←</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow></mrow></math></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">else</span></p>
+</div>
+<div id="S0.SSx3.p12" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><span class="ltx_text ltx_font_bold">begin</span></p>
+</div>
+<div id="S0.SSx3.p13" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p13.m1" class="ltx_Math" alttext="middle\leftarrow(bottom+top)/2" display="inline"><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo>←</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>+</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mn>2</mn></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p14" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">if</span> <math id="S0.SSx3.p14.m1" class="ltx_Math" alttext="key&lt;L[middle]" display="inline"><mrow><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo>&lt;</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math> <span class="ltx_text ltx_font_bold">then</span></p>
+</div>
+<div id="S0.SSx3.p15" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p15.m1" class="ltx_Math" alttext="Binary\_Search\leftarrow Binary\_Search(L,bottom,middle-1,key)" display="inline"><mrow><mrow><mi>B</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi></mrow><mo>←</mo><mrow><mi>B</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>,</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo>-</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">else</span></p>
+</div>
+<div id="S0.SSx3.p16" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p16.m1" class="ltx_Math" alttext="Binary\_Search\leftarrow Binary\_Search(L,middle+1,top,key)" display="inline"><mrow><mrow><mi>B</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi></mrow><mo>←</mo><mrow><mi>B</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p17" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">end</span>
+
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">end</span></p>
+</div>
+</section>
+<section id="S0.SSx4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Analysis</h2>
+
+<div id="S0.SSx4.p1" class="ltx_para">
+<p class="ltx_p">In the worst case, each step <math id="S0.SSx4.p1.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> requires a shift of <math id="S0.SSx4.p1.m2" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> elements for the insertion (consider an input
+list that is sorted in reverse order). Thus the runtime complexity is <math id="S0.SSx4.p1.m3" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>. Even the optimization
+of using a binary search does not help us here, because the deciding factor in this case is the insertion.
+It is possible to use a data type with <math id="S0.SSx4.p1.m4" class="ltx_Math" alttext="\mathcal{O}(\log{n})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> insertion time, giving <math id="S0.SSx4.p1.m5" class="ltx_Math" alttext="\mathcal{O}(n\log{n})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> runtime,
+but then the algorithm can no longer be done as an in-place sorting algorithm. Such data structures are also quite
+complicated.
+</p>
+</div>
+<div id="S0.SSx4.p2" class="ltx_para">
+<p class="ltx_p">A similar algorithm to the insertion sort is the selection sort, which requires fewer data movements than the insertion
+sort, but requires more comparisons.</p>
+</div>
+<div id="S0.SSx4.p3" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">insertion sort</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">InsertionSort</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:38</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:38</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 55U40</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 55U99</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 55U15</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 55U10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 55P20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 55-00</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 85-00</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 83-02</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SortingProblem</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">BinarySearch</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">SelectionSort</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:20 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

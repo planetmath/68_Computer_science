@@ -1,0 +1,201 @@
+<!DOCTYPE html><html>
+<head>
+<title>homomorphism of languages</title>
+<!--Generated on Sat Feb 10 12:45:41 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">homomorphism of languages</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Let <math id="p1.m1" class="ltx_Math" alttext="\Sigma_{1}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></math> and <math id="p1.m2" class="ltx_Math" alttext="\Sigma_{2}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>2</mn></msub></math> be two alphabets. A function <math id="p1.m3" class="ltx_Math" alttext="h:\Sigma_{1}^{*}\to\Sigma_{2}^{*}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup><mo>→</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></mrow></mrow></math> is called a <em class="ltx_emph ltx_font_italic">homomorphism</em> if it is a semigroup homomorphism from semigroups <math id="p1.m4" class="ltx_Math" alttext="\Sigma_{1}^{*}" display="inline"><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup></math> to <math id="p1.m5" class="ltx_Math" alttext="\Sigma_{2}^{*}" display="inline"><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></math>. This means that
+</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> preserves the empty word: <math id="I1.i1.p1.m2" class="ltx_Math" alttext="h(\lambda)=\lambda" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>λ</mi></mrow></math>, and</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> preserves concatenation: <math id="I1.i2.p1.m2" class="ltx_Math" alttext="h(\alpha\beta)=h(\alpha)h(\beta)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>α</mi><mo>⁢</mo><mi>β</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>α</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>β</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> for any words <math id="I1.i2.p1.m3" class="ltx_Math" alttext="\alpha,\beta\in\Sigma_{1}^{*}" display="inline"><mrow><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow><mo>∈</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Since the alphabet <math id="p2.m1" class="ltx_Math" alttext="\Sigma_{1}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></math> freely generates <math id="p2.m2" class="ltx_Math" alttext="\Sigma_{1}^{*}" display="inline"><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup></math>, <math id="p2.m3" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> is uniquely determined by its restriction to <math id="p2.m4" class="ltx_Math" alttext="\Sigma_{1}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></math>. Conversely, any function from <math id="p2.m5" class="ltx_Math" alttext="\Sigma_{1}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></math> extends to a unique homomorphism from <math id="p2.m6" class="ltx_Math" alttext="\Sigma_{1}^{*}" display="inline"><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup></math> to <math id="p2.m7" class="ltx_Math" alttext="\Sigma_{2}^{*}" display="inline"><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></math>. In other words, it is enough to know what <math id="p2.m8" class="ltx_Math" alttext="h(a)" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> is for each symbol <math id="p2.m9" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> in <math id="p2.m10" class="ltx_Math" alttext="\Sigma_{1}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></math>. Since every word <math id="p2.m11" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> over <math id="p2.m12" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is just a concatenation of symbols in <math id="p2.m13" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>, <math id="p2.m14" class="ltx_Math" alttext="h(w)" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>w</mi><mo stretchy="false">)</mo></mrow></mrow></math> can be computed using the second condition above. The first condition takes care of the case when <math id="p2.m15" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is the empty word.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Suppose <math id="p3.m1" class="ltx_Math" alttext="h:\Sigma_{1}^{*}\to\Sigma_{2}^{*}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup><mo>→</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></mrow></mrow></math> is a homomorphism, <math id="p3.m2" class="ltx_Math" alttext="L_{1}\subseteq\Sigma_{1}^{*}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>⊆</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup></mrow></math> and <math id="p3.m3" class="ltx_Math" alttext="L_{2}\subseteq\Sigma_{2}^{*}" display="inline"><mrow><msub><mi>L</mi><mn>2</mn></msub><mo>⊆</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></mrow></math>. Define</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="h(L_{1}):=\{h(w)\mid w\in L\}\qquad\mbox{and}\qquad h^{-1}(L_{2}):=\{v\mid h(v%
+)\in L_{2}\}." display="block"><mrow><mrow><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mrow><mo stretchy="false">{</mo><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>w</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∣</mo><mrow><mi>w</mi><mo>∈</mo><mi>L</mi></mrow><mo stretchy="false">}</mo></mrow><mo mathvariant="italic" separator="true">  </mo><mtext>and</mtext></mrow></mrow><mo mathvariant="italic" separator="true">  </mo><mrow><mrow><msup><mi>h</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mi>v</mi><mo>∣</mo><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><msub><mi>L</mi><mn>2</mn></msub></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">If <math id="p3.m4" class="ltx_Math" alttext="L_{1},L_{2}" display="inline"><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><msub><mi>L</mi><mn>2</mn></msub></mrow></math> belong to a certain family of languages, one is often interested to know if <math id="p3.m5" class="ltx_Math" alttext="h(L_{1})" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> or <math id="p3.m6" class="ltx_Math" alttext="h^{-1}(L_{2})" display="inline"><mrow><msup><mi>h</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> belongs to that same family. We have the following result:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I2.i1.p1.m1" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> and <math id="I2.i1.p1.m2" class="ltx_Math" alttext="L_{2}" display="inline"><msub><mi>L</mi><mn>2</mn></msub></math> are regular, so are <math id="I2.i1.p1.m3" class="ltx_Math" alttext="h(L_{1})" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="I2.i1.p1.m4" class="ltx_Math" alttext="h^{-1}(L_{2})" display="inline"><mrow><msup><mi>h</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I2.i2.p1.m1" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> and <math id="I2.i2.p1.m2" class="ltx_Math" alttext="L_{2}" display="inline"><msub><mi>L</mi><mn>2</mn></msub></math> are context-free, so are <math id="I2.i2.p1.m3" class="ltx_Math" alttext="h(L_{1})" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="I2.i2.p1.m4" class="ltx_Math" alttext="h^{-1}(L_{2})" display="inline"><mrow><msup><mi>h</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">If <math id="I2.i3.p1.m1" class="ltx_Math" alttext="L_{1}" display="inline"><msub><mi>L</mi><mn>1</mn></msub></math> and <math id="I2.i3.p1.m2" class="ltx_Math" alttext="L_{2}" display="inline"><msub><mi>L</mi><mn>2</mn></msub></math> are type-0, so are <math id="I2.i3.p1.m3" class="ltx_Math" alttext="h(L_{1})" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="I2.i3.p1.m4" class="ltx_Math" alttext="h^{-1}(L_{2})" display="inline"><mrow><msup><mi>h</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>L</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">However, the family <math id="p4.m1" class="ltx_Math" alttext="\mathscr{F}" display="inline"><mi class="ltx_font_mathscript">ℱ</mi></math> of context-sensitive languages is not closed under homomorphisms, nor inverse homomorphisms. Nevertheless, it can be shown that <math id="p4.m2" class="ltx_Math" alttext="\mathscr{F}" display="inline"><mi class="ltx_font_mathscript">ℱ</mi></math> is closed under a restricted class of homomorphisms, namely, <math id="p4.m3" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-free homomorphisms. A homomorphism is said to be <em class="ltx_emph ltx_font_italic"><math id="p4.m4" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-free</em> or <em class="ltx_emph ltx_font_italic">non-erasing</em> if <math id="p4.m5" class="ltx_Math" alttext="h(a)\neq\lambda" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mi>λ</mi></mrow></math> for any <math id="p4.m6" class="ltx_Math" alttext="a\in\Sigma_{1}" display="inline"><mrow><mi>a</mi><mo>∈</mo><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></mrow></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remarks</span>.</p>
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Every homomorphism induces a substitution in a trivial way: if <math id="I3.i1.p1.m1" class="ltx_Math" alttext="h:\Sigma_{1}^{*}\to\Sigma_{2}^{*}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup><mo>→</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></mrow></mrow></math> is a homomorphism, then <math id="I3.i1.p1.m2" class="ltx_Math" alttext="h_{s}:\Sigma_{1}\to P(\Sigma_{2}^{*})" display="inline"><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>:</mo><mrow><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub><mo>→</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math> defined by <math id="I3.i1.p1.m3" class="ltx_Math" alttext="h_{s}(a)=\{h(a)\}" display="inline"><mrow><mrow><msub><mi>h</mi><mi>s</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> is a substitution.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">One can likewise introduce the notion of antihomomorphism of languages. A map <math id="I3.i2.p1.m1" class="ltx_Math" alttext="g:\Sigma_{1}^{*}\to\Sigma_{2}^{*}" display="inline"><mrow><mi>g</mi><mo>:</mo><mrow><msubsup><mi mathvariant="normal">Σ</mi><mn>1</mn><mo>*</mo></msubsup><mo>→</mo><msubsup><mi mathvariant="normal">Σ</mi><mn>2</mn><mo>*</mo></msubsup></mrow></mrow></math> is an antihomomorphism if <math id="I3.i2.p1.m2" class="ltx_Math" alttext="g(\alpha\beta)=g(\beta)g(\alpha)" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>α</mi><mo>⁢</mo><mi>β</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>β</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>α</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, for any words <math id="I3.i2.p1.m3" class="ltx_Math" alttext="\alpha,\beta" display="inline"><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow></math> over <math id="I3.i2.p1.m4" class="ltx_Math" alttext="\Sigma_{1}" display="inline"><msub><mi mathvariant="normal">Σ</mi><mn>1</mn></msub></math>. It is easy to see that <math id="I3.i2.p1.m5" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> is an antihomomorphism iff <math id="I3.i2.p1.m6" class="ltx_Math" alttext="g\circ\operatorname{rev}" display="inline"><mrow><mi>g</mi><mo>∘</mo><mi>rev</mi></mrow></math> is a homomorphism, where <math id="I3.i2.p1.m7" class="ltx_Math" alttext="\operatorname{rev}" display="inline"><mi>rev</mi></math> is the reversal operator. Closure under antihomomorphisms for a family of languages follows the closure under homomorphisms, provided that the family is closed under reversal.</p>
+</div>
+</li>
+</ul>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> S. Ginsburg, <span class="ltx_text ltx_font_italic">The Mathematical Theory of Context-Free Languages</span>, McGraw-Hill, New York (1966).
+
+</span>
+      </li>
+      
+<li id="bib.bib2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">2</span>
+        
+<span class="ltx_bibblock"> H.R. Lewis, C.H. Papadimitriou <span class="ltx_text ltx_font_italic">Elements of the Theory of Computation</span>. Prentice-Hall, Englewood Cliffs, New Jersey (1981).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p6" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">homomorphism of languages</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">HomomorphismOfLanguages</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:55:06</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:55:06</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">12</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q45</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">
+<math id="p6.m1" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-free</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">non-erasing</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">StringSubstitution</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Substitution</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">homomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">antihomomorphism</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">
+<math id="p6.m2" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>-free</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:45:41 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

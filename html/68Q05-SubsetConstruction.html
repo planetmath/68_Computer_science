@@ -1,0 +1,199 @@
+<!DOCTYPE html><html>
+<head>
+<title>subset construction</title>
+<!--Generated on Sat Feb 10 12:40:41 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">subset construction</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">The subset construction is a technique of turning a non-deterministic automaton into a deterministic one, while keeping the accepting language the same. This technique shows that an NDFA is no more powerful in terms of word acceptance than a DFA.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">We begin by looking at a semiautomaton <math id="p2.m1" class="ltx_Math" alttext="(S,\Sigma,\delta)" display="inline"><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow></math>. The transition function <math id="p2.m2" class="ltx_Math" alttext="\delta" display="inline"><mi>δ</mi></math> is a function from <math id="p2.m3" class="ltx_Math" alttext="S\times\Sigma" display="inline"><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow></math> to <math id="p2.m4" class="ltx_Math" alttext="P(S)" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow></math>, which maps a pair <math id="p2.m5" class="ltx_Math" alttext="(s,a)" display="inline"><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></math> to a subset <math id="p2.m6" class="ltx_Math" alttext="\delta(s,a)" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> of <math id="p2.m7" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>. Observe that <math id="p2.m8" class="ltx_Math" alttext="\delta" display="inline"><mi>δ</mi></math> can be extended to a function <math id="p2.m9" class="ltx_Math" alttext="\delta^{\prime}" display="inline"><msup><mi>δ</mi><mo>′</mo></msup></math> from <math id="p2.m10" class="ltx_Math" alttext="P(S)\times\Sigma" display="inline"><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow></math> to <math id="p2.m11" class="ltx_Math" alttext="P(S)" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow></math> by setting
+</p>
+<table id="S0.E1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E1.m1" class="ltx_Math" alttext="\delta^{\prime}(T,a):=\bigcup\{\delta(t,a)\mid t\in T\}" display="block"><mrow><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo largeop="true" mathsize="160%" movablelimits="false" stretchy="false" symmetric="true">⋃</mo><mrow><mo stretchy="false">{</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∣</mo><mrow><mi>t</mi><mo>∈</mo><mi>T</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr>
+</table>
+<p class="ltx_p">for any subset <math id="p2.m12" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> of <math id="p2.m13" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> and <math id="p2.m14" class="ltx_Math" alttext="a\in\Sigma" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow></math>. Note that <math id="p2.m15" class="ltx_Math" alttext="\delta^{\prime}(\varnothing,a)=\varnothing" display="inline"><mrow><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∅</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi mathvariant="normal">∅</mi></mrow></math>. What we have just done is turning a semiautomaton <math id="p2.m16" class="ltx_Math" alttext="(S,\Sigma,\delta)" display="inline"><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow></math> into a deterministic semiautomaton <math id="p2.m17" class="ltx_Math" alttext="(S^{\prime},\Sigma,\delta^{\prime})" display="inline"><mrow><mo stretchy="false">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><msup><mi>δ</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></math>, where <math id="p2.m18" class="ltx_Math" alttext="S^{\prime}=P(S)" display="inline"><mrow><msup><mi>S</mi><mo>′</mo></msup><mo>=</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, the powerset of <math id="p2.m19" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">It is easy to see, by induction on the length of <math id="p3.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math>, that <math id="p3.m2" class="ltx_Math" alttext="\delta^{\prime}(T,u)=\bigcup\{\delta(t,u)\mid t\in T\}" display="inline"><mrow><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo>,</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo largeop="true" mathsize="160%" stretchy="false" symmetric="true">⋃</mo><mrow><mo stretchy="false">{</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∣</mo><mrow><mi>t</mi><mo>∈</mo><mi>T</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Next, given an NDFA <math id="p4.m1" class="ltx_Math" alttext="A=(S,\Sigma,\delta,I,F)" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo>,</mo><mi>I</mi><mo>,</mo><mi>F</mi><mo stretchy="false">)</mo></mrow></mrow></math>, we turn it into a DFA <math id="p4.m2" class="ltx_Math" alttext="A^{\prime}:=(S^{\prime},\Sigma,\delta^{\prime},I^{\prime},F^{\prime})" display="inline"><mrow><msup><mi>A</mi><mo>′</mo></msup><mo>:=</mo><mrow><mo stretchy="false">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><msup><mi>δ</mi><mo>′</mo></msup><mo>,</mo><msup><mi>I</mi><mo>′</mo></msup><mo>,</mo><msup><mi>F</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></math> as follows:</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="(S^{\prime},\Sigma,\delta^{\prime})" display="inline"><mrow><mo stretchy="false">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><msup><mi>δ</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></math> is derived from <math id="I1.i1.p1.m2" class="ltx_Math" alttext="(S,\Sigma,\delta)" display="inline"><mrow><mo stretchy="false">(</mo><mi>S</mi><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><mi>δ</mi><mo stretchy="false">)</mo></mrow></math> by the construction above,</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="I^{\prime}=I" display="inline"><mrow><msup><mi>I</mi><mo>′</mo></msup><mo>=</mo><mi>I</mi></mrow></math>, and</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="F^{\prime}=\{T\subseteq S\mid T\cap F\neq\varnothing\}" display="inline"><mrow><msup><mi>F</mi><mo>′</mo></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow><mo>∣</mo><mrow><mrow><mi>T</mi><mo>∩</mo><mi>F</mi></mrow><mo>≠</mo><mi mathvariant="normal">∅</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Since <math id="p4.m3" class="ltx_Math" alttext="I^{\prime}" display="inline"><msup><mi>I</mi><mo>′</mo></msup></math> is an element of <math id="p4.m4" class="ltx_Math" alttext="S^{\prime}=P(S)" display="inline"><mrow><msup><mi>S</mi><mo>′</mo></msup><mo>=</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, and <math id="p4.m5" class="ltx_Math" alttext="F^{\prime}\subseteq S^{\prime}" display="inline"><mrow><msup><mi>F</mi><mo>′</mo></msup><mo>⊆</mo><msup><mi>S</mi><mo>′</mo></msup></mrow></math>, <math id="p4.m6" class="ltx_Math" alttext="A^{\prime}" display="inline"><msup><mi>A</mi><mo>′</mo></msup></math> is a well-defined DFA.</p>
+</div>
+<div id="Thmprop1" class="ltx_theorem ltx_theorem_prop">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Proposition 1</span>.</h6>
+<div id="Thmprop1.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmprop1.p1.m1" class="ltx_Math" alttext="L(A)=L(A^{\prime})" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>A</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><math id="p5.m1" class="ltx_Math" alttext="u\in L(A)" display="inline"><mrow><mi>u</mi><mo>∈</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> iff <math id="p5.m2" class="ltx_Math" alttext="\delta(q,u)\cap F\neq\varnothing" display="inline"><mrow><mrow><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>F</mi></mrow><mo>≠</mo><mi mathvariant="normal">∅</mi></mrow></math> (where <math id="p5.m3" class="ltx_Math" alttext="q\in I" display="inline"><mrow><mi>q</mi><mo>∈</mo><mi>I</mi></mrow></math>) iff <math id="p5.m4" class="ltx_Math" alttext="\delta^{\prime}(I,u)\in F^{\prime}" display="inline"><mrow><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo>,</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><msup><mi>F</mi><mo>′</mo></msup></mrow></math> iff <math id="p5.m5" class="ltx_Math" alttext="u\in L(A^{\prime})" display="inline"><mrow><mi>u</mi><mo>∈</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>A</mi><mo>′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.
+∎</p>
+</div>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">What happens if the NDFA in question contains <math id="p6.m1" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-transitions (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/EpsilonTransition</span>)? Suppose <math id="p6.m2" class="ltx_Math" alttext="p\lx@stackrel{{\scriptstyle\epsilon}}{{\rightarrow}}q" display="inline"><mrow><mi>p</mi><mover><mo movablelimits="false">→</mo><mi>ϵ</mi></mover><mi>q</mi></mrow></math> is an <math id="p6.m3" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-transition, and <math id="p6.m4" class="ltx_Math" alttext="p\neq q" display="inline"><mrow><mi>p</mi><mo>≠</mo><mi>q</mi></mrow></math>. Then <math id="p6.m5" class="ltx_Math" alttext="\delta^{\prime}(\{p\},\epsilon)=\{q\}\neq\{p\}" display="inline"><mrow><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo stretchy="false">{</mo><mi>p</mi><mo stretchy="false">}</mo></mrow><mo>,</mo><mi>ϵ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>q</mi><mo stretchy="false">}</mo></mrow><mo>≠</mo><mrow><mo stretchy="false">{</mo><mi>p</mi><mo stretchy="false">}</mo></mrow></mrow></math>, which is not allowed in a DFA.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">To get around this difficulty, we make a small modification on <math id="p7.m1" class="ltx_Math" alttext="A^{\prime}" display="inline"><msup><mi>A</mi><mo>′</mo></msup></math>. First, define, for any <math id="p7.m2" class="ltx_Math" alttext="T\subseteq S" display="inline"><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow></math>, the <em class="ltx_emph ltx_font_italic"><math id="p7.m3" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-closure</em> <math id="p7.m4" class="ltx_Math" alttext="C_{\epsilon}(T)" display="inline"><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow></math> of <math id="p7.m5" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> as the set</p>
+<table id="S0.E2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E2.m1" class="ltx_Math" alttext="C_{\epsilon}(T):=\{t\mid t\in\delta^{\prime}(T,\epsilon^{k}),k\geq 0\}" display="block"><mrow><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mo stretchy="false">{</mo><mi>t</mi><mo>∣</mo><mrow><mrow><mi>t</mi><mo>∈</mo><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo>,</mo><msup><mi>ϵ</mi><mi>k</mi></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo><mrow><mi>k</mi><mo>≥</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr>
+</table>
+<p class="ltx_p">For any <math id="p7.m6" class="ltx_Math" alttext="T\subseteq S" display="inline"><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow></math>, <math id="p7.m7" class="ltx_Math" alttext="\delta^{\prime}(C_{\epsilon}(T),a)=C_{\epsilon}(T)" display="inline"><mrow><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. If the automaton does not contain any <math id="p7.m8" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-transitions, then <math id="p7.m9" class="ltx_Math" alttext="C_{\epsilon}(T)=T" display="inline"><mrow><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>T</mi></mrow></math>.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Now, let NDFA <math id="p8.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> be an <math id="p8.m2" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-automaton (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/EpsilonAutomaton</span>), define <math id="p8.m3" class="ltx_Math" alttext="A^{\prime\prime}:=(S^{\prime},\Sigma,\delta^{\prime\prime},I^{\prime\prime},F^%
+{\prime\prime})" display="inline"><mrow><msup><mi>A</mi><mo>′′</mo></msup><mo>:=</mo><mrow><mo stretchy="false">(</mo><msup><mi>S</mi><mo>′</mo></msup><mo>,</mo><mi mathvariant="normal">Σ</mi><mo>,</mo><msup><mi>δ</mi><mo>′′</mo></msup><mo>,</mo><msup><mi>I</mi><mo>′′</mo></msup><mo>,</mo><msup><mi>F</mi><mo>′′</mo></msup><mo stretchy="false">)</mo></mrow></mrow></math> as follows:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="S^{\prime}=P(S)" display="inline"><mrow><msup><mi>S</mi><mo>′</mo></msup><mo>=</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>,</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\delta^{\prime\prime}(T,a)=\delta^{\prime}(C_{\epsilon}(T),a)" display="inline"><mrow><mrow><msup><mi>δ</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>δ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, where <math id="I2.i2.p1.m2" class="ltx_Math" alttext="\delta^{\prime}" display="inline"><msup><mi>δ</mi><mo>′</mo></msup></math> is defined in (1) above,</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="I^{\prime\prime}=C_{\epsilon}(I)" display="inline"><mrow><msup><mi>I</mi><mo>′′</mo></msup><mo>=</mo><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, and</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i4.p1.m1" class="ltx_Math" alttext="F^{\prime\prime}=\{T\subseteq S\mid C_{\epsilon}(T)\cap F\neq\varnothing\}" display="inline"><mrow><msup><mi>F</mi><mo>′′</mo></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow><mo>∣</mo><mrow><mrow><mrow><msub><mi>C</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>F</mi></mrow><mo>≠</mo><mi mathvariant="normal">∅</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">By definition, <math id="p8.m4" class="ltx_Math" alttext="A^{\prime\prime}" display="inline"><msup><mi>A</mi><mo>′′</mo></msup></math> is a DFA, and it can be shown that <math id="p8.m5" class="ltx_Math" alttext="L(A^{\prime\prime})=L(A)" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>A</mi><mo>′′</mo></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. The proof is very similar to the one given here (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/EveryEpsilonAutomatonIsEquivalentToAnAutomaton</span>).
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">subset construction</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SubsetConstruction</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:02:00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:02:00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">7</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03D10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q42</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_r">powerset construction</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">DeterministicFiniteAutomaton</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">
+<math id="p8.m6" class="ltx_Math" alttext="\epsilon" display="inline"><mi>ϵ</mi></math>-closure</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p ltx_align_right"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:40:41 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

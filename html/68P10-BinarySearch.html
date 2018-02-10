@@ -1,0 +1,224 @@
+<!DOCTYPE html><html>
+<head>
+<title>binary search</title>
+<!--Generated on Sat Feb 10 12:38:02 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">binary search</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SSx1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">The Problem</h2>
+
+<div id="S0.SSx1.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="S0.SSx1.p1.m1" class="ltx_Math" alttext="\leq" display="inline"><mo>≤</mo></math> be a total ordering on the set <math id="S0.SSx1.p1.m2" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>. Given a sequence of <math id="S0.SSx1.p1.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements,
+<math id="S0.SSx1.p1.m4" class="ltx_Math" alttext="L=\left\{x_{1}\leq x_{2}\leq\dots\leq x_{n}\right\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo>{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mi mathvariant="normal">…</mi><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub><mo>}</mo></mrow></mrow></math>, and a value <math id="S0.SSx1.p1.m5" class="ltx_Math" alttext="y\in S" display="inline"><mrow><mi>y</mi><mo>∈</mo><mi>S</mi></mrow></math>,
+locate the position of any elements in <math id="S0.SSx1.p1.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> that are equal to <math id="S0.SSx1.p1.m7" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, or determine that
+none exist.</p>
+</div>
+</section>
+<section id="S0.SSx2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">The Algorithm</h2>
+
+<div id="S0.SSx2.p1" class="ltx_para">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">binary search</em> technique is a fundamental method for locating an element of
+a particular value within a sequence of sorted elements (see Sorting Problem).
+The idea is to eliminate half of the search space with each comparison.</p>
+</div>
+<div id="S0.SSx2.p2" class="ltx_para">
+<p class="ltx_p">First, the
+middle element of the sequence is compared to the value we are searching for. If this
+element matches the value we are searching for, we are done. If, however, the middle
+element is “less than” the value we are chosen for (as specified by the relation (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/Relation</span>) used
+to specify a total order over the set of elements), then we know that, if the value exists
+in the sequence, it must exist somewhere <em class="ltx_emph ltx_font_italic">after</em> the middle element. Therefore we
+can eliminate the first half of the sequence from our search and simply repeat the search
+in the exact same manner on the remaining half of the sequence. If, however, the value we
+are searching for comes before the middle element, then we repeat the search on the first half
+of the sequence.</p>
+</div>
+</section>
+<section id="S0.SSx3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Pseudocode</h2>
+
+<div id="S0.SSx3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm</span> <span class="ltx_text ltx_font_smallcaps">Binary_Search</span><span class="ltx_text ltx_font_typewriter">(L, n, key)
+<br class="ltx_break"></span><span class="ltx_text ltx_font_italic">Input</span>: A list <math id="S0.SSx3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> of <math id="S0.SSx3.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements, and <math id="S0.SSx3.p1.m3" class="ltx_Math" alttext="key" display="inline"><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></math> (the search key)
+<br class="ltx_break"><span class="ltx_text ltx_font_italic">Output</span>: <math id="S0.SSx3.p1.m4" class="ltx_Math" alttext="Position" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow></math> (such that <math id="S0.SSx3.p1.m5" class="ltx_Math" alttext="X[Position]=key" display="inline"><mrow><mrow><mi>X</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>P</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math>)</p>
+</div>
+<div id="S0.SSx3.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">begin
+<br class="ltx_break"></span>         
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
+<span class="ltx_p"><math id="S0.SSx3.p2.m1" class="ltx_Math" alttext="Position\leftarrow Find(L,1,n,key);" display="inline"><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo>←</mo><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>;</mo></mrow></math></span>
+</span>
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">end
+<br class="ltx_break">function</span> <math id="S0.SSx3.p2.m2" class="ltx_Math" alttext="Find(L,bottom,top,key)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>,</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> 
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">begin
+<br class="ltx_break"></span>         
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">if</span> <math id="S0.SSx3.p2.m3" class="ltx_Math" alttext="bottom=top" display="inline"><mrow><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>=</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow></mrow></math> <span class="ltx_text ltx_font_bold">then</span></span>
+</span></p>
+</div>
+<div id="S0.SSx3.p3" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><span class="ltx_text ltx_font_bold">if</span> <math id="S0.SSx3.p3.m1" class="ltx_Math" alttext="L[bottom]=key" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math> <span class="ltx_text ltx_font_bold">then</span></p>
+</div>
+<div id="S0.SSx3.p4" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p4.m1" class="ltx_Math" alttext="Find\leftarrow bottom" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi></mrow><mo>←</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow></mrow></math></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">else</span></p>
+</div>
+<div id="S0.SSx3.p5" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p5.m1" class="ltx_Math" alttext="Find\leftarrow 0" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi></mrow><mo>←</mo><mn>0</mn></mrow></math></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">else</span></p>
+</div>
+<div id="S0.SSx3.p6" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><span class="ltx_text ltx_font_bold">begin</span></p>
+</div>
+<div id="S0.SSx3.p7" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p7.m1" class="ltx_Math" alttext="middle\leftarrow(bottom+top)/2;" display="inline"><mrow><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo>←</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>+</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mn>2</mn></mrow></mrow><mo>;</mo></mrow></math></p>
+</div>
+<div id="S0.SSx3.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">if</span> <math id="S0.SSx3.p8.m1" class="ltx_Math" alttext="key&lt;L[middle]" display="inline"><mrow><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo>&lt;</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math> <span class="ltx_text ltx_font_bold">then</span></p>
+</div>
+<div id="S0.SSx3.p9" class="ltx_para">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
+<span class="ltx_p"><math id="S0.SSx3.p9.m1" class="ltx_Math" alttext="Find\leftarrow Find(L,bottom,middle-1,key)" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi></mrow><mo>←</mo><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>,</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo>-</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></span>
+</span>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">else</span></p>
+</div>
+<div id="S0.SSx3.p10" class="ltx_para">
+<p class="ltx_p ltx_parbox ltx_align_middle" style="width:433.6pt;"><math id="S0.SSx3.p10.m1" class="ltx_Math" alttext="Find\leftarrow Find(L,middle+1,top,key)" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi></mrow><mo>←</mo><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+<div id="S0.SSx3.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">end</span>
+
+<br class="ltx_break"><span class="ltx_text ltx_font_bold">end</span>
+
+</p>
+</div>
+</section>
+<section id="S0.SSx4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Analysis</h2>
+
+<div id="S0.SSx4.p1" class="ltx_para">
+<p class="ltx_p">We can specify the runtime complexity of this binary search algorithm by counting the number
+of comparisons required to locate some element <math id="S0.SSx4.p1.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> in <math id="S0.SSx4.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>. Since half of the list is eliminated
+with each comparison, there can be no more than <math id="S0.SSx4.p1.m3" class="ltx_Math" alttext="\log_{2}{n}" display="inline"><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mi>n</mi></mrow></math> comparisons before either the positions
+of all the <math id="S0.SSx4.p1.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> elements are found or the entire list is eliminated and <math id="S0.SSx4.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> is determined to not exist
+in <math id="S0.SSx4.p1.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>.
+Thus the worst-case runtime complexity of the binary search is <math id="S0.SSx4.p1.m7" class="ltx_Math" alttext="\mathcal{O}(\log{n})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.
+It can also be shown that the average-case runtime complexity of the binary search is approximately
+<math id="S0.SSx4.p1.m8" class="ltx_Math" alttext="\log_{2}{n}-1" display="inline"><mrow><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mi>n</mi></mrow><mo>-</mo><mn>1</mn></mrow></math> comparisons.
+This means that any single entry in a phone book containing one million entries can be located
+with at most 20 comparisons (and on average 19).
+</p>
+<table class="ltx_tabular ltx_align_right ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">binary search</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">BinarySearch</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:34</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 11:44:34</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">18</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">mathcam (2727)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 16S40</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 20G42</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 16W35</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 81R50</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 16W30</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 57T05</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 54-01</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TotalOrder</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">PartialOrder</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SortingProblem</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">InsertionSort</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:38:02 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

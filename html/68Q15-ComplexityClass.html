@@ -1,0 +1,177 @@
+<!DOCTYPE html><html>
+<head>
+<title>complexity class</title>
+<!--Generated on Sat Feb 10 12:41:30 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">complexity class</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">If <math id="p1.m1" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> is any function and <math id="p1.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is a Turing machine (of any kind) which halts on all inputs, we say that <math id="p1.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is time bounded by <math id="p1.m4" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> if for any input <math id="p1.m5" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> with length <math id="p1.m6" class="ltx_Math" alttext="|x|" display="inline"><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow></math>, <math id="p1.m7" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> halts after at most <math id="p1.m8" class="ltx_Math" alttext="f(|x|)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mo stretchy="false">)</mo></mrow></mrow></math> steps.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">For a decision problem <math id="p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> and a class <math id="p2.m2" class="ltx_Math" alttext="K" display="inline"><mi>K</mi></math> of Turing machines, we say that <math id="p2.m3" class="ltx_Math" alttext="L\in KTIME(f(n))" display="inline"><mrow><mi>L</mi><mo>∈</mo><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> if there is a Turing machine <math id="p2.m4" class="ltx_Math" alttext="T\in K" display="inline"><mrow><mi>T</mi><mo>∈</mo><mi>K</mi></mrow></math> bounded by <math id="p2.m5" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> which decides <math id="p2.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>. If <math id="p2.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> is a search problem then <math id="p2.m8" class="ltx_Math" alttext="R\in KTIME(f(n))" display="inline"><mrow><mi>R</mi><mo>∈</mo><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> if <math id="p2.m9" class="ltx_Math" alttext="L(R)\in KTIME(f(n))" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>R</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. The most common classes are all restricted to one read-only input tape and one output/work tape (and in some cases a one-way, read-only guess tape) and are defined as follows:</p>
+</div>
+<div id="p3" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> is the class of deterministic Turing machines. (In this case <math id="I1.i1.p1.m2" class="ltx_Math" alttext="KTIME" display="inline"><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi></mrow></math> is written <math id="I1.i1.p1.m3" class="ltx_Math" alttext="DTIME" display="inline"><mrow><mi>D</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi></mrow></math>.)</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> is the class of non-deterministic Turing machines (and so <math id="I1.i2.p1.m2" class="ltx_Math" alttext="KTIME" display="inline"><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi></mrow></math> is written <math id="I1.i2.p1.m3" class="ltx_Math" alttext="NTIME" display="inline"><mrow><mi>N</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi></mrow></math>).</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> is the class of positive one-sided error Turing machines and <math id="I1.i3.p1.m2" class="ltx_Math" alttext="coR" display="inline"><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>R</mi></mrow></math> the class of negative one-sided error machines</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i4.p1.m1" class="ltx_Math" alttext="BP" display="inline"><mrow><mi>B</mi><mo>⁢</mo><mi>P</mi></mrow></math> is the class of two-sided error machines</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i5.p1.m1" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> is the class of minimal error machines</p>
+</div>
+</li>
+<li id="I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i6.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i6.p1.m1" class="ltx_Math" alttext="ZP" display="inline"><mrow><mi>Z</mi><mo>⁢</mo><mi>P</mi></mrow></math> is the class of zero error machines</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Although <math id="p4.m1" class="ltx_Math" alttext="KTIME(f(n))" display="inline"><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> is a time complexity class for any <math id="p4.m2" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math>, in actual use time complexity classes are usually the union of <math id="p4.m3" class="ltx_Math" alttext="KTIME(f(n))" display="inline"><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> for many <math id="p4.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. If <math id="p4.m5" class="ltx_Math" alttext="\Phi" display="inline"><mi mathvariant="normal">Φ</mi></math> is a class of functions then <math id="p4.m6" class="ltx_Math" alttext="KTIME(\Phi)=\bigcup_{f\in\Phi}KTIME(f(n))" display="inline"><mrow><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mo largeop="true" mathsize="160%" stretchy="false" symmetric="true">⋃</mo><mrow><mi>f</mi><mo>∈</mo><mi mathvariant="normal">Φ</mi></mrow></msub><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>. Most commonly this is used when <math id="p4.m7" class="ltx_Math" alttext="\Phi=\mathcal{O}(f(n))" display="inline"><mrow><mi mathvariant="normal">Φ</mi><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">The most important time complexity classes are the polynomial classes:</p>
+</div>
+<div id="p6" class="ltx_para">
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="K\mathcal{P}=\bigcup_{i\in\mathbb{N}}KTIME(n^{i})" display="block"><mrow><mrow><mi>K</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒫</mi></mrow><mo>=</mo><mrow><munder><mo largeop="true" mathsize="160%" movablelimits="false" stretchy="false" symmetric="true">⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>ℕ</mi></mrow></munder><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mi>i</mi></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">When <math id="p7.m1" class="ltx_Math" alttext="K=D" display="inline"><mrow><mi>K</mi><mo>=</mo><mi>D</mi></mrow></math> this is called just <math id="p7.m2" class="ltx_Math" alttext="\mathcal{P}" display="inline"><mi class="ltx_font_mathcaligraphic">𝒫</mi></math>, the class of problems decidable in polynomial time. One of the major outstanding problems in mathematics is the question of whether <math id="p7.m3" class="ltx_Math" alttext="\mathcal{P}=\mathcal{NP}" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒫</mi><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒫</mi></mrow></mrow></math>.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">We say a problem <math id="p8.m1" class="ltx_Math" alttext="\pi\in KSPACE(f(n))" display="inline"><mrow><mi>π</mi><mo>∈</mo><mrow><mi>K</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> if there is a Turing machine <math id="p8.m2" class="ltx_Math" alttext="T\in K" display="inline"><mrow><mi>T</mi><mo>∈</mo><mi>K</mi></mrow></math> which solves <math id="p8.m3" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>, always halts, and never uses more than <math id="p8.m4" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> cells of its output/work tape. As above, if <math id="p8.m5" class="ltx_Math" alttext="\Phi" display="inline"><mi mathvariant="normal">Φ</mi></math> is a class of function then <math id="p8.m6" class="ltx_Math" alttext="KSPACE(\Phi)=\bigcup_{f\in\Phi}KSPACE(f(n))" display="inline"><mrow><mrow><mi>K</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Φ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mo largeop="true" mathsize="160%" stretchy="false" symmetric="true">⋃</mo><mrow><mi>f</mi><mo>∈</mo><mi mathvariant="normal">Φ</mi></mrow></msub><mrow><mi>K</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">The most common space complexity classes are <math id="p9.m1" class="ltx_Math" alttext="K\mathcal{L}=KSPACE(\mathcal{O}(\log n))" display="inline"><mrow><mrow><mi>K</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">ℒ</mi></mrow><mo>=</mo><mrow><mi>K</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. When <math id="p9.m2" class="ltx_Math" alttext="K=D" display="inline"><mrow><mi>K</mi><mo>=</mo><mi>D</mi></mrow></math> this is just called <math id="p9.m3" class="ltx_Math" alttext="\mathcal{L}" display="inline"><mi class="ltx_font_mathcaligraphic">ℒ</mi></math>.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">If <math id="p10.m1" class="ltx_Math" alttext="\mathcal{C}" display="inline"><mi class="ltx_font_mathcaligraphic">𝒞</mi></math> is any complexity class then <math id="p10.m2" class="ltx_Math" alttext="\pi\in co\mathcal{C}" display="inline"><mrow><mi>π</mi><mo>∈</mo><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒞</mi></mrow></mrow></math> if <math id="p10.m3" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math> is a decision problem and <math id="p10.m4" class="ltx_Math" alttext="\overline{\pi}\in\mathcal{C}" display="inline"><mrow><mover accent="true"><mi>π</mi><mo>¯</mo></mover><mo>∈</mo><mi class="ltx_font_mathcaligraphic">𝒞</mi></mrow></math> or <math id="p10.m5" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math> is a search problem and <math id="p10.m6" class="ltx_Math" alttext="L(\pi)\in co\mathcal{C}" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒞</mi></mrow></mrow></math>. Of course, this coincides with the definition of <math id="p10.m7" class="ltx_Math" alttext="coR" display="inline"><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>R</mi></mrow></math> above. Clearly <math id="p10.m8" class="ltx_Math" alttext="co(co\mathcal{C})=\mathcal{C}" display="inline"><mrow><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒞</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi class="ltx_font_mathcaligraphic">𝒞</mi></mrow></math>.</p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">Since a machine with a time complexity <math id="p11.m1" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> cannot possibly use more than <math id="p11.m2" class="ltx_Math" alttext="f(n)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> cells, <math id="p11.m3" class="ltx_Math" alttext="KTIME(f(n))\subseteq KSPACE(f(n))" display="inline"><mrow><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><mi>K</mi><mo>⁢</mo><mi>S</mi><mo>⁢</mo><mi>P</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. If <math id="p11.m4" class="ltx_Math" alttext="K\subseteq K^{\prime}" display="inline"><mrow><mi>K</mi><mo>⊆</mo><msup><mi>K</mi><mo>′</mo></msup></mrow></math> then <math id="p11.m5" class="ltx_Math" alttext="KTIME(f(n))\subseteq K^{\prime}TIME(f(n))" display="inline"><mrow><mrow><mi>K</mi><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>⊆</mo><mrow><msup><mi>K</mi><mo>′</mo></msup><mo>⁢</mo><mi>T</mi><mo>⁢</mo><mi>I</mi><mo>⁢</mo><mi>M</mi><mo>⁢</mo><mi>E</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> and similarly for space.</p>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">The following are all trivial, following from the fact that some classes of machines accept and reject under stricter circumstances than others:</p>
+</div>
+<div id="p13" class="ltx_para">
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="D\subseteq ZP=R\cap coR" display="block"><mrow><mi>D</mi><mo>⊆</mo><mrow><mi>Z</mi><mo>⁢</mo><mi>P</mi></mrow><mo>=</mo><mrow><mi>R</mi><mo>∩</mo><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>R</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="R\cup coR\subseteq BP\cap N" display="block"><mrow><mrow><mi>R</mi><mo>∪</mo><mrow><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>R</mi></mrow></mrow><mo>⊆</mo><mrow><mrow><mi>B</mi><mo>⁢</mo><mi>P</mi></mrow><mo>∩</mo><mi>N</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="BP\subseteq P" display="block"><mrow><mrow><mi>B</mi><mo>⁢</mo><mi>P</mi></mrow><mo>⊆</mo><mi>P</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">complexity class</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">ComplexityClass</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 13:01:59</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 13:01:59</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Henry (455)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Henry (455)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">4</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Henry (455)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">msc 68Q15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:41:30 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html><html>
+<head>
+<title>examples of growth of perturbations in chemical organizations</title>
+<!--Generated on Sat Feb 10 12:41:50 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">examples of growth of perturbations in chemical organizations</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">We will examine several simple examples of chemical systems where we start with one species
+of molecules (or a closed subset of species) then intoruduce a small perturbation and evolve
+the system using mass action dynamics. We want to know whether this perturbation will grow
+and, if so, at what rate. Ultimately, we would like to link the behavor to some feature of
+the reaction system, perhaps related to Rosen’s theory of M-R systems.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">To get started, consider a trivial case, <math id="p2.m1" class="ltx_Math" alttext="A+B\to B+B" display="inline"><mrow><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><mo>→</mo><mrow><mi>B</mi><mo>+</mo><mi>B</mi></mrow></mrow></math>. The system of equations which
+describes this system is:</p>
+<table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex1" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\displaystyle\frac{dx}{dt}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex1.m2" class="ltx_Math" alttext="\displaystyle=-kxy" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>-</mo><mrow><mi>k</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex2" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex2.m1" class="ltx_Math" alttext="\displaystyle\frac{dy}{dt}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex2.m2" class="ltx_Math" alttext="\displaystyle=kxy" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">It is easy enough to solve this system. We begin by noting that
+<math id="p2.m2" class="ltx_Math" alttext="\frac{d}{dt}(x+y)=0" display="inline"><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, hence <math id="p2.m3" class="ltx_Math" alttext="x+y=x_{0}+y_{0}" display="inline"><mrow><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>=</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mrow></math>.
+Substituting this back in to the second equation, we conclude
+that</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="\frac{dy}{dt}=k(x_{0}+y_{0}-y)(y)." display="block"><mrow><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>-</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">This equation can readily be solved to yield the implicit solution</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="kt=\frac{1}{x_{0}+y_{0}}\log\frac{y}{x_{0}+y_{0}-y}\cdot\frac{x_{0}}{y_{0}}" display="block"><mrow><mrow><mi>k</mi><mo>⁢</mo><mi>t</mi></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mfrac><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mfrac><mi>y</mi><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>-</mo><mi>y</mi></mrow></mfrac><mo>⋅</mo><mfrac><msub><mi>x</mi><mn>0</mn></msub><msub><mi>y</mi><mn>0</mn></msub></mfrac></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">which can be solved to produce the explicit solution</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="y=x_{0}+y_{0}-\frac{x_{0}+y_{0}}{1+\frac{y_{0}}{x_{0}}\exp(k(x_{0}+y_{0})t)}." display="block"><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>-</mo><mfrac><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mfrac><msub><mi>y</mi><mn>0</mn></msub><msub><mi>x</mi><mn>0</mn></msub></mfrac><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mfrac></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Looking at the solution, we see that it starts out at <math id="p2.m4" class="ltx_Math" alttext="y=y_{0}" display="inline"><mrow><mi>y</mi><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></math> and grows
+towards <math id="p2.m5" class="ltx_Math" alttext="y=x_{0}+y_{0}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mrow></math> as <math id="p2.m6" class="ltx_Math" alttext="t\to\infty" display="inline"><mrow><mi>t</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></math>. This is as we expect — as
+time goes on, whatever A’s there are left react with B’s to turn into B’s
+until we are left with nothing but B’s.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">If we suppose that, at the initial time <math id="p3.m1" class="ltx_Math" alttext="t=0" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow></math>, there is only a tiny
+proportion of B’s, i.e. <math id="p3.m2" class="ltx_Math" alttext="y_{0}\ll x_{0}" display="inline"><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>≪</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></math>, then we may make an expansion
+of the fraction and conclude that <math id="p3.m3" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> grows exponentially for small
+values of <math id="p3.m4" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>:</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="\frac{1}{1+\frac{y_{0}}{x_{0}}\exp(k(x_{0}+y_{0})t)}\approx 1-\frac{y_{0}}{x_{%
+0}}\exp(k(x_{0}+y_{0})t)" display="block"><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mrow><mfrac><msub><mi>y</mi><mn>0</mn></msub><msub><mi>x</mi><mn>0</mn></msub></mfrac><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mfrac><mo>≈</mo><mrow><mn>1</mn><mo>-</mo><mrow><mfrac><msub><mi>y</mi><mn>0</mn></msub><msub><mi>x</mi><mn>0</mn></msub></mfrac><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="y\approx\frac{y_{0}}{x_{0}}\exp(k(x_{0}+y_{0})t)" display="block"><mrow><mi>y</mi><mo>≈</mo><mrow><mfrac><msub><mi>y</mi><mn>0</mn></msub><msub><mi>x</mi><mn>0</mn></msub></mfrac><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">We can also come to this conclusion by bounding <math id="p3.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> without solving the
+equation first. For a simple equation like this which is readily solved,
+this is hardly needed but, for larger, more complicated equations, it
+becomes important and this simple example can serve as a illustration of
+the general technique.</p>
+</div>
+<div id="Thmthm1" class="ltx_theorem ltx_theorem_thm">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Theorem 1</span>.</h6>
+<div id="Thmthm1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="Thmthm1.p1.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> be a real number such that <math id="Thmthm1.p1.m2" class="ltx_Math" alttext="0&lt;C&lt;1" display="inline"><mrow><mn mathvariant="normal">0</mn><mo mathvariant="normal">&lt;</mo><mi>C</mi><mo mathvariant="normal">&lt;</mo><mn mathvariant="normal">1</mn></mrow></math> and let <math id="Thmthm1.p1.m3" class="ltx_Math" alttext="x_{0}" display="inline"><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub></math> and <math id="Thmthm1.p1.m4" class="ltx_Math" alttext="y_{0}" display="inline"><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub></math> be
+strictly positive real numbers such that <math id="Thmthm1.p1.m5" class="ltx_Math" alttext="0&lt;y_{0}&lt;C(x_{0}+y_{0})" display="inline"><mrow><mn mathvariant="normal">0</mn><mo mathvariant="normal">&lt;</mo><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal">&lt;</mo><mrow><mi>C</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mrow><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal">+</mo><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mrow></math>.
+Set <math id="Thmthm1.p1.m6" class="ltx_Math" alttext="t_{1}=\frac{1}{k(x_{0}+y_{0})}\log C\frac{x_{0}+y_{0}}{y_{0}}" display="inline"><mrow><msub><mi>t</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">=</mo><mrow><mfrac><mn mathvariant="normal">1</mn><mrow><mi>k</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mrow><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal">+</mo><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mfrac><mo mathvariant="italic">⁢</mo><mrow><mi mathvariant="normal">log</mi><mo mathvariant="italic">⁡</mo><mrow><mi>C</mi><mo mathvariant="italic">⁢</mo><mfrac><mrow><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal">+</mo><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub></mrow><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub></mfrac></mrow></mrow></mrow></mrow></math>. Then
+there exists a function <math id="Thmthm1.p1.m7" class="ltx_Math" alttext="f\colon[0,t_{1})\to[0,C(x_{0}+y_{0}))" display="inline"><mrow><mi>f</mi><mo mathvariant="normal">:</mo><mrow><mrow><mo mathvariant="normal" stretchy="false">[</mo><mn mathvariant="normal">0</mn><mo mathvariant="normal">,</mo><msub><mi>t</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal" stretchy="false">)</mo></mrow><mo mathvariant="normal">→</mo><mrow><mo mathvariant="normal" stretchy="false">[</mo><mn mathvariant="normal">0</mn><mo mathvariant="normal">,</mo><mrow><mi>C</mi><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><mrow><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal">+</mo><msub><mi>y</mi><mn mathvariant="normal">0</mn></msub></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></mrow></math> such that
+<math id="Thmthm1.p1.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> satisfies the differential equation</span></p>
+<table id="S0.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex8.m1" class="ltx_Math" alttext="\frac{df(t)}{dt}=k(x_{0}+y_{0}-f(t))f(t)." display="block"><mrow><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>-</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">and, for all <math id="Thmthm1.p1.m9" class="ltx_Math" alttext="t\in[0,t_{1})" display="inline"><mrow><mi>t</mi><mo mathvariant="normal">∈</mo><mrow><mo mathvariant="normal" stretchy="false">[</mo><mn mathvariant="normal">0</mn><mo mathvariant="normal">,</mo><msub><mi>t</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math>,
+</span></p>
+<table id="S0.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex9.m1" class="ltx_Math" alttext="y_{0}\exp((1-C)k(x_{0}+y_{0})t)\leq f(t)\leq y_{0}\exp(k(x_{0}+y_{0})t)." display="block"><mrow><mrow><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>-</mo><mi>C</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>≤</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">By the existence theorem, there exists a positive real number
+<math id="p4.m1" class="ltx_Math" alttext="t_{0}" display="inline"><msub><mi>t</mi><mn>0</mn></msub></math> and a function <math id="p4.m2" class="ltx_Math" alttext="f\colon[0,t_{0})\to\mathbb{R}" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><msub><mi>t</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>→</mo><mi>ℝ</mi></mrow></mrow></math>
+such that <math id="p4.m3" class="ltx_Math" alttext="f(0)=y_{0}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></math> and <math id="p4.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> satifies the differential equation.
+Since <math id="p4.m5" class="ltx_Math" alttext="f(0)=y_{0}&lt;C(x_{0}+y_{0})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub><mo>&lt;</mo><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, by continuity there exists
+a positive real number <math id="p4.m6" class="ltx_Math" alttext="t_{2}" display="inline"><msub><mi>t</mi><mn>2</mn></msub></math> and a function <math id="p4.m7" class="ltx_Math" alttext="f\colon[0,t_{0})\to[0,C(x_{0}+y_{0}))" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><msub><mi>t</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>→</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>
+which satisfies the same differential equation with the same
+initial condition. Furthermore, we assume that <math id="p4.m8" class="ltx_Math" alttext="t_{2}" display="inline"><msub><mi>t</mi><mn>2</mn></msub></math> is maximal.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Starting with this condition <math id="p5.m1" class="ltx_Math" alttext="f(t)&lt;C(x_{0}+y_{0})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> and
+doing some algebra, we conclude that</p>
+<table id="S0.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex10.m1" class="ltx_Math" alttext="(1-C)k(x_{0}+y_{0})\leq\frac{1}{y}\frac{dy}{dt}\leq k(x_{0}+y_{0})" display="block"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>-</mo><mi>C</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mfrac><mn>1</mn><mi>y</mi></mfrac><mo>⁢</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mrow><mo>≤</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Now, <math id="p5.m2" class="ltx_Math" alttext="\frac{1}{y}\frac{dy}{dt}=\frac{d}{dt}(\log y)" display="inline"><mrow><mrow><mfrac><mn>1</mn><mi>y</mi></mfrac><mo>⁢</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mrow><mo>=</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> so, by the mean
+value theorem, we conclude that</p>
+<table id="S0.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex11.m1" class="ltx_Math" alttext="(1-C)k(x_{0}+y_{0})t\leq\log\frac{y}{y_{0}}\leq k(x_{0}+y_{0})t." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>-</mo><mi>C</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo>≤</mo><mrow><mi>log</mi><mo>⁡</mo><mfrac><mi>y</mi><msub><mi>y</mi><mn>0</mn></msub></mfrac></mrow><mo>≤</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Exponentiating,
+</p>
+<table id="S0.Ex12" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex12.m1" class="ltx_Math" alttext="y_{0}\exp((1-C)k(x_{0}+y_{0})t)\leq y\leq y_{0}\exp(k(x_{0}+y_{0})t)." display="block"><mrow><mrow><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>-</mo><mi>C</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>≤</mo><mi>y</mi><mo>≤</mo><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">We can ensure that the bound on <math id="p6.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> is satisfied if the condition
+<math id="p6.m2" class="ltx_Math" alttext="C(x_{0}+y_{0})\geq y_{0}\exp(k(x_{0}+y_{0})t)" display="inline"><mrow><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>t</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math> is met, which amounts to
+demanding that <math id="p6.m3" class="ltx_Math" alttext="0\leq t\leq t_{1}" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><msub><mi>t</mi><mn>1</mn></msub></mrow></math> where <math id="p6.m4" class="ltx_Math" alttext="t_{1}=\frac{1}{k(x_{0}+y_{0})}\log C\frac{x_{0}+y_{0}}{y_{0}}" display="inline"><mrow><msub><mi>t</mi><mn>1</mn></msub><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mi>k</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mi>C</mi><mo>⁢</mo><mfrac><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><msub><mi>y</mi><mn>0</mn></msub></mfrac></mrow></mrow></mrow></mrow></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="p8" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">examples of growth of perturbations in chemical organizations</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">ExamplesOfGrowthOfPerturbationsInChemicalOrganizations</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2014-05-31 15:55:20</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2014-05-31 15:55:20</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">rspuzio (6075)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">rspuzio (6075)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">33</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">rspuzio (6075)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Example</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:41:50 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

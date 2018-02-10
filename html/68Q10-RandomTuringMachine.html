@@ -1,0 +1,122 @@
+<!DOCTYPE html><html>
+<head>
+<title>random Turing machine</title>
+<!--Generated on Sat Feb 10 12:41:13 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">random Turing machine</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">A random Turing machine is defined the same way as a non-deterministic Turing machine, but with different rules governing when it accepts or rejects. Whenever there are multiple legal moves, instead of always guessing right, a random machine selects one of the possible moves at random.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">As with non-deterministic machines, this can also be viewed as a deterministic machine with an extra input, which corresponds to the random selections.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">There are several different ways of defining what it means for a random Turing machine to accept or reject an input. Let <math id="p3.m1" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)" display="inline"><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> be the probability that <math id="p3.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> halts in an accepting state when the input is <math id="p3.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">A positive <em class="ltx_emph ltx_font_italic">one-sided error</em> machine is said to accept <math id="p4.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p4.m2" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)\geq\frac{1}{2}" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math> and to reject <math id="p4.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p4.m4" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)=0" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. A negative one-sided error machine accepts <math id="p4.m5" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p4.m6" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)=1" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math> and rejects <math id="p4.m7" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p4.m8" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)\leq\frac{1}{2}" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math>. So a single run of a positive one-sided error machine never misleadingly accepts but may misleadingly reject, while a single run of a negative one-sided error machine never misleadingly rejects.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">The definition of a positive one-sided error machine is stricter than the definition of a non-deterministic machine, since a non-deterministic machine rejects when there is no certificate and accepts when there is at least one, while a positive one-sided error machine requires that half of all possible guess inputs be certificates.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">two-sided error</em> machine accepts <math id="p6.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p6.m2" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)\geq\frac{2}{3}" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow></math> and rejects <math id="p6.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p6.m4" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)\leq\frac{1}{3}" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></math>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">The constants in any of the definitions above can be adjusted, although this will affect the time and space complexity classes.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">minimal error</em> machine accepts <math id="p8.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p8.m2" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)&gt;\frac{1}{2}" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math> and rejects <math id="p8.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if <math id="p8.m4" class="ltx_Math" alttext="\operatorname{Prob}_{T}(x)&lt;\frac{1}{2}" display="inline"><mrow><mrow><msub><mi>Prob</mi><mi>T</mi></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math>.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">One additional variant defines, in addition to accepting states, rejecting states. Such a machine is called <em class="ltx_emph ltx_font_italic">zero error</em> if on at least half of all inputs it halts in either an accepting or a rejecting state. It accepts <math id="p9.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> if there is any sequence of guesses which causes it to end in an accepting state, and rejects if there is any sequence of guesses which causes it to end in a rejecting state. In other words, such a machine is never wrong when it provides an answer, but does not produce a decisive answer on all input. The machine can emulate a positive (resp. negative) one-sided error machine by accepting (resp. rejecting) when the result is indecisive.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">It is a testament to the robustness of the definition of the Turing machine (and the Church-Turing thesis) that each of these definitions computes the same functions as a standard Turing machine. The point of defining all these types of machines is that some are more efficient than others, and therefore they define different time and space complexity classes.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">random Turing machine</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">RandomTuringMachine</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 13:01:53</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 13:01:53</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Henry (455)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Henry (455)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">5</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Henry (455)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">one sided error</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">two sided error</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">one-sided error</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_r">two-sided error</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">minimal error</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:41:13 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

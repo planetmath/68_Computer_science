@@ -1,0 +1,254 @@
+<!DOCTYPE html><html>
+<head>
+<title>formal definition of a Turing machine</title>
+<!--Generated on Sat Feb 10 12:41:11 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">formal definition of a Turing machine</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Based on the informal description of a Turing machine in the parent entry, we give it a formal mathematical definition:</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A Turing machine <math id="p2.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is a 7-tuple consists of the following:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">an alphabet <math id="I1.i1.p1.m1" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> called the state alphabet,
+</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">an element <math id="I1.i2.p1.m1" class="ltx_Math" alttext="s\in S" display="inline"><mrow><mi>s</mi><mo>∈</mo><mi>S</mi></mrow></math> called the start state,</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">an element <math id="I1.i3.p1.m1" class="ltx_Math" alttext="t\in S" display="inline"><mrow><mi>t</mi><mo>∈</mo><mi>S</mi></mrow></math> called the accept state, and</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">an element <math id="I1.i4.p1.m1" class="ltx_Math" alttext="r\in S" display="inline"><mrow><mi>r</mi><mo>∈</mo><mi>S</mi></mrow></math> such that <math id="I1.i4.p1.m2" class="ltx_Math" alttext="r\neq t" display="inline"><mrow><mi>r</mi><mo>≠</mo><mi>t</mi></mrow></math>, called the reject state,</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">5.</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p">an alphabet <math id="I1.i5.p1.m1" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> called the input alphabet,</p>
+</div>
+</li>
+<li id="I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">6.</span> 
+<div id="I1.i6.p1" class="ltx_para">
+<p class="ltx_p">a symbol called the blank symbol <math id="I1.i6.p1.m1" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> not in <math id="I1.i6.p1.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>,</p>
+</div>
+</li>
+<li id="I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">7.</span> 
+<div id="I1.i7.p1" class="ltx_para">
+<p class="ltx_p">a function <math id="I1.i7.p1.m1" class="ltx_Math" alttext="\delta:S\times\Sigma\to S\times\Sigma\times\{L,R\}" display="inline"><mrow><mi>δ</mi><mo>:</mo><mrow><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow><mo>→</mo><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi><mo>×</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></mrow></math> called the transition function, such that</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\delta(t,a)=\delta(t,b,X)\qquad\mbox{and}\qquad\delta(r,c)=\delta(r,d,Y)," display="block"><mrow><mrow><mrow><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mrow><mo mathvariant="italic" separator="true">  </mo><mtext>and</mtext></mrow></mrow><mo mathvariant="italic" separator="true">  </mo><mrow><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo>,</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>r</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="I1.i7.p1.m2" class="ltx_Math" alttext="a,b,c,d\in\Sigma\cup\{B\}" display="inline"><mrow><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi></mrow><mo>∈</mo><mrow><mi mathvariant="normal">Σ</mi><mo>∪</mo><mrow><mo stretchy="false">{</mo><mi>B</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></math> and <math id="I1.i7.p1.m3" class="ltx_Math" alttext="X,Y\in\{L,R\}" display="inline"><mrow><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow><mo>∈</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false">}</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p"><math id="p2.m2" class="ltx_Math" alttext="t,r" display="inline"><mrow><mi>t</mi><mo>,</mo><mi>r</mi></mrow></math> are collectively called the <em class="ltx_emph ltx_font_italic">halt states</em> of <math id="p2.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Actually, the definition above is only part of the story. What is described in the definition is the “finite control” (the brain) portion of a Turing machine. All by itself, the finite control is useless. In order for a Turing machine to do computations, two other ingredients are needed to complete the description: a tape, and a reading head. The two can be formalized as follows:</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A <em class="ltx_emph ltx_font_italic">tape</em>, or formally a <em class="ltx_emph ltx_font_italic">tape description</em>, is a function <math id="p4.m1" class="ltx_Math" alttext="\tau:\mathbb{Z}\to\Sigma\cup\{B\}" display="inline"><mrow><mi>τ</mi><mo>:</mo><mrow><mi>ℤ</mi><mo>→</mo><mrow><mi mathvariant="normal">Σ</mi><mo>∪</mo><mrow><mo stretchy="false">{</mo><mi>B</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></mrow></math>. A <em class="ltx_emph ltx_font_italic">position of the reading head</em> is an integer <math id="p4.m2" class="ltx_Math" alttext="n\in\mathbb{Z}" display="inline"><mrow><mi>n</mi><mo>∈</mo><mi>ℤ</mi></mrow></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">In other words, the tape of a Turing machine <math id="p5.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is infinitely long in both direction, and is divided up into squares. The content of each square is either a symbol in <math id="p5.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> or blank (<math id="p5.m3" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>). The purpose of the tape is to store input, output, as well as any other strings that are used during computations.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">The finite control and the tape of a Turing machine are connected by a reading head, which points over the tape, has the ability to move left or right along the tape, and reads the tape one square at a time. The position of the reading head is the square it is currently reading.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">The Turing machine defined this way is also known as a two-way deterministic Turing machine.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">To formally describe the computational process of a Turing machine, we need to know three things: what is the current state of the finite control, what is on the tape, and what is the current position of the reading head:</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A <em class="ltx_emph ltx_font_italic">configuration</em> of a Turing machine is a triple <math id="p9.m1" class="ltx_Math" alttext="(p,\tau,m)" display="inline"><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></math>, where <math id="p9.m2" class="ltx_Math" alttext="p\in S" display="inline"><mrow><mi>p</mi><mo>∈</mo><mi>S</mi></mrow></math>, called the state of the configuration, <math id="p9.m3" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> is a tape description called the tape description of the configuration, and <math id="p9.m4" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> is a position of the reading head called <em class="ltx_emph ltx_font_italic">the</em> position of the reading head of the configuration.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">We are now ready to describe what it means for a Turing machine to compute something:
+</p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Given a Turing machine <math id="p11.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> (with the associated tape and reading head), a <em class="ltx_emph ltx_font_italic">computation step</em> <math id="p11.m2" class="ltx_Math" alttext="\rightarrow" display="inline"><mo>→</mo></math> is a binary relation on the set of all configurations of <math id="p11.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, defined as follows: if</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="(p,\tau,m)\rightarrow(q,\tau^{\prime},n)," display="block"><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><mo>→</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><msup><mi>τ</mi><mo>′</mo></msup><mo>,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">then</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="(q,\tau^{\prime},n)=\left\{\begin{array}[]{ll}(q,\tau^{\prime},m+1)&amp;\textrm{%
+provided that }\delta(p,\tau(m))=(q,b,R),\\
+(q,\tau^{\prime},m-1)&amp;\textrm{provided that }\delta(p,\tau(m))=(q,b,L),\end{%
+array}\right." display="block"><mrow><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><msup><mi>τ</mi><mo>′</mo></msup><mo>,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><msup><mi>τ</mi><mo>′</mo></msup><mo>,</mo><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>provided that </mtext><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>R</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><msup><mi>τ</mi><mo>′</mo></msup><mo>,</mo><mrow><mi>m</mi><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>provided that </mtext><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\tau^{\prime}(i)=\left\{\begin{array}[]{ll}b&amp;\textrm{if }i=m,\\
+\tau(i)&amp;\textrm{otherwise.}\end{array}\right." display="block"><mrow><mrow><msup><mi>τ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mi>b</mi></mtd><mtd columnalign="left"><mrow><mrow><mrow><mtext>if </mtext><mo>⁢</mo><mi>i</mi></mrow><mo>=</mo><mi>m</mi></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>τ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd columnalign="left"><mtext>otherwise.</mtext></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">We can of course take the reflexive transitive closure of <math id="p11.m4" class="ltx_Math" alttext="\rightarrow" display="inline"><mo>→</mo></math> to obtain <math id="p11.m5" class="ltx_Math" alttext="\rightarrow^{*}" display="inline"><msup><mo>→</mo><mo>*</mo></msup></math>.</p>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. An input to a Turing machine is a (finite) word <math id="p12.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> over <math id="p12.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>. If the length of <math id="p12.m3" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is <math id="p12.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, we define the tape description <math id="p12.m5" class="ltx_Math" alttext="\tau_{w}" display="inline"><msub><mi>τ</mi><mi>w</mi></msub></math> of <math id="p12.m6" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> as follows:</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\tau_{w}(i)=\left\{\begin{array}[]{ll}w_{i}&amp;\textrm{the $i$-th letter of }w,%
+\mbox{ where }0\leq i\leq n,\mbox{ and}\\
+B&amp;\textrm{otherwise.}\end{array}\right." display="block"><mrow><mrow><msub><mi>τ</mi><mi>w</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><msub><mi>w</mi><mi>i</mi></msub></mtd><mtd columnalign="left"><mrow><mrow><mrow><mrow><mrow><mtext>the </mtext><mi>i</mi><mtext>-th letter of </mtext></mrow><mo>⁢</mo><mi>w</mi></mrow><mo>,</mo><mrow><mtext> where </mtext><mo>⁢</mo><mn>0</mn></mrow></mrow><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><mo>,</mo><mtext> and</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left"><mi>B</mi></mtd><mtd columnalign="left"><mtext>otherwise.</mtext></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Note that <math id="p12.m7" class="ltx_Math" alttext="\tau_{\lambda}" display="inline"><msub><mi>τ</mi><mi>λ</mi></msub></math> is the constant function whose value is <math id="p12.m8" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>, where <math id="p12.m9" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> is the empty word.</p>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Given an input <math id="p13.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> and a Turing machine <math id="p13.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, a computation of <math id="p13.m3" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> by <math id="p13.m4" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is a finite sequence</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="(s,\tau_{w},1)=(p_{1},\tau_{1},m_{1}),(p_{2},\tau_{2},m_{2}),\ldots,(p_{k},%
+\tau_{k},m_{k})," display="block"><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><msub><mi>τ</mi><mi>w</mi></msub><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><msub><mi>τ</mi><mn>1</mn></msub><mo>,</mo><msub><mi>m</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>,</mo><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mn>2</mn></msub><mo>,</mo><msub><mi>τ</mi><mn>2</mn></msub><mo>,</mo><msub><mi>m</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mi>k</mi></msub><mo>,</mo><msub><mi>τ</mi><mi>k</mi></msub><mo>,</mo><msub><mi>m</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where <math id="p13.m5" class="ltx_Math" alttext="(p_{i},\tau_{i},m_{i})\rightarrow(p_{i+1},\tau_{i+1},m_{i+1})" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo>,</mo><msub><mi>τ</mi><mi>i</mi></msub><mo>,</mo><msub><mi>m</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>→</mo><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>τ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>m</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math>. From the computation of <math id="p13.m6" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> above, we also say that the computation of <math id="p13.m7" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> leads to state <math id="p13.m8" class="ltx_Math" alttext="p_{k}" display="inline"><msub><mi>p</mi><mi>k</mi></msub></math>. <math id="p13.m9" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is said to <em class="ltx_emph ltx_font_italic">accept</em> an input <math id="p13.m10" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> iff it there is a computation of <math id="p13.m11" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> leading to the accepting state <math id="p13.m12" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>. In other words, <math id="p13.m13" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is accepted by <math id="p13.m14" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> iff <math id="p13.m15" class="ltx_Math" alttext="(s,\tau_{w},1)\rightarrow^{*}(t,\tau,m)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><msub><mi>τ</mi><mi>w</mi></msub><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><msup><mo>→</mo><mo>*</mo></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow></math> for some <math id="p13.m16" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> and <math id="p13.m17" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math>. Similarly, <math id="p13.m18" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is rejected by <math id="p13.m19" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> iff <math id="p13.m20" class="ltx_Math" alttext="(s,\tau_{w},1)\rightarrow^{*}(r,\tau,m)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>s</mi><mo>,</mo><msub><mi>τ</mi><mi>w</mi></msub><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><msup><mo>→</mo><mo>*</mo></msup><mrow><mo stretchy="false">(</mo><mi>r</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow></math> for some <math id="p13.m21" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> and <math id="p13.m22" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math>. <math id="p13.m23" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is said to <em class="ltx_emph ltx_font_italic">halt</em> on input <math id="p13.m24" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> iff it either accepts or rejects <math id="p13.m25" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>. Otherwise, <math id="p13.m26" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is said to <em class="ltx_emph ltx_font_italic">loop</em> on <math id="p13.m27" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>.</p>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">By the definition of the transition function <math id="p14.m1" class="ltx_Math" alttext="\delta" display="inline"><mi>δ</mi></math>, once the computation of <math id="p14.m2" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> leads to the accepting state <math id="p14.m3" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>, it never leaves that state. Likewise, once the computation of <math id="p14.m4" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> leads to the reject state <math id="p14.m5" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math>, no further computation will lead to a non-reject state.</p>
+</div>
+<div id="p15" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Let <math id="p15.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> be a Turing machine. The set of words accepted by <math id="p15.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is denoted by <math id="p15.m3" class="ltx_Math" alttext="L(T)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow></math>. A set <math id="p15.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> of words over <math id="p15.m5" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> is said to be <em class="ltx_emph ltx_font_italic">Turing acceptable</em> if there is a Turing machine <math id="p15.m6" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> such that <math id="p15.m7" class="ltx_Math" alttext="A=L(T)" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. If <math id="p15.m8" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> halts on every input word, then <math id="p15.m9" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is said to be <em class="ltx_emph ltx_font_italic">total</em>.</p>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remarks</span>.</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">It can be shown that <math id="I2.i1.p1.m1" class="ltx_Math" alttext="A\subseteq\Sigma^{*}" display="inline"><mrow><mi>A</mi><mo>⊆</mo><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></mrow></math> is Turing acceptable iff it is recursively enumerable. Furthermore, <math id="I2.i1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is recursive iff there it is Turing acceptable by a total Turing machine.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">The Turing machines described above are known as language acceptors. However, any Turing machine can be modified so it is capable of producing outputs. Using this modification, one can think of a Turing machine as a partial function where an input is in its domain iff the computation leads to a halting state. More can be found here (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/TuringComputable</span>).</p>
+</div>
+</li>
+</ul>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">formal definition of a Turing machine</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">FormalDefinitionOfATuringMachine</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:09:47</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 19:09:47</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">14</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CWoo (3771)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68Q05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 03D10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">TuringComputable</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p ltx_align_right"></p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:41:11 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

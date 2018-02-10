@@ -1,0 +1,165 @@
+<!DOCTYPE html><html>
+<head>
+<title>Huffman’s algorithm</title>
+<!--Generated on Sat Feb 10 12:39:11 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Huffman’s algorithm</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Huffman’s algorithm</em> is a method for building an extended binary tree with a minimum weighted path length from a set of given weights. Initially construct a forest of singleton trees, one associated with each weight. If there are at least two trees, choose the two trees with the least weight associated with their roots and replace them with a new tree, constructed by creating a root node whose weight is the sum of the weights of the roots of the two trees removed, and setting the two trees just removed as this new node’s children. This process is repeated until the forest consists of one tree.</p>
+</div>
+<section id="S0.SS0.SSSx1" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Pseudocode</h2>
+
+<div id="S0.SS0.SSSx1.p1" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+Huffman(W, n)
+Input: A list W of n (positive) weights.
+Output: An extended binary tree T with weights
+   taken from W that gives the minimum weighted path length.
+Procedure:
+ Create list F from singleton trees formed from elements of W
+WHILE (F has more than one element) DO
+  Find T1, T2 in F that have minimum values associated with their roots
+  Construct new tree T by creating a new node and setting T1 and T2 as its children
+  Let the sum of the values associated with the roots of T1 and T2 be associated with the root of T
+  Add T to F
+OD
+Huffman := tree stored in F
+</pre>
+</div>
+</section>
+<section id="S0.SS0.SSSx2" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Example</h2>
+
+<div id="S0.SS0.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">Let us work through an example for the set of weights <math id="S0.SS0.SSSx2.p1.m1" class="ltx_Math" alttext="\{1,2,3,3,4\}" display="inline"><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false">}</mo></mrow></math>. In these intermediate steps we will display the temporary weights assigned by the algorithm in the circled nodes. Initially our forest is</p>
+</div>
+<div id="S0.SS0.SSSx2.p2" class="ltx_para ltx_centering">
+<img src="tree.5" id="S0.SS0.SSSx2.p2.g1" class="ltx_graphics" alt="">
+</div>
+<div id="S0.SS0.SSSx2.p3" class="ltx_para">
+<p class="ltx_p">During the first step, the two trees with weights 1 and 2 are merged, to create a new tree with a root of weight 3.</p>
+</div>
+<div id="S0.SS0.SSSx2.p4" class="ltx_para ltx_centering">
+<img src="tree.6" id="S0.SS0.SSSx2.p4.g1" class="ltx_graphics" alt="">
+</div>
+<div id="S0.SS0.SSSx2.p5" class="ltx_para">
+<p class="ltx_p">We now have three trees with weights of 3 at their roots. It does not matter which two we choose to merge. Let us choose the tree we just created and one of the singleton nodes of weight 3.</p>
+</div>
+<div id="S0.SS0.SSSx2.p6" class="ltx_para ltx_centering">
+<img src="tree.7" id="S0.SS0.SSSx2.p6.g1" class="ltx_graphics" alt="">
+</div>
+<div id="S0.SS0.SSSx2.p7" class="ltx_para">
+<p class="ltx_p">Now our two minimum trees are the two singleton nodes of weights 3 and 4. We will combine these to form a new tree of weight 7.</p>
+</div>
+<div id="S0.SS0.SSSx2.p8" class="ltx_para ltx_centering">
+<img src="tree.8" id="S0.SS0.SSSx2.p8.g1" class="ltx_graphics" alt="">
+</div>
+<div id="S0.SS0.SSSx2.p9" class="ltx_para">
+<p class="ltx_p">Finally we merge our last two remaining trees.</p>
+</div>
+<div id="S0.SS0.SSSx2.p10" class="ltx_para ltx_centering">
+<img src="tree.9" id="S0.SS0.SSSx2.p10.g1" class="ltx_graphics" alt="">
+</div>
+<div id="S0.SS0.SSSx2.p11" class="ltx_para">
+<p class="ltx_p">The result is an extended binary tree of minimum weighted path length 29. In the following diagram each circled node is marked with its weighted path length.</p>
+</div>
+<div id="S0.SS0.SSSx2.p12" class="ltx_para ltx_centering">
+<img src="tree.10" id="S0.SS0.SSSx2.p12.g1" class="ltx_graphics" alt="">
+</div>
+</section>
+<section id="S0.SS0.SSSx3" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Analysis</h2>
+
+<div id="S0.SS0.SSSx3.p1" class="ltx_para">
+<p class="ltx_p">Each iteration of Huffman’s algorithm reduces the size of the problem by 1,
+and so there are exactly <math id="S0.SS0.SSSx3.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> iterations.
+The <math id="S0.SS0.SSSx3.p1.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>th iteration consists of locating the two minimum values in a list
+of length <math id="S0.SS0.SSSx3.p1.m3" class="ltx_Math" alttext="n-i+1" display="inline"><mrow><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow><mo>+</mo><mn>1</mn></mrow></math>. This is a linear operation, and so Huffman’s algorithm clearly has a time complexity of <math id="S0.SS0.SSSx3.p1.m4" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx3.p2" class="ltx_para">
+<p class="ltx_p">However, it would be faster to sort the weights initially, and then maintain two lists. The first list consists of weights that have not yet been combined, and the second list consists of trees that have been formed by combining weights.
+This initial ordering is obtained at a cost of <math id="S0.SS0.SSSx3.p2.m1" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.
+Obtaining the minimum two trees at each step then consists of two comparisons (compare the heads of the two lists, and then compare the larger to the item after the smaller). The ordering of the second list can be maintained cheaply by using a binary search to insert new elements. Since at step <math id="S0.SS0.SSSx3.p2.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> there are <math id="S0.SS0.SSSx3.p2.m3" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> elements in the second list, <math id="S0.SS0.SSSx3.p2.m4" class="ltx_Math" alttext="\mathcal{O}(\log i)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>i</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> comparisons are needed for insertion.
+Over the entire duration of the algorithm the cost of keeping this list sorted is <math id="S0.SS0.SSSx3.p2.m5" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Therefore the overall time complexity of Huffman’s algorithm is <math id="S0.SS0.SSSx3.p2.m6" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="S0.SS0.SSSx3.p3" class="ltx_para">
+<p class="ltx_p">In terms of space complexity, the algorithm constructs a complete binary tree with exactly <math id="S0.SS0.SSSx3.p3.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> leaves. Therefore the output can only have <em class="ltx_emph ltx_font_italic">at most</em> <math id="S0.SS0.SSSx3.p3.m2" class="ltx_Math" alttext="2n-1" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>-</mo><mn>1</mn></mrow></math> nodes. Thus Huffman’s algorithm requires linear space.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Huffman’s algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">HuffmansAlgorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:32:17</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:32:17</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">mps (409)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">mps (409)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">9</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">mps (409)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68P30</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">MinimumWeightedPathLength</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">HuffmanCoding</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:39:11 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

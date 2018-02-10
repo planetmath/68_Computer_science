@@ -1,0 +1,202 @@
+<!DOCTYPE html><html>
+<head>
+<title>Java</title>
+<!--Generated on Sat Feb 10 12:37:29 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Java</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Java</span> is a software platform intended to modernize programming on a universal scale. The chief inventor was James Gosling working for Sun Microsystems which has retained the governance of the Java platform specifications. A strong community of other companies and users has developed and affected the development chiefly IBM and Apple.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Gosling’s hope for development on the platform was encompassed in the slogan</p>
+<blockquote class="ltx_quote">
+<p class="ltx_p">“Write once, run anywhere.”</p>
+</blockquote>
+<p class="ltx_p">Unfortunately, the realization has often followed the mocking slogan:</p>
+<blockquote class="ltx_quote">
+<p class="ltx_p">“Write once, debug everywhere.”</p>
+</blockquote>
+<p class="ltx_p">The name Java is a reference to coffee but was not the original name
+desired by Gosling.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>The platform</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The platform is comprised of several levels of abstraction.</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Every Java platform operates with a core kernel which is designed and implemented for specific physical settings. There are Java kernels
+targeted for multiprocessor Sparc and Itanium server environments all the way down to StrongArm and even Smart-Card chips. IBM has even prototype processors equipped to operate as solid state Java kernels. Access to this layer from the other platforms is achieved through <span class="ltx_text ltx_font_typewriter">jave.lang</span> packages as well as through the Java Native Interface.</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<p class="ltx_p">The simplest method to create a kernel is to build an interpreter in the
+language and tools of a given operating system, such as Microsoft Windows,
+Apple’s OS-X, and various Linux and Unix distributions. This unnecessary
+layer is generally responsible for slower performance on time critical tasks
+and may be responsible for much of the limited adoption of platform for large scale home or office applications.</p>
+</div>
+<div id="I1.i1.p3" class="ltx_para">
+<p class="ltx_p">The most notable divergence of the kernel from C style applications is
+garbage collection. Memory in Java is managed completely by the kernel and
+so programmers cannot use dangerous tricks such as incrementing or decrementing pointers beyond the bounds of the array or structure allocated to pointer.
+However, by retaining deletion controls, some critical optimizations may not
+be able release resources when desired.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">The second layer is the programming language and its suite of standard
+packages. The language uses the C syntax but unlike C++ makes an explicit
+use of object oriented structures. The concept of exceptions, experimentally introduced in C++, is given a robust form thus removing the need to
+check returns for errors. An error in Java reverses the execution direction
+of the thread “throwing” exception to the calling functions until some
+layer is capable of handling the error. An unexpected result of this is that
+some programs now use the exception mechanism as a valid exit strategy from
+a loop of recursion thus in effect providing for an unbounded number of types
+as the result of a method invocation.</p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<p class="ltx_p">The language has single inheritance but allows for polymorphism through interface structures. This avoids the danger of C++ multiple inheritance.</p>
+</div>
+<div id="I1.i2.p3" class="ltx_para">
+<p class="ltx_p">The various packages, for example: <span class="ltx_text ltx_font_typewriter">java.util</span>, <span class="ltx_text ltx_font_typewriter">java.awt</span>, <span class="ltx_text ltx_font_typewriter">java.net</span>, etc. provide uniform access to standard features of most
+hardware systems. For example, data structures such as lists, trees, queue, etc. are provided in the utility package. AWT controls standard windowing controls which allows for elegant and simply built graphical user interfaces. Packages such as the net package provide very direct methods to access internet controls (TCP/IP stacks) and provide conversions between
+various formats on the web. This makes network applications very favorable
+as there is no concern over which operating systems are linked together
+through the programs.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">At the most abstract layer to the platform are the extended packages.
+These include packages to control databases, XML utilities, 3-D packages,
+speech and natural language, and perhaps the most comprehensive dedication to
+accessibility and internationalization.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>The standards</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">Having developed the Java platform from the ground up there was a rare opportunity to establish conventions to form a uniform development look
+which would promote ease of development. Data types are named with a capital
+letter for each new word or initial. For example, the data structure
+encoding a list is written <span class="ltx_text ltx_font_typewriter">List</span>. The exception to this rule
+are the primitive data types of integers, floating points, etc. These
+are written <span class="ltx_text ltx_font_typewriter">int</span>, <span class="ltx_text ltx_font_typewriter">long</span>, <span class="ltx_text ltx_font_typewriter">boolean</span>, etc.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">In contrast, variables (references) begin with a lower case but may have
+upper case letters for subsequent words or initials. For example,
+an instance of an object <span class="ltx_text ltx_font_typewriter">LargeInteger</span> could be named
+<span class="ltx_text ltx_font_typewriter">largeInt</span>.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">Unlike the Microsoft Hungarian notation, references are not labeled with
+short hand letters revealing their type. Because Java is a strongly typed
+programming language, much of the type problems of C/C++ solved by Hungarian
+notation is unnecessary as the problems are caught at compile time. The trade off is the inflexibility of programming in that data must be explicitly cast
+to the appropriate data type even when provably clear in the
+program. Later languages, such as Python, are in sharp contrast to Java in this
+regard.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">At larger level, the names of new packages carry with them the website names of the developers. For example <span class="ltx_text ltx_font_typewriter">com.sun.java.swing</span> or <span class="ltx_text ltx_font_typewriter">com.ibm.java.speech</span> are packages from Sun Microsystems and IBM, as is easily detected in the package names. Linking between libraries is thus simply a matter of identifying the package name and is not affected by separate MAKE files etc. as is common in C/C++ settings.</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Mathematical and scientific applications</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">In the world of mathematical and scientific computation, the use of Java is limited. Most theoretical applications are encumbered by unnecessary user interfaces and the strong need to optimize makes garbage collects and especially interpreters very unfavorable. The one place were the Java platform is poised for use on large scale mathematical projects is in distributed computing problems such as searches for primes etc.</p>
+</div>
+<section id="S3.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1 </span>External links</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">http://www.mirwoj.opus.chelm.pl/ca/mjcell/mjcell.html</span>Mirek’s Java Cellebration v.1.50
+</p>
+<table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Java</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Java</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:52:10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:52:10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimeFan (13766)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimeFan (13766)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">9</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">PrimeFan (13766)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 68N15</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Defines</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Java</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sat Feb 10 12:37:29 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
