@@ -20,7 +20,7 @@
 <br class="ltx_break">
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Huffman’s algorithm</em> is a method for building an extended binary tree with a minimum weighted path length from a set of given weights. Initially construct a forest of singleton trees, one associated with each weight. If there are at least two trees, choose the two trees with the least weight associated with their roots and replace them with a new tree, constructed by creating a root node whose weight is the sum of the weights of the roots of the two trees removed, and setting the two trees just removed as this new node’s children. This process is repeated until the forest consists of one tree.</p>
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Huffman’s <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></em> is a method for building an <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">extended binary tree</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/ExtendedBinaryTree.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/extendedbinarytree"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> with a <a class="nnexus_concept" href="http://planetmath.org/minimumweightedpathlength">minimum weighted path length</a> from a set of given weights. Initially construct a forest of <a class="nnexus_concept" href="http://planetmath.org/singleton">singleton</a> trees, one associated with each weight. If there are at least two trees, choose the two trees with the least weight associated with their roots and replace them with a new tree, constructed by creating a root node whose weight is the sum of the weights of the roots of the two trees removed, and setting the two trees just removed as this new node’s <a class="nnexus_concept" href="http://planetmath.org/treesettheoretic">children</a>. This process is repeated until the forest consists of one tree.</p>
 </div>
 <section id="S0.SS0.SSSx1" class="ltx_subsubsection">
 <h2 class="ltx_title ltx_title_subsubsection">Pseudocode</h2>
@@ -28,12 +28,12 @@
 <div id="S0.SS0.SSSx1.p1" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
 Huffman(W, n)
-Input: A list W of n (positive) weights.
+Input: A list W of n (<a class="nnexus_concept" href="http://planetmath.org/positive">positive</a>) weights.
 Output: An extended binary tree T with weights
    taken from W that gives the minimum weighted path length.
 Procedure:
  Create list F from singleton trees formed from elements of W
-WHILE (F has more than one element) DO
+WHILE (F has more than one <a class="nnexus_concept" href="http://mathworld.wolfram.com/Element.html">element</a>) DO
   Find T1, T2 in F that have minimum values associated with their roots
   Construct new tree T by creating a new node and setting T1 and T2 as its children
   Let the sum of the values associated with the roots of T1 and T2 be associated with the root of T
@@ -77,7 +77,7 @@ Huffman := tree stored in F
 <img src="tree.9" id="S0.SS0.SSSx2.p10.g1" class="ltx_graphics" alt="">
 </div>
 <div id="S0.SS0.SSSx2.p11" class="ltx_para">
-<p class="ltx_p">The result is an extended binary tree of minimum weighted path length 29. In the following diagram each circled node is marked with its weighted path length.</p>
+<p class="ltx_p">The result is an extended binary tree of minimum weighted path length 29. In the following diagram each circled node is marked with its <a class="nnexus_concept" href="http://planetmath.org/weightedpathlength">weighted path length</a>.</p>
 </div>
 <div id="S0.SS0.SSSx2.p12" class="ltx_para ltx_centering">
 <img src="tree.10" id="S0.SS0.SSSx2.p12.g1" class="ltx_graphics" alt="">
@@ -87,19 +87,19 @@ Huffman := tree stored in F
 <h2 class="ltx_title ltx_title_subsubsection">Analysis</h2>
 
 <div id="S0.SS0.SSSx3.p1" class="ltx_para">
-<p class="ltx_p">Each iteration of Huffman’s algorithm reduces the size of the problem by 1,
+<p class="ltx_p">Each <a class="nnexus_concept" href="http://mathworld.wolfram.com/Iteration.html">iteration</a> of Huffman’s algorithm reduces the size of the problem by 1,
 and so there are exactly <math id="S0.SS0.SSSx3.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> iterations.
 The <math id="S0.SS0.SSSx3.p1.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>th iteration consists of locating the two minimum values in a list
-of length <math id="S0.SS0.SSSx3.p1.m3" class="ltx_Math" alttext="n-i+1" display="inline"><mrow><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow><mo>+</mo><mn>1</mn></mrow></math>. This is a linear operation, and so Huffman’s algorithm clearly has a time complexity of <math id="S0.SS0.SSSx3.p1.m4" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+of length <math id="S0.SS0.SSSx3.p1.m3" class="ltx_Math" alttext="n-i+1" display="inline"><mrow><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow><mo>+</mo><mn>1</mn></mrow></math>. This is a linear <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">operation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Operation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/operation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>, and so Huffman’s algorithm clearly has a <a class="nnexus_concept" href="http://planetmath.org/timecomplexity">time complexity</a> of <math id="S0.SS0.SSSx3.p1.m4" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
 </div>
 <div id="S0.SS0.SSSx3.p2" class="ltx_para">
 <p class="ltx_p">However, it would be faster to sort the weights initially, and then maintain two lists. The first list consists of weights that have not yet been combined, and the second list consists of trees that have been formed by combining weights.
-This initial ordering is obtained at a cost of <math id="S0.SS0.SSSx3.p2.m1" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.
-Obtaining the minimum two trees at each step then consists of two comparisons (compare the heads of the two lists, and then compare the larger to the item after the smaller). The ordering of the second list can be maintained cheaply by using a binary search to insert new elements. Since at step <math id="S0.SS0.SSSx3.p2.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> there are <math id="S0.SS0.SSSx3.p2.m3" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> elements in the second list, <math id="S0.SS0.SSSx3.p2.m4" class="ltx_Math" alttext="\mathcal{O}(\log i)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>i</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> comparisons are needed for insertion.
+This initial <a class="nnexus_concept" href="http://mathworld.wolfram.com/Ordering.html">ordering</a> is obtained at a cost of <math id="S0.SS0.SSSx3.p2.m1" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.
+Obtaining the minimum two trees at each step then consists of two comparisons (compare the heads of the two lists, and then compare the larger to the item after the smaller). The ordering of the second list can be maintained cheaply by using a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">binary search</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/BinarySearch.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/binarysearch"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> to insert new elements. Since at step <math id="S0.SS0.SSSx3.p2.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> there are <math id="S0.SS0.SSSx3.p2.m3" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> elements in the second list, <math id="S0.SS0.SSSx3.p2.m4" class="ltx_Math" alttext="\mathcal{O}(\log i)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>i</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> comparisons are needed for <a class="nnexus_concept" href="http://planetmath.org/insertionoperationonlanguages">insertion</a>.
 Over the entire duration of the algorithm the cost of keeping this list sorted is <math id="S0.SS0.SSSx3.p2.m5" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Therefore the overall time complexity of Huffman’s algorithm is <math id="S0.SS0.SSSx3.p2.m6" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
 </div>
 <div id="S0.SS0.SSSx3.p3" class="ltx_para">
-<p class="ltx_p">In terms of space complexity, the algorithm constructs a complete binary tree with exactly <math id="S0.SS0.SSSx3.p3.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> leaves. Therefore the output can only have <em class="ltx_emph ltx_font_italic">at most</em> <math id="S0.SS0.SSSx3.p3.m2" class="ltx_Math" alttext="2n-1" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>-</mo><mn>1</mn></mrow></math> nodes. Thus Huffman’s algorithm requires linear space.
+<p class="ltx_p">In terms of space <a class="nnexus_concept" href="http://mathworld.wolfram.com/Complexity.html">complexity</a>, the algorithm constructs a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">complete binary tree</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/CompleteBinaryTree.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/paradoxofthebinarytree"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/completebinarytree"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> with exactly <math id="S0.SS0.SSSx3.p3.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> leaves. Therefore the output can only have <em class="ltx_emph ltx_font_italic">at most</em> <math id="S0.SS0.SSSx3.p3.m2" class="ltx_Math" alttext="2n-1" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>-</mo><mn>1</mn></mrow></math> nodes. Thus Huffman’s algorithm requires <a class="nnexus_concept" href="http://planetmath.org/linearspace">linear space</a>.
 </p>
 <table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
 <tbody class="ltx_tbody">
@@ -108,7 +108,7 @@ Over the entire duration of the algorithm the cost of keeping this list sorted i
 <td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Huffman’s algorithm</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</th>
 <td class="ltx_td ltx_align_left ltx_border_r">HuffmansAlgorithm</td>
 </tr>
 <tr class="ltx_tr">
@@ -140,7 +140,7 @@ Over the entire duration of the algorithm the cost of keeping this list sorted i
 <td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Classification.html">Classification</a></th>
 <td class="ltx_td ltx_align_left ltx_border_r">msc 68P30</td>
 </tr>
 <tr class="ltx_tr">

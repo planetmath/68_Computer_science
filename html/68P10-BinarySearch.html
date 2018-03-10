@@ -23,7 +23,7 @@
 <h2 class="ltx_title ltx_title_subsection">The Problem</h2>
 
 <div id="S0.SSx1.p1" class="ltx_para">
-<p class="ltx_p">Let <math id="S0.SSx1.p1.m1" class="ltx_Math" alttext="\leq" display="inline"><mo>≤</mo></math> be a total ordering on the set <math id="S0.SSx1.p1.m2" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>. Given a sequence of <math id="S0.SSx1.p1.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements,
+<p class="ltx_p">Let <math id="S0.SSx1.p1.m1" class="ltx_Math" alttext="\leq" display="inline"><mo>≤</mo></math> be a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">total ordering</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/linearlyordered"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/totalorder"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> on the set <math id="S0.SSx1.p1.m2" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>. Given a <a class="nnexus_concept" href="http://planetmath.org/sequence">sequence</a> of <math id="S0.SSx1.p1.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> <a class="nnexus_concept" href="http://mathworld.wolfram.com/Element.html">elements</a>,
 <math id="S0.SSx1.p1.m4" class="ltx_Math" alttext="L=\left\{x_{1}\leq x_{2}\leq\dots\leq x_{n}\right\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo>{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mi mathvariant="normal">…</mi><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub><mo>}</mo></mrow></mrow></math>, and a value <math id="S0.SSx1.p1.m5" class="ltx_Math" alttext="y\in S" display="inline"><mrow><mi>y</mi><mo>∈</mo><mi>S</mi></mrow></math>,
 locate the position of any elements in <math id="S0.SSx1.p1.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> that are equal to <math id="S0.SSx1.p1.m7" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, or determine that
 none exist.</p>
@@ -33,16 +33,16 @@ none exist.</p>
 <h2 class="ltx_title ltx_title_subsection">The Algorithm</h2>
 
 <div id="S0.SSx2.p1" class="ltx_para">
-<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">binary search</em> technique is a fundamental method for locating an element of
-a particular value within a sequence of sorted elements (see Sorting Problem).
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">binary search</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/BinarySearch.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/binarysearch"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></em> technique is a fundamental method for locating an element of
+a particular value within a sequence of sorted elements (see <a class="nnexus_concept" href="http://planetmath.org/sortingproblem">Sorting Problem</a>).
 The idea is to eliminate half of the search space with each comparison.</p>
 </div>
 <div id="S0.SSx2.p2" class="ltx_para">
 <p class="ltx_p">First, the
-middle element of the sequence is compared to the value we are searching for. If this
+middle element of the sequence is compared to the value we are <a class="nnexus_concept" href="http://mathworld.wolfram.com/Searching.html">searching</a> for. If this
 element matches the value we are searching for, we are done. If, however, the middle
-element is “less than” the value we are chosen for (as specified by the relation (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/Relation</span>) used
-to specify a total order over the set of elements), then we know that, if the value exists
+element is “less than” the value we are chosen for (as specified by the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">relation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Relation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/presentationofagroup"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/relation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/Relation</span>) used
+to specify a <a class="nnexus_concept" href="http://mathworld.wolfram.com/TotalOrder.html">total order</a> over the set of elements), then we know that, if the value exists
 in the sequence, it must exist somewhere <em class="ltx_emph ltx_font_italic">after</em> the middle element. Therefore we
 can eliminate the first half of the sequence from our search and simply repeat the search
 in the exact same manner on the remaining half of the sequence. If, however, the value we
@@ -54,7 +54,7 @@ of the sequence.</p>
 <h2 class="ltx_title ltx_title_subsection">Pseudocode</h2>
 
 <div id="S0.SSx3.p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm</span> <span class="ltx_text ltx_font_smallcaps">Binary_Search</span><span class="ltx_text ltx_font_typewriter">(L, n, key)
+<p class="ltx_p"><span class="ltx_text ltx_font_bold"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></span> <span class="ltx_text ltx_font_smallcaps">Binary_Search</span><span class="ltx_text ltx_font_typewriter">(L, n, key)
 <br class="ltx_break"></span><span class="ltx_text ltx_font_italic">Input</span>: A list <math id="S0.SSx3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> of <math id="S0.SSx3.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements, and <math id="S0.SSx3.p1.m3" class="ltx_Math" alttext="key" display="inline"><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></math> (the search key)
 <br class="ltx_break"><span class="ltx_text ltx_font_italic">Output</span>: <math id="S0.SSx3.p1.m4" class="ltx_Math" alttext="Position" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow></math> (such that <math id="S0.SSx3.p1.m5" class="ltx_Math" alttext="X[Position]=key" display="inline"><mrow><mrow><mi>X</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>P</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math>)</p>
 </div>
@@ -65,7 +65,7 @@ of the sequence.</p>
 <span class="ltx_p"><math id="S0.SSx3.p2.m1" class="ltx_Math" alttext="Position\leftarrow Find(L,1,n,key);" display="inline"><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>n</mi></mrow><mo>←</mo><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>;</mo></mrow></math></span>
 </span>
 <br class="ltx_break"><span class="ltx_text ltx_font_bold">end
-<br class="ltx_break">function</span> <math id="S0.SSx3.p2.m2" class="ltx_Math" alttext="Find(L,bottom,top,key)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>,</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> 
+<br class="ltx_break"><a class="nnexus_concept" href="http://planetmath.org/function">function</a></span> <math id="S0.SSx3.p2.m2" class="ltx_Math" alttext="Find(L,bottom,top,key)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo>,</mo><mrow><mi>b</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>m</mi></mrow><mo>,</mo><mrow><mi>t</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>p</mi></mrow><mo>,</mo><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> 
 <br class="ltx_break"><span class="ltx_text ltx_font_bold">begin
 <br class="ltx_break"></span>         
 <span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;">
@@ -113,7 +113,7 @@ of the sequence.</p>
 <h2 class="ltx_title ltx_title_subsection">Analysis</h2>
 
 <div id="S0.SSx4.p1" class="ltx_para">
-<p class="ltx_p">We can specify the runtime complexity of this binary search algorithm by counting the number
+<p class="ltx_p">We can specify the runtime <a class="nnexus_concept" href="http://mathworld.wolfram.com/Complexity.html">complexity</a> of this binary search algorithm by counting the number
 of comparisons required to locate some element <math id="S0.SSx4.p1.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> in <math id="S0.SSx4.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>. Since half of the list is eliminated
 with each comparison, there can be no more than <math id="S0.SSx4.p1.m3" class="ltx_Math" alttext="\log_{2}{n}" display="inline"><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mi>n</mi></mrow></math> comparisons before either the positions
 of all the <math id="S0.SSx4.p1.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> elements are found or the entire list is eliminated and <math id="S0.SSx4.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> is determined to not exist

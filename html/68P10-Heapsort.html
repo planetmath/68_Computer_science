@@ -20,18 +20,18 @@
 <br class="ltx_break">
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">heapsort</em> algorithm is an elegant application of the heap data structure to the sorting problem. It consists of building a heap out of some list of <math id="p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements, and the removing a maximal value one at a time.</p>
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">heapsort</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Heapsort.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/heapsort"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></em> <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> is an elegant application of the heap <a class="nnexus_concept" href="http://mathworld.wolfram.com/DataStructure.html">data structure</a> to the <a class="nnexus_concept" href="http://planetmath.org/sortingproblem">sorting problem</a>. It consists of building a heap out of some list of <math id="p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements, and the removing a maximal value one at a time.</p>
 </div>
 <section id="S0.SS0.SSSx1" class="ltx_subsubsection">
 <h2 class="ltx_title ltx_title_subsubsection">The Algorithm</h2>
 
 <div id="S0.SS0.SSSx1.p1" class="ltx_para">
-<p class="ltx_p">The following pseudocode illustrates the heapsort algorithm. It builds upon the heap insertion and heap removal algorithms.</p>
+<p class="ltx_p">The following pseudocode illustrates the heapsort algorithm. It builds upon the heap <a class="nnexus_concept" href="http://planetmath.org/insertionoperationonlanguages">insertion</a> and <a class="nnexus_concept" href="http://planetmath.org/heapremovalalgorithm">heap removal algorithms</a>.</p>
 </div>
 <div id="S0.SS0.SSSx1.p2" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm</span> <span class="ltx_text ltx_font_smallcaps">HeapSort</span><span class="ltx_text ltx_font_typewriter">(<math id="S0.SS0.SSSx1.p2.m1" class="ltx_Math" alttext="(A,\preceq,n)" display="inline"><mrow><mo mathvariant="normal" stretchy="false">(</mo><mi mathvariant="normal">A</mi><mo mathvariant="normal">,</mo><mo mathvariant="normal">⪯</mo><mo mathvariant="normal">,</mo><mi mathvariant="normal">n</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></math>)
 <br class="ltx_break"></span><span class="ltx_text ltx_font_italic">Input</span>: List <math id="S0.SS0.SSSx1.p2.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> of <math id="S0.SS0.SSSx1.p2.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> elements
-<br class="ltx_break"><span class="ltx_text ltx_font_italic">Output</span>: <math id="S0.SS0.SSSx1.p2.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> sorted, such that <math id="S0.SS0.SSSx1.p2.m5" class="ltx_Math" alttext="\preceq" display="inline"><mo>⪯</mo></math> is a total order over <math id="S0.SS0.SSSx1.p2.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>
+<br class="ltx_break"><span class="ltx_text ltx_font_italic">Output</span>: <math id="S0.SS0.SSSx1.p2.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> sorted, such that <math id="S0.SS0.SSSx1.p2.m5" class="ltx_Math" alttext="\preceq" display="inline"><mo>⪯</mo></math> is a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">total order</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/TotalOrder.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/totalorder"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> over <math id="S0.SS0.SSSx1.p2.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>
 <br class="ltx_break"></p>
 </div>
 <div id="S0.SS0.SSSx1.p3" class="ltx_para">
@@ -55,15 +55,15 @@
 <h2 class="ltx_title ltx_title_subsubsection">Analysis</h2>
 
 <div id="S0.SS0.SSSx2.p1" class="ltx_para">
-<p class="ltx_p">Note that the algorithm given is based on a top-down heap insertion algorithm.
+<p class="ltx_p">Note that the algorithm given is based on a top-down <a class="nnexus_concept" href="http://planetmath.org/heapinsertionalgorithm">heap insertion algorithm</a>.
 It is possible to get better results through bottom-up heap construction.</p>
 </div>
 <div id="S0.SS0.SSSx2.p2" class="ltx_para">
-<p class="ltx_p">Each step of each of the two <span class="ltx_text ltx_font_bold">for</span> loops in this algorithm has a runtime complexity of <math id="S0.SS0.SSSx2.p2.m1" class="ltx_Math" alttext="\mathcal{O}(\log i)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>i</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Thus overall the heapsort algorithm is <math id="S0.SS0.SSSx2.p2.m2" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+<p class="ltx_p">Each step of each of the two <span class="ltx_text ltx_font_bold">for</span> loops in this algorithm has a runtime <a class="nnexus_concept" href="http://mathworld.wolfram.com/Complexity.html">complexity</a> of <math id="S0.SS0.SSSx2.p2.m1" class="ltx_Math" alttext="\mathcal{O}(\log i)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>i</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Thus overall the heapsort algorithm is <math id="S0.SS0.SSSx2.p2.m2" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
 </div>
 <div id="S0.SS0.SSSx2.p3" class="ltx_para">
-<p class="ltx_p">Heapsort is not quite as fast as quicksort in general, but it is not much slower, either. Also, like quicksort, heapsort is an in-place sorting algorithm, but not a stable sorting algorithm.
-Unlike quicksort, its performance is guaranteed, so despite the ordering of its input its worst-case complexity is <math id="S0.SS0.SSSx2.p3.m1" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.
+<p class="ltx_p">Heapsort is not quite as fast as <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">quicksort</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Quicksort.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/quicksort"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> in general, but it is not much slower, either. Also, like quicksort, heapsort is an <a class="nnexus_concept" href="http://planetmath.org/inplacesortingalgorithm">in-place sorting algorithm</a>, but not a <a class="nnexus_concept" href="http://planetmath.org/stablesortingalgorithm">stable sorting algorithm</a>.
+Unlike quicksort, its performance is guaranteed, so despite the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">ordering</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Ordering.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/partialorder"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> of its input its worst-case complexity is <math id="S0.SS0.SSSx2.p3.m1" class="ltx_Math" alttext="\mathcal{O}(n\log n)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.
 Given its simple implementation and reasonable performance, heapsort is ideal for quickly implementing a decent sorting algorithm.
 </p>
 <table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
@@ -105,7 +105,7 @@ Given its simple implementation and reasonable performance, heapsort is ideal fo
 <td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Classification.html">Classification</a></th>
 <td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
 </tr>
 <tr class="ltx_tr">

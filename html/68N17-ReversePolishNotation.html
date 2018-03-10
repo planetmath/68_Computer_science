@@ -18,19 +18,19 @@
 
 <div id="p1" class="ltx_para">
 <br class="ltx_break">
-<p class="ltx_p">Whereas operators are traditionally placed between operands, with parentheses used to override operator precedence, it is possible to place operators to the right of operands, thus eliminating ambiguity and the need for parentheses, and even the need for rules of operator precedence. This is known as <em class="ltx_emph ltx_font_italic">reverse Polish notation</em> (after the Polish mathematician Jan Łukasiewicz who came up with Polish notation, abbreviated <em class="ltx_emph ltx_font_italic">RPN</em>), or <em class="ltx_emph ltx_font_italic">postfix notation</em>. Invented by Australian philosopher Charles Hamblin, reverse Polish notation requires that the number of operands of a given operator be defined in advance.</p>
+<p class="ltx_p">Whereas <a class="nnexus_concept" href="http://planetmath.org/operator">operators</a> are traditionally placed between operands, with parentheses used to override <a class="nnexus_concept" href="http://planetmath.org/orderofoperations">operator precedence</a>, it is possible to place operators to the right of operands, thus eliminating ambiguity and the need for parentheses, and even the need for rules of operator precedence. This is known as <em class="ltx_emph ltx_font_italic"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">reverse Polish notation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/ReversePolishNotation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/reversepolishnotation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></em> (after the Polish mathematician Jan Łukasiewicz who came up with <a class="nnexus_concept" href="http://planetmath.org/polishnotation">Polish notation</a>, abbreviated <em class="ltx_emph ltx_font_italic">RPN</em>), or <em class="ltx_emph ltx_font_italic">postfix notation</em>. Invented by Australian philosopher Charles Hamblin, reverse Polish notation requires that the number of operands of a given operator be defined in advance.</p>
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">For example, <math id="p2.m1" class="ltx_Math" alttext="3\times 16-1" display="inline"><mrow><mrow><mn>3</mn><mo>×</mo><mn>16</mn></mrow><mo>-</mo><mn>1</mn></mrow></math> probably means 47, but if the possibility exists that the author meant but neglected to put in parentheses, the expression could actually mean <math id="p2.m2" class="ltx_Math" alttext="3\times(16-1)=45" display="inline"><mrow><mrow><mn>3</mn><mo>×</mo><mrow><mo stretchy="false">(</mo><mrow><mn>16</mn><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>45</mn></mrow></math>. In reverse Polish notation, we could define the basic arithmetic operators to all be binary, and write <math id="p2.m3" class="ltx_Math" alttext="3\quad 16\times 1-" display="inline"><mrow><mn>3</mn><mo mathvariant="italic" separator="true"> </mo><mrow><mrow><mn>16</mn><mo>×</mo><mn>1</mn></mrow><mo>-</mo></mrow></mrow></math> with the confidence that it will evaluate to 47 and not 45.</p>
+<p class="ltx_p">For example, <math id="p2.m1" class="ltx_Math" alttext="3\times 16-1" display="inline"><mrow><mrow><mn>3</mn><mo>×</mo><mn>16</mn></mrow><mo>-</mo><mn>1</mn></mrow></math> probably means 47, but if the possibility exists that the author meant but neglected to put in parentheses, the <a class="nnexus_concept" href="http://planetmath.org/expression">expression</a> could actually mean <math id="p2.m2" class="ltx_Math" alttext="3\times(16-1)=45" display="inline"><mrow><mrow><mn>3</mn><mo>×</mo><mrow><mo stretchy="false">(</mo><mrow><mn>16</mn><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>45</mn></mrow></math>. In reverse Polish notation, we could define the basic <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">arithmetic</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/arithmetic"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/arithmeticalhierarchy"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> operators to all be binary, and write <math id="p2.m3" class="ltx_Math" alttext="3\quad 16\times 1-" display="inline"><mrow><mn>3</mn><mo mathvariant="italic" separator="true"> </mo><mrow><mrow><mn>16</mn><mo>×</mo><mn>1</mn></mrow><mo>-</mo></mrow></mrow></math> with the confidence that it will evaluate to 47 and not 45.</p>
 </div>
 <div id="p3" class="ltx_para">
-<p class="ltx_p">Reverse Polish notation is particularly advantageous for stack-based programming languages like Forth and Adobe PostScript. Most Hewlett-Packard calculators use reverse Polish notation (though a few, such as the HP-38G, use the sort of infix notation conventional to most calculators). Some beginning programming language courses give as an exercise to the student the implementation of an RPN calculator. Instead of having to remember multiple addresses for different variables and constants, most RPN implementations use a stack and a stack pointer to keep track of data.</p>
+<p class="ltx_p">Reverse Polish notation is particularly advantageous for stack-based programming languages like Forth and Adobe PostScript. Most Hewlett-Packard <a class="nnexus_concept" href="http://planetmath.org/calculator">calculators</a> use reverse Polish notation (though a few, such as the HP-38G, use the sort of <a class="nnexus_concept" href="http://planetmath.org/infixnotation">infix notation</a> conventional to most calculators). Some beginning programming language courses give as an exercise to the student the implementation of an RPN calculator. Instead of having to remember multiple addresses for different <a class="nnexus_concept" href="http://planetmath.org/variable">variables</a> and <a class="nnexus_concept" href="http://planetmath.org/logicallanguage">constants</a>, most RPN implementations use a stack and a stack pointer to keep track of data.</p>
 </div>
 <div id="p4" class="ltx_para">
-<p class="ltx_p">The factorial notation (e.g., <math id="p4.m1" class="ltx_Math" alttext="n!" display="inline"><mrow><mi>n</mi><mo lspace="0pt" rspace="3.5pt">!</mo></mrow></math>) is a fairly common use of postfix notation in mostly infix contexts. (Most unary operators in C++ are prefix).</p>
+<p class="ltx_p">The <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">factorial</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Factorial.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/factorial"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> notation (e.g., <math id="p4.m1" class="ltx_Math" alttext="n!" display="inline"><mrow><mi>n</mi><mo lspace="0pt" rspace="3.5pt">!</mo></mrow></math>) is a fairly common use of postfix notation in mostly infix <a class="nnexus_concept" href="http://planetmath.org/conceptlattice">contexts</a>. (Most unary operators in C++ are prefix).</p>
 </div>
 <div id="p5" class="ltx_para">
-<p class="ltx_p">To convert from standard infix notation to reverse Polish notation, the Dutch computer programmer Edsger Dijkstra came up with the shunting yard algorithm.
+<p class="ltx_p">To convert from standard infix notation to reverse Polish notation, the Dutch <a class="nnexus_concept" href="http://planetmath.org/supercomputers">computer</a> programmer Edsger Dijkstra came up with the <a class="nnexus_concept" href="http://planetmath.org/shuntingyardalgorithm">shunting yard algorithm</a>.
 </p>
 <table class="ltx_tabular ltx_align_right ltx_align_middle">
 <tbody class="ltx_tbody">
@@ -39,7 +39,7 @@
 <td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">reverse Polish notation</td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</td>
 <td class="ltx_td ltx_align_left ltx_border_r">ReversePolishNotation</td>
 </tr>
 <tr class="ltx_tr">
@@ -68,10 +68,10 @@
 </tr>
 <tr class="ltx_tr">
 <td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
-<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concept" href="http://planetmath.org/definition">Definition</a></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_l"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Classification.html">Classification</a></td>
 <td class="ltx_td ltx_align_left ltx_border_r">msc 68N17</td>
 </tr>
 <tr class="ltx_tr">

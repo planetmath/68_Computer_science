@@ -20,10 +20,10 @@
 <br class="ltx_break">
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_italic">++</span> is a compiled multi-paradigm programming language based on C that supports procedural, object-oriented and generic programming paradigms. It was developed by Bjarne Stroustrup at Bell Labs in 1983, the same year that the ANSI C standard was ratified. Working in tandem, the ANSI and ISO ratified standard C++ in 1998.</p>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">++</span> is a compiled multi-paradigm programming language based on C that <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">supports</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Support.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/support1"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> procedural, object-oriented and <a class="nnexus_concept" href="http://planetmath.org/ashorterproofmartinsaxiomandthecontinuumhypothesis">generic</a> programming paradigms. It was developed by Bjarne Stroustrup at Bell Labs in 1983, the same year that the ANSI C standard was ratified. Working in tandem, the ANSI and ISO ratified standard C++ in 1998.</p>
 </div>
 <div id="p3" class="ltx_para">
-<p class="ltx_p">The following C++ program takes two integers as inputs and outputs their greatest common divisor using Euclid’s algorithm.</p>
+<p class="ltx_p">The following C++ <a class="nnexus_concept" href="http://mathworld.wolfram.com/Program.html">program</a> takes two <a class="nnexus_concept" href="http://mathworld.wolfram.com/Integer.html">integers</a> as inputs and outputs their <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">greatest common divisor</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/GreatestCommonDivisor.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/greatestcommondivisor"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> using Euclid’s <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>.</p>
 </div>
 <div id="p4" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
@@ -60,19 +60,19 @@ int main() {
 the corresponding C example (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/CProgrammingLanguage</span>).
 Instead of C’s standard I/O library, the program uses
 C++’s <code class="ltx_verbatim ltx_font_typewriter">iostream</code> library.
-A substantial difference between the two programs
-is that the C++ version of <code class="ltx_verbatim ltx_font_typewriter">gcd</code> function is more general:
+A substantial <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">difference</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/difference"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/setdifference"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> between the two programs
+is that the C++ version of <code class="ltx_verbatim ltx_font_typewriter">gcd</code> <a class="nnexus_concept" href="http://planetmath.org/function">function</a> is more general:
 not only can it work with integers of type <code class="ltx_verbatim ltx_font_typewriter">int</code>,
 the same code can work<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
-Moreover, unlike most other object-oriented languages,
+Moreover, unlike most other object-oriented <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">languages</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/language"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/signature"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>,
 this abtraction imposes absolutely no performance penalty at run-time.</span></span></span>
 with <em class="ltx_emph ltx_font_italic">any</em> type that has
-division with remainder defined.
-The division with remainder corresponds to the operator <code class="ltx_verbatim ltx_font_typewriter">%</code> in C++.</p>
+<a class="nnexus_concept" href="http://planetmath.org/division">division</a> with <a class="nnexus_concept" href="http://planetmath.org/longdivision">remainder</a> defined.
+The division with remainder corresponds to the <a class="nnexus_concept" href="http://planetmath.org/operator">operator</a> <code class="ltx_verbatim ltx_font_typewriter">%</code> in C++.</p>
 </div>
 <div id="p6" class="ltx_para">
-<p class="ltx_p">Note that the algorithm, for integers, may return negative
-numbers for the greatest common divisor, if an input contains a negative.
+<p class="ltx_p">Note that the algorithm, for integers, may return <a class="nnexus_concept" href="http://planetmath.org/negativenumber">negative
+numbers</a> for the greatest common divisor, if an input contains a <a class="nnexus_concept" href="http://planetmath.org/positive">negative</a>.
 The algorithm is still correct, however, if the “greatest common divisor”
 is suitably defined, as in modern abstract algebra,
 to be unique only up to units in a ring.
@@ -80,7 +80,7 @@ See <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bibx1" title="" cla
 for an interesting discussion around this point.</p>
 </div>
 <div id="p7" class="ltx_para">
-<p class="ltx_p">We could define another GCD function with the same name but that took three integers as input and returned the GCD of the trio. Or we could create our own complex integer object and then write a GCD function with the same name that took complex integers as input. Furthermore, we could define the operators so as to enable a programmer to write things like <code class="ltx_verbatim ltx_font_typewriter">w = u + v;</code> with complex integers rather something like <code class="ltx_verbatim ltx_font_typewriter">w.setVal(complexAddition(u, v));</code>. The programmer’s imagination is the limit: the addition operator for a set object could be defined to either add up each element in one set to an element in a second set, or to perform a union of the two sets. Even in our simple GCD example, C++’s <code class="ltx_verbatim ltx_font_typewriter">iostream</code> library has overloaded the bitwise operators to perform concatenation.</p>
+<p class="ltx_p">We could define another GCD function with the same name but that took three integers as input and returned the GCD of the trio. Or we could create our own complex integer object and then write a GCD function with the same name that took complex integers as input. Furthermore, we could define the operators so as to enable a programmer to write things like <code class="ltx_verbatim ltx_font_typewriter">w = u + v;</code> with complex integers rather something like <code class="ltx_verbatim ltx_font_typewriter">w.setVal(complexAddition(u, v));</code>. The programmer’s imagination is the limit: the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">addition</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/addition"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/cardinalarithmetic"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> operator for a set object could be defined to either add up each <a class="nnexus_concept" href="http://mathworld.wolfram.com/Element.html">element</a> in one set to an element in a second set, or to perform a union of the two sets. Even in our simple GCD example, C++’s <code class="ltx_verbatim ltx_font_typewriter">iostream</code> library has <a class="nnexus_concept" href="http://planetmath.org/overload">overloaded</a> the bitwise operators to perform <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">concatenation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Concatenation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/concatenation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>.</p>
 </div>
 <section id="bib" class="ltx_bibliography">
 <h2 class="ltx_title ltx_title_bibliography">References</h2>
@@ -106,7 +106,7 @@ Alexander Stepanov. <span class="ltx_text ltx_font_typewriter">http://www.stepan
 <td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">C++</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</th>
 <td class="ltx_td ltx_align_left ltx_border_r">C</td>
 </tr>
 <tr class="ltx_tr">
@@ -135,7 +135,7 @@ Alexander Stepanov. <span class="ltx_text ltx_font_typewriter">http://www.stepan
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
-<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concept" href="http://planetmath.org/definition">Definition</a></td>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>

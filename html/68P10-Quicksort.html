@@ -20,7 +20,7 @@
 <br class="ltx_break">
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">Quicksort is a divide-and-conquer algorithm for sorting in the
+<p class="ltx_p"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Quicksort</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Quicksort.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/quicksort"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> is a divide-and-conquer <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> for <a class="nnexus_concept" href="http://mathworld.wolfram.com/Sorting.html">sorting</a> in the
 comparison model. Its expected running time is <math id="p2.m1" class="ltx_Math" alttext="O(n\lg n)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>lg</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> for
 sorting <math id="p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> values.</p>
 </div>
@@ -71,13 +71,13 @@ sorting <math id="p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi
 
 <div id="S0.SSx2.p1" class="ltx_para">
 <p class="ltx_p">The behavior of quicksort can be analyzed by considering the
-computation as a binary tree. Each node of the tree corresponds to
+<a class="nnexus_concept" href="http://mathworld.wolfram.com/Computation.html">computation</a> as a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">binary tree</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/BinaryTree.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/binarytree"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>. Each node of the tree corresponds to
 one recursive call to the quicksort procedure.</p>
 </div>
 <div id="S0.SSx2.p2" class="ltx_para">
 <p class="ltx_p">Consider the initial input to the algorithm, some list <math id="S0.SSx2.p2.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>. Call the
 Sorted list <math id="S0.SSx2.p2.m2" class="ltx_Math" alttext="S," display="inline"><mrow><mi>S</mi><mo>,</mo></mrow></math> with <math id="S0.SSx2.p2.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>th and <math id="S0.SSx2.p2.m4" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>th elements <math id="S0.SSx2.p2.m5" class="ltx_Math" alttext="S_{i}" display="inline"><msub><mi>S</mi><mi>i</mi></msub></math> and <math id="S0.SSx2.p2.m6" class="ltx_Math" alttext="S_{j}." display="inline"><mrow><msub><mi>S</mi><mi>j</mi></msub><mo>.</mo></mrow></math> These
-two elements will be compared with some probability <math id="S0.SSx2.p2.m7" class="ltx_Math" alttext="p_{ij}" display="inline"><msub><mi>p</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math>. This
+two elements will be compared with some <a class="nnexus_concept" href="http://mathworld.wolfram.com/Probability.html">probability</a> <math id="S0.SSx2.p2.m7" class="ltx_Math" alttext="p_{ij}" display="inline"><msub><mi>p</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math>. This
 probability can be determined by considering two preconditions on
 <math id="S0.SSx2.p2.m8" class="ltx_Math" alttext="S_{i}" display="inline"><msub><mi>S</mi><mi>i</mi></msub></math> and <math id="S0.SSx2.p2.m9" class="ltx_Math" alttext="S_{j}" display="inline"><msub><mi>S</mi><mi>j</mi></msub></math> being compared:</p>
 <ul id="I1" class="ltx_itemize">
@@ -105,9 +105,9 @@ pivot before any element between them is <math id="S0.SSx2.p3.m3" class="ltx_Mat
 precisely <math id="S0.SSx2.p3.m4" class="ltx_Math" alttext="p_{ij}." display="inline"><mrow><msub><mi>p</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>.</mo></mrow></math></p>
 </div>
 <div id="S0.SSx2.p4" class="ltx_para">
-<p class="ltx_p">The expected number of comparisons is just the summation over all
+<p class="ltx_p">The expected number of comparisons is just the <a class="nnexus_concept" href="http://planetmath.org/summation">summation</a> over all
 possible comparisons of the probability of that particular comparison
-occurring. By linearity of expectation, no independence assumptions
+occurring. By linearity of <a class="nnexus_concept" href="http://planetmath.org/expectedvalue">expectation</a>, no independence assumptions
 are necessary. The expected number of comparisons is therefore</p>
 </div>
 <div id="S0.SSx2.p5" class="ltx_para">
@@ -161,7 +161,7 @@ are necessary. The expected number of comparisons is therefore</p>
 <td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">quicksort</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</th>
 <td class="ltx_td ltx_align_left ltx_border_r">Quicksort</td>
 </tr>
 <tr class="ltx_tr">
@@ -190,10 +190,10 @@ are necessary. The expected number of comparisons is therefore</p>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
-<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concept" href="http://planetmath.org/definition">Definition</a></td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Classification.html">Classification</a></th>
 <td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
 </tr>
 <tr class="ltx_tr">

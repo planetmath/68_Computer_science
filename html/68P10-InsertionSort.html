@@ -23,7 +23,7 @@
 <h2 class="ltx_title ltx_title_subsection">The Problem</h2>
 
 <div id="S0.SSx1.p1" class="ltx_para">
-<p class="ltx_p">See the sorting problem.</p>
+<p class="ltx_p">See the <a class="nnexus_concept" href="http://planetmath.org/sortingproblem">sorting problem</a>.</p>
 </div>
 </section>
 <section id="S0.SSx2" class="ltx_subsection">
@@ -31,7 +31,7 @@
 
 <div id="S0.SSx2.p1" class="ltx_para">
 <p class="ltx_p">Suppose <math id="S0.SSx2.p1.m1" class="ltx_Math" alttext="L=\left\{x_{1},x_{2},\dots,x_{n}\right\}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo>{</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>}</mo></mrow></mrow></math> is the initial list of unsorted elements.
-The <em class="ltx_emph ltx_font_italic">insertion sort</em> algorithm will construct a new list, containing the
+The <em class="ltx_emph ltx_font_italic"><a class="nnexus_concept" href="http://planetmath.org/insertionsort">insertion sort</a></em> <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> will construct a new list, containing the
 elements of <math id="S0.SSx2.p1.m2" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> in order, which we will call <math id="S0.SSx2.p1.m3" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math>. The algorithm constructs this list one element at a time.</p>
 </div>
 <div id="S0.SSx2.p2" class="ltx_para">
@@ -46,7 +46,7 @@ can be used to quickly find <math id="S0.SSx2.p2.m16" class="ltx_Math" alttext="
 </div>
 <div id="S0.SSx2.p3" class="ltx_para">
 <p class="ltx_p">Since at step <math id="S0.SSx2.p3.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>, the length of list <math id="S0.SSx2.p3.m2" class="ltx_Math" alttext="L^{\prime}" display="inline"><msup><mi>L</mi><mo>′</mo></msup></math> is <math id="S0.SSx2.p3.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> and the length of list <math id="S0.SSx2.p3.m4" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is <math id="S0.SSx2.p3.m5" class="ltx_Math" alttext="n-i" display="inline"><mrow><mi>n</mi><mo>-</mo><mi>i</mi></mrow></math>, we can implement this
-algorithm as an in-place sorting algorithm. Each step <math id="S0.SSx2.p3.m6" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> results in <math id="S0.SSx2.p3.m7" class="ltx_Math" alttext="L[1..i]" display="inline"><mrow><mi>L</mi><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></math> becoming fully sorted.</p>
+algorithm as an <a class="nnexus_concept" href="http://planetmath.org/inplacesortingalgorithm">in-place sorting algorithm</a>. Each step <math id="S0.SSx2.p3.m6" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> results in <math id="S0.SSx2.p3.m7" class="ltx_Math" alttext="L[1..i]" display="inline"><mrow><mi>L</mi><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>i</mi><mo stretchy="false">]</mo></mrow></mrow></math> becoming fully sorted.</p>
 </div>
 </section>
 <section id="S0.SSx3" class="ltx_subsection">
@@ -54,7 +54,7 @@ algorithm as an in-place sorting algorithm. Each step <math id="S0.SSx2.p3.m6" c
 
 <div id="S0.SSx3.p1" class="ltx_para">
 <p class="ltx_p">This algorithm uses a modified binary search algorithm to find the position in <math id="S0.SSx3.p1.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> where an element <math id="S0.SSx3.p1.m2" class="ltx_Math" alttext="key" display="inline"><mrow><mi>k</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></math>
-should be placed to maintain ordering.</p>
+should be placed to maintain <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">ordering</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Ordering.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/partialorder"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>.</p>
 </div>
 <div id="S0.SSx3.p2" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm</span> <span class="ltx_text ltx_font_smallcaps">Insertion_Sort</span><span class="ltx_text ltx_font_typewriter">(L, n)
@@ -129,16 +129,16 @@ should be placed to maintain ordering.</p>
 <h2 class="ltx_title ltx_title_subsection">Analysis</h2>
 
 <div id="S0.SSx4.p1" class="ltx_para">
-<p class="ltx_p">In the worst case, each step <math id="S0.SSx4.p1.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> requires a shift of <math id="S0.SSx4.p1.m2" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> elements for the insertion (consider an input
-list that is sorted in reverse order). Thus the runtime complexity is <math id="S0.SSx4.p1.m3" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>. Even the optimization
-of using a binary search does not help us here, because the deciding factor in this case is the insertion.
+<p class="ltx_p">In the worst case, each step <math id="S0.SSx4.p1.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math> requires a shift of <math id="S0.SSx4.p1.m2" class="ltx_Math" alttext="i-1" display="inline"><mrow><mi>i</mi><mo>-</mo><mn>1</mn></mrow></math> elements for the <a class="nnexus_concept" href="http://planetmath.org/insertionoperationonlanguages">insertion</a> (consider an input
+list that is sorted in reverse order). Thus the runtime <a class="nnexus_concept" href="http://mathworld.wolfram.com/Complexity.html">complexity</a> is <math id="S0.SSx4.p1.m3" class="ltx_Math" alttext="\mathcal{O}(n^{2})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math>. Even the optimization
+of using a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">binary search</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/BinarySearch.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/binarysearch"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> does not help us here, because the deciding factor in this case is the insertion.
 It is possible to use a data type with <math id="S0.SSx4.p1.m4" class="ltx_Math" alttext="\mathcal{O}(\log{n})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> insertion time, giving <math id="S0.SSx4.p1.m5" class="ltx_Math" alttext="\mathcal{O}(n\log{n})" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> runtime,
-but then the algorithm can no longer be done as an in-place sorting algorithm. Such data structures are also quite
+but then the algorithm can no longer be done as an in-place sorting algorithm. Such <a class="nnexus_concept" href="http://mathworld.wolfram.com/DataStructure.html">data structures</a> are also quite
 complicated.
 </p>
 </div>
 <div id="S0.SSx4.p2" class="ltx_para">
-<p class="ltx_p">A similar algorithm to the insertion sort is the selection sort, which requires fewer data movements than the insertion
+<p class="ltx_p">A <a class="nnexus_concept" href="http://planetmath.org/equivalentmachines">similar</a> algorithm to the insertion sort is the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">selection sort</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/SelectionSort.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/selectionsort"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>, which requires fewer data movements than the insertion
 sort, but requires more comparisons.</p>
 </div>
 <div id="S0.SSx4.p3" class="ltx_para ltx_align_right">
@@ -181,7 +181,7 @@ sort, but requires more comparisons.</p>
 <td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_l"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Classification.html">Classification</a></td>
 <td class="ltx_td ltx_align_left ltx_border_r">msc 68P10</td>
 </tr>
 <tr class="ltx_tr">

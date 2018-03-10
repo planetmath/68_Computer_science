@@ -18,7 +18,7 @@
 
 <div id="p1" class="ltx_para">
 <br class="ltx_break">
-<p class="ltx_p">Based on the informal description of a Turing machine in the parent entry, we give it a formal mathematical definition:</p>
+<p class="ltx_p">Based on the informal description of a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Turing machine</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/TuringMachine.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/turingmachine"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> in the parent entry, we give it a formal mathematical definition:</p>
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A Turing machine <math id="p2.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is a 7-tuple consists of the following:</p>
@@ -26,14 +26,14 @@
 <li id="I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_enumerate">1.</span> 
 <div id="I1.i1.p1" class="ltx_para">
-<p class="ltx_p">an alphabet <math id="I1.i1.p1.m1" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> called the state alphabet,
+<p class="ltx_p">an <a class="nnexus_concept" href="http://planetmath.org/alphabet">alphabet</a> <math id="I1.i1.p1.m1" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> called the state alphabet,
 </p>
 </div>
 </li>
 <li id="I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_enumerate">2.</span> 
 <div id="I1.i2.p1" class="ltx_para">
-<p class="ltx_p">an element <math id="I1.i2.p1.m1" class="ltx_Math" alttext="s\in S" display="inline"><mrow><mi>s</mi><mo>∈</mo><mi>S</mi></mrow></math> called the start state,</p>
+<p class="ltx_p">an <a class="nnexus_concept" href="http://mathworld.wolfram.com/Element.html">element</a> <math id="I1.i2.p1.m1" class="ltx_Math" alttext="s\in S" display="inline"><mrow><mi>s</mi><mo>∈</mo><mi>S</mi></mrow></math> called the <a class="nnexus_concept" href="http://planetmath.org/automaton">start state</a>,</p>
 </div>
 </li>
 <li id="I1.i3" class="ltx_item" style="list-style-type:none;">
@@ -63,7 +63,7 @@
 <li id="I1.i7" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_enumerate">7.</span> 
 <div id="I1.i7.p1" class="ltx_para">
-<p class="ltx_p">a function <math id="I1.i7.p1.m1" class="ltx_Math" alttext="\delta:S\times\Sigma\to S\times\Sigma\times\{L,R\}" display="inline"><mrow><mi>δ</mi><mo>:</mo><mrow><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow><mo>→</mo><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi><mo>×</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></mrow></math> called the transition function, such that</p>
+<p class="ltx_p">a <a class="nnexus_concept" href="http://planetmath.org/function">function</a> <math id="I1.i7.p1.m1" class="ltx_Math" alttext="\delta:S\times\Sigma\to S\times\Sigma\times\{L,R\}" display="inline"><mrow><mi>δ</mi><mo>:</mo><mrow><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi></mrow><mo>→</mo><mrow><mi>S</mi><mo>×</mo><mi mathvariant="normal">Σ</mi><mo>×</mo><mrow><mo stretchy="false">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></mrow></math> called the transition function, such that</p>
 <table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -79,32 +79,32 @@
 <p class="ltx_p"><math id="p2.m2" class="ltx_Math" alttext="t,r" display="inline"><mrow><mi>t</mi><mo>,</mo><mi>r</mi></mrow></math> are collectively called the <em class="ltx_emph ltx_font_italic">halt states</em> of <math id="p2.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>.</p>
 </div>
 <div id="p3" class="ltx_para">
-<p class="ltx_p">Actually, the definition above is only part of the story. What is described in the definition is the “finite control” (the brain) portion of a Turing machine. All by itself, the finite control is useless. In order for a Turing machine to do computations, two other ingredients are needed to complete the description: a tape, and a reading head. The two can be formalized as follows:</p>
+<p class="ltx_p">Actually, the definition above is only part of the story. What is described in the definition is the “finite control” (the brain) portion of a Turing machine. All by itself, the finite control is useless. In order for a Turing machine to do <a class="nnexus_concept" href="http://mathworld.wolfram.com/Computation.html">computations</a>, two other ingredients are needed to <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">complete</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/soundcomplete"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/completebinarytree"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/completegraph"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/kripkesemantics"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/maximallyconsistent"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> the description: a tape, and a reading head. The two can be formalized as follows:</p>
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A <em class="ltx_emph ltx_font_italic">tape</em>, or formally a <em class="ltx_emph ltx_font_italic">tape description</em>, is a function <math id="p4.m1" class="ltx_Math" alttext="\tau:\mathbb{Z}\to\Sigma\cup\{B\}" display="inline"><mrow><mi>τ</mi><mo>:</mo><mrow><mi>ℤ</mi><mo>→</mo><mrow><mi mathvariant="normal">Σ</mi><mo>∪</mo><mrow><mo stretchy="false">{</mo><mi>B</mi><mo stretchy="false">}</mo></mrow></mrow></mrow></mrow></math>. A <em class="ltx_emph ltx_font_italic">position of the reading head</em> is an integer <math id="p4.m2" class="ltx_Math" alttext="n\in\mathbb{Z}" display="inline"><mrow><mi>n</mi><mo>∈</mo><mi>ℤ</mi></mrow></math>.</p>
 </div>
 <div id="p5" class="ltx_para">
-<p class="ltx_p">In other words, the tape of a Turing machine <math id="p5.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is infinitely long in both direction, and is divided up into squares. The content of each square is either a symbol in <math id="p5.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> or blank (<math id="p5.m3" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>). The purpose of the tape is to store input, output, as well as any other strings that are used during computations.</p>
+<p class="ltx_p">In other words, the tape of a Turing machine <math id="p5.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is infinitely long in both direction, and is divided up into squares. The <a class="nnexus_concept" href="http://mathworld.wolfram.com/Content.html">content</a> of each square is either a symbol in <math id="p5.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math> or blank (<math id="p5.m3" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>). The purpose of the tape is to store input, output, as well as any other strings that are used during computations.</p>
 </div>
 <div id="p6" class="ltx_para">
-<p class="ltx_p">The finite control and the tape of a Turing machine are connected by a reading head, which points over the tape, has the ability to move left or right along the tape, and reads the tape one square at a time. The position of the reading head is the square it is currently reading.</p>
+<p class="ltx_p">The finite control and the tape of a Turing machine are <a class="nnexus_concept" href="http://planetmath.org/connectedgraph">connected</a> by a reading head, which points over the tape, has the ability to move left or right along the tape, and reads the tape one square at a time. The position of the reading head is the square it is currently reading.</p>
 </div>
 <div id="p7" class="ltx_para">
-<p class="ltx_p">The Turing machine defined this way is also known as a two-way deterministic Turing machine.</p>
+<p class="ltx_p">The Turing machine defined this way is also known as a two-way <a class="nnexus_concept" href="http://planetmath.org/deterministicturingmachine">deterministic Turing machine</a>.</p>
 </div>
 <div id="p8" class="ltx_para">
 <p class="ltx_p">To formally describe the computational process of a Turing machine, we need to know three things: what is the current state of the finite control, what is on the tape, and what is the current position of the reading head:</p>
 </div>
 <div id="p9" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A <em class="ltx_emph ltx_font_italic">configuration</em> of a Turing machine is a triple <math id="p9.m1" class="ltx_Math" alttext="(p,\tau,m)" display="inline"><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></math>, where <math id="p9.m2" class="ltx_Math" alttext="p\in S" display="inline"><mrow><mi>p</mi><mo>∈</mo><mi>S</mi></mrow></math>, called the state of the configuration, <math id="p9.m3" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> is a tape description called the tape description of the configuration, and <math id="p9.m4" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> is a position of the reading head called <em class="ltx_emph ltx_font_italic">the</em> position of the reading head of the configuration.</p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. A <em class="ltx_emph ltx_font_italic"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">configuration</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Configuration.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/unlimitedregistermachine"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></em> of a Turing machine is a triple <math id="p9.m1" class="ltx_Math" alttext="(p,\tau,m)" display="inline"><mrow><mo stretchy="false">(</mo><mi>p</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></math>, where <math id="p9.m2" class="ltx_Math" alttext="p\in S" display="inline"><mrow><mi>p</mi><mo>∈</mo><mi>S</mi></mrow></math>, called the state of the configuration, <math id="p9.m3" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math> is a tape description called the tape description of the configuration, and <math id="p9.m4" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> is a position of the reading head called <em class="ltx_emph ltx_font_italic">the</em> position of the reading head of the configuration.</p>
 </div>
 <div id="p10" class="ltx_para">
 <p class="ltx_p">We are now ready to describe what it means for a Turing machine to compute something:
 </p>
 </div>
 <div id="p11" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Given a Turing machine <math id="p11.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> (with the associated tape and reading head), a <em class="ltx_emph ltx_font_italic">computation step</em> <math id="p11.m2" class="ltx_Math" alttext="\rightarrow" display="inline"><mo>→</mo></math> is a binary relation on the set of all configurations of <math id="p11.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, defined as follows: if</p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Given a Turing machine <math id="p11.m1" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> (with the associated tape and reading head), a <em class="ltx_emph ltx_font_italic">computation step</em> <math id="p11.m2" class="ltx_Math" alttext="\rightarrow" display="inline"><mo>→</mo></math> is a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">binary relation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/BinaryRelation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/relation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> on the set of all configurations of <math id="p11.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, defined as follows: if</p>
 <table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -135,7 +135,7 @@ array}\right." display="block"><mrow><mrow><mo stretchy="false">(</mo><mi>q</mi>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 </tr>
 </table>
-<p class="ltx_p">We can of course take the reflexive transitive closure of <math id="p11.m4" class="ltx_Math" alttext="\rightarrow" display="inline"><mo>→</mo></math> to obtain <math id="p11.m5" class="ltx_Math" alttext="\rightarrow^{*}" display="inline"><msup><mo>→</mo><mo>*</mo></msup></math>.</p>
+<p class="ltx_p">We can of course take the <a class="nnexus_concept" href="http://planetmath.org/closureofarelationwithrespecttoaproperty">reflexive transitive closure</a> of <math id="p11.m4" class="ltx_Math" alttext="\rightarrow" display="inline"><mo>→</mo></math> to obtain <math id="p11.m5" class="ltx_Math" alttext="\rightarrow^{*}" display="inline"><msup><mo>→</mo><mo>*</mo></msup></math>.</p>
 </div>
 <div id="p12" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. An input to a Turing machine is a (finite) word <math id="p12.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> over <math id="p12.m2" class="ltx_Math" alttext="\Sigma" display="inline"><mi mathvariant="normal">Σ</mi></math>. If the length of <math id="p12.m3" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> is <math id="p12.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, we define the tape description <math id="p12.m5" class="ltx_Math" alttext="\tau_{w}" display="inline"><msub><mi>τ</mi><mi>w</mi></msub></math> of <math id="p12.m6" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> as follows:</p>
@@ -149,10 +149,10 @@ B&amp;\textrm{otherwise.}\end{array}\right." display="block"><mrow><mrow><msub><
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 </tr>
 </table>
-<p class="ltx_p">Note that <math id="p12.m7" class="ltx_Math" alttext="\tau_{\lambda}" display="inline"><msub><mi>τ</mi><mi>λ</mi></msub></math> is the constant function whose value is <math id="p12.m8" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>, where <math id="p12.m9" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> is the empty word.</p>
+<p class="ltx_p">Note that <math id="p12.m7" class="ltx_Math" alttext="\tau_{\lambda}" display="inline"><msub><mi>τ</mi><mi>λ</mi></msub></math> is the <a class="nnexus_concept" href="http://planetmath.org/constantfunction">constant function</a> whose value is <math id="p12.m8" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>, where <math id="p12.m9" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> is the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">empty word</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/word"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/freesemigroup"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/freegroup"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>.</p>
 </div>
 <div id="p13" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Given an input <math id="p13.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> and a Turing machine <math id="p13.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, a computation of <math id="p13.m3" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> by <math id="p13.m4" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is a finite sequence</p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Definition</span>. Given an input <math id="p13.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> and a Turing machine <math id="p13.m2" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, a computation of <math id="p13.m3" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> by <math id="p13.m4" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> is a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">finite sequence</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/orderedtuplet"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/sequence"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></p>
 <table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -176,13 +176,13 @@ B&amp;\textrm{otherwise.}\end{array}\right." display="block"><mrow><mrow><msub><
 <li id="I2.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_itemize">•</span> 
 <div id="I2.i1.p1" class="ltx_para">
-<p class="ltx_p">It can be shown that <math id="I2.i1.p1.m1" class="ltx_Math" alttext="A\subseteq\Sigma^{*}" display="inline"><mrow><mi>A</mi><mo>⊆</mo><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></mrow></math> is Turing acceptable iff it is recursively enumerable. Furthermore, <math id="I2.i1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is recursive iff there it is Turing acceptable by a total Turing machine.</p>
+<p class="ltx_p">It can be shown that <math id="I2.i1.p1.m1" class="ltx_Math" alttext="A\subseteq\Sigma^{*}" display="inline"><mrow><mi>A</mi><mo>⊆</mo><msup><mi mathvariant="normal">Σ</mi><mo>*</mo></msup></mrow></math> is Turing acceptable iff it is <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">recursively enumerable</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/arithmeticalhierarchy"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/recursivelyenumerable"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>. Furthermore, <math id="I2.i1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is recursive iff there it is Turing acceptable by a total Turing machine.</p>
 </div>
 </li>
 <li id="I2.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_itemize">•</span> 
 <div id="I2.i2.p1" class="ltx_para">
-<p class="ltx_p">The Turing machines described above are known as language acceptors. However, any Turing machine can be modified so it is capable of producing outputs. Using this modification, one can think of a Turing machine as a partial function where an input is in its domain iff the computation leads to a halting state. More can be found here (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/TuringComputable</span>).</p>
+<p class="ltx_p">The Turing machines described above are known as <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">language</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/language"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/signature"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> acceptors. However, any Turing machine can be modified so it is capable of producing outputs. Using this modification, one can think of a Turing machine as a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">partial function</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/PartialFunction.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/partialfunction"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> where an input is in its domain iff the computation leads to a halting state. More can be found here (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/TuringComputable</span>).</p>
 </div>
 </li>
 </ul>
@@ -225,7 +225,7 @@ B&amp;\textrm{otherwise.}\end{array}\right." display="block"><mrow><mrow><msub><
 <td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Classification.html">Classification</a></th>
 <td class="ltx_td ltx_align_left ltx_border_r">msc 68Q10</td>
 </tr>
 <tr class="ltx_tr">

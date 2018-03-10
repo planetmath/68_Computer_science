@@ -18,13 +18,13 @@
 
 <div id="p1" class="ltx_para">
 <br class="ltx_break">
-<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Arithmetic coding</em> is a technique for achieving near-optimal entropy encoding.</p>
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic"><a class="nnexus_concept" href="http://planetmath.org/arithmeticencoding">Arithmetic coding</a></em> is a technique for achieving near-optimal <a class="nnexus_concept" href="http://planetmath.org/entropyencoding">entropy encoding</a>.</p>
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">An arithmetic encoder takes a string of symbols as input and produces a rational number in the interval <math id="p2.m1" class="ltx_Math" alttext="[0,1)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math> as output. As each symbol is processed, the encoder will restrict the output to a smaller interval.</p>
+<p class="ltx_p">An arithmetic encoder takes a string of symbols as input and produces a <a class="nnexus_concept" href="http://planetmath.org/rationalnumber">rational number</a> in the interval <math id="p2.m1" class="ltx_Math" alttext="[0,1)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math> as output. As each symbol is processed, the encoder will restrict the output to a smaller interval.</p>
 </div>
 <div id="p3" class="ltx_para">
-<p class="ltx_p">Let <math id="p3.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> be the number of distinct symbols in the input; let <math id="p3.m2" class="ltx_Math" alttext="x_{1},x_{2}\dots x_{N}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>⁢</mo><mi mathvariant="normal">…</mi><mo>⁢</mo><msub><mi>x</mi><mi>N</mi></msub></mrow></mrow></math> represent the symbols, and let <math id="p3.m3" class="ltx_Math" alttext="P_{1},P_{2}\dots P_{N}" display="inline"><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>,</mo><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mi mathvariant="normal">…</mi><mo>⁢</mo><msub><mi>P</mi><mi>N</mi></msub></mrow></mrow></math> represent the probability of each symbol appearing. At each step in the process, the output is restricted to the current interval <math id="p3.m4" class="ltx_Math" alttext="[y,y+R)" display="inline"><mrow><mo stretchy="false">[</mo><mi>y</mi><mo>,</mo><mrow><mi>y</mi><mo>+</mo><mi>R</mi></mrow><mo stretchy="false">)</mo></mrow></math>. Partition this interval into <math id="p3.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> disjoint subintervals:
+<p class="ltx_p">Let <math id="p3.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> be the number of distinct symbols in the input; let <math id="p3.m2" class="ltx_Math" alttext="x_{1},x_{2}\dots x_{N}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>⁢</mo><mi mathvariant="normal">…</mi><mo>⁢</mo><msub><mi>x</mi><mi>N</mi></msub></mrow></mrow></math> represent the symbols, and let <math id="p3.m3" class="ltx_Math" alttext="P_{1},P_{2}\dots P_{N}" display="inline"><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>,</mo><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>⁢</mo><mi mathvariant="normal">…</mi><mo>⁢</mo><msub><mi>P</mi><mi>N</mi></msub></mrow></mrow></math> represent the probability of each symbol appearing. At each step in the process, the output is restricted to the current interval <math id="p3.m4" class="ltx_Math" alttext="[y,y+R)" display="inline"><mrow><mo stretchy="false">[</mo><mi>y</mi><mo>,</mo><mrow><mi>y</mi><mo>+</mo><mi>R</mi></mrow><mo stretchy="false">)</mo></mrow></math>. <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Partition</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/integerpartition"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/partition"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> this interval into <math id="p3.m5" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> <a class="nnexus_concept" href="http://planetmath.org/disjoint">disjoint</a> subintervals:
 </p>
 </div>
 <div id="p4" class="ltx_para">
@@ -65,10 +65,10 @@
 <p class="ltx_p">Therefore the  of <math id="p5.m1" class="ltx_Math" alttext="I_{i}" display="inline"><msub><mi>I</mi><mi>i</mi></msub></math> is <math id="p5.m2" class="ltx_Math" alttext="P_{i}R" display="inline"><mrow><msub><mi>P</mi><mi>i</mi></msub><mo>⁢</mo><mi>R</mi></mrow></math>. If the next symbol is <math id="p5.m3" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math>, then restrict the output to the new interval <math id="p5.m4" class="ltx_Math" alttext="I_{i}" display="inline"><msub><mi>I</mi><mi>i</mi></msub></math>.</p>
 </div>
 <div id="p6" class="ltx_para">
-<p class="ltx_p">Note that at each stage, all the possible intervals are pairwise disjoint. Therefore a specific sequence of symbols produces exactly one unique output range, and the process can be reversed.</p>
+<p class="ltx_p">Note that at each stage, all the possible intervals are <a class="nnexus_concept" href="http://planetmath.org/pairwisedisjoint">pairwise disjoint</a>. Therefore a specific <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">sequence</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Sequence.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/sequence"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> of symbols produces exactly one unique output range, and the process can be reversed.</p>
 </div>
 <div id="p7" class="ltx_para">
-<p class="ltx_p">Since arithmetic encoders are typically implemented on binary computers, the actual output of the encoder is generally the shortest sequence of bits representing the fractional part of a rational number in the final interval.</p>
+<p class="ltx_p">Since arithmetic encoders are typically implemented on binary <a class="nnexus_concept" href="http://planetmath.org/supercomputers">computers</a>, the actual output of the encoder is generally the shortest sequence of bits representing the <a class="nnexus_concept" href="http://planetmath.org/fractionalpart">fractional part</a> of a rational number in the final interval.</p>
 </div>
 <div id="p8" class="ltx_para">
 <p class="ltx_p">Suppose our entire input string contains <math id="p8.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> symbols: then <math id="p8.m2" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math> appears exactly <math id="p8.m3" class="ltx_Math" alttext="P_{i}M" display="inline"><mrow><msub><mi>P</mi><mi>i</mi></msub><mo>⁢</mo><mi>M</mi></mrow></math> times in the input. Therefore, the size of the final interval will be</p>
@@ -80,7 +80,7 @@
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 </tr>
 </table>
-<p class="ltx_p">The number of bits necessary to write a binary fraction in this range is</p>
+<p class="ltx_p">The number of bits necessary to write a binary <a class="nnexus_concept" href="http://planetmath.org/fraction">fraction</a> in this range is</p>
 <table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_eqnarray ltx_eqn_table">
 
 <tr id="S0.Ex8" class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -107,7 +107,7 @@
 </table>
 </div>
 <div id="p9" class="ltx_para">
-<p class="ltx_p">By Shannon’s theorem, this is the total entropy of the original message. Therefore arithmetic encoding is near-optimal entropy encoding.
+<p class="ltx_p">By Shannon’s <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">theorem</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Theorem.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/lemma"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>, this is the total <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">entropy</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Entropy.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/shannonsentropy"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> of the original message. Therefore arithmetic encoding is near-optimal entropy encoding.
 </p>
 <table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
 <tbody class="ltx_tbody">
@@ -116,7 +116,7 @@
 <td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">arithmetic encoding</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</th>
 <td class="ltx_td ltx_align_left ltx_border_r">ArithmeticEncoding</td>
 </tr>
 <tr class="ltx_tr">
@@ -145,7 +145,7 @@
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
-<td class="ltx_td ltx_align_left ltx_border_r">Definition</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concept" href="http://planetmath.org/definition">Definition</a></td>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>

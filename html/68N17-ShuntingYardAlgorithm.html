@@ -18,10 +18,10 @@
 
 <div id="p1" class="ltx_para">
 <br class="ltx_break">
-<p class="ltx_p">To convert from standard infix notation to reverse Polish notation, the Dutch computer programmer Edsger Dijkstra came up with the <em class="ltx_emph ltx_font_italic">shunting yard algorithm</em>.</p>
+<p class="ltx_p">To convert from standard <a class="nnexus_concept" href="http://planetmath.org/infixnotation">infix notation</a> to <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">reverse Polish notation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/ReversePolishNotation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/reversepolishnotation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>, the Dutch <a class="nnexus_concept" href="http://planetmath.org/supercomputers">computer</a> programmer Edsger Dijkstra came up with the <em class="ltx_emph ltx_font_italic"><a class="nnexus_concept" href="http://planetmath.org/shuntingyardalgorithm">shunting yard algorithm</a></em>.</p>
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">Given a string of tokens, a token reader that ignores whitespace (except to delimit numbers), a number stack, an operator stack and an output queue execute the following steps:</p>
+<p class="ltx_p">Given a string of tokens, a token reader that ignores whitespace (except to delimit numbers), a number stack, an <a class="nnexus_concept" href="http://planetmath.org/operator">operator</a> stack and an output queue execute the following steps:</p>
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">1. Read the tokens in order until end of line. Put number tokens on the output queue. Put operator tokens on the operator stack: if an operator is associative, and has lesser precedence than the operator below it on the operator stack, pop the lower operator off the operator stack and put it on the output queue. If the operator is a left parenthesis, push it onto the operator stack. If the operator is a right parenthesis, start popping operators off the operator stack and onto the output queue until a left parenthesis is encountered. If no left parenthesis is found, throw a mismatched parenthesis exception.
@@ -29,7 +29,7 @@
 3. Send the contents of the output queue to the appropriate output device.</p>
 </div>
 <div id="p4" class="ltx_para">
-<p class="ltx_p">What the mismatched parenthesis exception does depends on the device. In the case of a palm calculator, the exception might just turn on the error ”E” and ignore input until the error clear key is pressed. In the case of a calculator implemented on a computer, the exception could give an appropriate message and ask the user to try again.
+<p class="ltx_p">What the mismatched parenthesis exception does depends on the device. In the case of a palm <a class="nnexus_concept" href="http://planetmath.org/calculator">calculator</a>, the exception might just turn on the error ”E” and ignore input until the error clear key is pressed. In the case of a calculator implemented on a computer, the exception could give an appropriate message and ask the user to try again.
 </p>
 <table class="ltx_tabular ltx_align_right ltx_guessed_headers ltx_align_middle">
 <tbody class="ltx_tbody">
@@ -38,7 +38,7 @@
 <td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">shunting yard algorithm</td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</th>
 <td class="ltx_td ltx_align_left ltx_border_r">ShuntingYardAlgorithm</td>
 </tr>
 <tr class="ltx_tr">
@@ -67,7 +67,7 @@
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
-<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></td>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>

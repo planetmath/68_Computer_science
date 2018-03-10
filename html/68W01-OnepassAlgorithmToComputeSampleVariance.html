@@ -20,10 +20,10 @@
 <br class="ltx_break">
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">In many situations it is desirable to calculate,
-in one iteration, the sample variance of many numbers, and without
+<p class="ltx_p">In many situations it is desirable to <a class="nnexus_concept" href="http://planetmath.org/searchproblem">calculate</a>,
+in one <a class="nnexus_concept" href="http://mathworld.wolfram.com/Iteration.html">iteration</a>, the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">sample variance</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/SampleVariance.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/statistic"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> of many numbers, and without
 having to have every number available
-in computer memory before beginning processing.</p>
+in <a class="nnexus_concept" href="http://planetmath.org/supercomputers">computer</a> memory before beginning processing.</p>
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Let <math id="p3.m1" class="ltx_Math" alttext="x_{1},x_{2},\ldots" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math> denote the data.
@@ -40,24 +40,24 @@ _{i=1}^{n}x_{i}\,," display="block"><mrow><mrow><mrow><mi>v</mi><mo>=</mo><mrow>
 </tr>
 </table>
 <p class="ltx_p">suffers from computational round-off error.
-If the mean <math id="p3.m2" class="ltx_Math" alttext="\overline{x}" display="inline"><mover accent="true"><mi>x</mi><mo>¯</mo></mover></math> is large in absolute value,
+If the mean <math id="p3.m2" class="ltx_Math" alttext="\overline{x}" display="inline"><mover accent="true"><mi>x</mi><mo>¯</mo></mover></math> is large in <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">absolute value</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/valuation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/absolutevalue"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>,
 and <math id="p3.m3" class="ltx_Math" alttext="\sum_{i=1}^{n}x_{i}^{2}" display="inline"><mrow><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></mrow></math> is close to <math id="p3.m4" class="ltx_Math" alttext="n\overline{x}^{2}" display="inline"><mrow><mi>n</mi><mo>⁢</mo><msup><mover accent="true"><mi>x</mi><mo>¯</mo></mover><mn>2</mn></msup></mrow></math>,
-then the subtraction at the end will tend to lose
-significant digits on the result.
+then the <a class="nnexus_concept" href="http://planetmath.org/subtraction">subtraction</a> at the end will tend to lose
+<a class="nnexus_concept" href="http://mathworld.wolfram.com/SignificantDigits.html">significant digits</a> on the result.
 Also, in rare cases, the sum of squares <math id="p3.m5" class="ltx_Math" alttext="\sum_{i=1}^{n}x_{i}^{2}" display="inline"><mrow><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></mrow></math>
 can overflow on a computer.</p>
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p">A better alternative, though requiring more work per iteration,
-is to calculate the running sample mean
-and variance instead,
+is to calculate the <a class="nnexus_concept" href="http://planetmath.org/summation">running</a> <a class="nnexus_concept" href="http://mathworld.wolfram.com/SampleMean.html">sample mean</a>
+and <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">variance</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Variance.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/variance"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> instead,
 and update these as each datum is processed.
 Here we give the derivation of the one-pass algorithm — which
-involves nothing more than simple algebraic manipulations.</p>
+involves nothing more than simple <a class="nnexus_concept" href="http://mathworld.wolfram.com/Algebraics.html">algebraic</a> manipulations.</p>
 </div>
 <div id="p5" class="ltx_para">
-<p class="ltx_p">Define the running arithmetic mean
-and the sum of squared residuals:</p>
+<p class="ltx_p">Define the running <a class="nnexus_concept" href="http://planetmath.org/arithmeticmean">arithmetic mean</a>
+and the sum of squared <a class="nnexus_concept" href="http://mathworld.wolfram.com/Residual.html">residuals</a>:</p>
 <table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -138,13 +138,13 @@ n+1)\gamma-\gamma=n\gamma\,;" display="inline"><mrow><mrow><mrow><mi>γ</mi><mo>
 </table>
 </div>
 <div id="p8" class="ltx_para">
-<p class="ltx_p">Note that the number to be added to <math id="p8.m1" class="ltx_Math" alttext="s_{n}" display="inline"><msub><mi>s</mi><mi>n</mi></msub></math> is never negative,
+<p class="ltx_p">Note that the number to be added to <math id="p8.m1" class="ltx_Math" alttext="s_{n}" display="inline"><msub><mi>s</mi><mi>n</mi></msub></math> is never <a class="nnexus_concept" href="http://planetmath.org/positive">negative</a>,
 so no cancellation error will occur from this procedure.
 (However, there can still be computational round-off error if <math id="p8.m2" class="ltx_Math" alttext="s_{n+1}-s_{n}" display="inline"><mrow><msub><mi>s</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>-</mo><msub><mi>s</mi><mi>n</mi></msub></mrow></math>
 happens to be very small compared to <math id="p8.m3" class="ltx_Math" alttext="s_{n}" display="inline"><msub><mi>s</mi><mi>n</mi></msub></math>.)</p>
 </div>
 <div id="p9" class="ltx_para">
-<p class="ltx_p">The recurrence relation for the
+<p class="ltx_p">The <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">recurrence relation</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/RecurrenceRelation.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/recurrencerelation"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> for the
 sample covariance of two lists of numbers <math id="p9.m1" class="ltx_Math" alttext="x_{1},x_{2},\ldots" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math>
 and <math id="p9.m2" class="ltx_Math" alttext="y_{1},y_{2},\ldots" display="inline"><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math>
 can be derived similarly.
@@ -200,10 +200,10 @@ B. P. Welford. “Note on a Method for Calculating Corrected Sums of Squares and
 <tbody class="ltx_tbody">
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
-<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">one-pass algorithm to compute sample variance</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t"><a class="nnexus_concept" href="http://planetmath.org/onepassalgorithmtocomputesamplevariance">one-pass algorithm to compute sample variance</a></td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l"><a class="nnexus_concept" href="http://planetmath.org/canonical">Canonical</a> name</th>
 <td class="ltx_td ltx_align_left ltx_border_r">OnepassAlgorithmToComputeSampleVariance</td>
 </tr>
 <tr class="ltx_tr">
@@ -232,7 +232,7 @@ B. P. Welford. “Note on a Method for Calculating Corrected Sums of Squares and
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
-<td class="ltx_td ltx_align_left ltx_border_r">Algorithm</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup></td>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
